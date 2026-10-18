@@ -17,6 +17,11 @@ This directory records the formalization contract, provenance, planning state, a
 - [`formal-vs-numerical-evidence.md`](formal-vs-numerical-evidence.md) — permitted bridges and prohibited status transfers.
 - [`certificates.md`](certificates.md) — certificate vocabulary and present availability.
 
+## Architecture and workflow
+
+- [`ecosystem-architecture.md`](ecosystem-architecture.md) — horizontal hub-and-spoke relationship, shallow dependencies, and cross-repository bridges.
+- [`agent-workflow.md`](agent-workflow.md) — bounded Pi/Lean development loop and criteria for evaluating optional agent tooling.
+
 ## Planning
 
 - [`module-layout.md`](module-layout.md) — intended ownership of documentation-only source folders.

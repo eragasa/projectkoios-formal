@@ -4,7 +4,7 @@ This roadmap orders future work by mathematical dependency. It is not an authori
 
 ## R0 — documentation and layout
 
-**Current scope.** Establish authority boundaries, conventions, provenance, theorem planning, trusted-base policy, and documentation-only module folders.
+**Current scope.** Establish authority boundaries, conventions, provenance, theorem planning, trusted-base policy, the horizontal ecosystem relationship, the bounded agent workflow, and documentation-only module folders.
 
 Exit evidence:
 
@@ -12,6 +12,12 @@ Exit evidence:
 - planned entries remain distinct from Lean declarations;
 - pin, build, and admission/axiom audits pass; and
 - no scientific theorem count changes.
+
+## Optional tooling track — read-only and non-gating
+
+Candidate Lean skills, language-server bridges, MCP servers, and proof-search wrappers may be evaluated from authoritative sources at immutable revisions. An evaluation records license, toolchain compatibility, commands, data access, mutation behavior, and limitations before adoption.
+
+Agent tooling is not part of the logical trusted base, does not replace the repository checks, and must not block statement selection or foundational proof work. Repository-owned configuration or dependency adoption requires separate review.
 
 ## R1 — statement selection and finite foundations
 
