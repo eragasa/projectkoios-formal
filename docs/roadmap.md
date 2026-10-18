@@ -25,7 +25,8 @@ Candidate work:
 
 - review exact definitions of finite support, admissible sets, witnesses, and set distance;
 - inventory existing Mathlib/Physlib APIs without adopting Physlib implicitly;
-- select one exact source theorem and record its assumption delta; and
+- select one exact source theorem and record its assumption delta;
+- identify applicable References-owned canonical identities and exact source locators without creating a duplicate bibliography; and
 - approve namespace and declaration names before encoding.
 
 No theorem implementation begins until the exact statement is selected.

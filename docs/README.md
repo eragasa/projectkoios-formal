@@ -16,6 +16,7 @@ This directory records the formalization contract, provenance, planning state, a
 - [`conventions.md`](conventions.md) — conventions that every future statement must make explicit.
 - [`formal-vs-numerical-evidence.md`](formal-vs-numerical-evidence.md) — permitted bridges and prohibited status transfers.
 - [`certificates.md`](certificates.md) — certificate vocabulary and present availability.
+- [`reference-crosswalk-policy.md`](reference-crosswalk-policy.md) — theorem-to-literature traceability without duplicating References-owned bibliography authority.
 
 ## Architecture and workflow
 
