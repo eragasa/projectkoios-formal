@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≠}{{$\ne$}}1 {⊤}{{$\top$}}1}
+
+\title{Proof Dossier: Nonempty Admissible Sets Have Finite Extended Distance}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-005} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.admissibleSetEDist_ne_top_of_nonempty} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+
+Let $X$ be a metric space and let $A,B\subseteq X$ be nonempty. Then
+\[
+ \delta_{\mathrm e}(A,B)\ne\infty.
+\]
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026c/v1/manuscript.md} \\
+Locator & definition lines 117--130; empty-set boundary lines 147--149 \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The theorem \texttt{formalizes} the finiteness needed to recover the source's real-valued
+distance when both sets are nonempty.
+
+\section{Assumptions and representation delta}
+
+\begin{itemize}
+ \item Ambient space: \texttt{[MetricSpace X]}.
+ \item Set assumptions: \texttt{A.Nonempty} and \texttt{B.Nonempty}.
+ \item Lean representation: \texttt{ENNReal}.
+ \item Conclusion: the value is not $\top$; no compactness or disjointness is required.
+\end{itemize}
+
+\section{Prior art and contribution boundary}
+
+This is an elementary property of the infimum definition in a finite-valued metric space.
+It is not novel. No accepted References-owned canonical ID is attached to this step.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+Choose $a\in A$ and $b\in B$ \\
+$\Downarrow$ \\
+BG-THM-001 gives $\delta_{\mathrm e}(A,B)\le d_{\mathrm e}(a,b)$ \\
+$\Downarrow$ \\
+Metric-space extended distances satisfy $d_{\mathrm e}(a,b)<\infty$ \\
+$\Downarrow$ \\
+$\delta_{\mathrm e}(A,B)<\infty$
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+Nonemptiness supplies one point from each set. BG-THM-001 bounds the set distance by the
+extended distance between those points. Every extended distance in a metric space is
+strictly below infinity. Therefore the set distance is finite.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem admissibleSetEDist_ne_top_of_nonempty {A B : Set X}
+    (hA : A.Nonempty) (hB : B.Nonempty) :
+    admissibleSetEDist A B ≠ ⊤
+\end{lstlisting}
+
+\section{Trusted base and axiom report}
+
+Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679} report:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.admissibleSetEDist_ne_top_of_nonempty'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the declaration and proof in the pinned environment. The theorem does not
+establish scientific-set nonemptiness; that remains an external or downstream formal
+obligation. No independent expert mathematical or physical review is recorded.
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

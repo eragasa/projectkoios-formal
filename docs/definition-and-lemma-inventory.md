@@ -7,6 +7,9 @@ This inventory records both implemented first-slice declarations and future sear
 | Finite geometry | feasible pair bounds set distance; common witness implies zero distance | Ragasa2026c witness/separation proposition | implemented as `BG-DEF-001`; `BG-THM-001/002` are proved | `BandGauge/Geometry` |
 | Finite geometry | positive certified lower bound implies disjointness | same | proved as `BG-THM-003` | `BandGauge/Geometry` |
 | Topology | disjoint nonempty compact sets attain positive distance under the required metric hypotheses | same | proved as `BG-THM-004` using `IsCompact.prod`, `IsCompact.exists_isMinOn`, and continuity of `edist` | `BandGauge/Geometry` |
+| Finite geometry | nonempty finiteness and real/extended distance bridge | same | `BG-THM-005` and `BG-THM-006` proved; `BG-DEF-002` implemented | `BandGauge/Geometry` |
+| Finite geometry | spectral and restricted aligned-operator loss sublevel sets on one domain | Ragasa2026c admissible-set definitions | `BG-DEF-003/004` implemented; `BG-THM-007/008` proved | `BandGauge/Geometry` |
+| Finite geometry | reduced rank-two squared losses and irreducible operator floor | Ragasa2026a exact loss geometry | `BG-DEF-005` through `BG-DEF-008` implemented; `BG-THM-009` through `BG-THM-013` proved; matrix-residual derivation and correlation inequality remain open | `BandGauge/Geometry` |
 | Rank-two algebra | trace/traceless decomposition for real symmetric `2 × 2` matrices | Ragasa2026a exact loss geometry | unassessed | `BandGauge/Foundations` |
 | Rank-two algebra | real `SO(2)` conjugation and second-harmonic correlation | same | unassessed | `BandGauge/Geometry` |
 | Quadratic geometry | common-curvature loss formulas and ellipse centers/radii | Ragasa2026a | source-specific statement not selected | `BandGauge/Geometry` |

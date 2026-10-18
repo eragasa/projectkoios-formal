@@ -1,0 +1,133 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {→}{{$\to$}}1 {ℝ}{{$\mathbb R$}}1}
+
+\title{Proof Dossier: Joint Loss Bounds Force Zero Distance}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-007} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_loss_bounds} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+
+Let $X$ be one metric candidate-parameter domain. Let $L_E,L_H:X\to\mathbb R$ and let
+$\tau_E,\tau_H\in\mathbb R$. Define
+\[
+ \mathcal A_E=\{\theta:L_E(\theta)\le\tau_E\},\qquad
+ \mathcal A_H=\{\theta:L_H(\theta)\le\tau_H\}.
+\]
+If one candidate $\theta$ satisfies both loss bounds, then
+\[
+ \delta_{\mathrm e}(\mathcal A_E,\mathcal A_H)=0.
+\]
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026c/v1/manuscript.md} \\
+Locator & admissible-set definitions lines 117--130; proposition lines 132--138 \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the common-witness clause for the paper's
+threshold-defined spectral and restricted aligned-operator admissible sets.
+
+\section{Definitions and assumptions}
+
+\begin{itemize}
+ \item `BG-DEF-003` defines the spectral admissible set.
+ \item `BG-DEF-004` defines the restricted aligned-operator admissible set.
+ \item Both losses have the same domain $X$, so the witness is one candidate.
+ \item The theorem treats the losses as supplied real-valued functions; their scientific formulas remain external.
+\end{itemize}
+
+\section{Prior art and contribution boundary}
+
+The implication is classical feasible-set logic. Feasible-parameter-set literature is
+\texttt{background-only}; accepted References-owned IDs remain unavailable. The theorem
+is not novel. It makes the paper's joint-adequacy criterion exact.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+$L_E(\theta)\le\tau_E$ and $L_H(\theta)\le\tau_H$ \\
+$\Downarrow$ \\
+$\theta\in\mathcal A_E\cap\mathcal A_H$ \\
+$\Downarrow$ \\
+BG-THM-002 \\
+$\Downarrow$ \\
+$\delta_{\mathrm e}(\mathcal A_E,\mathcal A_H)=0$
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+The two inequalities place the same candidate in both threshold-defined admissible sets.
+BG-THM-002 states that a common member forces zero admissible-set distance. Applying it to
+this candidate proves the result.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem admissibleSetEDist_eq_zero_of_loss_bounds
+    {spectralLoss alignedOperatorLoss : X → ℝ}
+    {spectralBudget operatorBudget : ℝ} {candidate : X}
+    (hSpectral : spectralLoss candidate ≤ spectralBudget)
+    (hOperator : alignedOperatorLoss candidate ≤ operatorBudget) :
+    admissibleSetEDist
+      (spectralAdmissibleSet spectralLoss spectralBudget)
+      (alignedOperatorAdmissibleSet alignedOperatorLoss operatorBudget) = 0
+\end{lstlisting}
+
+\section{Trusted base and axiom report}
+
+Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679} report:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_loss_bounds'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the declaration and proof in the pinned environment. The theorem does not
+show that a runtime candidate satisfies either loss bound, validate the loss definitions,
+or establish physical adequacy outside the declared family. No independent expert
+mathematical or physical review is recorded.
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

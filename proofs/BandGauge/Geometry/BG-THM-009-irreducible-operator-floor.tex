@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1}
+
+\title{Proof Dossier: Irreducible Operator-Loss Floor}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-009} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.irreducibleOperatorFloor_le_rankTwoAlignedOperatorLossSq} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+
+For $p=(s,\lambda)$ in the Euclidean parameter plane, define
+\[
+ L_{\mathrm{op},\mu}^2(p)
+ =s^2+\kappa(\lambda-\mu)^2+\kappa(1-\mu^2).
+\]
+If $\kappa\ge0$, then
+\[
+ \kappa(1-\mu^2)\le L_{\mathrm{op},\mu}^2(p).
+\]
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex} \\
+Locator & exact-loss-geometry theorem; Eqs. \texttt{exact-operator-loss} and \texttt{common-curvature} \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the scalar lower-bound consequence of the stated
+operator-loss quadratic.
+
+\section{Definitions and assumptions}
+
+\begin{itemize}
+ \item `BG-DEF-005` is the Euclidean parameter plane.
+ \item `BG-DEF-007` is the scalar squared-loss formula.
+ \item The sole theorem assumption is $\kappa\ge0$.
+ \item The formula's derivation from matrix residuals and the bound $|\mu|\le1$ are not proved here.
+\end{itemize}
+
+\section{Prior art and contribution boundary}
+
+The proof is elementary nonnegative-square algebra and is not novel. Its role is to
+make the rank-two loss floor machine-checkable without treating numerical evaluation as
+proof of the formula.
+
+\section{Human-readable proof}
+
+Both $s^2$ and $(\lambda-\mu)^2$ are nonnegative. Since $\kappa\ge0$, the term
+$\kappa(\lambda-\mu)^2$ is also nonnegative. Adding these two terms to
+$\kappa(1-\mu^2)$ cannot decrease it, giving the claimed lower bound.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem irreducibleOperatorFloor_le_rankTwoAlignedOperatorLossSq
+    {κ μ : ℝ} (hκ : 0 ≤ κ) (p : RankTwoParameter) :
+    κ * (1 - μ ^ 2) ≤ rankTwoAlignedOperatorLossSq κ μ p
+\end{lstlisting}
+
+\section{Trusted base and axiom report}
+
+Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679} report:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.irreducibleOperatorFloor_le_rankTwoAlignedOperatorLossSq'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the declaration in the pinned environment. This result proves a consequence
+of the supplied scalar formula; it does not prove that the formula equals a matrix loss,
+that $|\mu|\le1$, or that any numerical data satisfy the assumptions. No independent
+expert mathematical or physical review is recorded.
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

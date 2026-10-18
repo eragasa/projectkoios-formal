@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {∅}{{$\varnothing$}}1 {ℝ}{{$\mathbb R$}}1}
+
+\title{Proof Dossier: Below-Floor Operator Budget Implies Emptiness}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-010} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoAlignedOperatorAdmissibleSet_eq_empty_of_sq_lt_floor} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+
+Let
+\[
+ \mathcal A_o=
+ \{p:L_{\mathrm{op},\mu}^2(p)\le\tau_o^2\}.
+\]
+If $\kappa\ge0$ and
+\[
+ \tau_o^2<\kappa(1-\mu^2),
+\]
+then $\mathcal A_o=\varnothing$.
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex} \\
+Locator & exact admissible-set geometry; Eq. \texttt{operator-radius} and the following emptiness sentence \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the paper's negative-radicand emptiness condition in
+squared-loss form.
+
+\section{Definitions and assumptions}
+
+\begin{itemize}
+ \item `BG-DEF-004` supplies the threshold-defined aligned-operator set.
+ \item `BG-DEF-007` supplies the reduced rank-two squared loss.
+ \item The theorem assumes $\kappa\ge0$ and the strict below-floor budget inequality.
+ \item The matrix-residual derivation of the scalar loss remains external.
+\end{itemize}
+
+\section{Prior art and contribution boundary}
+
+The implication is elementary sublevel-set reasoning and is not novel. The contribution
+is an exact checked boundary between an empty operator-feasible set and later distance
+claims, which require nonemptiness.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+BG-THM-009: $\kappa(1-\mu^2)\le L_{\mathrm{op},\mu}^2(p)$ \\
+$\tau_o^2<\kappa(1-\mu^2)$ \\
+$\Downarrow$ \\
+$L_{\mathrm{op},\mu}^2(p)\nleq\tau_o^2$ for every $p$ \\
+$\Downarrow$ \\
+$\mathcal A_o=\varnothing$
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+Assume a point belongs to the operator admissible set. Its squared loss is then at most
+$\tau_o^2$. BG-THM-009 says the same loss is at least $\kappa(1-\mu^2)$. Together these
+inequalities contradict $\tau_o^2<\kappa(1-\mu^2)$. No admissible point exists.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem rankTwoAlignedOperatorAdmissibleSet_eq_empty_of_sq_lt_floor
+    {κ μ operatorBudget : ℝ} (hκ : 0 ≤ κ)
+    (hbelow : operatorBudget ^ 2 < κ * (1 - μ ^ 2)) :
+    alignedOperatorAdmissibleSet
+      (rankTwoAlignedOperatorLossSq κ μ) (operatorBudget ^ 2) = ∅
+\end{lstlisting}
+
+\section{Trusted base and axiom report}
+
+Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679} report:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.rankTwoAlignedOperatorAdmissibleSet_eq_empty_of_sq_lt_floor'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the declaration in the pinned environment. The theorem proves only
+emptiness of the supplied reduced scalar sublevel set. It does not validate the loss
+formula, compute a budget, establish $|\mu|\le1$, or justify a finite set-to-set distance.
+No independent expert mathematical or physical review is recorded.
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

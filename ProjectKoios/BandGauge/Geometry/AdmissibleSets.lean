@@ -79,4 +79,64 @@ theorem exists_admissibleSetEDist_eq_edist_and_pos_of_compact
     exact (Set.disjoint_left.1 hdisjoint hpair.1) (by simpa [hequal] using hpair.2)
   exact ⟨pair.1, hpair.1, pair.2, hpair.2, heq, heq.symm ▸ edist_pos.2 hne⟩
 
+/-- The extended admissible-set distance is finite when both sets are nonempty. -/
+theorem admissibleSetEDist_ne_top_of_nonempty {A B : Set X}
+    (hA : A.Nonempty) (hB : B.Nonempty) :
+    admissibleSetEDist A B ≠ ⊤ := by
+  obtain ⟨a, ha⟩ := hA
+  obtain ⟨b, hb⟩ := hB
+  exact ne_of_lt <| (admissibleSetEDist_le_edist_of_mem ha hb).trans_lt (edist_lt_top a b)
+
+/-- The real-valued distance between two nonempty admissible sets. Nonemptiness is part of
+the interface, so empty inputs cannot produce a finite reported value. -/
+noncomputable def admissibleSetDist (A B : Set X)
+    (_hA : A.Nonempty) (_hB : B.Nonempty) : ℝ :=
+  (admissibleSetEDist A B).toReal
+
+/-- Converting the real-valued nonempty-set distance back to `ENNReal` recovers the
+extended admissible-set distance. -/
+theorem ofReal_admissibleSetDist_eq_admissibleSetEDist {A B : Set X}
+    (hA : A.Nonempty) (hB : B.Nonempty) :
+    ENNReal.ofReal (admissibleSetDist A B hA hB) = admissibleSetEDist A B := by
+  exact ENNReal.ofReal_toReal (admissibleSetEDist_ne_top_of_nonempty hA hB)
+
+/-- Candidates whose spectral loss is within the declared spectral budget. -/
+def spectralAdmissibleSet (spectralLoss : X → ℝ) (spectralBudget : ℝ) : Set X :=
+  {candidate | spectralLoss candidate ≤ spectralBudget}
+
+/-- Candidates whose restricted aligned-operator loss is within the declared operator
+budget. -/
+def alignedOperatorAdmissibleSet
+    (alignedOperatorLoss : X → ℝ) (operatorBudget : ℝ) : Set X :=
+  {candidate | alignedOperatorLoss candidate ≤ operatorBudget}
+
+/-- One candidate satisfying both loss budgets forces zero distance between the spectral
+and aligned-operator admissible sets. -/
+theorem admissibleSetEDist_eq_zero_of_loss_bounds
+    {spectralLoss alignedOperatorLoss : X → ℝ}
+    {spectralBudget operatorBudget : ℝ} {candidate : X}
+    (hSpectral : spectralLoss candidate ≤ spectralBudget)
+    (hOperator : alignedOperatorLoss candidate ≤ operatorBudget) :
+    admissibleSetEDist
+      (spectralAdmissibleSet spectralLoss spectralBudget)
+      (alignedOperatorAdmissibleSet alignedOperatorLoss operatorBudget) = 0 := by
+  exact admissibleSetEDist_eq_zero_of_mem_inter ⟨hSpectral, hOperator⟩
+
+/-- A certified positive separation between the two threshold-defined admissible sets
+rules out every candidate satisfying both loss budgets. -/
+theorem not_exists_jointly_admissible_of_pos_le_admissibleSetEDist
+    {spectralLoss alignedOperatorLoss : X → ℝ}
+    {spectralBudget operatorBudget : ℝ} {lower : ENNReal}
+    (hpos : 0 < lower)
+    (hlower : lower ≤ admissibleSetEDist
+      (spectralAdmissibleSet spectralLoss spectralBudget)
+      (alignedOperatorAdmissibleSet alignedOperatorLoss operatorBudget)) :
+    ¬ ∃ candidate,
+      spectralLoss candidate ≤ spectralBudget ∧
+      alignedOperatorLoss candidate ≤ operatorBudget := by
+  intro hJoint
+  obtain ⟨candidate, hSpectral, hOperator⟩ := hJoint
+  have hdisjoint := disjoint_of_pos_le_admissibleSetEDist hpos hlower
+  exact (Set.disjoint_left.1 hdisjoint hSpectral) hOperator
+
 end ProjectKoios.BandGauge.Geometry

@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Normalized-Correlation Bound}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-011} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.abs_rankTwoNormalizedCorrelation_le_one} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Define $\mu=b/\kappa$. If $0<\kappa$ and $|b|\le\kappa$, then $|\mu|\le1$.
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex} \\
+Locator & Eq. \texttt{operator-correlation} and the exact-loss-geometry theorem \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the scalar normalization step in the paper's bound
+$|\mu_\phi|\le1$. It does not prove the preceding matrix-level correlation inequality.
+
+\section{Assumptions and proof}
+The positive denominator gives $|b/\kappa|=|b|/\kappa$. Division of
+$|b|\le\kappa$ by $\kappa>0$ yields $|b|/\kappa\le1$.
+
+\begin{lstlisting}
+theorem abs_rankTwoNormalizedCorrelation_le_one
+    {κ b : ℝ} (hκ : 0 < κ) (hb : |b| ≤ κ) :
+    |rankTwoNormalizedCorrelation κ b| ≤ 1
+\end{lstlisting}
+
+\section{Prior art and contribution boundary}
+This is elementary ordered-field algebra and is not novel. The scientific obligation is
+to derive $|b|\le\kappa$ from the frozen weighted matrix residuals.
+
+\section{Trusted base and axiom report}
+Lean \texttt{v4.35.0} and Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+report \texttt{[propext, Classical.choice, Quot.sound]}. There is no \texttt{sorry},
+\texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No numerical correlation, residual formula, alignment family, or matrix Cauchy--Schwarz
+premise is validated here. No independent expert mathematical or physical review is
+recorded.
+
+\section{Review record}
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+\end{document}

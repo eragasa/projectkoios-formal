@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Irreducible-Floor Nonnegativity}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-012} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoIrreducibleOperatorFloor_nonneg} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+If $0\le\kappa$ and $|\mu|\le1$, then
+\[
+ 0\le\kappa(1-\mu^2).
+\]
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex} \\
+Locator & exact-loss-geometry theorem; irreducible minimum following Eq. \texttt{common-curvature} \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} nonnegativity of the paper's irreducible operator
+term under its stated normalized-correlation bound.
+
+\section{Human-readable proof}
+From $|\mu|\le1$, squaring gives $\mu^2\le1$, hence $0\le1-\mu^2$. Multiplication by
+$\kappa\ge0$ preserves nonnegativity.
+
+\begin{lstlisting}
+theorem rankTwoIrreducibleOperatorFloor_nonneg
+    {κ μ : ℝ} (hκ : 0 ≤ κ) (hμ : |μ| ≤ 1) :
+    0 ≤ κ * (1 - μ ^ 2)
+\end{lstlisting}
+
+\section{Prior art and contribution boundary}
+The proof is elementary ordered-field algebra and is not novel. The theorem assumes the
+normalized-correlation bound rather than deriving it from matrix residuals.
+
+\section{Trusted base and axiom report}
+Lean \texttt{v4.35.0} and Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+report \texttt{[propext, Classical.choice, Quot.sound]}. There is no \texttt{sorry},
+\texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+The result does not establish $|\mu|\le1$ for a concrete alignment problem or validate
+any numerical value. No independent expert mathematical or physical review is recorded.
+
+\section{Review record}
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+\end{document}

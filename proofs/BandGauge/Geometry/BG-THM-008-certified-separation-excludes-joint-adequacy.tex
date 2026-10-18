@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {¬}{{$\neg$}}1 {∃}{{$\exists$}}1 {∧}{{$\land$}}1 {→}{{$\to$}}1 {ℝ}{{$\mathbb R$}}1}
+
+\title{Proof Dossier: Certified Separation Excludes Joint Adequacy}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-008} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.not_exists_jointly_admissible_of_pos_le_admissibleSetEDist} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+
+Let $X$ be one metric candidate-parameter domain. Let $L_E,L_H:X\to\mathbb R$, with
+budgets $\tau_E,\tau_H$. If
+\[
+ 0<\ell\le\delta_{\mathrm e}(\mathcal A_E,\mathcal A_H),
+\]
+where the two admissible sets are the corresponding loss sublevel sets, then
+\[
+ \neg\exists\theta\in X:\quad
+ L_E(\theta)\le\tau_E\ \land\ L_H(\theta)\le\tau_H.
+\]
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026c/v1/manuscript.md} \\
+Locator & admissible-set definitions lines 117--130; proposition lines 132--138 \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the certified-separation conclusion for the paper's
+threshold-defined spectral and restricted aligned-operator admissible sets.
+
+\section{Definitions and assumptions}
+
+\begin{itemize}
+ \item `BG-DEF-003` and `BG-DEF-004` define the two sublevel sets on the same domain.
+ \item $\ell$ is an exact positive lower bound in \texttt{ENNReal}.
+ \item The theorem assumes the certificate inequality; it does not compute or validate it.
+ \item The operator loss uses the supplied restricted alignment contract.
+\end{itemize}
+
+\section{Prior art and contribution boundary}
+
+The logical implication is classical. Validated global optimization and interval
+analysis provide methods for establishing the lower-bound premise. Their relation is
+\texttt{background-only}. Accepted References-owned IDs remain unavailable. The theorem
+is not novel. It states exactly what the certificate excludes.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+$0<\ell\le\delta_{\mathrm e}(\mathcal A_E,\mathcal A_H)$ \\
+$\Downarrow$ \\
+BG-THM-003 gives $\mathcal A_E\cap\mathcal A_H=\varnothing$ \\
+$\Downarrow$ \\
+A candidate satisfying both loss bounds would belong to the intersection \\
+$\Downarrow$ \\
+No jointly admissible candidate exists
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+BG-THM-003 converts the positive certified lower bound into disjointness of the two
+admissible sets. Assume a candidate satisfies both loss bounds. By the definitions of the
+sublevel sets, that candidate belongs to both sets, contradicting disjointness. Therefore
+no candidate satisfies both budgets.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem not_exists_jointly_admissible_of_pos_le_admissibleSetEDist
+    {spectralLoss alignedOperatorLoss : X → ℝ}
+    {spectralBudget operatorBudget : ℝ} {lower : ENNReal}
+    (hpos : 0 < lower)
+    (hlower : lower ≤ admissibleSetEDist
+      (spectralAdmissibleSet spectralLoss spectralBudget)
+      (alignedOperatorAdmissibleSet alignedOperatorLoss operatorBudget)) :
+    ¬ ∃ candidate,
+      spectralLoss candidate ≤ spectralBudget ∧
+      alignedOperatorLoss candidate ≤ operatorBudget
+\end{lstlisting}
+
+\section{Trusted base and axiom report}
+
+Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679} report:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.not_exists_jointly_admissible_of_pos_le_admissibleSetEDist'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the declaration and proof in the pinned environment. The result excludes a
+joint match only inside the declared domain, candidate family, loss definitions,
+alignment contract, and budgets. It establishes no numerical certificate, physical
+inequivalence, or statement about a larger family. No independent expert mathematical or
+physical review is recorded.
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

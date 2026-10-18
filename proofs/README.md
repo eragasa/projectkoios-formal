@@ -48,9 +48,18 @@ Current draft dossiers:
 - [`BG-THM-001-feasible-pair-upper-bound.tex`](BandGauge/Geometry/BG-THM-001-feasible-pair-upper-bound.tex);
 - [`BG-THM-002-common-witness.tex`](BandGauge/Geometry/BG-THM-002-common-witness.tex);
 - [`BG-THM-003-certified-separation.tex`](BandGauge/Geometry/BG-THM-003-certified-separation.tex); and
-- [`BG-THM-004-compact-attainment-positive-distance.tex`](BandGauge/Geometry/BG-THM-004-compact-attainment-positive-distance.tex).
+- [`BG-THM-004-compact-attainment-positive-distance.tex`](BandGauge/Geometry/BG-THM-004-compact-attainment-positive-distance.tex);
+- [`BG-THM-005-nonempty-finiteness.tex`](BandGauge/Geometry/BG-THM-005-nonempty-finiteness.tex); and
+- [`BG-THM-006-real-extended-bridge.tex`](BandGauge/Geometry/BG-THM-006-real-extended-bridge.tex);
+- [`BG-THM-007-joint-loss-bounds-zero-distance.tex`](BandGauge/Geometry/BG-THM-007-joint-loss-bounds-zero-distance.tex); and
+- [`BG-THM-008-certified-separation-excludes-joint-adequacy.tex`](BandGauge/Geometry/BG-THM-008-certified-separation-excludes-joint-adequacy.tex);
+- [`BG-THM-009-irreducible-operator-floor.tex`](BandGauge/Geometry/BG-THM-009-irreducible-operator-floor.tex); and
+- [`BG-THM-010-below-floor-operator-set-empty.tex`](BandGauge/Geometry/BG-THM-010-below-floor-operator-set-empty.tex);
+- [`BG-THM-011-normalized-correlation-bound.tex`](BandGauge/Geometry/BG-THM-011-normalized-correlation-bound.tex);
+- [`BG-THM-012-irreducible-floor-nonnegative.tex`](BandGauge/Geometry/BG-THM-012-irreducible-floor-nonnegative.tex); and
+- [`BG-THM-013-operator-squared-loss-nonnegative.tex`](BandGauge/Geometry/BG-THM-013-operator-squared-loss-nonnegative.tex).
 
-Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The files remain draft and unreleased; accepted literature identities, the real-valued bridge, and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
+Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
 
 ## Organizing principle
 

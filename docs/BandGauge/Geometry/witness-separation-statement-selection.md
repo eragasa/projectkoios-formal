@@ -1,6 +1,6 @@
 # BG-PLAN-001 witness/separation statement-selection packet
 
-This began as a statement-selection packet and now records the first implemented slice of `BG-PLAN-001`. `BG-DEF-001` and `BG-THM-001` through `BG-THM-004` exist in `ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean`; all four theorem statuses are `proved`. The real-valued bridge and paper-specific instantiation remain planning items.
+This began as a statement-selection packet and now records the first implemented slice of `BG-PLAN-001`. The implemented declarations in `ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean` are listed in `docs/theorem-manifest.md`. Concrete paper loss formulas and certificate data remain open.
 
 ## Immutable owner source
 
@@ -87,7 +87,7 @@ noncomputable def admissibleSetEDist [MetricSpace X] (A B : Set X) : ENNReal :=
   ⨅ (a : X) (_ : a ∈ A) (b : X) (_ : b ∈ B), edist a b
 ```
 
-This extends the paper's real-valued nonempty distance so that either empty input gives `⊤`, not a finite reported value. The codomain delta is explicit. A later declaration may expose the real paper quantity only under nonemptiness and with a reviewed `ENNReal.toReal` bridge. Do not add a total real API whose empty-set behavior can be mistaken for a reported scientific distance.
+This extends the paper's real-valued nonempty distance so that either empty input gives `⊤`, not a finite reported value. `BG-DEF-002` exposes the real value only with nonemptiness proofs, and `BG-THM-006` proves the real/extended bridge. No total real API assigns a reportable value to empty inputs.
 
 ## Implemented and remaining signatures
 
@@ -108,16 +108,43 @@ candidate ∈ A ∩ B → admissibleSetEDist A B = 0
 IsCompact A → IsCompact B → A.Nonempty → B.Nonempty → Disjoint A B →
   ∃ a ∈ A, ∃ b ∈ B,
     admissibleSetEDist A B = edist a b ∧ 0 < admissibleSetEDist A B
+
+-- BG-THM-005
+A.Nonempty → B.Nonempty → admissibleSetEDist A B ≠ ⊤
+
+-- BG-DEF-002
+admissibleSetDist (A B : Set X) (hA : A.Nonempty) (hB : B.Nonempty) : ℝ
+
+-- BG-THM-006
+ENNReal.ofReal (admissibleSetDist A B hA hB) = admissibleSetEDist A B
+
+-- BG-DEF-003 / BG-DEF-004
+spectralAdmissibleSet spectralLoss spectralBudget : Set X
+alignedOperatorAdmissibleSet alignedOperatorLoss operatorBudget : Set X
+
+-- BG-THM-007
+spectralLoss candidate ≤ spectralBudget →
+alignedOperatorLoss candidate ≤ operatorBudget →
+  admissibleSetEDist
+    (spectralAdmissibleSet spectralLoss spectralBudget)
+    (alignedOperatorAdmissibleSet alignedOperatorLoss operatorBudget) = 0
+
+-- BG-THM-008
+0 < lower →
+lower ≤ admissibleSetEDist
+  (spectralAdmissibleSet spectralLoss spectralBudget)
+  (alignedOperatorAdmissibleSet alignedOperatorLoss operatorBudget) →
+¬ ∃ candidate,
+  spectralLoss candidate ≤ spectralBudget ∧
+  alignedOperatorLoss candidate ≤ operatorBudget
 ```
 
 The source assumes a metric, not merely a pseudometric. `[MetricSpace X]` is retained because strict positivity for disjoint sets fails when distinct points can have zero pseudodistance.
 
-Remaining definitions and lemmas:
+Remaining convenience lemmas:
 
 - left-empty distance is `⊤`;
-- right-empty distance is `⊤`;
-- nonempty-set distance is finite; and
-- the nonempty real-valued bridge agrees with the source quantity.
+- right-empty distance is `⊤`.
 
 ## Mathlib API probe
 
@@ -147,9 +174,9 @@ Inspected declarations:
 | `continuous_dist`, `continuous_edist` | Continuity needed for product minimization. |
 | `csInf_le`, `le_csInf` | Support the alternative real `sInf (Set.image2 dist s t)` representation. |
 
-Local exploratory files considered both a real-valued `sInf (Set.image2 dist s t)` formulation and the implemented extended-valued formulation. Their exact source was not retained and supplies no proof evidence. The repository module independently proves `BG-THM-001` through `BG-THM-004`.
+Local exploratory files considered both a real-valued `sInf (Set.image2 dist s t)` formulation and the implemented extended-valued formulation. Their exact source was not retained and supplies no proof evidence. The repository module independently proves and implements every declaration listed for this module in `docs/theorem-manifest.md`.
 
-The module and `ProjectKoios/Audit.lean` build at the pin. The audit reports only `propext`, `Classical.choice`, and `Quot.sound` for all four theorems, with no admission or repository-owned scientific axiom. The full repository build, pin check, admission scan, and named axiom audit pass in the current worktree.
+The module and `ProjectKoios/Audit.lean` build at the pin. The audit reports only `propext`, `Classical.choice`, and `Quot.sound` for every listed theorem, with no admission or repository-owned scientific axiom. The full repository build, pin check, admission scan, and named axiom audit pass in the current worktree.
 
 ## Artifact placement principle
 
@@ -162,7 +189,7 @@ Keep each kind of material in one place:
 - A future `Tests/Probes/` area may contain replayable, non-library Lean experiments organized one file per planning ID. Creating that area, its audit coverage, and its explicit check command requires separate review because it would add repository-owned Lean source outside the current library glob.
 - Implement the smallest declaration and matching dossier needed for the sourced claim. Do not preserve duplicate proof bodies across documentation, probes, dossiers, and library source.
 
-This packet therefore remains a compact decision record. The Lean proof bodies live in the library module and human explanations for `BG-THM-001` through `BG-THM-004` live in their individual dossier drafts; this file embeds neither a proof appendix nor a hidden test surface or monolithic claims document.
+This packet therefore remains a compact decision record. The Lean proof bodies live in the library module and each theorem has an individual dossier draft under `proofs/BandGauge/Geometry/`; this file embeds neither a proof appendix nor a hidden test surface or monolithic claims document.
 
 Physlib was not needed or inspected for these generic metric-space facts.
 
@@ -193,10 +220,9 @@ Farkas, Nocedal–Wright, and Ljung remain deferred analogical/background candid
 
 ## Remaining work
 
-- Relate the nonempty real paper quantity to the extended value.
-- Add exact empty-input and finiteness lemmas when downstream proofs need them.
+- Add explicit empty-input simplification lemmas when downstream proofs need them.
 - Instantiate the generic geometry in a paper namespace when the scientific loss definitions are encoded.
 - Attach References-owned canonical and authority IDs when available.
 - Exclude the owner's dirty attribution wording unless it is committed and separately audited.
 
-`BG-PLAN-001` contains four proved generic clauses. The real-valued bridge, scientific instantiation, and numerical decision procedure remain incomplete.
+`BG-PLAN-001` contains the generic decision theorems and real/extended bridge. Concrete scientific loss formulas, certificate data, and the numerical decision procedure remain incomplete.

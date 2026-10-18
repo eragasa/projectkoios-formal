@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Operator Squared-Loss Nonnegativity}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-013} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoAlignedOperatorLossSq_nonneg} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+If $0\le\kappa$ and $|\mu|\le1$, then for every Euclidean parameter point $p$,
+\[
+ 0\le L_{\mathrm{op},\mu}^2(p).
+\]
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex} \\
+Locator & exact-loss-geometry theorem; Eq. \texttt{exact-operator-loss} \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} nonnegativity of the supplied reduced scalar squared
+loss under the source's curvature and normalized-correlation bounds.
+
+\section{Proof schematic}
+BG-THM-012 makes the irreducible floor nonnegative. BG-THM-009 bounds the operator
+squared loss below by that floor. Transitivity gives the result.
+
+\begin{lstlisting}
+theorem rankTwoAlignedOperatorLossSq_nonneg
+    {κ μ : ℝ} (hκ : 0 ≤ κ) (hμ : |μ| ≤ 1)
+    (p : RankTwoParameter) :
+    0 ≤ rankTwoAlignedOperatorLossSq κ μ p
+\end{lstlisting}
+
+\section{Prior art and contribution boundary}
+The result is elementary and is not novel. It justifies later square-root loss definitions
+without silently assuming that an arbitrary scalar expression is nonnegative.
+
+\section{Trusted base and axiom report}
+Lean \texttt{v4.35.0} and Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+report \texttt{[propext, Classical.choice, Quot.sound]}. There is no \texttt{sorry},
+\texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+The theorem does not derive the scalar formula from matrix residuals, prove a concrete
+correlation bound, or certify numerical evidence. No independent expert mathematical or
+physical review is recorded.
+
+\section{Review record}
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+\end{document}

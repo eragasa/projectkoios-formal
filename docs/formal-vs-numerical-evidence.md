@@ -35,6 +35,13 @@ Current formal implications:
 
 - `BG-THM-002` — an exact common-set member implies zero admissible-set distance.
 - `BG-THM-003` — a supplied strictly positive global lower bound implies disjointness.
+- `BG-THM-007` — one candidate satisfying both loss budgets forces zero distance.
+- `BG-THM-008` — a supplied positive separation certificate excludes joint adequacy.
+- `BG-THM-009` — the supplied reduced operator-loss quadratic is bounded below by its irreducible floor.
+- `BG-THM-010` — a squared operator budget below that floor makes the reduced sublevel set empty.
+- `BG-THM-011` — a supplied scalar correlation bound implies normalized magnitude at most one.
+- `BG-THM-012` — the normalized-correlation bound makes the irreducible floor nonnegative.
+- `BG-THM-013` — the reduced aligned-operator squared loss is nonnegative under the scalar bounds.
 
 These theorems do not define the scientific loss sublevel sets, produce a runtime witness, or validate a numerical lower bound. An exact checked certificate must connect runtime output to their hypotheses.
 

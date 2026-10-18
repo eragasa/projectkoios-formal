@@ -22,7 +22,7 @@
 \textbf{Status warning.} This is an incomplete working manuscript, not a submitted or
 published paper. It does not replace the owner manuscripts, individual proof dossiers,
 Lean source, theorem manifest, numerical evidence records, or a References-owned
-bibliography. Four elementary generic clauses are currently proved in Lean; no paper-specific theorem or scientific certificate is claimed.
+bibliography. Generic admissible-set results and reduced scalar rank-two consequences are checked in Lean; no complete paper theorem or scientific certificate is claimed.
 }}
 \end{center}
 
@@ -37,10 +37,10 @@ upper bound and that one common candidate forces zero distance. These are classi
 metric-space facts, not new theory. The contribution is methodological and applied: standard set-distance facts,
 feasible-parameter-set language, and validated global certificates form an explicit
 decision procedure for joint spectral
-and restricted aligned-operator adequacy, then instantiate that procedure without
-obscuring assumptions or evidence boundaries. The remaining Ragasa claim families are
-reported as planned, external, or unresolved rather than silently promoted to formal
-results.
+and restricted aligned-operator adequacy. A reduced scalar rank-two layer additionally
+checks the irreducible operator-loss floor and the below-floor emptiness condition without
+obscuring assumptions or evidence boundaries. Unformalized Ragasa claims are reported as
+planned, external, or unresolved rather than silently promoted to formal results.
 \end{abstract}
 
 \section{Purpose and scope}
@@ -143,7 +143,7 @@ For a metric space $X$ and subsets $A,B\subseteq X$, the repository defines
  \inf_{a\in A,\,b\in B} d_{\mathrm e}(a,b)\in[0,\infty].
 \]
 The extended codomain preserves the source rule that empty input must not produce a
-finite reported set distance. A real-valued bridge for nonempty sets remains future work.
+finite reported set distance. BG-DEF-002 and BG-THM-006 provide the real-valued nonempty-set bridge.
 
 \paragraph{BG-THM-001: feasible-pair upper bound.}
 If $a\in A$ and $b\in B$, then
@@ -169,7 +169,28 @@ Nonempty compact disjoint sets admit $a\in A$ and $b\in B$ such that
 $\delta_{\mathrm e}(A,B)=d_{\mathrm e}(a,b)>0$. The proof minimizes continuous extended
 distance on the compact product $A\times B$.
 
-All four declarations have status \texttt{proved} in the module
+\paragraph{BG-THM-005: nonempty finiteness.}
+Nonempty $A$ and $B$ satisfy $\delta_{\mathrm e}(A,B)\ne\infty$.
+
+\paragraph{BG-DEF-002 and BG-THM-006: real/extended bridge.}
+BG-DEF-002 exposes a real-valued distance only with nonemptiness proofs. BG-THM-006 proves
+that conversion back to the extended nonnegative reals recovers BG-DEF-001.
+
+\paragraph{BG-DEF-003/004 and BG-THM-007/008: threshold-defined adequacy.}
+BG-DEF-003 and BG-DEF-004 define the spectral and restricted aligned-operator loss
+sublevel sets on one candidate domain. BG-THM-007 turns joint loss bounds into zero set
+distance. BG-THM-008 turns certified positive separation into nonexistence of a jointly
+admissible candidate.
+
+\paragraph{BG-DEF-005--008 and BG-THM-009--013: reduced rank-two loss and correlation bounds.}
+BG-DEF-005 uses the Euclidean shift/splitting-scale plane. BG-DEF-006 and BG-DEF-007
+encode the published reduced scalar squared-loss formulas. BG-THM-009 proves the
+operator-loss floor for nonnegative curvature, and BG-THM-010 proves that a squared
+budget strictly below that floor makes the operator admissible set empty. BG-DEF-008 and
+BG-THM-011 isolate the scalar normalization step from the still-external matrix
+correlation bound. BG-THM-012/013 prove floor and squared-loss nonnegativity.
+
+All theorem declarations have status \texttt{proved} in the module
 \begin{center}
 \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean}.
 \end{center}
@@ -197,9 +218,12 @@ families:
  \item compact alignment attainment, transported-frame covariance, and excess.
 \end{itemize}
 
-All remain planned. The active rank-two numerical results remain external development
-evidence, and the separately retained scalar precursor does not transfer status to the
-rank-two claim family.
+BG-DEF-005 through BG-DEF-008 encode the Euclidean parameter plane, reduced scalar
+squared-loss formulas, and normalized correlation. BG-THM-009 through BG-THM-013 prove
+the lower-bound, below-floor emptiness, scalar normalization, and nonnegativity
+consequences. The matrix-residual derivation, the matrix-level $|b|\le\kappa$ inequality,
+and the remaining Paper A families remain open. Active rank-two numerical
+results remain external development evidence.
 
 \subsection{Ragasa2026B}
 
@@ -223,9 +247,10 @@ required before this working paper can assert exhaustive Paper B coverage.
 The current crosswalk covers the witness/separation proposition, exact D1 representation
 certificates, the D1 exterior-isolation and attack-angle derivations, and bounded
 historical M2/M3, rank-three, and Wannier90 records. The four generic mathematical
-clauses of the witness/separation proposition have status \texttt{proved}. D1 analytic
-certificates, scientific loss instantiation, and all numerical campaign claims remain
-unproved or external here. A complete claim-level inventory is
+clauses of the witness/separation proposition have status \texttt{proved}. BG-DEF-003/004
+and BG-THM-007/008 encode the threshold-defined loss-set logic. Concrete loss formulas,
+D1 analytic certificates, and all numerical campaign claims remain unproved or external
+here. A complete claim-level inventory is
 still required for exhaustive Paper C coverage.
 
 \section{Formalization and evidence matrix}
@@ -235,10 +260,15 @@ still required for exhaustive Paper C coverage.
 Family & Current status & Next formal obligation \\
 \midrule
 Witness upper bound & proved: BG-THM-001 & accepted reference identities \\
-Common witness & proved: BG-THM-002 & scientific sublevel-set instantiation \\
+Common witness & proved: BG-THM-002 & concrete loss formulas \\
 Certified separation & proved: BG-THM-003 & checked lower-bound certificate interface \\
-Compact attainment & proved: BG-THM-004 & real-valued bridge and scientific hypotheses \\
-Rank-two loss geometry & planned & freeze scalar field, rank, positivity, box, and alignment assumptions \\
+Compact attainment & proved: BG-THM-004 & scientific compactness hypotheses \\
+Nonempty finiteness & proved: BG-THM-005 & scientific nonemptiness hypotheses \\
+Real/extended bridge & implemented/proved: BG-DEF-002/BG-THM-006 & concrete loss formulas \\
+Threshold loss sets & implemented: BG-DEF-003/004 & concrete spectral and operator losses \\
+Joint threshold witness & proved: BG-THM-007 & exact or checked witness evidence \\
+Threshold separation & proved: BG-THM-008 & checked lower-bound certificate \\
+Rank-two scalar loss geometry & partially implemented/proved: BG-DEF-005--008 and BG-THM-009--013 & matrix-residual derivation, $|b|\le\kappa$, and ellipse geometry \\
 Fourier/locality identities & planned & freeze discrete and continuum normalizations separately \\
 Projection support loss & planned & select an explicit finite witness \\
 Tail bounds & planned & establish special-function and shell conventions \\
@@ -268,7 +298,7 @@ claim citation completeness.
 
 The current environment is Lean \texttt{v4.35.0}, commit
 \path{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}, with Mathlib revision
-\path{56a005855ea17e0b0958f73ec801ae140b0a1679}. The four theorems report
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679}. The theorem declarations report
 \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; they use no
 \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
 

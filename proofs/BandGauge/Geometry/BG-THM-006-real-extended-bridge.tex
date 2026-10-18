@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+
+\title{Proof Dossier: Real and Extended Admissible-Set Distance Bridge}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-006} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.ofReal_admissibleSetDist_eq_admissibleSetEDist} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+
+For nonempty subsets $A,B$ of a metric space, define
+\[
+ \delta(A,B)=\operatorname{toReal}(\delta_{\mathrm e}(A,B)).
+\]
+Then
+\[
+ \operatorname{ofReal}(\delta(A,B))=\delta_{\mathrm e}(A,B).
+\]
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026c/v1/manuscript.md} \\
+Locator & definition lines 117--130; empty-set boundary lines 147--149 \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The theorem \texttt{adapts} the source's real-valued nonempty-set distance to the Lean
+implementation's explicit extended-value boundary.
+
+\section{Definitions and assumptions}
+
+\begin{itemize}
+ \item `BG-DEF-001` defines $\delta_{\mathrm e}$ in \texttt{ENNReal}.
+ \item `BG-THM-005` proves $\delta_{\mathrm e}(A,B)\ne\infty$ for nonempty sets.
+ \item `BG-DEF-002` defines the real value only when nonemptiness proofs are supplied.
+ \item No compactness, disjointness, or numerical certificate is assumed.
+\end{itemize}
+
+\section{Prior art and contribution boundary}
+
+The theorem is a representation lemma using the standard `ENNReal.toReal` and
+`ENNReal.ofReal` interface. It is not a new mathematical result. No accepted
+References-owned canonical ID is required for this implementation bridge.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+$A$ and $B$ nonempty \\
+$\Downarrow$ \\
+BG-THM-005 gives $\delta_{\mathrm e}(A,B)\ne\infty$ \\
+$\Downarrow$ \\
+\texttt{ENNReal.ofReal\_toReal} applies \\
+$\Downarrow$ \\
+$\operatorname{ofReal}(\delta(A,B))=\delta_{\mathrm e}(A,B)$
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+BG-THM-005 proves that the extended distance is finite. For every finite extended
+nonnegative real, converting to a real number and then applying `ofReal` returns the
+original value. Applying that library identity to $\delta_{\mathrm e}(A,B)$ proves the
+claim.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem ofReal_admissibleSetDist_eq_admissibleSetEDist
+    {A B : Set X} (hA : A.Nonempty) (hB : B.Nonempty) :
+    ENNReal.ofReal (admissibleSetDist A B hA hB) =
+      admissibleSetEDist A B
+\end{lstlisting}
+
+\section{Trusted base and axiom report}
+
+Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679} report:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.ofReal_admissibleSetDist_eq_admissibleSetEDist'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, review, and evidence boundaries}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the declaration and proof in the pinned environment. The theorem connects two
+representations of the same formal distance. It does not establish that scientific
+admissible sets are nonempty or that a numerical computation satisfies either definition.
+No independent expert mathematical or physical review is recorded.
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

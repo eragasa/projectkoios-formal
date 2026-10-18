@@ -29,7 +29,7 @@ Candidate work:
 - identify applicable References-owned canonical identities and exact source locators without creating a duplicate bibliography; and
 - record namespace and declaration names before encoding.
 
-- `BG-PLAN-001`: `BG-DEF-001` implements the extended representation; `BG-THM-001` through `BG-THM-004` prove the four generic mathematical clauses. The real-valued bridge and scientific instantiation remain open.
+- `BG-PLAN-001`: declaration IDs and statuses are listed in `theorem-manifest.md`. Concrete paper loss formulas and certificate data remain open.
 
 ## R2 — finite witness and rank-two algebra
 
@@ -39,6 +39,8 @@ Candidate theorem families:
 2. rank-two exact loss geometry under the source's real-rotation and positivity assumptions;
 3. finite/discrete Fourier residual–locality identities; and
 4. an explicit spectral-projection support-loss example.
+
+`BG-PLAN-002` now includes the reduced scalar squared-loss and normalized-correlation definitions, the irreducible-floor and nonnegativity bounds, and the below-floor emptiness theorem. Derivation from matrix residuals, the matrix-level correlation inequality `|b| ≤ κ`, and ellipse geometry remain open.
 
 Each declaration requires a source crosswalk and named axiom report.
 

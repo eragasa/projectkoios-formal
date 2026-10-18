@@ -1,5 +1,6 @@
 import ProjectKoios.Formal.Authority
 import ProjectKoios.BandGauge.Geometry.AdmissibleSets
+import ProjectKoios.BandGauge.Geometry.RankTwoLoss
 import ProjectKoios.BandGauge.Papers.Ragasa2026A
 import ProjectKoios.BandGauge.Papers.Ragasa2026B
 import ProjectKoios.BandGauge.Papers.Ragasa2026C
@@ -9,6 +10,15 @@ import ProjectKoios.BandGauge.Papers.Ragasa2026C
 #print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_mem_inter
 #print axioms ProjectKoios.BandGauge.Geometry.disjoint_of_pos_le_admissibleSetEDist
 #print axioms ProjectKoios.BandGauge.Geometry.exists_admissibleSetEDist_eq_edist_and_pos_of_compact
+#print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_ne_top_of_nonempty
+#print axioms ProjectKoios.BandGauge.Geometry.ofReal_admissibleSetDist_eq_admissibleSetEDist
+#print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_loss_bounds
+#print axioms ProjectKoios.BandGauge.Geometry.not_exists_jointly_admissible_of_pos_le_admissibleSetEDist
+#print axioms ProjectKoios.BandGauge.Geometry.irreducibleOperatorFloor_le_rankTwoAlignedOperatorLossSq
+#print axioms ProjectKoios.BandGauge.Geometry.rankTwoAlignedOperatorAdmissibleSet_eq_empty_of_sq_lt_floor
+#print axioms ProjectKoios.BandGauge.Geometry.abs_rankTwoNormalizedCorrelation_le_one
+#print axioms ProjectKoios.BandGauge.Geometry.rankTwoIrreducibleOperatorFloor_nonneg
+#print axioms ProjectKoios.BandGauge.Geometry.rankTwoAlignedOperatorLossSq_nonneg
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.placeholder
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026B.placeholder
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026C.placeholder

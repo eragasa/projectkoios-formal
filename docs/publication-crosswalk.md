@@ -9,6 +9,7 @@ Primary audit ledger: `claim-and-commitment-inventory.md`, especially analytic e
 | Publication declaration/location | Source status | Lean status |
 |---|---|---|
 | “Exact loss geometry,” `manuscript.tex:663` | theorem with paper proof; rank-two/positive-weight/global-real-rotation assumptions | placeholder; no statement |
+| Reduced scalar loss formulas and irreducible operator floor, `manuscript.tex:663` | consequences of the exact-loss quadratic; operator-set negative-radicand condition follows in the next subsection | `BG-DEF-005` through `BG-DEF-008` implemented and `BG-THM-009` through `BG-THM-013` proved; matrix-residual derivation and the matrix-level `|b| ≤ κ` bound remain open |
 | “Compatibility and exact full-ellipse distance,” `manuscript.tex:737` | corollary with containment and real-radius premises | placeholder; no statement |
 | “Exact spectral pass with certified operator incompatibility,” `manuscript.tex:857` | constructed proposition for fixed observations, box, and thresholds | placeholder; no statement |
 | “Smooth monotone threshold continuum,” `manuscript.tex:925` | corollary for the stated flat rank-two Bessel family and amplitude interval | placeholder; no statement |
@@ -38,7 +39,8 @@ Primary source: `manuscript.md`; boundary detail in `appendices/`. Formal target
 
 | Publication declaration/location | Source status | Lean status |
 |---|---|---|
-| “Witnesses and certified separation,” `manuscript.md:132` | proposition with elementary paper proof; failed search proves nothing; compactness is required for the stated attainment conclusion | generic mathematical clauses formalized: `BG-THM-001` through `BG-THM-004` prove feasible-pair upper bounds, common-witness zero distance, certified separation, and compact attainment with positivity; no paper-namespace instantiation or real-valued bridge |
+| “Witnesses and certified separation,” `manuscript.md:132` | proposition with elementary paper proof; failed search proves nothing; compactness is required for the stated attainment conclusion | generic mathematical clauses and representation bridge formalized: `BG-DEF-001/002` and `BG-THM-001` through `BG-THM-006`; no paper-namespace instantiation |
+| Spectral and aligned-operator admissible-set definitions, `manuscript.md:117` | two loss sublevel sets in one candidate parameter domain | threshold form implemented as `BG-DEF-003/004`; `BG-THM-007/008` prove the joint-witness and certified-separation consequences; concrete loss formulas and certificates remain external |
 | “Exact D1 representation certificates,” `manuscript.md:547` | proposition with paper proof for the selected continuum Fourier/P0 construction | placeholder; no statement |
 | D1 exterior-isolation and attack-angle derivations, `appendices/A-2-d1-p0-g0-isolation-gap-certificate.tex` | analytic formulas; accompanying finite grid is explicitly only a sanity check | placeholder; no checked certificate |
 | M2/M3, rank-three, and Wannier90 records, `appendices/A-1-extracted-evidence-boundary.md` | bounded historical/extracted numerical evidence with listed nonclaims | outside Lean; external numerical obligations |
@@ -47,4 +49,4 @@ Paper 3 remains pre-results for the new higher-rank campaign: the selected D1 P0
 
 ## Residual assumptions and unresolved work
 
-The two proved clauses import only a generic metric-space assumption and do not encode the paper's concrete loss functions, thresholds, alignment family, or numerical claims. Any later statement must preserve the source's rank, dimension, positivity, compactness, support, gauge/alignment family, Fourier convention, parameter-domain, and numerical-boundary premises exactly. Later clauses remain separate statement and source-fidelity tasks.
+The proved generic and reduced-scalar declarations do not encode the full matrix-residual loss derivation, concrete thresholds, admissible alignment construction, or numerical claims. Any later statement must preserve the source's rank, dimension, positivity, compactness, support, gauge/alignment family, Fourier convention, parameter-domain, and numerical-boundary premises exactly. Later clauses remain separate statement and source-fidelity tasks.
