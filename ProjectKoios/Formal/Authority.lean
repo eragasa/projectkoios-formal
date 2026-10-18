@@ -20,7 +20,7 @@ inductive FormalizationStatus where
   | externallyAssumed
   deriving DecidableEq, Repr
 
-/-- Auditable metadata for a publication whose claims have not been encoded. -/
+/-- Auditable metadata for a publication whose paper-specific declarations have not been encoded. -/
 structure PublicationPlaceholder where
   sourceKey : String
   sourcePath : String

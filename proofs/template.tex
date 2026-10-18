@@ -1,0 +1,213 @@
+% Project Koios Formal per-proof dossier template.
+% TEMPLATE ONLY: copying this file does not create or prove a statement.
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\newcommand{\StatementID}{TEMPLATE-NOT-A-STATEMENT}
+\newcommand{\StatementStatus}{template-only}
+\newcommand{\LeanDeclaration}{NOT-ASSIGNED}
+\newcommand{\LeanModule}{NOT-ASSIGNED}
+
+\title{Project Koios Formal Proof Dossier\\\large \StatementID}
+\author{Project Koios Formal}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.9\textwidth}{
+\textbf{Template warning.} This file is not a mathematical claim, Lean declaration,
+proof, certificate, or publication result. Replace every template field only after an
+exact statement receives a stable formal ID and passes statement review.
+}}
+\end{center}
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Statement ID & \StatementID \\
+Status & \StatementStatus \\
+Lean declaration & \texttt{\LeanDeclaration} \\
+Owning module & \texttt{\LeanModule} \\
+\bottomrule
+\end{tabularx}
+
+Use the statement ID and status recorded in \path{docs/theorem-manifest.md}. Status
+reports the formal declaration only; it does not imply release, scientific validation,
+novelty, or publication support.
+
+\section{Exact mathematical statement}
+
+Write one exact statement, including its ambient types, quantifiers, assumptions,
+conventions, and conclusion. Do not replace the checked statement with a stronger or
+more intuitive paraphrase.
+
+\begin{quote}
+\textbf{Statement.} NOT-YET-WRITTEN.
+\end{quote}
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Owner repository & NOT-ASSIGNED \\
+Branch for navigation & NOT-ASSIGNED \\
+Immutable commit & NOT-ASSIGNED \\
+Repository-relative path & NOT-ASSIGNED \\
+Source locator & NOT-ASSIGNED \\
+Dirty-state limitation & NOT-ASSESSED \\
+\bottomrule
+\end{tabularx}
+
+Explain whether the Lean statement formalizes, adapts, or only compares with the owner
+source. Publication prose is not itself a checked theorem.
+
+\section{Assumptions, conventions, and statement delta}
+
+\begin{tabularx}{\textwidth}{@{}XXX@{}}
+\toprule
+Source assumption or convention & Lean encoding & Delta or limitation \\
+\midrule
+NOT-ASSESSED & NOT-ENCODED & NOT-REVIEWED \\
+\bottomrule
+\end{tabularx}
+
+Record scalar field, dimension, rank, domains, compactness, positivity, gauge or
+alignment family, Fourier normalization, nondegeneracy, and every other assumption
+that can change the meaning of the result.
+
+\section{Statement-specific prior art}
+
+Use only the relations \texttt{formalizes}, \texttt{adapts},
+\texttt{depends-on}, \texttt{compares-with}, and \texttt{background-only}.
+Canonical identity and bibliography authority remain with
+\texttt{projectkoios-references}.
+
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}@{}}
+\toprule
+Relation & Canonical reference and authority IDs & Exact locator & Role and caveat \\
+\midrule
+UNRESOLVED & UNRESOLVED & UNVERIFIED & No attribution claim yet \\
+\bottomrule
+\end{tabular}
+
+List unresolved identity or locator questions explicitly. Do not infer novelty from a
+failed search and do not treat an AI-generated citation as verified metadata.
+
+\section{Motivation and contribution boundary}
+
+Explain why this exact statement is useful and whether the intended contribution is
+mathematical, methodological, computational, or applied. Identify classical ingredients
+as classical. Do not turn a useful synthesis, terminology choice, implementation, or
+scientific instantiation into a claim that a standard theorem is new. A bounded search
+that finds no exact phrase is not evidence of priority.
+
+\section{Proof schematic}
+
+Show the proof's structure before presenting prose or Lean. Include assumptions and
+definitions, principal reductions, imported lemmas, the critical implication chain, and
+the exact conclusion. Mark numerical, certificate, or scientific obligations that this
+theorem does not discharge.
+
+\begin{center}
+\begin{tabular}{c}
+\fbox{Assumptions and definitions} \\
+$\Downarrow$ \\
+\fbox{Principal reduction} \\
+$\Downarrow$ \\
+\fbox{Imported lemma or elementary implication} \\
+$\Downarrow$ \\
+\fbox{Exact conclusion} \\
+\end{tabular}
+\end{center}
+
+Replace this linear placeholder with the smallest readable dependency diagram needed for
+the proof. Branches are encouraged when they reveal independent cases or external
+obligations; decorative complexity is not.
+
+\section{Human-readable mathematical argument}
+
+Provide a proof at a level that exposes the main definitions, reductions, and uses of
+prior results. If no proof is complete, state the exact gap instead of writing around it.
+Do not duplicate a long Lean tactic script here.
+
+\paragraph{Proof status.} NOT-STARTED.
+
+\paragraph{Argument.} NOT-YET-WRITTEN.
+
+\section{Lean realization}
+
+Quote only the final declaration signature or a short normalized rendering.
+The repository Lean source remains authoritative.
+
+\begin{verbatim}
+-- NOT-YET-IMPLEMENTED
+\end{verbatim}
+
+\begin{tabular}{@{}p{0.27\textwidth}p{0.65\textwidth}@{}}
+\toprule
+Lean toolchain & NOT-ASSIGNED \\
+Mathlib revision & NOT-ASSIGNED \\
+Additional dependencies & NONE-RECORDED \\
+Imports & NOT-ASSIGNED \\
+Build command and result & NOT-RUN \\
+\bottomrule
+\end{tabular}
+
+\section{Trusted base and axiom report}
+
+\begin{verbatim}
+#print axioms NOT_YET_IMPLEMENTED
+\end{verbatim}
+
+Record the exact output. Disclose axioms, admissions, classical principles, quotient
+soundness, or external checker boundaries without translating them into stronger claims.
+
+\section{AI, automation, and comprehension record}
+
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+AI-generated or AI-assisted material & NOT-RECORDED \\
+Other automation and tools & NOT-RECORDED \\
+Exact outputs checked by Lean & NONE \\
+Maintainer reading/contextualization & NOT-RECORDED \\
+Independent expert review & NONE-RECORDED \\
+Remaining uncertainty & NOT-RECORDED \\
+\bottomrule
+\end{tabularx}
+
+Do not describe operation of the pipeline or a successful compiler run as independent
+expert proof review. State only what was actually read, checked, or reviewed.
+
+\section{Scientific and evidence boundaries}
+
+Explain what the theorem does and does not establish about scientific models, numerical
+runs, exact certificates, calculator outputs, physical interpretation, and publication
+claims. A theorem about encoded assumptions does not establish that those assumptions
+hold for a material or computation.
+
+\section{Unresolved questions}
+
+\begin{itemize}
+  \item NOT-RECORDED.
+\end{itemize}
+
+\section{Review and revision history}
+
+\begin{tabularx}{\textwidth}{@{}lllX@{}}
+\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+NOT-RECORDED & NOT-RECORDED & NOT-RECORDED & NOT-REVIEWED \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

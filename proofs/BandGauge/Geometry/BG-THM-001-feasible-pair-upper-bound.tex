@@ -1,0 +1,174 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{seqsplit}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∈}{{$\in$}}1 {≤}{{$\le$}}1}
+
+\title{Proof Dossier: Feasible-Pair Upper Bound}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-001} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.admissibleSetEDist_le_edist_of_mem} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean} \\
+\bottomrule
+\end{tabularx}
+
+This dossier covers one generic clause of the paper's witness/separation proposition. It
+does not claim that the full proposition or its scientific instantiations are formalized.
+
+\section{Exact mathematical statement}
+
+Let $X$ be a metric space, let $A,B\subseteq X$, and define the extended admissible-set
+distance
+\[
+ \delta_{\mathrm e}(A,B)
+ =\inf_{a\in A,\,b\in B} d_{\mathrm e}(a,b),
+\]
+with values in $[0,\infty]$. For every $a\in A$ and $b\in B$,
+\[
+ \delta_{\mathrm e}(A,B)\le d_{\mathrm e}(a,b).
+\]
+
+In the scientific application, $A$ and $B$ are the spectral and aligned-operator
+admissible sets inside one declared candidate model-parameter domain. A feasible pair
+supplies an upper bound only; it is not a joint match unless the same candidate belongs
+to both sets.
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026c/v1/manuscript.md} \\
+Locator & definition lines 117--130; proposition lines 132--138; proof lines 140--145 \\
+Dirty-state limitation & later owner worktree changes are excluded; committed bytes are authoritative \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the proposition's sentence that every feasible pair
+supplies an upper bound on the defining infimum.
+
+\section{Assumptions and representation delta}
+
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Item & Lean encoding & Delta or limitation \\
+\midrule
+Ambient domain & \texttt{[MetricSpace X]} & Matches the source metric-space assumption. \\
+Admissible classes & arbitrary \texttt{Set X} & Scientific loss sublevel sets are instantiated later. \\
+Distance codomain & \texttt{ENNReal} via \texttt{edist} & Extends the source's real value so empty input is not assigned a finite report. \\
+Nonemptiness & not needed for this implication & Membership hypotheses already exhibit both sets as nonempty. \\
+\bottomrule
+\end{tabularx}
+
+The real-valued nonempty specialization has not yet been declared.
+
+\section{Statement-specific prior art}
+
+The inequality is a defining property of an infimum rather than a claimed new theorem.
+No accepted References-owned canonical identity is currently attached to this elementary
+step. Bounded-error and set-membership identification are candidate
+\texttt{background-only} context for the feasible-parameter-set interpretation; their
+canonical IDs remain unresolved. No novelty or priority claim is made.
+
+\section{Motivation and contribution boundary}
+
+This inequality is classical and is not a theoretical contribution. Its value here is to
+make one step of a larger decision procedure explicit and machine-checkable: any verified
+spectral-feasible/operator-feasible pair gives a rigorous upper bound on the distance
+between the two threshold-defined admissible classes. The wider project's contribution is the integration of standard metric facts,
+feasible-set language, and validated global certificates in a concrete scientific
+workflow—not this inequality itself. A literature search that finds no identical
+terminology establishes no priority.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+$a\in A$ and $b\in B$ \\
+$\Downarrow$ \\
+$d_{\mathrm e}(a,b)$ is one term indexed by the defining infimum \\
+$\Downarrow$ \\
+$\inf_{x\in A,\,y\in B}d_{\mathrm e}(x,y)\le d_{\mathrm e}(a,b)$
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+The admissible-set distance is the infimum of all extended distances between a member of
+$A$ and a member of $B$. The hypotheses place $(a,b)$ among those feasible pairs. An
+infimum is no greater than any element of the family over which it is taken. Therefore
+$\delta_{\mathrm e}(A,B)\le d_{\mathrm e}(a,b)$.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem admissibleSetEDist_le_edist_of_mem {A B : Set X} {a b : X}
+    (ha : a ∈ A) (hb : b ∈ B) :
+    admissibleSetEDist A B ≤ edist a b
+\end{lstlisting}
+
+The proof applies \texttt{iInf\_le\_of\_le} to the two points and their membership proofs.
+The full proof body remains in the Lean module rather than being duplicated here.
+
+\section{Trusted base and axiom report}
+
+The current pinned environment is Lean \texttt{v4.35.0} with Mathlib revision
+\texttt{\seqsplit{56a005855ea17e0b0958f73ec801ae140b0a1679}}. The recorded output is:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.admissibleSetEDist_le_edist_of_mem'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, automation, and comprehension record}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the displayed declaration and proof term in the pinned environment. The
+maintainer supplied the scientific purpose and required the terminology of joint
+spectral and aligned-operator adequacy. No independent expert mathematical review is
+recorded. Maintainer comprehension and any later expert review must be added as actual
+work occurs rather than inferred from the successful build.
+
+\section{Scientific and evidence boundaries}
+
+This theorem does not find a feasible pair, prove a common witness, compute the global
+infimum, or validate any numerical optimizer. It establishes only the upper-bound logic
+for a pair already known to satisfy the two separate membership hypotheses. It proves
+nothing about material validity, physical equivalence, hopping locality, or the adequacy
+of a larger model family.
+
+\section{Unresolved questions}
+
+\begin{itemize}
+ \item Accepted canonical reference and authority IDs are unavailable.
+ \item The real-valued nonempty specialization remains to be selected.
+ \item No paper-namespace instantiation has been declared.
+\end{itemize}
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, repository checks, and bounded independent
+review passed. Statement status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

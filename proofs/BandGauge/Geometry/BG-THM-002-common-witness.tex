@@ -1,0 +1,182 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{seqsplit}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∈}{{$\in$}}1 {≤}{{$\le$}}1 {∩}{{$\cap$}}1}
+
+\title{Proof Dossier: Common Witness Establishes Joint Compatibility}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-002} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_mem_inter} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean} \\
+\bottomrule
+\end{tabularx}
+
+This dossier covers the common-witness clause of the paper's proposition. It does not
+claim that certified separation, compact attainment, or a paper-specific numerical
+certificate has been formalized.
+
+\section{Exact mathematical statement}
+
+Let $X$ be a metric space, let $A,B\subseteq X$, and define
+\[
+ \delta_{\mathrm e}(A,B)
+ =\inf_{a\in A,\,b\in B} d_{\mathrm e}(a,b)
+ \in[0,\infty].
+\]
+If $\theta\in A\cap B$, then
+\[
+ \delta_{\mathrm e}(A,B)=0.
+\]
+
+For the paper's decision problem, $A=\mathcal A_E$ is the spectral admissible set and
+$B=\mathcal A_H$ is the aligned-operator admissible set in one declared candidate
+model-parameter domain. The same candidate $\theta$ meeting both error budgets is the
+common witness or joint match.
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026c/v1/manuscript.md} \\
+Locator & definition lines 117--130; proposition lines 132--138; proof lines 140--145 \\
+Dirty-state limitation & later owner worktree changes are excluded; committed bytes are authoritative \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the source implication from a common witness to
+zero admissible-set distance.
+
+\section{Assumptions and representation delta}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Item & Lean encoding & Delta or limitation \\
+\midrule
+Ambient domain & \texttt{[MetricSpace X]} & Matches the source. \\
+Admissible classes & arbitrary \texttt{Set X} & The spectral and aligned-operator sublevel sets are not yet instantiated. \\
+Common witness & $\theta\in A\cap B$ & Encodes the same candidate satisfying both requirements. \\
+Distance codomain & \texttt{ENNReal} via \texttt{edist} & Preserves an explicit nonfinite empty-set boundary; the witness itself ensures nonemptiness here. \\
+\bottomrule
+\end{tabularx}
+
+The theorem proves the forward implication only. Zero distance does not imply a common
+witness for arbitrary noncompact or nonclosed sets.
+
+\section{Statement-specific prior art}
+
+This is an elementary consequence of the definition of distance between sets and is not
+claimed as novel. No accepted References-owned canonical identity currently supplies an
+exact locator for this one-line implication. Set-membership identification is
+\texttt{background-only} context for interpreting threshold-consistent candidates as
+admissible sets; its canonical IDs remain unresolved.
+
+\section{Motivation and contribution boundary}
+
+The implication is classical and is not presented as a new theorem. It is useful because
+it states the compatibility side of the scientific decision in an exact form: one
+concrete candidate, not two unrelated candidates, must satisfy both thresholded criteria.
+The broader methodological contribution packages this fact with certified positive
+separation, validated numerics, explicit scope conditions, and a scientific instantiation.
+A bounded search that finds no identical phrase establishes no priority.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+$\theta\in A\cap B$ \\
+$\Downarrow$ \\
+$(\theta,\theta)$ is a feasible pair \\
+$\Downarrow$ \\
+$\delta_{\mathrm e}(A,B)\le d_{\mathrm e}(\theta,\theta)=0$ \\
+$\Downarrow\quad$ since $0\le\delta_{\mathrm e}(A,B)$ \\
+$\delta_{\mathrm e}(A,B)=0$
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+The intersection hypothesis gives both $\theta\in A$ and $\theta\in B$. Apply the
+feasible-pair upper-bound theorem to the pair $(\theta,\theta)$. Its self-distance is
+zero, so $\delta_{\mathrm e}(A,B)\le0$. Extended distances are nonnegative, hence
+$0\le\delta_{\mathrm e}(A,B)$. Antisymmetry gives
+$\delta_{\mathrm e}(A,B)=0$.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem admissibleSetEDist_eq_zero_of_mem_inter {A B : Set X}
+    {candidate : X} (h : candidate ∈ A ∩ B) :
+    admissibleSetEDist A B = 0
+\end{lstlisting}
+
+The proof invokes \texttt{admissibleSetEDist\_le\_edist\_of\_mem}, simplifies the
+self-distance, and combines the upper bound with the bottom-element lower bound. The
+full proof body remains in the Lean module.
+
+\section{Trusted base and axiom report}
+
+The current pinned environment is Lean \texttt{v4.35.0} with Mathlib revision
+\texttt{\seqsplit{56a005855ea17e0b0958f73ec801ae140b0a1679}}. The recorded output is:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_mem_inter'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, automation, and comprehension record}
+
+The statement design, Lean proof, proof schematic, and dossier prose were AI-generated
+or AI-assisted. Lean checked the declaration and proof term in the pinned environment.
+The maintainer supplied the intended scientific meaning: compatibility is one concrete
+candidate model satisfying both the spectral and restricted aligned-operator adequacy
+criteria. No independent expert mathematical review is recorded. Maintainer
+comprehension must be recorded only after actual reading rather than inferred from the
+compiler result.
+
+\section{Scientific and evidence boundaries}
+
+The theorem establishes a joint match only after a common witness is supplied. It does
+not find that witness, validate an optimizer, establish the converse implication, or
+show that a failed search means separation. The result is scoped to the declared
+candidate family, metric, loss definitions, alignment family, and error budgets. It does
+not establish physical inequivalence, material validity, hopping locality, or adequacy
+of a larger model family.
+
+\section{Unresolved questions}
+
+\begin{itemize}
+ \item Accepted canonical reference and authority IDs are unavailable.
+ \item The real-valued nonempty specialization remains to be selected.
+ \item Spectral and aligned-operator sublevel-set definitions are not yet encoded.
+ \item No paper-namespace instantiation has been declared.
+\end{itemize}
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, repository checks, and bounded independent
+review passed. Statement status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

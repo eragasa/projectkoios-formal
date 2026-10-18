@@ -10,6 +10,12 @@
 
 The source directories use lowercase suffixes (`Ragasa2026a`, `Ragasa2026b`, `Ragasa2026c`); the requested Lean placeholder names use uppercase suffixes A/B/C. Inspection began while the worktree was at `593cfca64b19b34fc37f450a38419d1cf6e67a15` with relevant uncommitted changes. Another process integrated those bytes during this task. Identity and status were therefore re-resolved before recording the final audit. An unrelated untracked protocol path briefly appeared and disappeared during later concurrent activity; the cited publication paths remained clean. The final files below are clean bytes at commit `99a46c…`, and none of that concurrent activity is attributed to this task.
 
+## Later attribution reinspection
+
+A later read-only inspection for `BG-PLAN-001` found the same branch and HEAD, but both `Ragasa2026c/v1/manuscript.md` and `manuscript.tex` had new unstaged changes. Only the committed revision is used by the statement-selection packet. The later dirty attribution wording is neither copied nor treated as owner-approved evidence here.
+
+This later observation does not retroactively change the worktree state recorded during the original audit. It records a new dirty-state limitation for subsequent source use.
+
 ## Inspected files and final-byte SHA-256
 
 | SHA-256 | Owner-repository path |

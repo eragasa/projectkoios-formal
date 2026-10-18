@@ -4,7 +4,7 @@ This roadmap orders future work by mathematical dependency. It is not an authori
 
 ## R0 — documentation and layout
 
-**Current scope.** Establish authority boundaries, conventions, provenance, theorem planning, trusted-base policy, the horizontal ecosystem relationship, the bounded agent workflow, and documentation-only module folders.
+**Completed startup scope.** Establish authority boundaries, conventions, provenance, theorem planning, trusted-base policy, the horizontal ecosystem relationship, the bounded agent workflow, and documentation-only module folders. The no-theorem condition below describes the R0 checkpoint; later R1 work has now added two foundational declarations.
 
 Exit evidence:
 
@@ -27,9 +27,9 @@ Candidate work:
 - inventory existing Mathlib/Physlib APIs without adopting Physlib implicitly;
 - select one exact source theorem and record its assumption delta;
 - identify applicable References-owned canonical identities and exact source locators without creating a duplicate bibliography; and
-- approve namespace and declaration names before encoding.
+- record namespace and declaration names before encoding.
 
-No theorem implementation begins until the exact statement is selected.
+- `BG-PLAN-001`: `BG-DEF-001` implements the extended representation; `BG-THM-001` through `BG-THM-004` prove the four generic mathematical clauses. The real-valued bridge and scientific instantiation remain open.
 
 ## R2 — finite witness and rank-two algebra
 

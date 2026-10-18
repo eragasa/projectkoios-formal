@@ -1,6 +1,7 @@
 import ProjectKoios.Formal.Authority
 
-/-! Metadata only. No claim from Ragasa2026c is stated or proved here. -/
+/-! Metadata only. No paper-specific Ragasa2026c declaration is stated or proved here.
+Generic foundational clauses tracked in `BandGauge.Geometry` do not change this namespace status. -/
 
 namespace ProjectKoios.BandGauge.Papers.Ragasa2026C
 
@@ -15,6 +16,6 @@ def placeholder : PublicationPlaceholder where
   formalStatementCount := 0
   provedScientificTheoremCount := 0
   checkedCertificateCount := 0
-  warning := "PLACEHOLDER ONLY: publication prose, analytic certificates, and numerical diagnostics have not been encoded in Lean."
+  warning := "PLACEHOLDER ONLY: no paper-specific instantiation, complete proposition, analytic certificate, or numerical diagnostic has been encoded in this namespace."
 
 end ProjectKoios.BandGauge.Papers.Ragasa2026C

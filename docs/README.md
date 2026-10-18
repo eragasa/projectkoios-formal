@@ -23,20 +23,23 @@ This directory records the formalization contract, provenance, planning state, a
 - [`ecosystem-architecture.md`](ecosystem-architecture.md) — horizontal hub-and-spoke relationship, shallow dependencies, and cross-repository bridges.
 - [`agent-workflow.md`](agent-workflow.md) — bounded Pi/Lean development loop and criteria for evaluating optional agent tooling.
 - [`agent-tooling-candidates.md`](agent-tooling-candidates.md) — operator-recorded repositories to consider later; currently unevaluated and not adopted.
+- [`../proofs/README.md`](../proofs/README.md) — per-statement LaTeX dossier policy and current draft dossiers, with AI provenance and prior-art boundaries.
+- [`../papers/README.md`](../papers/README.md) — umbrella working-paper policy and the incomplete Ragasa claim-family formalization manuscript.
 
 ## Planning
 
 - [`module-layout.md`](module-layout.md) — intended ownership of documentation-only source folders.
 - [`definition-and-lemma-inventory.md`](definition-and-lemma-inventory.md) — concepts and library searches required before theorem encoding.
+- [`BandGauge/Geometry/witness-separation-statement-selection.md`](BandGauge/Geometry/witness-separation-statement-selection.md) — `BG-PLAN-001` source freeze, attribution boundary, Mathlib probe, implemented signatures and remaining work.
 - [`witness-catalog.md`](witness-catalog.md) — bounded candidate examples and their source limitations.
 - [`roadmap.md`](roadmap.md) — gated order of future formalization work.
 
 ## Status vocabulary
 
 - **metadata** — traceability information only; no proposition is encoded.
-- **planned** — a candidate theorem family or definition has been identified, but its Lean statement is not approved.
-- **statement** — an exact Lean proposition exists without a completed proof; any admission must be visible and audited.
-- **proved** — the stated Lean declaration has a checked proof and an recorded axiom report.
+- **planned** — a theorem family or definition has been identified, but no repository declaration exists.
+- **implemented** — an exact repository declaration exists; this says nothing by itself about proof, API stability, release, or scientific validity.
+- **proved** — Lean accepts the exact theorem declaration without admissions, the repository checks pass, and the named axiom report is recorded.
 - **blocked** — work cannot proceed without resolving a source, convention, dependency, or authority question.
 
-Only the theorem manifest may report a repository declaration as proved. Planning documents must not use “proved” to describe a publication argument or an intended Lean result.
+Only the theorem manifest reports formal proof status. `proved` is a technical status about the declared proposition: it does not imply a stable public API, release, paper-specific instantiation, valid numerical evidence, scientific validation, novelty, or publication support.

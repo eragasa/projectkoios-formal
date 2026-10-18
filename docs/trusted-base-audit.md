@@ -44,4 +44,4 @@ Before a scientific declaration is marked proved, the audit must record:
 7. the successful pin and build checks; and
 8. any external certificate or numerical obligations that remain outside the proof.
 
-Current publication-facing proved declarations: **none**.
+Current proof IDs and statuses are listed only in `theorem-manifest.md`. No listed theorem is a paper-specific model theorem, checked numerical certificate, scientific validation result, or release.

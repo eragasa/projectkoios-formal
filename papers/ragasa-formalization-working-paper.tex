@@ -1,0 +1,305 @@
+% Working manuscript. Not a release, submission, proof authority, or owner-publication replacement.
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{seqsplit}
+\usepackage{tabularx}
+
+\title{An Audit-First Formalization Program for the\\Ragasa Band--Gauge Claim Families\\\large Working paper}
+\author{Project Koios Formal}
+\date{18 October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.91\textwidth}{
+\textbf{Status warning.} This is an incomplete working manuscript, not a submitted or
+published paper. It does not replace the owner manuscripts, individual proof dossiers,
+Lean source, theorem manifest, numerical evidence records, or a References-owned
+bibliography. Four elementary generic clauses are currently proved in Lean; no paper-specific theorem or scientific certificate is claimed.
+}}
+\end{center}
+
+\begin{abstract}
+This working paper organizes an audit-first formalization program for the mathematical,
+computational, and evidentiary claims currently inventoried across Ragasa2026A,
+Ragasa2026B, and Ragasa2026C. The program separates exact theorem statements from
+numerical evidence, calculator authority, scientific interpretation, and publication
+status. Its first formal results define an extended distance between two admissible
+subsets of one metric model-parameter domain and prove that any feasible pair gives an
+upper bound and that one common candidate forces zero distance. These are classical
+metric-space facts, not new theory. The contribution is methodological and applied: standard set-distance facts,
+feasible-parameter-set language, and validated global certificates form an explicit
+decision procedure for joint spectral
+and restricted aligned-operator adequacy, then instantiate that procedure without
+obscuring assumptions or evidence boundaries. The remaining Ragasa claim families are
+reported as planned, external, or unresolved rather than silently promoted to formal
+results.
+\end{abstract}
+
+\section{Purpose and scope}
+
+The intended end product is one evolving working paper spanning the audited Ragasa claim
+families, supported by one Lean module per cohesive mathematical topic and one LaTeX
+proof dossier per publication-facing Lean statement. This manuscript supplies
+the cross-claim narrative; it does not duplicate full proofs or create a second source
+of theorem status.
+
+``All claims'' means that every claim family in the owner-source audits must eventually
+receive an explicit disposition: formalized, planned, numerical/external, excluded, or
+unresolved. It does not mean that every sentence is copied from the owner repositories.
+Exact owner prose remains owner-controlled. The current crosswalk is complete only for
+the headline declarations already inventoried in the Formal repository; exhaustive
+claim-level coverage for Papers B and C remains an open audit task.
+
+\section{Motivation and contribution boundary}
+
+The mathematical ingredients are established.
+
+\begin{itemize}
+ \item Elementary facts about the distance between two subsets of a metric space follow
+ from the definition of an infimum.
+ \item Positive separation of a compact set from a disjoint closed set is standard;
+ compact attainment is obtained by minimizing the continuous distance function on a
+ compact product.
+ \item A failed local or finite search is not a global infeasibility certificate. This
+ distinction is standard in complete search, constraint satisfaction, and validated
+ global optimization.
+ \item Feasible parameter sets, consistency testing, model invalidation, and
+ infeasibility are established bounded-error and set-membership-identification ideas.
+ \item Validated lower bounds for a set-distance optimization problem use established
+ interval and branch-and-bound machinery.
+\end{itemize}
+
+This work claims no new theorem or theory and no priority for the witness/infeasibility
+distinction. It integrates classical facts and established computational methods into a
+threshold-defined rule for joint spectral and aligned-operator adequacy, with replayable
+witnesses or lower-bound certificates. A terminology choice or bounded phrase search
+establishes no priority.
+
+\section{Owner-source and authority boundary}
+
+The currently audited owner-source identity is:
+\begin{itemize}
+ \item repository \texttt{ksdft2effmass};
+ \item navigation branch \path{work/paper-3-higher-rank-extension}; and
+ \item immutable commit
+ \texttt{\seqsplit{99a46cb59d0c6f27ada7d709f194996ef9619d9f}}.
+\end{itemize}
+Formal reads those sources but does not own their scientific prose, numerical evidence,
+or publication status. Later unstaged changes to the Ragasa2026C manuscript are excluded
+from the current source basis.
+
+Authority remains separated as follows:
+\begin{itemize}
+ \item \textbf{Owner manuscripts:} scientific claim wording, paper proofs, and publication scope.
+ \item \textbf{Lean source:} exact encoded propositions and proof terms.
+ \item \textbf{Theorem manifest:} repository declaration IDs and formal status.
+ \item \textbf{Proof dossiers:} human explanation, provenance, prior art, and limitations per statement.
+ \item \textbf{External runtimes:} numerical records and runtime-specific evidence.
+ \item \textbf{Reference authority:} canonical literature identity and bibliography authority.
+ \item \textbf{This working paper:} synthesis and status narrative only.
+\end{itemize}
+
+\section{Scientific decision represented by the first theorem family}
+
+Let $X$ be one declared candidate model-parameter domain. Frozen loss definitions and
+thresholds determine
+\[
+ \mathcal A_E=\{\theta\in X:L_E(\theta)\le\tau_E\},\qquad
+ \mathcal A_H=\{\theta\in X:L_{H,\mathrm{orb}}(\theta)\le\tau_H\}.
+\]
+The first set contains candidates meeting the spectral budget. The second contains
+candidates meeting the restricted aligned-operator budget. The alignment loss ranges
+only over the declared admissible alignment family.
+
+A common witness is one and the same candidate
+$\theta\in\mathcal A_E\cap\mathcal A_H$. Two different candidates, one in each set, do
+not establish joint adequacy. A certified positive lower bound on the distance between
+the sets proves that no candidate in the declared family meets both budgets. It does not
+exclude a larger candidate family, prove material invalidity, establish hopping
+locality, or show physical inequivalence of complete gauge-related Hamiltonians.
+
+The decision vocabulary is:
+\begin{enumerate}
+ \item \textbf{joint match}: an explicit common witness satisfies both budgets;
+ \item \textbf{certified separation}: a verified global lower bound exceeds a declared
+ separation resolution; and
+ \item \textbf{unresolved}: neither qualifying evidence object exists.
+\end{enumerate}
+A failed optimizer, finite scan, or plot belongs to the third category.
+
+\section{Current formal results}
+
+For a metric space $X$ and subsets $A,B\subseteq X$, the repository defines
+\[
+ \delta_{\mathrm e}(A,B)=
+ \inf_{a\in A,\,b\in B} d_{\mathrm e}(a,b)\in[0,\infty].
+\]
+The extended codomain preserves the source rule that empty input must not produce a
+finite reported set distance. A real-valued bridge for nonempty sets remains future work.
+
+\paragraph{BG-THM-001: feasible-pair upper bound.}
+If $a\in A$ and $b\in B$, then
+\[
+ \delta_{\mathrm e}(A,B)\le d_{\mathrm e}(a,b).
+\]
+The chosen pair is one member of the family over which the infimum is taken.
+
+\paragraph{BG-THM-002: common witness.}
+If $\theta\in A\cap B$, then
+\[
+ \delta_{\mathrm e}(A,B)=0.
+\]
+Apply BG-THM-001 to $(\theta,\theta)$ and use nonnegativity and
+$d_{\mathrm e}(\theta,\theta)=0$.
+
+\paragraph{BG-THM-003: certified separation.}
+If $0<\ell\le\delta_{\mathrm e}(A,B)$, then $A$ and $B$ are disjoint. A common member
+would force the distance to zero by BG-THM-002, contradicting the positive lower bound.
+
+\paragraph{BG-THM-004: compact attainment and positivity.}
+Nonempty compact disjoint sets admit $a\in A$ and $b\in B$ such that
+$\delta_{\mathrm e}(A,B)=d_{\mathrm e}(a,b)>0$. The proof minimizes continuous extended
+distance on the compact product $A\times B$.
+
+All four declarations have status \texttt{proved} in the module
+\begin{center}
+\path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean}.
+\end{center}
+Their draft individual dossiers record source locators, statement deltas, proof
+schematics, axiom reports, and AI provenance. They do not produce a numerical witness or
+certificate.
+
+\section{Claim-family coverage}
+
+\subsection{Ragasa2026A}
+
+The owner repository contains a detailed ledger covering central-contribution entries
+C01--C06, analytic entries A01--A12, model/comparison contracts M01--M15, numerical
+entries N01--N23, software/provenance entries V01--V10, explicit nonclaims X01--X12,
+validation rungs R01--R09, and pre-submission items S01--S15. This working paper does not
+copy that ledger. Formal's current headline crosswalk identifies the following analytic
+families:
+
+\begin{itemize}
+ \item exact rank-two spectral and aligned-operator loss geometry;
+ \item full-ellipse compatibility and distance under containment premises;
+ \item an exact spectral pass with certified operator incompatibility;
+ \item the smooth monotone threshold continuum for the flat Bessel family;
+ \item the residual/nonlocal-hopping-power identity; and
+ \item compact alignment attainment, transported-frame covariance, and excess.
+\end{itemize}
+
+All remain planned. The active rank-two numerical results remain external development
+evidence, and the separately retained scalar precursor does not transfer status to the
+rank-two claim family.
+
+\subsection{Ragasa2026B}
+
+The current crosswalk covers:
+\begin{itemize}
+ \item destruction of finite hopping support by spectral projection;
+ \item the multidimensional flat-parent residual--locality identity;
+ \item shell-resolved coefficients and a factorial Fourier-tail bound;
+ \item monotonicity and the small-amplitude dimension law;
+ \item the bond-orbit flat-parent comparator; and
+ \item the constrained-series complete-shell tail certificate.
+\end{itemize}
+
+These families remain statement-unselected. Finite meshes, strain samples, and
+binary64 evaluations remain numerical evidence rather than continuum proofs or checked
+certificates. A complete claim-level inventory comparable to the Paper A ledger is still
+required before this working paper can assert exhaustive Paper B coverage.
+
+\subsection{Ragasa2026C}
+
+The current crosswalk covers the witness/separation proposition, exact D1 representation
+certificates, the D1 exterior-isolation and attack-angle derivations, and bounded
+historical M2/M3, rank-three, and Wannier90 records. The four generic mathematical
+clauses of the witness/separation proposition have status \texttt{proved}. D1 analytic
+certificates, scientific loss instantiation, and all numerical campaign claims remain
+unproved or external here. A complete claim-level inventory is
+still required for exhaustive Paper C coverage.
+
+\section{Formalization and evidence matrix}
+
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}X@{}}
+\toprule
+Family & Current status & Next formal obligation \\
+\midrule
+Witness upper bound & proved: BG-THM-001 & accepted reference identities \\
+Common witness & proved: BG-THM-002 & scientific sublevel-set instantiation \\
+Certified separation & proved: BG-THM-003 & checked lower-bound certificate interface \\
+Compact attainment & proved: BG-THM-004 & real-valued bridge and scientific hypotheses \\
+Rank-two loss geometry & planned & freeze scalar field, rank, positivity, box, and alignment assumptions \\
+Fourier/locality identities & planned & freeze discrete and continuum normalizations separately \\
+Projection support loss & planned & select an explicit finite witness \\
+Tail bounds & planned & establish special-function and shell conventions \\
+Numerical claims & external & retain evidence and add exact checker boundaries where appropriate \\
+Physical interpretation & external & scientific review and hypothesis validation \\
+\bottomrule
+\end{tabularx}
+
+\section{Prior art and citation status}
+
+The attribution policy is conservative. Rudin supplies standard compactness and
+separation ingredients: Chapter 4, Exercise 21, p.~101 for positive separation of a
+compact set from a disjoint closed set, and Theorem 4.16, pp.~89--90 for extrema of a
+continuous function on a compact metric space. Compact-pair attainment requires the
+additional compact-product step. Neumaier provides complete-search and rigorous
+infeasibility-certificate background. Moore--Kearfott--Cloud provide interval-enclosure
+and outward-rounding background. Milanese and collaborators provide feasible-parameter-
+set context.
+
+These are candidate relations recorded as \texttt{depends-on} or
+\texttt{background-only}, not claims that those sources state the Project Koios workflow.
+Accepted References-owned canonical, authority, and governed evidence IDs are not yet
+available. Consequently this working draft does not create a second bibliography or
+claim citation completeness.
+
+\section{Trusted base and reproducibility}
+
+The current environment is Lean \texttt{v4.35.0}, commit
+\path{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}, with Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679}. The four theorems report
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; they use no
+\texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+A clean Lean build establishes elaboration and compilation only. Compiling this LaTeX
+file establishes typesetting only. Neither action verifies source fidelity, numerical
+data, physical modeling assumptions, novelty, or publication readiness.
+
+\section{AI assistance and review status}
+
+Statement decomposition, proof discovery, Lean implementation, and much of this prose
+were AI-generated or AI-assisted. AI output is treated as untrusted material. Lean checks
+exact proof terms; repository audits check selected provenance and status invariants. The
+maintainer's role is computational pipeline construction, source reading, operation of
+the checks, and scientific contextualization. No independent expert mathematical or
+physical review is currently recorded.
+
+\section{Open program}
+
+The immediate next steps are to freeze the nonempty real-valued bridge, select the
+certified-separation statement, and prove compact attainment without strengthening the
+owner claim. In parallel, the claim-level inventories for Papers B and C must be made as
+explicit as Paper A's ledger. Only then can this manuscript claim comprehensive status
+coverage. Later sections may incorporate the rank-two, projection, Fourier, and tail
+families one statement at a time, each linked to an individual Lean declaration and
+proof dossier.
+
+\section{Conclusion}
+
+The current result is intentionally modest. Four classical clauses are now exact, Lean-checked, and attributable. The larger aim is a coherent
+working paper in which every Ragasa claim family has an honest formal, numerical,
+external, excluded, or unresolved status. The value of that effort is disciplined
+integration and auditability, not the invention of a new metric-space principle.
+
+\end{document}

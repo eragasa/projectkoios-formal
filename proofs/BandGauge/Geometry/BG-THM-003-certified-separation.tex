@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {∅}{{$\varnothing$}}1}
+
+\title{Proof Dossier: Certified Positive Separation}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-003} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.disjoint_of_pos_le_admissibleSetEDist} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+
+Let $X$ be a metric space, let $A,B\subseteq X$, and let
+$\delta_{\mathrm e}(A,B)$ be their extended admissible-set distance. If an extended
+nonnegative number $\ell$ satisfies
+\[
+ 0<\ell\le\delta_{\mathrm e}(A,B),
+\]
+then $A$ and $B$ are disjoint.
+
+In the scientific application, the premise is a certified global lower bound on the
+distance between the spectral and aligned-operator admissible sets in one candidate
+parameter domain.
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026c/v1/manuscript.md} \\
+Locator & definition lines 117--130; proposition lines 132--138; proof lines 140--145 \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the source implication from a certified positive
+lower bound to disjointness.
+
+\section{Assumptions and representation delta}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Item & Lean encoding & Boundary \\
+\midrule
+Ambient domain & \texttt{[MetricSpace X]} & Matches the source metric assumption. \\
+Set distance & \texttt{ENNReal} & Extends the source's real-valued nonempty distance. \\
+Certificate & $0<\ell\le\delta_{\mathrm e}(A,B)$ & The theorem checks the implication, not the external computation of $\ell$. \\
+Conclusion & \texttt{Disjoint A B} & Scoped to the declared sets and domain. \\
+\bottomrule
+\end{tabularx}
+
+\section{Prior art and contribution boundary}
+
+The implication is a classical consequence of the definition of set distance. Validated
+global optimization and interval analysis supply \texttt{background-only} methods for
+constructing rigorous lower bounds; accepted References-owned IDs remain unavailable.
+The theorem is not novel. The project contribution is the explicit use of this standard
+implication in the joint-adequacy decision workflow.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+Assume $0<\ell\le\delta_{\mathrm e}(A,B)$ \\
+$\Downarrow$ \\
+Assume for contradiction that $x\in A\cap B$ \\
+$\Downarrow$ \\
+BG-THM-002 gives $\delta_{\mathrm e}(A,B)=0$ \\
+$\Downarrow$ \\
+$0<\ell\le0$, contradiction \\
+$\Downarrow$ \\
+$A\cap B=\varnothing$
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+Assume that a point $x$ belongs to both sets. BG-THM-002 then gives
+$\delta_{\mathrm e}(A,B)=0$. The certified lower bound becomes $\ell\le0$, contradicting
+$0<\ell$. Therefore no point belongs to both sets, so the sets are disjoint.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem disjoint_of_pos_le_admissibleSetEDist {A B : Set X}
+    {lower : ENNReal} (hpos : 0 < lower)
+    (hlower : lower ≤ admissibleSetEDist A B) :
+    Disjoint A B
+\end{lstlisting}
+
+The proof invokes BG-THM-002 and the set-theoretic characterization of disjointness.
+
+\section{Trusted base and axiom report}
+
+Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679} report:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.disjoint_of_pos_le_admissibleSetEDist'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI and review record}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the declaration and proof in the pinned environment. Repository checks pass.
+No independent expert mathematical or physical review is recorded.
+
+\section{Scientific and evidence boundaries}
+
+The theorem does not compute $\ell$, validate an optimizer, or prove that a numerical
+bound encloses the global infimum. It proves the exact consequence of a supplied bound.
+Disjointness applies only to the declared candidate family, parameter domain, losses,
+alignment contract, and thresholds. It does not prove physical inequivalence or exclude a
+larger model family.
+
+\section{Unresolved work}
+
+Accepted canonical reference IDs and a checked certificate interface for externally
+computed lower bounds remain unavailable.
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

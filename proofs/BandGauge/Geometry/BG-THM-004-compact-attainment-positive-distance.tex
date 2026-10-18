@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∈}{{$\in$}}1 {∃}{{$\exists$}}1 {∧}{{$\land$}}1}
+
+\title{Proof Dossier: Compact Attainment and Positive Distance}
+\author{Project Koios Formal}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-004} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.exists_admissibleSetEDist_eq_edist_and_pos_of_compact} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+
+Let $X$ be a metric space and let $A,B\subseteq X$ be nonempty compact disjoint sets.
+Then there are $a\in A$ and $b\in B$ such that
+\[
+ \delta_{\mathrm e}(A,B)=d_{\mathrm e}(a,b)
+ \qquad\text{and}\qquad
+ 0<\delta_{\mathrm e}(A,B).
+\]
+Thus the extended admissible-set distance is attained and strictly positive.
+
+\section{Source provenance}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \path{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Path & \path{docs/publications/papers/Ragasa2026c/v1/manuscript.md} \\
+Locator & definition lines 117--130; proposition lines 132--138; proof lines 140--145 \\
+Dirty-state limitation & later owner worktree changes are excluded \\
+\bottomrule
+\end{tabularx}
+
+The declaration \texttt{formalizes} the compact-attainment and positivity clause of the
+source proposition.
+
+\section{Assumptions and representation delta}
+
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Item & Lean encoding & Boundary \\
+\midrule
+Ambient domain & \texttt{[MetricSpace X]} & A true metric is required for distinct points to have positive distance. \\
+Sets & nonempty, compact, disjoint & Matches the source hypotheses. \\
+Set distance & \texttt{ENNReal} & Extends the source's real-valued quantity; nonemptiness makes the attained value finite. \\
+Conclusion & attaining pair and strict positivity & No algorithm for finding the pair is supplied. \\
+\bottomrule
+\end{tabularx}
+
+\section{Prior art and contribution boundary}
+
+This is classical. Rudin, Chapter 4, Exercise 21, p.~101 records positive separation of a
+compact set from a disjoint closed set. Rudin Theorem 4.16, pp.~89--90 supplies extrema
+of continuous functions on compact sets; attainment here also uses compactness of
+$A\times B$. The relation is \texttt{depends-on}, with the compact-product derivation
+stated explicitly. Accepted References-owned IDs remain unavailable. No novelty claim is
+made.
+
+\section{Proof schematic}
+
+\begin{center}
+\begin{tabular}{c}
+$A$ and $B$ nonempty compact \\
+$\Downarrow$ \\
+$A\times B$ nonempty compact \\
+$\Downarrow$ \\
+continuous $(a,b)\mapsto d_{\mathrm e}(a,b)$ attains a minimum \\
+$\Downarrow$ \\
+that minimum equals $\delta_{\mathrm e}(A,B)$ \\
+$\Downarrow$ \\
+$A$ and $B$ disjoint, so the minimizing points differ \\
+$\Downarrow$ \\
+$0<\delta_{\mathrm e}(A,B)$
+\end{tabular}
+\end{center}
+
+\section{Human-readable proof}
+
+The product $A\times B$ is nonempty and compact. Extended distance is continuous on the
+product, so the extreme-value theorem supplies a minimizing pair $(a,b)$. The definition
+of $\delta_{\mathrm e}$ gives one inequality between the infimum and
+$d_{\mathrm e}(a,b)$; minimality gives the reverse inequality. Hence the values are
+equal. If $a=b$, that point belongs to both $A$ and $B$, contradicting disjointness.
+Therefore $a\ne b$, and the metric-space self-separation law gives
+$0<d_{\mathrm e}(a,b)=\delta_{\mathrm e}(A,B)$.
+
+\section{Lean realization}
+
+\begin{lstlisting}
+theorem exists_admissibleSetEDist_eq_edist_and_pos_of_compact
+    {A B : Set X} (hA : IsCompact A) (hB : IsCompact B)
+    (hneA : A.Nonempty) (hneB : B.Nonempty)
+    (hdisjoint : Disjoint A B) :
+    ∃ a ∈ A, ∃ b ∈ B,
+      admissibleSetEDist A B = edist a b ∧
+      0 < admissibleSetEDist A B
+\end{lstlisting}
+
+The proof uses \texttt{IsCompact.prod}, \texttt{IsCompact.exists\_isMinOn}, continuity
+of \texttt{edist}, the defining infimum, and \texttt{edist\_pos}.
+
+\section{Trusted base and axiom report}
+
+Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679} report:
+
+\begin{lstlisting}
+'ProjectKoios.BandGauge.Geometry.exists_admissibleSetEDist_eq_edist_and_pos_of_compact'
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+There is no \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI and review record}
+
+The statement design, Lean proof, and dossier prose were AI-generated or AI-assisted.
+Lean checked the declaration and proof in the pinned environment. Repository checks pass.
+No independent expert mathematical or physical review is recorded.
+
+\section{Scientific and evidence boundaries}
+
+The theorem proves existence and positivity under exact compactness, nonemptiness, and
+disjointness hypotheses. It does not prove that scientific admissible sets satisfy those
+hypotheses, compute the minimizing pair, validate numerical bounds, or establish physical
+inequivalence.
+
+\section{Unresolved work}
+
+The real-valued nonempty specialization and accepted canonical reference IDs remain
+unavailable.
+
+\section{Review record}
+
+On 18 October 2026, the Lean build, axiom print, and repository checks passed. Statement
+status: \texttt{proved}. The dossier remains a working draft.
+
+\end{document}

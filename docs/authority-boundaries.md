@@ -2,7 +2,7 @@
 
 | Class | What may establish it | What it may establish here | Current count |
 |---|---|---|---|
-| Exact formal proof | proposition and proof term checked by the pinned Lean kernel | only that proposition under its explicit assumptions | one non-scientific smoke theorem |
+| Exact formal proof | proposition and proof term checked by the pinned Lean kernel | only that proposition under its explicit assumptions | see `theorem-manifest.md`; no paper-specific instantiation |
 | Exact checked certificate | exact certificate data plus a specified Lean checker and a proved connection to the target proposition | only the checker theorem's conclusion | zero |
 | Numerical evidence/certificate | sampled, finite-precision, interval, or other external computation with provenance | bounded computational evidence as declared; not automatically a Lean proof | referenced externally only |
 | Calculator/runtime authority | external implementation and execution environment | operational output under that runtime's contract | none owned here |

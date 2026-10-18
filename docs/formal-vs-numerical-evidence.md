@@ -31,7 +31,12 @@ Without all seven items, numerical output remains external evidence.
 
 The source publications contain analytic paper proofs, finite-mesh development calculations, retained precursor records, and proposed future certificate workflows. Their statuses remain those recorded by the owner source. This repository currently imports none of their numerical records and checks no scientific certificate.
 
-A future theorem may prove an implication such as “if an exact witness satisfies these inequalities, then the admissible sets intersect.” Establishing that a scientific runtime produced such a witness is a separate obligation unless an exact checked certificate connects the output to the hypotheses.
+Current formal implications:
+
+- `BG-THM-002` — an exact common-set member implies zero admissible-set distance.
+- `BG-THM-003` — a supplied strictly positive global lower bound implies disjointness.
+
+These theorems do not define the scientific loss sublevel sets, produce a runtime witness, or validate a numerical lower bound. An exact checked certificate must connect runtime output to their hypotheses.
 
 ## Prohibited status transfers
 

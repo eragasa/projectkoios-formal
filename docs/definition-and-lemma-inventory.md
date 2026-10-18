@@ -1,12 +1,12 @@
 # Definition and lemma inventory
 
-This is a search and design inventory, not an API commitment. “Unassessed” means that no complete Mathlib/Physlib search or exact Lean signature review has yet been recorded.
+This inventory records both implemented first-slice declarations and future search/design needs. The theorem manifest remains authoritative for existing APIs. “Unassessed” means that no complete Mathlib/Physlib search or exact Lean signature review has yet been recorded.
 
 | Area | Candidate concept or lemma | Source need | Library status | Intended folder |
 |---|---|---|---|---|
-| Finite geometry | common witness implies zero infimum distance | Ragasa2026c witness/separation proposition | unassessed | `BandGauge/Foundations` or `BandGauge/Geometry` |
-| Finite geometry | positive certified lower bound implies disjointness | same | unassessed | `BandGauge/Geometry` |
-| Topology | disjoint nonempty compact sets attain positive distance under the required metric hypotheses | same | likely related Mathlib infrastructure; exact API unassessed | `BandGauge/Geometry` |
+| Finite geometry | feasible pair bounds set distance; common witness implies zero distance | Ragasa2026c witness/separation proposition | implemented as `BG-DEF-001`; `BG-THM-001/002` are proved | `BandGauge/Geometry` |
+| Finite geometry | positive certified lower bound implies disjointness | same | proved as `BG-THM-003` | `BandGauge/Geometry` |
+| Topology | disjoint nonempty compact sets attain positive distance under the required metric hypotheses | same | proved as `BG-THM-004` using `IsCompact.prod`, `IsCompact.exists_isMinOn`, and continuity of `edist` | `BandGauge/Geometry` |
 | Rank-two algebra | trace/traceless decomposition for real symmetric `2 × 2` matrices | Ragasa2026a exact loss geometry | unassessed | `BandGauge/Foundations` |
 | Rank-two algebra | real `SO(2)` conjugation and second-harmonic correlation | same | unassessed | `BandGauge/Geometry` |
 | Quadratic geometry | common-curvature loss formulas and ellipse centers/radii | Ragasa2026a | source-specific statement not selected | `BandGauge/Geometry` |

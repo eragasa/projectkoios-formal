@@ -1,9 +1,14 @@
 import ProjectKoios.Formal.Authority
+import ProjectKoios.BandGauge.Geometry.AdmissibleSets
 import ProjectKoios.BandGauge.Papers.Ragasa2026A
 import ProjectKoios.BandGauge.Papers.Ragasa2026B
 import ProjectKoios.BandGauge.Papers.Ragasa2026C
 
 #print axioms ProjectKoios.Formal.harnessCompiles
+#print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_le_edist_of_mem
+#print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_mem_inter
+#print axioms ProjectKoios.BandGauge.Geometry.disjoint_of_pos_le_admissibleSetEDist
+#print axioms ProjectKoios.BandGauge.Geometry.exists_admissibleSetEDist_eq_edist_and_pos_of_compact
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.placeholder
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026B.placeholder
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026C.placeholder
