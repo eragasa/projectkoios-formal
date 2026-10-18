@@ -15,6 +15,12 @@ The startup tree contains one non-scientific smoke theorem and metadata-only pla
 3. **Numerical evidence:** sampled or floating-point output. It may motivate a statement but does not discharge a Lean proposition by itself.
 4. **Calculator/runtime authority:** external programs own their execution and outputs. Their success is neither a kernel proof nor scientific validation.
 
+## Documentation
+
+Start with [`docs/README.md`](docs/README.md). It indexes the authority and evidence contract, source/dependency audits, conventions, theorem planning, trusted-base policy, certificate vocabulary, and gated roadmap.
+
+The folders under `ProjectKoios/BandGauge/` reserve documentation-only ownership boundaries for foundations, geometry, Fourier analysis, projection, special functions, and thin paper crosswalks. A folder README does not establish a Lean API or a completed theorem.
+
 ## Checks
 
 ```console
@@ -24,4 +30,4 @@ lake build
 ./scripts/audit.sh
 ```
 
-`lake-manifest.json` is tracked; `.lake/` is ignored. See `docs/` for the theorem manifest, source audit, dependency audit, and publication crosswalk.
+`lake-manifest.json` is tracked; `.lake/` is ignored. Documentation additions must not change theorem totals unless corresponding Lean declarations and audits exist.
