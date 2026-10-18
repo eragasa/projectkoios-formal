@@ -15,7 +15,7 @@ Exit evidence:
 
 ## Optional tooling track — read-only and non-gating
 
-Candidate Lean skills, language-server bridges, MCP servers, and proof-search wrappers may be evaluated from authoritative sources at immutable revisions. An evaluation records license, toolchain compatibility, commands, data access, mutation behavior, and limitations before adoption.
+Candidate Lean skills, language-server bridges, MCP servers, and proof-search wrappers may be evaluated from authoritative sources at immutable revisions. The deferred candidate list currently records `leanprover/skills` and `cameronfreer/lean4-skills` for later consideration without adoption. An evaluation records license, toolchain compatibility, commands, data access, mutation behavior, and limitations before adoption.
 
 Agent tooling is not part of the logical trusted base, does not replace the repository checks, and must not block statement selection or foundational proof work. Repository-owned configuration or dependency adoption requires separate review.
 

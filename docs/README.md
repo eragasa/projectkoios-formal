@@ -21,6 +21,7 @@ This directory records the formalization contract, provenance, planning state, a
 
 - [`ecosystem-architecture.md`](ecosystem-architecture.md) — horizontal hub-and-spoke relationship, shallow dependencies, and cross-repository bridges.
 - [`agent-workflow.md`](agent-workflow.md) — bounded Pi/Lean development loop and criteria for evaluating optional agent tooling.
+- [`agent-tooling-candidates.md`](agent-tooling-candidates.md) — operator-recorded repositories to consider later; currently unevaluated and not adopted.
 
 ## Planning
 

@@ -74,7 +74,7 @@ Candidate Lean skills, LSP bridges, MCP servers, proof-search wrappers, or multi
 7. the smallest compatibility probe; and
 8. limitations of the evidence.
 
-A third-party search result or AI description is not dependency identity or compatibility evidence. Tooling should normally remain user-level unless repository-owned configuration is necessary and separately reviewed.
+A third-party search result or AI description is not dependency identity or compatibility evidence. Tooling should normally remain user-level unless repository-owned configuration is necessary and separately reviewed. Operator-recorded repositories awaiting possible later evaluation are listed in [`agent-tooling-candidates.md`](agent-tooling-candidates.md); appearance there does not imply adoption.
 
 ## Prohibited shortcuts
 
