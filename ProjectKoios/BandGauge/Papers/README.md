@@ -39,3 +39,10 @@ to concrete publication data remains open.
 foundational clauses linked from the crosswalk remain owned and counted in their
 foundational modules. Compilation alone is not evidence of a scientific result or
 complete publication formalization.
+
+Planning documents for the proposed A–D series division and the detailed A–D programs
+live under `docs/BandGauge/Papers/`; Paper A also has a prospective diagnostic-usefulness
+study. These documents do not create declarations, change placeholder counts, establish
+a Paper D source identity, or authorize an owner-repository mutation or publication
+claim. Reusable proofs remain organized by semantic mathematical ownership; paper modules
+are only thin source contracts and instantiations.

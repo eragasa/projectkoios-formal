@@ -32,3 +32,21 @@ This later observation does not retroactively change the worktree state recorded
 | `40b4658e2a074fcb75431d10642f689caf54b5671f4d03d793aaadc7c4ded8f2` | `docs/publications/papers/Ragasa2026c/v1/appendices/A-2-d1-p0-g0-isolation-gap-certificate.tex` |
 
 Hashes identify inspected bytes; they do not transfer ownership or evidence into this repository.
+
+## Later Paper 3 protocol planning inspection
+
+A later read-only planning inspection used a different immutable owner revision:
+
+- owner repository: `ksdft2effmass`;
+- branch: `work/paper-3-d1-calculator`;
+- commit: `8bafdeeb6b0c75bcd7a2984d0c283a8e64fb0fd8`;
+- protocol path: `experiments/periodic-reduction/higher-rank-composite-band-alignment-and-locality/experimental-protocol.tex`;
+- protocol SHA-256 at that commit: `160b61b2c2dc87e7628524c710c779f8e3b2c547f0a2d228615300aa06bdce0b`;
+- sibling README SHA-256 at that commit: `bf6693582c805aab485b5d3f17b55a6142f8e7adb4a4f7fb8eadb5ff365756dd`.
+
+The worktree was dirty during this inspection: the protocol and sibling README had
+uncommitted science-only edits, while the inspected Python implementation matched the
+immutable commit. The immutable committed protocol was therefore used for planning. This
+later inspection does not replace the publication-source identity or cited-byte hashes
+recorded above, and it does not transfer development calculator output into retained
+publication evidence.
