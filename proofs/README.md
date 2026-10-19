@@ -14,6 +14,12 @@ In the age of AI, the problem I am trying to address is how to build machinery t
 
 For each proof, the corresponding dossier must record the actual automation and toolchain provenance, the exact statement Lean checked, the axiom report, what I was able to read or contextualize, whether independent expert review occurred, and what remains uncertain. It must not relabel my operation of the process as expert human proof review. My practical understanding is valuable to me, but it does not replace kernel checking, source fidelity, attribution, or independent expert review.
 
+Every new dossier header records Eugene Joseph M. Ragasa as author, the SPDX identifier
+`Apache-2.0`, and the date on which the formal proof and dossier were first completed.
+Changing exposition without changing the exact proposition does not rewrite that initial
+completion date. Historical dossiers require a separate auditable metadata backfill rather
+than an invented common completion date.
+
 Attribution is a continuing best-effort obligation. I have attempted to credit the origins, precedents, and methods on which these proofs rely, while recognizing that searches can miss prior work and AI-generated attributions can be wrong. Candidate references must therefore remain visibly unresolved until checked through the repository's reference-authority process. Corrections and stronger primary sources should be recorded rather than hidden.
 
 ## Value for scientific papers

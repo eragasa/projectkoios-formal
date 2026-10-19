@@ -1,4 +1,6 @@
-% Project Koios Formal per-proof dossier template.
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
 % TEMPLATE ONLY: copying this file does not create or prove a statement.
 \documentclass[11pt]{article}
 
@@ -13,10 +15,12 @@
 \newcommand{\StatementStatus}{template-only}
 \newcommand{\LeanDeclaration}{NOT-ASSIGNED}
 \newcommand{\LeanModule}{NOT-ASSIGNED}
+\newcommand{\ProofAuthor}{Eugene Joseph M. Ragasa}
+\newcommand{\ProofCompleted}{NOT-COMPLETED}
 
 \title{Project Koios Formal Proof Dossier\\\large \StatementID}
-\author{Project Koios Formal}
-\date{\today}
+\author{\ProofAuthor}
+\date{Formal proof completed: \ProofCompleted}
 
 \begin{document}
 \maketitle
@@ -37,6 +41,9 @@ Statement ID & \StatementID \\
 Status & \StatementStatus \\
 Lean declaration & \texttt{\LeanDeclaration} \\
 Owning module & \texttt{\LeanModule} \\
+Author & \ProofAuthor \\
+License & Apache License, Version 2.0 (\texttt{Apache-2.0}) \\
+Formal proof completed & \ProofCompleted \\
 \bottomrule
 \end{tabularx}
 

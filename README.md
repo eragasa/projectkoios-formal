@@ -1,5 +1,8 @@
 # Project Koios Formal
 
+**Author and maintainer:** Eugene Joseph M. Ragasa
+**License:** Apache License, Version 2.0 (`Apache-2.0`)
+
 Minimal Lean/Lake harness for reusable Project Koios formalization.
 
 - Lake package: `ProjectKoiosFormal`
@@ -35,3 +38,8 @@ lake build
 ```
 
 `lake-manifest.json` is tracked; `.lake/` is ignored. Documentation additions must not change theorem totals unless corresponding Lean declarations and audits exist.
+
+## License
+
+Repository-authored work is made available under the Apache License, Version 2.0. See
+[`LICENSE`](LICENSE). External dependencies retain their own licenses and notices.
