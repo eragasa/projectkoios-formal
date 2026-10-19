@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Common-Power Operator Quadratic}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-012} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoOperatorMatrixLossSq_eq_quadratic} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/OperatorLossBridge.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Under the assumptions of BG-HILBERT-THM-011, if
+$P(D)=P(B)=\kappa$ and $C(D,B)=b$, then
+\[
+ L_{\mathrm{matrix}}^2(s,\lambda)
+ =s^2+\kappa\lambda^2-2b\lambda+\kappa.
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the intermediate scalar quadratic in Supplementary
+Section S1.1 of Ragasa2026A. Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Source: \path{docs/publications/papers/Ragasa2026a/v3/}\path{supplementary.tex},
+lines 75--82. Substitute the two common-power equalities and the declared correlation
+into BG-HILBERT-THM-011, then normalize the polynomial by commutative-ring algebra.
+
+\section{Boundary and trusted base}
+The common-power and correlation equalities are hypotheses. BG-HILBERT-THM-007 and
+BG-HILBERT-THM-008 provide their generic unitary and Cauchy--Schwarz context but do not
+instantiate scientific fields. Lean and pinned Mathlib report \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or scientific axiom is
+used. The proof and prose were AI-assisted and kernel-checked. No independent expert
+review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

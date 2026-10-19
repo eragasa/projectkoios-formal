@@ -1,0 +1,48 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Common-Power Correlation Bound}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-008} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.abs_rankTwoWeightedFrobeniusCorrelation_le_commonPower} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/WeightedFrobenius.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For nonnegative coordinate weights and $E_{\mathrm{ref}}\ne0$, suppose two finite
+rank-two matrix fields satisfy $P(X)=\kappa$ and $P(Y)=\kappa$. Then
+\[
+ |C(X,Y)|\le\kappa.
+\]
+
+\section{Source and relationship}
+This theorem \texttt{formalizes} the Cauchy--Schwarz step needed for the Paper A bound
+$|b_\phi|\le\kappa$, using the definitions near lines 606--625 of the v3 manuscript in
+\path{ksdft2effmass}, immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+BG-HILBERT-THM-007 supplies the common-power equalities when both fields are pointwise
+unitary conjugates of one parent field.
+
+\section{Proof and boundary}
+BG-HILBERT-THM-006 gives $|C(X,Y)|\le\sqrt{P(X)}\sqrt{P(Y)}$. Substituting the common
+power gives $\sqrt\kappa\sqrt\kappa=\kappa$; nonnegativity of $\kappa$ follows from
+BG-HILBERT-THM-005.
+
+The theorem does not identify $X$ and $Y$ with the source's concrete $D_{i,\phi}$ and
+$B_i$, derive the scalar loss polynomial, or validate numerical data. Lean and pinned
+Mathlib report \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+No admission or scientific axiom is used. The proof and prose were AI-assisted and
+kernel-checked. No independent expert review is recorded. Status: \texttt{proved};
+working draft.
+\end{document}

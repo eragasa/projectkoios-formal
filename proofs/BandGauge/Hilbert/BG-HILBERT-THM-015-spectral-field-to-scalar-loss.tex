@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Spectral Residual-to-Scalar Loss Bridge}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-015} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoSpectralFieldLossSq_eq_rankTwoSpectralLossSq} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/SpectralLossBridge.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Under the assumptions of BG-HILBERT-THM-014, if the centered two-state field has
+weighted power $P(d)=\kappa$, then its source-normalized residual loss equals the
+existing reduced scalar spectral loss:
+\[
+ L_{\mathrm{field}}^2(s,\lambda)
+ =s^2+\kappa(\lambda-1)^2
+ =L_{\mathrm{spec}}^2(s,\lambda).
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the final spectral identity in Supplementary Section
+S1.1 and the exact spectral-loss formula near line 663 of the Paper A v3 manuscript.
+Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Substitute $P(d)=\kappa$ into BG-HILBERT-THM-014 and unfold the repository's reduced
+scalar spectral-loss definition.
+
+\section{Boundary and trusted base}
+This theorem bridges two repository definitions under explicit abstract hypotheses. It
+does not establish those hypotheses for scientific source data or certify numerical
+results. Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

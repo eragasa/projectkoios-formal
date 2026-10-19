@@ -30,6 +30,8 @@ Candidate work:
 - record namespace and declaration names before encoding.
 
 - `BG-PLAN-001`: declaration IDs and statuses are listed in `theorem-manifest.md`. Concrete paper loss formulas and certificate data remain open.
+- `BG-BLOCH-PLAN-001`: pointwise unitary sewing, sewn sections/operators, alignment pullback, an abstract periodic rank-two finite-sample interface, trace centering, and unitary common-power/correlation bridges and Hermiticity preservation are implemented. Construction from a periodic potential, quotient-torus, continuity/measurability, Hilbert-section, and integration contracts remain open.
+- `BG-HILBERT-PLAN-001`: exact two-ball geometry, finite rank-two weighted Frobenius algebra, operator and spectral residual expansions, and equalities with both reduced scalar losses are implemented. The Bloch layer supplies abstract sampled-parent infrastructure, and the Paper A module conditionally instantiates the exact operator fields, a canonical exact finite Hermitian spectral diagonalization, and a canonically extracted exact Pauli-coordinate correlation harmonic with continuous maximum. Construction from a periodic potential and binding to concrete publication data remain open.
 
 ## R2 — finite witness and rank-two algebra
 
@@ -40,7 +42,7 @@ Candidate theorem families:
 3. finite/discrete Fourier residual–locality identities; and
 4. an explicit spectral-projection support-loss example.
 
-`BG-PLAN-002` now includes the reduced scalar squared-loss and normalized-correlation definitions, the irreducible-floor and nonnegativity bounds, and the below-floor emptiness theorem. Derivation from matrix residuals, the matrix-level correlation inequality `|b| ≤ κ`, and ellipse geometry remain open.
+`BG-PLAN-002` now includes reduced scalar squared and real losses, normalized correlation, irreducible-floor and nonnegativity bounds, below-floor emptiness, square-root recovery, threshold equivalence, the operator radius, explicit ellipse conditions, the exact full-plane intersection criterion and Euclidean distance, explicit containment-based transfer to a closed candidate rectangle, the generic finite weighted Frobenius correlation inequality `|b| ≤ κ`, operator and spectral residual-to-scalar-loss bridges, abstract periodic sampled-parent infrastructure, conditional exact Paper A operator and canonical spectral-field bridges, and canonical exact Pauli extraction, continuous correlation-harmonic optimization with a canonical half-open maximizing angle, the reduced matrix-loss bridge centered at `μmax`, and canonical full-plane/candidate-rectangle admissible-set intersection and distance specializations. Construction from a periodic potential, concrete publication-data binding, and numerical verification remain open.
 
 Each declaration requires a source crosswalk and named axiom report.
 
@@ -48,6 +50,7 @@ Each declaration requires a source crosswalk and named axiom report.
 
 Candidate work:
 
+- quotient-torus or fundamental-domain representation compatible with the pointwise sewing contract;
 - torus measure and Fourier normalization;
 - Parseval/Plancherel specialization;
 - relation between onsite projection, global alignment, and nonzero Fourier weight; and

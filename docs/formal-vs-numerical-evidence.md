@@ -42,6 +42,37 @@ Current formal implications:
 - `BG-THM-011` — a supplied scalar correlation bound implies normalized magnitude at most one.
 - `BG-THM-012` — the normalized-correlation bound makes the irreducible floor nonnegative.
 - `BG-THM-013` — the reduced aligned-operator squared loss is nonnegative under the scalar bounds.
+- `BG-THM-014` — the reduced spectral squared loss is nonnegative for nonnegative curvature.
+- `BG-THM-015/016` — square-root real losses recover the corresponding squared formulas.
+- `BG-THM-017/018` — nonnegative real-loss budgets are equivalent to squared-loss budgets.
+- `BG-THM-019/021` — the spectral and aligned-operator sublevel conditions have explicit ellipse forms.
+- `BG-THM-020` — a nonnegative operator-radius radicand is recovered by squaring its radius.
+- `BG-THM-022/024/025` — the full ellipses intersect exactly under the scaled-center compatibility bound.
+- `BG-THM-023` — strict scaled center separation makes the full ellipses disjoint.
+- `BG-THM-026` — the exact full-plane criterion transfers to the reduced real-loss admissible sets.
+- `BG-THM-027/028` — the full-ellipse distance formula is a universal lower bound and is attained.
+- `BG-THM-029` — the full-ellipse admissible-set distance equals the closed formula.
+- `BG-THM-030` — the exact distance transfers to the reduced real-loss admissible sets.
+- `BG-THM-031/032` — supplied full-ellipse containment makes restriction to the declared candidate rectangle leave each ellipse unchanged.
+- `BG-THM-033/034` — under those containment premises, the rectangle-restricted ellipses retain the exact intersection criterion and distance formula.
+- `BG-BLOCH-THM-001` — a supplied sewn operator field preserves a supplied sewn section.
+- `BG-BLOCH-THM-002` — a supplied sewing-compatible unitary alignment preserves operator covariance.
+- `BG-BLOCH-THM-003/004` — half-trace centering makes the abstract retained Bloch matrix and its finite sampled field pointwise traceless.
+- `BG-BLOCH-THM-005/006` — supplied unitary conjugation preserves pointwise tracelessness and weighted Frobenius power.
+- `BG-BLOCH-THM-007/008` — two supplied unitary fields of one sampled centered parent have common power and correlation magnitude at most that power.
+- `BG-RAGASA2026A-THM-001/002/003` — under the exact conditional Paper A contract, the globally real-rotated candidate and momentum-dependently aligned comparison fields are traceless, have common power, and satisfy `|bφ| ≤ κ`.
+- `BG-RAGASA2026A-THM-004` — under the same contract and `0 < κ`, the exact finite operator matrix residual equals the reduced scalar aligned-operator loss.
+- `BG-RAGASA2026A-THM-005/006/007` — a supplied exact real unitary diagonalization witness yields centered spectral deviations, equality of spectral and parent Frobenius power, and the reduced scalar spectral loss.
+- `BG-RAGASA2026A-THM-018/019/020` — the finite-dimensional Hermitian spectral theorem constructs that exact decomposition canonically, so no external eigensolver output is trusted implicitly; this noncomputable existence result supplies no numerical eigenvalue certificate.
+- `BG-RAGASA2026A-THM-008` through `BG-RAGASA2026A-THM-017` — exact Pauli coordinates, canonically extracted from the Hermitian traceless fields, yield the source second harmonic, its exact continuous maximum and canonical half-open maximizing angle, `|bmax/κ| ≤ 1`, and the finite matrix loss centered at `μmax`; no numerical coefficient extraction or degeneracy decision is trusted implicitly.
+- `BG-RAGASA2026A-THM-021` through `BG-RAGASA2026A-THM-026` — the actual canonical Paper A losses inherit the proved ellipse intersection and exact-distance formulas; candidate-rectangle results require explicit full-ellipse containment, whose concrete numerical verification remains external.
+- `BG-HILBERT-THM-001` — two nonnegative-radius Hilbert balls intersect exactly when their center distance is at most the radius sum.
+- `BG-HILBERT-THM-002/003/004` — the center-gap formula is a universal lower bound, is attained, and equals the real admissible-set distance.
+- `BG-HILBERT-THM-005/006` — the finite weighted rank-two Frobenius residual is nonnegative and its real correlation satisfies Cauchy–Schwarz.
+- `BG-HILBERT-THM-007/008` — pointwise unitary conjugation preserves weighted Frobenius power, and equal power `κ` bounds correlation magnitude by `κ`.
+- `BG-HILBERT-THM-009/010` — weighted Frobenius power obeys real polarization, and pointwise traceless fields are orthogonal to the identity field.
+- `BG-HILBERT-THM-011/012/013` — the abstract finite operator matrix residual expands exactly, specializes to the common-power quadratic, and equals the existing reduced scalar aligned-operator loss.
+- `BG-HILBERT-THM-014/015` — the abstract centered two-state spectral residual expands exactly and equals the existing reduced scalar spectral loss when its weighted power is `κ`.
 
 These theorems do not define the scientific loss sublevel sets, produce a runtime witness, or validate a numerical lower bound. An exact checked certificate must connect runtime output to their hypotheses.
 

@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Spectral Square-Root Recovery}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-015} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoSpectralLoss_sq} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and source}
+With $\kappa\ge0$ and
+$L_{\mathrm{spec}}(p)=\sqrt{L_{\mathrm{spec}}^2(p)}$,
+\[
+ L_{\mathrm{spec}}(p)^2=L_{\mathrm{spec}}^2(p).
+\]
+This \texttt{formalizes} the bridge between loss and squared-loss notation in the
+exact-loss-geometry theorem of \path{ksdft2effmass}. The immutable source commit is
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+The source path is
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Later owner worktree changes are excluded.
+
+\section{Proof}
+BG-THM-014 establishes that the square-root argument is nonnegative. The standard
+identity $(\sqrt{x})^2=x$ then gives the result.
+\begin{lstlisting}
+theorem rankTwoSpectralLoss_sq
+    {κ : ℝ} (hκ : 0 ≤ κ) (p : RankTwoParameter) :
+    rankTwoSpectralLoss κ p ^ 2 = rankTwoSpectralLossSq κ p
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The result is elementary and not novel. It does not derive the reduced loss formula from
+matrix residuals. Lean \texttt{v4.35.0} with Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+reports \texttt{[propext, Classical.choice, Quot.sound]}. There is no \texttt{sorry},
+\texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No concrete loss or numerical evidence is validated. No independent expert mathematical
+or physical review is recorded. On 18 October 2026, repository checks passed. Status:
+\texttt{proved}; working draft.
+\end{document}

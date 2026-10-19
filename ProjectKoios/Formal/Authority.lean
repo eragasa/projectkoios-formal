@@ -32,4 +32,17 @@ structure PublicationPlaceholder where
   warning : String
   deriving Repr
 
+/-- Auditable aggregate status for a partially or fully formalized publication crosswalk.
+A positive formal statement count does not imply a proved scientific or numerical claim. -/
+structure PublicationFormalizationSummary where
+  sourceKey : String
+  sourcePath : String
+  inspectedRevision : String
+  status : FormalizationStatus
+  formalStatementCount : Nat
+  provedScientificTheoremCount : Nat
+  checkedCertificateCount : Nat
+  warning : String
+  deriving Repr
+
 end ProjectKoios.Formal

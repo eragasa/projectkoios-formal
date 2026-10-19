@@ -1,0 +1,51 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Hilbert-Ball Distance Attainment}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-003} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.exists_hilbertBallDistance_eq_dist} \\
+Owning module & \path{ProjectKoios/BandGauge/Hilbert/AdmissibleBalls.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For nonnegative radii there exist $x\in B(c_1,r_1)$ and $y\in B(c_2,r_2)$ satisfying
+\[
+ d(x,y)=\max\{0,d(c_1,c_2)-r_1-r_2\}.
+\]
+
+\section{Source and scope}
+This is classical normed-space geometry. The motivating owner source is
+\path{ksdft2effmass} at immutable commit
+\begin{center}
+\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.
+\end{center}
+The finite weighted Frobenius loss appears in the Paper A v3 manuscript, lines
+575--601, at \path{docs/publications/papers/Ragasa2026a/v3/}\path{manuscript.tex}.
+The relationship is \texttt{background-only}.
+
+\section{Proof}
+If the balls intersect, a common point attains distance zero. Otherwise let
+$d=d(c_1,c_2)>r_1+r_2$. On the center line choose parameters $r_1/d$ and $1-r_2/d$.
+The resulting points lie on the respective ball boundaries, and their parameter gap
+times $d$ is $d-r_1-r_2$, the positive branch of the formula.
+
+\section{Boundary and trusted base}
+The theorem establishes geometric attainment only. It does not establish that a paper
+loss is induced by this Hilbert norm or that scientific residual data satisfy its
+hypotheses. Lean and pinned Mathlib report
+\texttt{[propext, Classical.choice, Quot.sound]}; no admission or scientific axiom is
+used. The proof and prose were AI-generated or AI-assisted and kernel-checked. No
+independent expert review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Unitary Conjugation Preserves Tracelessness}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-005} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.trace_unitaryConjugateRankTwoField_eq_zero} \\
+Module & \path{ProjectKoios/BandGauge/Bloch/PeriodicRankTwo.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and proof}
+If $\operatorname{tr}D_i=0$ and $U_i$ is unitary, then
+\[
+ \operatorname{tr}(U_i^\dagger D_iU_i)=0.
+\]
+Cyclicity of the finite matrix trace moves $U_i$ next to $U_i^\dagger$; unitarity reduces
+their product to the identity.
+
+\section{Source boundary}
+This standard supporting theorem has a \texttt{background-only} relation to the tracelessness inherited by the aligned fields in
+lines 612--624 of the Ragasa2026A v3 manuscript. Owner: \path{ksdft2effmass}; immutable
+commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Unitary trace invariance is not a paper-contribution or novelty claim. The unitary field is a hypothesis, not a constructed or numerically checked alignment.
+
+\section{Trusted base}
+Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

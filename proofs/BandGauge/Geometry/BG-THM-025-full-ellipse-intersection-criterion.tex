@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {↔}{{$\leftrightarrow$}}1 {ℝ}{{$\mathbb R$}}1 {∈}{{$\in$}}1 {∩}{{$\cap$}}1}
+\title{Proof Dossier: Exact Full-Ellipse Intersection Criterion}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-025} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoFullEllipses_inter_nonempty_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For $\kappa>0$ and nonnegative radii,
+\[
+ \mathcal E_s\cap\mathcal E_o\ne\varnothing
+ \quad\Longleftrightarrow\quad
+ \sqrt\kappa\,|1-\mu|\le\tau_s+r.
+\]
+
+\section{Source provenance}
+This declaration \texttt{formalizes} the full-ellipse intersection clause. The source
+owner is \path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Locator: Eq. \texttt{exact-intersection}. Later owner worktree changes are excluded.
+
+\section{Proof}
+BG-THM-022 proves necessity. BG-THM-024 constructs a common point from the compatibility
+inequality, proving sufficiency.
+
+\begin{lstlisting}
+theorem rankTwoFullEllipses_inter_nonempty_iff
+    {κ μ spectralBudget operatorRadius : ℝ}
+    (hκ : 0 < κ) (hSpectralBudget : 0 ≤ spectralBudget)
+    (hOperatorRadius : 0 ≤ operatorRadius) :
+    (rankTwoFullSpectralEllipse κ spectralBudget ∩
+      rankTwoFullOperatorEllipse κ μ operatorRadius).Nonempty ↔
+      Real.sqrt κ * |1 - μ| ≤ spectralBudget + operatorRadius
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The theorem is classical and not novel. It applies to full ellipses. Transfer to a bounded
+candidate rectangle requires a separate containment premise. Lean \texttt{v4.35.0} and
+pinned Mathlib report \texttt{[propext, Classical.choice, Quot.sound]}; no admission or
+scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No rectangle containment, exact distance, or numerical evidence is validated. No
+independent expert review is recorded. On 18 October 2026, repository checks passed.
+Status: \texttt{proved}; working draft.
+\end{document}

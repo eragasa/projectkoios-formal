@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Exact Reduced Real-Loss Distance}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-030} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoLossAdmissibleSetDist_eq} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Assume $\kappa>0$, $|\mu|\le1$, nonnegative budgets, a nonnegative operator-radius
+radicand, and nonempty reduced real-loss admissible sets. Their distance equals
+\[
+ \max\left\{0,|1-\mu|-\frac{\tau_s+r_*}{\sqrt\kappa}\right\}.
+\]
+
+\section{Source provenance}
+This is the reduced real-loss specialization of Eq. \texttt{exact-distance}. Its relation
+is \texttt{formalizes}. The source owner is \path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Later owner worktree changes are excluded.
+
+\section{Proof}
+BG-THM-019 and BG-THM-021 identify the two real-loss sublevel sets with the full
+ellipses. BG-THM-029 then supplies the exact distance with the operator radius from
+BG-DEF-011.
+
+\section{Boundary and trusted base}
+The theorem is classical and not novel. It is a full-plane result; use for a bounded
+candidate domain requires the source's containment premise. Lean and pinned Mathlib give
+\begin{center}\texttt{[propext, Classical.choice, Quot.sound]}\end{center}
+No admission or scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No matrix derivation, scientific budget, rectangle containment, or numerical distance is
+validated. No independent expert review is recorded. On 18 October 2026, repository
+checks passed. Status: \texttt{proved}; working draft.
+\end{document}

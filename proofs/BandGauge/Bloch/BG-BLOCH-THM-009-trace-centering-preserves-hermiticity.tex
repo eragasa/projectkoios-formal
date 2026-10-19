@@ -1,0 +1,17 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Trace Centering Preserves Hermiticity}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-BLOCH-THM-009}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Bloch.centeredBlochMatrix_conjTranspose_eq_self}}.
+\section{Statement and proof}
+If the retained rank-two Hamiltonian matrix $H$ is Hermitian, then
+$H-\tfrac12\operatorname{tr}(H)I$ is Hermitian. The proof derives that the trace is real
+from $H^\dagger=H$ and then expands the conjugate transpose.
+\section{Boundary}
+This is standard supporting algebra on the abstract sampled interface, not a
+Bloch--Floquet construction. Kernel axioms: \texttt{propext},
+\texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and
+kernel-checked; no independent expert review recorded.
+\end{document}

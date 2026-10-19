@@ -1,0 +1,17 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Pauli Frobenius Correlation}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOUNDATION-THM-004}; status \texttt{proved}. Lean declaration:
+\par\noindent {\scriptsize\path{ProjectKoios.BandGauge.Foundations.rankTwoPauliMatrix_frobeniusCorrelation}}.
+\section{Statement and proof}
+For real Pauli coordinates,
+\[\operatorname{Re}\sum_{m,n}\overline{D_{mn}}B_{mn}
+  =2(xX+yY+zZ).\]
+The proof expands all four complex matrix entries and normalizes the resulting polynomial.
+\section{Boundary}
+This is standard supporting matrix algebra. Kernel-reported axioms: \texttt{propext},
+\texttt{Classical.choice}, \texttt{Quot.sound}. No admissions or scientific axioms.
+AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

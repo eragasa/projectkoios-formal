@@ -1,0 +1,20 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Canonical Spectral Field Is Centered}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-018}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.canonicalSpectralSplittingField_centered}}.
+\section{Exact statement}
+The real eigenvalues selected by the finite-dimensional Hermitian spectral theorem obey
+$d_{i,0}+d_{i,1}=0$ at every sampled coordinate.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} spectral centering used in manuscript lines 489--501 and 565--574
+at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The exact spectral theorem supplies the unitary witness and the existing trace argument
+proves centering. This is noncomputable existence, not a numerical eigensolver or
+certificate. Kernel axioms: \texttt{propext}, \texttt{Classical.choice},
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert
+review recorded.
+\end{document}

@@ -1,0 +1,53 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Hilbert-Ball Intersection Criterion}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-001} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.hilbertAdmissibleBalls_inter_nonempty_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Hilbert/AdmissibleBalls.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For centers $c_1,c_2$ in a real Hilbert space and radii $r_1,r_2\ge0$,
+\[
+ B(c_1,r_1)\cap B(c_2,r_2)\ne\varnothing
+ \quad\Longleftrightarrow\quad
+ d(c_1,c_2)\le r_1+r_2.
+\]
+
+\section{Source and scope}
+This is classical normed-space geometry. The motivating owner source is
+\path{ksdft2effmass} at immutable commit
+\begin{center}
+\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.
+\end{center}
+The finite weighted Frobenius loss appears in the Paper A v3 manuscript, lines
+575--601. Its repository path is
+\path{docs/publications/papers/Ragasa2026a/v3/}\path{manuscript.tex}. The relationship
+is \texttt{background-only}; this theorem does not formalize that loss.
+
+\section{Proof}
+A common point gives the forward inequality by the triangle inequality. Conversely, if
+$c_2$ already lies in the first ball, use $c_2$. Otherwise choose the point at fraction
+$r_1/d(c_1,c_2)$ along the line from $c_1$ to $c_2$. Its distances from the centers are
+$r_1$ and $d(c_1,c_2)-r_1\le r_2$.
+
+\section{Boundary and trusted base}
+No matrix representation, Frobenius weights, Bloch boundary condition, operator norm,
+or numerical claim is present. The Lean axiom report contains \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or scientific axiom is
+used. The proof and prose were AI-assisted and kernel-checked. No independent expert
+review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

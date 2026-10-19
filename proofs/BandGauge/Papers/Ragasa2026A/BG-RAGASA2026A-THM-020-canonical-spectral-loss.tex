@@ -1,0 +1,19 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Canonical Spectral Loss}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-020}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.canonicalSpectralFieldLossSq_eq_spectralLossSq}}.
+\section{Exact statement}
+If the sampled centered parent has weighted power $\kappa$, its canonical real spectral
+field has exact residual loss
+\[L_{\mathrm{spec}}^2(s,\lambda)=s^2+\kappa(\lambda-1)^2.\]
+\section{Source, proof, and boundary}
+This \texttt{formalizes} manuscript lines 565--574 and 667--669 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+It specializes the previously proved exact-witness bridge to the canonical Hermitian
+spectral decomposition. Parent power and concrete matrices remain external. Kernel
+axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

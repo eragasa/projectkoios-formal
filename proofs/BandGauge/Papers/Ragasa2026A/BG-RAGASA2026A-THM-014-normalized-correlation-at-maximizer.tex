@@ -1,0 +1,19 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Normalized Correlation at the Maximizer}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-014}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.normalizedOperatorCorrelation_maximizingAngle}}.
+\section{Exact statement}
+At the canonical maximizing angle,
+\[\frac{b_{\phi_*}}{\kappa}=\frac{b_{\max}}{\kappa}=\mu_{\max}.\]
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the identification used in manuscript lines 645--655 at owner
+commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof rewrites maximum attainment. It does not validate $\kappa$, Pauli coefficients,
+or publication data. Kernel axioms: \texttt{propext}, \texttt{Classical.choice},
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert
+review recorded.
+\end{document}

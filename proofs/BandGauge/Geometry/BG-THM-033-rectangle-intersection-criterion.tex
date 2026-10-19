@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Candidate-Rectangle Intersection Criterion}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-033} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoEllipsesInRectangle_inter_nonempty_iff} \\
+Module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Suppose $\kappa>0$, both radii are nonnegative, and each full ellipse is contained in
+the declared candidate rectangle $X$. The rectangle-restricted ellipses intersect if and
+only if
+\[
+ \sqrt{\kappa}\,|1-\mu|\le \tau_s+r.
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the intersection clause of ``Compatibility and exact
+full-ellipse distance'' at lines 737--773 of the Ragasa2026A v3 manuscript. Owner:
+\path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+BG-THM-031 and BG-THM-032 identify both restricted ellipses with their full ellipses.
+BG-THM-025 then supplies the exact full-ellipse criterion.
+
+\section{Boundary and trusted base}
+Containment is supplied, not numerically verified. No formula is asserted for failed
+containment or implicitly clipped ellipses. Lean and pinned Mathlib report
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or
+scientific axiom is used. The proof and prose were AI-assisted and kernel-checked. No
+independent expert review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Weighted Frobenius Cauchy--Schwarz}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-006} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.abs_rankTwoWeightedFrobeniusCorrelation_le} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/WeightedFrobenius.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Write $P(X)$ for the source-normalized weighted Frobenius power and
+\[
+ C(X,Y)=\sum_i\frac{\alpha_i}{2E_{\mathrm{ref}}^2}
+   \sum_{m,n}\operatorname{Re}\!\left(\overline{X_i(m,n)}Y_i(m,n)\right).
+\]
+For nonnegative weights and $E_{\mathrm{ref}}\ne0$,
+\[
+ |C(X,Y)|\le\sqrt{P(X)}\sqrt{P(Y)}.
+\]
+
+\section{Source and relationship}
+This theorem \texttt{adapts} the Frobenius correlation at lines 606--625 of the Paper A
+v3 manuscript in \path{ksdft2effmass}, immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The explicit entry correlation equals the real part of the source trace expression.
+
+\section{Proof and boundary}
+Embed both fields in the finite complex Euclidean space obtained by multiplying each
+entry by the square root of its weight coefficient. The correlation is the real part of
+the complex inner product. Its absolute value is bounded first by the complex norm and
+then by Cauchy--Schwarz. The two vector norms are the square roots of $P(X)$ and $P(Y)$.
+No bounded-operator norm or continuum section space is used.
+
+Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

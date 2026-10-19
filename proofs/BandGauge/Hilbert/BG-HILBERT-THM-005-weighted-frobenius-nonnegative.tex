@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Weighted Frobenius Nonnegativity}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-005} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoWeightedFrobeniusSq_nonneg} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/WeightedFrobenius.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For a finite rank-two matrix field $X$, nonnegative weights $\alpha_i$, and
+$E_{\mathrm{ref}}\ne0$,
+\[
+ 0\le \sum_i\frac{\alpha_i}{2E_{\mathrm{ref}}^2}
+       \sum_{m,n}|X_i(m,n)|^2.
+\]
+
+\section{Source and relationship}
+The coefficient and Frobenius entry sum \texttt{formalize} equations near lines 575--604
+of the Paper A v3 manuscript in \path{ksdft2effmass}, immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The source assumes strictly positive normalized weights and positive reference energy;
+the theorem uses only the weaker assumptions required by the inequality.
+
+\section{Proof and boundary}
+Scale every matrix entry by the square root of its nonnegative coefficient and place the
+entries in a finite complex Euclidean space. The displayed sum is the squared norm of
+that vector, hence is nonnegative. This does not identify $X$ with a scientific dataset
+or derive the paper's complete operator-loss polynomial.
+
+Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

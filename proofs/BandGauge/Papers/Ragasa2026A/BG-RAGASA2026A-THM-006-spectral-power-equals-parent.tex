@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Ragasa2026A Spectral Power Equals Parent Power}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-RAGASA2026A-THM-006} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Papers.Ragasa2026A.spectralSplittingField_power_eq_parent} \\
+Module & \path{ProjectKoios/BandGauge/Papers/Ragasa2026A/RankTwoFields.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For the exact finite diagonalization witness,
+\[
+ \sum_i\frac{\alpha_i}{2E_{\mathrm{ref}}^2}
+   \sum_n d_{i,n}^2
+ =
+ \sum_i\frac{\alpha_i}{2E_{\mathrm{ref}}^2}
+   \lVert D(q_i)\rVert_F^2.
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the common spectral/operator power identification used
+in manuscript lines 603--610 and Supplementary Section S1.1 at immutable
+\path{ksdft2effmass} commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The Frobenius entry sum of the real diagonal matrix is $d_{i,0}^2+d_{i,1}^2$.
+BG-BLOCH-THM-006 transfers that power through the unitary diagonalization.
+
+\section{Boundary and trusted base}
+No numerical eigenvalue or matrix is supplied. The identity is symmetric in the two
+spectral labels and requires no ordering. Lean and pinned Mathlib report
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or
+scientific axiom is used. AI-assisted and kernel-checked; no independent expert review
+is recorded. Status: \texttt{proved}; working draft.
+\end{document}

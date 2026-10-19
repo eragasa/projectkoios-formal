@@ -1,0 +1,52 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Hilbert-Ball Distance Lower Bound}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-002} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.hilbertBallDistance_le_dist_of_mem} \\
+Owning module & \path{ProjectKoios/BandGauge/Hilbert/AdmissibleBalls.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+If $x\in B(c_1,r_1)$ and $y\in B(c_2,r_2)$, then
+\[
+ \max\{0,d(c_1,c_2)-r_1-r_2\}\le d(x,y).
+\]
+No radius-sign premise is needed for this direction; membership supplies the required
+bounds.
+
+\section{Source and scope}
+This is classical metric geometry. The motivating owner source is
+\path{ksdft2effmass} at immutable commit
+\begin{center}
+\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.
+\end{center}
+The finite weighted Frobenius loss appears in the Paper A v3 manuscript, lines
+575--601, at \path{docs/publications/papers/Ragasa2026a/v3/}\path{manuscript.tex}.
+The relationship is \texttt{background-only}; no paper-loss equality is asserted.
+
+\section{Proof}
+The triangle inequality gives
+$d(c_1,c_2)\le d(c_1,x)+d(x,y)+d(y,c_2)$. Membership bounds the first and last terms by
+$r_1$ and $r_2$. Rearrangement gives the center-gap bound, while nonnegativity of distance
+gives the zero branch of the maximum.
+
+\section{Boundary and trusted base}
+The theorem does not choose a matrix norm, operator family, Bloch section space, or
+numerical residual. Lean and pinned Mathlib report
+\texttt{[propext, Classical.choice, Quot.sound]}; no admission or scientific axiom is
+used. The proof and prose were AI-generated or AI-assisted and kernel-checked. No
+independent expert review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

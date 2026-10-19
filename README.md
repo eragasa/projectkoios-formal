@@ -6,7 +6,7 @@ Minimal Lean/Lake harness for reusable Project Koios formalization.
 - harness namespace: `ProjectKoios.Formal`
 - initial scientific namespace: `ProjectKoios.BandGauge`
 
-The tree contains a non-scientific smoke theorem, proved generic admissible-set theorems, and metadata-only publication placeholders. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). It contains **no paper-specific model theorem, checked scientific certificate, numerical result, release, or scientific validation claim**.
+The tree contains a non-scientific smoke theorem, proved reusable foundations, partial conditional Ragasa2026A rank-two field, spectral, correlation-harmonic, and optimized admissible-set geometry bridges, and metadata-only placeholders for the other publication modules. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). It contains **no proved scientific theorem, checked scientific certificate, numerical result, release, or scientific validation claim**.
 
 ## Authority boundaries
 

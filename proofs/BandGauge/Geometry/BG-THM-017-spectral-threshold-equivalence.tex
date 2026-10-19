@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {↔}{{$\leftrightarrow$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Spectral Threshold Equivalence}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-017} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoSpectralLoss_le_iff_sq_le_sq} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and source}
+If $\kappa\ge0$ and $\tau_s\ge0$, then
+\[
+ L_{\mathrm{spec}}(p)\le\tau_s
+ \quad\Longleftrightarrow\quad
+ L_{\mathrm{spec}}^2(p)\le\tau_s^2.
+\]
+This \texttt{formalizes} the equivalence used between the exact spectral quadratic and
+its admissible loss sublevel set in \path{ksdft2effmass}. The immutable source commit is
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+The source path is
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Later owner worktree changes are excluded.
+
+\section{Proof}
+Both the square-root loss and the budget are nonnegative. Squaring is therefore
+order-preserving and order-reflecting. BG-THM-015 replaces the square of the real loss by
+the reduced squared-loss formula.
+\begin{lstlisting}
+theorem rankTwoSpectralLoss_le_iff_sq_le_sq
+    {κ spectralBudget : ℝ} (hκ : 0 ≤ κ)
+    (hBudget : 0 ≤ spectralBudget) (p : RankTwoParameter) :
+    rankTwoSpectralLoss κ p ≤ spectralBudget ↔
+      rankTwoSpectralLossSq κ p ≤ spectralBudget ^ 2
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The proof is elementary and not novel. It requires a nonnegative scientific budget and
+does not choose its value. Lean \texttt{v4.35.0} with Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+reports \texttt{[propext, Classical.choice, Quot.sound]}. There is no \texttt{sorry},
+\texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No concrete budget, loss derivation, or numerical evidence is validated. No independent
+expert mathematical or physical review is recorded. On 18 October 2026, repository
+checks passed. Status: \texttt{proved}; working draft.
+\end{document}

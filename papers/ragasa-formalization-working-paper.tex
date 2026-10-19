@@ -182,19 +182,82 @@ sublevel sets on one candidate domain. BG-THM-007 turns joint loss bounds into z
 distance. BG-THM-008 turns certified positive separation into nonexistence of a jointly
 admissible candidate.
 
-\paragraph{BG-DEF-005--008 and BG-THM-009--013: reduced rank-two loss and correlation bounds.}
+\paragraph{BG-DEF-005--017 and BG-THM-009--034: reduced rank-two loss and ellipse geometry.}
 BG-DEF-005 uses the Euclidean shift/splitting-scale plane. BG-DEF-006 and BG-DEF-007
 encode the published reduced scalar squared-loss formulas. BG-THM-009 proves the
 operator-loss floor for nonnegative curvature, and BG-THM-010 proves that a squared
 budget strictly below that floor makes the operator admissible set empty. BG-DEF-008 and
 BG-THM-011 isolate the scalar normalization step from the still-external matrix
-correlation bound. BG-THM-012/013 prove floor and squared-loss nonnegativity.
+correlation bound. BG-THM-012--014 prove floor and squared-loss nonnegativity.
+BG-DEF-009/010 expose nonnegative real losses, while BG-THM-015--018 prove
+square-root recovery and equivalence between real-loss and squared-loss thresholds.
+BG-DEF-011 and BG-THM-019--021 expose the operator radius and the explicit spectral and
+operator ellipse inequalities. BG-DEF-012/013 and BG-THM-022--026 prove the necessary,
+strict-separation, constructive-sufficiency, exact full-ellipse, and reduced real-loss
+intersection criteria. BG-DEF-014 and BG-THM-027--030 prove the pairwise lower bound,
+constructive attainment, exact full-ellipse distance, and reduced real-loss distance.
+BG-DEF-015--017 define the closed candidate rectangle and its restricted ellipses.
+BG-THM-031--034 prove that explicit containment makes restriction leave both ellipses,
+their intersection criterion, and their exact distance unchanged. Failed containment is
+not assigned an implicit clipped-ellipse formula.
 
-All theorem declarations have status \texttt{proved} in the module
-\begin{center}
-\path{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean}.
-\end{center}
-Their draft individual dossiers record source locators, statement deltas, proof
+\paragraph{BG-BLOCH-DEF-001--011 and BG-BLOCH-THM-001--011: pointwise sewing and finite samples.}
+As supporting library infrastructure, rather than a Paper A--C contribution, the Bloch
+layer defines a unitary reciprocal-group cocycle, sewn sections and operator fields,
+sewing-compatible alignments, and aligned operator pullback. It also defines an abstract
+sewn Hermitian rank-two Hamiltonian with a finite normalized weighted sample, its
+trace-centered matrix field, and source-oriented unitary conjugation. The proved results
+establish covariance preservation, tracelessness, unitary power invariance, common
+power, and the correlation bound. These standard linear-algebraic and solid-state
+interfaces carry no novelty claim. This is an interface rather than a Bloch--Floquet
+construction from a periodic potential. Regularity, quotient-torus,
+Hilbert-section, and integration structures remain open.
+
+\paragraph{BG-HILBERT-DEF-001/002 and BG-HILBERT-THM-001--004: residual-ball geometry.}
+The Hilbert layer defines closed residual-budget balls and the nonnegative center-gap
+formula. It proves the exact intersection criterion, the universal pairwise lower bound,
+explicit center-line attainment, and equality with the real admissible-set distance.
+This is classical geometry intended for finite weighted Frobenius instantiation.
+
+\paragraph{BG-HILBERT-DEF-003--005 and BG-HILBERT-THM-005--008: weighted Frobenius algebra.}
+The finite retained-rank-two layer freezes the source coefficient
+$\alpha_i/(2E_{\mathrm{ref}}^2)$, defines the entrywise squared Frobenius residual and
+real Frobenius correlation, and proves nonnegativity and weighted Cauchy--Schwarz.
+It also proves that pointwise unitary conjugation preserves weighted Frobenius power and
+that two fields of common power $\kappa$ have correlation magnitude at most $\kappa$.
+BG-HILBERT-DEF-006--008 and BG-HILBERT-THM-009--013 add polarization,
+traceless--identity orthogonality, the exact operator matrix-residual expansion, its
+common-power quadratic, and equality with the reduced scalar aligned-operator loss.
+BG-HILBERT-DEF-009--012 and BG-HILBERT-THM-014--015 likewise derive the
+centered two-state spectral residual and identify it with the reduced scalar spectral
+loss. BG-BLOCH-THM-003--011 provide abstract sampled centered-parent, Hermiticity, and unitary-field
+infrastructure. BG-RAGASA2026A-DEF-001--004 then impose the source's strict-positive
+weights, global standard real rotation, momentum-dependent comparison alignment, and
+exact $b_\phi$. BG-RAGASA2026A-THM-001--004 prove tracelessness, common power,
+$|b_\phi|\le\kappa$, and the conditional exact operator matrix-to-scalar loss bridge.
+BG-RAGASA2026A-DEF-005/006 and BG-RAGASA2026A-THM-005--007 define an exact finite
+unitary diagonalization witness, prove centered real spectral deviations and equality of
+spectral and parent Frobenius power, and obtain the scalar spectral loss.
+BG-RAGASA2026A-DEF-015 and BG-RAGASA2026A-THM-018--020 construct and instantiate that
+witness canonically using the finite-dimensional Hermitian spectral theorem. This is a
+noncomputable exact existence result, not a floating-point eigensolver or numerical
+eigenvalue certificate.
+BG-FOUNDATION-DEF-002--009 and BG-FOUNDATION-THM-001--007 provide the standard Pauli
+and second-harmonic infrastructure. BG-RAGASA2026A-DEF-007--014 and
+BG-RAGASA2026A-THM-008--017 then derive the exact source coefficients,
+$b_\phi=b_0+c\cos(2\phi)+d\sin(2\phi)$, the greatest value
+$b_0+\sqrt{c^2+d^2}$, a canonical maximizer in $[-\pi/2,\pi/2)$, and
+$|b_{\max}/\kappa|\le1$, and the exact finite matrix loss centered at
+$\mu_{\max}=b_{\max}/\kappa$. The Pauli coordinates are extracted canonically from the
+proved Hermitian traceless matrices rather than supplied as an external witness.
+BG-RAGASA2026A-DEF-016--021 and BG-RAGASA2026A-THM-021--026 then instantiate the
+canonical real losses, their full-plane admissible-set intersection and exact distance,
+and their candidate-rectangle transfer under explicit full-ellipse containment.
+Construction from a periodic potential and identification with
+concrete publication data remain open.
+
+The declaration statuses and owning modules are recorded in
+\path{docs/theorem-manifest.md}. Their draft individual dossiers record source locators, statement deltas, proof
 schematics, axiom reports, and AI provenance. They do not produce a numerical witness or
 certificate.
 
@@ -218,11 +281,22 @@ families:
  \item compact alignment attainment, transported-frame covariance, and excess.
 \end{itemize}
 
-BG-DEF-005 through BG-DEF-008 encode the Euclidean parameter plane, reduced scalar
-squared-loss formulas, and normalized correlation. BG-THM-009 through BG-THM-013 prove
-the lower-bound, below-floor emptiness, scalar normalization, and nonnegativity
-consequences. The matrix-residual derivation, the matrix-level $|b|\le\kappa$ inequality,
-and the remaining Paper A families remain open. Active rank-two numerical
+BG-DEF-005 through BG-DEF-017 encode the Euclidean parameter plane, reduced scalar
+squared and real loss formulas, normalized correlation, operator radius, full ellipses,
+the candidate rectangle, and their distance formula. BG-THM-009 through BG-THM-034
+prove lower-bound, emptiness, normalization, threshold, exact intersection, attainment,
+exact full-plane distance, and containment-based rectangle-transfer consequences.
+BG-HILBERT-THM-008 proves the generic finite weighted Frobenius inequality
+$|b|\le\kappa$ from common power. The paper-specific loss derivation depends on supporting BG-BLOCH-THM-003--011
+infrastructure. The thin BG-RAGASA2026A-DEF-001--021 and
+BG-RAGASA2026A-THM-001--026 layer fixes the source's strict-positive weights, literal
+global real rotation, momentum-dependent comparison field, correlation, conditional
+operator-loss equality, canonical exact finite Hermitian spectral and Pauli decompositions,
+the correlation harmonic with its continuous maximum and canonical half-open maximizing
+angle, and the full-plane and containment-gated rectangle admissible-set geometry. The standard infrastructure is not counted as a Paper A contribution, and the
+conditional bridges are not scientific-data validation. A construction from a periodic
+potential, identification with concrete publication data, and the remaining Paper A
+families remain open. Active rank-two numerical
 results remain external development evidence.
 
 \subsection{Ragasa2026B}
@@ -248,13 +322,17 @@ The current crosswalk covers the witness/separation proposition, exact D1 repres
 certificates, the D1 exterior-isolation and attack-angle derivations, and bounded
 historical M2/M3, rank-three, and Wannier90 records. The four generic mathematical
 clauses of the witness/separation proposition have status \texttt{proved}. BG-DEF-003/004
-and BG-THM-007/008 encode the threshold-defined loss-set logic. Concrete loss formulas,
-D1 analytic certificates, and all numerical campaign claims remain unproved or external
-here. A complete claim-level inventory is
+and BG-THM-007/008 encode the threshold-defined loss-set logic. BG-BLOCH-DEF-001--005
+and BG-BLOCH-THM-001/002 adapt the paper's periodic-frame and reciprocal-sewing
+requirements to an abstract pointwise group action. Concrete loss formulas, regularity
+and integration layers, D1 analytic certificates, and numerical campaign claims remain
+unproved or external here. A complete claim-level inventory is
 still required for exhaustive Paper C coverage.
 
 \section{Formalization and evidence matrix}
 
+\begingroup
+\small
 \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.18\textwidth}>{\raggedright\arraybackslash}p{0.23\textwidth}>{\raggedright\arraybackslash}X@{}}
 \toprule
 Family & Current status & Next formal obligation \\
@@ -268,7 +346,10 @@ Real/extended bridge & implemented/proved: BG-DEF-002/BG-THM-006 & concrete loss
 Threshold loss sets & implemented: BG-DEF-003/004 & concrete spectral and operator losses \\
 Joint threshold witness & proved: BG-THM-007 & exact or checked witness evidence \\
 Threshold separation & proved: BG-THM-008 & checked lower-bound certificate \\
-Rank-two scalar loss geometry & partially implemented/proved: BG-DEF-005--008 and BG-THM-009--013 & matrix-residual derivation, $|b|\le\kappa$, and ellipse geometry \\
+Rank-two scalar loss geometry & partially implemented/proved: BG-DEF-005--017, BG-THM-009--034, and BG-RAGASA2026A-DEF-001--021/THM-001--026 & concrete data and numerical containment verification \\
+Hilbert residual balls & implemented/proved: BG-HILBERT-DEF-001/002 and BG-HILBERT-THM-001--004 & paper-loss ball instantiation \\
+Finite residual algebra & implemented/proved: BG-HILBERT-DEF-003--012 and BG-HILBERT-THM-005--015 & periodic-potential and concrete scientific-data instantiation \\
+Bloch sewing and finite samples & implemented/proved: BG-BLOCH-DEF-001--011 and BG-BLOCH-THM-001--011 & periodic-potential construction, quotient torus, regularity, Hilbert sections, and integration \\
 Fourier/locality identities & planned & freeze discrete and continuum normalizations separately \\
 Projection support loss & planned & select an explicit finite witness \\
 Tail bounds & planned & establish special-function and shell conventions \\
@@ -276,6 +357,7 @@ Numerical claims & external & retain evidence and add exact checker boundaries w
 Physical interpretation & external & scientific review and hypothesis validation \\
 \bottomrule
 \end{tabularx}
+\endgroup
 
 \section{Prior art and citation status}
 

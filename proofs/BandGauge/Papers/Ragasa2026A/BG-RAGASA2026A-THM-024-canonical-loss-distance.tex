@@ -1,0 +1,21 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Canonical Loss-Set Distance}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-024}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{canonicalLossAdmissibleSetDist_eq}}.
+\section{Exact statement}
+For nonempty canonical loss sets, their Euclidean set distance is exactly the existing
+closed-form full-ellipse distance with center $\mu_{\max}$ and the derived operator
+radius.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the full-plane distance clause near manuscript line 737 at owner
+commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof transports the reusable exact-distance theorem across the two field-to-scalar
+loss equalities. Set nonemptiness is explicit; no numerical threshold is certified.
+Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions.
+\end{document}

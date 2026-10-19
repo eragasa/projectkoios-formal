@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Unitary Conjugation Preserves Frobenius Power}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-007} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoWeightedFrobeniusSq_unitary_conjugate} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/WeightedFrobenius.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For a finite rank-two matrix field $X_i$ and arbitrary unitary matrices $U_i$,
+\[
+ P\bigl(i\mapsto U_i^\dagger X_iU_i\bigr)=P(X),
+\]
+where $P$ is the source-normalized weighted Frobenius power. This algebraic equality does
+not require signs on the scalar coefficients.
+
+\section{Source and relationship}
+This theorem \texttt{adapts} the conjugated splitting fields and common power defined near
+lines 606--625 of the Paper A v3 manuscript in \path{ksdft2effmass}, immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+It is stated for complex unitary matrices, which includes the paper's real rotations.
+
+\section{Proof and boundary}
+For each coordinate, express squared Frobenius norm as
+$\operatorname{Re}\operatorname{tr}(A^\dagger A)$. Expand the conjugated product, cancel
+$U_iU_i^\dagger=I$, and cyclically move the remaining unitary factors through the trace.
+Thus every coordinate power is unchanged, so the weighted sum is unchanged.
+
+This proves algebraic invariance only; it does not validate any computed alignment or
+source matrix. Lean and pinned Mathlib report \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or scientific axiom is
+used. The proof and prose were AI-assisted and kernel-checked. No independent expert
+review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

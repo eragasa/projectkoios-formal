@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Spectral Rectangle-Containment Transfer}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-031} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoSpectralEllipseInRectangle_eq_full_of_subset} \\
+Module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and proof}
+Let $E_s$ be the full spectral ellipse and let $X$ be the declared closed candidate
+rectangle. If $E_s\subseteq X$, then
+\[
+ E_s\cap X=E_s.
+\]
+This is the elementary set identity that intersection with a containing set leaves the
+contained set unchanged.
+
+\section{Source boundary}
+This theorem \texttt{formalizes} the spectral containment premise in the corollary at
+lines 737--773 of the Ragasa2026A v3 manuscript. Owner: \path{ksdft2effmass}; immutable
+commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Containment is an explicit hypothesis; this theorem does not verify numerical coordinate
+extrema.
+
+\section{Trusted base}
+Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

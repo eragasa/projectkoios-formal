@@ -1,0 +1,43 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Ragasa2026A Spectral Field Is Centered}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-RAGASA2026A-THM-005} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Papers.Ragasa2026A.spectralSplittingField_centered} \\
+Module & \path{ProjectKoios/BandGauge/Papers/Ragasa2026A/RankTwoFields.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Given an exact finite unitary diagonalization
+\[
+ W_i^\dagger D(q_i)W_i=\operatorname{diag}(d_{i,0},d_{i,1}),
+ \qquad d_{i,n}\in\mathbb R,
+\]
+the spectral deviations satisfy $d_{i,0}+d_{i,1}=0$ for every $i$.
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the centered two-state splitting used in manuscript
+lines 489--501 and Supplementary Section S1.1 at immutable \path{ksdft2effmass} commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The centered parent is traceless; unitary conjugation preserves trace; the trace of the
+diagonal matrix is the sum of the two supplied real values.
+
+\section{Boundary and trusted base}
+The diagonalization is an exact witness, not an eigensolver implementation or floating-
+point record. No ordering, continuity, or band-isolation claim is made. Lean and pinned
+Mathlib report \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+No admission or scientific axiom is used. AI-assisted and kernel-checked; no independent
+expert review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

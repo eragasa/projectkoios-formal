@@ -1,0 +1,43 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Ragasa2026A Aligned Fields Are Traceless}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-RAGASA2026A-THM-001} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_traceless} \\
+Module & \path{ProjectKoios/BandGauge/Papers/Ragasa2026A/RankTwoFields.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For the exact conditional Paper A field contract,
+\[
+ D_{i,\phi}=R(\phi)^\dagger D(q_i)R(\phi),\qquad
+ B_i=U(q_i)^\dagger D(q_i)U(q_i)
+\]
+are traceless at every construction coordinate.
+
+\section{Source and proof}
+This theorem \texttt{formalizes} manuscript lines 489--496 and 612--624 at immutable
+\path{ksdft2effmass} commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Half-trace centering makes the parent traceless; cyclicity of trace and unitarity preserve
+that property under both conjugations.
+
+\section{Boundary and trusted base}
+The contract supplies the Bloch sample and comparison alignment. No periodic potential or
+scientific data are constructed. Lean and pinned Mathlib report \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or scientific axiom is
+used. AI-assisted and kernel-checked; no independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

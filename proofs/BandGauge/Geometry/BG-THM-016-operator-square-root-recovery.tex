@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Operator Square-Root Recovery}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-016} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoAlignedOperatorLoss_sq} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and source}
+If $\kappa\ge0$, $|\mu|\le1$, and
+$L_{\mathrm{op},\mu}(p)=\sqrt{L_{\mathrm{op},\mu}^2(p)}$, then
+\[
+ L_{\mathrm{op},\mu}(p)^2=L_{\mathrm{op},\mu}^2(p).
+\]
+This \texttt{formalizes} the loss/squared-loss bridge for the exact operator-loss formula
+in \path{ksdft2effmass}. The immutable source commit is
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+The source path is
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Later owner worktree changes are excluded.
+
+\section{Proof}
+BG-THM-013 establishes nonnegativity of the square-root argument. Applying
+$(\sqrt{x})^2=x$ proves the identity.
+\begin{lstlisting}
+theorem rankTwoAlignedOperatorLoss_sq
+    {κ μ : ℝ} (hκ : 0 ≤ κ) (hμ : |μ| ≤ 1)
+    (p : RankTwoParameter) :
+    rankTwoAlignedOperatorLoss κ μ p ^ 2 =
+      rankTwoAlignedOperatorLossSq κ μ p
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The result is elementary and not novel. It assumes the scalar formula and normalized
+correlation bound. Lean \texttt{v4.35.0} with Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+reports \texttt{[propext, Classical.choice, Quot.sound]}. There is no \texttt{sorry},
+\texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No matrix derivation, concrete correlation, or numerical evidence is validated. No
+independent expert mathematical or physical review is recorded. On 18 October 2026,
+repository checks passed. Status: \texttt{proved}; working draft.
+\end{document}

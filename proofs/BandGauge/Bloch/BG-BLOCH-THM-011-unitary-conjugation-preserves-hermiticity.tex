@@ -1,0 +1,16 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Unitary Conjugation Preserves Hermiticity}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-BLOCH-THM-011}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Bloch.unitaryConjugateRankTwoField_conjTranspose_eq_self}}.
+\section{Statement and proof}
+For a pointwise Hermitian field $D_i$ and unitary field $U_i$, every
+$U_i^\dagger D_iU_i$ is Hermitian. The proof reverses products under conjugate transpose
+and uses $D_i^\dagger=D_i$.
+\section{Boundary}
+This is standard supporting matrix algebra, with no continuity or concrete-data claim.
+Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no
+admissions. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

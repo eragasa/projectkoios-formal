@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Ragasa2026A Operator Matrix-to-Scalar Loss}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-RAGASA2026A-THM-004} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Papers.Ragasa2026A.operatorMatrixLossSq_eq_alignedOperatorLossSq} \\
+Module & \path{ProjectKoios/BandGauge/Papers/Ragasa2026A/RankTwoFields.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Under the exact conditional field contract, parent power $\kappa>0$, and
+$\mu_\phi=b_\phi/\kappa$, the finite matrix residual loss equals
+\[
+ s^2+\kappa(\lambda-\mu_\phi)^2+\kappa(1-\mu_\phi^2).
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the operator channel of ``Exact loss geometry'' near
+manuscript lines 663--684 and Supplementary Section S1.1 at immutable
+\path{ksdft2effmass} commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The preceding paper-specific theorems supply trace zero and common power. The correlation
+is definitionally $b_\phi$; BG-HILBERT-THM-013 completes the matrix-to-scalar bridge.
+
+\section{Boundary and trusted base}
+The theorem is conditional algebra, not a concrete scientific theorem. It validates no
+potential, matrix dataset, alignment calculation, or numerical threshold. Lean and
+pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. AI-assisted and
+kernel-checked; no independent expert review is recorded. Status: \texttt{proved};
+working draft.
+\end{document}

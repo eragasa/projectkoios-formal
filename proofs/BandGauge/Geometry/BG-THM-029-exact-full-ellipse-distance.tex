@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Exact Full-Ellipse Distance}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-029} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoFullEllipse_admissibleSetDist_eq} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For $\kappa>0$, nonnegative radii, and nonempty full ellipses,
+\[
+ \delta(\mathcal E_s,\mathcal E_o)=
+ \max\left\{0,|1-\mu|-\frac{\tau_s+r}{\sqrt\kappa}\right\},
+\]
+where $\delta$ is BG-DEF-002's real nonempty-set distance.
+
+\section{Source provenance}
+This declaration \texttt{formalizes} Eq. \texttt{exact-distance} for the full ellipses in
+\path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Later owner worktree changes are excluded.
+
+\section{Proof}
+BG-THM-027 bounds every feasible pair below by the formula. BG-THM-028 supplies a pair
+attaining it. These two inequalities identify BG-DEF-001's extended infimum; BG-THM-006's
+real representation then gives the displayed equality.
+
+\section{Boundary and trusted base}
+The theorem is classical and not novel. It concerns full ellipses in the Euclidean
+parameter plane. The paper's rectangle-containment transfer is separate. Lean and pinned
+Mathlib give \begin{center}\texttt{[propext, Classical.choice, Quot.sound]}\end{center}
+No admission or scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No concrete loss derivation, rectangle containment, or numerical result is validated. No
+independent expert review is recorded. On 18 October 2026, repository checks passed.
+Status: \texttt{proved}; working draft.
+\end{document}

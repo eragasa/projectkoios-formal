@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Spectral Squared-Loss Nonnegativity}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-014} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoSpectralLossSq_nonneg} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and source}
+For $p=(s,\lambda)$ and $\kappa\ge0$,
+\[
+ 0\le L_{\mathrm{spec}}^2(p)=s^2+\kappa(\lambda-1)^2.
+\]
+This \texttt{formalizes} a scalar consequence of the exact-loss-geometry theorem in
+\path{ksdft2effmass}. The immutable source commit is
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+The source path is
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Equation \texttt{exact-spectral-loss} is the exact locator. Later owner worktree changes
+are excluded.
+
+\section{Proof}
+Both squares are nonnegative, and multiplication by $\kappa\ge0$ preserves
+nonnegativity. Their sum is therefore nonnegative.
+\begin{lstlisting}
+theorem rankTwoSpectralLossSq_nonneg
+    {κ : ℝ} (hκ : 0 ≤ κ) (p : RankTwoParameter) :
+    0 ≤ rankTwoSpectralLossSq κ p
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The proof is elementary and not novel. It assumes the reduced scalar formula and does
+not derive it from matrix residuals. Lean \texttt{v4.35.0} with Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+reports \texttt{[propext, Classical.choice, Quot.sound]}. There is no \texttt{sorry},
+\texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No concrete loss, matrix derivation, or numerical evidence is validated. No independent
+expert mathematical or physical review is recorded. On 18 October 2026, repository
+checks passed. Status: \texttt{proved}; working draft.
+\end{document}

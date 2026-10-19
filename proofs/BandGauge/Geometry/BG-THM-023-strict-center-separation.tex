@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1 {∈}{{$\in$}}1 {∩}{{$\cap$}}1}
+\title{Proof Dossier: Strict Center Separation Implies Disjointness}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-023} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.disjoint_rankTwoFullEllipses_of_add_lt_sqrt_mul_abs_centerSeparation} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For $\kappa>0$ and nonnegative radii, if
+\[
+ \tau_s+r<\sqrt\kappa\,|1-\mu|,
+\]
+then the full spectral and operator ellipses are disjoint.
+
+\section{Source provenance}
+This \texttt{formalizes} the strict-separation direction. The source owner is
+\path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Locator: Eq. \texttt{exact-intersection}. Later owner worktree changes are excluded.
+
+\section{Proof}
+A common point would imply the opposite non-strict inequality by BG-THM-022. The strict
+separation premise therefore excludes every common point.
+
+\begin{lstlisting}
+theorem disjoint_rankTwoFullEllipses_of_add_lt_sqrt_mul_abs_centerSeparation
+    {κ μ spectralBudget operatorRadius : ℝ}
+    (hκ : 0 < κ) (hSpectralBudget : 0 ≤ spectralBudget)
+    (hOperatorRadius : 0 ≤ operatorRadius)
+    (hseparated : spectralBudget + operatorRadius <
+      Real.sqrt κ * |1 - μ|) :
+    Disjoint (rankTwoFullSpectralEllipse κ spectralBudget)
+      (rankTwoFullOperatorEllipse κ μ operatorRadius)
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The theorem is classical and not novel. It establishes full-ellipse disjointness, not an
+exact positive distance or a rectangle-clipped claim. Lean \texttt{v4.35.0} and pinned
+Mathlib report \texttt{[propext, Classical.choice, Quot.sound]}; no admission or
+scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No numerical separation margin or containment premise is validated. No independent
+expert review is recorded. On 18 October 2026, repository checks passed. Status:
+\texttt{proved}; working draft.
+\end{document}

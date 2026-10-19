@@ -57,9 +57,89 @@ Current draft dossiers:
 - [`BG-THM-010-below-floor-operator-set-empty.tex`](BandGauge/Geometry/BG-THM-010-below-floor-operator-set-empty.tex);
 - [`BG-THM-011-normalized-correlation-bound.tex`](BandGauge/Geometry/BG-THM-011-normalized-correlation-bound.tex);
 - [`BG-THM-012-irreducible-floor-nonnegative.tex`](BandGauge/Geometry/BG-THM-012-irreducible-floor-nonnegative.tex); and
-- [`BG-THM-013-operator-squared-loss-nonnegative.tex`](BandGauge/Geometry/BG-THM-013-operator-squared-loss-nonnegative.tex).
+- [`BG-THM-013-operator-squared-loss-nonnegative.tex`](BandGauge/Geometry/BG-THM-013-operator-squared-loss-nonnegative.tex);
+- [`BG-THM-014-spectral-squared-loss-nonnegative.tex`](BandGauge/Geometry/BG-THM-014-spectral-squared-loss-nonnegative.tex);
+- [`BG-THM-015-spectral-square-root-recovery.tex`](BandGauge/Geometry/BG-THM-015-spectral-square-root-recovery.tex);
+- [`BG-THM-016-operator-square-root-recovery.tex`](BandGauge/Geometry/BG-THM-016-operator-square-root-recovery.tex);
+- [`BG-THM-017-spectral-threshold-equivalence.tex`](BandGauge/Geometry/BG-THM-017-spectral-threshold-equivalence.tex); and
+- [`BG-THM-018-operator-threshold-equivalence.tex`](BandGauge/Geometry/BG-THM-018-operator-threshold-equivalence.tex);
+- [`BG-THM-019-spectral-sublevel-ellipse.tex`](BandGauge/Geometry/BG-THM-019-spectral-sublevel-ellipse.tex);
+- [`BG-THM-020-operator-radius-recovery.tex`](BandGauge/Geometry/BG-THM-020-operator-radius-recovery.tex); and
+- [`BG-THM-021-operator-sublevel-ellipse.tex`](BandGauge/Geometry/BG-THM-021-operator-sublevel-ellipse.tex);
+- [`BG-THM-022-common-point-compatibility-bound.tex`](BandGauge/Geometry/BG-THM-022-common-point-compatibility-bound.tex);
+- [`BG-THM-023-strict-center-separation.tex`](BandGauge/Geometry/BG-THM-023-strict-center-separation.tex);
+- [`BG-THM-024-compatibility-constructs-common-point.tex`](BandGauge/Geometry/BG-THM-024-compatibility-constructs-common-point.tex);
+- [`BG-THM-025-full-ellipse-intersection-criterion.tex`](BandGauge/Geometry/BG-THM-025-full-ellipse-intersection-criterion.tex); and
+- [`BG-THM-026-real-loss-intersection-criterion.tex`](BandGauge/Geometry/BG-THM-026-real-loss-intersection-criterion.tex);
+- [`BG-THM-027-pairwise-distance-lower-bound.tex`](BandGauge/Geometry/BG-THM-027-pairwise-distance-lower-bound.tex);
+- [`BG-THM-028-distance-attainment.tex`](BandGauge/Geometry/BG-THM-028-distance-attainment.tex);
+- [`BG-THM-029-exact-full-ellipse-distance.tex`](BandGauge/Geometry/BG-THM-029-exact-full-ellipse-distance.tex); and
+- [`BG-THM-030-exact-real-loss-distance.tex`](BandGauge/Geometry/BG-THM-030-exact-real-loss-distance.tex);
+- [`BG-THM-031-spectral-rectangle-containment-transfer.tex`](BandGauge/Geometry/BG-THM-031-spectral-rectangle-containment-transfer.tex);
+- [`BG-THM-032-operator-rectangle-containment-transfer.tex`](BandGauge/Geometry/BG-THM-032-operator-rectangle-containment-transfer.tex);
+- [`BG-THM-033-rectangle-intersection-criterion.tex`](BandGauge/Geometry/BG-THM-033-rectangle-intersection-criterion.tex); and
+- [`BG-THM-034-exact-rectangle-ellipse-distance.tex`](BandGauge/Geometry/BG-THM-034-exact-rectangle-ellipse-distance.tex);
+- [`BG-FOUNDATION-THM-001-second-harmonic-upper-bound.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-001-second-harmonic-upper-bound.tex);
+- [`BG-FOUNDATION-THM-002-second-harmonic-arg-attainment.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-002-second-harmonic-arg-attainment.tex);
+- [`BG-FOUNDATION-THM-003-real-rotation-pauli-action.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-003-real-rotation-pauli-action.tex);
+- [`BG-FOUNDATION-THM-004-pauli-frobenius-correlation.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-004-pauli-frobenius-correlation.tex);
+- [`BG-FOUNDATION-THM-005-canonical-angle-range.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-005-canonical-angle-range.tex); and
+- [`BG-FOUNDATION-THM-006-canonical-angle-attainment.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-006-canonical-angle-attainment.tex); and
+- [`BG-FOUNDATION-THM-007-canonical-pauli-decomposition.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-007-canonical-pauli-decomposition.tex);
+- [`BG-BLOCH-THM-001-operator-preserves-sewing.tex`](BandGauge/Bloch/BG-BLOCH-THM-001-operator-preserves-sewing.tex); and
+- [`BG-BLOCH-THM-002-alignment-preserves-covariance.tex`](BandGauge/Bloch/BG-BLOCH-THM-002-alignment-preserves-covariance.tex);
+- [`BG-BLOCH-THM-003-trace-centering.tex`](BandGauge/Bloch/BG-BLOCH-THM-003-trace-centering.tex);
+- [`BG-BLOCH-THM-004-sampled-field-traceless.tex`](BandGauge/Bloch/BG-BLOCH-THM-004-sampled-field-traceless.tex);
+- [`BG-BLOCH-THM-005-unitary-conjugation-preserves-trace.tex`](BandGauge/Bloch/BG-BLOCH-THM-005-unitary-conjugation-preserves-trace.tex);
+- [`BG-BLOCH-THM-006-sampled-unitary-power.tex`](BandGauge/Bloch/BG-BLOCH-THM-006-sampled-unitary-power.tex);
+- [`BG-BLOCH-THM-007-two-alignments-common-power.tex`](BandGauge/Bloch/BG-BLOCH-THM-007-two-alignments-common-power.tex); and
+- [`BG-BLOCH-THM-008-sampled-correlation-bound.tex`](BandGauge/Bloch/BG-BLOCH-THM-008-sampled-correlation-bound.tex);
+- [`BG-BLOCH-THM-009-trace-centering-preserves-hermiticity.tex`](BandGauge/Bloch/BG-BLOCH-THM-009-trace-centering-preserves-hermiticity.tex);
+- [`BG-BLOCH-THM-010-sampled-field-hermitian.tex`](BandGauge/Bloch/BG-BLOCH-THM-010-sampled-field-hermitian.tex); and
+- [`BG-BLOCH-THM-011-unitary-conjugation-preserves-hermiticity.tex`](BandGauge/Bloch/BG-BLOCH-THM-011-unitary-conjugation-preserves-hermiticity.tex);
+- [`BG-HILBERT-THM-001-ball-intersection-criterion.tex`](BandGauge/Hilbert/BG-HILBERT-THM-001-ball-intersection-criterion.tex);
+- [`BG-HILBERT-THM-002-ball-distance-lower-bound.tex`](BandGauge/Hilbert/BG-HILBERT-THM-002-ball-distance-lower-bound.tex);
+- [`BG-HILBERT-THM-003-ball-distance-attainment.tex`](BandGauge/Hilbert/BG-HILBERT-THM-003-ball-distance-attainment.tex); and
+- [`BG-HILBERT-THM-004-exact-ball-set-distance.tex`](BandGauge/Hilbert/BG-HILBERT-THM-004-exact-ball-set-distance.tex);
+- [`BG-HILBERT-THM-005-weighted-frobenius-nonnegative.tex`](BandGauge/Hilbert/BG-HILBERT-THM-005-weighted-frobenius-nonnegative.tex);
+- [`BG-HILBERT-THM-006-weighted-frobenius-cauchy-schwarz.tex`](BandGauge/Hilbert/BG-HILBERT-THM-006-weighted-frobenius-cauchy-schwarz.tex);
+- [`BG-HILBERT-THM-007-unitary-conjugation-preserves-power.tex`](BandGauge/Hilbert/BG-HILBERT-THM-007-unitary-conjugation-preserves-power.tex); and
+- [`BG-HILBERT-THM-008-common-power-correlation-bound.tex`](BandGauge/Hilbert/BG-HILBERT-THM-008-common-power-correlation-bound.tex);
+- [`BG-HILBERT-THM-009-weighted-frobenius-polarization.tex`](BandGauge/Hilbert/BG-HILBERT-THM-009-weighted-frobenius-polarization.tex);
+- [`BG-HILBERT-THM-010-traceless-identity-orthogonality.tex`](BandGauge/Hilbert/BG-HILBERT-THM-010-traceless-identity-orthogonality.tex);
+- [`BG-HILBERT-THM-011-operator-matrix-loss-expansion.tex`](BandGauge/Hilbert/BG-HILBERT-THM-011-operator-matrix-loss-expansion.tex);
+- [`BG-HILBERT-THM-012-common-power-operator-quadratic.tex`](BandGauge/Hilbert/BG-HILBERT-THM-012-common-power-operator-quadratic.tex); and
+- [`BG-HILBERT-THM-013-matrix-to-scalar-operator-loss.tex`](BandGauge/Hilbert/BG-HILBERT-THM-013-matrix-to-scalar-operator-loss.tex);
+- [`BG-HILBERT-THM-014-spectral-residual-expansion.tex`](BandGauge/Hilbert/BG-HILBERT-THM-014-spectral-residual-expansion.tex); and
+- [`BG-HILBERT-THM-015-spectral-field-to-scalar-loss.tex`](BandGauge/Hilbert/BG-HILBERT-THM-015-spectral-field-to-scalar-loss.tex);
+- [`BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex);
+- [`BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex);
+- [`BG-RAGASA2026A-THM-003-operator-correlation-bound.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-003-operator-correlation-bound.tex); and
+- [`BG-RAGASA2026A-THM-004-operator-matrix-to-scalar-loss.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-004-operator-matrix-to-scalar-loss.tex);
+- [`BG-RAGASA2026A-THM-005-spectral-field-centered.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-005-spectral-field-centered.tex);
+- [`BG-RAGASA2026A-THM-006-spectral-power-equals-parent.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-006-spectral-power-equals-parent.tex); and
+- [`BG-RAGASA2026A-THM-007-spectral-field-to-scalar-loss.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-007-spectral-field-to-scalar-loss.tex);
+- [`BG-RAGASA2026A-THM-008-correlation-harmonic.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-008-correlation-harmonic.tex);
+- [`BG-RAGASA2026A-THM-009-correlation-upper-bound.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-009-correlation-upper-bound.tex);
+- [`BG-RAGASA2026A-THM-010-maximizing-angle-range.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-010-maximizing-angle-range.tex);
+- [`BG-RAGASA2026A-THM-011-maximizing-angle-attainment.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-011-maximizing-angle-attainment.tex);
+- [`BG-RAGASA2026A-THM-012-correlation-maximum-is-greatest.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-012-correlation-maximum-is-greatest.tex); and
+- [`BG-RAGASA2026A-THM-013-maximized-normalized-correlation-bound.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-013-maximized-normalized-correlation-bound.tex);
+- [`BG-RAGASA2026A-THM-014-normalized-correlation-at-maximizer.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-014-normalized-correlation-at-maximizer.tex); and
+- [`BG-RAGASA2026A-THM-015-maximized-matrix-to-scalar-loss.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-015-maximized-matrix-to-scalar-loss.tex);
+- [`BG-RAGASA2026A-THM-016-canonical-correlation-harmonic.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-016-canonical-correlation-harmonic.tex); and
+- [`BG-RAGASA2026A-THM-017-canonical-maximized-matrix-loss.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-017-canonical-maximized-matrix-loss.tex);
+- [`BG-RAGASA2026A-THM-018-canonical-spectral-field-centered.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-018-canonical-spectral-field-centered.tex);
+- [`BG-RAGASA2026A-THM-019-canonical-spectral-power.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-019-canonical-spectral-power.tex); and
+- [`BG-RAGASA2026A-THM-020-canonical-spectral-loss.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-020-canonical-spectral-loss.tex);
+- [`BG-RAGASA2026A-THM-021-canonical-spectral-real-loss.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-021-canonical-spectral-real-loss.tex);
+- [`BG-RAGASA2026A-THM-022-canonical-optimized-real-loss.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-022-canonical-optimized-real-loss.tex);
+- [`BG-RAGASA2026A-THM-023-canonical-loss-intersection.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-023-canonical-loss-intersection.tex);
+- [`BG-RAGASA2026A-THM-024-canonical-loss-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-024-canonical-loss-distance.tex);
+- [`BG-RAGASA2026A-THM-025-rectangle-intersection.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-025-rectangle-intersection.tex); and
+- [`BG-RAGASA2026A-THM-026-rectangle-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-026-rectangle-distance.tex).
 
-Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
+Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The `BG-BLOCH-THM-003` through `BG-BLOCH-THM-006` dossiers document standard supporting trace and unitary-invariance infrastructure; they are not paper-contribution or novelty claims. `BG-BLOCH-THM-007/008` are source-normalized bridge specializations; `BG-BLOCH-THM-009--011` are standard Hermiticity infrastructure. None carries a claim that the underlying standard algebra is novel. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
 
 ## Organizing principle
 

@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {↔}{{$\leftrightarrow$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Operator Sublevel-Set Ellipse}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-021} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoAlignedOperatorLoss_le_iff_ellipse} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For $p=(s,\lambda)$, assume $\kappa\ge0$, $|\mu|\le1$, $\tau_o\ge0$, and
+$\kappa(1-\mu^2)\le\tau_o^2$. Then
+\[
+ L_{\mathrm{op},\mu}(p)\le\tau_o
+ \quad\Longleftrightarrow\quad
+ s^2+\kappa(\lambda-\mu)^2\le r_*^2.
+\]
+
+\section{Source provenance}
+This \texttt{formalizes} the source's centered operator ellipse. The owner repository is
+\path{ksdft2effmass}. The immutable source commit is
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+The source path is
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+The locators are Eqs. \texttt{exact-operator-loss}, \texttt{admissible-sets}, and
+\texttt{operator-radius}. Later owner worktree changes are excluded.
+
+\section{Proof}
+BG-THM-018 converts the real-loss threshold to the squared-loss threshold. Unfolding the
+operator squared loss and using BG-THM-020 moves the irreducible floor to the budget side,
+producing the centered ellipse inequality.
+\begin{lstlisting}
+theorem rankTwoAlignedOperatorLoss_le_iff_ellipse
+    {κ μ operatorBudget : ℝ} (hκ : 0 ≤ κ)
+    (hμ : |μ| ≤ 1) (hBudget : 0 ≤ operatorBudget)
+    (hRadicand : κ * (1 - μ ^ 2) ≤ operatorBudget ^ 2)
+    (p : RankTwoParameter) :
+    rankTwoAlignedOperatorLoss κ μ p ≤ operatorBudget ↔
+      (p 0) ^ 2 + κ * (p 1 - μ) ^ 2 ≤
+        rankTwoOperatorRadius κ μ operatorBudget ^ 2
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The result is elementary and not novel. It proves the full-plane scalar condition, not
+containment in the parameter rectangle or the distance between ellipses. Lean
+\texttt{v4.35.0} with Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+reports \texttt{[propext, Classical.choice, Quot.sound]}. No admission or
+repository-owned scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No matrix derivation, scientific budget, rectangle containment, or numerical evidence is
+validated. No independent expert mathematical or physical review is recorded. On 18
+October 2026, repository checks passed. Status: \texttt{proved}; working draft.
+\end{document}

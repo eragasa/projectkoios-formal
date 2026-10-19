@@ -1,0 +1,17 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Second-Harmonic Upper Bound}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOUNDATION-THM-001}; status \texttt{proved}. Lean declaration:
+\par\noindent {\scriptsize\path{ProjectKoios.BandGauge.Foundations.secondHarmonicValue_le_maximum}}.
+\section{Statement and proof}
+For all real $b_0,c,d,\phi$,
+\[b_0+c\cos(2\phi)+d\sin(2\phi)\le b_0+\sqrt{c^2+d^2}.\]
+The proof expands the square of the harmonic and its orthogonal companion, uses
+$\sin^2+\cos^2=1$, and compares nonnegative squares.
+\section{Boundary}
+This is standard supporting analysis, not a paper novelty claim. Kernel-reported axioms:
+\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}. No admissions or
+scientific axioms. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

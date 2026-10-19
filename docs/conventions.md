@@ -21,7 +21,7 @@ This document is a pre-encoding contract. It does not freeze one mathematical co
 
 The publication crosswalk identifies source conventions that future encodings must preserve, including rank-two real-rotation families, positive splitting parameters, finite global alignment families, normalized torus integrals, complete metric shells, and the D1 continuum Fourier convention. These observations are traceability notes, not repository-wide defaults.
 
-For Ragasa2026A v3, the source records reduced momentum `q = k/G = ka₀/(2π)` and a negative-exponent forward Fourier transform. A future Lean statement must restate the exact domain and normalization rather than relying on this prose summary.
+For Ragasa2026A v3, the source records reduced momentum `q = k/G = ka₀/(2π)` and a negative-exponent forward Fourier transform. It also reduces the correlation-maximizing angle to `[-π/2, π/2)`; `BG-FOUNDATION-DEF-006` and `BG-RAGASA2026A-DEF-012` implement that exact half-open convention by replacing the complex-argument upper endpoint with the equivalent lower endpoint. The degenerate harmonic still has no unique reported angle. A future Fourier statement must restate the exact domain and normalization rather than relying on this prose summary.
 
 ## Equality and transport discipline
 

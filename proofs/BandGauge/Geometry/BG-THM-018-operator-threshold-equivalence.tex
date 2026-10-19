@@ -1,0 +1,62 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {↔}{{$\leftrightarrow$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Operator Threshold Equivalence}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-018} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoAlignedOperatorLoss_le_iff_sq_le_sq} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and source}
+If $\kappa\ge0$, $|\mu|\le1$, and $\tau_o\ge0$, then
+\[
+ L_{\mathrm{op},\mu}(p)\le\tau_o
+ \quad\Longleftrightarrow\quad
+ L_{\mathrm{op},\mu}^2(p)\le\tau_o^2.
+\]
+This \texttt{formalizes} the equivalence used between the exact operator quadratic and
+its admissible loss sublevel set in \path{ksdft2effmass}. The immutable source commit is
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+The source path is
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Later owner worktree changes are excluded.
+
+\section{Proof}
+The square-root loss and budget are nonnegative, so squaring preserves and reflects the
+inequality. BG-THM-016 identifies the square with the reduced operator squared loss.
+\begin{lstlisting}
+theorem rankTwoAlignedOperatorLoss_le_iff_sq_le_sq
+    {κ μ operatorBudget : ℝ} (hκ : 0 ≤ κ)
+    (hμ : |μ| ≤ 1) (hBudget : 0 ≤ operatorBudget)
+    (p : RankTwoParameter) :
+    rankTwoAlignedOperatorLoss κ μ p ≤ operatorBudget ↔
+      rankTwoAlignedOperatorLossSq κ μ p ≤ operatorBudget ^ 2
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The proof is elementary and not novel. It assumes the normalized-correlation bound and a
+nonnegative scientific budget. Lean \texttt{v4.35.0} with Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+reports \texttt{[propext, Classical.choice, Quot.sound]}. There is no \texttt{sorry},
+\texttt{admit}, or repository-owned scientific axiom.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No matrix derivation, correlation certificate, budget, or numerical evidence is
+validated. No independent expert mathematical or physical review is recorded. On 18
+October 2026, repository checks passed. Status: \texttt{proved}; working draft.
+\end{document}

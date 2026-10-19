@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Traceless--Identity Frobenius Orthogonality}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-010} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoWeightedFrobeniusCorrelation_identity_eq_zero} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/WeightedFrobenius.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+If every matrix $X_i$ in a finite rank-two field has trace zero, then its weighted real
+Frobenius correlation with the constant identity field vanishes:
+\[
+ C(I,X)=0.
+\]
+No weight sign or normalization assumption is needed.
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the vanishing shift cross term in Supplementary Section
+S1.1 of Ragasa2026A. Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Source: \path{docs/publications/papers/Ragasa2026a/v3/}\path{supplementary.tex},
+lines 69--76. At each coordinate, the Frobenius pairing with identity is the real part of
+the trace. Pointwise trace zero makes every weighted summand zero.
+
+\section{Boundary and trusted base}
+The theorem assumes tracelessness; it does not prove it for external matrices. Lean and
+pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

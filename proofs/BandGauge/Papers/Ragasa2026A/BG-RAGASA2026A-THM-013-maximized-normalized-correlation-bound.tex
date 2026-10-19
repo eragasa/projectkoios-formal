@@ -1,0 +1,20 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Maximized Normalized Correlation Bound}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-013}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.abs_maximumOperatorCorrelation_div_le_one}}.
+\section{Exact statement}
+If the centered parent has common power $\kappa>0$, then
+\[\left|\frac{b_{\max}}{\kappa}\right|\le1.\]
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the normalized maximum used in manuscript lines 645--650 at owner
+commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The maximizing
+angle turns $b_{\max}$ into an ordinary field correlation, to which the proved weighted
+Frobenius bound applies. Parent power and Pauli coordinates are hypotheses, not validated
+data. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound};
+no admissions. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

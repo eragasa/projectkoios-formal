@@ -1,0 +1,20 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Canonical Spectral Power}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-019}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.canonicalSpectralSplittingField_power_eq_parent}}.
+\section{Exact statement}
+For the canonical Hermitian spectral decomposition,
+\[\sum_i\frac{\alpha_i}{2E_{\mathrm{ref}}^2}\sum_n d_{i,n}^2
+ =\sum_i\frac{\alpha_i}{2E_{\mathrm{ref}}^2}\lVert D(q_i)\rVert_F^2.\]
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the common-power identification used in manuscript lines
+603--610 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+It specializes unitary Frobenius invariance to the canonical spectral-theorem witness.
+No numerical eigenvalues are produced. Kernel axioms: \texttt{propext},
+\texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and
+kernel-checked; no independent expert review recorded.
+\end{document}

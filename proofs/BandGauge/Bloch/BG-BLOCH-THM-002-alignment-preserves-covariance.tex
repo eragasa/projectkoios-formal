@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: Sewn Alignment Preserves Operator Covariance}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-002} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.isBlochOperatorField_alignedOperatorField} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/Sewing.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Let $S_r$ and $S_c$ be reference and candidate sewing systems. Let a pointwise unitary
+$U(k)$ intertwine them:
+\[
+ U(g\cdot k)S_r(g,k)=S_c(g,k)U(k).
+\]
+If the candidate operator field $A_c$ is sewing-covariant, then the pulled-back field
+\[
+ \widetilde A(k)=U(k)^{-1}A_c(k)U(k)
+\]
+is covariant under $S_r$.
+
+\section{Source provenance}
+This theorem \texttt{adapts} the source's equal-rank unitary alignment and
+reciprocal-boundary sewing requirements. Owner: \path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026c/v1/manuscript.md}\end{center}
+Locators: equal-rank frame transformations near lines 27--42, pointwise/global alignment
+near lines 48--77, and sewing near lines 87--94. The abstract group-action formulation is
+broader than the paper's stated periodic frame.
+
+\section{Proof}
+Apply $U(g\cdot k)$ to both sides of the desired covariance equation. The inverse in the
+aligned field cancels. Sewing compatibility moves $U$ through the reference transport,
+and candidate operator covariance moves $A_c$ through the candidate transport. Applying
+sewing compatibility once more to the output makes both sides identical. Injectivity of
+the unitary alignment proves the original equality.
+
+\section{Boundary and trusted base}
+The theorem is classical bundle-equivariance algebra and not novel. It does not prove
+that an alignment exists, is continuous or periodic, survives rank deficiency, or belongs
+to a declared scientific alignment family. Lean and pinned Mathlib report
+\texttt{[propext, Classical.choice, Quot.sound]}; no admission or scientific axiom is used.
+
+\section{AI, evidence, and review}
+The design, proof, and dossier were AI-generated or AI-assisted and kernel-checked. No
+concrete frame, sewing matrix, singular-value cutoff, or numerical evidence is validated.
+No independent expert review is recorded. On 18 October 2026, repository checks passed.
+Status: \texttt{proved}; working draft.
+\end{document}

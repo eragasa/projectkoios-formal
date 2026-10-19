@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Ragasa2026A Aligned Fields Have Common Power}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-RAGASA2026A-THM-002} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_commonPower} \\
+Module & \path{ProjectKoios/BandGauge/Papers/Ragasa2026A/RankTwoFields.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+If the centered sampled parent has source-normalized weighted Frobenius power $\kappa$,
+then
+\[
+ P(D_{\phi})=\kappa,\qquad P(B)=\kappa.
+\]
+The contract retains the source premises $\alpha_i>0$, $\sum_i\alpha_i=1$, and
+$E_{\mathrm{ref}}>0$.
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the common-power consequence of manuscript lines
+603--624 at immutable \path{ksdft2effmass} commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The global standard real rotation and every supplied comparison alignment are unitary, so
+weighted Frobenius power is preserved pointwise and then under the finite sum.
+
+\section{Boundary and trusted base}
+The parent-power equality is a hypothesis. No concrete matrix or numerical power is
+validated. Lean and pinned Mathlib report \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or scientific axiom is
+used. AI-assisted and kernel-checked; no independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

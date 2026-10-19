@@ -1,0 +1,20 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Rectangle Intersection Transfer}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-025}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{canonicalLossAdmissibleSetsInRectangle_inter_nonempty_iff}}.
+\section{Exact statement}
+If both full canonical ellipses are contained in the declared candidate rectangle, their
+rectangle-restricted loss sets intersect exactly under the full-plane compatibility
+inequality.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the containment-gated transfer near manuscript line 737 at owner
+commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Both containment premises are explicit. The theorem makes no clipped-ellipse claim when
+either premise fails and supplies no numerical containment evidence. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+\end{document}

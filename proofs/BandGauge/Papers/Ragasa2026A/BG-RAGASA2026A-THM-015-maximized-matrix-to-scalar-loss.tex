@@ -1,0 +1,20 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Maximized Matrix-to-Scalar Loss}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-015}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.operatorMatrixLossSq_maximizingAngle_eq_alignedOperatorLossSq}}.
+\section{Exact statement}
+If the sampled centered parent has common power $\kappa>0$, the finite operator matrix
+loss at $\phi_*$ equals the reduced aligned-operator loss centered at
+$\mu_{\max}=b_{\max}/\kappa$.
+\section{Source, proof, and boundary}
+This connects manuscript lines 645--675 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof specializes BG-RAGASA2026A-THM-004 and rewrites
+BG-RAGASA2026A-THM-014. It remains conditional on exact field, Pauli, and parent-power
+witnesses and supplies no scientific data. Kernel axioms: \texttt{propext},
+\texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and
+kernel-checked; no independent expert review recorded.
+\end{document}

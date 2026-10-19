@@ -1,0 +1,20 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Canonical Spectral Real Loss}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-021}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{canonicalSpectralLoss_eq_rankTwoSpectralLoss}}.
+\section{Exact statement}
+When the sampled centered parent has power $\kappa$, the square root of the canonical
+finite spectral residual equals the reduced real loss
+$\sqrt{s^2+\kappa(\lambda-1)^2}$.
+\section{Source, proof, and boundary}
+This specializes the exact spectral formula in manuscript lines 667--669 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof rewrites the canonical squared-loss theorem beneath the same real square root.
+Concrete matrices and $\kappa$ remain external. Kernel axioms are \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. AI-assisted and
+kernel-checked; no independent expert review recorded.
+\end{document}

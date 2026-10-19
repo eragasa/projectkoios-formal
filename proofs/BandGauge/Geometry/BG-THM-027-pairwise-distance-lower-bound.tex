@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1 {∈}{{$\in$}}1}
+\title{Proof Dossier: Pairwise Full-Ellipse Distance Lower Bound}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-027} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoFullEllipseDistance_le_dist_of_mem} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For $\kappa>0$ and nonnegative radii, every $p\in\mathcal E_s$ and
+$q\in\mathcal E_o$ satisfy
+\[
+ \max\left\{0,|1-\mu|-\frac{\tau_s+r}{\sqrt\kappa}\right\}
+ \le \operatorname{dist}(p,q).
+\]
+
+\section{Source provenance}
+This \texttt{formalizes} the lower-bound direction of Eq. \texttt{exact-distance} in
+\path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Later owner worktree changes are excluded.
+
+\section{Proof}
+The ellipse inequalities bound each point's longitudinal displacement from its center.
+The scalar triangle inequality then bounds the longitudinal distance between any pair
+below by the displayed gap. Euclidean distance dominates the absolute difference of one
+coordinate, and nonnegativity supplies the outer maximum with zero.
+
+\section{Boundary and trusted base}
+The theorem is classical and not novel. It concerns full ellipses and the Euclidean
+parameter metric, not a clipped rectangle. Lean and pinned Mathlib report
+\texttt{[propext, Classical.choice, Quot.sound]}; no admission or scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No matrix derivation, containment premise, or numerical distance is validated. No
+independent expert review is recorded. On 18 October 2026, repository checks passed.
+Status: \texttt{proved}; working draft.
+\end{document}

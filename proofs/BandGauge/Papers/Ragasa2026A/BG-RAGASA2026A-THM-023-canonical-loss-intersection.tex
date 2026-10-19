@@ -1,0 +1,21 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Canonical Loss-Set Intersection}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-023}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{canonicalLossAdmissibleSets_inter_nonempty_iff}}.
+\section{Exact statement}
+The canonical spectral and continuously optimized operator loss sets intersect exactly
+when the scaled center separation is no larger than the spectral budget plus the real
+operator radius.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the full-plane compatibility clause associated with manuscript
+line 737 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof identifies both actual field losses with their reduced scalar losses and applies
+the reusable ellipse criterion. Nonnegative budgets, $\kappa>0$, parent power, and a
+nonnegative radius radicand are explicit. Kernel axioms are \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+\end{document}

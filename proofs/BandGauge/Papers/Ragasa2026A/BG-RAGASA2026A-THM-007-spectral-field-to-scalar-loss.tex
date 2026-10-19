@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Ragasa2026A Spectral Field-to-Scalar Loss}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-RAGASA2026A-THM-007} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Papers.Ragasa2026A.spectralFieldLossSq_eq_spectralLossSq} \\
+Module & \path{ProjectKoios/BandGauge/Papers/Ragasa2026A/RankTwoFields.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+If the sampled centered parent has weighted Frobenius power $\kappa$, the exact witnessed
+spectral field has residual loss
+\[
+ \sum_i\frac{\alpha_i}{2E_{\mathrm{ref}}^2}
+ \sum_n\bigl(E_{\mathrm{ref}}s+(\lambda-1)d_{i,n}\bigr)^2
+ =s^2+\kappa(\lambda-1)^2.
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} manuscript lines 565--574 and the spectral derivation in
+Supplementary Section S1.1 at immutable \path{ksdft2effmass} commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+BG-RAGASA2026A-THM-005 supplies centering, BG-RAGASA2026A-THM-006 supplies power
+$\kappa$, and BG-HILBERT-THM-015 supplies the residual-to-scalar identity.
+
+\section{Boundary and trusted base}
+The result is conditional on an exact diagonalization witness and parent power. It does
+not construct a periodic Hamiltonian, run an eigensolver, or validate scientific data.
+Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. AI-assisted and
+kernel-checked; no independent expert review is recorded. Status: \texttt{proved};
+working draft.
+\end{document}

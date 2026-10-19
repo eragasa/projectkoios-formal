@@ -1,0 +1,17 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Canonical Harmonic-Angle Attainment}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOUNDATION-THM-006}; status \texttt{proved}. Lean declaration:
+\par\noindent {\scriptsize\path{ProjectKoios.BandGauge.Foundations.secondHarmonicValue_canonicalMaximizingAngle}}.
+\section{Statement and proof}
+The canonical half-open representative attains $b_0+\sqrt{c^2+d^2}$. The only changed
+case replaces $\phi=\pi/2$ by $-\pi/2$; both give the same sine and cosine at angle
+$2\phi$.
+\section{Boundary}
+No uniqueness is asserted, including when $c=d=0$. Kernel-reported axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. No admissions or
+scientific axioms. AI-assisted and kernel-checked. No independent expert review is
+recorded.
+\end{document}

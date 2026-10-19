@@ -1,0 +1,20 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Canonical Pauli Decomposition}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOUNDATION-THM-007}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Foundations.}}\\
+{\tiny\path{eq_rankTwoPauliMatrix_of_conjTranspose_eq_self_of_trace_eq_zero}}.
+\section{Statement and proof}
+Every traceless Hermitian complex $2$-by-$2$ matrix equals
+$x\sigma_x+y\sigma_y+z\sigma_z$, where
+$x=\operatorname{Re}M_{01}$, $y=-\operatorname{Im}M_{01}$, and
+$z=\operatorname{Re}M_{00}$. Hermiticity makes the diagonal real and identifies the
+lower-left entry with the conjugate upper-right entry; trace zero fixes the second
+diagonal entry.
+\section{Boundary}
+This is standard supporting linear algebra, not a novelty claim. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked. No independent expert review is recorded.
+\end{document}

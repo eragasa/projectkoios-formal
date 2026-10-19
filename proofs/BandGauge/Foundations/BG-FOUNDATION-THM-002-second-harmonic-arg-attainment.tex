@@ -1,0 +1,17 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Complex-Argument Harmonic Attainment}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOUNDATION-THM-002}; status \texttt{proved}. Lean declaration:
+\par\noindent {\scriptsize\path{ProjectKoios.BandGauge.Foundations.secondHarmonicValue_maximizingAngle}}.
+\section{Statement and proof}
+The angle $\phi=\tfrac12\arg(c+id)$ attains
+$b_0+\sqrt{c^2+d^2}$. The polar identities
+$\lVert c+id\rVert\cos\arg(c+id)=c$ and
+$\lVert c+id\rVert\sin\arg(c+id)=d$ give the result, including $c=d=0$.
+\section{Boundary}
+No uniqueness is asserted. This is standard supporting analysis. Kernel-reported axioms:
+\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}. No admissions or
+scientific axioms. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

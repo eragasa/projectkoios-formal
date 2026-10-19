@@ -1,0 +1,47 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Matrix-to-Scalar Operator-Loss Bridge}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-013} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoOperatorMatrixLossSq_eq_rankTwoAlignedOperatorLossSq} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/OperatorLossBridge.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Assume the hypotheses of BG-HILBERT-THM-012 and $\kappa>0$. With
+$\mu=b/\kappa$, the source-normalized matrix residual loss equals the existing reduced
+scalar loss:
+\[
+ L_{\mathrm{matrix}}^2(s,\lambda)
+ =s^2+\kappa(\lambda-\mu)^2+\kappa(1-\mu^2).
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} completion of the square in Supplementary Section S1.1
+and the exact operator-loss formula near lines 663--684 of the Paper A v3 manuscript.
+Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+BG-HILBERT-THM-012 supplies $s^2+\kappa\lambda^2-2b\lambda+\kappa$.
+Substitute $\mu=b/\kappa$ and complete the square; positivity of $\kappa$ permits the
+required division.
+
+\section{Boundary and trusted base}
+This is an exact bridge between two repository definitions under explicit hypotheses. It
+does not identify matrices with external data, select an alignment, or validate a
+physical conclusion. Lean and pinned Mathlib report \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or scientific axiom is
+used. The proof and prose were AI-assisted and kernel-checked. No independent expert
+review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Sampled Unitary-Field Correlation Bound}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-008} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.abs_unitaryConjugateSampledFields_correlation_le_commonPower} \\
+Module & \path{ProjectKoios/BandGauge/Bloch/PeriodicRankTwo.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For nonnegative normalized sample weights, positive $E_{\mathrm{ref}}$, parent power
+$P(D)=\kappa$, and two pointwise unitary fields $U_i,V_i$,
+\[
+ \left|C(U^\dagger DU,V^\dagger DV)\right|\le\kappa.
+\]
+The correlation uses the same source-normalized finite Frobenius pairing as the power.
+
+\section{Source and proof}
+This source-normalized bridge \texttt{adapts} standard weighted Cauchy--Schwarz.
+It gives the abstract correlation bound for the fields in lines 603--624 of the
+Ragasa2026A v3 manuscript. Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+BG-BLOCH-THM-007 supplies common power; BG-HILBERT-THM-008 supplies weighted
+Frobenius Cauchy--Schwarz.
+
+\section{Boundary and trusted base}
+The underlying Cauchy--Schwarz inequality carries no novelty claim. The theorem
+supplies the abstract $|b|\le\kappa$ bridge, not a concrete alignment or numerical
+correlation. Lean and pinned Mathlib report \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or scientific axiom is
+used. The proof and prose were AI-assisted and kernel-checked. No independent expert
+review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

@@ -1,0 +1,43 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Rank-Two Trace Centering}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-003} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.trace_centeredBlochMatrix_eq_zero} \\
+Module & \path{ProjectKoios/BandGauge/Bloch/PeriodicRankTwo.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and proof}
+For every retained $2\times2$ Bloch Hamiltonian matrix $H(k)$,
+\[
+ D(k)=H(k)-\frac{\operatorname{tr}H(k)}2 I_2
+ \quad\Longrightarrow\quad \operatorname{tr}D(k)=0.
+\]
+The proof expands the two diagonal entries of the trace and applies commutative-ring
+algebra.
+
+\section{Source boundary}
+This standard supporting theorem has a \texttt{background-only} relation to the trace decomposition at lines 491--496 of the
+Ragasa2026A v3 manuscript. Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+It is elementary finite matrix algebra and is not a paper-contribution or novelty claim. It does not construct $H(k)$ from a periodic
+potential or establish a Bloch--Floquet theorem.
+
+\section{Trusted base}
+Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

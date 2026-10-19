@@ -84,4 +84,4 @@ Only an audited record may be treated as a completed theorem-to-literature cross
 
 ## Current status
 
-No theorem-to-external-literature crosswalk record has been created. The existing publication crosswalk binds owner manuscript statements to metadata-only Lean placeholders. Actual literature records should begin only when the first formal statement is selected and References-owned canonical identities are available.
+No accepted theorem-to-external-literature crosswalk record has been created because References-owned canonical identities remain unavailable. The publication crosswalk now binds several owner-manuscript statements to generic foundations and a conditional Paper A algebraic bridge, while Paper B and Paper C namespace entries remain metadata placeholders. Governed literature records should begin only when accepted References-owned identities are available.

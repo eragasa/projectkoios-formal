@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Sampled Centered Field Is Traceless}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-004} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.trace_sampledCenteredField_eq_zero} \\
+Module & \path{ProjectKoios/BandGauge/Bloch/PeriodicRankTwo.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement and proof}
+For abstract periodic rank-two sample data and every declared construction coordinate
+$i$, the sampled centered field satisfies
+\[
+ \operatorname{tr}D(q_i)=0.
+\]
+This is BG-BLOCH-THM-003 evaluated at the supplied sample point $q_i$.
+
+\section{Source boundary}
+This supporting specialization \texttt{depends-on} the standard trace-centering identity and matches the sampled form of the trace decomposition at lines
+491--496 of the Ragasa2026A v3 manuscript. Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+It is supporting infrastructure, not a paper-contribution or novelty claim. The sample map is supplied. No numerical coordinate or periodic-potential construction is
+validated.
+
+\section{Trusted base}
+Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

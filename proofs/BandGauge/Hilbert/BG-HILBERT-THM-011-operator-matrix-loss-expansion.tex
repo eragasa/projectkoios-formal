@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Operator Matrix-Loss Expansion}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-011} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoOperatorMatrixLossSq_eq_expansion} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/OperatorLossBridge.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Let $D_i$ and $B_i$ be pointwise traceless complex $2\times2$ matrices, let
+$\sum_i\alpha_i=1$, and let $E_{\mathrm{ref}}\ne0$. For the residual
+$E_{\mathrm{ref}}sI+\lambda D_i-B_i$, its weighted squared Frobenius loss is
+\[
+ s^2+\lambda^2P(D)-2\lambda C(D,B)+P(B).
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the operator-channel expansion in Supplementary Section
+S1.1 of Ragasa2026A. Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Source: \path{docs/publications/papers/Ragasa2026a/v3/}\path{supplementary.tex},
+lines 69--80. Apply weighted polarization first to $\lambda D-B$ and then to the identity
+shift plus that tail. Tracelessness removes the shift cross term. Rank two, normalized
+weights, and the source coefficient reduce the identity contribution to $s^2$.
+
+\section{Boundary and trusted base}
+The theorem concerns abstract finite fields satisfying explicit hypotheses; it does not
+identify source data or validate numerical matrices. Lean and pinned Mathlib report
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. No admission or
+scientific axiom is used. The proof and prose were AI-assisted and kernel-checked. No
+independent expert review is recorded. Status: \texttt{proved}; working draft.
+\end{document}

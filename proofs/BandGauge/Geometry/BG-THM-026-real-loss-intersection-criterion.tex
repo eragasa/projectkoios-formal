@@ -1,0 +1,71 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {→}{{$\to$}}1 {↔}{{$\leftrightarrow$}}1 {ℝ}{{$\mathbb R$}}1 {∈}{{$\in$}}1 {∩}{{$\cap$}}1}
+\title{Proof Dossier: Reduced Real-Loss Intersection Criterion}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-026} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoLossAdmissibleSets_inter_nonempty_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Assume $\kappa>0$, $|\mu|\le1$, nonnegative spectral and operator budgets, and a
+nonnegative operator-radius radicand. The reduced real-loss admissible sets have a common
+point exactly when
+\[
+ \sqrt\kappa\,|1-\mu|\le\tau_s+r_*.
+\]
+
+\section{Source provenance}
+This is the source's full-plane real-loss specialization. Its relation is
+\texttt{formalizes}. The owner is \path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Locators: Eqs. \texttt{admissible-sets}, \texttt{operator-radius}, and
+\texttt{exact-intersection}. Later owner worktree changes are excluded.
+
+\section{Proof}
+BG-THM-019 and BG-THM-021 convert membership in the real-loss sublevel sets into the
+spectral and operator ellipse inequalities. BG-THM-022 and BG-THM-024 then prove the two
+directions of the criterion.
+
+\begin{lstlisting}
+theorem rankTwoLossAdmissibleSets_inter_nonempty_iff
+    {κ μ spectralBudget operatorBudget : ℝ}
+    (hκ : 0 < κ) (hμ : |μ| ≤ 1)
+    (hSpectralBudget : 0 ≤ spectralBudget)
+    (hOperatorBudget : 0 ≤ operatorBudget)
+    (hRadicand : κ * (1 - μ ^ 2) ≤ operatorBudget ^ 2) :
+    (spectralAdmissibleSet (rankTwoSpectralLoss κ) spectralBudget ∩
+      alignedOperatorAdmissibleSet
+        (rankTwoAlignedOperatorLoss κ μ) operatorBudget).Nonempty ↔
+      Real.sqrt κ * |1 - μ| ≤
+        spectralBudget + rankTwoOperatorRadius κ μ operatorBudget
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+This theorem is classical and not novel. It applies to the full parameter plane, not a
+bounded rectangle. Lean \texttt{v4.35.0} and pinned Mathlib give the axiom report
+\begin{center}\texttt{[propext, Classical.choice, Quot.sound]}\end{center}
+No admission or scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No matrix derivation, rectangle containment, exact distance, or numerical evidence is
+validated. No independent expert review is recorded. On 18 October 2026, repository
+checks passed. Status: \texttt{proved}; working draft.
+\end{document}

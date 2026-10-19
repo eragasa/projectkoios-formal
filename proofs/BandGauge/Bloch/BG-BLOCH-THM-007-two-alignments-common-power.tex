@@ -1,0 +1,44 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Two Unitary Alignments Have Common Power}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-007} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.unitaryConjugateSampledFields_commonPower} \\
+Module & \path{ProjectKoios/BandGauge/Bloch/PeriodicRankTwo.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+If the sampled centered parent field has weighted power $P(D)=\kappa$, then any two
+pointwise unitary fields $U_i,V_i$ give
+\[
+ P(U^\dagger DU)=\kappa,
+ \qquad P(V^\dagger DV)=\kappa.
+\]
+
+\section{Source and proof}
+This source-normalized bridge \texttt{adapts} standard unitary invariance to the common-power premise for $D_{i,\phi}$ and $B_i$ in
+lines 603--624 of the Ragasa2026A v3 manuscript. Owner: \path{ksdft2effmass}; immutable
+commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Apply BG-BLOCH-THM-006 independently to the two unitary fields and substitute the parent
+power equality.
+
+\section{Boundary and trusted base}
+The underlying unitary-invariance fact carries no novelty claim. The theorem does not identify $U$ and $V$ with the publication's concrete alignments.
+Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

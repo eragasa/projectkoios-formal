@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: Sewn Operators Preserve Sewn Sections}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-001} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.isBlochSection_operator_apply} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/Sewing.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Let a group $\Gamma$ act on momentum labels $K$, and let $S(g,k)$ be unitary fiber
+transport. Suppose
+\[
+ f(g\cdot k)=S(g,k)f(k)
+\]
+and
+\[
+ A(g\cdot k)S(g,k)v=S(g,k)A(k)v.
+\]
+Then $k\mapsto A(k)f(k)$ obeys the same sewing law.
+
+\section{Source provenance}
+This theorem \texttt{adapts} the periodic-frame and reciprocal-sewing requirements in
+\path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026c/v1/manuscript.md}\end{center}
+Locators: state-space definitions near lines 27--42 and the sewing requirement near
+lines 87--94. The abstract cocycle formulation is broader than the source's periodic
+frame and does not change any existing `BG-THM` proposition.
+
+\section{Proof}
+At $g\cdot k$, replace $f(g\cdot k)$ by $S(g,k)f(k)$. Operator covariance then rewrites
+$A(g\cdot k)S(g,k)f(k)$ as $S(g,k)A(k)f(k)$, which is the required sewing law.
+
+\section{Boundary and trusted base}
+The result is elementary equivariance bookkeeping and not novel. It asserts no
+continuity, measurability, square integrability, topology, or numerical boundary check.
+Lean and pinned Mathlib report \texttt{[propext, Classical.choice, Quot.sound]}; no
+admission or scientific axiom is used.
+
+\section{AI, evidence, and review}
+The design, proof, and dossier were AI-generated or AI-assisted and kernel-checked. No
+concrete reciprocal lattice, sewing matrix, or Bloch frame is validated. No independent
+expert review is recorded. On 18 October 2026, repository checks passed. Status:
+\texttt{proved}; working draft.
+\end{document}

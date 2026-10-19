@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Weighted Frobenius Polarization}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-009} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoWeightedFrobeniusSq_linear_combination} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/WeightedFrobenius.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For real $a,b$ and finite complex rank-two fields $X,Y$,
+\[
+ P(aX+bY)=a^2P(X)+2ab\,C(X,Y)+b^2P(Y),
+\]
+where $P$ and $C$ use the same source coefficient
+$\alpha_i/(2E_{\mathrm{ref}}^2)$.
+
+\section{Source and proof}
+This theorem \texttt{adapts} the Frobenius expansion used in Supplementary Section S1.1
+of Ragasa2026A. Owner source: \path{ksdft2effmass}, immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The source file is
+\path{docs/publications/papers/Ragasa2026a/v3/}\path{supplementary.tex}, lines 51--82.
+The proof expands the squared complex modulus of each entry and then distributes the
+finite weighted sum.
+
+\section{Boundary and trusted base}
+The identity is algebraic and does not instantiate scientific matrices. Lean and pinned
+Mathlib report \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}.
+No admission or scientific axiom is used. The proof and prose were AI-assisted and
+kernel-checked. No independent expert review is recorded. Status: \texttt{proved};
+working draft.
+\end{document}

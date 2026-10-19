@@ -1,0 +1,19 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Rectangle Distance Transfer}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-026}; status \texttt{proved}. Lean declaration:
+\par\noindent {\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{canonicalLossAdmissibleSetsInRectangle_admissibleSetDist_eq}}.
+\section{Exact statement}
+Under full-ellipse containment and explicit nonemptiness, restricting both canonical loss
+sets to the candidate rectangle preserves the exact closed-form full-ellipse distance.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the containment-gated distance transfer near manuscript line 737
+at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+No formula is asserted for clipped ellipses when containment fails. Concrete instances
+must separately establish containment and nonemptiness. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+\end{document}

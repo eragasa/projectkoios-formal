@@ -1,0 +1,18 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Real-Rotation Action on Pauli Coordinates}\author{Project Koios Formal}\date{}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOUNDATION-THM-003}; status \texttt{proved}. Lean declaration:
+\par\noindent {\scriptsize\path{ProjectKoios.BandGauge.Foundations.rankTwoRealRotation_conjTranspose_mul_pauli_mul}}.
+\section{Statement and proof}
+For $D=x\sigma_x+y\sigma_y+z\sigma_z$,
+\[R(\phi)^\dagger D R(\phi)=
+ (x\cos2\phi-z\sin2\phi)\sigma_x+y\sigma_y+
+ (x\sin2\phi+z\cos2\phi)\sigma_z.\]
+The proof is an explicit $2$-by-$2$ matrix calculation using the double-angle formulas.
+\section{Boundary}
+This is standard supporting matrix algebra, not a paper novelty claim. Kernel-reported
+axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}. No admissions
+or scientific axioms. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

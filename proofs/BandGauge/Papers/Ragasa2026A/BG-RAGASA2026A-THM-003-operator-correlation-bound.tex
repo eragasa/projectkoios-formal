@@ -1,0 +1,43 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Ragasa2026A Operator-Correlation Bound}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-RAGASA2026A-THM-003} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Papers.Ragasa2026A.abs_operatorCorrelation_le_commonPower} \\
+Module & \path{ProjectKoios/BandGauge/Papers/Ragasa2026A/RankTwoFields.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For the source correlation
+\[
+ b_\phi=\sum_i\frac{\alpha_i}{2E_{\mathrm{ref}}^2}
+ \operatorname{Re}\operatorname{tr}(D_{i,\phi}^\dagger B_i),
+\]
+if the sampled centered parent has power $\kappa$, then $|b_\phi|\le\kappa$.
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the correlation bound associated with manuscript lines
+603--624 at immutable \path{ksdft2effmass} commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+BG-RAGASA2026A-THM-002 supplies common power. Weighted Frobenius Cauchy--Schwarz
+then gives the bound with the exact source coefficient.
+
+\section{Boundary and trusted base}
+This conditional result does not compute $b_\phi$ or select a maximizing angle. Lean and
+pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. AI-assisted and
+kernel-checked; no independent expert review is recorded. Status: \texttt{proved};
+working draft.
+\end{document}

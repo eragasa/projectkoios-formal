@@ -1,0 +1,65 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1}
+\title{Proof Dossier: Operator-Radius Recovery}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-020} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.rankTwoOperatorRadius_sq} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Define
+\[
+ r_* = \sqrt{\tau_o^2-\kappa(1-\mu^2)}.
+\]
+If $\kappa(1-\mu^2)\le\tau_o^2$, then
+\[
+ r_*^2=\tau_o^2-\kappa(1-\mu^2).
+\]
+
+\section{Source provenance}
+This \texttt{formalizes} the source operator-radius identity. The owner repository is
+\path{ksdft2effmass}. The immutable source commit is
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+The source path is
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+The locator is Eq. \texttt{operator-radius}. Later owner worktree changes are excluded.
+
+\section{Proof}
+The premise says the square-root radicand is nonnegative. The identity
+$(\sqrt{x})^2=x$ applies directly.
+\begin{lstlisting}
+theorem rankTwoOperatorRadius_sq
+    {κ μ operatorBudget : ℝ}
+    (hRadicand : κ * (1 - μ ^ 2) ≤ operatorBudget ^ 2) :
+    rankTwoOperatorRadius κ μ operatorBudget ^ 2 =
+      operatorBudget ^ 2 - κ * (1 - μ ^ 2)
+\end{lstlisting}
+
+\section{Boundary and trusted base}
+The proof is elementary and not novel. It does not establish that a concrete scientific
+budget satisfies the radicand premise. Lean \texttt{v4.35.0} with Mathlib revision
+\begin{center}\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}\end{center}
+reports \texttt{[propext, Classical.choice, Quot.sound]}. No admission or
+repository-owned scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No matrix derivation, budget, or numerical evidence is validated. No independent expert
+mathematical or physical review is recorded. On 18 October 2026, repository checks
+passed. Status: \texttt{proved}; working draft.
+\end{document}

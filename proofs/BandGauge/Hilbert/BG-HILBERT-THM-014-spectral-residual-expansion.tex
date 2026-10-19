@@ -1,0 +1,50 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\title{Proof Dossier: Spectral Residual Expansion}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-014} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.rankTwoSpectralFieldLossSq_eq_expansion} \\
+Module & \path{ProjectKoios/BandGauge/Hilbert/SpectralLossBridge.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+Let $d_{in}$ be a finite real two-state field with $\sum_n d_{in}=0$ at each
+coordinate, let $\sum_i\alpha_i=1$, and let $E_{\mathrm{ref}}\ne0$. The weighted
+squared residual associated with
+\[
+ E_{\mathrm{ref}}s+(\lambda-1)d_{in}
+\]
+is exactly
+\[
+ s^2+(\lambda-1)^2P(d),
+\qquad
+ P(d)=\sum_{i,n}\frac{\alpha_i}{2E_{\mathrm{ref}}^2}d_{in}^2.
+\]
+
+\section{Source and proof}
+This theorem \texttt{formalizes} the spectral-channel expansion in Supplementary
+Section S1.1 of Ragasa2026A. Owner: \path{ksdft2effmass}; immutable commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Source: \path{docs/publications/papers/Ragasa2026a/v3/}\path{supplementary.tex},
+lines 51--68. Real polarization expands the residual. Two-state centering cancels the
+cross term. Rank two and normalized weights reduce the constant contribution to $s^2$.
+
+\section{Boundary and trusted base}
+The theorem assumes centering and does not identify $d$ with an external eigenvalue
+field. Lean and pinned Mathlib report \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}. No admission or scientific axiom is used. The proof and prose were
+AI-assisted and kernel-checked. No independent expert review is recorded. Status:
+\texttt{proved}; working draft.
+\end{document}

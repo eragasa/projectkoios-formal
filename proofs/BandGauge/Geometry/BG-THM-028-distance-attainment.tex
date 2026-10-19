@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings,tabularx}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={≤}{{$\le$}}1 {κ}{{$\kappa$}}1 {μ}{{$\mu$}}1 {ℝ}{{$\mathbb R$}}1 {∈}{{$\in$}}1 {∃}{{$\exists$}}1}
+\title{Proof Dossier: Full-Ellipse Distance Attainment}
+\author{Project Koios Formal}
+\date{}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}
+\toprule
+Statement ID & \texttt{BG-THM-028} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Geometry.exists_rankTwoFullEllipseDistance_eq_dist} \\
+Owning module & \path{ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact statement}
+For $\kappa>0$ and nonnegative radii, there are $p\in\mathcal E_s$ and
+$q\in\mathcal E_o$ such that
+\[
+ \operatorname{dist}(p,q)=
+ \max\left\{0,|1-\mu|-\frac{\tau_s+r}{\sqrt\kappa}\right\}.
+\]
+
+\section{Source provenance}
+This \texttt{formalizes} attainment of Eq. \texttt{exact-distance} in
+\path{ksdft2effmass}. Immutable commit:
+\begin{center}\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}\end{center}
+Source:
+\begin{center}\path{docs/publications/papers/Ragasa2026a/v3/manuscript.tex}\end{center}
+Later owner worktree changes are excluded.
+
+\section{Proof}
+When the ellipses intersect, BG-THM-024 supplies one point for both sets and the formula
+is zero. Under strict separation, choose boundary points on the common center axis,
+toward the other center. Their transverse coordinate is zero and their longitudinal gap
+is exactly the stated positive expression.
+
+\section{Boundary and trusted base}
+The construction is classical and not novel. The witnesses lie in the full parameter
+plane and are not certified to lie in a bounded rectangle. Lean and pinned Mathlib give
+\begin{center}\texttt{[propext, Classical.choice, Quot.sound]}\end{center}
+No admission or scientific axiom is used.
+
+\section{AI, evidence, and review}
+The statement, proof, and dossier were AI-generated or AI-assisted and kernel-checked.
+No matrix derivation, containment premise, or numerical result is validated. No
+independent expert review is recorded. On 18 October 2026, repository checks passed.
+Status: \texttt{proved}; working draft.
+\end{document}
