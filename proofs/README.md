@@ -118,6 +118,15 @@ Current draft dossiers:
 - [`BG-HILBERT-THM-013-matrix-to-scalar-operator-loss.tex`](BandGauge/Hilbert/BG-HILBERT-THM-013-matrix-to-scalar-operator-loss.tex);
 - [`BG-HILBERT-THM-014-spectral-residual-expansion.tex`](BandGauge/Hilbert/BG-HILBERT-THM-014-spectral-residual-expansion.tex); and
 - [`BG-HILBERT-THM-015-spectral-field-to-scalar-loss.tex`](BandGauge/Hilbert/BG-HILBERT-THM-015-spectral-field-to-scalar-loss.tex);
+- [`BG-CERT-THM-001-check-implies-valid.tex`](BandGauge/Certificates/BG-CERT-THM-001-check-implies-valid.tex);
+- [`BG-CERT-THM-002-spectral-witness.tex`](BandGauge/Certificates/BG-CERT-THM-002-spectral-witness.tex);
+- [`BG-CERT-THM-003-ellipse-containment.tex`](BandGauge/Certificates/BG-CERT-THM-003-ellipse-containment.tex); and
+- [`BG-CERT-THM-004-strict-separation.tex`](BandGauge/Certificates/BG-CERT-THM-004-strict-separation.tex);
+- [`BG-CERT-THM-005-enclosure-check-implies-valid.tex`](BandGauge/Certificates/BG-CERT-THM-005-enclosure-check-implies-valid.tex);
+- [`BG-CERT-THM-006-enclosure-spectral-witness.tex`](BandGauge/Certificates/BG-CERT-THM-006-enclosure-spectral-witness.tex);
+- [`BG-CERT-THM-007-enclosure-containment.tex`](BandGauge/Certificates/BG-CERT-THM-007-enclosure-containment.tex);
+- [`BG-CERT-THM-008-enclosure-separation.tex`](BandGauge/Certificates/BG-CERT-THM-008-enclosure-separation.tex); and
+- [`BG-CERT-THM-009-inverse-sqrt-two-enclosure.tex`](BandGauge/Certificates/BG-CERT-THM-009-inverse-sqrt-two-enclosure.tex);
 - [`BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex);
 - [`BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex);
 - [`BG-RAGASA2026A-THM-003-operator-correlation-bound.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-003-operator-correlation-bound.tex); and
@@ -143,7 +152,9 @@ Current draft dossiers:
 - [`BG-RAGASA2026A-THM-023-canonical-loss-intersection.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-023-canonical-loss-intersection.tex);
 - [`BG-RAGASA2026A-THM-024-canonical-loss-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-024-canonical-loss-distance.tex);
 - [`BG-RAGASA2026A-THM-025-rectangle-intersection.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-025-rectangle-intersection.tex); and
-- [`BG-RAGASA2026A-THM-026-rectangle-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-026-rectangle-distance.tex).
+- [`BG-RAGASA2026A-THM-026-rectangle-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-026-rectangle-distance.tex); and
+- [`BG-RAGASA2026A-THM-027-checked-certificate-bridge.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-027-checked-certificate-bridge.tex); and
+- [`BG-RAGASA2026A-THM-028-checked-enclosure-bridge.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-028-checked-enclosure-bridge.tex);
 
 Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The `BG-BLOCH-THM-003` through `BG-BLOCH-THM-006` dossiers document standard supporting trace and unitary-invariance infrastructure; they are not paper-contribution or novelty claims. `BG-BLOCH-THM-007/008` are source-normalized bridge specializations; `BG-BLOCH-THM-009--011` are standard Hermiticity infrastructure. None carries a claim that the underlying standard algebra is novel. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
 

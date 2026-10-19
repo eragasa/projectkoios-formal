@@ -1,0 +1,25 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Checked-Enclosure Bridge}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-028}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{canonicalSpectralPass_and_operatorIncompatibility_of_checkedEnclosure}}.
+\section{Exact statement}
+Given enclosure-certificate acceptance, exact parent-power binding, and proved lower and
+upper rational bounds on the canonical real $\mu_{\max}$, the encoded positive-scale
+witness passes the canonical spectral loss in the candidate rectangle. The canonical
+spectral and optimized-operator pass sets there are disjoint.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} an interval-bound certificate bridge for manuscript line 857 at
+owner commit \texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}. The proof rewrites
+the finite field losses to scalar ellipses and applies uniform enclosure separation. No
+concrete matrices, parser, certificate instance, or scientific validation are supplied.
+Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked.
+\end{document}

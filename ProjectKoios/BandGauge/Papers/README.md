@@ -20,7 +20,14 @@ candidate-rectangle ellipse intersection and distance theorems to the canonical 
 field and continuously optimized operator field. Rectangle results retain explicit
 full-ellipse containment premises.
 
-`Ragasa2026A.lean` records the aggregate status: twenty-six formal statements, zero proved
+`Ragasa2026A/CertificateBridge.lean` transports successful exact rational checks to the
+canonical finite loss fields. One theorem uses exact rational `μmax` equality; another
+uses proved rational enclosure bounds and supports algebraic centers such as `1 / √2`.
+Both prove a positive-scale spectral pass and disjointness from the optimized operator
+pass set in the candidate rectangle. Neither instantiates publication data or certifies
+runtime output.
+
+`Ragasa2026A.lean` records the aggregate status: twenty-eight formal statements, zero proved
 scientific theorems, and zero checked certificates. The spectral and Pauli decompositions
 are now canonically obtained from the finite Hermitian matrices using exact noncomputable
 mathematics; the generic supplied spectral-witness interface also remains available.

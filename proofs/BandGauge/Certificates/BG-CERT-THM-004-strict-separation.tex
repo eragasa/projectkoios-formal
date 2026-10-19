@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Certified Rank-Two Strict Separation}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-004}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{disjoint_fullEllipses_of_check_eq_true}}.
+\section{Statement and proof}
+An accepted squared rational separation inequality implies that the spectral and operator
+full real ellipses are disjoint. A checked rational upper bound controls the operator
+square-root radius. Nonnegativity converts the strict squared inequality into strict
+center separation, after which the reusable ellipse-disjointness theorem applies.
+\section{Boundary}
+This supports the incompatibility conditions near Ragasa2026A manuscript line 857 at
+owner commit \texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}. No runtime or
+publication data are accepted here. Kernel axioms are \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. AI-assisted and
+kernel-checked.
+\end{document}

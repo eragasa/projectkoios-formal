@@ -1,0 +1,28 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Uniform Enclosure Ellipse Separation}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-008}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{disjoint_fullEllipses_of_enclosureCheck_eq_true}}.
+\section{Statement and proof}
+For every real center in the checked rational interval, the exact spectral and operator
+full ellipses are disjoint. The upper endpoint gives both the largest operator radius and
+the smallest center gap. Checked nonnegativity converts the strict squared rational
+inequality to the reusable strict-separation hypothesis.
+\section{Boundary}
+This supports incompatibility near Paper A manuscript line 857 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+No concrete field binding is claimed. The kernel axiom report is:
+\begin{itemize}
+\item \texttt{propext};
+\item \texttt{Classical.choice}; and
+\item \texttt{Quot.sound}.
+\end{itemize}
+There are no admissions. The proof is AI-assisted and kernel-checked.
+\end{document}

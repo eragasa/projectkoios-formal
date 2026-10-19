@@ -1,0 +1,27 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Enclosure-Certified Spectral Witness}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-006}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{enclosureSpectralWitness_mem_of_check_eq_true}}.
+\section{Statement and proof}
+Acceptance puts the encoded witness in the exact full spectral ellipse and candidate
+rectangle, with strictly positive scale. The proof casts checked rational inequalities to
+reals and verifies both coordinates.
+\section{Boundary}
+This supports Paper A manuscript line 857 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+No publication witness is instantiated. The kernel axiom report is:
+\begin{itemize}
+\item \texttt{propext};
+\item \texttt{Classical.choice}; and
+\item \texttt{Quot.sound}.
+\end{itemize}
+There are no admissions. The proof is AI-assisted and kernel-checked.
+\end{document}

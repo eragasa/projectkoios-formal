@@ -33,6 +33,8 @@ Before subtracting or comparing operators, a statement must identify:
 4. the energy reference and units; and
 5. the lattice and reciprocal-coordinate convention.
 
+Exact scalar certificates use rational inputs and exact rational comparison before coercion to real geometry. Algebraic real centers may be supplied through proved rational lower and upper bounds. Square-root bounds are discharged by checked squared inequalities plus explicit nonnegativity; floating-point square roots are not trusted. Certificate acceptance remains separate from binding `κ`, `μ`, thresholds, or witness coordinates to publication matrices and runtime data.
+
 Projection, disentanglement, basis transformation, Fourier conversion, and truncation remain different operations. A proof about one operation must not be relabeled as a result about another.
 
 ## How a convention becomes frozen

@@ -1,0 +1,23 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Certified Rank-Two Ellipse Containment}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-003}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{fullEllipses_subset_candidateRectangle_of_check_eq_true}}.
+\section{Statement and proof}
+Acceptance proves that both full real ellipses lie inside the encoded candidate rectangle.
+The checker supplies nonnegative rational upper bounds for the shift and scale radii. The
+proof uses squared inequalities and positivity of $\kappa$ to derive coordinatewise bounds;
+no floating-point square root is trusted.
+\section{Boundary}
+This supports the containment conditions near Ragasa2026A manuscript line 857 at owner
+commit \texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}. No concrete rectangle is
+instantiated. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked.
+\end{document}

@@ -1,0 +1,28 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Uniform Enclosure Ellipse Containment}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-007}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{fullEllipses_subset_enclosureCandidateRectangle_of_check_eq_true}}.
+\section{Statement and proof}
+For every real center in the checked rational interval, both full ellipses lie inside the
+candidate rectangle. Monotonicity of $\mu^2$ on the checked nonnegative interval bounds
+the operator radius at the upper endpoint. Exact squared inequalities then provide all
+coordinate bounds.
+\section{Boundary}
+This supports containment near Paper A manuscript line 857 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+No floating-point radius is trusted. The kernel axiom report is:
+\begin{itemize}
+\item \texttt{propext};
+\item \texttt{Classical.choice}; and
+\item \texttt{Quot.sound}.
+\end{itemize}
+There are no admissions. The proof is AI-assisted and kernel-checked.
+\end{document}

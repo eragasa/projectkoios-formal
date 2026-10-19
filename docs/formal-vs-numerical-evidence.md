@@ -66,6 +66,10 @@ Current formal implications:
 - `BG-RAGASA2026A-THM-018/019/020` — the finite-dimensional Hermitian spectral theorem constructs that exact decomposition canonically, so no external eigensolver output is trusted implicitly; this noncomputable existence result supplies no numerical eigenvalue certificate.
 - `BG-RAGASA2026A-THM-008` through `BG-RAGASA2026A-THM-017` — exact Pauli coordinates, canonically extracted from the Hermitian traceless fields, yield the source second harmonic, its exact continuous maximum and canonical half-open maximizing angle, `|bmax/κ| ≤ 1`, and the finite matrix loss centered at `μmax`; no numerical coefficient extraction or degeneracy decision is trusted implicitly.
 - `BG-RAGASA2026A-THM-021` through `BG-RAGASA2026A-THM-026` — the actual canonical Paper A losses inherit the proved ellipse intersection and exact-distance formulas; candidate-rectangle results require explicit full-ellipse containment, whose concrete numerical verification remains external.
+- `BG-CERT-THM-001` through `BG-CERT-THM-004` — an exact rational-center Boolean checker implies a positive-scale spectral witness, full-ellipse containment, and strict separation in real geometry.
+- `BG-CERT-THM-005` through `BG-CERT-THM-008` — a rational-enclosure checker proves the same conclusions uniformly for every real center in its checked interval.
+- `BG-CERT-THM-009` — exact real arithmetic proves `7/10 < 1 / √2 < 71/100` without floating-point evidence.
+- `BG-RAGASA2026A-THM-027/028` — after explicit exact `κ` binding and either exact rational `μ` equality or proved rational enclosure of the canonical finite fields, acceptance implies a spectral pass and operator incompatibility in the candidate rectangle. No concrete publication certificate, runtime parser, or matrix binding is present.
 - `BG-HILBERT-THM-001` — two nonnegative-radius Hilbert balls intersect exactly when their center distance is at most the radius sum.
 - `BG-HILBERT-THM-002/003/004` — the center-gap formula is a universal lower bound, is attained, and equals the real admissible-set distance.
 - `BG-HILBERT-THM-005/006` — the finite weighted rank-two Frobenius residual is nonnegative and its real correlation satisfies Cauchy–Schwarz.
@@ -74,7 +78,7 @@ Current formal implications:
 - `BG-HILBERT-THM-011/012/013` — the abstract finite operator matrix residual expands exactly, specializes to the common-power quadratic, and equals the existing reduced scalar aligned-operator loss.
 - `BG-HILBERT-THM-014/015` — the abstract centered two-state spectral residual expands exactly and equals the existing reduced scalar spectral loss when its weighted power is `κ`.
 
-These theorems do not define the scientific loss sublevel sets, produce a runtime witness, or validate a numerical lower bound. An exact checked certificate must connect runtime output to their hypotheses.
+These theorems define conditional loss sublevel sets and an exact scalar-checker boundary, but they do not instantiate the publication matrices, parse runtime output, or validate a concrete numerical lower bound. A future concrete certificate package must bind exact runtime data to the checker inputs and discharge the field-derived `κ` and `μmax` equalities.
 
 ## Prohibited status transfers
 

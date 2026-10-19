@@ -44,4 +44,6 @@ Before a scientific declaration is marked proved, the audit must record:
 7. the successful pin and build checks; and
 8. any external certificate or numerical obligations that remain outside the proof.
 
-Current proof IDs and statuses are listed only in `theorem-manifest.md`. No listed theorem is a paper-specific model theorem, checked numerical certificate, scientific validation result, or release.
+The rational rank-two checker reduces exact decidable propositions inside Lean; its soundness theorems remain kernel checked. Runtime parsing and field-to-certificate bindings are not trusted implicitly.
+
+Current proof IDs and statuses are listed only in `theorem-manifest.md`. No listed theorem instantiates concrete publication model data, constitutes a concrete checked scientific certificate, validates a scientific model, or authorizes a release.

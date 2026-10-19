@@ -1,0 +1,29 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Certified Rank-Two Spectral Witness}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-002}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{spectralWitness_mem_of_check_eq_true}}.
+\section{Statement and proof}
+An accepted certificate's rational witness, coerced exactly into the Euclidean real
+parameter plane, lies in both its full spectral ellipse and candidate rectangle, and has
+strictly positive scale. The proof casts the checked rational inequalities into reals and
+checks the two coordinates explicitly.
+\section{Boundary}
+This supports the Paper A witness conditions near manuscript line 857 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+No concrete witness is instantiated. The kernel reports the following axioms:
+\begin{itemize}
+\item \texttt{propext};
+\item \texttt{Classical.choice}; and
+\item \texttt{Quot.sound}.
+\end{itemize}
+There are no admissions. The proof is AI-assisted and kernel-checked; no independent
+expert review is recorded.
+\end{document}

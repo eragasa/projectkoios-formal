@@ -1,0 +1,29 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Checked-Certificate Bridge}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-027}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{canonicalSpectralPass_and_operatorIncompatibility_of_checkedCertificate}}.
+\section{Exact statement}
+Given Boolean acceptance, exact parent-power binding to the certificate's $\kappa$, and
+exact binding of canonical $\mu_{\max}$ to its $\mu$, the encoded positive-scale witness
+passes the canonical spectral loss inside the candidate rectangle. The canonical spectral
+and optimized-operator pass sets in that rectangle are disjoint.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the conditional certificate bridge associated with manuscript
+line 857 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof rewrites both finite field losses to the reduced scalar ellipses and applies the
+certificate witness and separation theorems. The binding hypotheses are not discharged;
+there is no concrete publication certificate, parser, or scientific validation. The
+source example's algebraic $\mu_{\max}=1/\sqrt{2}$ does not satisfy this theorem's exact
+rational equality; BG-RAGASA2026A-THM-028 supplies the separate enclosure bridge. Kernel
+axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no
+admissions. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

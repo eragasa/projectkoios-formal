@@ -1,0 +1,31 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Exact Rational Enclosure of $1/\sqrt{2}$}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-009}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{sevenTenths_lt_inv_sqrtTwo_lt_seventyOneHundredths}}.
+\section{Exact statement}
+The kernel checks
+\[
+ \frac{7}{10}<\frac{1}{\sqrt{2}}<\frac{71}{100}.
+\]
+\section{Proof and boundary}
+Positivity of $\sqrt2$ permits positive-denominator comparison. Squaring the resulting
+nonnegative sides and using $(\sqrt2)^2=2$ reduces both inequalities to exact rational
+arithmetic. This encloses the algebraic center appearing near Paper A manuscript line 857
+at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+It does not prove that a concrete field has that center. The kernel axiom report is:
+\begin{itemize}
+\item \texttt{propext};
+\item \texttt{Classical.choice}; and
+\item \texttt{Quot.sound}.
+\end{itemize}
+There are no admissions. The proof is AI-assisted and kernel-checked.
+\end{document}

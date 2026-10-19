@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Exact Rank-Two Certificate Acceptance}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-001}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{valid_of_checkRankTwoSeparationCertificate_eq_true}}.
+\section{Statement and proof}
+If the Boolean exact rational checker returns \texttt{true}, every field of the
+certificate validity predicate holds. The proof unfolds the checker, invokes the
+soundness of \texttt{decide}, and transports the checked conjunction to the named
+validity structure.
+\section{Boundary}
+This supports the scalar conditions near Ragasa2026A manuscript line 857 at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+It neither parses runtime output nor binds values to publication matrices. Kernel axioms
+are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}
