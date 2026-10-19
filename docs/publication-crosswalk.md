@@ -1,10 +1,10 @@
 # Publication-to-formalization crosswalk
 
-All source locations below are in `ksdft2effmass`, branch `work/paper-3-higher-rank-extension`, commit `99a46cb59d0c6f27ada7d709f194996ef9619d9f`. “Paper proof” means a mathematical argument in publication prose; it does **not** mean Lean-checked proof. Most rows map only to metadata placeholders; the Ragasa2026C witness/separation row has the explicitly limited foundational formalization recorded below. Standard quantum, solid-state, Bloch, trace, and unitary-invariance facts are supporting dependencies rather than paper contributions; their presence in foundational modules carries no novelty claim.
+Unless a later planning inspection is explicitly identified, all source locations below are in `ksdft2effmass`, branch `work/paper-3-higher-rank-extension`, commit `99a46cb59d0c6f27ada7d709f194996ef9619d9f`. “Paper proof” means a mathematical argument in publication prose; it does **not** mean Lean-checked proof. Most rows map only to metadata placeholders; the Ragasa2026C witness/separation row has the explicitly limited foundational formalization recorded below. Standard quantum, solid-state, Bloch, trace, and unitary-invariance facts are supporting dependencies rather than paper contributions; their presence in foundational modules carries no novelty claim.
 
 ## Ragasa2026A ↔ `Ragasa2026a/v3`
 
-Primary audit ledger: `claim-and-commitment-inventory.md`, especially analytic entries A01–A12 and numerical entries N01–N23. Aggregate formal status: `ProjectKoios.BandGauge.Papers.Ragasa2026A.summary`. The conditional field, harmonic, and optimized-geometry bridges are in the three modules under `ProjectKoios.BandGauge.Papers.Ragasa2026A`; together they record twenty-six proved algebraic, optimization, and geometry statements, zero proved scientific theorems, and zero checked certificates.
+Primary audit ledger: `claim-and-commitment-inventory.md`, especially analytic entries A01–A12 and numerical entries N01–N23. Aggregate formal status: `ProjectKoios.BandGauge.Papers.Ragasa2026A.summary`. The conditional field, harmonic, optimized-geometry, and certificate-binding bridges are in four modules under `ProjectKoios.BandGauge.Papers.Ragasa2026A`; together they record twenty-eight proved conditional statements, zero proved scientific theorems, and zero concrete checked certificates. The proposed scientific plan is [`BandGauge/Papers/Ragasa2026A/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026A/paper-and-proof-plan.md), and the prospective mathematical and computational study of every diagnostic family is [`BandGauge/Papers/Ragasa2026A/diagnostic-usefulness-study-plan.md`](BandGauge/Papers/Ragasa2026A/diagnostic-usefulness-study-plan.md). These plans do not change the aggregate status.
 
 | Publication declaration/location | Source status | Lean status |
 |---|---|---|
@@ -14,7 +14,7 @@ Primary audit ledger: `claim-and-commitment-inventory.md`, especially analytic e
 | “Exact loss geometry,” `manuscript.tex:663` | theorem with paper proof; rank-two/strict-positive-weight/global-real-rotation assumptions | operator and spectral field bridges are `BG-RAGASA2026A-DEF-001` through `BG-RAGASA2026A-DEF-015` and `BG-RAGASA2026A-THM-001` through `BG-RAGASA2026A-THM-020`; canonical real losses and their optimized full-plane and candidate-rectangle admissible-set geometry are `BG-RAGASA2026A-DEF-016` through `BG-RAGASA2026A-DEF-021` and `BG-RAGASA2026A-THM-021` through `BG-RAGASA2026A-THM-026`; rectangle conclusions retain explicit full-ellipse containment; “optimized” denotes evaluation at the correlation-maximizing angle and does not assert all-real-`λ` angle minimization outside the source's positive candidate domain; periodic-potential construction, concrete data, and scientific hypotheses remain open |
 | Reduced scalar loss formulas and irreducible operator floor, `manuscript.tex:663` | consequences of the exact-loss quadratic; operator-set negative-radicand condition follows in the next subsection | `BG-DEF-005` through `BG-DEF-014` and `BG-THM-009` through `BG-THM-030` cover scalar geometry; `BG-HILBERT-THM-011` through `BG-HILBERT-THM-015` derive both scalar losses from abstract finite residuals; `BG-RAGASA2026A-THM-004/007` supply conditional exact operator and spectral field bridges, and `BG-RAGASA2026A-THM-008` through `BG-RAGASA2026A-THM-017` supply canonical Pauli extraction, conditional continuous correlation optimization, and the matrix-loss bridge centered at `μmax`; concrete matrix/eigenvalue data, numerical certificates, and periodic-potential construction remain open |
 | “Compatibility and exact full-ellipse distance,” `manuscript.tex:737` | corollary with containment and real-radius premises | reusable full-plane geometry is `BG-THM-025` and `BG-THM-029`; `BG-DEF-015` through `BG-DEF-017` and `BG-THM-031` through `BG-THM-034` provide containment-based rectangle transfer; `BG-RAGASA2026A-DEF-016` through `BG-RAGASA2026A-DEF-021` and `BG-RAGASA2026A-THM-021` through `BG-RAGASA2026A-THM-026` instantiate the actual canonical Paper A loss sets, intersection criteria, and distances; concrete thresholds and numerical containment verification remain external |
-| “Exact spectral pass with certified operator incompatibility,” `manuscript.tex:857` | constructed proposition for fixed observations, box, and thresholds | placeholder; no statement |
+| “Exact spectral pass with certified operator incompatibility,” `manuscript.tex:857` | constructed proposition for fixed observations, box, and thresholds | `BG-CERT-DEF-001` through `BG-CERT-DEF-013` and `BG-CERT-THM-001` through `BG-CERT-THM-008` provide exact rational-center and rational-enclosure checkers for the witness, containment, and separation conditions; `BG-CERT-THM-009` proves `7/10 < 1 / √2 < 71/100`; `BG-RAGASA2026A-THM-027/028` bridge acceptance to the canonical finite loss fields under explicit exact `κ` and either rational equality or enclosure hypotheses for `μmax`; no fixed publication observations, runtime parser, matrix binding, or concrete accepted certificate are present |
 | “Smooth monotone threshold continuum,” `manuscript.tex:925` | corollary for the stated flat rank-two Bessel family and amplitude interval | placeholder; no statement |
 | “Operator residual equals induced nonlocal hopping weight,” `manuscript.tex:1024` | theorem under flat traceless parent and matched real-rotation-family assumptions | placeholder; no statement |
 | “Attainment, transported-frame covariance, and excess,” `supplementary.tex:202` | limited paper proposition; explicitly not the MLWF spread decomposition | placeholder; no statement |
@@ -23,7 +23,7 @@ The ledger labels dispersive homotopy, finite-mesh hopping, truncation, and rang
 
 ## Ragasa2026B ↔ `Ragasa2026b/v2`
 
-Primary source: `manuscript.tex`; v2 says it preserves v1 mathematics and scope. Formal target: `ProjectKoios.BandGauge.Papers.Ragasa2026B.placeholder`.
+Primary source: `manuscript.tex`; v2 says it preserves v1 mathematics and scope. Formal target: `ProjectKoios.BandGauge.Papers.Ragasa2026B.placeholder`. The proposed scientific, evidence, and semantic proof-dependency plan is [`BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md); it does not instantiate the placeholder.
 
 | Publication declaration/location | Source status | Lean status |
 |---|---|---|
@@ -40,6 +40,15 @@ Finite meshes and strain samples do not establish continuum extrema. Graphene-/s
 
 Primary source: `manuscript.md`; boundary detail in `appendices/`. Formal target: `ProjectKoios.BandGauge.Papers.Ragasa2026C.placeholder`.
 
+A later read-only planning inspection used branch `work/paper-3-d1-calculator`, immutable
+commit `8bafdeeb6b0c75bcd7a2984d0c283a8e64fb0fd8`, and the committed higher-rank D1 protocol.
+That protocol supports the source-audited planning documents
+[`BandGauge/higher-rank-composite-band-formalization-plan.md`](BandGauge/higher-rank-composite-band-formalization-plan.md)
+and
+[`BandGauge/Papers/Ragasa2026C/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026C/paper-and-proof-plan.md).
+It does not replace the publication-source revision, instantiate the Paper C Lean
+namespace, or promote schema-free development output to retained evidence.
+
 | Publication declaration/location | Source status | Lean status |
 |---|---|---|
 | “Witnesses and certified separation,” `manuscript.md:132` | proposition with elementary paper proof; failed search proves nothing; compactness is required for the stated attainment conclusion | generic mathematical clauses and representation bridge formalized: `BG-DEF-001/002` and `BG-THM-001` through `BG-THM-006`; no paper-namespace instantiation |
@@ -50,6 +59,15 @@ Primary source: `manuscript.md`; boundary detail in `appendices/`. Formal target
 | M2/M3, rank-three, and Wannier90 records, `appendices/A-1-extracted-evidence-boundary.md` | bounded historical/extracted numerical evidence with listed nonclaims | outside Lean; external numerical obligations |
 
 Paper 3 remains pre-results for the new higher-rank campaign: the selected D1 P0/G0 protocol has no implementation, run, result, retained evidence package, submission, or publication asserted by the source. Its exact prose certificates do not establish numerical convergence, locality, or scientific acceptance.
+
+## Series planning beyond the current crosswalk
+
+The proposed division of Ragasa2026A–D is recorded in
+[`BandGauge/Papers/ragasa-series-research-plan.md`](BandGauge/Papers/ragasa-series-research-plan.md).
+The possible first-principles continuation is described separately in
+[`BandGauge/Papers/Ragasa2026D/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026D/paper-and-proof-plan.md).
+These documents are planning only. In particular, Ragasa2026D has no audited publication
+source, canonical source key, Lean namespace, or paper-specific claim in this repository.
 
 ## Residual assumptions and unresolved work
 

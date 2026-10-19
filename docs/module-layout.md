@@ -1,15 +1,18 @@
 # Planned module layout
 
-The directories under `ProjectKoios/BandGauge/` currently contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Their presence reserves cohesive ownership boundaries; it does not announce implemented APIs.
+The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Neither a directory nor a paper plan announces an implemented API.
 
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
 | `Foundations/` | finite index types, support vocabulary, state-space/frame/gauge definitions, rank-two real rotations and Pauli coordinates, and standard second-harmonic optimization | paper-specific thresholds and numerical records |
-| `Bloch/` | pointwise reciprocal-group sewing, covariant operator fields, sewing-compatible alignments, and abstract periodic retained-rank-two finite samples | silently treating `L²` classes as pointwise boundary data, claiming topology from sewing diagnostics, or claiming a Bloch--Floquet construction from a periodic potential |
-| `Geometry/` | admissible-set geometry, alignment losses, rank-two finite-dimensional consequences | unreviewed generalization to arbitrary rank or scalar field |
+| `Bloch/` | pointwise reciprocal-group sewing, covariant operator fields, sewing-compatible alignments, aligned difference fields, and abstract periodic retained-rank-two finite samples | silently treating `L²` classes as pointwise boundary data, claiming topology from sewing diagnostics, or claiming a Bloch--Floquet construction from a periodic potential |
+| `Geometry/` | admissible-set geometry, alignment losses, metric separation, and rank-two finite-dimensional consequences | unreviewed generalization to arbitrary rank or scalar field, or finite decision enumeration |
 | `Hilbert/` | reusable real Hilbert-space residual-ball geometry and finite rank-two weighted Frobenius algebra | substituting bounded-operator norm for the papers' Frobenius losses |
-| `Fourier/` | discrete Fourier conventions and locality first; continuum analysis later | calculator execution and sampled evidence |
-| `Projection/` | spectral projection and finite-support consequences | conflating projection with gauge change, disentanglement, or truncation |
+| `Alignment/` *(proposed)* | finite-rank gauge actions, special-orthogonal/unitary alignment, exact recovery, and reviewed Procrustes/Kabsch results | paper channel labels, Fourier truncation, or treating unequal-rank isometries as unitary gauge equivalence |
+| `Decision/` | finite dominance, Pareto efficiency, threshold feasibility, minimum-cost attainment, robustness, and empty-set classification | plot triangulation, convexification, KKT assumptions, or continuum-frontier claims |
+| `Certificates/` | exact decidable rational-center and rational-enclosure schemas, and later finite interval-table, coverage, and mask certificate soundness bridges | production runtime execution, unbound publication data, or scientific validation |
+| `Fourier/` | implemented convention-neutral finite reconstruction/truncation, two-sided finite-abelian inversion, Parseval, exact Hilbert- and matrix-Frobenius tail identities, Hermitian pairing, and constant/uniform rank-two paper normalization; later nonuniform-weight, physical-shell and source-mesh specializations, and continuum analysis | Wannier90 execution, calculator output, sampled evidence, or silently identifying the generic group with a publication mesh |
+| `Projection/` | retained low-eigenpair compression, invariant-subspace reconstruction, residual/leakage bounds, and finite-support consequences | conflating projection with gauge change, disentanglement, Fourier conversion, or truncation |
 | `SpecialFunctions/` | later Jacobi–Anger, Bessel, and shell-tail infrastructure | premature dependencies before finite/continuum foundations are fixed |
 | `Papers/` | thin source crosswalks and eventual theorem instantiations | duplicated foundational proofs and ownership of publication prose |
 
@@ -19,15 +22,18 @@ The intended direction is:
 
 ```text
 Foundations ──→ Bloch
+      ├───────→ Alignment
       ├───────→ Geometry
       ├───────→ Hilbert
       ├───────→ Fourier
       └───────→ Projection
 
-Bloch finite sampled fields ──→ Hilbert finite residual layer
+Bloch + Alignment ──→ sewn aligned differences and reference-fiber losses
+Projection + Alignment + Fourier + Hilbert ──→ Decision
+Geometry + Decision ──→ Certificates ──→ Papers through explicit bindings
 Bloch + reviewed measure/regularity contracts ──→ later Hilbert section spaces
 Foundations + Fourier ──→ later SpecialFunctions
-reviewed foundational modules ──→ Papers
+reviewed semantic modules ──→ thin Papers instantiations
 ```
 
 Actual imports must remain narrower than this sketch. No root module should become a catch-all re-export merely because a directory exists.
@@ -41,4 +47,6 @@ A documentation folder becomes a Lean module family only after:
 3. ownership and import direction are reviewed; and
 4. the theorem manifest receives a statement-level entry.
 
-Placeholder README files are not supported import surfaces.
+Placeholder README files are not supported import surfaces. Theorem IDs and proof dossiers
+follow semantic families. Paper IDs are reserved for genuinely source-specific
+instantiations and must not be used merely because a paper motivated a reusable theorem.

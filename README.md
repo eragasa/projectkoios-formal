@@ -9,7 +9,7 @@ Minimal Lean/Lake harness for reusable Project Koios formalization.
 - harness namespace: `ProjectKoios.Formal`
 - initial scientific namespace: `ProjectKoios.BandGauge`
 
-The tree contains a non-scientific smoke theorem, proved reusable foundations, partial conditional Ragasa2026A rank-two field, spectral, correlation-harmonic, and optimized admissible-set geometry bridges, and metadata-only placeholders for the other publication modules. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). It contains **no proved scientific theorem, checked scientific certificate, numerical result, release, or scientific validation claim**.
+The tree contains a non-scientific smoke theorem, proved reusable foundations, a semantic finite-decision/Pareto layer with exact Boolean checks, convention-neutral finite reconstruction/support truncation, exact finite-abelian inversion, Parseval and residual-tail identities, partial conditional Ragasa2026A rank-two field, spectral, correlation-harmonic, optimized admissible-set geometry, and exact certificate-binding bridges, and metadata-only placeholders for the other publication modules. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). It contains **no proved scientific theorem, checked scientific certificate, numerical result, release, or scientific validation claim**.
 
 ## Authority boundaries
 
@@ -26,7 +26,7 @@ Human-readable, statement-specific proof explanations and prior-art records live
 
 An umbrella [`Ragasa claim-family formalization working paper`](papers/ragasa-formalization-working-paper.tex) supplies the cross-claim narrative and status matrix. It is an incomplete synthesis, not a proof authority, source-publication replacement, release, or claim that all families are already formalized; see [`papers/README.md`](papers/README.md).
 
-The folders under `ProjectKoios/BandGauge/` reserve narrow ownership boundaries for foundations, geometry, Fourier analysis, projection, special functions, and thin paper crosswalks. A folder README does not establish a Lean API or a completed theorem; implemented modules must be listed in the theorem manifest.
+The folders under `ProjectKoios/BandGauge/` reserve narrow ownership boundaries for foundations, geometry, finite decisions, exact certificate checking, Fourier analysis, projection, special functions, and thin paper crosswalks. A folder README does not establish a Lean API or a completed theorem; implemented modules must be listed in the theorem manifest.
 
 ## Checks
 

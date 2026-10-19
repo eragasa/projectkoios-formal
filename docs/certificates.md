@@ -12,11 +12,13 @@
 | Theorem inventory | fully qualified declarations and honest proof status | startup inventory available | planned or metadata entries are not theorems |
 | Axiom report | `#print axioms` output for named declarations | available for startup declarations | says nothing about declarations not audited |
 | Publication crosswalk | source statement location, assumptions, and Lean declaration/status | available at metadata level | does not formalize the statement |
-| Exact scientific certificate | exact data, parser/checker, soundness theorem, and bound input identity | none | numerical output is not silently promoted to this class |
+| Exact rank-two scalar checkers | rational scalar inputs, exact-center or interval-center checks, and soundness theorems for witness, containment, and separation | implemented in `BandGauge/Certificates/RankTwoSeparation.lean` and `RankTwoSeparationEnclosure.lean` | does not bind scalars to publication matrices or runtime bytes |
+| Exact finite Pareto checks | total finite exact objective table, executable dominance and threshold checks, executable nondominated mask, and soundness/completeness bridges | implemented in `BandGauge/Certificates/FinitePareto.lean` | does not parse external tables, prove external coverage, or resolve interval-overlapping comparisons |
+| Exact scientific certificate | exact data, parser/checker, soundness theorem, and bound input identity | none | the generic scalar checker and numerical output are not silently promoted to this class |
 
 ## Certificate lifecycle
 
-A future exact scientific certificate moves through these states:
+A future concrete exact scientific certificate moves through these states:
 
 1. **proposed** — data and target proposition are described;
 2. **specified** — exact encoding, parser, checker, and rejection behavior are fixed;
@@ -24,7 +26,7 @@ A future exact scientific certificate moves through these states:
 4. **checked** — a bound certificate passes the pinned checker;
 5. **crosswalked** — the checked result is linked to a reviewed theorem and source claim.
 
-Only the final two states may support a claim about a particular certificate, and neither implies scientific acceptance beyond the encoded conclusion.
+Only the final two states may support a claim about a particular certificate, and neither implies scientific acceptance beyond the encoded conclusion. The rank-two scalar and finite-Pareto checkers are implemented infrastructure; because no publication data package or parser binding is present, `checkedCertificateCount` remains zero. The enclosure checker handles algebraic centers through proved rational bounds, and `BG-CERT-THM-009` proves `7/10 < 1 / √2 < 71/100`. A concrete certificate still needs exact proofs that the field-derived `μmax`, `κ`, thresholds, and retained data match its checked inputs.
 
 ## Retention policy
 

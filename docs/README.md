@@ -28,9 +28,18 @@ This directory records the formalization contract, provenance, planning state, a
 
 ## Planning
 
-- [`module-layout.md`](module-layout.md) — intended ownership of documentation-only source folders.
+- [`module-layout.md`](module-layout.md) — intended semantic ownership of formal source folders.
+- [`../ProjectKoios/BandGauge/Decision/README.md`](../ProjectKoios/BandGauge/Decision/README.md) — implemented finite dominance, Pareto sufficiency, threshold monotonicity, and minimum-cost semantic layer.
+- [`../ProjectKoios/BandGauge/Fourier/README.md`](../ProjectKoios/BandGauge/Fourier/README.md) — implemented finite reconstruction/truncation, two-sided finite-abelian inversion, Parseval, Hermitian pairing, matrix Frobenius residual-tail identities, and the constant/uniform rank-two `weight/(2Eref²)` bridge.
 - [`definition-and-lemma-inventory.md`](definition-and-lemma-inventory.md) — concepts and library searches required before theorem encoding.
 - [`BandGauge/Geometry/witness-separation-statement-selection.md`](BandGauge/Geometry/witness-separation-statement-selection.md) — `BG-PLAN-001` source freeze, attribution boundary, Mathlib probe, implemented signatures and remaining work.
+- [`BandGauge/higher-rank-composite-band-formalization-plan.md`](BandGauge/higher-rank-composite-band-formalization-plan.md) — source-audited Paper 3 ambient-parent, retained-reference, gauge-alignment, Fourier-truncation, and finite-Pareto plan, with later threshold and Wannier90 boundaries kept separate.
+- [`BandGauge/Papers/ragasa-series-research-plan.md`](BandGauge/Papers/ragasa-series-research-plan.md) — proposed A–D division into compatibility, locality, higher-rank gauge expressivity, and a later first-principles application; Paper D remains planning-only with no source identity or Lean namespace.
+- [`BandGauge/Papers/Ragasa2026A/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026A/paper-and-proof-plan.md) — Paper A compatibility-geometry thesis, concrete certificate requirements, semantic proof dependencies, and readiness gates.
+- [`BandGauge/Papers/Ragasa2026A/diagnostic-usefulness-study-plan.md`](BandGauge/Papers/Ragasa2026A/diagnostic-usefulness-study-plan.md) — prospective registry and mathematical, fault-injection, sensitivity, predictive-value, ablation, cost, and held-out tests for all Paper A diagnostic families.
+- [`BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md) — Paper B projection-induced locality, complete-shell, finite-decision, proof, evidence, and readiness plan.
+- [`BandGauge/Papers/Ragasa2026C/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026C/paper-and-proof-plan.md) — detailed Paper C scientific thesis, D1/D2/D3 `SO(r)` ladder, fixed-reference error decomposition, evidence requirements, semantic proof dependencies, and publication-readiness boundary.
+- [`BandGauge/Papers/Ragasa2026D/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026D/paper-and-proof-plan.md) — planning-only first-principles oracle/bridge/local-model study; no Paper D source identity, namespace, or claim exists.
 - [`witness-catalog.md`](witness-catalog.md) — bounded candidate examples and their source limitations.
 - [`roadmap.md`](roadmap.md) — gated order of future formalization work.
 
