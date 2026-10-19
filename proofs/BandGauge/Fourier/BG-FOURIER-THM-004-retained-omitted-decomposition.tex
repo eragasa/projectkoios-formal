@@ -1,0 +1,27 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Exact Retained--Omitted Decomposition}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-004} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteReconstruction\_eq\_truncated\_add\_omitted} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteReconstruction.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+The full finite reconstruction is the sum of its retained-support reconstruction and its explicit complement sum.
+\section{Argument}
+The finite mode inventory is partitioned into the support and its complement. Finite-sum additivity gives the equality exactly.
+\section{Boundary and provenance}
+Completeness refers only to the declared finite type, not an external mesh or continuum domain. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

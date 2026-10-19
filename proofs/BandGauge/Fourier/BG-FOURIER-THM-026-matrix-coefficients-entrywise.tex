@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Matrix Fourier Coefficients Are Entrywise}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-026} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteFourierCoefficient\_apply} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/MatrixFrobenius.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+Evaluating a matrix-valued finite Fourier coefficient at one row and column equals the scalar Fourier coefficient of that entry field. Matrix evaluation commutes with finite sums and complex scalar multiplication.
+\section{Boundary}
+This is entrywise linear algebra and carries no matrix-norm or source-data claim. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

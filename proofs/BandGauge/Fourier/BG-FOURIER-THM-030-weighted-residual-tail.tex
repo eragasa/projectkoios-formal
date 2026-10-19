@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Constant-Weight Rank-Two Residual--Tail Identity}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-030} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{rankTwoWeightedFrobeniusTruncationResidual\_eq} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/RankTwoWeightedBridge.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+For a constant momentum weight, the exact rank-two weighted residual equals $|G|$ times the omitted matrix coefficient power carrying the factor $\mathrm{weight}/(2E_{\mathrm{ref}}^2)$. Combine BG-FOURIER-THM-028 with BG-FOURIER-THM-029.
+\section{Boundary}
+The finite group, support, and constant weight are supplied abstractions, not publication data. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

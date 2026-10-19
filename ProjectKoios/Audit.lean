@@ -8,6 +8,12 @@ import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
 import ProjectKoios.BandGauge.Hilbert.SpectralLossBridge
 import ProjectKoios.BandGauge.Decision.FinitePareto
+import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
+import ProjectKoios.BandGauge.Fourier.FiniteAbelianTransform
+import ProjectKoios.BandGauge.Fourier.FiniteParseval
+import ProjectKoios.BandGauge.Fourier.HermitianPairing
+import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
+import ProjectKoios.BandGauge.Fourier.RankTwoWeightedBridge
 import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Papers.Ragasa2026A
 import ProjectKoios.BandGauge.Papers.Ragasa2026A.CertificateBridge
@@ -88,6 +94,38 @@ import ProjectKoios.BandGauge.Papers.Ragasa2026C
 #print axioms ProjectKoios.BandGauge.Decision.exists_minimumFeasibleCost
 #print axioms ProjectKoios.BandGauge.Decision.minimumFeasibleCost_anti_of_relaxed
 #print axioms ProjectKoios.BandGauge.Decision.exists_jointFeasibilityClass_holds
+#print axioms ProjectKoios.BandGauge.Fourier.truncateCoefficients_eq_of_mem
+#print axioms ProjectKoios.BandGauge.Fourier.truncateCoefficients_eq_zero_of_not_mem
+#print axioms ProjectKoios.BandGauge.Fourier.truncatedReconstruction_eq_sum
+#print axioms ProjectKoios.BandGauge.Fourier.finiteReconstruction_eq_truncated_add_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteReconstruction_sub_truncatedReconstruction_eq_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.LinearMap.map_finiteReconstruction
+#print axioms ProjectKoios.BandGauge.Fourier.LinearMap.map_truncateCoefficients
+#print axioms ProjectKoios.BandGauge.Fourier.omittedWeight_anti
+#print axioms ProjectKoios.BandGauge.Fourier.finiteCharacterKernel
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierReconstruction_coefficients
+#print axioms ProjectKoios.BandGauge.Fourier.card_smul_finiteFourierCoefficient
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourier_inner_sum
+#print axioms ProjectKoios.BandGauge.Fourier.finiteCharacterOrthogonality
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierCoefficient_reconstruction
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierPower_eq_sum_norm_sq
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourier_parseval
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierPower_eq_truncated_add_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierCoefficient_sub
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierCoefficient_truncationResidual
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierPower_sub_truncate_eq_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierTruncationResidual_parseval
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierCoefficient_neg_eq_conjTranspose
+#print axioms ProjectKoios.BandGauge.Fourier.truncateCoefficients_neg_eq_conjTranspose
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierReconstruction_conjTranspose_eq_self
+#print axioms ProjectKoios.BandGauge.Fourier.truncatedFiniteFourierReconstruction_conjTranspose_eq_self
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierCoefficient_apply
+#print axioms ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusPower_parseval
+#print axioms ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusTruncationResidual_parseval
+#print axioms ProjectKoios.BandGauge.Fourier.rankTwoWeightedFrobeniusSq_const_eq_coefficient_mul_power
+#print axioms ProjectKoios.BandGauge.Fourier.rankTwoWeightedFrobeniusTruncationResidual_eq
+#print axioms ProjectKoios.BandGauge.Fourier.uniformFiniteWeight_pos
+#print axioms ProjectKoios.BandGauge.Fourier.uniformRankTwoWeightedFrobeniusTruncationResidual_eq
 #print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff

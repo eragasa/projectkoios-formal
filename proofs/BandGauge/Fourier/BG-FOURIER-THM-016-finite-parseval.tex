@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Finite Parseval Identity}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-016} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteFourier\_parseval} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteParseval.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+For forward normalization $1/|G|$, total field power equals $|G|$ times total coefficient power. Take the real part of BG-FOURIER-THM-012 with the same field in both arguments.
+\section{Boundary}
+This is finite Parseval for the selected convention, not a continuum or data-validation theorem. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

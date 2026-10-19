@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Finite Character Orthogonality}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-013} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteCharacterOrthogonality} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteParseval.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+The normalized momentum sum of $\overline{\chi(k)}\psi(k)$ is one when $\chi=\psi$ and zero otherwise. This is Mathlib's finite-abelian character orthogonality rewritten in the selected normalization.
+\section{Boundary}
+This is standard finite harmonic analysis and carries no novelty or publication-mesh claim. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

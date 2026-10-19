@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Negation-Closed Truncation Reconstructs Hermitian Fields}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-025} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{truncatedFiniteFourierReconstruction\_conjTranspose\_eq\_self} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/HermitianPairing.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+A paired coefficient field truncated to a negation-closed support reconstructs a pointwise Hermitian matrix field. BG-FOURIER-THM-023 preserves pairing, after which BG-FOURIER-THM-024 supplies Hermiticity.
+\section{Boundary}
+No physical shell, range metric, publication mesh, or numerical truncation is inferred. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

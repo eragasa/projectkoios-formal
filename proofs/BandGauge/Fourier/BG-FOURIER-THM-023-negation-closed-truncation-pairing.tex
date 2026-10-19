@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Negation-Closed Truncation Preserves Pairing}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-023} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{truncateCoefficients\_neg\_eq\_conjTranspose} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/HermitianPairing.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+If coefficient pairing holds before truncation and support membership is invariant under character negation, then pairing holds after truncation. Paired modes are either both retained or both replaced by zero.
+\section{Boundary}
+Negation closure is supplied explicitly; it is not a certificate that the support is a complete physical shell. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

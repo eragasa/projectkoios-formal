@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Constant-Weight Rank-Two Frobenius Bridge}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-029} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{rankTwoWeightedFrobeniusSq\_const\_eq\_coefficient\_mul\_power} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/RankTwoWeightedBridge.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+For a constant coordinate weight, the source-compatible rank-two weighted squared Frobenius quantity is exactly $\mathrm{weight}/(2E_{\mathrm{ref}}^2)$ times the unweighted finite matrix Frobenius power. Expand the product-index sum and factor the common coefficient.
+\section{Boundary}
+The constant-weight hypothesis is explicit and does not replace a nonuniform quadrature. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

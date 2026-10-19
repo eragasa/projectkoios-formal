@@ -1,0 +1,31 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Exact Finite-Abelian Fourier Inversion}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-010} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteFourierReconstruction\_coefficients} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteAbelianTransform.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+Let $f:G\to V$, where $G$ is a finite abelian group and $V$ is any complex module. Define
+\[
+ \widehat f(\chi)=\frac1{|G|}\sum_{x\in G}\overline{\chi(x)}f(x).
+\]
+Then $\sum_{\chi\in\widehat G}\chi(k)\widehat f(\chi)=f(k)$ for every $k\in G$.
+\section{Argument}
+Distribute the finite sums and interchange their order. The scalar multiplying each $f(x)$ is the character kernel from BG-FOURIER-THM-009, so every term vanishes except $x=k$.
+\section{Boundary and provenance}
+The convention is exact and explicit but is not yet bound to a publication mesh. This theorem is not Parseval, a continuum inversion theorem, or a numerical validation result. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Exact Matrix Frobenius Residual--Tail Identity}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-028} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteMatrixFrobeniusTruncationResidual\_parseval} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/MatrixFrobenius.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+The full-minus-truncated reconstructed matrix field has total entrywise squared Frobenius power equal to $|G|$ times the omitted coefficient Frobenius power. Apply matrix Parseval, identify residual coefficients, and partition the finite character inventory by support.
+\section{Boundary}
+The equality is unweighted and finite. It does not select the papers' normalization, a physical hopping shell, publication mesh, or continuum domain. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

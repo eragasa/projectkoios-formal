@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Finite Fourier Inner-Sum Identity}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-012} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteFourier\_inner\_sum} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteParseval.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+For complex-Hilbert-valued fields $f,g$, their momentum inner sum equals $|G|$ times the inner sum of their normalized Fourier coefficients. Insert exact reconstruction for $f$, interchange finite sums, move character scalars through the inner product, and identify the raw coefficient sum of $g$.
+\section{Boundary}
+No matrix norm, publication mesh, or continuum space is identified. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

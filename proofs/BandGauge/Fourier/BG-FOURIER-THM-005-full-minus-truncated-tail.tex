@@ -1,0 +1,27 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Exact Full-Minus-Truncated Tail}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-005} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteReconstruction\_sub\_truncatedReconstruction\_eq\_omitted} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteReconstruction.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+For coefficients in a complex module with additive inverses, full reconstruction minus support-truncated reconstruction is exactly the phase-weighted sum over omitted modes.
+\section{Argument}
+Apply the retained--omitted decomposition and cancel the retained term in the additive commutative group.
+\section{Boundary and provenance}
+This is an algebraic finite-tail identity, not Parseval, a norm equality, an error bound, or a continuum result. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

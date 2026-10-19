@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Uniform Finite Weight Is Positive}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-031} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.uniformFiniteWeight\_pos} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/RankTwoWeightedBridge.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+The uniform averaging weight $1/|G|$ is strictly positive because a finite additive group contains its zero element and therefore has positive cardinality.
+\section{Boundary}
+This does not establish that a publication or computational mesh uses uniform weights. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

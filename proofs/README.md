@@ -171,6 +171,38 @@ Current draft dossiers:
 - [`BG-DECISION-THM-011-minimum-feasible-cost-attained.tex`](BandGauge/Decision/BG-DECISION-THM-011-minimum-feasible-cost-attained.tex); and
 - [`BG-DECISION-THM-012-minimum-cost-antitone-under-relaxation.tex`](BandGauge/Decision/BG-DECISION-THM-012-minimum-cost-antitone-under-relaxation.tex); and
 - [`BG-DECISION-THM-013-two-channel-outcome-classification.tex`](BandGauge/Decision/BG-DECISION-THM-013-two-channel-outcome-classification.tex);
+- [`BG-FOURIER-THM-001-truncation-preserves-supported-coefficient.tex`](BandGauge/Fourier/BG-FOURIER-THM-001-truncation-preserves-supported-coefficient.tex);
+- [`BG-FOURIER-THM-002-truncation-zero-outside-support.tex`](BandGauge/Fourier/BG-FOURIER-THM-002-truncation-zero-outside-support.tex);
+- [`BG-FOURIER-THM-003-truncated-reconstruction-support-sum.tex`](BandGauge/Fourier/BG-FOURIER-THM-003-truncated-reconstruction-support-sum.tex);
+- [`BG-FOURIER-THM-004-retained-omitted-decomposition.tex`](BandGauge/Fourier/BG-FOURIER-THM-004-retained-omitted-decomposition.tex);
+- [`BG-FOURIER-THM-005-full-minus-truncated-tail.tex`](BandGauge/Fourier/BG-FOURIER-THM-005-full-minus-truncated-tail.tex);
+- [`BG-FOURIER-THM-006-linear-map-reconstruction.tex`](BandGauge/Fourier/BG-FOURIER-THM-006-linear-map-reconstruction.tex);
+- [`BG-FOURIER-THM-007-linear-map-truncation.tex`](BandGauge/Fourier/BG-FOURIER-THM-007-linear-map-truncation.tex);
+- [`BG-FOURIER-THM-008-omitted-weight-antitone.tex`](BandGauge/Fourier/BG-FOURIER-THM-008-omitted-weight-antitone.tex);
+- [`BG-FOURIER-THM-009-finite-character-kernel.tex`](BandGauge/Fourier/BG-FOURIER-THM-009-finite-character-kernel.tex);
+- [`BG-FOURIER-THM-010-finite-fourier-inversion.tex`](BandGauge/Fourier/BG-FOURIER-THM-010-finite-fourier-inversion.tex);
+- [`BG-FOURIER-THM-011-cardinality-removes-forward-normalization.tex`](BandGauge/Fourier/BG-FOURIER-THM-011-cardinality-removes-forward-normalization.tex);
+- [`BG-FOURIER-THM-012-inner-sum-parseval.tex`](BandGauge/Fourier/BG-FOURIER-THM-012-inner-sum-parseval.tex);
+- [`BG-FOURIER-THM-013-character-orthogonality.tex`](BandGauge/Fourier/BG-FOURIER-THM-013-character-orthogonality.tex);
+- [`BG-FOURIER-THM-014-coefficient-reconstruction.tex`](BandGauge/Fourier/BG-FOURIER-THM-014-coefficient-reconstruction.tex);
+- [`BG-FOURIER-THM-015-power-is-norm-square-sum.tex`](BandGauge/Fourier/BG-FOURIER-THM-015-power-is-norm-square-sum.tex);
+- [`BG-FOURIER-THM-016-finite-parseval.tex`](BandGauge/Fourier/BG-FOURIER-THM-016-finite-parseval.tex);
+- [`BG-FOURIER-THM-017-retained-omitted-power.tex`](BandGauge/Fourier/BG-FOURIER-THM-017-retained-omitted-power.tex);
+- [`BG-FOURIER-THM-018-coefficient-subtraction.tex`](BandGauge/Fourier/BG-FOURIER-THM-018-coefficient-subtraction.tex);
+- [`BG-FOURIER-THM-019-truncation-residual-coefficient.tex`](BandGauge/Fourier/BG-FOURIER-THM-019-truncation-residual-coefficient.tex);
+- [`BG-FOURIER-THM-020-coefficient-residual-omitted-power.tex`](BandGauge/Fourier/BG-FOURIER-THM-020-coefficient-residual-omitted-power.tex);
+- [`BG-FOURIER-THM-021-reconstructed-residual-parseval.tex`](BandGauge/Fourier/BG-FOURIER-THM-021-reconstructed-residual-parseval.tex);
+- [`BG-FOURIER-THM-022-hermitian-field-coefficient-pairing.tex`](BandGauge/Fourier/BG-FOURIER-THM-022-hermitian-field-coefficient-pairing.tex);
+- [`BG-FOURIER-THM-023-negation-closed-truncation-pairing.tex`](BandGauge/Fourier/BG-FOURIER-THM-023-negation-closed-truncation-pairing.tex);
+- [`BG-FOURIER-THM-024-paired-coefficients-hermitian-reconstruction.tex`](BandGauge/Fourier/BG-FOURIER-THM-024-paired-coefficients-hermitian-reconstruction.tex);
+- [`BG-FOURIER-THM-025-truncated-reconstruction-hermitian.tex`](BandGauge/Fourier/BG-FOURIER-THM-025-truncated-reconstruction-hermitian.tex);
+- [`BG-FOURIER-THM-026-matrix-coefficients-entrywise.tex`](BandGauge/Fourier/BG-FOURIER-THM-026-matrix-coefficients-entrywise.tex);
+- [`BG-FOURIER-THM-027-matrix-frobenius-parseval.tex`](BandGauge/Fourier/BG-FOURIER-THM-027-matrix-frobenius-parseval.tex);
+- [`BG-FOURIER-THM-028-matrix-frobenius-residual-tail.tex`](BandGauge/Fourier/BG-FOURIER-THM-028-matrix-frobenius-residual-tail.tex);
+- [`BG-FOURIER-THM-029-constant-weight-frobenius-bridge.tex`](BandGauge/Fourier/BG-FOURIER-THM-029-constant-weight-frobenius-bridge.tex);
+- [`BG-FOURIER-THM-030-weighted-residual-tail.tex`](BandGauge/Fourier/BG-FOURIER-THM-030-weighted-residual-tail.tex);
+- [`BG-FOURIER-THM-031-uniform-weight-positive.tex`](BandGauge/Fourier/BG-FOURIER-THM-031-uniform-weight-positive.tex); and
+- [`BG-FOURIER-THM-032-uniform-paper-normalization.tex`](BandGauge/Fourier/BG-FOURIER-THM-032-uniform-paper-normalization.tex).
 
 Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The `BG-BLOCH-THM-003` through `BG-BLOCH-THM-006` dossiers document standard supporting trace and unitary-invariance infrastructure; they are not paper-contribution or novelty claims. `BG-BLOCH-THM-007/008` are source-normalized bridge specializations; `BG-BLOCH-THM-009--011` are standard Hermiticity infrastructure. None carries a claim that the underlying standard algebra is novel. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
 

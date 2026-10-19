@@ -1,0 +1,27 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Linear Maps Commute with Truncation}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-007} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.LinearMap.}\newline\texttt{map\_truncateCoefficients} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteReconstruction.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+Every complex-linear map applied pointwise after coefficient truncation equals truncation of the pointwise mapped coefficient field.
+\section{Argument}
+On the support both sides equal the mapped original coefficient. Off the support both sides are zero because a linear map preserves zero.
+\section{Boundary and provenance}
+This does not identify any particular gauge action or prove that a momentum-dependent action commutes with Fourier synthesis. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

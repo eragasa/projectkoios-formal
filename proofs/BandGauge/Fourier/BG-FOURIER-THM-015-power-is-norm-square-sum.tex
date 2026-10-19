@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Finite Fourier Power Is a Norm-Square Sum}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-015} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteFourierPower\_eq\_sum\_norm\_sq} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteParseval.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+The declared finite Fourier power equals the sum of squared Hilbert norms over its finite index. This follows pointwise from the inner-product-space identity $\operatorname{Re}\langle v,v\rangle=\lVert v\rVert^2$.
+\section{Boundary}
+The Hilbert norm is abstract and is not silently identified with a matrix Frobenius norm. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

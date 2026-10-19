@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Coefficients of the Truncation Residual}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-019} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteFourierCoefficient\_truncationResidual} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/FiniteParseval.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+Every coefficient of full reconstruction minus support-truncated reconstruction is the original coefficient minus its truncated value. Use coefficient linearity and exact coefficient recovery in both terms.
+\section{Boundary}
+The result assumes the complete declared finite transform and does not certify an external mode inventory. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

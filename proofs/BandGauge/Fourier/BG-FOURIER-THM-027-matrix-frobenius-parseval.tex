@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Finite Matrix Frobenius Parseval}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\noindent\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-FOURIER-THM-027} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Fourier.}\newline\texttt{finiteMatrixFrobeniusPower\_parseval} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Fourier/MatrixFrobenius.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement and argument}
+For forward normalization $1/|G|$, the unweighted entrywise squared Frobenius power of a finite matrix field equals $|G|$ times the corresponding coefficient power. Apply scalar Parseval to every matrix entry and interchange finite sums.
+\section{Boundary}
+This is not yet the papers' weighted, energy-normalized Frobenius loss. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}
