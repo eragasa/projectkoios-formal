@@ -1,0 +1,35 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: A Pareto-Efficient Weak Improver Exists}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-006} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.exists_paretoEfficient_weaklyImproves} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+For a finite decision type and preorder-valued objective table, every decision $d$ is
+weakly improved by some Pareto-efficient decision $e$.
+\section{Argument}
+Consider the nonempty set $S$ of decisions weakly improving $d$; it contains $d$.
+Dominance is transitive and irreflexive, hence well founded on the finite decision type.
+Choose a dominance-minimal $e\in S$. If another decision dominated $e$, transitivity of
+weak improvement would put that decision in $S$, contradicting minimality. Thus $e$ is
+globally efficient and weakly improves $d$.
+\section{Boundary and provenance}
+Finiteness applies only to the declared decision type. The result does not interpolate,
+convexify, or establish a continuum Pareto frontier. Lean checked the statement with the
+pinned toolchain; the dossier and proof were AI-assisted.
+\end{document}

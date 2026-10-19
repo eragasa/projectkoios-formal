@@ -1,0 +1,35 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Exact Dominance Check}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-CERT-THM-010} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Certificates/FinitePareto.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+For a finite objective type with an exact decidable linear order, the Boolean dominance
+check returns true exactly when the first decision weakly improves the second in every
+objective and strictly improves it in at least one objective.
+\section{Argument}
+The checker filters the complete objective enumeration once for weak inequalities and
+once for strict inequalities. The first filter must equal the full enumeration and the
+second must be nonempty. Simplifying finite-filter membership gives exactly the two
+conjuncts in the propositional dominance definition.
+\section{Boundary and provenance}
+The theorem applies to the supplied exact table. It does not validate floating-point
+values or external coverage. Lean checked the exact statement; the dossier and proof were
+AI-assisted.
+\end{document}

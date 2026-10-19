@@ -1,0 +1,37 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Exhaustive Two-Channel Outcome Classification}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-013} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.exists_jointFeasibilityClass_holds} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+For any decision type and two predicates $A,B$ on its decisions, at least one declared
+classification holds: the inventory is empty; the first channel is empty; the first is
+nonempty and the second is empty; both are individually nonempty but have no common
+witness; or a common witness exists.
+\section{Argument}
+First split on whether the decision type is inhabited. For an inhabited type, split on
+existence of an $A$ witness and then a $B$ witness. If both exist, split on existence of a
+single decision satisfying $A\land B$. These exhaustive cases construct exactly the
+corresponding classification witness.
+\section{Boundary and provenance}
+The theorem classifies arbitrary predicates logically. It does not prove that objective
+values, thresholds, or inventory coverage are correct, and it gives no authority beyond
+the declared decision type. Lean checked the exact statement; the dossier and proof were
+AI-assisted.
+\end{document}

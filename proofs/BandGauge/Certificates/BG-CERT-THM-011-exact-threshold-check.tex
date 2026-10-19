@@ -1,0 +1,33 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Exact Threshold-Feasibility Check}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-CERT-THM-011} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Certificates/FinitePareto.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+The Boolean threshold checker accepts exactly when one decision's value is no larger
+than its budget in every objective.
+\section{Argument}
+The checker filters the complete finite objective enumeration by the budget inequality
+and tests equality with the full enumeration. Finite-filter simplification converts this
+test to the universal coordinatewise feasibility proposition.
+\section{Boundary and provenance}
+The same decision is checked in all channels. The theorem neither chooses nor validates
+budgets and does not bind external numerical values. Lean checked the exact statement;
+the dossier and proof were AI-assisted.
+\end{document}

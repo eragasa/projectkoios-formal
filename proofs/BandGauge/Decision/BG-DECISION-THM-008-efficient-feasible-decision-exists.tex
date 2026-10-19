@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: An Efficient Feasible Decision Exists}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-008} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.exists_paretoEfficient_thresholdFeasible} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+If a finite decision type contains a threshold-feasible decision, it contains a decision
+that is both Pareto efficient and threshold feasible.
+\section{Argument}
+Choose any feasible $d$. By BG-DECISION-THM-006, an efficient $e$ weakly improves $d$.
+BG-DECISION-THM-007 transfers feasibility from $d$ to $e$.
+\section{Boundary and provenance}
+The conclusion is relative to the supplied finite inventory and budgets. It supplies no
+numerical table or scientific validation. Lean checked the exact statement; the dossier
+and proof were AI-assisted.
+\end{document}

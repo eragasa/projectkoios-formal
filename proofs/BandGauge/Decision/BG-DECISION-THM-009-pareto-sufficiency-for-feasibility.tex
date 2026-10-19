@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Pareto Sufficiency for Finite Threshold Feasibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-009} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.exists_thresholdFeasible_iff_exists_paretoEfficient_thresholdFeasible} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+A finite inventory contains a threshold-feasible decision if and only if it contains a
+Pareto-efficient threshold-feasible decision.
+\section{Argument}
+The forward implication is BG-DECISION-THM-008. The reverse implication forgets the
+efficiency conjunct and retains the same feasible witness.
+\section{Boundary and provenance}
+This justifies searching an exactly computed efficient subset for coordinatewise
+feasibility. It does not justify an approximate mask, interpolated surface, or incomplete
+inventory. Lean checked the exact statement; the dossier and proof were AI-assisted.
+\end{document}

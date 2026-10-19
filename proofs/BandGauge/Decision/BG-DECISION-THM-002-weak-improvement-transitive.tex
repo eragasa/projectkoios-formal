@@ -1,0 +1,30 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Weak Improvement Is Transitive}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-002} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Decision.weaklyImproves\_trans} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & none \\
+\bottomrule\end{tabularx}
+\section{Statement}
+If $a$ weakly improves $b$ and $b$ weakly improves $c$, then $a$ weakly improves $c$.
+\section{Argument}
+For every objective $j$, the hypotheses give $f(a,j)\le f(b,j)$ and
+$f(b,j)\le f(c,j)$. Transitivity gives $f(a,j)\le f(c,j)$.
+\section{Boundary and provenance}
+This is standard coordinatewise preorder infrastructure. No finite-inventory or
+scientific conclusion follows from it alone. Lean checked the exact statement; the
+dossier and proof were AI-assisted.
+\end{document}

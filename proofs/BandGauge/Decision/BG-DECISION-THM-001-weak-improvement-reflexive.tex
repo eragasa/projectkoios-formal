@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Weak Improvement Is Reflexive}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-001} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Decision.weaklyImproves\_refl} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & none \\
+\bottomrule\end{tabularx}
+\section{Statement}
+For any objective table $f:D\to J\to V$ valued in a preorder and any $d\in D$,
+$d$ weakly improves itself: $f(d,j)\le f(d,j)$ for every $j\in J$.
+\section{Argument}
+Fix an arbitrary objective $j$. Reflexivity of the preorder gives
+$f(d,j)\le f(d,j)$. Since $j$ was arbitrary, the coordinatewise relation holds.
+\section{Boundary and provenance}
+This is standard preorder infrastructure. It proves no numerical, scientific, Pareto,
+or publication claim. Lean checked the exact statement with the pinned toolchain. The
+dossier and proof were AI-assisted and remain subject to source and expert review.
+\end{document}

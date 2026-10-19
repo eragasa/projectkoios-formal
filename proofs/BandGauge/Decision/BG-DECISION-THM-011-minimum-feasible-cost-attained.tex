@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Minimum Feasible Cost Is Attained}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-011} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Decision.exists\_minimumFeasibleCost} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+For a finite decision type, a linearly ordered cost, and a nonempty feasible class, some
+feasible decision has cost no larger than every other feasible decision.
+\section{Argument}
+The feasible subset is finite and nonempty. Choose a cost-minimal member. In a linear
+order, if its cost were not at most another feasible cost, the other cost would be
+strictly smaller, contradicting minimality.
+\section{Boundary and provenance}
+The theorem assigns no finite value to an empty feasible class and is exhaustive only for
+the declared finite type. Lean checked the exact statement; the dossier and proof were
+AI-assisted.
+\end{document}

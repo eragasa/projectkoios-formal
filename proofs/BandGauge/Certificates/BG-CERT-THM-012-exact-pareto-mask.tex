@@ -1,0 +1,35 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Exact Pareto-Mask Soundness and Completeness}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-CERT-THM-012} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Certificates/FinitePareto.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+\section{Statement}
+For a total exact finite objective table, the Boolean nondominated mask marks a decision
+if and only if no declared decision dominates it.
+\section{Argument}
+The mask filters the complete finite decision enumeration by the proved exact dominance
+Boolean and tests that the filter is empty. BG-CERT-THM-010 replaces Boolean acceptance
+with propositional dominance. Empty-filter simplification then gives the definition of
+Pareto efficiency.
+\section{Boundary and provenance}
+Soundness and completeness are relative to the supplied finite type and exact table. The
+theorem does not prove external record coverage, interval resolution, or scientific
+attainability beyond that inventory. Lean checked the exact statement; the dossier and
+proof were AI-assisted.
+\end{document}

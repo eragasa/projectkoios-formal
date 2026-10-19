@@ -7,6 +7,8 @@ import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
 import ProjectKoios.BandGauge.Hilbert.SpectralLossBridge
+import ProjectKoios.BandGauge.Decision.FinitePareto
+import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Papers.Ragasa2026A
 import ProjectKoios.BandGauge.Papers.Ragasa2026A.CertificateBridge
 import ProjectKoios.BandGauge.Papers.Ragasa2026B
@@ -73,6 +75,22 @@ import ProjectKoios.BandGauge.Papers.Ragasa2026C
 #print axioms ProjectKoios.BandGauge.Hilbert.rankTwoOperatorMatrixLossSq_eq_rankTwoAlignedOperatorLossSq
 #print axioms ProjectKoios.BandGauge.Hilbert.rankTwoSpectralFieldLossSq_eq_expansion
 #print axioms ProjectKoios.BandGauge.Hilbert.rankTwoSpectralFieldLossSq_eq_rankTwoSpectralLossSq
+#print axioms ProjectKoios.BandGauge.Decision.weaklyImproves_refl
+#print axioms ProjectKoios.BandGauge.Decision.weaklyImproves_trans
+#print axioms ProjectKoios.BandGauge.Decision.dominates_irrefl
+#print axioms ProjectKoios.BandGauge.Decision.dominates_trans
+#print axioms ProjectKoios.BandGauge.Decision.not_dominates_of_objectives_eq
+#print axioms ProjectKoios.BandGauge.Decision.exists_paretoEfficient_weaklyImproves
+#print axioms ProjectKoios.BandGauge.Decision.thresholdFeasible_of_weaklyImproves
+#print axioms ProjectKoios.BandGauge.Decision.exists_paretoEfficient_thresholdFeasible
+#print axioms ProjectKoios.BandGauge.Decision.exists_thresholdFeasible_iff_exists_paretoEfficient_thresholdFeasible
+#print axioms ProjectKoios.BandGauge.Decision.thresholdFeasible_of_thresholdsRelaxed
+#print axioms ProjectKoios.BandGauge.Decision.exists_minimumFeasibleCost
+#print axioms ProjectKoios.BandGauge.Decision.minimumFeasibleCost_anti_of_relaxed
+#print axioms ProjectKoios.BandGauge.Decision.exists_jointFeasibilityClass_holds
+#print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
+#print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
+#print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Foundations.secondHarmonicValue_le_maximum
 #print axioms ProjectKoios.BandGauge.Foundations.secondHarmonicValue_maximizingAngle
 #print axioms ProjectKoios.BandGauge.Foundations.canonicalSecondHarmonicMaximizingAngle_mem

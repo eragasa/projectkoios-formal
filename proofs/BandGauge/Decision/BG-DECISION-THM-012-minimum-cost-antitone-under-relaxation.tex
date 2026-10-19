@@ -1,0 +1,33 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Minimum Cost Cannot Increase under Relaxation}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-012} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.minimumFeasibleCost_anti_of_relaxed} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & none \\
+\bottomrule\end{tabularx}
+\section{Statement}
+Given minimum-cost decisions for strict and relaxed coordinatewise budgets, the relaxed
+minimum cost is no larger than the strict minimum cost.
+\section{Argument}
+The strict minimizer remains feasible after threshold relaxation by
+BG-DECISION-THM-010. Minimality of the relaxed minimizer therefore bounds its cost above
+by the strict minimizer's cost.
+\section{Boundary and provenance}
+Both minimizers are explicit hypotheses, so the theorem does not hide empty-feasibility
+behavior. It does not authorize post hoc threshold changes. Lean checked the exact
+statement; the dossier and proof were AI-assisted.
+\end{document}

@@ -127,6 +127,9 @@ Current draft dossiers:
 - [`BG-CERT-THM-007-enclosure-containment.tex`](BandGauge/Certificates/BG-CERT-THM-007-enclosure-containment.tex);
 - [`BG-CERT-THM-008-enclosure-separation.tex`](BandGauge/Certificates/BG-CERT-THM-008-enclosure-separation.tex); and
 - [`BG-CERT-THM-009-inverse-sqrt-two-enclosure.tex`](BandGauge/Certificates/BG-CERT-THM-009-inverse-sqrt-two-enclosure.tex);
+- [`BG-CERT-THM-010-exact-dominance-check.tex`](BandGauge/Certificates/BG-CERT-THM-010-exact-dominance-check.tex);
+- [`BG-CERT-THM-011-exact-threshold-check.tex`](BandGauge/Certificates/BG-CERT-THM-011-exact-threshold-check.tex); and
+- [`BG-CERT-THM-012-exact-pareto-mask.tex`](BandGauge/Certificates/BG-CERT-THM-012-exact-pareto-mask.tex);
 - [`BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex);
 - [`BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex);
 - [`BG-RAGASA2026A-THM-003-operator-correlation-bound.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-003-operator-correlation-bound.tex); and
@@ -155,6 +158,19 @@ Current draft dossiers:
 - [`BG-RAGASA2026A-THM-026-rectangle-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-026-rectangle-distance.tex); and
 - [`BG-RAGASA2026A-THM-027-checked-certificate-bridge.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-027-checked-certificate-bridge.tex); and
 - [`BG-RAGASA2026A-THM-028-checked-enclosure-bridge.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-028-checked-enclosure-bridge.tex);
+- [`BG-DECISION-THM-001-weak-improvement-reflexive.tex`](BandGauge/Decision/BG-DECISION-THM-001-weak-improvement-reflexive.tex);
+- [`BG-DECISION-THM-002-weak-improvement-transitive.tex`](BandGauge/Decision/BG-DECISION-THM-002-weak-improvement-transitive.tex);
+- [`BG-DECISION-THM-003-dominance-irreflexive.tex`](BandGauge/Decision/BG-DECISION-THM-003-dominance-irreflexive.tex);
+- [`BG-DECISION-THM-004-dominance-transitive.tex`](BandGauge/Decision/BG-DECISION-THM-004-dominance-transitive.tex);
+- [`BG-DECISION-THM-005-duplicate-objectives-do-not-dominate.tex`](BandGauge/Decision/BG-DECISION-THM-005-duplicate-objectives-do-not-dominate.tex);
+- [`BG-DECISION-THM-006-efficient-weak-improver-exists.tex`](BandGauge/Decision/BG-DECISION-THM-006-efficient-weak-improver-exists.tex);
+- [`BG-DECISION-THM-007-weak-improvement-preserves-feasibility.tex`](BandGauge/Decision/BG-DECISION-THM-007-weak-improvement-preserves-feasibility.tex);
+- [`BG-DECISION-THM-008-efficient-feasible-decision-exists.tex`](BandGauge/Decision/BG-DECISION-THM-008-efficient-feasible-decision-exists.tex);
+- [`BG-DECISION-THM-009-pareto-sufficiency-for-feasibility.tex`](BandGauge/Decision/BG-DECISION-THM-009-pareto-sufficiency-for-feasibility.tex);
+- [`BG-DECISION-THM-010-relaxed-thresholds-preserve-feasibility.tex`](BandGauge/Decision/BG-DECISION-THM-010-relaxed-thresholds-preserve-feasibility.tex);
+- [`BG-DECISION-THM-011-minimum-feasible-cost-attained.tex`](BandGauge/Decision/BG-DECISION-THM-011-minimum-feasible-cost-attained.tex); and
+- [`BG-DECISION-THM-012-minimum-cost-antitone-under-relaxation.tex`](BandGauge/Decision/BG-DECISION-THM-012-minimum-cost-antitone-under-relaxation.tex); and
+- [`BG-DECISION-THM-013-two-channel-outcome-classification.tex`](BandGauge/Decision/BG-DECISION-THM-013-two-channel-outcome-classification.tex);
 
 Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The `BG-BLOCH-THM-003` through `BG-BLOCH-THM-006` dossiers document standard supporting trace and unitary-invariance infrastructure; they are not paper-contribution or novelty claims. `BG-BLOCH-THM-007/008` are source-normalized bridge specializations; `BG-BLOCH-THM-009--011` are standard Hermiticity infrastructure. None carries a claim that the underlying standard algebra is novel. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
 

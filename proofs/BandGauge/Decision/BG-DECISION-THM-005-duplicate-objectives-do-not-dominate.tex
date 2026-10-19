@@ -1,0 +1,31 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\title{Proof Dossier: Duplicate Objective Vectors Do Not Dominate}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-005} \\
+Status & proved; no admissions \\
+Lean declaration & \texttt{ProjectKoios.BandGauge.Decision.not\_dominates\_of\_objectives\_eq} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & none \\
+\bottomrule\end{tabularx}
+\section{Statement}
+If two decisions have equal values in every objective, the first does not dominate the
+second under weak-all/strict-any dominance.
+\section{Argument}
+Dominance would supply an objective with a strict inequality. Substitution of the
+coordinatewise equality turns it into $x<x$, a contradiction.
+\section{Boundary and provenance}
+The theorem deliberately permits distinct decisions with duplicate objective vectors to
+remain efficient. Deduplication is a separate data policy. Lean checked the exact
+statement; the dossier and proof were AI-assisted.
+\end{document}

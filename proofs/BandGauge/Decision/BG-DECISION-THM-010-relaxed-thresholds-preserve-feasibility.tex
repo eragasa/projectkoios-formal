@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Relaxed Thresholds Preserve Feasibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-010} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.thresholdFeasible_of_thresholdsRelaxed} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & none \\
+\bottomrule\end{tabularx}
+\section{Statement}
+If every relaxed budget is at least its corresponding strict budget, any decision
+feasible under the strict budgets remains feasible under the relaxed budgets.
+\section{Argument}
+For each objective, compose the decision-to-strict-budget inequality with the
+strict-to-relaxed-budget inequality.
+\section{Boundary and provenance}
+The theorem is monotonicity for fixed declared objective values. It provides no authority
+to tune thresholds after observing results. Lean checked the exact statement; the
+dossier and proof were AI-assisted.
+\end{document}

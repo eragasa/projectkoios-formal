@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Weak Improvement Preserves Threshold Feasibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-007} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.thresholdFeasible_of_weaklyImproves} \\
+Owning module & \texttt{ProjectKoios/BandGauge/Decision/FinitePareto.lean} \\
+Axioms & none \\
+\bottomrule\end{tabularx}
+\section{Statement}
+If $a$ weakly improves a threshold-feasible decision $b$, then $a$ is feasible for the
+same coordinatewise budget vector.
+\section{Argument}
+For each objective $j$, weak improvement gives $f(a,j)\le f(b,j)$ and feasibility gives
+$f(b,j)\le\tau(j)$. Transitivity gives $f(a,j)\le\tau(j)$.
+\section{Boundary and provenance}
+The same decision is used in every objective. The theorem does not permit componentwise
+envelopes assembled from different decisions. Lean checked the exact statement; the
+dossier and proof were AI-assisted.
+\end{document}
