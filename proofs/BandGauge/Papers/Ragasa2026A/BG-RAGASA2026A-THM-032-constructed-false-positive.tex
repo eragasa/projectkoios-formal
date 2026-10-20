@@ -1,0 +1,34 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Exact Constructed False Positive}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-032}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{constructedFalsePositive_exactSpectralPass_and_operatorIncompatibility}}.
+\section{Exact statement}
+For the encoded two-observation construction, $(s,\lambda)=(0,1)$ has zero canonical
+spectral loss, belongs to the spectral pass set for budget $0.05$, and has positive scale.
+In the rectangle $[-0.20,0.20]\times[0.50,1.10]$, that spectral pass set is disjoint from
+the continuously optimized operator pass set for budget $0.72$.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the spectral-pass and operator-incompatibility clauses of the
+constructed proposition at
+\begin{center}\small\path{Ragasa2026a/v3/manuscript.tex:851--889}\end{center}
+for owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof combines exact uniform weight
+and power, the equality $\mu_{\max}=1/\sqrt{2}$, its proved rational enclosure, exact
+checker acceptance, and the canonical enclosure bridge. This proves the finite normalized
+analytic counterexample. This declaration does not itself instantiate the proposition's
+exact distance or resolution corollary; BG-RAGASA2026A-THM-033/034 supply those results.
+It does not prove a calculated result for the four-state parent,
+parse runtime output, construct the field from a periodic potential, validate a material,
+or make a continuum claim. Kernel axioms are \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. AI-assisted and
+kernel-checked.
+\end{document}

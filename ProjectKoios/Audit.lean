@@ -16,7 +16,7 @@ import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
 import ProjectKoios.BandGauge.Fourier.RankTwoWeightedBridge
 import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Papers.Ragasa2026A
-import ProjectKoios.BandGauge.Papers.Ragasa2026A.CertificateBridge
+import ProjectKoios.BandGauge.Papers.Ragasa2026A.ConstructedFalsePositive
 import ProjectKoios.BandGauge.Papers.Ragasa2026B
 import ProjectKoios.BandGauge.Papers.Ragasa2026C
 
@@ -173,6 +173,12 @@ import ProjectKoios.BandGauge.Papers.Ragasa2026C
 #print axioms ProjectKoios.BandGauge.Certificates.sevenTenths_lt_inv_sqrtTwo_lt_seventyOneHundredths
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.canonicalSpectralPass_and_operatorIncompatibility_of_checkedCertificate
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.canonicalSpectralPass_and_operatorIncompatibility_of_checkedEnclosure
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_uniformWeight_and_power
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_maximumNormalizedCorrelation
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositiveCertificate_accepts
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_exactSpectralPass_and_operatorIncompatibility
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_exactSeparationDistance
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_separationResolutionCertified
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.summary
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026B.placeholder
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026C.placeholder

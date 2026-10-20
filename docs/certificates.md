@@ -15,11 +15,12 @@
 | Exact rank-two scalar checkers | rational scalar inputs, exact-center or interval-center checks, and soundness theorems for witness, containment, and separation | implemented in `BandGauge/Certificates/RankTwoSeparation.lean` and `RankTwoSeparationEnclosure.lean` | does not bind scalars to publication matrices or runtime bytes |
 | Exact finite Pareto checks | total finite exact objective table, executable dominance and threshold checks, executable nondominated mask, and soundness/completeness bridges | implemented in `BandGauge/Certificates/FinitePareto.lean` | does not parse external tables, prove external coverage, or resolve interval-overlapping comparisons |
 | Publication-evidence acceptance contract | immutable identity, a-priori or certified-optimized weight derivation, explicit support semantics, finite coverage, alignment, objective, and fail-closed requirements | specified as `PKF-BG-EVIDENCE-CONTRACT/1` in [`BandGauge/publication-evidence-contract.md`](BandGauge/publication-evidence-contract.md) | a requirements document is not a production schema, parser, retained artifact, or accepted certificate |
-| Exact scientific certificate | exact data, parser/checker, soundness theorem, and bound input identity | none | the generic scalar checker and numerical output are not silently promoted to this class |
+| Exact analytic source certificate | exact source construction encoded directly in Lean, checker, soundness bridge, and immutable source crosswalk | one Paper A two-observation certificate, `BG-RAGASA2026A-DEF-022` through `BG-RAGASA2026A-DEF-024` and `BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034` | does not imply runtime evidence, four-state-parent validation, material validation, or a continuum claim |
+| Runtime scientific certificate | exact retained data, parser/checker, soundness theorem, and bound input identity | none | the analytic source certificate, generic scalar checker, and numerical output are not silently promoted to this class |
 
 ## Certificate lifecycle
 
-A future concrete exact scientific certificate moves through these states:
+A future concrete runtime scientific certificate moves through these states:
 
 1. **proposed** — data and target proposition are described;
 2. **specified** — exact encoding, parser, checker, and rejection behavior are fixed;
@@ -27,7 +28,7 @@ A future concrete exact scientific certificate moves through these states:
 4. **checked** — a bound certificate passes the pinned checker;
 5. **crosswalked** — the checked result is linked to a reviewed theorem and source claim.
 
-Only the final two states may support a claim about a particular certificate, and neither implies scientific acceptance beyond the encoded conclusion. The rank-two scalar and finite-Pareto checkers are implemented infrastructure; because no publication data package or parser binding is present, `checkedCertificateCount` remains zero. The enclosure checker handles algebraic centers through proved rational bounds, and `BG-CERT-THM-009` proves `7/10 < 1 / √2 < 71/100`. A concrete certificate still needs exact proofs that the field-derived `μmax`, `κ`, thresholds, and retained data match its checked inputs.
+Only the final two states may support a claim about a particular certificate, and neither implies scientific acceptance beyond the encoded conclusion. The rank-two scalar and finite-Pareto checkers are implemented infrastructure. Paper A's exact analytic construction is encoded directly rather than parsed, and its checked certificate count is one: the field-derived power and `μmax`, thresholds, witness, and source rectangle are proved and bound in Lean. The enclosure checker handles the algebraic center through `BG-CERT-THM-009`, which proves `7/10 < 1 / √2 < 71/100`. No runtime publication package or parser binding exists; a calculated result still needs exact identity and retained-data bindings.
 
 ## Retention policy
 

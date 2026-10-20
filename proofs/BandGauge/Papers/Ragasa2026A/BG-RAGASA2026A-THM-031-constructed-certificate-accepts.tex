@@ -1,0 +1,29 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Constructed Certificate Acceptance}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-031}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{constructedFalsePositiveCertificate_accepts}}.
+\section{Exact statement}
+The concrete rational enclosure certificate for $\kappa=1$, center interval
+$[7/10,71/100]$, budgets $1/20$ and $18/25$, source rectangle
+$[-1/5,1/5]\times[1/2,11/10]$, and witness $(0,1)$ is accepted by the exact Boolean
+checker.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} a conservative exact certificate for the construction at
+\begin{center}\small\path{Ragasa2026a/v3/manuscript.tex:851--889}\end{center}
+for owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Lean reduces the checker conditions by
+exact rational arithmetic; the algebraic-center binding is discharged separately by
+BG-RAGASA2026A-THM-030 and BG-CERT-THM-009. The certificate is encoded directly in Lean;
+it is not a production serializer, runtime artifact, or four-state-parent calculation.
+Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked.
+\end{document}

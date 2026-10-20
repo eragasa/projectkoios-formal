@@ -8,13 +8,15 @@
 
 This document records a proposed scientific, computational, and formalization program for
 Ragasa2026A. It is not publication prose, a new theorem declaration, a checked
-publication certificate, numerical evidence, publication authorization, or a claim that
-the paper is complete.
+runtime publication certificate, numerical evidence, publication authorization, or a
+claim that the paper is complete.
 
 The authoritative declaration ledger is
 [`../../../theorem-manifest.md`](../../../theorem-manifest.md). Current Paper A Lean
-modules contain conditional, source-specific instantiations, but the generic proofs they
-consume remain owned by semantic foundational modules.
+modules contain conditional source-specific instantiations and one exact checked analytic
+two-observation construction; the generic proofs they consume remain owned by semantic
+foundational modules. The construction is not runtime evidence or four-state-parent
+validation.
 
 ## Source identity
 
@@ -110,11 +112,17 @@ A successful exact rational or outward-rounded interval certificate must imply:
 2. containment hypotheses required by the rectangle transfer; and
 3. positive separation from the optimized operator pass set.
 
-A generic or synthetic accepted certificate is not a checked publication certificate.
+A generic or synthetic accepted certificate is not a checked publication certificate. The
+source's exact two-observation analytic construction is now encoded and checked by
+`BG-RAGASA2026A-DEF-022` through `BG-RAGASA2026A-DEF-024` and
+`BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034`, including the exact
+positive admissible-set distance and resolution corollary; it remains distinct from a retained runtime package or a
+calculated four-state-parent result.
 
-## Scientific result required
+## Computational scientific result still required
 
-The paper needs at least one immutable source-bound instance containing:
+Beyond the checked analytic construction, the paper needs at least one immutable
+source-bound computational instance containing:
 
 1. frozen matrices or exact field-derived summaries;
 2. frozen strict-positive weights derived by an accepted a-priori or certified optimized
@@ -166,10 +174,10 @@ The highest-value unresolved theorem families are:
 3. the source's smooth monotone threshold-continuum result;
 4. the operator-residual/nonlocal-hopping identity under exact Fourier hypotheses;
 5. transported-frame covariance and attainment with explicit regularity premises; and
-6. source-data binding from an immutable artifact to the existing certificate checker.
+6. runtime-data binding from an immutable artifact to the existing certificate checker.
 
-The last item is a checked-certificate boundary, not a proof that the computational model
-is physically valid.
+The last item is a runtime checked-certificate boundary, not a proof that the
+computational model is physically valid.
 
 ## Proposed manuscript structure
 
@@ -204,5 +212,6 @@ Ragasa2026A is ready for a concrete scientific-result claim only when:
 6. formal proof, numerical evidence, scientific applicability, novelty, and publication
    status are reported separately.
 
-The existing conditional Lean theorems do not by themselves establish any concrete
-publication result.
+The existing Lean theorems establish the exact source-specific analytic construction but
+do not by themselves establish a runtime computational result, four-state-parent result,
+material claim, or publication completion.

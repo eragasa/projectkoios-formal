@@ -1,0 +1,28 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Separation-Resolution Corollary}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-034}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{constructedFalsePositive_separationResolutionCertified}}.
+\section{Exact statement}
+For every declared real separation resolution $\rho_{\mathrm{sep}}$ satisfying
+$\rho_{\mathrm{sep}}<\delta_*$, there are nonemptiness witnesses for the two constructed
+pass sets such that $\rho_{\mathrm{sep}}$ is strictly below their Euclidean admissible-set
+distance.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the separation-resolution corollary at
+\begin{center}\small\path{Ragasa2026a/v3/manuscript.tex:851--889}\end{center}
+for owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof substitutes the exact distance equality from BG-RAGASA2026A-THM-033 into the
+assumed strict resolution bound. It does not select a runtime resolution, trust the
+manuscript's decimal approximation, or establish a four-state-parent, material, or
+continuum claim. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked.
+\end{document}

@@ -69,7 +69,8 @@ Current formal implications:
 - `BG-CERT-THM-001` through `BG-CERT-THM-004` — an exact rational-center Boolean checker implies a positive-scale spectral witness, full-ellipse containment, and strict separation in real geometry.
 - `BG-CERT-THM-005` through `BG-CERT-THM-008` — a rational-enclosure checker proves the same conclusions uniformly for every real center in its checked interval.
 - `BG-CERT-THM-009` — exact real arithmetic proves `7/10 < 1 / √2 < 71/100` without floating-point evidence.
-- `BG-RAGASA2026A-THM-027/028` — after explicit exact `κ` binding and either exact rational `μ` equality or proved rational enclosure of the canonical finite fields, acceptance implies a spectral pass and operator incompatibility in the candidate rectangle. No concrete publication certificate, runtime parser, or matrix binding is present.
+- `BG-RAGASA2026A-THM-027/028` — after explicit exact `κ` binding and either exact rational `μ` equality or proved rational enclosure of the canonical finite fields, acceptance implies a spectral pass and operator incompatibility in the candidate rectangle.
+- `BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034` — the source's exact two-observation construction has uniform weight `1/2`, parent power one, `μmax = 1 / √2`, an accepted exact rational enclosure certificate, zero spectral loss at `(0,1)`, disjoint pass sets, the exact positive admissible-set distance, and the separation-resolution corollary in the source rectangle. This is an analytic source instance, not runtime evidence or four-state-parent validation.
 - `BG-HILBERT-THM-001` — two nonnegative-radius Hilbert balls intersect exactly when their center distance is at most the radius sum.
 - `BG-HILBERT-THM-002/003/004` — the center-gap formula is a universal lower bound, is attained, and equals the real admissible-set distance.
 - `BG-HILBERT-THM-005/006` — the finite weighted rank-two Frobenius residual is nonnegative and its real correlation satisfies Cauchy–Schwarz.
@@ -78,7 +79,7 @@ Current formal implications:
 - `BG-HILBERT-THM-011/012/013` — the abstract finite operator matrix residual expands exactly, specializes to the common-power quadratic, and equals the existing reduced scalar aligned-operator loss.
 - `BG-HILBERT-THM-014/015` — the abstract centered two-state spectral residual expands exactly and equals the existing reduced scalar spectral loss when its weighted power is `κ`.
 
-These theorems define conditional loss sublevel sets and an exact scalar-checker boundary, but they do not instantiate the publication matrices, parse runtime output, or validate a concrete numerical lower bound. A future concrete certificate package must bind exact runtime data to the checker inputs and discharge the field-derived `κ` and `μmax` equalities.
+These theorems define conditional loss sublevel sets, an exact scalar-checker boundary, and one exact source-specific analytic construction. They do not parse runtime output, validate a calculated four-state-parent result, or establish a numerical/material claim. A future runtime certificate package must bind immutable computational data to the checker inputs and discharge field-derived `κ` and `μmax` obligations independently.
 
 ## Prohibited status transfers
 

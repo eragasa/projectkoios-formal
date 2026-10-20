@@ -1,0 +1,27 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-19
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Constructed Uniform Weight and Power}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-19}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-029}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{constructedFalsePositive_uniformWeight_and_power}}.
+\section{Exact statement}
+Each of the two observations in the exact constructed field has a-priori weight $1/2$,
+and the weighted normalized Frobenius power of the centered parent field is exactly one.
+\section{Source, proof, and boundary}
+This \texttt{formalizes} the equal-weight two-observation construction at
+\begin{center}\small\path{Ragasa2026a/v3/manuscript.tex:851--889}\end{center}
+for owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof unfolds the encoded weights,
+centered Pauli-$z$ matrix, and coefficient $\alpha_i/(2E_{\mathrm{ref}}^2)$ with
+$E_{\mathrm{ref}}=1$. It is an exact normalized analytic construction, not runtime output,
+a periodic-potential derivation, or material validation. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked.
+\end{document}

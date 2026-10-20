@@ -143,8 +143,11 @@ or post-hoc evaluation weights are not eligible.
 - conservative interval uncertainty for `κ`; and
 - binding a concrete immutable artifact to the generic certificate checker.
 
-The current Paper A Lean layer supplies conditional exact mathematics but no concrete
-publication certificate or scientific validation.
+The current Paper A Lean layer supplies conditional exact mathematics and one checked
+source-specific analytic certificate for the two-observation construction, including its
+exact positive admissible-set distance and separation-resolution corollary. It supplies no
+retained runtime certificate, calculated four-state-parent result, material validation, or
+publication completion.
 
 ## Proposed positioning
 
@@ -410,8 +413,9 @@ must not be silently generalized, moved, or renamed to serve later papers.
 
 # Recommended execution order
 
-1. Bind and check one concrete Ragasa2026A interval certificate.
-2. Implement the reusable finite Pareto and Fourier-tail layer required by Paper B.
+1. Bind one immutable Ragasa2026A runtime result to the existing exact checker; the
+   separate analytic two-observation certificate is already checked.
+2. Apply the implemented reusable finite Pareto and Fourier-tail layers to Paper B.
 3. Retain one immutable Paper B bounded objective table and checked nondominated mask.
 4. Complete Paper C's fail-closed D1 calculator and independent evidence contract in its
    owner repository.

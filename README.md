@@ -9,7 +9,7 @@ Minimal Lean/Lake harness for reusable Project Koios formalization.
 - harness namespace: `ProjectKoios.Formal`
 - initial scientific namespace: `ProjectKoios.BandGauge`
 
-The tree contains a non-scientific smoke theorem, proved reusable foundations, a semantic finite-decision/Pareto layer with exact Boolean checks, convention-neutral finite reconstruction/support truncation, exact finite-abelian inversion, Parseval and residual-tail identities, partial conditional Ragasa2026A rank-two field, spectral, correlation-harmonic, optimized admissible-set geometry, and exact certificate-binding bridges, and metadata-only placeholders for the other publication modules. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). It contains **no proved scientific theorem, checked scientific certificate, numerical result, release, or scientific validation claim**.
+The tree contains a non-scientific smoke theorem, proved reusable foundations, a semantic finite-decision/Pareto layer with exact Boolean checks, convention-neutral finite reconstruction/support truncation, exact finite-abelian inversion, Parseval and residual-tail identities, partial conditional Ragasa2026A rank-two field, spectral, correlation-harmonic, optimized admissible-set geometry, exact certificate-binding bridges, and one exact checked source-specific analytic false-positive construction. The other publication modules remain metadata-only placeholders. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). The analytic construction is **not** runtime evidence, a calculated four-state-parent result, material validation, a release, or publication completion.
 
 ## Authority boundaries
 

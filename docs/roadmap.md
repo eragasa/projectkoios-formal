@@ -132,7 +132,7 @@ This stage follows, rather than precedes, the finite and continuum convention wo
 
 ## R5 — publication instantiation
 
-Thin paper modules may instantiate reviewed foundational theorems, after which the publication crosswalk can name exact Lean declarations. Paper A now has conditional exact-center and interval-enclosure certificate bridges, but no concrete publication certificate, retained-data binding, or parser binding. Paper status remains separate from formal theorem status, numerical evidence status, and publication authorization.
+Thin paper modules may instantiate reviewed foundational theorems, after which the publication crosswalk can name exact Lean declarations. Paper A now has conditional exact-center and interval-enclosure bridges plus one checked exact analytic certificate, its exact positive admissible-set distance, and its separation-resolution corollary for the two-observation construction. No retained runtime-data binding, parser binding, calculated four-state-parent certificate, or material validation is present. Paper status remains separate from formal theorem status, numerical evidence status, and publication authorization.
 
 The proposed publication narratives are recorded in
 [`BandGauge/Papers/ragasa-series-research-plan.md`](BandGauge/Papers/ragasa-series-research-plan.md),

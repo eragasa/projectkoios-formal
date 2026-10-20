@@ -24,16 +24,24 @@ full-ellipse containment premises.
 canonical finite loss fields. One theorem uses exact rational `μmax` equality; another
 uses proved rational enclosure bounds and supports algebraic centers such as `1 / √2`.
 Both prove a positive-scale spectral pass and disjointness from the optimized operator
-pass set in the candidate rectangle. Neither instantiates publication data or certifies
-runtime output.
+pass set in the candidate rectangle. Neither alone instantiates publication data or
+certifies runtime output.
 
-`Ragasa2026A.lean` records the aggregate status: twenty-eight formal statements, zero proved
-scientific theorems, and zero checked certificates. The spectral and Pauli decompositions
-are now canonically obtained from the finite Hermitian matrices using exact noncomputable
-mathematics; the generic supplied spectral-witness interface also remains available.
-Concrete matrix data remain external. No floating-point eigensolver, continuity, or
-construction from a periodic potential is claimed. Binding
-to concrete publication data remains open.
+`Ragasa2026A/ConstructedFalsePositive.lean` binds the source's exact two-observation,
+equal-weight analytic construction to those bridges. It proves normalized power one,
+`μmax = 1 / √2`, exact checker acceptance, zero spectral loss at `(0,1)`, disjointness
+of the two pass sets, their exact positive Euclidean separation, and the source's
+separation-resolution corollary in the declared rectangle. This is not a calculated
+result for the four-state parent, runtime evidence, material validation, or a continuum
+claim.
+
+`Ragasa2026A.lean` records the aggregate status: thirty-four formal statements, three
+source-specific analytic conclusions, and one exact checked analytic certificate. The
+spectral and Pauli decompositions are canonically obtained from the finite Hermitian
+matrices using exact noncomputable mathematics; the generic supplied spectral-witness
+interface also remains available. No floating-point eigensolver, continuity, or
+construction from a periodic potential is claimed. Runtime publication data and physical
+validation remain external.
 
 `Ragasa2026B.lean` and `Ragasa2026C.lean` remain metadata-only placeholders. Generic
 foundational clauses linked from the crosswalk remain owned and counted in their

@@ -158,6 +158,12 @@ Current draft dossiers:
 - [`BG-RAGASA2026A-THM-026-rectangle-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-026-rectangle-distance.tex); and
 - [`BG-RAGASA2026A-THM-027-checked-certificate-bridge.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-027-checked-certificate-bridge.tex); and
 - [`BG-RAGASA2026A-THM-028-checked-enclosure-bridge.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-028-checked-enclosure-bridge.tex);
+- [`BG-RAGASA2026A-THM-029-uniform-weight-and-power.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-029-uniform-weight-and-power.tex);
+- [`BG-RAGASA2026A-THM-030-constructed-maximum-correlation.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-030-constructed-maximum-correlation.tex);
+- [`BG-RAGASA2026A-THM-031-constructed-certificate-accepts.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-031-constructed-certificate-accepts.tex); and
+- [`BG-RAGASA2026A-THM-032-constructed-false-positive.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-032-constructed-false-positive.tex);
+- [`BG-RAGASA2026A-THM-033-exact-separation-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-033-exact-separation-distance.tex); and
+- [`BG-RAGASA2026A-THM-034-separation-resolution.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-034-separation-resolution.tex);
 - [`BG-DECISION-THM-001-weak-improvement-reflexive.tex`](BandGauge/Decision/BG-DECISION-THM-001-weak-improvement-reflexive.tex);
 - [`BG-DECISION-THM-002-weak-improvement-transitive.tex`](BandGauge/Decision/BG-DECISION-THM-002-weak-improvement-transitive.tex);
 - [`BG-DECISION-THM-003-dominance-irreflexive.tex`](BandGauge/Decision/BG-DECISION-THM-003-dominance-irreflexive.tex);
