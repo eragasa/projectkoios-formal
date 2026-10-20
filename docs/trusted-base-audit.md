@@ -60,3 +60,18 @@ Current proof IDs and statuses are listed only in `theorem-manifest.md`. No list
 - The canonical Dirichlet, periodic, and twisted exponential phases and cosine eigenvalue results
   do not establish continuum completeness, nonzero/distinctness for every natural mode index, or a
   Bloch--Floquet theorem. Scalar real-space twisting is not identified with reciprocal-fiber sewing.
+
+## Symbolic finite-barrier tranche audit (2026-10-21)
+
+- `lake build`: passed, 3,129 jobs.
+- `./scripts/audit.sh`: passed; no scanned `sorry`, `admit`, or repository-owned `axiom` marker.
+- `./scripts/check-pins.py`: passed; Mathlib remains pinned to
+  `56a005855ea17e0b0958f73ec801ae140b0a1679`, and all nine resolved revisions are commit IDs.
+- `git diff --check`: passed.
+- The 44 new constant-region, transfer-matrix, finite-barrier, and interface-matching declarations
+  have unique manifest IDs with exactly one declaration-table row each.
+- The 30 named theorem/lemma reports in `ProjectKoios/Audit.lean` use only `propext`,
+  `Classical.choice`, and `Quot.sound`.
+- The exact symbolic transfer and matching results do not solve the constrained left-incident
+  scattering amplitudes, attach flux probabilities, certify numerical transmission or reflection,
+  take an infinite-barrier limit, bind runtime arrays, or establish continuum convergence.

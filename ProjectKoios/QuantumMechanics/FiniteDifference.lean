@@ -5,5 +5,8 @@ public import ProjectKoios.QuantumMechanics.FiniteDifference.DirichletMatrixMode
 public import ProjectKoios.QuantumMechanics.FiniteDifference.ExponentialMode1D
 public import ProjectKoios.QuantumMechanics.FiniteDifference.TwistedCyclic1D
 public import ProjectKoios.QuantumMechanics.FiniteDifference.OddExtension1D
+public import ProjectKoios.QuantumMechanics.FiniteDifference.ConstantPotential1D
+public import ProjectKoios.QuantumMechanics.FiniteDifference.FiniteBarrier1D
+public import ProjectKoios.QuantumMechanics.FiniteDifference.BarrierMatching1D
 
 /-! Narrow import root for source-neutral one-dimensional finite differences. -/

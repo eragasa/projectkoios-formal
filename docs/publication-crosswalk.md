@@ -69,9 +69,14 @@ nonuniqueness, finite Frobenius model-class fits, the centered Dirichlet stencil
 support, scalar-twisted and PBC matrices, unit-circle Hermiticity, doubled-cycle odd extension,
 periodic-to-Dirichlet operator restriction and exact Dirichlet/PBC mode identification, complex translation characters, antisymmetric/sine-normalized
 Dirichlet modes, canonical phases `exp(i kπ/(N+1))`, real representability, and the exact finite-matrix eigenvalue
-`2-2 cos(kπ/(N+1))`. See `docs/source-audit.md` for the dirty-worktree crosswalk limitation.
-No retained numerical result, observed convergence order, runtime eigensolver claim, continuum
-spectral completeness claim, or publication status follows.
+`2-2 cos(kπ/(N+1))`. The source-neutral finite-difference layer also contains symbolic
+constant-potential characters, determinant-one transfer matrices, finite left/barrier/right
+piecewise-constant recurrence, and exact character-amplitude/interface-state matching results. These barrier declarations are
+methodology infrastructure, not an adopted PIAB1D or Ragasa-series claim. See
+`docs/source-audit.md` for the dirty-worktree crosswalk limitation. No retained numerical result,
+observed convergence order, runtime eigensolver claim, continuum spectral completeness claim,
+constrained scattering-amplitude solution, flux probability, scattering coefficient,
+infinite-barrier limit, novelty claim, or publication status follows.
 
 ## Series planning beyond the current crosswalk
 

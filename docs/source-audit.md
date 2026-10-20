@@ -116,3 +116,16 @@ odd-extension layers are deliberately more general than the current PIAB1D calcu
 source-neutral finite real-space boundary algebra; they are not inferred from the dirty runtime
 implementation. A later reviewed theorem may connect scalar translation characters to reciprocal-
 fiber Bloch sewing, but no such identification or Bloch--Floquet theorem is claimed here.
+
+## Symbolic finite-barrier scope
+
+The constant-region and finite-barrier modules are source-neutral exact lattice algebra. They were
+not copied from, and are not presented as validation of, a retained owner-repository barrier
+calculation. Their potential values, energy, character roots, amplitudes, and natural-number
+barrier width remain universally quantified. The exact transfer result propagates a supplied global
+lattice state whose recurrence holds at every barrier site. The matching layer represents symbolic
+lead amplitudes as interface states and proves coordinate existence/uniqueness away from coincident
+reciprocal roots. It does not solve the constrained left-incident reflection/transmission system,
+attach flux probabilities, compute numerical transmission or reflection, establish continuum
+convergence, or prove a finite-barrier-to-Dirichlet limit. Any publication attribution or numerical
+binding requires a separate immutable source and crosswalk review.
