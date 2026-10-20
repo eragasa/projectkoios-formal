@@ -2,7 +2,7 @@
 
 The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Neither a directory nor a paper plan announces an implemented API.
 
-The implemented `ProjectKoios/QuantumMechanics/HarmonicOscillator/` family is source-neutral. It owns exact physicists' Hermite polynomial/function identities, retained finite ladder algebra, generic matrix-compression leakage, the explicit top-state Hamiltonian reconstruction defect, finite-difference symmetry, and supporting finite comparison algebra. It does not own runtime arrays, binary64 evidence, `L²` normalization or completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See its [module README](../ProjectKoios/QuantumMechanics/HarmonicOscillator/README.md).
+The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil and complex exponential translation modes. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
 
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
@@ -50,6 +50,18 @@ FiniteComparison          (independent exact comparison layer)
 ```
 
 The narrow `ProjectKoios.QuantumMechanics.HarmonicOscillator` module imports only these five semantic modules.
+
+The PIAB1D and reusable import direction is:
+
+```text
+FiniteDifference/CenteredDirichlet1D ─┐
+FiniteDifference/ExponentialMode1D ────┴→ FiniteDifference/DirichletMatrixMode1D
+FiniteDifference/DirichletMatrixMode1D ─→ Piab1d/FiniteDifference ─→ Piab1d/Spectrum
+FiniteDimensional/*                        (source-neutral operator analysis)
+```
+
+`ExponentialMode1D` proves translation-character algebra intended for a later reviewed Bloch bridge.
+It does not itself establish Bloch--Floquet theory or identify the phase with a runtime momentum.
 
 ## Naming and promotion
 

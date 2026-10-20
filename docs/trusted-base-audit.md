@@ -47,3 +47,15 @@ Before a scientific declaration is marked proved, the audit must record:
 The rational rank-two checker reduces exact decidable propositions inside Lean; its soundness theorems remain kernel checked. Runtime parsing and field-to-certificate bindings are not trusted implicitly.
 
 Current proof IDs and statuses are listed only in `theorem-manifest.md`. No listed theorem instantiates concrete publication model data, constitutes a concrete checked scientific certificate, validates a scientific model, or authorizes a release.
+
+## PIAB1D tranche audit (2026-10-21)
+
+- `lake build`: passed, 3,124 jobs.
+- `./scripts/audit.sh`: passed; no scanned `sorry`, `admit`, or repository-owned `axiom` marker.
+- Named reports in `ProjectKoios/Audit.lean`: the new finite-dimensional, finite-difference,
+  exponential-mode, and PIAB1D declarations report only `propext`, `Classical.choice`, and
+  `Quot.sound`.
+- The exact finite `Matrix.mulVec` results do not bind NumPy/SciPy arrays, binary64 evaluation,
+  JSON, or retained calculation results.
+- The canonical exponential phase and cosine eigenvalue results do not establish continuum
+  completeness, nonzero/distinctness for every natural mode index, or a Bloch--Floquet theorem.

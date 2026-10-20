@@ -83,3 +83,34 @@ formalization therefore defines the physicists' recurrence directly rather than 
 identifying the conventions. This is a convention choice, not a claim of source-text
 fidelity to a physics reference. No governed textbook source has yet been admitted for
 normalization, orthogonality, completeness, self-adjointness, or spectral completeness.
+
+## PIAB1D computational crosswalk inspection
+
+The PIAB1D formalization was prepared from source-neutral exact algebra after a read-only
+inspection of an actively restructured owner worktree:
+
+- owner repository: `ksdft2effmass`;
+- branch: `work/source-package-ownership-cleanup`;
+- base commit: `2229777163882c3452b950b8b21db86c7ea43511`;
+- dirty-state limitation: 172 status entries were present at inspection; the canonical
+  `calculations/piab1d/`, `model_systems/piab1d/`, and `analysis/operators/` ownership changes were
+  uncommitted and therefore are not immutable owner evidence;
+- access mode: read-only from this formal worktree; no owner bytes, index, branch, or configuration
+  were changed by the formalization task.
+
+| SHA-256 of inspected dirty-worktree bytes | Owner-repository path | Crosswalk use |
+|---|---|---|
+| `2038fa182a6618d759cd20ef09dd54003fb7336bad4c435a8aa9d423e7a3f68d` | `python/src/ksdft2effmass/model_systems/piab1d/model.py` | finite analytical and difference conventions |
+| `7b4fd044c0e90c9527220da9df89c71305f68dded2085e37ba586b4b1ba30e57` | `python/src/ksdft2effmass/model_systems/piab1d/evaluation.py` | represented grid-evaluation context |
+| `c57314766cd79c43dd80385f0c20ca42a5eac914dc41999bf99b06e46ace448c` | `python/src/ksdft2effmass/analysis/operators/compression_residuals.py` | compression-residual semantics |
+| `4d8e9810d392f62d0d64a412a4dede6f96be61743b5548b629ff916d84a5ffac` | `python/src/ksdft2effmass/analysis/operators/eigenpair_diagnostics.py` | exact-residual versus numerical-diagnostic boundary |
+| `14eeb46747ca4d458d143063726f948634598a7a4ef1f33c62b8bc5c48edd36c` | `python/src/ksdft2effmass/analysis/operators/decomposition_identifiability.py` | additive decomposition semantics |
+| `3e566d523fb8daccce414242e4b0f51596e74bcdfac011a14482cf534d627ada` | `python/src/ksdft2effmass/analysis/operators/model_fitting.py` | declared finite model classes and Frobenius loss |
+| `85dd2b11225278194aedce6346cfb93ec6358e0c5df8a4009ff0567bb0b833ed` | `calculations/piab1d/input.json` | illustrative calculation parameters only |
+| `fdc708803ccb2f3eb44ab9d5c4b3608fb49ce5b00177e219669d9666df5703db` | `calculations/piab1d/protocol.md` | interpretation and authority boundaries |
+
+These hashes make the dirty inspection reproducible but do not upgrade those bytes to immutable
+source authority. The Lean theorems do not accept the retained JSON, binary64 arrays, eigensolver
+output, observed convergence orders, or plots. The exponential-mode layer is deliberately more
+general than the current PIAB1D calculation so that a later reviewed theorem can connect lattice
+translation characters to Bloch sewing; no Bloch--Floquet theorem is claimed here.

@@ -1,0 +1,157 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx}
+\usepackage{seqsplit}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,literate={•}{{$\mathbin{\bullet}$}}1}
+\title{Project Koios Formal Proof Dossier\\\large PIAB1D-SPECTRUM-THM-015: canonical finite Dirichlet mode eigenpair}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-21}
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+Statement ID & \texttt{PIAB1D-SPECTRUM-THM-015} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.QuantumMechanics.Piab1d.negativeDirichletDifferenceMatrix_mulVec_canonicalMode_cosine} \\
+Owning module & \path{ProjectKoios/QuantumMechanics/Piab1d/Spectrum.lean} \\
+Author and license & Eugene Joseph M. Ragasa; Apache-2.0 \\
+Formal proof completed & 2026-10-21 \\
+\bottomrule\end{tabularx}
+Status concerns only the exact Lean proposition. It does not imply numerical validation,
+source fidelity, novelty, applicability, publication, or release.
+
+\section{Exact mathematical statement}
+For natural numbers $N$ and $k$, let
+\[
+ z_{N,k}=\exp\!\left(i\frac{k\pi}{N+1}\right),\qquad
+ v_j=\frac{z_{N,k}^{j+1}-z_{N,k}^{-(j+1)}}{2i},\quad 0\leq j<N.
+\]
+For the exact finite negative centered-difference matrix $D_N$ with zero Dirichlet ghost
+values,
+\[
+ D_Nv=\left(2-2\cos\frac{k\pi}{N+1}\right)v.
+\]
+The Lean theorem allows every natural $k$ and therefore does not assert that every such vector
+is nonzero or that all indices give distinct modes.
+
+\section{Source provenance and authority boundary}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \texttt{work/source-package-ownership-cleanup} \\
+Base commit & \texttt{2229777163882c3452b950b8b21db86c7ea43511} \\
+Dirty-state limitation & the PIAB1D ownership restructuring was uncommitted at inspection \\
+Exact inspected-byte hashes & recorded in \path{docs/source-audit.md} \\
+\bottomrule\end{tabularx}
+The theorem is source-neutral exact mathematics. It neither authenticates owner execution nor
+imports binary64 arrays or retained JSON as formal evidence.
+
+\section{Formulation-specific possible prior art}
+The result and the central proof formulation are classical and carry no novelty claim. Our Lean
+proof should be understood as a formal synthesis of two established viewpoints: solve the centered
+recurrence using counter-propagating complex characteristic modes, and obtain homogeneous
+Dirichlet modes as the antisymmetric or odd sector of a periodic Fourier representation. The
+following inspected works are the closest formulation-level precedents located so far.
+
+\begin{itemize}
+\item \textbf{Yueh (2005), complex characteristic-mode derivation.} Wen-Chyuan Yueh,
+``Eigenvalues of Several Tridiagonal Matrices,'' \emph{Applied Mathematics E-Notes} 5
+(2005), 66--74. Section~2, pp.~67--70, embeds the finite eigenvector into a complex
+recurrence with ghost values $u_0=u_{n+1}=0$, writes the two characteristic roots as
+$\gamma_{\pm}=\rho^{-1}e^{\pm i\theta}$, subtracts their powers, and applies De Moivre's
+theorem to obtain sine modes. Section~3, especially equations (11)--(12) on pp.~70--71,
+imposes $\sin((n+1)\theta)=0$ and gives the corresponding tridiagonal eigenvectors and
+eigenvalues. This closely precedes the $z^n-z^{-n}$ portion of our proof, although it does
+not use our source-neutral Lean decomposition into translation, periodicity, reality, and
+\texttt{Matrix.mulVec} bridge lemmas. Inspected \href{https://www.math.nthu.edu.tw/~amen/2005/040903-7.pdf}{candidate PDF};
+SHA-256 \texttt{\seqsplit{f2a2f513fc9cc362bf47831bc1696b6f6ea54651d74dc0e04b9c47001b4de4c6}}.
+
+\item \textbf{Püschel--Moura (2008), antisymmetric Fourier/DST viewpoint.} Markus Püschel and
+José M. F. Moura, ``Algebraic Signal Processing Theory: 1-D Space,'' \emph{IEEE
+Transactions on Signal Processing} 56(8) (2008), 3586--3599. Sections~III--IV,
+pp.~3590--3593, treat Dirichlet ``zero value'' boundaries through whole- or half-point
+antisymmetric extensions and derive finite discrete trigonometric transforms as Fourier
+transforms of the associated finite space models. This is formulation-level prior art for
+our decision to derive Dirichlet sine modes from an antisymmetric sector rather than treat
+sine as an unrelated primitive. Inspected
+\href{https://users.ece.cmu.edu/~moura/papers/t-sp-aug08-part2--pueschelmoura-ieeexplore.pdf}{candidate PDF};
+SHA-256 \texttt{\seqsplit{a3132903efc58592fbbb795da982adc2fc561f203582aa22f066591fef79199e}}.
+
+\item \textbf{Noschese--Pasquini--Reichel (2013), broader spectral context.} Silvia Noschese,
+Lionello Pasquini, and Lothar Reichel, ``Tridiagonal Toeplitz Matrices: Properties and
+Novel Applications,'' \emph{Numerical Linear Algebra with Applications} 20 (2013),
+display DOI \url{https://doi.org/10.1002/nla.1811}. This is retained only as a broader
+candidate survey stating that the closed-form tridiagonal Toeplitz spectrum is known; it
+has not yet been inspected as evidence for our particular exponential/antisymmetric proof
+architecture.
+\end{itemize}
+
+No source has yet been located and audited that packages every step exactly as this Lean tranche
+does: a reusable integer-lattice character $z^n$, root-of-unity periodicity, the antisymmetric
+combination $z^n-z^{-n}$, explicit real representability after division by $2i$, an exact finite
+\texttt{Matrix.mulVec} realization, and the scaling bridge to the declared PIAB1D Hamiltonian.
+That packaging distinction is not a mathematical novelty claim. These candidates were not used as
+axioms or external proof steps. Their References-owned canonical identities remain unresolved, so
+a completed literature crosswalk still requires identity resolution and an audited
+statement/assumption comparison.
+
+\section{Proof schematic}
+The reusable complex-exponential layer first proves the translation recurrence
+\[
+-(z^{n-1}-2z^n+z^{n+1})=(2-z^{-1}-z)z^n.
+\]
+Linearity transfers it to $z^n-z^{-n}$ and division by $2i$. The phase is nonzero, is a
+$2(N+1)$-st root of unity, and hence makes the antisymmetric mode vanish at both ghost
+endpoints. Restriction to interior coordinates and the exact \texttt{toMatrix'}--\texttt{mulVec}
+bridge give the finite matrix equation. Finally,
+$z+z^{-1}=2\cos(k\pi/(N+1))$ rewrites the eigenvalue.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem negativeDirichletDifferenceMatrix_mulVec_canonicalMode_cosine
+    (N k : Nat) :
+    Matrix.mulVec (negativeDirichletDifferenceMatrix N)
+        (normalizedDirichletExponentialModeVector N (dirichletPhase N k)) =
+      ((2 - 2 * Real.cos (dirichletPhaseAngle N k) : Real) : Complex) •
+        normalizedDirichletExponentialModeVector N (dirichletPhase N k)
+\end{lstlisting}
+The repository source is authoritative; this is a shortened rendering.
+
+\section{Toolchain and trusted-base report}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+Lean toolchain & Lean 4.35.0 \\
+Mathlib revision & \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Build & \texttt{lake build}: passed, 3,124 jobs \\
+Admission scan & \texttt{./scripts/audit.sh}: passed \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+No \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom occurs.
+
+\section{AI, automation, and review}
+Proof discovery, Lean implementation, and dossier drafting were AI-assisted. Lean's elaborator,
+kernel, Mathlib tactics, Lake, and repository scripts checked the exact declaration and reported
+axioms. Eugene Joseph M. Ragasa selected the controlled-model question, operated the checks, and
+reviewed the stated authority boundary. No independent expert review is recorded.
+
+\section{Explicit nonclaims}
+This theorem does not prove continuum convergence, completeness or orthogonality of a spectral
+basis, physical parameter applicability, correspondence to a NumPy/SciPy matrix, correctness of
+floating-point eigenpairs, retained-result validity, or Bloch--Floquet theory. The common
+complex-exponential representation is reusable infrastructure for a later separately reviewed
+Bloch bridge, not that bridge itself.
+
+\section{Revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}\toprule
+Date & Revision & Process & Outcome \\
+\midrule
+2026-10-21 & initial & Lean kernel and repository audit & exact proposition checked; no independent expert review \\
+\bottomrule\end{tabularx}
+\end{document}

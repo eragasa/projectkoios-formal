@@ -220,8 +220,9 @@ Harmonic-oscillator dossiers:
 - [`QHO-TRUNCATION-THM-001-compression-multiplication-defect.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-001-compression-multiplication-defect.tex);
 - [`QHO-TRUNCATION-THM-002-truncated-ladder-hamiltonian-boundary-defect.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-002-truncated-ladder-hamiltonian-boundary-defect.tex);
 - [`QHO-TRUNCATION-THM-003-truncated-ladder-hamiltonian-inequality.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-003-truncated-ladder-hamiltonian-inequality.tex);
-- [`QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex`](QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex); and
-- [`QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex`](QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex).
+- [`QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex`](QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex);
+- [`QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex`](QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex); and
+- [`PIAB1D-SPECTRUM-THM-015-canonical-mode-cosine-eigenpair.tex`](QuantumMechanics/Piab1d/PIAB1D-SPECTRUM-THM-015-canonical-mode-cosine-eigenpair.tex).
 
 ## Organizing principle
 

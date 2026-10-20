@@ -60,6 +60,18 @@ namespace, or promote schema-free development output to retained evidence.
 
 Paper 3 remains pre-results for the new higher-rank campaign: the selected D1 P0/G0 protocol has no implementation, run, result, retained evidence package, submission, or publication asserted by the source. Its exact prose certificates do not establish numerical convergence, locality, or scientific acceptance.
 
+## Controlled model systems — not publication claims
+
+The QHO1D and PIAB1D modules are exact, source-neutral controlled-model mathematics motivated by
+the owner repository's calculation packages. They are not mapped to a Ragasa2026 publication
+claim. For PIAB1D, the formalized tranche covers compression algebra, additive decomposition
+nonuniqueness, finite Frobenius model-class fits, the centered Dirichlet stencil, cyclic corner
+support, complex translation characters, antisymmetric/sine-normalized Dirichlet modes, canonical
+phases `exp(i kπ/(N+1))`, real representability, and the exact finite-matrix eigenvalue
+`2-2 cos(kπ/(N+1))`. See `docs/source-audit.md` for the dirty-worktree crosswalk limitation.
+No retained numerical result, observed convergence order, runtime eigensolver claim, continuum
+spectral completeness claim, or publication status follows.
+
 ## Series planning beyond the current crosswalk
 
 The proposed division of Ragasa2026A–D is recorded in
