@@ -3,12 +3,16 @@
 **Author:** Eugene Joseph M. Ragasa
 **License:** Apache License, Version 2.0 (`Apache-2.0`)
 **Initial document completed:** 2026-10-19
+**Producer-field audit completed:** 2026-10-20
 
 ## Status
 
-This is a prospective study plan for the diagnostics used or promised by Ragasa2026A. It
-is not a numerical result, retained evidence package, theorem inventory, authorization to
-run a protected confirmatory calculation, or claim that any diagnostic is useful.
+This is a prospective study plan for the diagnostics used or promised by Ragasa2026A.
+The immutable producer-field availability audit below is complete for the stated owner
+commit; calibration, usefulness, ablation, cost, and held-out studies remain prospective.
+This document is not a numerical result, retained evidence package, theorem inventory,
+authorization to run a protected confirmatory calculation, or claim that any diagnostic
+is useful.
 
 The source basis is the immutable Paper A v3 claim-and-commitment inventory at owner
 revision `99a46cb59d0c6f27ada7d709f194996ef9619d9f`, especially contracts M01–M15,
@@ -189,6 +193,112 @@ Contracts M02–M04 and M14–M15 motivate the premise registry; M07, A01–A03,
 motivate the alignment registry; M09–M13 and A07–A12 motivate the Fourier, spectral, and
 decision registries; V01–V10 motivate the evidence-integrity registry. This crosswalk does
 not upgrade any development result to retained evidence.
+
+## Immutable producer-field audit
+
+The following audit reads owner repository `ksdft2effmass`, branch
+`work/paper-3-higher-rank-extension`, commit
+`99a46cb59d0c6f27ada7d709f194996ef9619d9f` through immutable `git show` objects. The
+currently checked-out owner worktree is on another branch and is substantially dirty; none
+of those later tracked or untracked bytes are evidence for this table.
+
+The abbreviated source paths are:
+
+- `records.py` = `python/src/ksdft2effmass/analysis/model_adequacy/`
+  `band_equivalence_locality/records.py`;
+- `refinement_records.py` = the sibling reusable refinement-record module;
+- `alignment.py`, `calculation.py`, and `fourier.py` = sibling reusable producer modules;
+- `nonflat_results.py` and `serialization.py` = Paper A development-experiment modules
+  below `experiments/model-adequacy/periodic1d/`
+  `band-equivalence-versus-hopping-locality/src/band_equivalence_hopping_locality/`.
+
+Classification is deliberately about producer availability, not scientific usefulness:
+
+- **implemented** — the producer or verifier computes and stores a matching named field;
+- **derived** — the diagnostic is deterministically recoverable from stored fields but has
+  no matching named field;
+- **hard-coded** — the reported diagnostic value is only a literal or frozen constant,
+  rather than a computed output;
+- **missing** — the immutable output does not store enough information for the diagnostic;
+- **ambiguous** — fields exist, but their scope or semantics do not match the registry
+  entry closely enough for an unqualified mapping.
+
+No registry item is classified solely as hard-coded. Frozen meshes, tolerances, and
+parameter grids are inputs to several computed diagnostics, not substitutes for their
+values. Totals are 31 implemented, eight derived, four missing, and three ambiguous.
+These statuses do not imply retained execution, schema validity, numerical verification,
+formal checking, or scientific applicability.
+
+### State-space and premise producer fields
+
+| ID | Classification | Immutable producer field or derivation | Audit note |
+|---|---|---|---|
+| A-DIAG-P01 | implemented | `PointDiagnostic.minimum_sampled_external_gap` (`records.py:66`); `continuous_external_gap_lower_bound` at line 67 | Sampled and analytic-lower-bound channels remain distinct. |
+| A-DIAG-P02 | implemented | `PointDiagnostic.minimum_sampled_transport_singular_value` (`records.py:76`) | `minimum_seed_overlap` is separately stored at line 68. |
+| A-DIAG-P03 | implemented | `PointDiagnostic.maximum_frame_orthonormality_defect` (`records.py:71`) | Maximum sampled defect, not a continuum statement. |
+| A-DIAG-P04 | implemented | `maximum_eigensystem_reconstruction_defect` and `maximum_parent_retained_reconstruction_defect` (`records.py:70,73`) | Two stored reconstruction channels cover eigensystem and retained-parent consistency. |
+| A-DIAG-P05 | implemented | `maximum_projector_reconstruction_defect` (`records.py:72`) | Gauge-invariant projector check is explicit. |
+| A-DIAG-P06 | implemented | `maximum_absolute_closure_holonomy_phases` and `maximum_closure_holonomy_unitarity_defect` (`records.py:84–85`) | Phases are sewing diagnostics only. |
+| A-DIAG-P07 | implemented | `maximum_periodic_frame_closure_defect` (`records.py:75`) | Post-closure residual is distinct from the pre-closure holonomy. |
+| A-DIAG-P08 | ambiguous | `maximum_parent_hermiticity_defect` and reference/comparison ordinary Fourier Hermiticity defects (`records.py:69,110–111`) | No single field resolves all four requested parent, retained, aligned, and reconstructed stages. |
+
+### Alignment and operator producer fields
+
+| ID | Classification | Immutable producer field or derivation | Audit note |
+|---|---|---|---|
+| A-DIAG-A01 | missing | no output field; `alignment.py:204–210` computes offset, cosine, and sine coefficients only as transient locals | The optimizer uses the coefficients, but a retained result cannot reconstruct or audit them directly. |
+| A-DIAG-A02 | implemented | `restricted_global_rotation_angle` and `restricted_global_rotation_degenerate` (`records.py:91–92`) | Stores the selected angle and its degeneracy disposition. |
+| A-DIAG-A03 | implemented | `finite_mesh_maximum_correlation`, `analytic_flat_correlation`, and `analytic_correlation_remainder_bound` (`records.py:94–96`) | Finite and analytic channels are explicitly separate. |
+| A-DIAG-A04 | implemented | `minimum_operator_threshold` and `restricted_global_rotation_residual` (`records.py:98,103`) | The producer stores both names for the aligned residual quantity. |
+| A-DIAG-A05 | derived | square `minimum_operator_threshold`; normalized form is `normalized_squared_operator_residual` (`records.py:102`) | There is no separately named unnormalized irreducible-floor field. |
+| A-DIAG-A06 | missing | no onsite-block difference field; only `reference_onsite_power` and `comparison_onsite_power` (`records.py:116–117`) | A difference of scalar powers is not the onsite-block mismatch norm. |
+| A-DIAG-A07 | implemented | `excess_nonzero_hopping_weight` and normalized counterpart (`records.py:120–121`) | Direct locality-cost output. |
+| A-DIAG-A08 | implemented | `maximum_covariant_defect` (`records.py:88`) | Stored maximum sampled covariance discrepancy. |
+| A-DIAG-A09 | ambiguous | `flat_identity_departure` and `flat_residual_tail_identity_defect` (`records.py:122,125`) | Departure is stored, but deformation and cross term are not separately exposed. |
+
+### Fourier and locality producer fields
+
+| ID | Classification | Immutable producer field or derivation | Audit note |
+|---|---|---|---|
+| A-DIAG-F01 | implemented | reference/comparison twisted-Nyquist and ordinary Hermiticity defects (`records.py:108–111`) | Cyclic Nyquist and ordinary conjugate pairing remain separate. |
+| A-DIAG-F02 | implemented | reference/comparison Fourier reconstruction defects (`records.py:104–105`); parent reconstruction at line 74 | Complete finite-transform reconstruction is explicit. |
+| A-DIAG-F03 | implemented | reference/comparison Parseval defects (`records.py:106–107`) and per-shell truncation Parseval defects (`records.py:37–38`) | Both complete and truncation identities are stored. |
+| A-DIAG-F04 | implemented | `reference_nyquist_power` and `comparison_nyquist_power` (`records.py:123–124`) | Conversion power is not treated as spectral error. |
+| A-DIAG-F05 | implemented | `reference_nononsite_power` and `comparison_nononsite_power` (`records.py:118–119`) | Direct locality summaries. |
+| A-DIAG-F06 | implemented | per-shell reference/comparison omitted and total-omitted powers (`records.py:33–36`) | Ordinary omission and Nyquist-inclusive total omission are distinct. |
+| A-DIAG-F07 | implemented | `ShellDiagnostic.retained_blocks` and `shell_index` (`records.py:25–26`) | In this 1-D producer the shell index is the declared integer support radius. |
+| A-DIAG-F08 | implemented | `PointDiagnostic.reference_interpolation` and `comparison_interpolation` (`records.py:112–113`) | Each is an `ErrorChannels` record with matrix and band components. |
+| A-DIAG-F09 | implemented | per-shell `reference_truncation` and `comparison_truncation` (`records.py:27–28`) | Deliberate truncation is isolated from total error. |
+| A-DIAG-F10 | implemented | per-shell `reference_total` and `comparison_total` (`records.py:29–30`) | Total errors remain matrix-valued computations summarized by separate norms. |
+
+### Spectral and decision producer fields
+
+| ID | Classification | Immutable producer field or derivation | Audit note |
+|---|---|---|---|
+| A-DIAG-S01 | implemented | `PointDiagnostic.maximum_direct_band_defect` (`records.py:87`) | Complete-field sampled equivalence check. |
+| A-DIAG-S02 | implemented | `ErrorChannels.maximum_band` nested in every shell truncation and total channel (`records.py:17,27–30`) | Sorted-band maximum and RMS remain separate. |
+| A-DIAG-S03 | implemented | `ErrorChannels.maximum_hamiltonian` (`records.py:15`), computed as the maximum normalized Frobenius error in `fourier.py:60–72` | It supplies the recorded perturbation upper-bound value; the theorem is external to the producer. |
+| A-DIAG-S04 | derived | `maximum_band / maximum_hamiltonian` from the selected `ErrorChannels` record | Zero-denominator disposition must remain explicit. |
+| A-DIAG-S05 | implemented | reference/comparison Hamiltonian shell fields in `FirstPassingDecision` (`records.py:48–49`) | Passing and preceding errors are also stored. |
+| A-DIAG-S06 | implemented | reference/comparison band shell fields in `FirstPassingDecision` (`records.py:46–47`) | Passing and preceding errors are also stored. |
+| A-DIAG-S07 | derived | comparison first-passing shell minus reference first-passing shell | Must be derived separately for matrix and band channels. |
+| A-DIAG-S08 | derived | first shell in `shell_diagnostics` satisfying both declared channel thresholds | It must be scanned from the common shell ledger; taking separate minima is not valid without monotonicity. |
+| A-DIAG-S09 | derived | count positive S07 values over the complete frozen point inventory | No aggregate prevalence field is stored. |
+| A-DIAG-S10 | derived | equality comparison of Hamiltonian and band first-passing shell fields | Agreement is a comparison, not authority to substitute one channel for the other. |
+
+### Stability and evidence-integrity producer fields
+
+| ID | Classification | Immutable producer field or derivation | Audit note |
+|---|---|---|---|
+| A-DIAG-R01 | implemented | change and stability fields in `BandEquivalenceLocalityRefinementPair` (`refinement_records.py:16–33`) | Includes objective, reconstruction, Parseval, final-outcome, and first-passing stability. |
+| A-DIAG-R02 | derived | tolerance minus passing/preceding errors in `FirstPassingDecision` (`records.py:45,50–57`) | The signed margin is not stored by name. |
+| A-DIAG-R03 | implemented | passing and preceding error fields (`records.py:50–57`) plus explicit verifier comparisons in `calculation.py:1287–1355` | Verifier checks selected pass and predecessor failure. |
+| A-DIAG-R04 | derived | compare `PointDiagnostic` outputs across stored `parent_scale` and `amplitude` (`records.py:64–65`) and midpoint records | No one aggregate sensitivity field covers both axes. |
+| A-DIAG-R05 | implemented | `CaseDiagnostic.construction_evaluation_minimum_separation` (`records.py:215`) | Direct coordinate-disjointness output. |
+| A-DIAG-R06 | missing | no independent truncation-reconstruction result or verifier field in the immutable tree | `records.py:238–240` independently probes the parent and complete-field band relation, not every declared truncation cutoff. |
+| A-DIAG-R07 | ambiguous | `serialization.py:74–173` supplies strict schema IDs and SHA-256 bindings for the smooth-continuum records only | At the audited commit, non-flat and truncation schemas and a complete coverage manifest are absent from the immutable tree despite broader manuscript wording. |
+| A-DIAG-R08 | missing | no dependency-lock, executable, platform, or environment identity field in the audited Paper A result records | Repository lockfiles are not retained execution identity. |
+| A-DIAG-R09 | implemented | `SmoothFourStateAmplitudeValidationResult.maximum_*_defect`, failure count, and disposition (`nonflat_results.py:348–354`) | Validation rejects the interpolant when the prospective targets fail. |
 
 # Mathematical support plan
 

@@ -141,9 +141,10 @@ with detailed plans for
 [Paper B](BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md),
 [Paper C](BandGauge/Papers/Ragasa2026C/paper-and-proof-plan.md), and a
 [planning-only Paper D](BandGauge/Papers/Ragasa2026D/paper-and-proof-plan.md).
-Paper A also has a prospective
-[diagnostic-usefulness study](BandGauge/Papers/Ragasa2026A/diagnostic-usefulness-study-plan.md).
-These paper narratives do not determine formal module ownership: reusable proofs are
+Paper A also has a
+[diagnostic-usefulness study](BandGauge/Papers/Ragasa2026A/diagnostic-usefulness-study-plan.md)
+with a completed immutable producer-field audit and still-prospective calibration,
+ablation, cost, and held-out phases. These paper narratives do not determine formal module ownership: reusable proofs are
 organized by mathematical semantics, and publication modules remain thin source-specific
 consumers. Paper D has no audited source or Lean namespace and remains planning-only until
 the owner repository establishes both.

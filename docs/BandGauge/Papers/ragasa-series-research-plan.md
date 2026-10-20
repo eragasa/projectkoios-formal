@@ -92,6 +92,9 @@ The detailed plan is
 [`Ragasa2026A/paper-and-proof-plan.md`](Ragasa2026A/paper-and-proof-plan.md), with the
 complete diagnostic study in
 [`Ragasa2026A/diagnostic-usefulness-study-plan.md`](Ragasa2026A/diagnostic-usefulness-study-plan.md).
+The latter now audits all 46 registry entries against immutable producer fields; its
+calibration, fault-injection, sensitivity, ablation, cost, and held-out phases remain
+prospective.
 
 The central decision is
 
