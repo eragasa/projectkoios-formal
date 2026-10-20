@@ -50,3 +50,36 @@ immutable commit. The immutable committed protocol was therefore used for planni
 later inspection does not replace the publication-source identity or cited-byte hashes
 recorded above, and it does not transfer development calculator output into retained
 publication evidence.
+
+## Harmonic-oscillator computational crosswalk inspection
+
+The harmonic-oscillator modules are source-neutral exact mathematics. Their computational
+crosswalk was selected after a read-only inspection of the clean local owner worktree:
+
+- owner repository: `ksdft2effmass`;
+- branch: `work/source-package-ownership-cleanup`;
+- commit: `2229777163882c3452b950b8b21db86c7ea43511`;
+- dirty state at inspection: clean;
+- access mode: read-only; no owner-repository bytes, index, branch, or configuration were changed.
+
+| SHA-256 | Owner-repository path | Crosswalk use |
+|---|---|---|
+| `d8558ec63f7f05335e28f3f982ed700fd54c88aae6c65aaa77862049d97ba745` | `python/src/ksdft2effmass/operators/ladder_operators.py` | finite ladder convention |
+| `d8782535073b1b0bdbe7abdc2bee230c985472a881be911eca1a50bd99c2f33c` | `python/src/ksdft2effmass/operators/finite_differences.py` | centered finite-difference convention |
+| `b75d07a13b617adde68a43cd7f83ae5d1092df5ccdc55ff37782003cc4b4f998` | `python/src/ksdft2effmass/analysis/model_systems/harmonic_oscillator/model.py` | dimensionless QHO/Hermite formulas |
+| `ce9a4242285d4734431287299791b00d471f95ae37a9226f539d661f53c6b697` | `python/src/ksdft2effmass/analysis/model_systems/harmonic_oscillator/comparison.py` | finite comparison and pullback context |
+| `1ad7a6fc021f7ebbd16ca8487e782e513f31afb677ee7a01fe4f3a41c059f4c7` | `calculations/research-monograph/harmonic-oscillator/protocol.md` | retained calculation protocol context |
+| `77f2875ae663871074e18ea2bc8f8ed43541f30484d2cfe84d30b3cb6d184da1` | `calculations/research-monograph/harmonic-oscillator/report.md` | retained numerical-result context only |
+| `5ccc6491881072dfa95943ebe479157b84315357dad17220f87894bf495be120` | `calculations/research-monograph/harmonic-oscillator/SHA256SUMS` | retained-evidence manifest context only |
+
+The Lean declarations do not copy or validate the owner repository's generated artifacts,
+SciPy execution, binary64 values, array serialization, or retained result. The formal
+parameter `K` denotes the highest retained number-state index and therefore a dimension
+of `K + 1`; an owner API that accepts a retained dimension `N` corresponds to `K = N - 1`
+when `N > 0`.
+
+Mathlib's `Polynomial.hermite` was inspected and is the probabilists' convention. The
+formalization therefore defines the physicists' recurrence directly rather than silently
+identifying the conventions. This is a convention choice, not a claim of source-text
+fidelity to a physics reference. No governed textbook source has yet been admitted for
+normalization, orthogonality, completeness, self-adjointness, or spectral completeness.

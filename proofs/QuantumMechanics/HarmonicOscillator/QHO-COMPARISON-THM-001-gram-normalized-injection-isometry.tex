@@ -1,0 +1,132 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,literate={•}{{$\mathbin{\bullet}$}}1}
+\title{Project Koios Formal Proof Dossier\\\large QHO-COMPARISON-THM-001: Exact Gram normalization implies an isometric injection}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+Statement ID & \texttt{QHO-COMPARISON-THM-001} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.QuantumMechanics.HarmonicOscillator.orthonormalizedInjection_isometry} \\
+Owning module & \path{ProjectKoios.QuantumMechanics.HarmonicOscillator} \\
+Author & Eugene Joseph M. Ragasa \\
+License & Apache-2.0 \\
+Formal proof completed & 2026-10-20 \\
+\bottomrule\end{tabularx}
+Status concerns the exact Lean proposition only. It does not imply release, novelty,
+source fidelity, numerical validation, or physical applicability.
+
+\section{Exact mathematical statement}
+\begin{quote}\textbf{Statement.} For finite real matrices $S$ and $R$, if $R^{\mathsf T}(S^{\mathsf T}S)R=I$, then $(SR)^{\mathsf T}(SR)=I$.\end{quote}
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Branch for navigation & \texttt{work/source-package-ownership-cleanup} \\
+Immutable commit & \texttt{2229777163882c3452b950b8b21db86c7ea43511} \\
+Formal module & \path{ProjectKoios/QuantumMechanics/HarmonicOscillator} \\
+Owner paths & See \path{docs/source-audit.md} and the module README \\
+Dirty-state limitation & clean at read-only inspection; the commit is local-only \\
+\bottomrule\end{tabularx}
+The theorem is source-neutral mathematics selected to clarify the owner computation. It
+compares with the computational formulas; it does not authenticate execution or copy
+retained numerical evidence into Lean.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}YYY@{}}\toprule
+Convention & Lean encoding & Limitation \\
+\midrule
+Finite real coordinates & \texttt{Matrix} over \texttt{Real} & no complex phase or infinite operator is inferred \\
+Number-state cutoff & highest index $K$, dimension $K+1$ where applicable & owner dimension conventions require the documented index translation \\
+Exact equality & kernel-checked algebra and calculus & no floating-point, discretization, or runtime binding \\
+\bottomrule\end{tabularx}
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lYYY@{}}\toprule
+Relation & Authority & Locator & Role and caveat \\
+\midrule
+compares-with & \path{ksdft2effmass@22297771} & paths in \path{docs/source-audit.md} & computational convention only \\
+background-only & unresolved governed textbook identity & unverified & classical QHO mathematics; no novelty claim \\
+\bottomrule\end{tabularx}
+No governed textbook locator has been admitted for this statement. This dossier therefore
+makes no source-fidelity or priority claim.
+
+\section{Motivation and contribution boundary}
+The statement isolates an exact mechanism needed to interpret the finite harmonic-
+oscillator calculation. The contribution is methodological and formal: it makes the
+assumptions and exact algebra inspectable. The underlying mathematics is classical.
+
+\section{Proof schematic}
+\begin{center}\fbox{\parbox{0.88\textwidth}{\small\raggedright $J=SR$ $\Rightarrow$ $J^{\mathsf T}J=R^{\mathsf T}(S^{\mathsf T}S)R$ $\Rightarrow$ supplied exact Gram identity $\Rightarrow$ $J^{\mathsf T}J=I$}}\end{center}
+External numerical and applicability obligations do not enter this implication chain.
+
+\section{Human-readable mathematical argument}
+\paragraph{Proof status.} Complete for the exact Lean proposition.
+\paragraph{Argument.} Expand the injection as $J=SR$.  Transposition reverses products, so $J^{\mathsf T}J=R^{\mathsf T}S^{\mathsf T}SR$.  Reassociate to obtain $R^{\mathsf T}(S^{\mathsf T}S)R$, then apply the supplied exact normalization identity.
+
+\section{Lean realization}
+The following is a short normalized rendering; the repository source is authoritative.
+\begin{lstlisting}
+theorem orthonormalizedInjection_isometry
+    (S : Matrix Grid Retained Real) (R : Matrix Retained Retained Real)
+    (hR : R.transpose * sampledGramMatrix S * R = 1) :
+  (orthonormalizedInjection S R).transpose *
+    orthonormalizedInjection S R = 1
+\end{lstlisting}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+Lean toolchain & Lean 4.35.0, commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
+Mathlib revision & \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Additional dependencies & none beyond the immutable Lake manifest \\
+Build & targeted module build and \texttt{lake build ProjectKoios.Audit}: passed \\
+\bottomrule\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.QuantumMechanics.HarmonicOscillator.orthonormalizedInjection_isometry
+-- depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+No \texttt{sorry}, \texttt{admit}, or repository-owned scientific axiom occurs in the
+proof. The listed transitive dependencies are the repository's currently audited standard
+classical/quotient foundations.
+
+\section{AI, automation, and comprehension record}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+AI assistance & proof discovery, Lean implementation, and dossier drafting were AI-assisted \\
+Automation & Lean elaborator/kernel, Mathlib tactics, Lake, and repository audit scripts \\
+Exact output checked & the declaration above and its transitive axiom report \\
+Maintainer role & selected the scientific question, operated checks, and reviewed the stated boundary \\
+Independent expert review & none recorded \\
+Remaining uncertainty & source attribution and scientific applicability require separate review \\
+\bottomrule\end{tabularx}
+
+\section{Scientific and evidence boundaries}
+The Gram identity is a hypothesis. Lean does not prove that a floating-point eigendecomposition, inverse square root, or serialized runtime matrix satisfies it.
+
+\section{Unresolved questions}
+\begin{itemize}
+\item Obtain a governed primary or textbook locator if publication-specific source fidelity is required.
+\item Decide whether stronger analytical or numerical bridges are needed; they must receive separate statements and evidence.
+\item Record independent expert review if it occurs.
+\end{itemize}
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-10-20 & initial & Lean kernel and repository audit & exact proposition checked; no independent expert review \\
+\bottomrule\end{tabularx}
+\end{document}

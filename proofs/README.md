@@ -212,6 +212,17 @@ Current draft dossiers:
 
 Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The `BG-BLOCH-THM-003` through `BG-BLOCH-THM-006` dossiers document standard supporting trace and unitary-invariance infrastructure; they are not paper-contribution or novelty claims. `BG-BLOCH-THM-007/008` are source-normalized bridge specializations; `BG-BLOCH-THM-009--011` are standard Hermiticity infrastructure. None carries a claim that the underlying standard algebra is novel. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
 
+Harmonic-oscillator dossiers:
+
+- [`QHO-LADDER-THM-001-finite-ladder-commutator-defect.tex`](QuantumMechanics/HarmonicOscillator/QHO-LADDER-THM-001-finite-ladder-commutator-defect.tex);
+- [`QHO-HERMITE-THM-001-physicists-hermite-differential-equation.tex`](QuantumMechanics/HarmonicOscillator/QHO-HERMITE-THM-001-physicists-hermite-differential-equation.tex);
+- [`QHO-HERMITE-THM-002-hermite-gaussian-eigenfunction.tex`](QuantumMechanics/HarmonicOscillator/QHO-HERMITE-THM-002-hermite-gaussian-eigenfunction.tex);
+- [`QHO-TRUNCATION-THM-001-compression-multiplication-defect.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-001-compression-multiplication-defect.tex);
+- [`QHO-TRUNCATION-THM-002-truncated-ladder-hamiltonian-boundary-defect.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-002-truncated-ladder-hamiltonian-boundary-defect.tex);
+- [`QHO-TRUNCATION-THM-003-truncated-ladder-hamiltonian-inequality.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-003-truncated-ladder-hamiltonian-inequality.tex);
+- [`QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex`](QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex); and
+- [`QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex`](QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex).
+
 ## Organizing principle
 
 A dossier is keyed by one Project Koios Formal statement ID and mirrors the owning Lean module path. For example:

@@ -2,6 +2,8 @@
 
 The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Neither a directory nor a paper plan announces an implemented API.
 
+The implemented `ProjectKoios/QuantumMechanics/HarmonicOscillator/` family is source-neutral. It owns exact physicists' Hermite polynomial/function identities, retained finite ladder algebra, generic matrix-compression leakage, the explicit top-state Hamiltonian reconstruction defect, finite-difference symmetry, and supporting finite comparison algebra. It does not own runtime arrays, binary64 evidence, `L²` normalization or completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See its [module README](../ProjectKoios/QuantumMechanics/HarmonicOscillator/README.md).
+
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
 | `Foundations/` | finite index types, support vocabulary, state-space/frame/gauge definitions, rank-two real rotations and Pauli coordinates, and standard second-harmonic optimization | paper-specific thresholds and numerical records |
@@ -37,6 +39,17 @@ reviewed semantic modules ──→ thin Papers instantiations
 ```
 
 Actual imports must remain narrower than this sketch. No root module should become a catch-all re-export merely because a directory exists.
+
+The harmonic-oscillator import direction is:
+
+```text
+FiniteLadder ──→ TruncationDistortion
+HermiteEigenfunction ──→ TruncationDistortion (finite/analytic energy crosswalk only)
+FiniteDifference          (independent exact stencil layer)
+FiniteComparison          (independent exact comparison layer)
+```
+
+The narrow `ProjectKoios.QuantumMechanics.HarmonicOscillator` module imports only these five semantic modules.
 
 ## Naming and promotion
 
