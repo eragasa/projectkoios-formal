@@ -2,7 +2,7 @@
 
 The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Neither a directory nor a paper plan announces an implemented API.
 
-The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil and complex exponential translation modes. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
+The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil, complex exponential translation modes, scalar-twisted and periodic cycles, and the doubled-cycle odd-extension bridge to Dirichlet boundaries. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
 
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
@@ -56,12 +56,16 @@ The PIAB1D and reusable import direction is:
 ```text
 FiniteDifference/CenteredDirichlet1D ─┐
 FiniteDifference/ExponentialMode1D ────┴→ FiniteDifference/DirichletMatrixMode1D
-FiniteDifference/DirichletMatrixMode1D ─→ Piab1d/FiniteDifference ─→ Piab1d/Spectrum
-FiniteDimensional/*                        (source-neutral operator analysis)
+FiniteDifference/DirichletMatrixMode1D ─→ FiniteDifference/TwistedCyclic1D
+FiniteDifference/TwistedCyclic1D ───────→ FiniteDifference/OddExtension1D
+FiniteDifference/TwistedCyclic1D ───────→ Piab1d/FiniteDifference ─→ Piab1d/Spectrum
+FiniteDimensional/*                         (source-neutral operator analysis)
 ```
 
-`ExponentialMode1D` proves translation-character algebra intended for a later reviewed Bloch bridge.
-It does not itself establish Bloch--Floquet theory or identify the phase with a runtime momentum.
+`ExponentialMode1D` and `TwistedCyclic1D` prove translation-character and scalar real-space
+boundary algebra intended for a later reviewed Bloch bridge. The scalar twist is not definitionally
+the reciprocal-fiber sewing contract in `BandGauge/Bloch`; these modules do not establish
+Bloch--Floquet theory or identify a phase with a runtime momentum.
 
 ## Naming and promotion
 

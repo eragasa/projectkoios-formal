@@ -6,7 +6,7 @@ Author: Eugene Joseph M. Ragasa
 module
 
 public import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
-public import ProjectKoios.QuantumMechanics.FiniteDifference.DirichletMatrixMode1D
+public import ProjectKoios.QuantumMechanics.FiniteDifference.OddExtension1D
 public import ProjectKoios.QuantumMechanics.Piab1d.FiniteDifference
 
 /-!
@@ -244,5 +244,41 @@ theorem map_dirichletHamiltonian_mulVec_canonicalMode_cosine
   congr 1
   norm_cast
   ring
+
+/--
+`PIAB1D-SPECTRUM-THM-017`: the canonical Dirichlet phase is a root of unity for the doubled
+periodic cycle of length `2(N+1)`.
+-/
+theorem dirichletPhase_pow_doubledCycleLength_eq_one (N k : ℕ) :
+    dirichletPhase N k ^ (2 * N + 2) = 1 := by
+  rw [show 2 * N + 2 = 2 * (N + 1) by omega]
+  exact dirichletPhase_pow_two_mul_succ_eq_one N k
+
+/--
+`PIAB1D-SPECTRUM-THM-018`: the finite Dirichlet exponential mode is exactly the first-interior-half
+restriction of the antisymmetric reciprocal-character mode on the doubled periodic cycle.
+-/
+theorem dirichletExponentialModeVector_eq_restrict_finitePeriodicAntisymmetricMode
+    (N : ℕ) (z : ℂ) :
+    dirichletExponentialModeVector N z =
+      restrictDoubledCycleInterior (finitePeriodicAntisymmetricMode (2 * N) z) := by
+  funext i
+  simp [dirichletExponentialModeVector, finiteAntisymmetricExponentialMode,
+    antisymmetricExponentialMode, restrictDoubledCycleInterior, finitePeriodicAntisymmetricMode,
+    finiteExponentialMode, doubledCycleInteriorCoordinate, exponentialMode]
+
+/--
+`PIAB1D-SPECTRUM-THM-019`: the doubled-cycle antisymmetric mode built from the canonical
+Dirichlet phase is an exact PBC matrix eigenmode before interior restriction.
+-/
+theorem negativePeriodicDifferenceMatrix_mulVec_doubledDirichletMode
+    (N k : ℕ) :
+    Matrix.mulVec (negativePeriodicDifferenceMatrix (2 * N))
+        (finitePeriodicAntisymmetricMode (2 * N) (dirichletPhase N k)) =
+      (2 - (dirichletPhase N k)⁻¹ - dirichletPhase N k) •
+        finitePeriodicAntisymmetricMode (2 * N) (dirichletPhase N k) := by
+  apply negativePeriodicDifferenceMatrix_mulVec_finitePeriodicAntisymmetricMode
+  · exact dirichletPhase_ne_zero N k
+  · exact dirichletPhase_pow_doubledCycleLength_eq_one N k
 
 end ProjectKoios.QuantumMechanics.Piab1d

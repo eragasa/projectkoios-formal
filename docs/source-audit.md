@@ -111,6 +111,8 @@ inspection of an actively restructured owner worktree:
 
 These hashes make the dirty inspection reproducible but do not upgrade those bytes to immutable
 source authority. The Lean theorems do not accept the retained JSON, binary64 arrays, eigensolver
-output, observed convergence orders, or plots. The exponential-mode layer is deliberately more
-general than the current PIAB1D calculation so that a later reviewed theorem can connect lattice
-translation characters to Bloch sewing; no Bloch--Floquet theorem is claimed here.
+output, observed convergence orders, or plots. The exponential, scalar-twisted/PBC, and
+odd-extension layers are deliberately more general than the current PIAB1D calculation. They prove
+source-neutral finite real-space boundary algebra; they are not inferred from the dirty runtime
+implementation. A later reviewed theorem may connect scalar translation characters to reciprocal-
+fiber Bloch sewing, but no such identification or Bloch--Floquet theorem is claimed here.

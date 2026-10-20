@@ -5,7 +5,7 @@ Author: Eugene Joseph M. Ragasa
 -/
 module
 
-public import ProjectKoios.QuantumMechanics.FiniteDifference.DirichletMatrixMode1D
+public import ProjectKoios.QuantumMechanics.FiniteDifference.TwistedCyclic1D
 public import Mathlib.Data.Matrix.Basis
 
 /-!
@@ -100,5 +100,31 @@ theorem cyclicCornerCoupling_apply_eq_zero
         exact h₂ ⟨rfl, h⟩
       simp [Ne.symm hj0, Ne.symm hlast0]
     · simp [Ne.symm hi0, Ne.symm hilast]
+
+/--
+`PIAB1D-BOUNDARY-THM-003`: the source-neutral periodic corner correction is exactly the
+complexification of the declared PIAB1D cyclic corner coupling with coefficient `-1`.
+-/
+theorem periodicCornerCorrection_eq_map_cyclicCornerCoupling (N : ℕ) :
+    periodicCornerCorrection N = (cyclicCornerCoupling N (-1)).map Complex.ofReal := by
+  ext i j
+  simp [periodicCornerCorrection, twistedCornerCorrection, cyclicCornerCoupling,
+    Matrix.single_apply]
+  split_ifs <;> norm_num
+
+/--
+`PIAB1D-BOUNDARY-THM-004`: the exact periodic negative-difference matrix is the complexification
+of the unit-spacing Dirichlet stencil after adding the declared cyclic closure.
+-/
+theorem negativePeriodicDifferenceMatrix_eq_map_cyclicClosure (N : ℕ) :
+    negativePeriodicDifferenceMatrix N =
+      (cyclicClosure N (-(centeredDirichletLaplacian1D (N + 2) 1)) (-1)).map
+        Complex.ofReal := by
+  rw [negativePeriodicDifferenceMatrix_eq_dirichlet_add_corner,
+    negativeDirichletDifferenceMatrix_eq_neg_map_centeredDirichletLaplacian1D]
+  ext i j
+  simp [cyclicClosure, periodicCornerCorrection, twistedCornerCorrection, cyclicCornerCoupling,
+    Matrix.single_apply]
+  split_ifs <;> norm_num
 
 end ProjectKoios.QuantumMechanics.Piab1d
