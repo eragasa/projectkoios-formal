@@ -15,6 +15,7 @@ import ProjectKoios.BandGauge.Fourier.HermitianPairing
 import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
 import ProjectKoios.BandGauge.Fourier.RankTwoWeightedBridge
 import ProjectKoios.BandGauge.Certificates.FinitePareto
+import ProjectKoios.BandGauge.Certificates.RankTwoSeparationBox
 import ProjectKoios.BandGauge.Papers.Ragasa2026A
 import ProjectKoios.BandGauge.Papers.Ragasa2026A.ConstructedFalsePositive
 import ProjectKoios.BandGauge.Papers.Ragasa2026B
@@ -129,6 +130,10 @@ import ProjectKoios.BandGauge.Papers.Ragasa2026C
 #print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff
+#print axioms ProjectKoios.BandGauge.Certificates.valid_of_checkRankTwoSeparationBoxCertificate_eq_true
+#print axioms ProjectKoios.BandGauge.Certificates.boxSpectralWitness_mem_of_check_eq_true
+#print axioms ProjectKoios.BandGauge.Certificates.fullEllipses_subset_boxCandidateRectangle_of_check_eq_true
+#print axioms ProjectKoios.BandGauge.Certificates.disjoint_fullEllipses_of_boxCheck_eq_true
 #print axioms ProjectKoios.BandGauge.Foundations.secondHarmonicValue_le_maximum
 #print axioms ProjectKoios.BandGauge.Foundations.secondHarmonicValue_maximizingAngle
 #print axioms ProjectKoios.BandGauge.Foundations.canonicalSecondHarmonicMaximizingAngle_mem

@@ -130,6 +130,10 @@ Current draft dossiers:
 - [`BG-CERT-THM-010-exact-dominance-check.tex`](BandGauge/Certificates/BG-CERT-THM-010-exact-dominance-check.tex);
 - [`BG-CERT-THM-011-exact-threshold-check.tex`](BandGauge/Certificates/BG-CERT-THM-011-exact-threshold-check.tex); and
 - [`BG-CERT-THM-012-exact-pareto-mask.tex`](BandGauge/Certificates/BG-CERT-THM-012-exact-pareto-mask.tex);
+- [`BG-CERT-THM-013-box-check-implies-valid.tex`](BandGauge/Certificates/BG-CERT-THM-013-box-check-implies-valid.tex);
+- [`BG-CERT-THM-014-box-spectral-witness.tex`](BandGauge/Certificates/BG-CERT-THM-014-box-spectral-witness.tex);
+- [`BG-CERT-THM-015-box-containment.tex`](BandGauge/Certificates/BG-CERT-THM-015-box-containment.tex); and
+- [`BG-CERT-THM-016-box-separation.tex`](BandGauge/Certificates/BG-CERT-THM-016-box-separation.tex);
 - [`BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex);
 - [`BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex);
 - [`BG-RAGASA2026A-THM-003-operator-correlation-bound.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-003-operator-correlation-bound.tex); and
