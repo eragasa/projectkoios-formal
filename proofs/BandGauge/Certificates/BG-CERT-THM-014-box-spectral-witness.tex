@@ -1,0 +1,23 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Joint-Enclosure Spectral Witness}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-014}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{boxSpectralWitness_mem_of_check_eq_true}}.
+\section{Exact statement}
+For every real curvature $\kappa$ in the checked rational interval, the encoded witness
+belongs to the corresponding full spectral ellipse and candidate rectangle and has
+strictly positive scale.
+\section{Proof and boundary}
+The spectral residual is monotone in nonnegative $\kappa$, so checking the witness at the
+upper endpoint controls the entire interval. Rectangle membership and positive scale are
+exact rational consequences. This theorem does not bind an external field or runtime
+artifact. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked.
+\end{document}

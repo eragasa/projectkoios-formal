@@ -27,15 +27,20 @@ Both prove a positive-scale spectral pass and disjointness from the optimized op
 pass set in the candidate rectangle. Neither alone instantiates publication data or
 certifies runtime output.
 
+`Ragasa2026A/KappaEnclosureBridge.lean` transports the stronger joint `(κ, μmax)` box
+checker to the canonical fields. The actual field-derived parent power and optimized
+correlation must both be proved to lie in the checked rational intervals.
+
 `Ragasa2026A/ConstructedFalsePositive.lean` binds the source's exact two-observation,
 equal-weight analytic construction to those bridges. It proves normalized power one,
 `μmax = 1 / √2`, exact checker acceptance, zero spectral loss at `(0,1)`, disjointness
 of the two pass sets, their exact positive Euclidean separation, and the source's
-separation-resolution corollary in the declared rectangle. This is not a calculated
+separation-resolution corollary in the declared rectangle. Its degenerate curvature
+interval `[1,1]` also regression-tests the joint box checker and bridge. This is not a calculated
 result for the four-state parent, runtime evidence, material validation, or a continuum
 claim.
 
-`Ragasa2026A.lean` records the aggregate status: thirty-four formal statements, three
+`Ragasa2026A.lean` records the aggregate status: thirty-seven formal statements, three
 source-specific analytic conclusions, and one exact checked analytic certificate. The
 spectral and Pauli decompositions are canonically obtained from the finite Hermitian
 matrices using exact noncomputable mathematics; the generic supplied spectral-witness
