@@ -278,8 +278,11 @@ componentwise envelope need not be attainable.
 
 A future compact certificate should bind every declared rank, depth, construction mesh,
 alignment disposition, support, withheld-mesh objective, refinement diagnostic, and
-Pareto flag. Outward-rounded rational intervals certify floating results; threshold
-overlap remains unresolved.
+Pareto flag. It must satisfy
+[`publication-evidence-contract.md`](publication-evidence-contract.md), including an
+a-priori or certified optimized quadrature rule, explicit support semantics, canonical
+artifact identity, and fail-closed rejection behavior. Outward-rounded rational intervals
+certify floating results; threshold overlap remains unresolved.
 
 ## Repository placement
 
@@ -295,9 +298,10 @@ No new broad source tree is required.
 | Paper 3 bindings | a thin future Paper 3 module under `ProjectKoios/BandGauge/Papers/` |
 
 The calculator, independent verifier, serializers, schemas, Wannier90 invocation, and
-production evidence packages belong to the owner computational repository. This
-repository may check only compact exact certificates through an explicit soundness
-boundary.
+production evidence packages belong to the owner computational repository. The formal
+acceptance requirements are frozen here, but they are not the owner's machine-readable
+schema. This repository may check only compact exact certificates through an explicit
+soundness boundary.
 
 ## Staged implementation
 

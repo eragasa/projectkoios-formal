@@ -16,6 +16,7 @@ This directory records the formalization contract, provenance, planning state, a
 - [`conventions.md`](conventions.md) — conventions that every future statement must make explicit.
 - [`formal-vs-numerical-evidence.md`](formal-vs-numerical-evidence.md) — permitted bridges and prohibited status transfers.
 - [`certificates.md`](certificates.md) — certificate vocabulary and present availability.
+- [`BandGauge/publication-evidence-contract.md`](BandGauge/publication-evidence-contract.md) — frozen acceptance contract for immutable source identity, a-priori or certified-optimized weights, support semantics, mesh coverage, alignment, objective tables, and fail-closed checking.
 - [`reference-crosswalk-policy.md`](reference-crosswalk-policy.md) — theorem-to-literature traceability without duplicating References-owned bibliography authority.
 
 ## Architecture and workflow

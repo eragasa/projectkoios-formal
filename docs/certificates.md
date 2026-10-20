@@ -14,6 +14,7 @@
 | Publication crosswalk | source statement location, assumptions, and Lean declaration/status | available at metadata level | does not formalize the statement |
 | Exact rank-two scalar checkers | rational scalar inputs, exact-center or interval-center checks, and soundness theorems for witness, containment, and separation | implemented in `BandGauge/Certificates/RankTwoSeparation.lean` and `RankTwoSeparationEnclosure.lean` | does not bind scalars to publication matrices or runtime bytes |
 | Exact finite Pareto checks | total finite exact objective table, executable dominance and threshold checks, executable nondominated mask, and soundness/completeness bridges | implemented in `BandGauge/Certificates/FinitePareto.lean` | does not parse external tables, prove external coverage, or resolve interval-overlapping comparisons |
+| Publication-evidence acceptance contract | immutable identity, a-priori or certified-optimized weight derivation, explicit support semantics, finite coverage, alignment, objective, and fail-closed requirements | specified as `PKF-BG-EVIDENCE-CONTRACT/1` in [`BandGauge/publication-evidence-contract.md`](BandGauge/publication-evidence-contract.md) | a requirements document is not a production schema, parser, retained artifact, or accepted certificate |
 | Exact scientific certificate | exact data, parser/checker, soundness theorem, and bound input identity | none | the generic scalar checker and numerical output are not silently promoted to this class |
 
 ## Certificate lifecycle
@@ -30,4 +31,4 @@ Only the final two states may support a claim about a particular certificate, an
 
 ## Retention policy
 
-Do not commit generated build state, large numerical outputs, runtime caches, or private source artifacts. A retained certificate package, if later authorized, should contain only the exact compact inputs, identities, checksums, checker coordinates, audit output, and readable status needed to reproduce its bounded conclusion.
+Do not commit generated build state, large numerical outputs, runtime caches, or private source artifacts. A retained certificate package, if later authorized, should contain only the exact compact inputs, identities, checksums, checker coordinates, audit output, and readable status needed to reproduce its bounded conclusion. It must satisfy the acceptance and fail-closed rules in [`BandGauge/publication-evidence-contract.md`](BandGauge/publication-evidence-contract.md); in particular, undocumented or post-hoc evaluation weights are ineligible.

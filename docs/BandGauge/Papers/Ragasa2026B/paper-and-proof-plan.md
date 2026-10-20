@@ -107,15 +107,19 @@ A retained Paper B result requires:
 2. a frozen finite scale inventory;
 3. complete inversion- and symmetry-closed shell inventories;
 4. construction and withheld momentum meshes;
-5. objective values for every declared decision;
-6. an independently checked nondominated mask;
-7. mesh, scale-grid, and shell-cap refinement;
-8. resolution rules for claimed dimension or model differences; and
-9. provenance and outward-rounded uncertainty where exact evaluation is unavailable.
+5. evaluation weights fixed by an a-priori or certified optimized quadrature rule;
+6. objective values for every declared decision;
+7. an independently checked nondominated mask;
+8. mesh, scale-grid, and shell-cap refinement;
+9. resolution rules for claimed dimension or model differences; and
+10. provenance and outward-rounded uncertainty where exact evaluation is unavailable.
 
 Square and simple-cubic systems may be exact mathematical controls. Graphene- and
 silicon-inspired controls remain inspired controls unless an independent material
-parameter binding is established.
+parameter binding is established. Every retained table must satisfy
+[`../../publication-evidence-contract.md`](../../publication-evidence-contract.md),
+including explicit support semantics and fail-closed rejection of arbitrary or post-hoc
+evaluation weights.
 
 ## Semantically organized proof dependencies
 

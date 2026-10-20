@@ -121,7 +121,8 @@ representation after the declared admissible alignment.
 A publishable result requires at least one immutable concrete instantiation containing:
 
 1. frozen matrix or field data;
-2. frozen strict-positive weights and reference energy;
+2. strict-positive weights fixed by an a-priori or certified optimized quadrature rule,
+   plus the reference energy;
 3. exact or outward-rounded bounds on `κ` and `μmax`;
 4. a fixed candidate domain;
 5. independently justified positive thresholds;
@@ -129,7 +130,9 @@ A publishable result requires at least one immutable concrete instantiation cont
 7. a checked positive lower bound on operator separation.
 
 A parameter region or perturbation-stability result is preferable to an isolated
-one-point example.
+one-point example. Cross-paper evidence acceptance is governed by
+[`../publication-evidence-contract.md`](../publication-evidence-contract.md); arbitrary
+or post-hoc evaluation weights are not eligible.
 
 ## Remaining high-value proof work
 

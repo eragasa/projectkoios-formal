@@ -216,6 +216,13 @@ hold fixed an interpretable quantity such as total generator power, maximum gene
 norm, or integrated squared gauge gradient. Otherwise increasing dimension also
 silently increases perturbation strength.
 
+Evaluation weights must likewise be determined before inspecting candidate fidelity.
+The immutable D1 protocol already makes equal raw sample and aggregate weights mandatory,
+so the immediate Paper C program uses exact uniform counting. A later nonuniform mesh
+would require a separately reviewed geometric, moment-exact, or certified optimized
+quadrature rule. Weights optimized directly against candidate losses are design variables
+and must not replace the fixed evaluation measure.
+
 ## Analytic results for the paper
 
 The main paper should emphasize a small number of explanatory propositions.
@@ -375,6 +382,7 @@ Before retained D1 evidence, the owner implementation must at minimum:
 - replace hard-coded evaluation-noninfluence assertions by a checkable record;
 - implement source claim-resolution outputs;
 - provide strict schemas and canonical serialization;
+- bind the a-priori weight rule and explicit support semantic class;
 - provide an independent direct-formula verifier; and
 - bind provenance, digests, resources, and no-overwrite retained evidence.
 
@@ -383,7 +391,9 @@ these retained-evidence obligations.
 
 The scientific protocol and the implementation/evidence contract should be separate
 sibling documents. Removing software detail from the scientific protocol must not delete
-the evidence contract.
+the evidence contract. The formal sidecar's acceptance requirements are frozen in
+[`../../publication-evidence-contract.md`](../../publication-evidence-contract.md); that
+document does not replace the owner repository's production schema.
 
 ## Proposed manuscript structure
 

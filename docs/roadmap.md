@@ -93,8 +93,12 @@ truncation, and Hermiticity of the resulting reconstruction are also proved. The
 unweighted entrywise matrix Frobenius Parseval and residual-tail identities are now exact.
 For constant weights, the exact rank-two coefficient `weight/(2Eref²)` is bridged to the
 matrix identity; uniform averaging cancels the transform cardinality and leaves
-`1/(2Eref²)` exactly. Nonuniform quadrature, physical shell semantics, publication-mesh
-identification, and external mesh/source binding remain open.
+`1/(2Eref²)` exactly. `PKF-BG-EVIDENCE-CONTRACT/1` now freezes the publication-evidence
+policy: concrete evaluation weights must be determined a priori by normalized counting,
+geometric-cell, moment-exact, or certified optimized quadrature rules, and every support
+must declare its semantic class. Nonuniform weighted Parseval, concrete weight derivation,
+physical shell membership, publication-mesh identification, and external source binding
+remain open.
 
 A common `τ_E`/`τ_O` intersection, minimum-cost threshold surface, approximate eigenpair binding,
 and Wannier90 witness layer are later separately reviewed extensions, not statements already

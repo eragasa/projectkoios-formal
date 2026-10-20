@@ -7,4 +7,6 @@
 | Numerical evidence/certificate | sampled, finite-precision, interval, or other external computation with provenance | bounded computational evidence as declared; not automatically a Lean proof | referenced externally only |
 | Calculator/runtime authority | external implementation and execution environment | operational output under that runtime's contract | none owned here |
 
+The acceptance requirements in [`BandGauge/publication-evidence-contract.md`](BandGauge/publication-evidence-contract.md) determine whether a future compact artifact is eligible for binding. Specifying that contract creates no artifact, checker result, formal theorem, or scientific authority. In particular, reusable mathematics may allow arbitrary positive weights while the concrete evidence contract rejects undocumented or post-hoc evaluation weights.
+
 A publication label such as “theorem,” “proof,” or “exact certificate” records the source author's mathematical status. It does not become a Lean theorem until the statement and proof are encoded and audited. Floating-point margins do not become exact merely by being serialized. Conversely, a clean software build establishes compilation, not scientific correctness or validation.

@@ -9,6 +9,7 @@ This document is a pre-encoding contract. It does not freeze one mathematical co
 | Scalars | real or complex field and any ordered-field requirements | a real model must not be silently generalized to a complex one |
 | Dimension and rank | spatial dimension, retained rank, and finiteness assumptions | a fixed rank or dimension must not be renamed as arbitrary |
 | Momentum domain | finite cyclic mesh, interval representative, torus, or product torus | endpoint identification and measure are never inferred from notation alone |
+| Sampling weights | normalized counting, geometric-cell, moment-exact, or certified optimized quadrature rule | arbitrary or post-hoc evaluation weights are not accepted as publication evidence |
 | Fourier transform | sign, normalization, index group, inversion rule, and finite/continuum setting | discrete and continuum transforms are not interchangeable |
 | Matrices and operators | domain, codomain, basis/frame, adjoint, and matrix norm | a represented matrix is not identified with an abstract operator without a map |
 | Support and locality | index set, metric, shell rule, conjugate closure, and finite versus decaying support | coordinate cutoff is not physical range unless established |
@@ -34,6 +35,16 @@ Before subtracting or comparing operators, a statement must identify:
 5. the lattice and reciprocal-coordinate convention.
 
 Exact scalar certificates use rational inputs and exact rational comparison before coercion to real geometry. Algebraic real centers may be supplied through proved rational lower and upper bounds. Square-root bounds are discharged by checked squared inequalities plus explicit nonnegativity; floating-point square roots are not trusted. Certificate acceptance remains separate from binding `κ`, `μ`, thresholds, or witness coordinates to publication matrices and runtime data.
+
+The publication-evidence policy is frozen in
+[`BandGauge/publication-evidence-contract.md`](BandGauge/publication-evidence-contract.md).
+Reusable theorems may quantify over arbitrary strictly positive normalized weights, but a
+concrete evidence package must derive its weights a priori from normalized counting,
+geometric cells, fixed moment conditions, or a preregistered optimization problem with a
+checkable optimum. Weights tuned against the reported candidate losses are design
+variables, not evaluation weights. Every concrete support must separately identify
+whether it is arbitrary finite, negation closed, a complete metric shell, or a
+source-defined hopping range.
 
 Projection, disentanglement, basis transformation, Fourier conversion, and truncation remain different operations. A proof about one operation must not be relabeled as a result about another.
 

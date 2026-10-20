@@ -50,7 +50,8 @@ immutable computational instance to an exact or conservative interval certificat
 
 The publication-facing setting is the source's rank-two retained problem with:
 
-- strict-positive normalized coordinate weights;
+- strict-positive normalized coordinate weights, kept general in the reusable theorem but
+  determined a priori for every concrete publication instance;
 - one global standard real rotation;
 - momentum-dependent comparison alignment;
 - weighted finite Frobenius loss with coefficient `αᵢ/(2E_ref²)`;
@@ -58,7 +59,11 @@ The publication-facing setting is the source's rank-two retained problem with:
 - a declared positive candidate domain; and
 - the source's canonical angle convention in `[-π/2,π/2)`.
 
-These hypotheses must not be strengthened, weakened, or generalized silently.
+These hypotheses must not be strengthened, weakened, or generalized silently. The
+immutable source leaves the general raw objective weights parametrized, so they remain
+formal theorem inputs rather than eligible concrete evidence until a derivation rule is
+frozen. The paper's constructed two-observation false positive is already equally
+weighted and therefore has an a-priori `uniform-counting` specialization.
 
 ## Main analytic narrative
 
@@ -112,7 +117,8 @@ A generic or synthetic accepted certificate is not a checked publication certifi
 The paper needs at least one immutable source-bound instance containing:
 
 1. frozen matrices or exact field-derived summaries;
-2. frozen strict-positive weights and reference energy;
+2. frozen strict-positive weights derived by an accepted a-priori or certified optimized
+   quadrature rule, plus the reference energy;
 3. exact or outward-rounded bounds for `κ` and `μmax`;
 4. a fixed candidate rectangle;
 5. independently justified positive `τ_E` and `τ_O`;
@@ -120,7 +126,10 @@ The paper needs at least one immutable source-bound instance containing:
 7. a checked positive lower bound on operator separation.
 
 A robust open parameter region or interval perturbation result is preferable to a single
-finely tuned point.
+finely tuned point. Concrete weight, mesh, support, alignment, artifact-identity, and
+fail-closed requirements are specified by
+[`../../publication-evidence-contract.md`](../../publication-evidence-contract.md).
+Weights tuned against the reported Paper A losses are not admissible evaluation weights.
 
 The prospective study of every premise, alignment, Fourier, spectral, decision,
 stability, and evidence diagnostic is specified in
