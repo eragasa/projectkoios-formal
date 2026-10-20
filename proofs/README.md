@@ -168,6 +168,9 @@ Current draft dossiers:
 - [`BG-RAGASA2026A-THM-032-constructed-false-positive.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-032-constructed-false-positive.tex);
 - [`BG-RAGASA2026A-THM-033-exact-separation-distance.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-033-exact-separation-distance.tex); and
 - [`BG-RAGASA2026A-THM-034-separation-resolution.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-034-separation-resolution.tex);
+- [`BG-RAGASA2026A-THM-035-checked-box-bridge.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-035-checked-box-bridge.tex);
+- [`BG-RAGASA2026A-THM-036-box-certificate-accepts.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-036-box-certificate-accepts.tex); and
+- [`BG-RAGASA2026A-THM-037-box-bridge-regression.tex`](BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-037-box-bridge-regression.tex);
 - [`BG-DECISION-THM-001-weak-improvement-reflexive.tex`](BandGauge/Decision/BG-DECISION-THM-001-weak-improvement-reflexive.tex);
 - [`BG-DECISION-THM-002-weak-improvement-transitive.tex`](BandGauge/Decision/BG-DECISION-THM-002-weak-improvement-transitive.tex);
 - [`BG-DECISION-THM-003-dominance-irreflexive.tex`](BandGauge/Decision/BG-DECISION-THM-003-dominance-irreflexive.tex);

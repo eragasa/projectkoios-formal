@@ -2,7 +2,7 @@
 Copyright (c) 2026 Eugene Joseph M. Ragasa.
 SPDX-License-Identifier: Apache-2.0
 Author: Eugene Joseph M. Ragasa
-Initial document completed: 2026-10-19
+Initial document completed: 2026-10-20
 -->
 
 # Publication evidence acceptance contract
@@ -338,13 +338,16 @@ not establish physical applicability or publication acceptance.
 | Existing infrastructure | What it can consume | Missing package boundary |
 |---|---|---|
 | `RankTwoSeparation.lean` | exact rational scalar certificate | field/matrix derivation, canonical serialization, source and artifact binding |
-| `RankTwoSeparationEnclosure.lean` | rational enclosure of an algebraic center | conservative computational enclosure for every derived scalar and source binding |
-| `Ragasa2026A/CertificateBridge.lean` | exact hypotheses connecting checked scalars to canonical finite fields | concrete publication matrices, weights, `κ`, `μmax`, thresholds, and parser binding |
+| `RankTwoSeparationEnclosure.lean` | rational enclosure of an algebraic center | conservative computational enclosure for curvature and source binding |
+| `RankTwoSeparationBox.lean` | exact rational joint enclosure of positive `κ` and nonnegative `μ`, with uniform witness, containment, and separation conclusions | field derivation, canonical serialization, source and artifact binding |
+| `Ragasa2026A/CertificateBridge.lean` and `KappaEnclosureBridge.lean` | exact hypotheses connecting checked scalars or scalar intervals to canonical finite fields | concrete runtime publication matrices, weights, `κ`, `μmax`, thresholds, and parser binding |
 | `Certificates/FinitePareto.lean` | a total finite exact objective table | external inventory coverage, interval semantics, parser, and retained table binding |
 | finite Fourier modules | exact finite-group fields, supports, and constant/uniform-weight specializations | publication mesh/group identification, nonuniform-weight theorem, physical support meaning, and artifact binding |
 
-These are implemented verification components, not evidence packages. The concrete
-checked-certificate count remains zero.
+These are implemented verification components, not evidence packages. The retained
+runtime evidence-package count remains zero. The exact Paper A two-observation analytic
+certificate and its degenerate-`κ` regression are source constructions encoded in Lean,
+not runtime evidence packages.
 
 ## First binding gate
 

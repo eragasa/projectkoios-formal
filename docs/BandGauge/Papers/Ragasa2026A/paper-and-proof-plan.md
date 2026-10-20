@@ -114,10 +114,13 @@ A successful exact rational or outward-rounded interval certificate must imply:
 
 A generic or synthetic accepted certificate is not a checked publication certificate. The
 source's exact two-observation analytic construction is now encoded and checked by
-`BG-RAGASA2026A-DEF-022` through `BG-RAGASA2026A-DEF-024` and
-`BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034`, including the exact
-positive admissible-set distance and resolution corollary; it remains distinct from a retained runtime package or a
-calculated four-state-parent result.
+`BG-RAGASA2026A-DEF-022` through `BG-RAGASA2026A-DEF-025`,
+`BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034`, and
+`BG-RAGASA2026A-THM-036/037`, including the exact
+positive admissible-set distance and resolution corollary. `BG-RAGASA2026A-THM-035`
+additionally binds simultaneous rational intervals for field-derived `κ` and `μmax`; the
+exact construction regression-tests it at `κ ∈ [1,1]`. These results remain distinct from
+a retained runtime package or a calculated four-state-parent result.
 
 ## Computational scientific result still required
 
@@ -169,12 +172,12 @@ propositions remain immutable.
 
 The highest-value unresolved theorem families are:
 
-1. conservative interval uncertainty for field-derived `κ`;
-2. persistence of positive separation under certified perturbations;
-3. the source's smooth monotone threshold-continuum result;
-4. the operator-residual/nonlocal-hopping identity under exact Fourier hypotheses;
-5. transported-frame covariance and attainment with explicit regularity premises; and
-6. runtime-data binding from an immutable artifact to the existing certificate checker.
+1. persistence of positive separation under structured field perturbations beyond the
+   checked scalar `(κ, μmax)` box;
+2. the source's smooth monotone threshold-continuum result;
+3. the operator-residual/nonlocal-hopping identity under exact Fourier hypotheses;
+4. transported-frame covariance and attainment with explicit regularity premises; and
+5. runtime-data binding from an immutable artifact to the existing certificate checker.
 
 The last item is a runtime checked-certificate boundary, not a proof that the
 computational model is physically valid.

@@ -184,6 +184,9 @@ import ProjectKoios.BandGauge.Papers.Ragasa2026C
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_exactSpectralPass_and_operatorIncompatibility
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_exactSeparationDistance
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_separationResolutionCertified
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.canonicalSpectralPass_and_operatorIncompatibility_of_checkedBox
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositiveBoxCertificate_accepts
+#print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.constructedFalsePositive_boxBridgeRegression
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.summary
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026B.placeholder
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026C.placeholder
