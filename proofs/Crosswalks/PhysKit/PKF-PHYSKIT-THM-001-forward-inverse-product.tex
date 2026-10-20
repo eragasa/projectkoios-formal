@@ -1,0 +1,33 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\title{Proof Dossier: FCC--Bain Forward--Inverse Product}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{PKF-PHYSKIT-THM-001}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.Crosswalks.PhysKit.}}\\
+{\tiny\path{bainToFccMatrix_mul_fccToBainMatrix}}.
+\section{Source and statement}
+At PhysKit commit \path{7157dcedd0d220673d443c1c025e35a6fd1ffa7a},
+\path{src/python/projectkoios/physkit/periodic/lattice/bain/bridge.py} declares
+\[
+U=\begin{pmatrix}1&1&0\\0&0&1\\0&-1&0\end{pmatrix},\qquad
+V=\begin{pmatrix}1&0&1\\0&0&-1\\0&1&0\end{pmatrix}.
+\]
+The theorem states exactly that $UV=I_3$ over $\mathbb Z$.
+\section{Proof}
+Direct row-by-column multiplication gives
+\[
+UV=\begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix}.
+\]
+Lean expands the finite matrix product and normalizes its nine integer entries.
+\section{Boundary and trust}
+This is a source-crosswalk theorem for fixed constants. It does not verify a Python object,
+NumPy execution, crystallographic convention, or physical applicability. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked. No independent expert review is recorded.
+\end{document}

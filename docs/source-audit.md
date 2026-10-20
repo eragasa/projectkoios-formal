@@ -129,3 +129,29 @@ reciprocal roots. It does not solve the constrained left-incident reflection/tra
 attach flux probabilities, compute numerical transmission or reflection, establish continuum
 convergence, or prove a finite-barrier-to-Dirichlet limit. Any publication attribution or numerical
 binding requires a separate immutable source and crosswalk review.
+## PhysKit FCC--Bain coordinate-bridge inspection
+
+The authorized exact source crosswalk for `FccBainCoordinateBridge3D` used:
+
+- owner repository: `projectkoios-physkit`;
+- local checkout: `/Users/eugene/repos/physkit`;
+- branch observed during inspection: `main`;
+- immutable commit: `7157dcedd0d220673d443c1c025e35a6fd1ffa7a`;
+- immutable tree: `49889a01edcee57742efca568ef4ee68c9dd2bfa`;
+- access mode: read-only `git show` for every cited byte.
+
+The owner worktree was dirty during inspection because unrelated finite-periodic cleanup
+was in progress. Those changes were neither inspected as source authority nor modified.
+The fixed FCC--Bain files cited below were read from the immutable commit:
+
+| SHA-256 | Owner-repository path |
+|---|---|
+| `8bc4e9f0c957899a9b9c14ab75ece4aa8c82945ecb6524f0c1ecbb10067b8072` | `src/python/projectkoios/physkit/periodic/lattice/bain/bridge.py` |
+| `c27ee93a3bc5bb162355cce0233a7003e5e5a44423d29b4076eccab604946090` | `docs/architecture/projectkoios/physkit/periodic/lattice/bain/bridge/FccBainCoordinateBridge3D/index.md` |
+| `ec1b633163e26682ddbc6d9ed48f78ca0015593913427480ba3034f90166f1c8` | `tests/projectkoios/physkit/periodic/lattice/bain/bridge/test__FccBainCoordinateBridge3D__contract.py` |
+
+The Lean crosswalk copies only the two fixed integer matrices and proves their exact
+algebraic consequences over `ℤ` and `ZMod n`. It does not import PhysKit, verify a live
+Python object, prove signed-64-bit batch execution free of overflow, establish that an
+external lattice uses the declared bases, or validate a crystallographic or physical
+interpretation.

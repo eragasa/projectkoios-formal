@@ -208,7 +208,12 @@ Current draft dossiers:
 - [`BG-FOURIER-THM-029-constant-weight-frobenius-bridge.tex`](BandGauge/Fourier/BG-FOURIER-THM-029-constant-weight-frobenius-bridge.tex);
 - [`BG-FOURIER-THM-030-weighted-residual-tail.tex`](BandGauge/Fourier/BG-FOURIER-THM-030-weighted-residual-tail.tex);
 - [`BG-FOURIER-THM-031-uniform-weight-positive.tex`](BandGauge/Fourier/BG-FOURIER-THM-031-uniform-weight-positive.tex); and
-- [`BG-FOURIER-THM-032-uniform-paper-normalization.tex`](BandGauge/Fourier/BG-FOURIER-THM-032-uniform-paper-normalization.tex).
+- [`BG-FOURIER-THM-032-uniform-paper-normalization.tex`](BandGauge/Fourier/BG-FOURIER-THM-032-uniform-paper-normalization.tex);
+- [`PKF-PHYSKIT-THM-001-forward-inverse-product.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-001-forward-inverse-product.tex);
+- [`PKF-PHYSKIT-THM-002-inverse-forward-product.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-002-inverse-forward-product.tex);
+- [`PKF-PHYSKIT-THM-003-determinant-one.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-003-determinant-one.tex);
+- [`PKF-PHYSKIT-THM-004-modular-mutual-inverses.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-004-modular-mutual-inverses.tex); and
+- [`PKF-PHYSKIT-THM-005-positive-modulus-bijection.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-005-positive-modulus-bijection.tex).
 
 Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The `BG-BLOCH-THM-003` through `BG-BLOCH-THM-006` dossiers document standard supporting trace and unitary-invariance infrastructure; they are not paper-contribution or novelty claims. `BG-BLOCH-THM-007/008` are source-normalized bridge specializations; `BG-BLOCH-THM-009--011` are standard Hermiticity infrastructure. None carries a claim that the underlying standard algebra is novel. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
 

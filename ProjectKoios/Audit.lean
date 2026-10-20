@@ -1,4 +1,5 @@
 import ProjectKoios.Formal.Authority
+import ProjectKoios.Crosswalks.PhysKit.FccBainCoordinateBridge
 import ProjectKoios.BandGauge.Geometry.AdmissibleSets
 import ProjectKoios.BandGauge.Geometry.RankTwoLoss
 import ProjectKoios.BandGauge.Bloch.Sewing
@@ -308,3 +309,8 @@ import ProjectKoios.QuantumMechanics.Piab1d.Spectrum
 #print axioms ProjectKoios.QuantumMechanics.Piab1d.dirichletPhase_pow_doubledCycleLength_eq_one
 #print axioms ProjectKoios.QuantumMechanics.Piab1d.dirichletExponentialModeVector_eq_restrict_finitePeriodicAntisymmetricMode
 #print axioms ProjectKoios.QuantumMechanics.Piab1d.negativePeriodicDifferenceMatrix_mulVec_doubledDirichletMode
+#print axioms ProjectKoios.Crosswalks.PhysKit.bainToFccMatrix_mul_fccToBainMatrix
+#print axioms ProjectKoios.Crosswalks.PhysKit.fccToBainMatrix_mul_bainToFccMatrix
+#print axioms ProjectKoios.Crosswalks.PhysKit.bainToFccMatrix_det
+#print axioms ProjectKoios.Crosswalks.PhysKit.bainToFccModMap_mutualInverse
+#print axioms ProjectKoios.Crosswalks.PhysKit.bainToFccModMap_bijective

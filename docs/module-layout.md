@@ -1,6 +1,6 @@
 # Planned module layout
 
-The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Neither a directory nor a paper plan announces an implemented API.
+The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Neither a directory nor a paper plan announces an implemented API. Narrow source-specific computational crosswalks live separately under `ProjectKoios/Crosswalks/` only after their exact constants, immutable owner revision, and proof boundary have been selected.
 
 The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil, complex exponential translation modes, scalar-twisted and periodic cycles, the doubled-cycle odd-extension bridge to Dirichlet boundaries, and symbolic constant-region/finite-barrier transfer algebra. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
 
@@ -17,6 +17,12 @@ The implemented quantum-mechanics families separate source-neutral finite-dimens
 | `Projection/` | retained low-eigenpair compression, invariant-subspace reconstruction, residual/leakage bounds, and finite-support consequences | conflating projection with gauge change, disentanglement, Fourier conversion, or truncation |
 | `SpecialFunctions/` | later Jacobi–Anger, Bessel, and shell-tail infrastructure | premature dependencies before finite/continuum foundations are fixed |
 | `Papers/` | thin source crosswalks and eventual theorem instantiations | duplicated foundational proofs and ownership of publication prose |
+
+Source-specific crosswalks remain outside the BandGauge semantic hierarchy:
+
+| Directory | Intended ownership | Explicit exclusions |
+|---|---|---|
+| `Crosswalks/PhysKit/` | exact source-specific constants and thin consequences for the immutable PhysKit `FccBainCoordinateBridge3D` matrix contract | mirroring the PhysKit package tree, importing Python, verifying NumPy execution, supplying a runtime superclass, or claiming crystallographic or physical applicability |
 
 ## Dependency direction
 

@@ -6,6 +6,7 @@ This directory records the formalization contract, provenance, planning state, a
 
 - [`theorem-manifest.md`](theorem-manifest.md) — declarations that exist in Lean, their proof status, and a clearly separate planning inventory.
 - [`publication-crosswalk.md`](publication-crosswalk.md) — publication statements, source status, assumptions, and current Lean status.
+- [`computational-crosswalk.md`](computational-crosswalk.md) — immutable computational-owner constants and their exact Lean representations, without runtime or scientific status transfer.
 - [`source-audit.md`](source-audit.md) — immutable owner-source identity and cited-byte hashes.
 - [`dependency-audit.md`](dependency-audit.md) — selected Lean/Mathlib pins and the bounded Physlib evaluation.
 - [`trusted-base-audit.md`](trusted-base-audit.md) — trusted-base policy and required admission/axiom checks.

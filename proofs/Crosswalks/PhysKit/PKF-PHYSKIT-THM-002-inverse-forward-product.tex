@@ -1,0 +1,33 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\title{Proof Dossier: FCC--Bain Inverse--Forward Product}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{PKF-PHYSKIT-THM-002}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.Crosswalks.PhysKit.}}\\
+{\tiny\path{fccToBainMatrix_mul_bainToFccMatrix}}.
+\section{Source and statement}
+{\raggedright
+The two fixed integer matrices are copied from
+\path{src/python/projectkoios/physkit/periodic/lattice/bain/bridge.py} at PhysKit commit
+\path{7157dcedd0d220673d443c1c025e35a6fd1ffa7a}. The theorem states that the declared
+FCC-to-Bain matrix $V$ also satisfies $VU=I_3$ over $\mathbb Z$.\par}
+\section{Proof}
+Direct row-by-column multiplication of
+\[
+V=\begin{pmatrix}1&0&1\\0&0&-1\\0&1&0\end{pmatrix},\qquad
+U=\begin{pmatrix}1&1&0\\0&0&1\\0&-1&0\end{pmatrix}
+\]
+gives the identity matrix. Lean expands and normalizes all nine entries.
+\section{Boundary and trust}
+The theorem strengthens the source constructor's one displayed runtime product only by
+checking the reverse exact integer product; it makes no Python-execution or scientific
+claim. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked. No independent expert
+review is recorded.
+\end{document}

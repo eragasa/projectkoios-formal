@@ -9,7 +9,7 @@ Minimal Lean/Lake harness for reusable Project Koios formalization.
 - harness namespace: `ProjectKoios.Formal`
 - initial scientific namespace: `ProjectKoios.BandGauge`
 
-The tree contains a non-scientific smoke theorem, proved reusable foundations, a semantic finite-decision/Pareto layer with exact Boolean checks, convention-neutral finite reconstruction/support truncation, exact finite-abelian inversion, Parseval and residual-tail identities, partial conditional Ragasa2026A rank-two field, spectral, correlation-harmonic, optimized admissible-set geometry, exact certificate-binding bridges, and one exact checked source-specific analytic false-positive construction. The other publication modules remain metadata-only placeholders. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). The analytic construction is **not** runtime evidence, a calculated four-state-parent result, material validation, a release, or publication completion.
+The tree contains a non-scientific smoke theorem, proved reusable foundations, a semantic finite-decision/Pareto layer with exact Boolean checks, convention-neutral finite reconstruction/support truncation, exact finite-abelian inversion, Parseval and residual-tail identities, partial conditional Ragasa2026A rank-two field, spectral, correlation-harmonic, optimized admissible-set geometry, exact certificate-binding bridges, one exact checked source-specific analytic false-positive construction, and one narrow exact PhysKit FCC--Bain integer-matrix crosswalk. The other publication modules remain metadata-only placeholders. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). Neither source-specific artifact is runtime evidence, material validation, a release, or publication completion.
 
 ## Authority boundaries
 
@@ -26,7 +26,7 @@ Human-readable, statement-specific proof explanations and prior-art records live
 
 An umbrella [`Ragasa claim-family formalization working paper`](papers/ragasa-formalization-working-paper.tex) supplies the cross-claim narrative and status matrix. It is an incomplete synthesis, not a proof authority, source-publication replacement, release, or claim that all families are already formalized; see [`papers/README.md`](papers/README.md).
 
-The folders under `ProjectKoios/BandGauge/` reserve narrow ownership boundaries for foundations, geometry, finite decisions, exact certificate checking, Fourier analysis, projection, special functions, and thin paper crosswalks. A folder README does not establish a Lean API or a completed theorem; implemented modules must be listed in the theorem manifest.
+The folders under `ProjectKoios/BandGauge/` reserve narrow ownership boundaries for foundations, geometry, finite decisions, exact certificate checking, Fourier analysis, projection, special functions, and thin paper crosswalks. `ProjectKoios/Crosswalks/` is reserved for separately authorized, immutable-source-specific computational crosswalks and does not mirror owner package trees. A folder README does not establish a Lean API or a completed theorem; implemented modules must be listed in the theorem manifest.
 
 ## Checks
 

@@ -1,0 +1,28 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\title{Proof Dossier: Positive-Modulus FCC--Bain Bijection}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{PKF-PHYSKIT-THM-005}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.Crosswalks.PhysKit.bainToFccModMap_bijective}}.
+\section{Statement}
+For every positive natural number $n$, the map induced by the fixed Bain-to-FCC matrix on
+$(\mathbb Z/n\mathbb Z)^3$ is bijective.
+\section{Proof}
+By \texttt{PKF-PHYSKIT-THM-004}, the map induced by the declared FCC-to-Bain matrix is both
+a left and a right inverse. A function with a left inverse is injective and a function with
+a right inverse is surjective. Hence the Bain-to-FCC map is bijective. The positivity
+premise preserves the source statement's finite-modulus scope.
+\section{Source and boundary}
+The statement formalizes the fixed-matrix clause in
+\path{FccBainCoordinateBridge3D} at PhysKit commit
+\path{7157dcedd0d220673d443c1c025e35a6fd1ffa7a}. It does not bind a runtime object,
+prove machine-integer execution, or validate crystallographic or physical use. Kernel
+axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no
+admissions. AI-assisted and kernel-checked. No independent expert review is recorded.
+\end{document}
