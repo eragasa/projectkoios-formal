@@ -176,3 +176,38 @@ owner revision:
 These sources motivate only the abstract finite block-folding and route-commutativity signatures.
 The Lean declarations do not bind their Python arrays, floating-point Fourier matrices, twist
 representatives, finite-size sequences, observables, tolerances, or retained evidence.
+## Tetrahedral `sp³s⋆` algebra inspection
+
+A separate read-only inspection supplied the exact algebraic conventions for the
+publication-independent solid-state modules:
+
+- scientific source: P. Vogl, H. P. Hjalmarson, and J. D. Dow, “A semi-empirical
+  tight-binding theory of the electronic structure of semiconductors,” *Journal of
+  Physics and Chemistry of Solids* 44 (1983), DOI
+  `10.1016/0022-3697(83)90064-1`;
+- inspected PDF SHA-256:
+  `3bee3702162b8d2a60543cdbfbb7ff188770b69e2af104f998ef68ba472e7c39`;
+- calculation owner repository: `ksdft2effmass`;
+- inspected worktree branch: `work/source-package-ownership-cleanup`;
+- inspected `HEAD`: `daf3e3fa175955babbe7cca0530412bc6700d6f4`;
+- dirty-state limitation: the worktree had 639 short-status entries at the final identity
+  check, and every calculation path listed below was untracked; therefore the path and
+  byte hash, not `HEAD`, identify each inspected calculation-owned source byte sequence;
+- access mode for this formalization task: read-only; no KSD file, index, branch,
+  configuration, or generated result was changed.
+
+| SHA-256 | Calculation-owner path |
+|---|---|
+| `fd7fb8eeeed4b223423fca53e8fcc2c215c0bd20937650da04c04b83ab764214` | `calculations/Si/bulk/technical-report/technical-report.tex` |
+| `c3bd48418573c98b37efc7e6a405b46ba733cf1c166fb60d9beb3377aa91c356` | `calculations/Si/bulk/analysis/controls/vogl-sp3s-star/vogl1983_lcao_sp3sstar/model.py` |
+| `77d1766661d76778239a13e45e701c892c2ee4db0f74c43fb21df292da60ef27` | `calculations/Si/bulk/analysis/controls/vogl-sp3s-star/table1.json` |
+| `839caed7cd4c499173719d3950ab7d3636418de84f622b84f5fef233f75f25ef` | `calculations/Si/bulk/analysis/controls/vogl-sp3s-star/source-audit.md` |
+
+The Lean declarations independently encode the published finite algebra: the normalized
+Hadamard transform, its `s⋆` identity extension, tetrahedral bond phases, the four
+structure-factor combinations, 13 abstract real parameter slots, the published hopping
+pattern, and Hermitian block assembly. They do not copy Gist or notebook source code.
+The accepted Table 1 JSON is recorded above only to delimit the nearby computational
+context: none of its 208 values is embedded or certified by the current Lean modules.
+No numerical eigenspectrum, Python execution, DFT/Wannier output, parameter accuracy,
+material adequacy, novelty, or publication conclusion is transferred into Formal.

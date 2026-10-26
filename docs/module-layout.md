@@ -1,8 +1,8 @@
 # Planned module layout
 
-The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Neither a directory nor a paper plan announces an implemented API. Narrow source-specific computational crosswalks live separately under `ProjectKoios/Crosswalks/` only after their exact constants, immutable owner revision, and proof boundary have been selected.
+The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Narrow source-specific computational crosswalks live separately under `ProjectKoios/Crosswalks/` only after their exact constants, immutable owner revision, and proof boundary have been selected. `ProjectKoios/QuantumMechanics/` and `ProjectKoios/SolidState/` are separate publication-independent families for reusable exact algebra. Neither a directory nor a paper plan announces an implemented API.
 
-The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil, complex exponential translation modes, scalar-twisted and periodic cycles, the doubled-cycle odd-extension bridge to Dirichlet boundaries, and symbolic constant-region/finite-barrier transfer algebra. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
+The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, reduction bases, spin embeddings, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil, complex exponential translation modes, scalar-twisted and periodic cycles, the doubled-cycle odd-extension bridge to Dirichlet boundaries, and symbolic constant-region/finite-barrier transfer algebra. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
 
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
@@ -23,6 +23,7 @@ Source-specific crosswalks remain outside the BandGauge semantic hierarchy:
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
 | `Crosswalks/PhysKit/` | exact source-specific constants and thin consequences for the immutable PhysKit `FccBainCoordinateBridge3D` matrix contract | mirroring the PhysKit package tree, importing Python, verifying NumPy execution, supplying a runtime superclass, or claiming crystallographic or physical applicability |
+
 ## Quantum-mechanics modules
 
 | Directory | Intended ownership | Explicit exclusions |
@@ -37,16 +38,17 @@ and abstract orbital-coefficient residual identities, but not authored calculati
 physical spin assumptions. These modules are imported by the audit surface but are not re-exported
 through the package root.
 
-## Solid-state finite-lattice modules
+## Solid-state modules
 
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
 | `ProjectKoios/SolidState/FiniteLattice/` | normalized finite-character folding, cell-major block supercells, exact finite Bloch-fiber diagonalization, and coordinate/alignment/energy-shift/defect route algebra | runtime Fourier matrices, representative-selection code, hopping truncations, numerical eigenspectra, tolerances, serialized evidence, and physical applicability |
+| `ProjectKoios/SolidState/TightBinding/` | exact tetrahedral `sp³` and `sp³s⋆` basis transforms, exact bond-phase structure factors, abstract nearest-neighbor parameter slots, structural zeros, and Hermitian block assembly | accepted empirical parameter values, numerical eigenspectra, Python/runtime validation, DFT or Wannier evidence, material adequacy, novelty, and publication claims |
 
 The cyclic one-dimensional specialization uses `ZMod N`. General finite-abelian declarations are
 source-neutral reusable infrastructure; the calculation crosswalk relies only on the cyclic case
-and explicit coordinate-change premises. The modules are audited but not re-exported through
-`ProjectKoios.lean`.
+and explicit coordinate-change premises. The solid-state modules are audited but not re-exported
+through `ProjectKoios.lean`; future bridges must be reviewed explicitly.
 
 ## Dependency direction
 
@@ -68,6 +70,10 @@ Foundations + Fourier ──→ later SpecialFunctions
 QuantumMechanics/FiniteDimensional/SpinEmbedding ──→ SolidState/FiniteLattice route identities
 Mathlib finite-character and matrix APIs ──→ SolidState/FiniteLattice folding
 reviewed semantic modules ──→ thin Papers instantiations
+
+TetrahedralSp3 ──→ TetrahedralSp3sStar
+       └─────────→ TetrahedralStructureFactors ──→ VoglSp3sStar
+TetrahedralSp3sStar ─────────────────────────────→ VoglSp3sStar
 ```
 
 Actual imports must remain narrower than this sketch. No root module should become a catch-all re-export merely because a directory exists.
