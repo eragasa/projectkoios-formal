@@ -20,6 +20,13 @@ The proved identities include coefficient round-trip, projector idempotence and 
 `Q` is intentionally reserved for the complementary projector `I - P`, matching the PIAB1D
 calculation protocol.
 
+`RankOneResolvent.lean` formalizes complex finite-matrix rank-one updates. It proves the matrix
+determinant factorization, exact scalar singularity condition, Sherman--Morrison inverse identity,
+Hermitian real-coupling specializations, and the resolvent-constructed eigenvector equation at a
+supplied secular zero. Base invertibility and nonzero-denominator premises are explicit. The module
+does not prove that a secular root exists, select a numerical root, certify bisection or eigensolver
+execution, or attach physical-defect meaning to an abstract matrix update.
+
 `SpinEmbedding.lean` adjoins a two-state spin coordinate in orbital-major product order. It defines
 the exact spin-degenerate lift `A ⊗ₖ I₂`, selected-spin injections, and injection-sandwich
 pullbacks. The proved identities recover diagonal spin blocks, annihilate cross-spin blocks, show
@@ -38,5 +45,5 @@ Hermiticity under explicit hypotheses, and the collinear and three-channel squar
 residual identities.
 
 No module assigns physical meaning to a decomposition or verifies runtime matrices, binary64
-orthogonality, eigensolver output, serialization, authored coefficient matrices, time-reversal
-implementations, or physical applicability.
+orthogonality, eigensolver output, root-finding, serialization, authored coefficient matrices,
+time-reversal implementations, or physical applicability.

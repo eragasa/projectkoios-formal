@@ -2,7 +2,7 @@
 
 The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Narrow source-specific computational crosswalks live separately under `ProjectKoios/Crosswalks/` only after their exact constants, immutable owner revision, and proof boundary have been selected. `ProjectKoios/QuantumMechanics/` and `ProjectKoios/SolidState/` are separate publication-independent families for reusable exact algebra. Neither a directory nor a paper plan announces an implemented API.
 
-The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, reduction bases, spin embeddings, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil, complex exponential translation modes, scalar-twisted and periodic cycles, the doubled-cycle odd-extension bridge to Dirichlet boundaries, and symbolic constant-region/finite-barrier transfer algebra. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
+The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, reduction bases, finite rank-one determinant/resolvent algebra, spin embeddings, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil, complex exponential translation modes, scalar-twisted and periodic cycles, the doubled-cycle odd-extension bridge to Dirichlet boundaries, and symbolic constant-region/finite-barrier transfer algebra. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
 
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
@@ -36,10 +36,13 @@ The source-neutral quantum-mechanics foundation is a separate semantic family un
 | `Dirac.lean` | typed ordinary ket/bra aliases, brackets, bounded rank-one operators, and normalized projector properties | generalized eigenvectors or decorative syntax detached from named definitions |
 | `RiggedHilbertSpace.lean` | Hausdorff locally convex test-space embedding core and convention-sensitive Hilbert-to-test-dual injections | nuclearity, concrete Schwartz spaces, operator domains, generalized spectral completeness, or physical applicability |
 | `Operator/TestDomain.lean` | bridge from test-space endomorphisms to Mathlib partial linear operators, dense domains, invariant test domains, formal adjoints, and maximal-adjoint containment | claiming boundedness, closedness, adjoint equality, essential self-adjointness, a spectrum, or a concrete Hamiltonian |
-| `FiniteDimensional/` | source-neutral finite-dimensional algebra, including rectangular reduction bases, retained projectors, reduced-coordinate Hamiltonians, exact two-state spin lifts, Frobenius-optimal spin-independent projection, and standard Pauli residual identities | runtime arrays, eigensolver execution, binary64 error claims, serialized-artifact validity, authored coefficient matrices, time-reversal implementations, and physical interpretation or adequacy |
+| `FiniteDimensional/` | source-neutral finite-dimensional algebra, including rectangular reduction bases, retained projectors, reduced-coordinate Hamiltonians, rank-one determinant/resolvent updates, exact two-state spin lifts, Frobenius-optimal spin-independent projection, and standard Pauli residual identities | runtime arrays, eigensolver or root-finder execution, binary64 error claims, serialized-artifact validity, authored coefficient matrices, spectral-root existence, time-reversal implementations, and physical interpretation or adequacy |
 
 The reduction-basis module uses `Φ` for the reduced-to-full map, `P = Φ Φᵀ` for the retained
-projector, and reserves `Q = I - P` for the complementary projector. The spin modules use
+projector, and reserves `Q = I - P` for the complementary projector. The rank-one-resolvent module
+proves conditional exact finite identities only: it requires base invertibility, requires a
+nonzero scalar denominator for the inverse formula, and takes any secular zero as a hypothesis
+rather than proving that one exists. The spin modules use
 orbital-major product indices `ι × Fin 2`, the exact lift `A ⊗ₖ I₂`, and the half-partial-trace
 projection onto that lift's range. The Pauli-residual module owns standard two-state Pauli matrices
 and abstract orbital-coefficient residual identities, but not authored calculation matrices or
@@ -113,7 +116,8 @@ FiniteDifference/TwistedCyclic1D ───────→ Piab1d/FiniteDifferenc
 FiniteDifference/ExponentialMode1D ──────→ FiniteDifference/ConstantPotential1D
 FiniteDifference/ConstantPotential1D ────→ FiniteDifference/FiniteBarrier1D
 FiniteDifference/FiniteBarrier1D ────────→ FiniteDifference/BarrierMatching1D
-FiniteDimensional/*                         (source-neutral operator analysis)
+FiniteDimensional/RankOneResolvent          (independent finite rank-one algebra)
+FiniteDimensional/*                         (other source-neutral operator analysis)
 ```
 
 `ExponentialMode1D` and `TwistedCyclic1D` prove translation-character and scalar real-space

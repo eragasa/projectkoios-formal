@@ -19,7 +19,8 @@ applicability.
   endomorphism into a densely defined Hilbert-space operator, prove test-domain invariance, and lift
   a supplied formal-adjoint identity to maximal-adjoint containment.
 - `FiniteDimensional/` owns compression, decomposition-identifiability, model-class fitting,
-  rectangular reduction-basis, and two-state spin algebra.
+  rectangular reduction-basis, finite rank-one determinant/resolvent identities, and two-state spin
+  algebra.
 - `FiniteDifference/` owns source-neutral centered-difference, boundary-cycle, odd-extension,
   constant-region, and finite-barrier algebra.
 - `HarmonicOscillator/` owns exact QHO Hermite, finite-ladder, truncation, finite-difference, and

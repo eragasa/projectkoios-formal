@@ -303,20 +303,25 @@ comparisons.
 
 **Owner:** `calculations/research-monograph/impurity-defect-1d-analytical-oracle/`.
 
-This is a valuable but more difficult target. It should be split into layers:
+This target is split into layers:
 
 1. exact rank-one determinant/resolvent algebra;
 2. the resolvent-constructed eigenvector equation at a secular root;
 3. positivity and monotonicity of the local resolvent below the finite host edge; and
 4. uniqueness and bound-state-count consequences.
 
-The first two are near-term finite matrix theorems. The latter two require careful
-finite spectral-order APIs and should not be inferred from numerical bisection. The
-special spin-degenerate case should use an equal-rank projector theorem, not individual
-eigenvector identity.
+**Implemented finite layer:** `RankOneResolvent.lean` proves the first two layers for arbitrary
+finite complex matrices. It includes the determinant factorization, exact scalar singularity
+criterion, Sherman--Morrison formula with an explicit nonzero denominator, Hermitian real-coupling
+specializations, nonvanishing of the resolvent vector for a nonzero source, and the exact
+eigenvalue equation at a supplied secular zero of `H-EI`.
 
-Formal support would establish the exact conditional oracle mathematics. It would not
-check the bisection execution, brackets, retained numerical roots, or finite-size trend.
+The latter two layers still require careful finite spectral-order APIs and must not be inferred
+from numerical bisection. The special spin-degenerate case should use an equal-rank projector
+theorem, not individual eigenvector identity.
+
+Current Formal support establishes only the exact conditional oracle mathematics. It does not
+check bisection execution, brackets, retained numerical roots, or finite-size trends.
 
 ### 11. Blind alignment
 
@@ -420,8 +425,8 @@ material adequacy, or silicon validation.
    deliberately external.
 3. **Generalize unitary/Fourier invariance from rank two to arbitrary finite rank.** This
    supports the rank-N and composite-band programs.
-4. **Add rank-one resolvent defect algebra.** Start with conditional finite-matrix
-   identities; defer root uniqueness until spectral-order hypotheses are explicit.
+4. **Review and checkpoint the implemented rank-one resolvent defect algebra.** Keep root
+   uniqueness deferred until spectral-order hypotheses are explicit.
 5. **Add finite lattice-gauge loop invariance.** Keep it separate from Chern integrality
    and general Wannier obstruction.
 6. **Only then add calculation-specific certificate bridges.** Require frozen exact

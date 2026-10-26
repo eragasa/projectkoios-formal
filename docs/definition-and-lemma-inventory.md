@@ -16,6 +16,7 @@ This inventory records both implemented first-slice declarations and future sear
 | Exact rank-two certificates | exact rational-center and rational-enclosure schemas and Boolean checkers for a positive-scale spectral witness, full-ellipse containment, and strict separation | Ragasa2026a scalar loss geometry and future runtime binding | `BG-CERT-DEF-001` through `BG-CERT-DEF-013` implemented; `BG-CERT-THM-001` through `BG-CERT-THM-009` proved, including `7/10 < 1/√2 < 71/100`; this generic module alone supplies no source instance or parser binding | `BandGauge/Certificates` |
 | Paper A fields, optimized geometry, and certificate binding | strict-positive sampled parent, global real rotation, momentum-dependent comparison, canonical spectral and Pauli decompositions, continuous correlation optimization, actual loss sublevel sets, full-plane/rectangle geometry, explicit scalar-certificate binding, and the exact equal-weight constructed false positive | Ragasa2026a exact loss geometry | `BG-RAGASA2026A-DEF-001` through `BG-RAGASA2026A-DEF-024` implemented; `BG-RAGASA2026A-THM-001` through `BG-RAGASA2026A-THM-028` are conditional bridges; `BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034` bind and check the exact two-observation analytic construction, its exact positive admissible-set distance, and its resolution corollary; three source-specific conclusions and one certificate are checked, but no runtime artifact, four-state-parent result, material validation, or parser binding is claimed | `BandGauge/Papers/Ragasa2026A` |
 | Finite reduction bases | rectangular basis `Φ`, orthonormal-column equation, projector `Φ Φᵀ`, reduced Hamiltonian `Φᵀ H Φ`, full-space embedding, and exact `Hemb = P H P` bridge | source-neutral algebra motivated by the PIAB1D retained-subspace contract | `QM-REDUCTION-DEF-001` through `QM-REDUCTION-DEF-003` implemented; `QM-REDUCTION-THM-001` through `QM-REDUCTION-THM-006` proved; runtime arrays, binary64 orthogonality, and serialized evidence remain external | `QuantumMechanics/FiniteDimensional` |
+| Finite rank-one resolvent algebra | conjugated outer products, complex rank-one updates, scalar resolvent denominator, determinant factorization, exact singularity criterion, Sherman--Morrison inverse, attractive-sign secular equation, Hermitian specialization, and resolvent-constructed eigenvector equation | source-neutral finite algebra motivated by the impurity-defect-1D analytical-oracle calculation | `QM-RESOLVENT-DEF-001` through `QM-RESOLVENT-DEF-008` implemented and `QM-RESOLVENT-THM-001` through `QM-RESOLVENT-THM-014` proved; root existence/uniqueness, numerical root-finding, runtime arrays, spectra, retained evidence, and physical-defect applicability remain external | `QuantumMechanics/FiniteDimensional` |
 | Finite spin embeddings, projection, and Pauli residuals | two-state lift `A ⊗ₖ I₂`, spin injections and pullbacks, partial spin trace, exact Frobenius-optimal half-trace projection, fixed points, Pythagorean and uniqueness results, standard Pauli channels, Hermiticity, and exact collinear/general residual powers | source-neutral algebra motivated by the impurity-spin-spaces calculation | `QM-SPIN-DEF-001` through `QM-SPIN-DEF-003`, `QM-SPIN-PROJECTION-DEF-001` through `QM-SPIN-PROJECTION-DEF-004`, and `QM-SPIN-PAULI-DEF-001` through `QM-SPIN-PAULI-DEF-005` implemented; `QM-SPIN-THM-001` through `QM-SPIN-THM-014`, `QM-SPIN-PROJECTION-THM-001` through `QM-SPIN-PROJECTION-THM-019`, and `QM-SPIN-PAULI-THM-001` through `QM-SPIN-PAULI-THM-017` proved; authored coefficient matrices, runtime values, spin-frame rotations, time reversal, spectra, and physical adequacy remain external | `QuantumMechanics/FiniteDimensional` |
 | Finite block folding and extraction-route commutativity | normalized finite-character folding, orbital-block lift, unit-modulus row phases, finite block-hopping supercells, exact Bloch-fiber block diagonalization, coordinate pullbacks, energy-reference correction, defect subtraction, and spin-lift commutativity | source-neutral algebra motivated by the matched and independent-route impurity-defect-1D protocols | `SS-FOLDING-DEF-001` through `SS-FOLDING-DEF-009` and `SS-ROUTE-DEF-001` through `SS-ROUTE-DEF-002` implemented; `SS-FOLDING-THM-001` through `SS-FOLDING-THM-016` and `SS-ROUTE-THM-001` through `SS-ROUTE-THM-010` proved; runtime Fourier matrices, twist representatives, authored hopping blocks, truncation inventories, tolerances, spectra, and artifact bindings remain external | `SolidState/FiniteLattice` |
 | Rank-two algebra | trace/traceless decomposition for real symmetric `2 × 2` matrices | Ragasa2026a exact loss geometry | complex Hermitian trace centering implemented; real-symmetric specialization unassessed | `BandGauge/Foundations` |
@@ -71,6 +72,28 @@ This inventory records both implemented first-slice declarations and future sear
 - Ownership: the source-neutral constructions belong under
   `ProjectKoios.QuantumMechanics.FiniteDimensional`; PIAB1D dimensions, runtime arrays, and evidence
   binding remain downstream obligations.
+
+## Rank-one-resolvent library-search record
+
+- Required signature: a finite complex matrix `A`, vectors `u` and `v`, an update
+  `A + λ |u⟩⟨v|`, the scalar `1 + λ⟨v|A⁻¹|u⟩`, determinant and inverse identities under
+  explicit invertibility/nonzero premises, and the attractive self-update specialization.
+- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
+  `Matrix.det_add_replicateCol_mul_replicateRow` supplies the determinant update;
+  `Matrix.mul_nonsing_inv`, `Matrix.nonsing_inv_mul`, and
+  `Matrix.isUnit_det_of_right_inverse` supply finite inverse bridges; row/column and
+  `vecMulVec` multiplication lemmas supply the rank-one contractions. Weinstein--Aronszajn,
+  Woodbury, and Schur-complement APIs were also inspected, but no existing declaration packaged the
+  exact conjugated-vector Sherman--Morrison and secular-root signatures required here.
+- The module introduces only named connecting definitions for the conjugated outer product,
+  resolvent contraction, denominator, inverse candidate, and attractive-sign specialization. It
+  reuses Mathlib's determinant and nonsingular-inverse infrastructure rather than defining a second
+  matrix inverse.
+- Physlib was not adopted because pinned Mathlib supplies all required finite matrix algebra.
+- Ownership: source-neutral exact finite rank-one algebra belongs under
+  `ProjectKoios.QuantumMechanics.FiniteDimensional`; numerical root searches, runtime arrays,
+  retained spectra, source-specific defect parameters, and physical applicability remain
+  downstream obligations.
 
 ## Spin-embedding library-search record
 

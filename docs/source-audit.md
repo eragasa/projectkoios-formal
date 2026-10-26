@@ -211,3 +211,31 @@ The accepted Table 1 JSON is recorded above only to delimit the nearby computati
 context: none of its 208 values is embedded or certified by the current Lean modules.
 No numerical eigenspectrum, Python execution, DFT/Wannier output, parameter accuracy,
 material adequacy, novelty, or publication conclusion is transferred into Formal.
+
+## Rank-one analytical-oracle inspection
+
+The finite rank-one resolvent module was motivated by a later read-only inspection of a clean
+calculation subdirectory inside an otherwise dirty owner worktree:
+
+- owner repository: `ksdft2effmass`;
+- checkout: `/Users/eugene/repos/ksdft2effmass`;
+- branch: `work/monograph-current-library-capabilities`;
+- immutable commit: `4835e7bf9161729cc8f0537bcc13db083896a6ae`;
+- whole-worktree dirty-state limitation: 112 short-status entries at inspection;
+- scoped status: no dirty entry under
+  `calculations/research-monograph/impurity-defect-1d-analytical-oracle/`; and
+- access mode: read-only; no owner file, index, branch, worktree, or configuration was changed.
+
+| SHA-256 | Owner-repository path at `4835e7b…` |
+|---|---|
+| `55b8d2533541ea5b24fc2abc7a909f5b417eb815112f0ec6e150ed9a92edf339` | `calculations/research-monograph/impurity-defect-1d-analytical-oracle/protocol.md` |
+| `a4281b2bd95ced8b642cc6115f99decd6b599d29f611144a83cb20c4ee943ce3` | `calculations/research-monograph/impurity-defect-1d-analytical-oracle/README.md` |
+| `bebc93e8609e7f63aaff81fb5556119756f54d8238f1aeeb1654fccf323a5e93` | `calculations/research-monograph/impurity-defect-1d-analytical-oracle/analytical_oracle_calculation/run_experiment.py` |
+
+The inspected source uses the attractive update `V_g = -g |v⟩⟨v|`, the scalar equation
+`1 - g⟨v|(H₀-EI)⁻¹|v⟩ = 0`, and a vector reconstructed by applying that finite resolvent to `v`.
+The Lean module proves the reusable conditional finite-matrix algebra behind those expressions. It
+does not copy or bind the source matrix, vector, energy interval, coupling, root, bisection logic,
+floating-point tolerances, normalization, eigenvalue output, serialized artifacts, or plots. It
+also does not prove existence or uniqueness of a secular root, monotonicity, a bound-state count,
+an infinite-volume statement, or physical applicability.
