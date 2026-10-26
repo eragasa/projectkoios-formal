@@ -155,3 +155,24 @@ algebraic consequences over `ℤ` and `ZMod n`. It does not import PhysKit, veri
 Python object, prove signed-64-bit batch execution free of overflow, establish that an
 external lattice uses the declared bases, or validate a crystallographic or physical
 interpretation.
+## Calculation-support and finite-folding inspection
+
+A later read-only calculation inventory and finite-folding crosswalk used another immutable
+owner revision:
+
+- owner repository: `ksdft2effmass`;
+- worktree: `/Users/eugene/worktrees/ksdft2effmass-source-package-ownership-cleanup`;
+- branch: `work/source-package-ownership-cleanup`;
+- commit: `25161d7f55c708a464c18ea8d5d0fd6152ff86a6`;
+- whole-worktree status count at inventory inspection: 645 entries;
+- `calculations/` status count at inventory inspection: 34 entries; and
+- access mode: read-only.
+
+| SHA-256 | Owner-repository path at `25161d7f…` |
+|---|---|
+| `85c20bcacfe46e5e844abfb2b493ef2e178f50e36640a1a00bc2bdedb6ee44ff` | `calculations/research-monograph/impurity-defect-1d/protocol.md` |
+| `e6dafe3ad7de7cc876b640df2535adab4d26e888d95bcc40c1b7d2a8be5c8760` | `calculations/research-monograph/impurity-defect-1d-independent-route/protocol.md` |
+
+These sources motivate only the abstract finite block-folding and route-commutativity signatures.
+The Lean declarations do not bind their Python arrays, floating-point Fourier matrices, twist
+representatives, finite-size sequences, observables, tolerances, or retained evidence.

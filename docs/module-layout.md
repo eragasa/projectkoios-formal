@@ -23,6 +23,30 @@ Source-specific crosswalks remain outside the BandGauge semantic hierarchy:
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
 | `Crosswalks/PhysKit/` | exact source-specific constants and thin consequences for the immutable PhysKit `FccBainCoordinateBridge3D` matrix contract | mirroring the PhysKit package tree, importing Python, verifying NumPy execution, supplying a runtime superclass, or claiming crystallographic or physical applicability |
+## Quantum-mechanics modules
+
+| Directory | Intended ownership | Explicit exclusions |
+|---|---|---|
+| `ProjectKoios/QuantumMechanics/FiniteDimensional/` | source-neutral finite-dimensional algebra, including rectangular reduction bases, retained projectors, reduced-coordinate Hamiltonians, exact two-state spin lifts, Frobenius-optimal spin-independent projection, and standard Pauli residual identities | runtime arrays, eigensolver execution, binary64 error claims, serialized-artifact validity, authored coefficient matrices, time-reversal implementations, and physical interpretation or adequacy |
+
+The reduction-basis module uses `Φ` for the reduced-to-full map, `P = Φ Φᵀ` for the retained
+projector, and reserves `Q = I - P` for the complementary projector. The spin modules use
+orbital-major product indices `ι × Fin 2`, the exact lift `A ⊗ₖ I₂`, and the half-partial-trace
+projection onto that lift's range. The Pauli-residual module owns standard two-state Pauli matrices
+and abstract orbital-coefficient residual identities, but not authored calculation matrices or
+physical spin assumptions. These modules are imported by the audit surface but are not re-exported
+through the package root.
+
+## Solid-state finite-lattice modules
+
+| Directory | Intended ownership | Explicit exclusions |
+|---|---|---|
+| `ProjectKoios/SolidState/FiniteLattice/` | normalized finite-character folding, cell-major block supercells, exact finite Bloch-fiber diagonalization, and coordinate/alignment/energy-shift/defect route algebra | runtime Fourier matrices, representative-selection code, hopping truncations, numerical eigenspectra, tolerances, serialized evidence, and physical applicability |
+
+The cyclic one-dimensional specialization uses `ZMod N`. General finite-abelian declarations are
+source-neutral reusable infrastructure; the calculation crosswalk relies only on the cyclic case
+and explicit coordinate-change premises. The modules are audited but not re-exported through
+`ProjectKoios.lean`.
 
 ## Dependency direction
 
@@ -41,6 +65,8 @@ Projection + Alignment + Fourier + Hilbert ──→ Decision
 Geometry + Decision ──→ Certificates ──→ Papers through explicit bindings
 Bloch + reviewed measure/regularity contracts ──→ later Hilbert section spaces
 Foundations + Fourier ──→ later SpecialFunctions
+QuantumMechanics/FiniteDimensional/SpinEmbedding ──→ SolidState/FiniteLattice route identities
+Mathlib finite-character and matrix APIs ──→ SolidState/FiniteLattice folding
 reviewed semantic modules ──→ thin Papers instantiations
 ```
 

@@ -3,5 +3,9 @@ module
 public import ProjectKoios.QuantumMechanics.FiniteDimensional.DecompositionIdentifiability
 public import ProjectKoios.QuantumMechanics.FiniteDimensional.ModelClassFitting
 public import ProjectKoios.QuantumMechanics.FiniteDimensional.OrthogonalCompression
+public import ProjectKoios.QuantumMechanics.FiniteDimensional.ReductionBasis
+public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinEmbedding
+public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinIndependentProjection
+public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinPauliResidual
 
 /-! Narrow import root for source-neutral finite-dimensional quantum algebra. -/

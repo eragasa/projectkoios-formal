@@ -15,6 +15,9 @@ This inventory records both implemented first-slice declarations and future sear
 | Weighted finite residual algebra | rank-two complex operator fields and real spectral fields, source-normalized powers, polarization, cross-term cancellation, and scalar-loss bridges | Ragasa2026a losses and Supplementary S1.1 | `BG-HILBERT-DEF-003` through `BG-HILBERT-DEF-012` implemented; `BG-HILBERT-THM-005` through `BG-HILBERT-THM-015` proved; exact conditional operator fields and a canonical exact finite Hermitian spectral diagonalization are supplied by the Paper A module; periodic-potential construction and concrete-data binding remain open | `BandGauge/Hilbert` |
 | Exact rank-two certificates | exact rational-center and rational-enclosure schemas and Boolean checkers for a positive-scale spectral witness, full-ellipse containment, and strict separation | Ragasa2026a scalar loss geometry and future runtime binding | `BG-CERT-DEF-001` through `BG-CERT-DEF-013` implemented; `BG-CERT-THM-001` through `BG-CERT-THM-009` proved, including `7/10 < 1/√2 < 71/100`; this generic module alone supplies no source instance or parser binding | `BandGauge/Certificates` |
 | Paper A fields, optimized geometry, and certificate binding | strict-positive sampled parent, global real rotation, momentum-dependent comparison, canonical spectral and Pauli decompositions, continuous correlation optimization, actual loss sublevel sets, full-plane/rectangle geometry, explicit scalar-certificate binding, and the exact equal-weight constructed false positive | Ragasa2026a exact loss geometry | `BG-RAGASA2026A-DEF-001` through `BG-RAGASA2026A-DEF-024` implemented; `BG-RAGASA2026A-THM-001` through `BG-RAGASA2026A-THM-028` are conditional bridges; `BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034` bind and check the exact two-observation analytic construction, its exact positive admissible-set distance, and its resolution corollary; three source-specific conclusions and one certificate are checked, but no runtime artifact, four-state-parent result, material validation, or parser binding is claimed | `BandGauge/Papers/Ragasa2026A` |
+| Finite reduction bases | rectangular basis `Φ`, orthonormal-column equation, projector `Φ Φᵀ`, reduced Hamiltonian `Φᵀ H Φ`, full-space embedding, and exact `Hemb = P H P` bridge | source-neutral algebra motivated by the PIAB1D retained-subspace contract | `QM-REDUCTION-DEF-001` through `QM-REDUCTION-DEF-003` implemented; `QM-REDUCTION-THM-001` through `QM-REDUCTION-THM-006` proved; runtime arrays, binary64 orthogonality, and serialized evidence remain external | `QuantumMechanics/FiniteDimensional` |
+| Finite spin embeddings, projection, and Pauli residuals | two-state lift `A ⊗ₖ I₂`, spin injections and pullbacks, partial spin trace, exact Frobenius-optimal half-trace projection, fixed points, Pythagorean and uniqueness results, standard Pauli channels, Hermiticity, and exact collinear/general residual powers | source-neutral algebra motivated by the impurity-spin-spaces calculation | `QM-SPIN-DEF-001` through `QM-SPIN-DEF-003`, `QM-SPIN-PROJECTION-DEF-001` through `QM-SPIN-PROJECTION-DEF-004`, and `QM-SPIN-PAULI-DEF-001` through `QM-SPIN-PAULI-DEF-005` implemented; `QM-SPIN-THM-001` through `QM-SPIN-THM-014`, `QM-SPIN-PROJECTION-THM-001` through `QM-SPIN-PROJECTION-THM-019`, and `QM-SPIN-PAULI-THM-001` through `QM-SPIN-PAULI-THM-017` proved; authored coefficient matrices, runtime values, spin-frame rotations, time reversal, spectra, and physical adequacy remain external | `QuantumMechanics/FiniteDimensional` |
+| Finite block folding and extraction-route commutativity | normalized finite-character folding, orbital-block lift, unit-modulus row phases, finite block-hopping supercells, exact Bloch-fiber block diagonalization, coordinate pullbacks, energy-reference correction, defect subtraction, and spin-lift commutativity | source-neutral algebra motivated by the matched and independent-route impurity-defect-1D protocols | `SS-FOLDING-DEF-001` through `SS-FOLDING-DEF-009` and `SS-ROUTE-DEF-001` through `SS-ROUTE-DEF-002` implemented; `SS-FOLDING-THM-001` through `SS-FOLDING-THM-016` and `SS-ROUTE-THM-001` through `SS-ROUTE-THM-010` proved; runtime Fourier matrices, twist representatives, authored hopping blocks, truncation inventories, tolerances, spectra, and artifact bindings remain external | `SolidState/FiniteLattice` |
 | Rank-two algebra | trace/traceless decomposition for real symmetric `2 × 2` matrices | Ragasa2026a exact loss geometry | complex Hermitian trace centering implemented; real-symmetric specialization unassessed | `BandGauge/Foundations` |
 | Rank-two algebra | real `SO(2)` conjugation, Pauli-coordinate Frobenius pairing, second-harmonic maximum, and canonical half-open maximizing angle | same | implemented as `BG-FOUNDATION-DEF-001` through `BG-FOUNDATION-DEF-009`; proved as `BG-FOUNDATION-THM-001` through `BG-FOUNDATION-THM-007` | `BandGauge/Foundations` |
 | Quadratic geometry | common-curvature loss formulas and ellipse centers/radii | Ragasa2026a | source-specific statement not selected | `BandGauge/Geometry` |
@@ -44,6 +47,66 @@ This inventory records both implemented first-slice declarations and future sear
 | Constant lattice regions and finite barriers | constant-potential residuals, reciprocal character superpositions, determinant-one one-site transfer matrices, finite transfer products, piecewise left/barrier/right specialization, and exact interface-state propagation | classical exact finite-difference and transfer-matrix algebra; source-neutral methodology infrastructure | `QM-CONSTANT-REGION-DEF-001` through `DEF-003`, `LEM-001/002`, `THM-001` through `THM-004`, `QM-TRANSFER-DEF-001` through `DEF-003`, `THM-001` through `THM-005`, `QM-BARRIER-DEF-001` through `DEF-003`, `THM-001` through `THM-011`, `QM-BARRIER-MATCHING-DEF-001` through `DEF-005`, and `THM-001` through `THM-008` implemented; interface-coordinate existence/uniqueness excludes coincident reciprocal roots, while no constrained scattering-amplitude solution, flux probability, infinite-barrier limit, continuum convergence, or retained numerical claim is supplied | `QuantumMechanics/FiniteDifference` |
 | PIAB1D finite realization | scaled Dirichlet stencil, cyclic corner closure and its exact source-neutral periodic-matrix bridge, exponential Dirichlet endpoint, local recurrence, real-representability, and finite matrix eigenpair | dirty computational crosswalk; exact source-neutral mathematics | `PIAB1D-FD-DEF-001`, `PIAB1D-FD-THM-001/002`, `PIAB1D-BOUNDARY-DEF-001/002`, `LEM-001`, `THM-001` through `THM-004`, and `PIAB1D-SPECTRUM-DEF-001` through `DEF-007`, `THM-001` through `THM-019` implemented; convergence and runtime binding remain open | `QuantumMechanics/Piab1d` |
 | Exact integral coordinate bridge | fixed FCC--Bain `3 × 3` integer matrices, two-sided inverse products, determinant one, induced mutual inverses, and bijectivity modulo every positive finite size | `projectkoios-physkit` `FccBainCoordinateBridge3D` at commit `7157dcedd0d220673d443c1c025e35a6fd1ffa7a` | source constants implemented as `PKF-PHYSKIT-DEF-001` through `PKF-PHYSKIT-DEF-007`; exact results proved as `PKF-PHYSKIT-THM-001` through `PKF-PHYSKIT-THM-005`; uses Mathlib matrix multiplication, `det_fin_three`, ring-homomorphic matrix mapping, `mulVec_mulVec`, and `ZMod`; no owner runtime-object or `numpy.int64` execution binding | `Crosswalks/PhysKit` |
+
+## Reduction-basis library-search record
+
+- Required signature: a rectangular real matrix `Φ : Matrix ι κ ℝ`, the exact premise
+  `Φᵀ Φ = I`, and typed constructions `Φ Φᵀ`, `Φᵀ H Φ`, and
+  `Φ (Φᵀ H Φ) Φᵀ`.
+- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
+  `Matrix.HasOrthogonalCols` records pairwise orthogonality but not unit column norms;
+  `Orthonormal` is the canonical vector-family predicate; square orthogonal/unitary matrix APIs do
+  not represent a genuinely rectangular injection. The module therefore introduces no duplicate
+  orthonormality predicate and uses the source equation `Φᵀ Φ = I` directly.
+- Reused Mathlib infrastructure: rectangular matrix multiplication, transpose, `mulVec`,
+  `Matrix.IsSymm`, and transpose-of-product lemmas. No missing upstream lemma was required.
+- Physlib was not relevant because the required exact finite matrix APIs are already supplied by
+  pinned Mathlib; no Physlib dependency was adopted.
+- Ownership: the source-neutral constructions belong under
+  `ProjectKoios.QuantumMechanics.FiniteDimensional`; PIAB1D dimensions, runtime arrays, and evidence
+  binding remain downstream obligations.
+
+## Spin-embedding library-search record
+
+- Required signature: finite complex orbital matrices, the exact Kronecker lift `A ⊗ₖ I₂`,
+  rectangular selected-spin injections, conjugate-transpose sandwiches, and the Frobenius norm used
+  by the calculation-level contract.
+- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
+  `Mathlib.LinearAlgebra.Matrix.Kronecker` supplies `Matrix.kronecker_apply`,
+  `conjTranspose_kronecker`, `mul_kronecker_mul`, and `trace_kronecker`;
+  `Mathlib.Analysis.Matrix.Normed` supplies the scoped Frobenius norm and
+  `Matrix.frobenius_norm_def`; `Mathlib.LinearAlgebra.Matrix.Hermitian` supplies
+  `Matrix.IsHermitian`. No repository-owned replacement for these APIs was introduced.
+- The selected-spin injection, pullback, partial spin trace, and exact half-trace projection are
+  source-neutral connecting constructions absent from the inspected Mathlib API. Their exact
+  entrywise, fixed-point, trace, and Hermiticity identities are proved in `SpinEmbedding.lean` and
+  `SpinIndependentProjection.lean` rather than assumed. Mathlib has no inspected standard Pauli
+  matrix API, so `SpinPauliResidual.lean` declares the three explicit `Fin 2` matrices and proves
+  their required Hermiticity and Frobenius identities entrywise.
+- Physlib was not adopted because pinned Mathlib supplies all finite matrix, Kronecker, Hermitian,
+  trace, and Frobenius infrastructure required by this slice.
+- Ownership: abstract two-state spin-coordinate algebra belongs under
+  `ProjectKoios.QuantumMechanics.FiniteDimensional`; authored `4 × 4` coefficient matrices,
+  floating-point evidence, bindings from those matrices to the abstract residual identities, and
+  time-reversal applicability remain downstream obligations.
+
+## Finite-folding library-search record
+
+- Required signature: a normalized finite cyclic/abelian character transform, an unchanged finite
+  orbital block, a finite translation-invariant block-hopping operator, exact Bloch fibers, and
+  conjugate-transpose coordinate pullbacks.
+- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
+  finite-additive-character orthogonality and Pontryagin duality supply the complete character
+  inventory; matrix Kronecker, conjugate-transpose, multiplication, and finite-sum APIs supply the
+  block lift. No inspected Mathlib declaration directly packages the cell-major block-supercell
+  convention or the full route-commutativity statement.
+- The implementation reuses Mathlib characters and proves the normalization, block lift,
+  unit-modulus phase invariance, block diagonalization, scalar-shift transport, and subtraction
+  commutativity. `G = ZMod N` is exposed as the one-dimensional cyclic specialization.
+- Physlib was not adopted because the pinned Mathlib APIs cover this exact finite algebra.
+- Ownership: abstract exact folding and route algebra belongs under
+  `ProjectKoios.SolidState.FiniteLattice`; Python matrices, representative choices, numerical
+  tolerances, and retained evidence remain downstream obligations.
 
 ## Required library-search record
 

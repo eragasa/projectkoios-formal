@@ -31,6 +31,7 @@ This directory records the formalization contract, provenance, planning state, a
 ## Planning
 
 - [`module-layout.md`](module-layout.md) — intended semantic ownership of formal source folders.
+- [`ksdft2effmass-calculations-formal-support-inventory.md`](ksdft2effmass-calculations-formal-support-inventory.md) — source-bound first-pass map from calculation contracts to existing theorem support, candidate exact formalizations, and numerical/runtime nonclaims.
 - [`../ProjectKoios/BandGauge/Decision/README.md`](../ProjectKoios/BandGauge/Decision/README.md) — implemented finite dominance, Pareto sufficiency, threshold monotonicity, and minimum-cost semantic layer.
 - [`../ProjectKoios/BandGauge/Fourier/README.md`](../ProjectKoios/BandGauge/Fourier/README.md) — implemented finite reconstruction/truncation, two-sided finite-abelian inversion, Parseval, Hermitian pairing, matrix Frobenius residual-tail identities, and the constant/uniform rank-two `weight/(2Eref²)` bridge.
 - [`../ProjectKoios/QuantumMechanics/HarmonicOscillator/README.md`](../ProjectKoios/QuantumMechanics/HarmonicOscillator/README.md) — exact physicists' Hermite eigenfunction identity, finite ladder boundary algebra, compression leakage, top-state reconstruction distortion, and explicit analytical/numerical authority boundaries.
