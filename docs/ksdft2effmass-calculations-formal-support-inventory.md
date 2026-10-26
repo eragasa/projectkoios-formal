@@ -368,11 +368,16 @@ layer. The finite gauge-loop slice now additionally proves:
 - Bargmann overlap products and their principal complex arguments are independent of
   pointwise unit-modulus state phases;
 - matrix Wilson products transform by conjugation under pointwise unitary frame changes; and
-- determinants of those finite Wilson products are gauge invariant.
+- determinants of those finite Wilson products are gauge invariant;
+- rank-one state outer products are Hermitian and become idempotent under an explicit unit-norm
+  premise;
+- ordered products of those rank-one matrices are pointwise-phase invariant; and
+- the ordered projector-product trace is exactly the corresponding Bargmann product, so their
+  principal phases agree and are pointwise-phase invariant.
 
 **Remaining high-value exact addition:** separable Kronecker-sum spectra and degenerate projectors
-satisfy the declared product identities. A direct trace-of-projector-product crosswalk to the
-Bargmann product may be added only after its normalization and ordering convention is frozen.
+satisfy the declared product identities. The projector/Bargmann crosswalk is now implemented with
+an explicit start-plus-tail ordering and does not infer state normalization from runtime data.
 
 A general Chern integrality or Wannier-obstruction theorem is a separate, much larger
 analytic project. It must not be replaced by the proved finite-mesh gauge invariance.
@@ -432,7 +437,9 @@ material adequacy, or silicon validation.
    uniqueness deferred until spectral-order hypotheses are explicit.
 5. **Review and checkpoint the implemented finite lattice-gauge loop invariance.** Keep its exact
    finite algebra separate from Chern integrality and general Wannier obstruction.
-6. **Only then add calculation-specific certificate bridges.** Require frozen exact
+6. **Review and checkpoint the projector/Bargmann trace crosswalk.** Preserve its explicit
+   normalization and ordering premises and do not treat it as mesh or topology validation.
+7. **Only then add calculation-specific certificate bridges.** Require frozen exact
    schemas and preserve the producer/verifier/Formal boundaries.
 
 ## Nonclaims and explicit deferrals

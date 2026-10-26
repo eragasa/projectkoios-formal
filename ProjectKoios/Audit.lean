@@ -7,6 +7,7 @@ import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinIndependentProjection
 import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinPauliResidual
 import ProjectKoios.SolidState.FiniteLattice.Folding
 import ProjectKoios.SolidState.FiniteLattice.GaugeLoops
+import ProjectKoios.SolidState.FiniteLattice.ProjectorBargmann
 import ProjectKoios.SolidState.FiniteLattice.RouteCommutativity
 import ProjectKoios.BandGauge.Geometry.AdmissibleSets
 import ProjectKoios.BandGauge.Geometry.RankTwoLoss
@@ -161,6 +162,18 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.SolidState.FiniteLattice.bargmannLoopPhase_phaseGaugeState
 #print axioms ProjectKoios.SolidState.FiniteLattice.wilsonLoopProduct_unitaryGaugeTransform
 #print axioms ProjectKoios.SolidState.FiniteLattice.wilsonLoopDet_unitaryGaugeInvariant
+#print axioms ProjectKoios.SolidState.FiniteLattice.pureStateProjectorMatrix_apply
+#print axioms ProjectKoios.SolidState.FiniteLattice.pureStateProjectorMatrix_isHermitian
+#print axioms ProjectKoios.SolidState.FiniteLattice.pureStateProjectorMatrix_mul_self_of_norm_eq_one
+#print axioms ProjectKoios.SolidState.FiniteLattice.pureStateProjectorMatrix_phaseGaugeState
+#print axioms ProjectKoios.SolidState.FiniteLattice.rankOneMatrix_mul_rankOneMatrix
+#print axioms ProjectKoios.SolidState.FiniteLattice.trace_rankOneMatrix
+#print axioms ProjectKoios.SolidState.FiniteLattice.orderedStateProjectorProduct_eq
+#print axioms ProjectKoios.SolidState.FiniteLattice.orderedStateProjectorProduct_phaseGaugeState
+#print axioms ProjectKoios.SolidState.FiniteLattice.projectorLoopTrace_eq_bargmannLoopProduct
+#print axioms ProjectKoios.SolidState.FiniteLattice.projectorLoopTrace_phaseGaugeState
+#print axioms ProjectKoios.SolidState.FiniteLattice.projectorLoopPhase_eq_bargmannLoopPhase
+#print axioms ProjectKoios.SolidState.FiniteLattice.projectorLoopPhase_phaseGaugeState
 #print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_le_edist_of_mem
 #print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_mem_inter
 #print axioms ProjectKoios.BandGauge.Geometry.disjoint_of_pos_le_admissibleSetEDist

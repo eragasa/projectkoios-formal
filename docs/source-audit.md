@@ -264,8 +264,11 @@ protocols and a later immutable Wilson-loop utility:
 The protocols discuss overlap transport, reciprocal sewing, closed holonomy, gauge attacks, and
 finite reciprocal-mesh diagnostics. The later utility compares supplied Wilson-loop eigenphase
 spectra but does not construct overlap matrices, select loop orientation, infer gauge, unwrap
-branches, or establish topology. The Lean module proves only reusable exact finite cancellation,
-conjugation, Bargmann-product/phase invariance, and Wilson-determinant invariance. It does not copy
-or bind runtime arrays, execute the utility, validate eigenphases, certify a mesh, establish Chern
-integrality or continuum topology, prove a Wannier obstruction, execute Wannier90, or establish
-physical applicability.
+branches, or establish topology. The Lean gauge-loop module proves only reusable exact finite
+cancellation, conjugation, Bargmann-product/phase invariance, and Wilson-determinant invariance.
+The source-neutral projector crosswalk separately freezes an explicit start-plus-tail ordering,
+proves Hermiticity and idempotence under an explicit unit-norm premise, and identifies the ordered
+rank-one projector-product trace with the Bargmann product. These modules do not copy or bind
+runtime arrays, infer normalization from floating-point data, execute the utility, validate
+eigenphases, certify a mesh, establish Chern integrality or continuum topology, prove a Wannier
+obstruction, execute Wannier90, or establish physical applicability.

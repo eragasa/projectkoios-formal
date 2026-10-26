@@ -12,7 +12,14 @@ commutative loop and plaquette invariance, invariance of complex Bargmann produc
 phases under pointwise unit-modulus state phases, and conjugation/determinant invariance of finite
 matrix Wilson products under pointwise unitary frame changes.
 
+`ProjectorBargmann.lean` proves that finite rank-one state outer products are Hermitian, become
+idempotent projectors under an explicit unit-norm premise, and are invariant under pointwise
+unit-modulus phases. It factors their ordered products and identifies the product trace exactly
+with the corresponding Bargmann loop product, including equality and gauge invariance of the
+principal phases.
+
 These modules do not bind Python arrays, binary64 Fourier or overlap matrices, hopping truncations,
 twist representatives, loop orientations, boundary sewing, tolerances, spectra, or retained
-calculation evidence. They do not establish Chern integrality, continuum topology, a Wannier
-obstruction, Wannier90 execution, numerical-mesh validity, or physical applicability.
+calculation evidence. They do not infer normalization from runtime data or establish Chern
+integrality, continuum topology, a Wannier obstruction, Wannier90 execution, numerical-mesh
+validity, or physical applicability.
