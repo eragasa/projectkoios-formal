@@ -45,6 +45,10 @@ import ProjectKoios.QuantumMechanics.FiniteDifference.BarrierMatching1D
 import ProjectKoios.QuantumMechanics.Piab1d.FiniteDifference
 import ProjectKoios.QuantumMechanics.Piab1d.Spectrum
 import ProjectKoios.SolidState.TightBinding.VoglSp3sStar
+import ProjectKoios.QuantumMechanics.Measurement.FinitePureState
+import ProjectKoios.QuantumMechanics.Dirac
+import ProjectKoios.QuantumMechanics.RiggedHilbertSpace
+import ProjectKoios.QuantumMechanics.Operator.TestDomain
 
 #print axioms ProjectKoios.Formal.harnessCompiles
 #print axioms ProjectKoios.QuantumMechanics.FiniteDimensional.reductionBasis_transpose_mulVec_mulVec_eq
@@ -438,3 +442,34 @@ import ProjectKoios.SolidState.TightBinding.VoglSp3sStar
 #print axioms ProjectKoios.SolidState.TightBinding.voglSp3sStarHamiltonianAtReducedWavevector_isHermitian
 #print axioms ProjectKoios.SolidState.TightBinding.normalizedTetrahedralBondDirection_self_dotProduct
 #print axioms ProjectKoios.SolidState.TightBinding.normalizedTetrahedralBondDirection_pair_dotProduct
+
+-- Quantum-mechanics supporting lemmas are audited separately from author-facing theorems.
+#print axioms ProjectKoios.QuantumMechanics.Measurement.bornProbability_nonneg
+#print axioms ProjectKoios.QuantumMechanics.Measurement.sum_bornProbability_eq_one
+#print axioms ProjectKoios.QuantumMechanics.Measurement.bornProbability_le_one
+#print axioms ProjectKoios.QuantumMechanics.Measurement.bornProbability_phaseShift
+#print axioms ProjectKoios.QuantumMechanics.Measurement.postMeasurementState_vector
+#print axioms ProjectKoios.QuantumMechanics.Measurement.norm_postMeasurementState_vector_eq_one
+#print axioms ProjectKoios.QuantumMechanics.braOfKet_apply
+#print axioms ProjectKoios.QuantumMechanics.braOfKet_smul
+#print axioms ProjectKoios.QuantumMechanics.bracket_eq_inner
+#print axioms ProjectKoios.QuantumMechanics.outerProduct_apply
+#print axioms ProjectKoios.QuantumMechanics.outerProduct_comp_outerProduct
+#print axioms ProjectKoios.QuantumMechanics.pureStateProjector_apply_vector
+#print axioms ProjectKoios.QuantumMechanics.pureStateProjector_idempotent
+#print axioms ProjectKoios.QuantumMechanics.pureStateProjector_selfAdjoint
+#print axioms ProjectKoios.QuantumMechanics.hilbertToGeneralizedBra_apply
+#print axioms ProjectKoios.QuantumMechanics.hilbertToGeneralizedKet_apply
+#print axioms ProjectKoios.QuantumMechanics.hilbertToGeneralizedBra_smul
+#print axioms ProjectKoios.QuantumMechanics.hilbertToGeneralizedKet_smul
+#print axioms ProjectKoios.QuantumMechanics.hilbertToGeneralizedKet_eq_star_bra
+#print axioms ProjectKoios.QuantumMechanics.hilbertToGeneralizedBra_injective
+#print axioms ProjectKoios.QuantumMechanics.hilbertToGeneralizedKet_injective
+#print axioms ProjectKoios.QuantumMechanics.coe_includedTestVector
+#print axioms ProjectKoios.QuantumMechanics.testDomainEquiv_apply
+#print axioms ProjectKoios.QuantumMechanics.testSpaceOperator_domain
+#print axioms ProjectKoios.QuantumMechanics.testSpaceOperator_apply_includedTestVector
+#print axioms ProjectKoios.QuantumMechanics.testSpaceOperator_dense_domain
+#print axioms ProjectKoios.QuantumMechanics.testSpaceOperator_maps_domain
+#print axioms ProjectKoios.QuantumMechanics.isFormalAdjoint_testSpaceOperator
+#print axioms ProjectKoios.QuantumMechanics.testSpaceOperator_le_adjoint

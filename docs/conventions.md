@@ -18,6 +18,19 @@ This document is a pre-encoding contract. It does not freeze one mathematical co
 | Parameters | domains, positivity, compactness, bounds, and units | formulas derived on an unconstrained domain do not imply bounded-domain conclusions |
 | Error/evidence | exact equality, inequality, numerical tolerance, or external obligation | approximate equality is not rewritten as exact equality |
 
+## Declaration kinds and identifiers
+
+Stable IDs follow the mathematical presentation of a declaration:
+
+- `DEF` introduces a definition, abbreviation, structure, or named construction;
+- `LEM` records a supporting identity, rewrite rule, or intermediate result presented as a lemma;
+- `THM` records a principal result presented as a theorem.
+
+Lean gives `lemma` and `theorem` the same kernel status, but that implementation fact does not
+control the author-facing classification. Public visibility, proof completion, audit coverage, and
+a proof dossier do not by themselves turn a lemma into a theorem. The declaration manifest records
+the exact kind, and established IDs remain append-only unless separately reviewed.
+
 ## Source-specific records already observed
 
 The publication crosswalk identifies source conventions that future encodings must preserve, including rank-two real-rotation families, positive splitting parameters, finite global alignment families, normalized torus integrals, complete metric shells, and the D1 continuum Fourier convention. These observations are traceability notes, not repository-wide defaults.

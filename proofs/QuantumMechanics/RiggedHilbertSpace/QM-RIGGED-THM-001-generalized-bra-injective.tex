@@ -1,0 +1,36 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Injectivity of the Hilbert-to-Generalized-Bra Assignment}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{QM-RIGGED-THM-001}; status \texttt{proved}. Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.hilbertToGeneralizedBra_injective}}.
+\section{Exact statement}
+Let $i:\Phi\to\mathcal H$ be a continuous injective map from the declared test space into a
+complex Hilbert space with dense range. The assignment
+\[\psi\longmapsto B_\psi,\qquad B_\psi(\phi)=\langle\psi,i\phi\rangle,
+\]
+from $\mathcal H$ to continuous linear functionals on $\Phi$ is injective.
+\section{Source and assumptions}
+This is source-neutral functional analysis. The test space is Hausdorff and locally convex and the
+inclusion has dense range. Nuclearity, a concrete Schwartz space, and an operator spectral theorem
+are not assumptions or conclusions.
+\section{Proof schematic and proof}
+If $B_\psi=B_\chi$, then the continuous functions
+$y\mapsto\langle\psi,y\rangle$ and $y\mapsto\langle\chi,y\rangle$ agree on the dense image
+$i(\Phi)$. Continuity extends equality to every $y\in\mathcal H$. Nondegeneracy of the inner
+product in its right argument then gives $\psi=\chi$.
+\section{Lean realization and trusted base}
+The proof uses \texttt{DenseRange.equalizer} followed by \texttt{ext\_inner\_right}. The exact
+functional orientation is fixed by Mathlib's conjugate-linear-first convention. Kernel-reported
+axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; there are no
+admissions.
+\section{Boundary and review}
+Injectivity does not prove surjectivity onto the test dual, generalized eigenvector existence,
+spectral completeness, or physical applicability. AI-assisted and kernel-checked; no independent
+expert review is recorded.
+\end{document}

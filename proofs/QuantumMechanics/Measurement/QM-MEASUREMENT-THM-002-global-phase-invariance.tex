@@ -1,0 +1,31 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Global-Phase Invariance of Finite Born Weights}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{QM-MEASUREMENT-THM-002}; status \texttt{proved}. Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.Measurement.bornProbability_phaseShift}}.
+\section{Exact statement}
+For a bounded complex-linear outcome operation $M_i$, normalized representative $\psi$, and
+complex scalar $z$ with $\lVert z\rVert=1$,
+\[p(i\mid z\psi)=p(i\mid\psi).\]
+\section{Source and assumptions}
+This is a source-neutral result for the repository's finite bounded-operation definition. An exact
+textbook crosswalk is deferred. It proves invariance of the defined probabilities, not equality of
+vectors or construction of a quotient space of rays.
+\section{Proof schematic and proof}
+Complex linearity gives $M_i(z\psi)=zM_i\psi$. Norm homogeneity gives
+$\lVert zM_i\psi\rVert=\lVert z\rVert\lVert M_i\psi\rVert$. The unit-modulus premise removes the
+first factor, and squaring preserves the equality.
+\section{Lean realization and trusted base}
+The Lean proof unfolds \texttt{bornProbability} and \texttt{phaseShift}, then simplifies with
+bounded-map scalar linearity and \texttt{norm\_smul}. Kernel-reported axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; there are no admissions.
+\section{Boundary and review}
+No physical ray quotient, state-preparation equivalence, experiment, or numerical result is
+established. AI-assisted and kernel-checked; no independent expert review is recorded.
+\end{document}

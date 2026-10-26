@@ -1,0 +1,85 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Density of the Induced Test-Space Operator Domain}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+ID \texttt{QM-OPERATOR-THM-001}; status \texttt{proved; no admissions}.
+Owning module: \path{ProjectKoios/QuantumMechanics/Operator/TestDomain.lean}.
+Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.testSpaceOperator_dense_domain}}.
+
+\section{Exact mathematical statement}
+Let $\Phi$ be the declared locally convex test space, let $\mathcal H$ be a complex Hilbert space,
+and let $i:\Phi\to\mathcal H$ be the continuous injective inclusion supplied by a
+\texttt{RiggedHilbertSpaceCore}. Assume that $i(\Phi)$ is dense in $\mathcal H$. For any complex
+linear endomorphism $A:\Phi\to\Phi$, define the partial Hilbert-space operator $T_A$ by
+\[
+  \mathcal D(T_A)=\operatorname{ran} i,
+  \qquad T_A(i\phi)=i(A\phi).
+\]
+Then $\mathcal D(T_A)$ is dense in $\mathcal H$.
+
+\section{Source, assumptions, and statement delta}
+This is a source-neutral functional-analytic bridge to Mathlib's \texttt{LinearPMap} API. The dense
+range and injectivity of $i$ are explicit structure fields; the theorem introduces no physical
+postulate. The operator $A$ is only linear. Its continuity, boundedness, symmetry, closedness, and
+closability are neither assumed nor concluded. No governed textbook equation or protected source
+expression is claimed.
+
+\section{Prior art and contribution boundary}
+The density of the range of a dense embedding is standard. The repository contribution is the exact
+connection between \texttt{RiggedHilbertSpaceCore} and the domain representation used by Mathlib's
+partial linear maps, not a novelty claim for this elementary fact.
+
+\section{Proof schematic}
+\[
+\operatorname{Set.range}(i)\ \text{dense}
+\quad\land\quad
+\operatorname{Set.range}(i)\subseteq\operatorname{LinearMap.range}(i)
+\quad\Longrightarrow\quad
+\operatorname{LinearMap.range}(i)\ \text{dense}.
+\]
+By definition, the rightmost set is precisely $\mathcal D(T_A)$.
+
+\section{Human-readable proof}
+Every vector in the ordinary image of $i$ has the form $i\phi$. The same witness $\phi$ shows that
+this vector belongs to the linear-map range of $i$. Thus the dense ordinary image of $i$ is a subset
+of the domain of $T_A$. Any set containing a dense subset is dense, so $\mathcal D(T_A)$ is dense.
+The argument is independent of the action of $A$.
+
+\section{Lean realization and library dependencies}
+The proof rewrites the domain with \path{testSpaceOperator_domain}, then applies
+\path{R.inclusion_denseRange.mono}. A range witness for the continuous inclusion is reused as a
+witness for the linear-map range. The implementation reuses
+\path{Mathlib.Analysis.InnerProductSpace.LinearPMap}; it defines no competing unbounded-operator
+primitive.
+
+\section{Trusted base, automation, and toolchain}
+The declaration is kernel checked with Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679}. The recorded \texttt{\#print axioms} result is
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. These are standard Lean/Mathlib
+logical foundations, not scientific axioms. There is no \texttt{sorry}, \texttt{admit}, or
+repository-owned axiom. AI assistance contributed to proof discovery, Lean implementation, and this
+exposition; no independent expert review is recorded.
+
+\section{Evidence and applicability boundary}
+The theorem checks an abstract domain fact only. It supplies no numerical evidence, certificate,
+concrete test space, Hamiltonian, essential self-adjointness result, spectral expansion, or physical
+applicability judgment.
+
+\section{Unresolved questions and revision history}
+A concrete nuclear or Schwartz test space and a source-governed physical operator remain open.
+Initial proof and dossier completed 2026-10-20.
+\end{document}

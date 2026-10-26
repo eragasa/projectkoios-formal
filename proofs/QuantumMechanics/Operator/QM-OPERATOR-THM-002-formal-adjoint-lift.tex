@@ -1,0 +1,90 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Lifting a Test-Space Formal-Adjoint Identity}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+ID \texttt{QM-OPERATOR-THM-002}; status \texttt{proved; no admissions}.
+Owning module: \path{ProjectKoios/QuantumMechanics/Operator/TestDomain.lean}.
+Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.isFormalAdjoint_testSpaceOperator}}.
+
+\section{Exact mathematical statement}
+Let $i:\Phi\to\mathcal H$ be the injective dense inclusion of a
+\texttt{RiggedHilbertSpaceCore}, and let $A,B:\Phi\to\Phi$ be complex linear maps. Suppose
+\[
+  \langle i(A\phi),i\psi\rangle
+  =\langle i\phi,i(B\psi)\rangle
+  \qquad\text{for every }\phi,\psi\in\Phi,
+\]
+using Mathlib's convention that the inner product is conjugate-linear in its first argument. Then
+the induced partial Hilbert-space operators $T_A$ and $T_B$, both with domain $i(\Phi)$, satisfy
+Mathlib's formal-adjoint relation
+\[
+  \langle T_A x,y\rangle=\langle x,T_B y\rangle
+  \qquad(x\in\mathcal D(T_A),\ y\in\mathcal D(T_B)).
+\]
+
+\section{Source, assumptions, and statement delta}
+This is source-neutral functional analysis. The displayed test-space identity is an explicit
+hypothesis, not a repository axiom and not a conclusion derived from the name of an operator. The
+theorem does not assert that $A$ or $B$ is continuous, symmetric, closed, closable, mutually
+adjoint as maximal operators, or self-adjoint.
+
+\section{Prior art and contribution boundary}
+Passing an inner-product identity through an injective domain parametrization is standard. The
+repository contribution is the typed bridge from test-space endomorphisms to Mathlib's
+\path{LinearPMap.IsFormalAdjoint} predicate. No novelty or textbook-fidelity claim is made.
+
+\section{Proof schematic}
+For arbitrary domain vectors $x$ and $y$:
+\[
+ x=i\phi,\quad y=i\psi
+ \Longrightarrow
+ T_Ax=i(A\phi),\quad T_By=i(B\psi)
+ \Longrightarrow
+ \langle T_Ax,y\rangle=\langle x,T_By\rangle.
+\]
+Injectivity of $i$ makes the representatives selected by the range equivalence unique.
+
+\section{Human-readable proof}
+Choose the unique test vectors $\phi$ and $\psi$ corresponding to the domain elements $x$ and $y$
+through the linear equivalence between $\Phi$ and $\operatorname{ran} i$. By construction,
+$x=i\phi$ and $y=i\psi$. The induced-action identity gives $T_Ax=i(A\phi)$ and
+$T_By=i(B\psi)$. Substitution reduces the desired formal-adjoint equality exactly to the supplied
+hypothesis for $\phi$ and $\psi$.
+
+\section{Lean realization and library dependencies}
+The proof defines $\phi=(\texttt{testDomainEquiv }R)^{-1}x$ and similarly for $\psi$, uses the
+left/right inverse laws of the linear equivalence, rewrites both partial-operator actions with
+\path{testSpaceOperator_apply_includedTestVector}, and closes with
+\path{IsTestSpaceFormalAdjoint}. The formal-adjoint target is Mathlib's existing partial-operator
+predicate.
+
+\section{Trusted base, automation, and toolchain}
+The declaration is kernel checked with Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679}. The recorded \texttt{\#print axioms} result is
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. There are no admissions or
+repository-owned scientific axioms. AI assistance contributed to proof discovery, Lean
+implementation, and exposition; no independent expert review is recorded.
+
+\section{Evidence and applicability boundary}
+The premise must be established separately for every concrete operator pair. Numerical agreement
+cannot silently replace it. The result supplies no maximal-adjoint equality, self-adjointness,
+observable interpretation, spectral theorem, generalized eigenvector, or physical applicability.
+
+\section{Unresolved questions and revision history}
+Concrete invariant test spaces, concrete operator pairs, and conditions upgrading formal-adjoint
+relations remain open. Initial proof and dossier completed 2026-10-20.
+\end{document}

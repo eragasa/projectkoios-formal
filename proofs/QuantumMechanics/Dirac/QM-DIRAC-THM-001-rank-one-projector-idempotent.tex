@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Idempotence of a Normalized Rank-One Projector}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{QM-DIRAC-THM-001}; status \texttt{proved}. Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.pureStateProjector_idempotent}}.
+\section{Exact statement}
+For a unit vector $\psi$ in a complex inner-product space and
+$P_\psi=\lvert\psi\rangle\langle\psi\rvert$,
+\[P_\psi\circ P_\psi=P_\psi.\]
+The outer product is the bounded rank-one operator $v\mapsto\langle\psi,v\rangle\psi$.
+\section{Source and assumptions}
+This is standard source-neutral Hilbert-space mathematics. Exact textbook attachment is deferred.
+The theorem concerns an ordinary vector, not a generalized ket or an unbounded operator.
+\section{Proof schematic and proof}
+For every $v$,
+$P_\psi(P_\psi v)=\langle\psi,v\rangle\langle\psi,\psi\rangle\psi$.
+Unit norm gives $\langle\psi,\psi\rangle=1$, leaving $P_\psi v$.
+\section{Lean realization and trusted base}
+The proof specializes Mathlib's idempotence theorem for \path{rankOne} and rewrites bounded-map
+multiplication as composition. Kernel-reported axioms are \path{propext},
+\path{Classical.choice}, and \path{Quot.sound}; there are no admissions.
+\section{Boundary and review}
+The theorem alone does not establish self-adjointness, a spectral decomposition, physical state
+preparation, or source fidelity. AI-assisted and kernel-checked; no independent expert review is
+recorded.
+\end{document}

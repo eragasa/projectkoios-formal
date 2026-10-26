@@ -1,0 +1,34 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Self-Adjointness of a Normalized Rank-One Projector}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{QM-DIRAC-THM-002}; status \texttt{proved}. Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.pureStateProjector_selfAdjoint}}.
+\section{Exact statement}
+On a complete complex inner-product space, the bounded rank-one operator
+$P_\psi=\lvert\psi\rangle\langle\psi\rvert$ associated with a unit vector is self-adjoint:
+\[P_\psi^*=P_\psi.\]
+\section{Source and assumptions}
+This is standard source-neutral Hilbert-space mathematics. Completeness is explicit because the
+Mathlib adjoint API for arbitrary bounded operators uses a Hilbert space. No generalized-vector or
+unbounded-operator statement is included.
+\section{Proof schematic and proof}
+For vectors $x,y$,
+$\langle P_\psi x,y\rangle=\overline{\langle\psi,x\rangle}\langle\psi,y\rangle
+=\langle x,P_\psi y\rangle$.
+Together with the normalized rank-one construction, this is the standard orthogonal rank-one
+projection. Mathlib packages the result as a star projection, whose self-adjoint component gives the
+claim.
+\section{Lean realization and trusted base}
+The proof uses \texttt{InnerProductSpace.isStarProjection\_rankOne\_self} with the stored unit-norm
+proof and selects self-adjointness. Kernel-reported axioms are \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}; there are no admissions.
+\section{Boundary and review}
+No observable, measurement postulate, spectral measure, or physical applicability is established.
+AI-assisted and kernel-checked; no independent expert review is recorded.
+\end{document}

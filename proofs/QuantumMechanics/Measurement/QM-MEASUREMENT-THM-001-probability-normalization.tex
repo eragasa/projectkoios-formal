@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Finite Born-Probability Normalization}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{QM-MEASUREMENT-THM-001}; status \texttt{proved}. Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.Measurement.sum_bornProbability_eq_one}}.
+\section{Exact statement}
+For a finite outcome type, a supplied family of bounded operations $M_i$ satisfying
+$\sum_i\lVert M_i v\rVert^2=\lVert v\rVert^2$ for every $v$, and a normalized vector
+$\psi$, the defined weights satisfy
+\[\sum_i p(i\mid\psi)=1,\qquad p(i\mid\psi)=\lVert M_i\psi\rVert^2.\]
+\section{Source and assumptions}
+This is source-neutral mathematics. Exact textbook attachment is deferred pending governed source
+admission. Completeness is an explicit structure field, not a repository-owned physical axiom.
+The result covers only the declared finite bounded-operation model.
+\section{Proof schematic and proof}
+Insert $\psi$ into the supplied completeness equality, unfold the definition of the Born weight,
+and replace $\lVert\psi\rVert$ by one. This yields the displayed finite sum exactly.
+\section{Lean realization and trusted base}
+The proof specializes the measurement structure's completeness field and simplifies with the
+state structure's stored normalization equality. Kernel-reported axioms are
+\path{propext}, \path{Classical.choice}, and \path{Quot.sound}; there are no admissions or
+repository-owned scientific axioms.
+\section{Boundary and review}
+No continuous outcomes, observable spectral theorem, numerical evidence, or physical applicability
+is established. AI-assisted and kernel-checked; no independent expert review is recorded.
+\end{document}

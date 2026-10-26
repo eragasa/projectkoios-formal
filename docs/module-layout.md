@@ -26,9 +26,17 @@ Source-specific crosswalks remain outside the BandGauge semantic hierarchy:
 
 ## Quantum-mechanics modules
 
-| Directory | Intended ownership | Explicit exclusions |
+The source-neutral quantum-mechanics foundation is a separate semantic family under
+`ProjectKoios/QuantumMechanics/`; it is not owned by `BandGauge` or by a textbook crosswalk.
+
+| Module or directory | Intended ownership | Explicit exclusions |
 |---|---|---|
-| `ProjectKoios/QuantumMechanics/FiniteDimensional/` | source-neutral finite-dimensional algebra, including rectangular reduction bases, retained projectors, reduced-coordinate Hamiltonians, exact two-state spin lifts, Frobenius-optimal spin-independent projection, and standard Pauli residual identities | runtime arrays, eigensolver execution, binary64 error claims, serialized-artifact validity, authored coefficient matrices, time-reversal implementations, and physical interpretation or adequacy |
+| `State.lean` | normalized complex state-vector representatives and unit-modulus phase changes | quotient rays, state preparation, or a complete physical postulate system |
+| `Measurement/FinitePureState.lean` | finite bounded measurement operations, exact norm completeness supplied as data, Born weights, and positive-probability normalization | general observables, spectral measures, unbounded operators, or continuous outcomes |
+| `Dirac.lean` | typed ordinary ket/bra aliases, brackets, bounded rank-one operators, and normalized projector properties | generalized eigenvectors or decorative syntax detached from named definitions |
+| `RiggedHilbertSpace.lean` | Hausdorff locally convex test-space embedding core and convention-sensitive Hilbert-to-test-dual injections | nuclearity, concrete Schwartz spaces, operator domains, generalized spectral completeness, or physical applicability |
+| `Operator/TestDomain.lean` | bridge from test-space endomorphisms to Mathlib partial linear operators, dense domains, invariant test domains, formal adjoints, and maximal-adjoint containment | claiming boundedness, closedness, adjoint equality, essential self-adjointness, a spectrum, or a concrete Hamiltonian |
+| `FiniteDimensional/` | source-neutral finite-dimensional algebra, including rectangular reduction bases, retained projectors, reduced-coordinate Hamiltonians, exact two-state spin lifts, Frobenius-optimal spin-independent projection, and standard Pauli residual identities | runtime arrays, eigensolver execution, binary64 error claims, serialized-artifact validity, authored coefficient matrices, time-reversal implementations, and physical interpretation or adequacy |
 
 The reduction-basis module uses `Φ` for the reduced-to-full map, `P = Φ Φᵀ` for the retained
 projector, and reserves `Q = I - P` for the complementary projector. The spin modules use
@@ -74,6 +82,11 @@ reviewed semantic modules ──→ thin Papers instantiations
 TetrahedralSp3 ──→ TetrahedralSp3sStar
        └─────────→ TetrahedralStructureFactors ──→ VoglSp3sStar
 TetrahedralSp3sStar ─────────────────────────────→ VoglSp3sStar
+QuantumMechanics.State ──→ QuantumMechanics.Measurement.FinitePureState
+QuantumMechanics.State ──→ QuantumMechanics.Dirac
+QuantumMechanics.Dirac ──→ QuantumMechanics.RiggedHilbertSpace
+RiggedHilbertSpace ──→ QuantumMechanics.Operator.TestDomain
+TestDomain + future closed/self-adjoint analysis ──→ future generalized spectral statements
 ```
 
 Actual imports must remain narrower than this sketch. No root module should become a catch-all re-export merely because a directory exists.

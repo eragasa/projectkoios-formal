@@ -1,0 +1,90 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Containment in the Maximal Adjoint}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}
+\maketitle
+
+\section{Identity and status}
+ID \texttt{QM-OPERATOR-THM-003}; status \texttt{proved; no admissions}.
+Owning module: \path{ProjectKoios/QuantumMechanics/Operator/TestDomain.lean}.
+Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.testSpaceOperator_le_adjoint}}.
+
+\section{Exact mathematical statement}
+Let $i:\Phi\to\mathcal H$ be the injective dense inclusion of a
+\texttt{RiggedHilbertSpaceCore}. Let $A,B:\Phi\to\Phi$ be complex linear maps satisfying
+\[
+  \langle i(A\phi),i\psi\rangle
+  =\langle i\phi,i(B\psi)\rangle
+  \qquad(\phi,\psi\in\Phi).
+\]
+For the induced densely defined partial operators $T_A$ and $T_B$ on $\mathcal H$, one has
+\[
+  T_B\leq T_A^{\dagger},
+\]
+where $T_A^{\dagger}$ is Mathlib's maximal adjoint partial operator and $\leq$ is partial-operator
+extension order.
+
+\section{Source, assumptions, and statement delta}
+This is a source-neutral consequence of Mathlib's adjoint API. The test-space inner-product
+identity is supplied as a hypothesis. Dense domain follows from the declared dense inclusion. The
+statement is containment only: it does not say $T_B=T_A^{\dagger}$, $T_A=T_A^{\dagger}$, or that
+either operator is closed, closable, symmetric, essentially self-adjoint, or self-adjoint.
+
+\section{Prior art and contribution boundary}
+A formally adjoint operator on a dense domain is contained in the corresponding maximal adjoint;
+this is standard operator theory and is implemented by Mathlib. The repository contribution is the
+rigged-test-space specialization and explicit scope boundary, not a novelty claim.
+
+\section{Proof schematic}
+\[
+\begin{aligned}
+&\mathcal D(T_A)\text{ dense},\\
+&\langle T_Ax,y\rangle=\langle x,T_By\rangle
+  \quad(x\in\mathcal D(T_A),\ y\in\mathcal D(T_B))
+\\[2pt]
+&\hspace{38mm}\Longrightarrow\quad T_B\leq T_A^{\dagger}.
+\end{aligned}
+\]
+The first premise is \texttt{QM-OPERATOR-THM-001}; the second is
+\texttt{QM-OPERATOR-THM-002}.
+
+\section{Human-readable proof}
+The supplied test-space identity lifts to a formal-adjoint relation between $T_A$ and $T_B$.
+The domain of $T_A$ is dense because it is the range of the dense test-space inclusion. By the
+maximal property of the adjoint partial operator, every $y$ in the domain of $T_B$ satisfies the
+adjoint-domain condition for $T_A$, and $T_A^{\dagger}y=T_By$. Therefore $T_B$ is a restriction of
+$T_A^{\dagger}$.
+
+\section{Lean realization and library dependencies}
+The proof applies Mathlib's \path{LinearPMap.IsFormalAdjoint.le_adjoint} to
+\path{isFormalAdjoint_testSpaceOperator}, discharging its density premise with
+\path{testSpaceOperator_dense_domain}. The adjoint is Mathlib's existing maximal adjoint; no local
+substitute is defined.
+
+\section{Trusted base, automation, and toolchain}
+The declaration is kernel checked with Lean \texttt{v4.35.0} and Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679}. The recorded \texttt{\#print axioms} result is
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}. There are no admissions or
+repository-owned scientific axioms. AI assistance contributed to proof discovery, Lean
+implementation, and exposition; no independent expert review is recorded.
+
+\section{Evidence and applicability boundary}
+Containment can be strict. Upgrading it requires separate domain and analytic arguments. This
+theorem supplies no equality of adjoints, closure theorem, self-adjoint Hamiltonian, spectral
+measure, generalized-eigenvector completeness, numerical certificate, or physical applicability.
+
+\section{Unresolved questions and revision history}
+Conditions for closability, equality with the maximal adjoint, symmetry, and self-adjointness remain
+open and must be stated separately. Initial proof and dossier completed 2026-10-20.
+\end{document}
