@@ -53,7 +53,7 @@ through the package root.
 
 | Directory | Intended ownership | Explicit exclusions |
 |---|---|---|
-| `ProjectKoios/SolidState/FiniteLattice/` | normalized finite-character folding, cell-major block supercells, exact finite Bloch-fiber diagonalization, and coordinate/alignment/energy-shift/defect route algebra | runtime Fourier matrices, representative-selection code, hopping truncations, numerical eigenspectra, tolerances, serialized evidence, and physical applicability |
+| `ProjectKoios/SolidState/FiniteLattice/` | normalized finite-character folding, cell-major block supercells, exact finite Bloch-fiber diagonalization, coordinate/alignment/energy-shift/defect route algebra, and finite scalar/Bargmann/matrix gauge-loop invariance | runtime Fourier or overlap matrices, representative/loop/sewing selection, hopping truncations, phase unwrapping, numerical eigenspectra, Chern integrality, continuum topology, Wannier90 execution, tolerances, serialized evidence, and physical applicability |
 | `ProjectKoios/SolidState/TightBinding/` | exact tetrahedral `sp³` and `sp³s⋆` basis transforms, exact bond-phase structure factors, abstract nearest-neighbor parameter slots, structural zeros, and Hermitian block assembly | accepted empirical parameter values, numerical eigenspectra, Python/runtime validation, DFT or Wannier evidence, material adequacy, novelty, and publication claims |
 
 The cyclic one-dimensional specialization uses `ZMod N`. General finite-abelian declarations are
@@ -80,6 +80,7 @@ Bloch + reviewed measure/regularity contracts ──→ later Hilbert section sp
 Foundations + Fourier ──→ later SpecialFunctions
 QuantumMechanics/FiniteDimensional/SpinEmbedding ──→ SolidState/FiniteLattice route identities
 Mathlib finite-character and matrix APIs ──→ SolidState/FiniteLattice folding
+Mathlib units, unitary groups, inner products, and determinants ──→ SolidState/FiniteLattice gauge loops
 reviewed semantic modules ──→ thin Papers instantiations
 
 TetrahedralSp3 ──→ TetrahedralSp3sStar

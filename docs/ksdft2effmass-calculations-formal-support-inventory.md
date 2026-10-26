@@ -359,22 +359,25 @@ runtimes, memory observations, or accepted result bytes.
 **Owners:** `calculations/research-monograph/periodic-1d/` and `periodic-2d/`.
 
 **Existing support:** finite Fourier/Hermitian identities, sewing contracts, rank-two
-rotation, and the local projection/nonlocality counterexample already cover part of the
-exact layer.
+rotation, and the local projection/nonlocality counterexample cover part of the exact
+layer. The finite gauge-loop slice now additionally proves:
 
-**High-value topology additions:**
+- pointwise unit-valued link transformations cancel internally along ordered paths;
+- closed products transform by basepoint conjugation and are invariant for commutative links;
+- oriented four-edge plaquettes are invariant under scalar pointwise gauge changes;
+- Bargmann overlap products and their principal complex arguments are independent of
+  pointwise unit-modulus state phases;
+- matrix Wilson products transform by conjugation under pointwise unitary frame changes; and
+- determinants of those finite Wilson products are gauge invariant.
 
-- normalized scalar link phases and closed plaquette products are invariant under
-  pointwise `U(1)` gauge changes;
-- projector Bargmann loop products are independent of eigenvector phase choices;
-- non-Abelian Wilson products transform by conjugation under periodic frame changes;
-- determinant Wilson phases are gauge invariant; and
-- separable Kronecker-sum spectra and degenerate projectors satisfy the declared exact
-  product identities.
+**Remaining high-value exact addition:** separable Kronecker-sum spectra and degenerate projectors
+satisfy the declared product identities. A direct trace-of-projector-product crosswalk to the
+Bargmann product may be added only after its normalization and ordering convention is frozen.
 
 A general Chern integrality or Wannier-obstruction theorem is a separate, much larger
-analytic project. It must not be replaced by proving only finite-mesh gauge invariance.
-External Wannier90 convergence, native parsing, optimized spreads, and hopping tails
+analytic project. It must not be replaced by the proved finite-mesh gauge invariance.
+External overlap construction, loop orientation, boundary sewing, phase unwrapping, Wilson
+eigenphase extraction, Wannier90 convergence, native parsing, optimized spreads, and hopping tails
 remain runtime/numerical evidence.
 
 ### 14. Continuum-refinement and optimizer-basin packages
@@ -427,8 +430,8 @@ material adequacy, or silicon validation.
    supports the rank-N and composite-band programs.
 4. **Review and checkpoint the implemented rank-one resolvent defect algebra.** Keep root
    uniqueness deferred until spectral-order hypotheses are explicit.
-5. **Add finite lattice-gauge loop invariance.** Keep it separate from Chern integrality
-   and general Wannier obstruction.
+5. **Review and checkpoint the implemented finite lattice-gauge loop invariance.** Keep its exact
+   finite algebra separate from Chern integrality and general Wannier obstruction.
 6. **Only then add calculation-specific certificate bridges.** Require frozen exact
    schemas and preserve the producer/verifier/Formal boundaries.
 

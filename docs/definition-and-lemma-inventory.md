@@ -19,6 +19,7 @@ This inventory records both implemented first-slice declarations and future sear
 | Finite rank-one resolvent algebra | conjugated outer products, complex rank-one updates, scalar resolvent denominator, determinant factorization, exact singularity criterion, Sherman--Morrison inverse, attractive-sign secular equation, Hermitian specialization, and resolvent-constructed eigenvector equation | source-neutral finite algebra motivated by the impurity-defect-1D analytical-oracle calculation | `QM-RESOLVENT-DEF-001` through `QM-RESOLVENT-DEF-008` implemented and `QM-RESOLVENT-THM-001` through `QM-RESOLVENT-THM-014` proved; root existence/uniqueness, numerical root-finding, runtime arrays, spectra, retained evidence, and physical-defect applicability remain external | `QuantumMechanics/FiniteDimensional` |
 | Finite spin embeddings, projection, and Pauli residuals | two-state lift `A ⊗ₖ I₂`, spin injections and pullbacks, partial spin trace, exact Frobenius-optimal half-trace projection, fixed points, Pythagorean and uniqueness results, standard Pauli channels, Hermiticity, and exact collinear/general residual powers | source-neutral algebra motivated by the impurity-spin-spaces calculation | `QM-SPIN-DEF-001` through `QM-SPIN-DEF-003`, `QM-SPIN-PROJECTION-DEF-001` through `QM-SPIN-PROJECTION-DEF-004`, and `QM-SPIN-PAULI-DEF-001` through `QM-SPIN-PAULI-DEF-005` implemented; `QM-SPIN-THM-001` through `QM-SPIN-THM-014`, `QM-SPIN-PROJECTION-THM-001` through `QM-SPIN-PROJECTION-THM-019`, and `QM-SPIN-PAULI-THM-001` through `QM-SPIN-PAULI-THM-017` proved; authored coefficient matrices, runtime values, spin-frame rotations, time reversal, spectra, and physical adequacy remain external | `QuantumMechanics/FiniteDimensional` |
 | Finite block folding and extraction-route commutativity | normalized finite-character folding, orbital-block lift, unit-modulus row phases, finite block-hopping supercells, exact Bloch-fiber block diagonalization, coordinate pullbacks, energy-reference correction, defect subtraction, and spin-lift commutativity | source-neutral algebra motivated by the matched and independent-route impurity-defect-1D protocols | `SS-FOLDING-DEF-001` through `SS-FOLDING-DEF-009` and `SS-ROUTE-DEF-001` through `SS-ROUTE-DEF-002` implemented; `SS-FOLDING-THM-001` through `SS-FOLDING-THM-016` and `SS-ROUTE-THM-001` through `SS-ROUTE-THM-010` proved; runtime Fourier matrices, twist representatives, authored hopping blocks, truncation inventories, tolerances, spectra, and artifact bindings remain external | `SolidState/FiniteLattice` |
+| Finite lattice-gauge loops | ordered link paths, endpoint covariance, closed-loop conjugation, commutative loop and plaquette invariance, Bargmann-product and principal-phase invariance, matrix Wilson conjugation, and determinant invariance | source-neutral exact algebra motivated by the immutable periodic-1D/2D protocols | `SS-GAUGE-DEF-001` through `SS-GAUGE-DEF-012` implemented and `SS-GAUGE-THM-001` through `SS-GAUGE-THM-011` proved; runtime overlap matrices, loop construction, sewing selection, phase unwrapping, eigenphase spectra, Chern integrality, continuum topology, Wannier90 execution, numerical meshes, and physical applicability remain external | `SolidState/FiniteLattice` |
 | Rank-two algebra | trace/traceless decomposition for real symmetric `2 × 2` matrices | Ragasa2026a exact loss geometry | complex Hermitian trace centering implemented; real-symmetric specialization unassessed | `BandGauge/Foundations` |
 | Rank-two algebra | real `SO(2)` conjugation, Pauli-coordinate Frobenius pairing, second-harmonic maximum, and canonical half-open maximizing angle | same | implemented as `BG-FOUNDATION-DEF-001` through `BG-FOUNDATION-DEF-009`; proved as `BG-FOUNDATION-THM-001` through `BG-FOUNDATION-THM-007` | `BandGauge/Foundations` |
 | Quadratic geometry | common-curvature loss formulas and ellipse centers/radii | Ragasa2026a | source-specific statement not selected | `BandGauge/Geometry` |
@@ -136,6 +137,25 @@ This inventory records both implemented first-slice declarations and future sear
 - Ownership: abstract exact folding and route algebra belongs under
   `ProjectKoios.SolidState.FiniteLattice`; Python matrices, representative choices, numerical
   tolerances, and retained evidence remain downstream obligations.
+
+## Finite gauge-loop library-search record
+
+- Required signature: an ordered finite path product, pointwise inverse-left/forward-right link
+  action, endpoint cancellation, closed-loop conjugation, scalar/Bargmann invariance, and
+  matrix-Wilson determinant invariance.
+- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
+  `List` recursion supplies the ordered path carrier; `Units` allows invertible gauge values while
+  leaving link values noninvertible; `unitary`, `Unitary.toUnits`, `Matrix.unitaryGroup`, complex
+  inner products, `Complex.arg`, and `Matrix.det_mul` supply the phase, frame, and determinant
+  infrastructure. No inspected declaration packaged the required start-plus-tail loop convention
+  or its endpoint-cancellation theorem.
+- The module introduces only the connecting finite-path and named Bargmann/Wilson definitions. It
+  reuses Mathlib's unitary, inner-product, matrix, determinant, and complex-argument APIs.
+- Physlib was not adopted because pinned Mathlib supplies the exact algebra needed by this slice.
+- Ownership: source-neutral finite link/loop algebra belongs under
+  `ProjectKoios.SolidState.FiniteLattice`; numerical overlap construction, loop orientation,
+  reciprocal sewing, Chern integrality, continuum topology, Wannier90 execution, mesh validity,
+  retained evidence, and physical interpretation remain downstream obligations.
 
 ## Required library-search record
 

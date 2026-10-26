@@ -1,4 +1,5 @@
 module
 
 public import ProjectKoios.SolidState.FiniteLattice.Folding
+public import ProjectKoios.SolidState.FiniteLattice.GaugeLoops
 public import ProjectKoios.SolidState.FiniteLattice.RouteCommutativity

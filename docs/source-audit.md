@@ -239,3 +239,33 @@ does not copy or bind the source matrix, vector, energy interval, coupling, root
 floating-point tolerances, normalization, eigenvalue output, serialized artifacts, or plots. It
 also does not prove existence or uniqueness of a secular root, monotonicity, a bound-state count,
 an infinite-volume statement, or physical applicability.
+
+## Finite periodic gauge-loop inspection
+
+The finite gauge-loop module was motivated by a read-only inspection of immutable periodic
+protocols and a later immutable Wilson-loop utility:
+
+- owner repository: `ksdft2effmass`;
+- worktree: `/Users/eugene/worktrees/ksdft2effmass-source-package-ownership-cleanup`;
+- branch observed at the later inspection: `work/source-package-ownership-cleanup`;
+- later inspected commit: `cf36da4387062c4daad87e6a0d77bf336551be67`;
+- later whole-worktree dirty-state limitation: 1,292 short-status entries;
+- the two historical protocol paths were absent from that later checkout and commit, so their bytes
+  were read with `git show` from immutable commit
+  `25161d7f55c708a464c18ea8d5d0fd6152ff86a6`; and
+- access mode: read-only; no owner file, index, branch, worktree, or configuration was changed.
+
+| SHA-256 | Owner-repository path and immutable revision |
+|---|---|
+| `fa8d0fa13d8e6fc116622e8cd33205903b340f695cda411c75e89ac500fcd1a3` | `calculations/research-monograph/periodic-1d/protocol.md` at `25161d7f…` |
+| `691b54662eedf510e67c059216cc1da6d92a6a349996491c7ce861e280e33df4` | `calculations/research-monograph/periodic-2d/protocol.md` at `25161d7f…` |
+| `36bb668f0268ae8a93dc93021e9d141b2b42401c93cde657feef926d03272429` | `python/src/ksdft2effmass/solidstate/wilson_loops.py` at `cf36da4…` |
+
+The protocols discuss overlap transport, reciprocal sewing, closed holonomy, gauge attacks, and
+finite reciprocal-mesh diagnostics. The later utility compares supplied Wilson-loop eigenphase
+spectra but does not construct overlap matrices, select loop orientation, infer gauge, unwrap
+branches, or establish topology. The Lean module proves only reusable exact finite cancellation,
+conjugation, Bargmann-product/phase invariance, and Wilson-determinant invariance. It does not copy
+or bind runtime arrays, execute the utility, validate eigenphases, certify a mesh, establish Chern
+integrality or continuum topology, prove a Wannier obstruction, execute Wannier90, or establish
+physical applicability.

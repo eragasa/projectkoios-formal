@@ -6,6 +6,7 @@ import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinEmbedding
 import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinIndependentProjection
 import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinPauliResidual
 import ProjectKoios.SolidState.FiniteLattice.Folding
+import ProjectKoios.SolidState.FiniteLattice.GaugeLoops
 import ProjectKoios.SolidState.FiniteLattice.RouteCommutativity
 import ProjectKoios.BandGauge.Geometry.AdmissibleSets
 import ProjectKoios.BandGauge.Geometry.RankTwoLoss
@@ -149,6 +150,17 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.SolidState.FiniteLattice.defectExtraction_folding_commutes
 #print axioms ProjectKoios.SolidState.FiniteLattice.alignedShiftedDefectExtraction_folding_commutes
 #print axioms ProjectKoios.SolidState.FiniteLattice.coordinateChange_spinCoordinateLift
+#print axioms ProjectKoios.SolidState.FiniteLattice.orderedLinkProduct_gaugeTransform
+#print axioms ProjectKoios.SolidState.FiniteLattice.closedLoopProduct_gaugeTransform
+#print axioms ProjectKoios.SolidState.FiniteLattice.closedLoopProduct_gaugeInvariant
+#print axioms ProjectKoios.SolidState.FiniteLattice.orientedPlaquetteProduct_gaugeTransform
+#print axioms ProjectKoios.SolidState.FiniteLattice.orientedPlaquetteProduct_gaugeInvariant
+#print axioms ProjectKoios.SolidState.FiniteLattice.star_phase_eq_gaugeUnit_inv
+#print axioms ProjectKoios.SolidState.FiniteLattice.bargmannLink_phaseGaugeState
+#print axioms ProjectKoios.SolidState.FiniteLattice.bargmannLoopProduct_phaseGaugeState
+#print axioms ProjectKoios.SolidState.FiniteLattice.bargmannLoopPhase_phaseGaugeState
+#print axioms ProjectKoios.SolidState.FiniteLattice.wilsonLoopProduct_unitaryGaugeTransform
+#print axioms ProjectKoios.SolidState.FiniteLattice.wilsonLoopDet_unitaryGaugeInvariant
 #print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_le_edist_of_mem
 #print axioms ProjectKoios.BandGauge.Geometry.admissibleSetEDist_eq_zero_of_mem_inter
 #print axioms ProjectKoios.BandGauge.Geometry.disjoint_of_pos_le_admissibleSetEDist
