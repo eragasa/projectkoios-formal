@@ -37,10 +37,11 @@ an immutable baseline, but some inspected calculation documents were dirty or un
 working-tree bytes. The byte hashes in the final section identify exactly what this
 inventory read; they do not claim that all files belong to commit `25161d7f...`.
 
-## Existing Formal support considered
+## Formal support state at inventory time
 
-The following Formal states were considered separately. They are not silently combined
-into one branch or release.
+The following Formal states were considered separately when this first-pass inventory was
+written. Their statuses are a historical snapshot, not the status of the later consolidation
+branch described below.
 
 | Formal state | Identity and status | Relevant coverage |
 |---|---|---|
@@ -53,6 +54,16 @@ into one branch or release.
 
 A local-only or uncommitted Formal slice is evidence of implemented local work, not a
 published or integrated theorem dependency.
+
+### Subsequent consolidation status
+
+After this inventory, `work/calculation-support-integration` consolidated the clean QHO,
+PIAB1D, FCC--Bain, spin, finite-folding, Vogl, finite-measurement, arbitrary-rank Fourier,
+rank-one resolvent, finite gauge-loop, and projector--Bargmann checkpoints through immutable
+integration checkpoint `e6c9ad895eeb84608eb43292eacffd5d4d552b6e`. This later consolidation
+does not retroactively change the inspection-time table above and does not constitute a release,
+publication, or scientific-evidence promotion. The projection/nonlocality slice remains outside
+the consolidated branch.
 
 ## Calculation-family assessment
 
@@ -424,23 +435,22 @@ Formal cannot establish QE/Wannier90 execution, pseudopotential accuracy, cutoff
 convergence, valley location, numerical eigenspectra, Table 1 transcription accuracy,
 material adequacy, or silicon validation.
 
-## Recommended order
+## Recommended order and current disposition
 
-1. **Integrate existing clean QHO, PIAB1D, and FCC--Bain checkpoints before duplicating
-   them.** Rebase/review is an integration task, not new theorem work.
-2. **Review the completed spin and finite-folding slices before integration.** Their abstract
-   algebra is complete for the bounded scope; source-specific runtime and evidence bindings remain
-   deliberately external.
-3. **Generalize unitary/Fourier invariance from rank two to arbitrary finite rank.** This
-   supports the rank-N and composite-band programs.
-4. **Review and checkpoint the implemented rank-one resolvent defect algebra.** Keep root
-   uniqueness deferred until spectral-order hypotheses are explicit.
-5. **Review and checkpoint the implemented finite lattice-gauge loop invariance.** Keep its exact
-   finite algebra separate from Chern integrality and general Wannier obstruction.
-6. **Review and checkpoint the projector/Bargmann trace crosswalk.** Preserve its explicit
-   normalization and ordering premises and do not treat it as mesh or topology validation.
-7. **Only then add calculation-specific certificate bridges.** Require frozen exact
-   schemas and preserve the producer/verifier/Formal boundaries.
+1. **Completed on the consolidation branch:** integrate the clean QHO, PIAB1D, and FCC--Bain
+   checkpoints without duplicating their theorem families.
+2. **Completed on the consolidation branch:** review and integrate the spin and finite-folding
+   slices while keeping source-specific runtime and evidence bindings external.
+3. **Completed on the consolidation branch:** generalize fixed-unitary Fourier invariance from
+   rank two to arbitrary finite rank.
+4. **Completed on the consolidation branch:** review and checkpoint the conditional rank-one
+   resolvent defect algebra; root existence and uniqueness remain deferred.
+5. **Completed on the consolidation branch:** review and checkpoint finite lattice-gauge loop
+   invariance without claiming Chern integrality or a general Wannier obstruction.
+6. **Completed on the consolidation branch:** review and checkpoint the projector--Bargmann trace
+   crosswalk with explicit normalization and ordering premises.
+7. **Next candidate:** add a calculation-specific certificate bridge only after selecting a frozen
+   exact schema and preserving the producer/verifier/Formal boundaries.
 
 ## Nonclaims and explicit deferrals
 

@@ -109,8 +109,9 @@ inspection of an actively restructured owner worktree:
 | `85dd2b11225278194aedce6346cfb93ec6358e0c5df8a4009ff0567bb0b833ed` | `calculations/piab1d/input.json` | illustrative calculation parameters only |
 | `fdc708803ccb2f3eb44ab9d5c4b3608fb49ce5b00177e219669d9666df5703db` | `calculations/piab1d/protocol.md` | interpretation and authority boundaries |
 
-These hashes make the dirty inspection reproducible but do not upgrade those bytes to immutable
-source authority. The Lean theorems do not accept the retained JSON, binary64 arrays, eigensolver
+These hashes fingerprint the dirty bytes that were inspected, but they do not make those bytes
+recoverable, immutable, or independently reproducible and do not upgrade them to source authority.
+The Lean theorems do not accept the retained JSON, binary64 arrays, eigensolver
 output, observed convergence orders, or plots. The exponential, scalar-twisted/PBC, and
 odd-extension layers are deliberately more general than the current PIAB1D calculation. They prove
 source-neutral finite real-space boundary algebra; they are not inferred from the dirty runtime

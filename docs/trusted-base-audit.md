@@ -27,6 +27,7 @@ Physlib is not a dependency. Its bounded compatibility probe is documented separ
 | Dependency identity | `./scripts/check-pins.py` | declared Mathlib and resolved Lake revisions are immutable commit IDs |
 | Build | `lake build` | repository targets elaborate and compile with the selected toolchain |
 | Text admission scan | `./scripts/audit.sh` | repository-owned Lean sources contain no scanned admission markers |
+| Manifest/audit coverage | `python3 scripts/check-audit-coverage.py` (invoked by `./scripts/audit.sh`) | every theorem or lemma marked `proved; no admissions` has one named `#print axioms` report |
 | Named axiom report | `#print axioms` in `ProjectKoios/Audit.lean` | dependencies of the named declarations as reported by Lean |
 | Manifest review | compare `docs/theorem-manifest.md` with Lean sources | reported theorem status matches declarations that actually exist |
 | Crosswalk review | compare source revision, statement, and assumptions | formal declaration has not silently changed the publication claim |

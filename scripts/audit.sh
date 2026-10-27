@@ -8,6 +8,7 @@ if rg -n --glob '*.lean' '\b(sorry|admit|axiom)\b' ProjectKoios ProjectKoios.lea
   exit 1
 fi
 
+python3 scripts/check-audit-coverage.py
 lake env lean ProjectKoios/Audit.lean
 
 echo "audit passed: no admitted declaration markers in repository-owned Lean sources"
