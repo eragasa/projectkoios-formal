@@ -1,162 +1,103 @@
 # Formalization roadmap
 
-This roadmap orders future work by mathematical dependency. It is not an authorization to implement a theorem, adopt a dependency, execute a scientific calculation, or claim a paper complete.
+This roadmap orders work by dependency. It does not authorize implementation, execution, publication, or scientific claims.
 
-## R0 — documentation and layout
+## R0 — repository contract
 
-**Completed startup scope.** Establish authority boundaries, conventions, provenance, theorem planning, trusted-base policy, the horizontal ecosystem relationship, the bounded agent workflow, and documentation-only module folders. The no-theorem condition below describes the R0 checkpoint; later R1 work has now added two foundational declarations.
+Status: complete.
 
-Exit evidence:
+- Authority and evidence boundaries.
+- Source and dependency identity.
+- Module ownership and conventions.
+- Theorem manifest, trusted-base audit, and bounded agent workflow.
 
-- documentation links resolve;
-- planned entries remain distinct from Lean declarations;
-- pin, build, and admission/axiom audits pass; and
-- no scientific theorem count changes.
+## R1 — finite foundations
 
-## Optional tooling track — read-only and non-gating
+Status: substantially implemented.
 
-Candidate Lean skills, language-server bridges, MCP servers, and proof-search wrappers may be evaluated from authoritative sources at immutable revisions. The deferred candidate list currently records `leanprover/skills` and `cameronfreer/lean4-skills` for later consideration without adoption. An evaluation records license, toolchain compatibility, commands, data access, mutation behavior, and limitations before adoption.
+- Metric admissible-set geometry.
+- Pointwise Bloch sewing and finite rank-two samples.
+- Hilbert-ball and weighted Frobenius geometry.
+- Rank-two fields, spectral decomposition, and correlation optimization.
 
-Agent tooling is not part of the logical trusted base, does not replace the repository checks, and must not block statement selection or foundational proof work. Repository-owned configuration or dependency adoption requires separate review.
+Open:
 
-## R1 — statement selection and finite foundations
+- periodic-potential construction;
+- quotient-torus and regularity contracts;
+- concrete publication-data binding; and
+- accepted literature identities.
 
-Candidate work:
+## R2 — rank-two witnesses and certificates
 
-- review exact definitions of finite support, admissible sets, witnesses, and set distance;
-- inventory existing Mathlib/Physlib APIs without adopting Physlib implicitly;
-- select one exact source theorem and record its assumption delta;
-- identify applicable References-owned canonical identities and exact source locators without creating a duplicate bibliography; and
-- record namespace and declaration names before encoding.
+Status: exact scalar geometry and one source construction implemented.
 
-- `BG-PLAN-001`: declaration IDs and statuses are listed in `theorem-manifest.md`. Concrete paper loss formulas and certificate data remain open.
-- `BG-BLOCH-PLAN-001`: pointwise unitary sewing, sewn sections/operators, alignment pullback, an abstract periodic rank-two finite-sample interface, trace centering, and unitary common-power/correlation bridges and Hermiticity preservation are implemented. Construction from a periodic potential, quotient-torus, continuity/measurability, Hilbert-section, and integration contracts remain open.
-- `BG-HILBERT-PLAN-001`: exact two-ball geometry, finite rank-two weighted Frobenius algebra, operator and spectral residual expansions, and equalities with both reduced scalar losses are implemented. The Bloch layer supplies abstract sampled-parent infrastructure, and the Paper A module conditionally instantiates the exact operator fields, a canonical exact finite Hermitian spectral diagonalization, and a canonically extracted exact Pauli-coordinate correlation harmonic with continuous maximum. Construction from a periodic potential and binding to concrete publication data remain open.
+- Reduced spectral and operator losses.
+- Ellipse intersection and exact distance.
+- Candidate-rectangle containment transfer.
+- Rational-center, center-interval, and joint curvature-correlation checkers.
+- Exact Paper A two-observation construction and degenerate-curvature regression.
 
-## R2 — finite witness and rank-two algebra
+Open:
 
-Candidate theorem families:
+- runtime parser and artifact binding;
+- calculated four-state-parent certificate;
+- periodic-potential construction; and
+- structured perturbation results beyond scalar boxes.
 
-1. witness and certified-separation bookkeeping for explicitly stated metric-space assumptions;
-2. rank-two exact loss geometry under the source's real-rotation and positivity assumptions;
-3. finite/discrete Fourier residual–locality identities; and
-4. an explicit spectral-projection support-loss example.
+## R2.5 — finite Fourier and decisions
 
-`BG-PLAN-002` now includes reduced scalar squared and real losses, normalized correlation, irreducible-floor and nonnegativity bounds, below-floor emptiness, square-root recovery, threshold equivalence, the operator radius, explicit ellipse conditions, the exact full-plane intersection criterion and Euclidean distance, explicit containment-based transfer to a closed candidate rectangle, the generic finite weighted Frobenius correlation inequality `|b| ≤ κ`, operator and spectral residual-to-scalar-loss bridges, abstract periodic sampled-parent infrastructure, conditional exact Paper A operator and canonical spectral-field bridges, and canonical exact Pauli extraction, continuous correlation-harmonic optimization with a canonical half-open maximizing angle, the reduced matrix-loss bridge centered at `μmax`, canonical full-plane/candidate-rectangle admissible-set intersection and distance specializations, exact rational-center, correlation-interval, and joint `(κ, μmax)` enclosure certificate checkers for witness/containment/separation, an exact enclosure of `1 / √2`, and conditional bridges from accepted certificates to the canonical finite fields. The exact two-observation construction proves its field-derived `κ` and `μmax`, checks one analytic certificate, and regression-tests the joint checker at `κ ∈ [1,1]`. Construction from a periodic potential, concrete runtime publication-data and parser binding, and a calculated four-state-parent certificate remain open.
+Status: generic foundations implemented.
 
-Each declaration requires a source crosswalk and named axiom report.
+- Finite reconstruction, inversion, Parseval, residual tails, Hermitian pairing, and fixed-unitary equivariance.
+- Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
+- First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.
+- Exact Boolean dominance, threshold, and nondominated-mask checks.
 
-## R2.5 — finite spectral bridge and exhaustive fidelity decisions
+Open:
 
-The proposed architecture and its authority boundaries are recorded in
-[`BandGauge/higher-rank-composite-band-formalization-plan.md`](BandGauge/higher-rank-composite-band-formalization-plan.md).
-It follows Paper 3's committed synthetic ambient-parent, retained-reference, internal-gauge,
-alignment, finite-Fourier, and support-truncation protocol. A later low-eigenpair or Wannier90
-extension is kept separate because the current D1 protocol supplies analytic frames and explicitly
-does not execute Wannier90.
-
-Dependency-ordered candidate work:
-
-1. sewing-compatible aligned-difference closure, Hermiticity, and frame-consistent loss semantics;
-2. exact ambient-parent compression, retained-projector, and internal-gauge equivalence;
-3. exact P0 inverse-gauge recovery and the reviewed full-rank pointwise alignment consequence;
-4. finite Fourier inversion, Parseval, full-minus-truncated hopping-tail, error-decomposition,
-   and Hermitian perturbation identities;
-5. per-alignment finite support/operator/spectral objective tables and Pareto soundness and
-   completeness under weak improvement with one strict improvement; and
-6. outward-rounded interval objective tables with explicit rank, depth, alignment, support, and
-   momentum-mesh coverage.
-
-The semantic finite-decision foundation is now implemented as `BG-DECISION-DEF-001`
-through `BG-DECISION-DEF-011` and `BG-DECISION-THM-001` through
-`BG-DECISION-THM-016`. It proves weak-all/strict-any dominance properties, finite
-existence of efficient weak improvers, Pareto sufficiency for coordinatewise threshold
-feasibility, feasibility monotonicity, minimum-cost attainment, minimum-cost
-antitonicity under relaxed thresholds, an exhaustive logical two-channel outcome
-classification, and existence and uniqueness of a first-passing common cutoff after
-checking every earlier declared inventory member. Exact Boolean dominance, threshold,
-and nondominated-mask checks and
-their soundness/completeness bridges are also implemented as `BG-CERT-DEF-014` through
-`BG-CERT-DEF-016` and `BG-CERT-THM-010` through `BG-CERT-THM-012`. Concrete Paper B/C
-objective tables, interval comparison semantics, external inventory/mesh coverage, parser
-binding, and retained evidence remain open.
-
-The finite Fourier foundation is implemented as `BG-FOURIER-DEF-001` through
-`BG-FOURIER-DEF-015` and `BG-FOURIER-THM-001` through `BG-FOURIER-THM-032`. The
-convention-neutral layer proves exact support restriction, retained/omitted decomposition,
-the full-minus-truncated finite tail identity, complex-linear-map commutation, and
-antitonicity of omitted nonnegative weight under support enlargement. A separate explicit
-finite-abelian specialization uses conjugated-character coefficients normalized by
-`1 / |G|`, unconjugated-character reconstruction, and proves both transform directions,
-inner-product and power Parseval, coefficient-power decomposition, and the exact equality
-between full-minus-truncated reconstructed Hilbert power and `|G|` times omitted coefficient
-power. Negative-mode/conjugate-transpose pairing, its preservation under negation-closed
-truncation, and Hermiticity of the resulting reconstruction are also proved. The
-unweighted entrywise matrix Frobenius Parseval and residual-tail identities are now exact.
-For constant weights, the exact rank-two coefficient `weight/(2Eref²)` is bridged to the
-matrix identity; uniform averaging cancels the transform cardinality and leaves
-`1/(2Eref²)` exactly. `PKF-BG-EVIDENCE-CONTRACT/1` now freezes the publication-evidence
-policy: concrete evaluation weights must be determined a priori by normalized counting,
-geometric-cell, moment-exact, or certified optimized quadrature rules, and every support
-must declare its semantic class. Nonuniform weighted Parseval, concrete weight derivation,
-physical shell membership, publication-mesh identification, and external source binding
-remain open.
-
-A common `τ_E`/`τ_O` intersection, minimum-cost threshold surface, approximate eigenpair binding,
-and Wannier90 witness layer are later separately reviewed extensions, not statements already
-selected by the D1 protocol. The first concrete instance must use an immutable owner revision and a
-declared finite mesh. It may establish only a bounded finite-domain result. Unequal-rank
-compression, gap-dependent subspace perturbation, and continuum Brillouin-zone claims remain later
-separately reviewed work.
+- aligned-difference closure and retained compression;
+- physical support and publication-mesh bindings;
+- nonuniform weighted Parseval;
+- interval objective tables and external coverage;
+- concrete Paper B/C tables; and
+- runtime-bound cutoff inventories and later Wannier90 layers.
 
 ## R3 — continuum Fourier analysis
 
-Candidate work:
+Status: deferred.
 
-- quotient-torus or fundamental-domain representation compatible with the pointwise sewing contract;
-- torus measure and Fourier normalization;
-- Parseval/Plancherel specialization;
-- relation between onsite projection, global alignment, and nonzero Fourier weight; and
-- precise hypotheses connecting finite and continuum statements.
+- Torus representation and measure.
+- Continuum normalization and Parseval.
+- Finite-to-continuum hypotheses.
+- Projection/alignment/locality consequences.
 
-Discrete results must not be promoted to continuum results by analogy.
+Finite results must not be promoted by analogy.
 
-## R4 — special functions and tail bounds
+## R4 — special functions and tails
 
-Candidate work:
+Status: deferred until Fourier conventions are fixed.
 
-- Jacobi–Anger expansions;
-- Bessel coefficient identities;
-- shell-resolved Fourier coefficients; and
-- factorial or constrained-series tail bounds.
-
-This stage follows, rather than precedes, the finite and continuum convention work.
+- Jacobi--Anger expansions.
+- Bessel identities.
+- Shell coefficients.
+- Factorial or constrained-series bounds.
 
 ## R5 — publication instantiation
 
-Thin paper modules may instantiate reviewed foundational theorems, after which the publication crosswalk can name exact Lean declarations. Paper A now has conditional exact-center, correlation-interval, and joint `(κ, μmax)` enclosure bridges plus one checked exact analytic certificate, its exact positive admissible-set distance, and its separation-resolution corollary for the two-observation construction. No retained runtime-data binding, parser binding, calculated four-state-parent certificate, or material validation is present. Paper status remains separate from formal theorem status, numerical evidence status, and publication authorization.
+Status: Paper A has conditional bridges and one exact analytic construction; Papers B/C remain placeholders.
 
-The proposed publication narratives are recorded in
-[`BandGauge/Papers/ragasa-series-research-plan.md`](BandGauge/Papers/ragasa-series-research-plan.md),
-with detailed plans for
-[Paper A](BandGauge/Papers/Ragasa2026A/paper-and-proof-plan.md),
-[Paper B](BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md),
-[Paper C](BandGauge/Papers/Ragasa2026C/paper-and-proof-plan.md), and a
-[planning-only Paper D](BandGauge/Papers/Ragasa2026D/paper-and-proof-plan.md).
-Paper A also has a
-[diagnostic-usefulness study](BandGauge/Papers/Ragasa2026A/diagnostic-usefulness-study-plan.md)
-with a completed immutable producer-field audit and still-prospective calibration,
-ablation, cost, and held-out phases. These paper narratives do not determine formal module ownership: reusable proofs are
-organized by mathematical semantics, and publication modules remain thin source-specific
-consumers. Paper D has no audited source or Lean namespace and remains planning-only until
-the owner repository establishes both.
+- Keep reusable theorems in semantic modules.
+- Keep runtime evidence, source fidelity, formal status, applicability, and publication status separate.
+- Create Paper D only after an audited owner protocol exists.
+
+Detailed plans are under `docs/BandGauge/Papers/`.
 
 ## Stop conditions
 
-Stop and request review when:
+Stop for review when:
 
-- the source theorem or proof assumptions are ambiguous;
-- a proposed statement changes rank, dimension, scalar field, domain, or alignment family;
-- a required dependency lacks an immutable compatible revision;
-- numerical data would need to be treated as exact without a checker boundary; or
-- work would require modifying an owner repository or performing a protected action.
+- the source statement or assumptions are ambiguous;
+- rank, dimension, scalar field, domain, or alignment family would change;
+- a dependency lacks an immutable compatible revision;
+- approximate data would be treated as exact without a checker; or
+- work requires an owner-repository mutation or protected action.

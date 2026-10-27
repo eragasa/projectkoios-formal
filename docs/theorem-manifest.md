@@ -1,6 +1,11 @@
 # Theorem manifest
 
-Current repository status. Only the first table inventories declarations that exist in Lean.
+This is the authoritative declaration and proof-status ledger.
+
+- The first table contains declarations that exist in Lean.
+- Later planning tables do not create declarations.
+- `proved` requires Lean acceptance without admissions and a named axiom report.
+- Proof status does not imply source fidelity, applicability, novelty, evidence acceptance, or publication status.
 
 | Statement ID | Lean declaration | Kind | Proof status | Scientific content | Assumptions / authorities |
 |---|---|---|---|---|---|

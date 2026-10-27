@@ -1,45 +1,49 @@
 # Project Koios Formal
 
-**Author and maintainer:** Eugene Joseph M. Ragasa
-**License:** Apache License, Version 2.0 (`Apache-2.0`)
+This repository is the Lean verification sidecar for Project Koios.
 
-Minimal Lean/Lake harness for reusable Project Koios formalization.
+- Maintainer: Eugene Joseph M. Ragasa
+- License: Apache-2.0
 
-- Lake package: `ProjectKoiosFormal`
-- harness namespace: `ProjectKoios.Formal`
-- initial scientific namespace: `ProjectKoios.BandGauge`
+- Package: `ProjectKoiosFormal`
+- Harness namespace: `ProjectKoios.Formal`
+- Initial scientific namespace: `ProjectKoios.BandGauge`
 
-The tree contains a non-scientific smoke theorem, proved reusable foundations, a semantic finite-decision/Pareto layer with exact Boolean checks, convention-neutral finite reconstruction/support truncation, exact finite-abelian inversion, Parseval and residual-tail identities, source-neutral quantum state, finite measurement, typed Dirac, rigged-Hilbert-space-core, dense test-domain partial-operator, finite-dimensional, and finite-difference declarations, partial conditional Ragasa2026A rank-two field, spectral, correlation-harmonic, optimized admissible-set geometry, exact scalar-enclosure certificate-binding bridges, one exact checked source-specific analytic false-positive construction, one narrow exact PhysKit FCC--Bain integer-matrix crosswalk, finite-lattice folding/route/gauge-loop and projector–Bargmann crosswalk algebra, and publication-independent exact tetrahedral `sp³`/`sp³s⋆` tight-binding algebra. The other publication modules remain metadata-only placeholders. Exact IDs and statuses live only in [`docs/theorem-manifest.md`](docs/theorem-manifest.md). None of these exact declarations is runtime evidence, a calculated material result, material validation, a release, or publication completion.
+## Authority
 
-## Authority boundaries
+Each evidence class has a separate authority boundary.
 
-1. **Exact formal proof:** a proposition and proof term accepted by the pinned Lean kernel. Only declarations listed as proved in `docs/theorem-manifest.md` have this status.
-2. **Exact checked certificate:** external data checked by a specified exact Lean verifier whose soundness boundary is explicit. No such certificate exists here yet.
-3. **Numerical evidence:** sampled or floating-point output. It may motivate a statement but does not discharge a Lean proposition by itself.
-4. **Calculator/runtime authority:** external programs own their execution and outputs. Their success is neither a kernel proof nor scientific validation.
+- `docs/theorem-manifest.md` is the declaration and proof-status ledger.
+- Lean proves only encoded propositions under explicit assumptions.
+- Checked certificates prove only their checker conclusions.
+- Numerical and runtime evidence remain external unless an explicit exact bridge binds them.
+- Compilation does not establish source fidelity, scientific validity, novelty, release, or publication status.
 
-## Documentation
+## Layout
 
-Start with [`docs/README.md`](docs/README.md). It indexes the authority and evidence contract, source/dependency audits, conventions, theorem planning, trusted-base policy, certificate vocabulary, and gated roadmap.
+Semantic directories separate reusable mathematics from crosswalks.
 
-Human-readable, statement-specific proof explanations and prior-art records live under [`proofs/`](proofs/README.md), one LaTeX dossier per publication-facing declaration; the current dossiers are drafts. A compiled dossier is supplementary explanation; Lean and the theorem manifest remain authoritative for proof status.
+- `ProjectKoios/BandGauge/`: reusable band-gauge mathematics and thin paper crosswalks.
+- `ProjectKoios/QuantumMechanics/`: source-neutral quantum mathematics and controlled models.
+- `ProjectKoios/SolidState/`: finite-lattice and tight-binding algebra.
+- `ProjectKoios/Crosswalks/`: narrow immutable-source constant bridges.
+- `docs/`: policy, provenance, manifests, crosswalks, and plans.
+- `proofs/`: one human-readable dossier per publication-facing statement.
+- `papers/`: non-authoritative working syntheses.
 
-An umbrella [`Ragasa claim-family formalization working paper`](papers/ragasa-formalization-working-paper.tex) supplies the cross-claim narrative and status matrix. It is an incomplete synthesis, not a proof authority, source-publication replacement, release, or claim that all families are already formalized; see [`papers/README.md`](papers/README.md).
+See `docs/README.md` for the documentation index.
 
-The folders under `ProjectKoios/BandGauge/` reserve narrow ownership boundaries for foundations, geometry, finite decisions, exact certificate checking, Fourier analysis, projection, special functions, and thin paper crosswalks. `ProjectKoios/Crosswalks/` is reserved for separately authorized, immutable-source-specific computational crosswalks and does not mirror owner package trees. `ProjectKoios/QuantumMechanics/` owns source-neutral state, measurement, Dirac, rigged-space, dense test-domain partial-operator, finite-dimensional, finite-difference, QHO, and PIAB algebra. `ProjectKoios/SolidState/` separately owns reusable exact solid-state algebra. A folder README does not establish a Lean API or a completed theorem; implemented modules must be listed in the theorem manifest.
+## Promotion checks
 
-## Checks
+Run once for each exact candidate tree.
 
 ```console
-lake update
 ./scripts/check-pins.py
 lake build
 ./scripts/audit.sh
 ```
 
-`lake-manifest.json` is tracked; `.lake/` is ignored. Documentation additions must not change theorem totals unless corresponding Lean declarations and audits exist.
-
-## License
-
-Repository-authored work is made available under the Apache License, Version 2.0. See
-[`LICENSE`](LICENSE). External dependencies retain their own licenses and notices.
+- Reuse `.lake` and immutable dependency materialization.
+- Run `lake update` only for intentional dependency changes.
+- Do not rebuild after staging, committing, or merging a byte-identical tree.
+- Keep `lake-manifest.json` tracked and `.lake/` ignored.

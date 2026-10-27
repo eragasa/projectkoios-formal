@@ -1,229 +1,119 @@
 # Ragasa2026B paper and proof plan
 
-**Author:** Eugene Joseph M. Ragasa
-**License:** Apache License, Version 2.0 (`Apache-2.0`)
-**Initial document completed:** 2026-10-19
+This plan defines the unimplemented Paper B program.
 
-## Status
+- Author: Eugene Joseph M. Ragasa
+- License: Apache-2.0
+- Initial document completed: 2026-10-19
 
-This document records a proposed scientific, computational, and formalization program for
-Ragasa2026B. It is not publication prose, a Lean theorem declaration, a retained objective
-table, a checked Pareto certificate, publication authorization, or a claim that the paper
-is complete.
+This is a proposed program. The Paper B Lean namespace is a zero-statement metadata placeholder.
 
-The Paper B Lean namespace remains a zero-statement metadata placeholder. Declaration
-status is controlled by
-[`../../../theorem-manifest.md`](../../../theorem-manifest.md).
+## Source
 
-## Source identity
+The plan uses one immutable publication directory.
 
-The crosswalked owner source is:
+- Repository: `ksdft2effmass`
+- Branch: `work/paper-3-higher-rank-extension`
+- Commit: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`
+- Path: `docs/publications/papers/Ragasa2026b/v2`
 
-- repository: `ksdft2effmass`;
-- branch: `work/paper-3-higher-rank-extension`;
-- commit: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`;
-- path: `docs/publications/papers/Ragasa2026b/v2`.
+Version 2 states that it preserves the relevant version 1 mathematics and scope. Exact hashes and dirty-state limits are in `docs/source-audit.md`.
 
-Version 2 states that it preserves the relevant version 1 mathematics and scope. Exact
-source hashes and later dirty-state limitations are recorded in
-[`../../../source-audit.md`](../../../source-audit.md).
+## Thesis
 
-## Proposed paper thesis
+Spectral projection can turn a finite-range parent into a nonlocal reduced model. The cost of controlling that nonlocality depends on dimension, amplitude, symmetry, and the admissible complete-shell hierarchy.
 
-> Spectral projection can transform a finite-range parent into a nonlocal reduced model.
-> The representation cost required to control this nonlocality depends on dimension,
-> amplitude, symmetry, and the admissible complete-shell hierarchy.
+## Required analytic claims
 
-Paper B should explain why locality is lost and quantify the finite support required to
-recover declared operator and spectral tolerances.
+Seven claim families define the analytic scope.
 
-## Analytic scope
+- Explicit destruction of finite hopping support by spectral projection.
+- Multidimensional flat-parent residual/locality identity.
+- Shell-resolved Fourier coefficients.
+- Factorial or constrained-series tail bound.
+- Monotonicity and a small-amplitude dimension law.
+- Bond-orbit comparator.
+- Complete-shell tail certificate.
 
-The publication-facing analytic claim family comprises:
-
-- an explicit example in which spectral projection destroys finite hopping support;
-- a multidimensional flat-parent residual/locality identity;
-- shell-resolved Fourier coefficients;
-- a factorial or constrained-series Fourier-tail bound;
-- monotonicity and a small-amplitude dimension law;
-- a bond-orbit flat-parent comparator; and
-- a complete-shell tail certificate.
-
-Each statement must retain its exact dimension, flat-parent, amplitude, support, symmetry,
-and convergence hypotheses.
+Each theorem must retain its exact dimension, parent, amplitude, support, symmetry, and convergence hypotheses.
 
 ## Finite decision object
 
-For each attainable shell–scale decision `d`, retain
+For each declared shell--scale decision `d`, retain:
 
 \[
-  C(d)=N_{\mathrm{blocks}}(d),
-  \qquad
-  H(d)=\varepsilon_H(d),
-  \qquad
-  E(d)=\varepsilon_E(d).
+C(d)=N_{\mathrm{blocks}}(d),\qquad
+H(d)=\varepsilon_H(d),\qquad
+E(d)=\varepsilon_E(d),\qquad
+\text{admissible}(d).
 \]
 
-The primary sampled object is the finite set
+The decisive object is the complete finite table over all admissible decisions.
 
-\[
-  \{(C(d),H(d),E(d)):d\in D\},
-\]
+- Dominance is weak-all and strict-any.
+- Threshold feasibility is `E ≤ τ_E` and `H ≤ τ_H`.
+- Minimum feasible cost is relative to the complete declared table.
+- A common witness must satisfy both channels at one decision.
+- Dropped, failed, or silently filtered cases invalidate exhaustiveness.
 
-not a continuum surface fitted through it.
+## Attainability and support boundaries
 
-Use minimization dominance:
+Keep the following objects distinct:
 
-\[
-  d_1\prec d_2
-\]
-
-when `d₁` weakly improves all declared objectives and strictly improves at least one.
-The nondominated mask must refer to attainable decisions, not independently minimized
-coordinate envelopes.
-
-## Attainability and visualization boundary
-
-The paper must keep distinct:
-
-1. a sampled attainable decision;
-2. a sampled nondominated decision;
-3. a componentwise lower envelope whose coordinates may come from different decisions;
-4. a triangulated visualization; and
+1. sampled attainable decisions;
+2. sampled nondominated decisions;
+3. componentwise envelopes whose coordinates may come from different decisions;
+4. triangulated or smoothed visualizations; and
 5. a continuum Pareto frontier.
 
-Exhaustive finite enumeration establishes only the first two for the declared inventory.
-Plot triangulation does not establish interpolation, convexity, attainability, or a
-continuum result.
+Exhaustive finite enumeration establishes only the first two for the declared inventory. Plot interpolation, convexification, and tessellation do not establish attainability or a continuum result.
 
-Discrete support shells also produce genuine stepped behavior. Shell indices must not be
-smoothed into a continuous representation cost.
+Support inventories must be finite, inversion closed, symmetry complete, and nested where claimed. Equal-radius ties must not be split, and discrete shell costs must not be presented as continuous. Evaluation weights must be fixed a priori or by a separately certified rule. Graphene- and silicon-inspired controls remain inspired comparators unless independently bound to material parameters.
 
-## Scientific evidence required
+## Formal support
 
-A retained Paper B result requires:
+Implemented reusable support:
 
-1. immutable definitions of every parent/control model;
-2. a frozen finite scale inventory;
-3. complete inversion- and symmetry-closed shell inventories;
-4. construction and withheld momentum meshes;
-5. evaluation weights fixed by an a-priori or certified optimized quadrature rule;
-6. objective values for every declared decision;
-7. an independently checked nondominated mask;
-8. mesh, scale-grid, and shell-cap refinement;
-9. resolution rules for claimed dimension or model differences; and
-10. provenance and outward-rounded uncertainty where exact evaluation is unavailable.
+- finite Fourier reconstruction and residual tails;
+- matrix Frobenius Parseval;
+- finite dominance, efficiency, feasibility, and minimum-cost theorems;
+- exact finite Pareto checkers; and
+- rank-two spectral/operator loss geometry.
 
-Square and simple-cubic systems may be exact mathematical controls. Graphene- and
-silicon-inspired controls remain inspired controls unless an independent material
-parameter binding is established. Every retained table must satisfy
-[`../../publication-evidence-contract.md`](../../publication-evidence-contract.md),
-including explicit support semantics and fail-closed rejection of arbitrary or post-hoc
-evaluation weights.
+Missing support:
 
-## Semantically organized proof dependencies
+- source-specific spectral projection and support-destruction theorem;
+- special-function coefficient and tail theorems;
+- complete-shell encoding;
+- exact objective-table schema and external coverage proof; and
+- retained production evidence.
 
-Proofs are organized by mathematical meaning, not under a Paper B theorem hierarchy:
+## Certificate requirements
 
-| Semantic module family | Required content |
-|---|---|
-| `Projection/` | spectral projection, retained compression, and explicit finite-support loss examples |
-| `Fourier/` | multidimensional conventions, coefficient support, Parseval, truncation, and complete shells |
-| `SpecialFunctions/` | Jacobi–Anger/Bessel identities and analytic tail estimates where source-required |
-| `Hilbert/` | Frobenius residual/locality identities and exact normalizations |
-| `Geometry/` | threshold-admissible sets where metric geometry is needed |
-| `Decision/` | finite dominance, Pareto efficiency, threshold feasibility, and minimum cost |
-| `Certificates/` | interval objective tables, exhaustive coverage, and Pareto-mask soundness |
+A publication package must include:
 
-Paper B should consume these results through a source crosswalk or thin instantiation. A
-Fourier, projection, or finite-order theorem must not be duplicated or renamed merely to
-make it Paper B-specific.
+1. frozen case and decision enumeration;
+2. exact or outward-rounded objectives;
+3. explicit failed-case dispositions;
+4. strict parser and schema;
+5. producer and independent verifier;
+6. retained hashes and provenance;
+7. exact coverage proof for the declared decision space; and
+8. Lean-checked Pareto and threshold conclusions.
 
-## Required theorem families
+Plots and interpolated landscapes are derived views, not the decision record.
 
-### Projection and locality
+## Work order
 
-Prove, under the exact source hypotheses, that the selected spectral projection may have
-nonzero Fourier coefficients beyond the finite support of the parent.
+The work starts with statement and support conventions.
 
-### Residual/locality identity
+1. Freeze the exact paper statements and support convention.
+2. Formalize projection-induced nonlocality in a reusable module.
+3. Prove the source coefficient and tail bounds.
+4. Freeze the owner-side exhaustive table schema.
+5. Independently verify one retained table.
+6. Add a thin Paper B bridge and dossiers.
 
-Prove the exact equality between the declared operator residual and omitted Fourier or
-hopping weight with all normalization factors explicit.
+## Nonclaims
 
-### Shell coefficients and tail bound
-
-Derive the shell-resolved coefficient formula and its stated factorial or constrained
-series tail. Preserve convergence and shell-cap premises.
-
-### Dimension law
-
-Prove the small-amplitude dimension dependence only on the declared orthogonal
-flat-parent family. Do not generalize it to arbitrary lattices or materials.
-
-### Complete-shell properties
-
-Prove that each support inventory is finite, inversion closed, symmetry complete, and
-nested where nesting is claimed. Equal-radius ties must not be split.
-
-### Finite Pareto classification
-
-For a finite decision set, prove:
-
-- dominance is irreflexive and transitive;
-- every nonempty finite set has a nondominated element;
-- the calculated nondominated mask is sound and complete;
-- duplicate objective vectors do not dominate one another; and
-- any reported minimum-cost feasible decision is attained.
-
-### Interval certificate
-
-Prove that accepted outward-rounded intervals certify every comparison used by the
-nondominated mask. Overlapping intervals must yield unresolved comparisons rather than
-optimistic dominance.
-
-## Relationship to Papers A and C
-
-Paper A supplies the conceptual distinction between spectral and operator fidelity, but
-Paper B must not inherit Paper A's scientific status automatically.
-
-Paper B studies projection-induced locality and dimension. Paper C studies how a
-higher-rank admissible gauge can change that locality. Paper C may use Paper B's analytic
-laws as baselines, but the two papers should not present the same finite decision table as
-independent evidence.
-
-## Proposed manuscript structure
-
-1. **Problem:** finite-range parents need not yield finite-range projected models.
-2. **Analytic construction:** projection and exact Fourier structure.
-3. **Tail theory:** shell coefficients, bounds, monotonicity, and dimension law.
-4. **Finite decisions:** shell/scale inventories and attainable objectives.
-5. **Results:** exact comparators, discrete Pareto sets, and refinement.
-6. **Interpretation:** representation cost and dimensionality.
-7. **Limitations:** finite meshes, inspired controls, bounded inventories, and no
-   continuum conclusion from plots.
-
-Recommended figures are:
-
-- exact or certified tail decay by shell;
-- predicted versus observed tail bounds;
-- minimum support versus tolerance;
-- discrete shell-transition staircases;
-- attainable nondominated points without interpolated authority; and
-- refinement stability across meshes and shell caps.
-
-## Publication-readiness criteria
-
-Ragasa2026B is ready for a scientific-result claim only when:
-
-1. analytic comparators and finite decision definitions are frozen;
-2. every sampled decision is covered by the retained objective table;
-3. the nondominated mask is independently verified;
-4. complete-shell and refinement rules are satisfied prospectively;
-5. visualization is not treated as additional attainable evidence;
-6. inspired controls are not presented as material parametrizations; and
-7. analytic proof, finite numerical evidence, continuum status, and scientific
-   interpretation are reported separately.
-
-The current metadata placeholder and inspected development plots establish none of these
-publication results by themselves.
+No current declaration proves the Paper B thesis, a concrete minimum shell, a complete runtime table, continuum convergence, material applicability, novelty, release, or publication readiness.

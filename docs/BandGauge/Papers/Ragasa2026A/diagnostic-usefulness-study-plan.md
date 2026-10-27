@@ -1,78 +1,53 @@
 # Ragasa2026A diagnostic usefulness study plan
 
-**Author:** Eugene Joseph M. Ragasa
-**License:** Apache License, Version 2.0 (`Apache-2.0`)
-**Initial document completed:** 2026-10-19
-**Producer-field audit completed:** 2026-10-20
+This plan evaluates the meaning and cost of Paper A diagnostics.
 
-## Status
+- Author: Eugene Joseph M. Ragasa
+- License: Apache-2.0
+- Initial document completed: 2026-10-19
+- Producer-field audit completed: 2026-10-20
 
-This is a prospective study plan for the diagnostics used or promised by Ragasa2026A.
-The immutable producer-field availability audit below is complete for the stated owner
-commit; calibration, usefulness, ablation, cost, and held-out studies remain prospective.
-This document is not a numerical result, retained evidence package, theorem inventory,
-authorization to run a protected confirmatory calculation, or claim that any diagnostic
-is useful.
+This plan evaluates the Paper A diagnostics. Only the immutable producer-field availability audit is complete; calibration, ablation, cost, and held-out studies remain prospective.
 
-The source basis is the immutable Paper A v3 claim-and-commitment inventory at owner
-revision `99a46cb59d0c6f27ada7d709f194996ef9619d9f`, especially contracts M01–M15,
-analytic results A01–A12, development results N01–N23, and verification commitments
-V01–V10. Exact source identities and limitations are recorded in
-[`../../../source-audit.md`](../../../source-audit.md).
+- Owner revision: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`.
+- Source inventory: M01–M15, A01–A12, N01–N23, and V01–V10.
+- Exact source limits: `docs/source-audit.md`.
+- This file is not numerical evidence, a theorem inventory, execution authorization, or proof of usefulness.
 
-The purpose is to determine, for every diagnostic:
+## Primary decision
 
-1. what mathematical proposition it checks or estimates;
-2. which scientific or computational failure it can detect;
-3. whether it is necessary, redundant, explanatory, or misleading;
-4. how stable it is under mesh, parameter, and roundoff perturbations;
-5. whether it predicts or certifies a downstream adequacy decision; and
-6. whether its information value justifies its computational and reporting cost.
-
-## Primary decision being supported
-
-The diagnostics should support, but must not be confused with, the final representation
-decision. For candidate representation and cutoff `R_c`, the two principal questions are:
+For one candidate and cutoff `R_c`, evaluate
 
 \[
-  \varepsilon_H(R_c)\le\tau_H,
-  \qquad
-  \varepsilon_E(R_c)\le\tau_E.
+\varepsilon_H(R_c)\le\tau_H,
+\qquad
+\varepsilon_E(R_c)\le\tau_E.
 \]
 
-The same truncated representation must be used in both channels. Diagnostics may:
+The same truncated representation must serve both channels. Diagnostics may gate validity, check identities, certify bounds, explain failures, predict cutoffs, or verify evidence integrity.
 
-- establish that these quantities are meaningful;
-- certify an upper or lower bound;
-- explain a failure;
-- predict a useful cutoff before full evaluation; or
-- check implementation integrity.
+## Roles
 
-A diagnostic is not automatically useful merely because it can be computed accurately.
+Each diagnostic receives one primary role:
 
-## Diagnostic roles
+- premise gate;
+- identity check;
+- certified bound;
+- decision diagnostic;
+- explanatory diagnostic;
+- stability diagnostic;
+- evidence-integrity diagnostic; or
+- presentation-only quantity.
 
-Every diagnostic will be assigned exactly one primary role and any number of secondary
-roles:
-
-- **premise gate** — checks a condition required before downstream quantities are valid;
-- **identity check** — checks an exact algebraic or transform identity;
-- **certified bound** — gives a proved implication for a target quantity;
-- **decision diagnostic** — directly enters a declared pass/fail or minimum-cost rule;
-- **explanatory diagnostic** — helps attribute a result but does not certify it;
-- **stability diagnostic** — measures sensitivity to discretization or implementation;
-- **evidence-integrity diagnostic** — checks coverage, provenance, or independent
-  reconstruction; or
-- **presentation-only quantity** — may aid visualization but carries no decision authority.
-
-A quantity must not move from explanatory to certified status without a theorem or
-checked certificate establishing the implication.
+Explanatory status does not become certified status without a theorem or checked certificate.
 
 # Diagnostic registry
 
-The identifiers below are planning identifiers, not Lean theorem IDs.
+These are planning IDs, not Lean declaration IDs.
 
 ## A. State-space and premise diagnostics
+
+These diagnostics gate retained-subspace validity.
 
 | ID | Diagnostic | Mathematical role | Intended failure detection |
 |---|---|---|---|
@@ -89,6 +64,8 @@ Closure phases are sewing diagnostics only. They have no topological interpretat
 this study.
 
 ## B. Alignment and operator diagnostics
+
+These diagnostics quantify alignment and residual structure.
 
 | ID | Diagnostic | Mathematical role | Intended use |
 |---|---|---|---|
@@ -108,6 +85,8 @@ study object.
 
 ## C. Fourier and locality diagnostics
 
+These diagnostics separate transform, interpolation, and truncation effects.
+
 | ID | Diagnostic | Mathematical role | Intended failure detection or explanation |
 |---|---|---|---|
 | A-DIAG-F01 | conjugate-pairing defect `T(-R)-T(R)†` | Hermitian Fourier identity | sign, indexing, or support-pairing errors |
@@ -125,6 +104,8 @@ Interpolation, truncation, and total errors remain separate. Their scalar norms 
 added as though the matrix errors were independent.
 
 ## D. Spectral and decision diagnostics
+
+These diagnostics support finite threshold decisions.
 
 | ID | Diagnostic | Mathematical role | Intended use |
 |---|---|---|---|
@@ -144,6 +125,8 @@ the exact diagnostic. The study must detect pass/fail re-entry at larger cutoffs
 whether the decision means “first pass” or “all subsequent declared cutoffs pass.”
 
 ## E. Stability and evidence-integrity diagnostics
+
+These diagnostics test robustness and provenance.
 
 | ID | Diagnostic | Mathematical role | Intended use |
 |---|---|---|---|
@@ -231,6 +214,8 @@ formal checking, or scientific applicability.
 
 ### State-space and premise producer fields
 
+The immutable producer exposes the following fields.
+
 | ID | Classification | Immutable producer field or derivation | Audit note |
 |---|---|---|---|
 | A-DIAG-P01 | implemented | `PointDiagnostic.minimum_sampled_external_gap` (`records.py:66`); `continuous_external_gap_lower_bound` at line 67 | Sampled and analytic-lower-bound channels remain distinct. |
@@ -243,6 +228,8 @@ formal checking, or scientific applicability.
 | A-DIAG-P08 | ambiguous | `maximum_parent_hermiticity_defect` and reference/comparison ordinary Fourier Hermiticity defects (`records.py:69,110–111`) | No single field resolves all four requested parent, retained, aligned, and reconstructed stages. |
 
 ### Alignment and operator producer fields
+
+The immutable producer exposes the following alignment fields.
 
 | ID | Classification | Immutable producer field or derivation | Audit note |
 |---|---|---|---|
@@ -257,6 +244,8 @@ formal checking, or scientific applicability.
 | A-DIAG-A09 | ambiguous | `flat_identity_departure` and `flat_residual_tail_identity_defect` (`records.py:122,125`) | Departure is stored, but deformation and cross term are not separately exposed. |
 
 ### Fourier and locality producer fields
+
+The immutable producer exposes the following Fourier fields.
 
 | ID | Classification | Immutable producer field or derivation | Audit note |
 |---|---|---|---|
@@ -273,6 +262,8 @@ formal checking, or scientific applicability.
 
 ### Spectral and decision producer fields
 
+The immutable producer exposes the following decision fields.
+
 | ID | Classification | Immutable producer field or derivation | Audit note |
 |---|---|---|---|
 | A-DIAG-S01 | implemented | `PointDiagnostic.maximum_direct_band_defect` (`records.py:87`) | Complete-field sampled equivalence check. |
@@ -288,6 +279,8 @@ formal checking, or scientific applicability.
 
 ### Stability and evidence-integrity producer fields
 
+The immutable producer exposes the following integrity fields.
+
 | ID | Classification | Immutable producer field or derivation | Audit note |
 |---|---|---|---|
 | A-DIAG-R01 | implemented | change and stability fields in `BandEquivalenceLocalityRefinementPair` (`refinement_records.py:16–33`) | Includes objective, reconstruction, Parseval, final-outcome, and first-passing stability. |
@@ -301,6 +294,8 @@ formal checking, or scientific applicability.
 | A-DIAG-R09 | implemented | `SmoothFourStateAmplitudeValidationResult.maximum_*_defect`, failure count, and disposition (`nonflat_results.py:348–354`) | Validation rejects the interpolant when the prospective targets fail. |
 
 # Mathematical support plan
+
+Six theorem layers support the diagnostic registry.
 
 ## M1. Premise and frame theory
 
@@ -398,6 +393,8 @@ An interval overlapping zero or a threshold is unresolved unless the relevant ex
 identity is established symbolically.
 
 # Computational usefulness test plan
+
+Nine prospective stages test calibration, detection, prediction, and cost.
 
 ## C0. Freeze before evaluation
 
