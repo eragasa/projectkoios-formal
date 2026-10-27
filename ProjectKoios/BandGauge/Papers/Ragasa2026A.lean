@@ -19,9 +19,9 @@ def summary : PublicationFormalizationSummary where
   sourcePath := "docs/publications/papers/Ragasa2026a/v3"
   inspectedRevision := "99a46cb59d0c6f27ada7d709f194996ef9619d9f"
   status := .proved
-  formalStatementCount := 34
+  formalStatementCount := 37
   provedScientificTheoremCount := 3
   checkedCertificateCount := 1
-  warning := "PARTIAL FORMALIZATION ONLY: twenty-eight conditional statements and six exact source-specific construction statements are proved, including the exact separation distance and resolution corollary; one analytic equal-weight certificate is checked. This is not runtime evidence, four-state-parent validation, material validation, or publication completion."
+  warning := "PARTIAL FORMALIZATION ONLY: twenty-nine conditional statements and eight exact source-specific construction statements are proved, including joint kappa-correlation enclosure checking, the exact separation distance, and the resolution corollary; one analytic equal-weight certificate is checked. This is not runtime evidence, four-state-parent validation, material validation, or publication completion."
 
 end ProjectKoios.BandGauge.Papers.Ragasa2026A

@@ -142,13 +142,15 @@ or post-hoc evaluation weights are not eligible.
 - smooth threshold-continuum result;
 - operator-residual/hopping-weight identity;
 - transported-frame covariance and attainment;
-- persistence of strict separation under certified interval perturbations;
-- conservative interval uncertainty for `κ`; and
+- persistence of strict separation under structured field perturbations beyond the
+  checked scalar `(κ, μmax)` box; and
 - binding a concrete immutable artifact to the generic certificate checker.
 
 The current Paper A Lean layer supplies conditional exact mathematics and one checked
 source-specific analytic certificate for the two-observation construction, including its
-exact positive admissible-set distance and separation-resolution corollary. It supplies no
+exact positive admissible-set distance and separation-resolution corollary. The joint
+rational enclosure bridge supports simultaneous uncertainty in `κ` and `μmax`, with the
+exact construction as a degenerate-`κ` regression. It supplies no
 retained runtime certificate, calculated four-state-parent result, material validation, or
 publication completion.
 

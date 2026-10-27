@@ -25,7 +25,7 @@ Authoritative status remains separated as follows:
 - [`roadmap.md`](roadmap.md) records mathematical dependency stages.
 
 The portfolio snapshot below was reviewed against remote `main` merge commit
-`265fb7cb1a0b448cf3d069d4c1de9e5af1a912f8` on 2026-10-27. A later repository state does
+`95a6724ca2472d674fc90d879dd64c7d1c3d4e83` on 2026-10-27. A later repository state does
 not inherit this snapshot automatically.
 
 ## Mission
@@ -126,17 +126,12 @@ active effort requires moving or closing an existing one.
 
 ### Active
 
-#### Exact-certificate readiness audit
+#### Rank-two box-certificate integration
 
-Rank these candidates without implementing a bridge prematurely:
-
-1. rank-one defect analytical oracle;
-2. single-band finite Fourier reduction; and
-3. rank-two separation certificates.
-
-For each candidate require an immutable schema, exact integer or rational inputs, separate
-producer and verifier, retained hashes, and a precise mapping to an existing Lean proposition.
-If none qualifies, record blockers rather than manufacturing a weaker boundary.
+Clean-port the reviewed joint `(κ, μmax)` box checker and Paper A bridge from the preserved
+old-base topic. Keep its exact rational checker, soundness theorems, source-specific regression,
+current audit coverage, proof-dossier disclosures, and runtime nonclaims together. Do not add or
+imply a KSD runtime wire, retained runtime artifact, or independently checked scientific result.
 
 #### Portfolio maintenance
 
@@ -145,14 +140,11 @@ inventories, source hashes, or detailed paper plans into this file.
 
 ### Ready for bounded review
 
-1. **Rank-two box certificates:** `work/rank-two-kappa-mu-enclosure` contains a checkpointed
-   old-base candidate. It requires rebase, source review, the current audit-coverage gate, and a
-   fresh promotion review before integration.
-2. **Finite first-passing cutoffs:** extract `FiniteCutoff.lean` and its direct manifest, audit,
+1. **Finite first-passing cutoffs:** extract `FiniteCutoff.lean` and its direct manifest, audit,
    documentation, and dossier changes from the dirty primary checkout into one clean topic.
-3. **Rank-two spectral perturbation:** extract `RankTwoSpectralPerturbation.lean` separately;
+2. **Rank-two spectral perturbation:** extract `RankTwoSpectralPerturbation.lean` separately;
    do not combine it with cutoff semantics or diagnostic-interface design.
-4. **Paper A diagnostic specification:** review the mathematical and Python-interface documents
+3. **Paper A diagnostic specification:** review the mathematical and Python-interface documents
    as owner-side schema recommendations, not runtime implementation or accepted evidence.
 
 ### Blocked
@@ -177,6 +169,11 @@ inventories, source hashes, or detailed paper plans into this file.
 - branch or worktree deletion until separately authorized.
 
 ### Completed on main
+
+The exact-certificate readiness audit, coordinated read-only with the KSD owner, ranked the
+narrow Paper A rank-two box bridge first, the finite Mathieu1D Fourier bridge second, and the
+rank-one analytical oracle third. This ranking is a planning result, not a checked artifact or
+scientific-evidence promotion.
 
 The merged calculation-support tranche includes:
 

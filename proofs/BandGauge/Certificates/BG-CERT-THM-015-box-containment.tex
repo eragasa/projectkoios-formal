@@ -1,0 +1,25 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Uniform Joint-Enclosure Containment}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-015}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{fullEllipses_subset_boxCandidateRectangle_of_check_eq_true}}.
+\section{Exact statement}
+For every real $(\kappa,\mu)$ in the checked rational box, the full spectral and operator
+ellipses lie inside the encoded candidate rectangle.
+\section{Proof and boundary}
+Lower curvature controls the largest scale widths. Lower curvature and upper correlation
+control the largest operator radius, while the correlation endpoints control the operator
+center range. Exact squared inequalities yield coordinate bounds for every point of both
+ellipses. The theorem checks only the declared scalar box and rectangle. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and kernel-checked;
+no independent expert review recorded.
+\end{document}
