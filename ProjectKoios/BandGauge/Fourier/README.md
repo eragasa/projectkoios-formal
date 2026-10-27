@@ -7,7 +7,7 @@ Initial document completed: 2026-10-19
 
 # BandGauge Fourier analysis
 
-This directory owns exact finite Fourier, support, truncation, Parseval, and fixed-unitary equivariance results.
+This directory owns exact finite Fourier, support, truncation, Parseval, fixed-unitary equivariance, and pointwise-gauge boundary results.
 
 - `FiniteReconstruction.lean`: reconstruction with an explicit caller-supplied kernel, support truncation, and exact tail decomposition; it selects no Fourier convention.
 - `FiniteAbelianTransform.lean`: conjugated-character forward transform with normalization `1 / |G|` and finite inversion.
@@ -16,13 +16,16 @@ This directory owns exact finite Fourier, support, truncation, Parseval, and fix
 - `MatrixFrobenius.lean`: entrywise matrix Parseval and the analogous exact Frobenius residual-tail equality.
 - `RankTwoWeightedBridge.lean`: constant weight `weight / (2 Eref²)` and the uniform specialization in which `|G|` cancels.
 - `UnitaryEquivariance.lean`: Frobenius invariance and Fourier commutation for one fixed finite-rank unitary.
+- `PointwiseGauge.lean`: character-phase mode shifts, trivial scalar-operator conjugation, pointwise matrix conjugation, coefficient separation, and pointwise Frobenius invariance.
 
 ## Boundaries
 
 Every specialization must freeze its convention.
 
 - Every specialization must state sign, normalization, index group, support rule, and finite or continuum domain.
-- A momentum-dependent gauge generally mixes Fourier modes; fixed-unitary results do not cover it.
+- Character multiplication of a vector field shifts mode labels; it is not scalar-operator conjugation.
+- Scalar rank-one operator conjugation is pointwise trivial and is not a gauge-locality effect.
+- A momentum-dependent higher-rank gauge that changes the field changes at least one coefficient, but the current results do not provide a general convolution or support formula.
 - Uniform weights do not replace nonuniform quadrature.
 - Concrete weights and supports must satisfy `docs/BandGauge/publication-evidence-contract.md`.
 - The modules do not identify a generic finite group with a publication mesh or certify Wannier90, runtime arrays, continuum convergence, or physical locality.

@@ -151,7 +151,7 @@ Each declared support gives one attainable cost/operator/spectral objective poin
 
 ## Implemented support
 
-Current reusable modules cover finite sewing, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, and route identities.
+Current reusable modules cover finite sewing, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, and route identities.
 
 They do not bind the owner protocol's runtime arrays or prove its case coverage.
 

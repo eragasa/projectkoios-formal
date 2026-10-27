@@ -1,0 +1,24 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-27
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Character-Phase Fourier Mode Shift}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-THM-048}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.}}\\
+{\tiny\path{finiteFourierCoefficient_characterPhaseMultiply}}.
+\section{Statement and proof}
+For the normalized conjugated-character forward transform, multiplying a vector-valued
+field by character $p$ sends the coefficient at $m$ to the original coefficient at
+$m-p$. Pointwise character subtraction and unit-modulus conjugation reduce each summand.
+\section{Boundary}
+This is a state/vector action and one pure-character mode shift, not scalar operator
+conjugation or a general pointwise-gauge convolution theorem. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and kernel-checked;
+no independent expert review recorded.
+\end{document}

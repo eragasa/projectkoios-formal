@@ -27,6 +27,7 @@ import ProjectKoios.BandGauge.Fourier.HermitianPairing
 import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
 import ProjectKoios.BandGauge.Fourier.RankTwoWeightedBridge
 import ProjectKoios.BandGauge.Fourier.UnitaryEquivariance
+import ProjectKoios.BandGauge.Fourier.PointwiseGauge
 import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Certificates.IntervalDecision
 import ProjectKoios.BandGauge.Certificates.RankTwoSeparationBox
@@ -301,6 +302,13 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.truncateCoefficients_fixedUnitaryConjugation
 #print axioms ProjectKoios.BandGauge.Fourier.truncatedFiniteFourierReconstruction_fixedUnitaryConjugation
 #print axioms ProjectKoios.BandGauge.Fourier.finiteFourierTruncationResidual_fixedUnitaryConjugation
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierCoefficient_characterPhaseMultiply
+#print axioms ProjectKoios.BandGauge.Fourier.scalarPhaseConjugation_eq
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierCoefficient_scalarPhaseConjugation
+#print axioms ProjectKoios.BandGauge.Fourier.exists_finiteFourierCoefficient_ne_of_ne
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseUnitaryConjugation_const
+#print axioms ProjectKoios.BandGauge.Fourier.exists_finiteFourierCoefficient_pointwiseUnitaryConjugation_ne
+#print axioms ProjectKoios.BandGauge.Fourier.weightedFiniteMatrixFrobeniusPower_pointwiseUnitaryConjugation
 #print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff
