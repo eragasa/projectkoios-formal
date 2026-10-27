@@ -1,0 +1,29 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\title{Proof Dossier: Modular FCC--Bain Mutual Inverses}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{PKF-PHYSKIT-THM-004}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.Crosswalks.PhysKit.bainToFccModMap_mutualInverse}}.
+\section{Statement}
+For every positive natural modulus $n$, map the two exact integer matrices entrywise into
+$\mathbb Z/n\mathbb Z$ and let them act on three-component column coordinates. The resulting
+Bain-to-FCC and FCC-to-Bain maps are left and right inverses.
+\section{Proof}
+Entrywise reduction is a ring homomorphism, so it preserves both matrix products.
+By \texttt{PKF-PHYSKIT-THM-001/002}, the two integer products are identity matrices.
+Associativity of matrix-vector multiplication therefore makes both compositions the
+identity on $(\mathbb Z/n\mathbb Z)^3$.
+\section{Source and boundary}
+The constants come from PhysKit commit
+\path{7157dcedd0d220673d443c1c025e35a6fd1ffa7a}. This theorem concerns mathematical
+quotient rings. It does not claim that arbitrary \texttt{numpy.int64} batch multiplication
+avoids overflow. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked. No independent expert
+review is recorded.
+\end{document}

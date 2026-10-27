@@ -207,10 +207,37 @@ Current draft dossiers:
 - [`BG-FOURIER-THM-028-matrix-frobenius-residual-tail.tex`](BandGauge/Fourier/BG-FOURIER-THM-028-matrix-frobenius-residual-tail.tex);
 - [`BG-FOURIER-THM-029-constant-weight-frobenius-bridge.tex`](BandGauge/Fourier/BG-FOURIER-THM-029-constant-weight-frobenius-bridge.tex);
 - [`BG-FOURIER-THM-030-weighted-residual-tail.tex`](BandGauge/Fourier/BG-FOURIER-THM-030-weighted-residual-tail.tex);
-- [`BG-FOURIER-THM-031-uniform-weight-positive.tex`](BandGauge/Fourier/BG-FOURIER-THM-031-uniform-weight-positive.tex); and
-- [`BG-FOURIER-THM-032-uniform-paper-normalization.tex`](BandGauge/Fourier/BG-FOURIER-THM-032-uniform-paper-normalization.tex).
+- [`BG-FOURIER-THM-031-uniform-weight-positive.tex`](BandGauge/Fourier/BG-FOURIER-THM-031-uniform-weight-positive.tex);
+- [`BG-FOURIER-THM-032-uniform-paper-normalization.tex`](BandGauge/Fourier/BG-FOURIER-THM-032-uniform-paper-normalization.tex);
+- [`PKF-PHYSKIT-THM-001-forward-inverse-product.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-001-forward-inverse-product.tex);
+- [`PKF-PHYSKIT-THM-002-inverse-forward-product.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-002-inverse-forward-product.tex);
+- [`PKF-PHYSKIT-THM-003-determinant-one.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-003-determinant-one.tex);
+- [`PKF-PHYSKIT-THM-004-modular-mutual-inverses.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-004-modular-mutual-inverses.tex);
+- [`PKF-PHYSKIT-THM-005-positive-modulus-bijection.tex`](Crosswalks/PhysKit/PKF-PHYSKIT-THM-005-positive-modulus-bijection.tex);
+- [`QM-MEASUREMENT-THM-001-probability-normalization.tex`](QuantumMechanics/Measurement/QM-MEASUREMENT-THM-001-probability-normalization.tex);
+- [`QM-MEASUREMENT-THM-002-global-phase-invariance.tex`](QuantumMechanics/Measurement/QM-MEASUREMENT-THM-002-global-phase-invariance.tex);
+- [`QM-MEASUREMENT-THM-003-post-measurement-normalization.tex`](QuantumMechanics/Measurement/QM-MEASUREMENT-THM-003-post-measurement-normalization.tex);
+- [`QM-DIRAC-THM-001-rank-one-projector-idempotent.tex`](QuantumMechanics/Dirac/QM-DIRAC-THM-001-rank-one-projector-idempotent.tex);
+- [`QM-DIRAC-THM-002-rank-one-projector-self-adjoint.tex`](QuantumMechanics/Dirac/QM-DIRAC-THM-002-rank-one-projector-self-adjoint.tex);
+- [`QM-RIGGED-THM-001-generalized-bra-injective.tex`](QuantumMechanics/RiggedHilbertSpace/QM-RIGGED-THM-001-generalized-bra-injective.tex);
+- [`QM-RIGGED-THM-002-generalized-ket-injective.tex`](QuantumMechanics/RiggedHilbertSpace/QM-RIGGED-THM-002-generalized-ket-injective.tex);
+- [`QM-OPERATOR-THM-001-dense-test-domain.tex`](QuantumMechanics/Operator/QM-OPERATOR-THM-001-dense-test-domain.tex);
+- [`QM-OPERATOR-THM-002-formal-adjoint-lift.tex`](QuantumMechanics/Operator/QM-OPERATOR-THM-002-formal-adjoint-lift.tex); and
+- [`QM-OPERATOR-THM-003-adjoint-containment.tex`](QuantumMechanics/Operator/QM-OPERATOR-THM-003-adjoint-containment.tex).
 
 Each dossier records its statement ID and the status listed in `docs/theorem-manifest.md`. The `BG-BLOCH-THM-003` through `BG-BLOCH-THM-006` dossiers document standard supporting trace and unitary-invariance infrastructure; they are not paper-contribution or novelty claims. `BG-BLOCH-THM-007/008` are source-normalized bridge specializations; `BG-BLOCH-THM-009--011` are standard Hermiticity infrastructure. None carries a claim that the underlying standard algebra is novel. The files remain draft and unreleased; accepted literature identities and scientific instantiation remain unresolved. `template.tex` remains a template, not a claim.
+
+Harmonic-oscillator dossiers:
+
+- [`QHO-LADDER-THM-001-finite-ladder-commutator-defect.tex`](QuantumMechanics/HarmonicOscillator/QHO-LADDER-THM-001-finite-ladder-commutator-defect.tex);
+- [`QHO-HERMITE-THM-001-physicists-hermite-differential-equation.tex`](QuantumMechanics/HarmonicOscillator/QHO-HERMITE-THM-001-physicists-hermite-differential-equation.tex);
+- [`QHO-HERMITE-THM-002-hermite-gaussian-eigenfunction.tex`](QuantumMechanics/HarmonicOscillator/QHO-HERMITE-THM-002-hermite-gaussian-eigenfunction.tex);
+- [`QHO-TRUNCATION-THM-001-compression-multiplication-defect.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-001-compression-multiplication-defect.tex);
+- [`QHO-TRUNCATION-THM-002-truncated-ladder-hamiltonian-boundary-defect.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-002-truncated-ladder-hamiltonian-boundary-defect.tex);
+- [`QHO-TRUNCATION-THM-003-truncated-ladder-hamiltonian-inequality.tex`](QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-003-truncated-ladder-hamiltonian-inequality.tex);
+- [`QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex`](QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex);
+- [`QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex`](QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex); and
+- [`PIAB1D-SPECTRUM-THM-015-canonical-mode-cosine-eigenpair.tex`](QuantumMechanics/Piab1d/PIAB1D-SPECTRUM-THM-015-canonical-mode-cosine-eigenpair.tex).
 
 ## Organizing principle
 

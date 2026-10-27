@@ -60,6 +60,24 @@ namespace, or promote schema-free development output to retained evidence.
 
 Paper 3 remains pre-results for the new higher-rank campaign: the selected D1 P0/G0 protocol has no implementation, run, result, retained evidence package, submission, or publication asserted by the source. Its exact prose certificates do not establish numerical convergence, locality, or scientific acceptance.
 
+## Controlled model systems — not publication claims
+
+The QHO1D and PIAB1D modules are exact, source-neutral controlled-model mathematics motivated by
+the owner repository's calculation packages. They are not mapped to a Ragasa2026 publication
+claim. For PIAB1D, the formalized tranche covers compression algebra, additive decomposition
+nonuniqueness, finite Frobenius model-class fits, the centered Dirichlet stencil, cyclic corner
+support, scalar-twisted and PBC matrices, unit-circle Hermiticity, doubled-cycle odd extension,
+periodic-to-Dirichlet operator restriction and exact Dirichlet/PBC mode identification, complex translation characters, antisymmetric/sine-normalized
+Dirichlet modes, canonical phases `exp(i kπ/(N+1))`, real representability, and the exact finite-matrix eigenvalue
+`2-2 cos(kπ/(N+1))`. The source-neutral finite-difference layer also contains symbolic
+constant-potential characters, determinant-one transfer matrices, finite left/barrier/right
+piecewise-constant recurrence, and exact character-amplitude/interface-state matching results. These barrier declarations are
+methodology infrastructure, not an adopted PIAB1D or Ragasa-series claim. See
+`docs/source-audit.md` for the dirty-worktree crosswalk limitation. No retained numerical result,
+observed convergence order, runtime eigensolver claim, continuum spectral completeness claim,
+constrained scattering-amplitude solution, flux probability, scattering coefficient,
+infinite-barrier limit, novelty claim, or publication status follows.
+
 ## Series planning beyond the current crosswalk
 
 The proposed division of Ragasa2026A–D is recorded in

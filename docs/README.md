@@ -6,6 +6,7 @@ This directory records the formalization contract, provenance, planning state, a
 
 - [`theorem-manifest.md`](theorem-manifest.md) — declarations that exist in Lean, their proof status, and a clearly separate planning inventory.
 - [`publication-crosswalk.md`](publication-crosswalk.md) — publication statements, source status, assumptions, and current Lean status.
+- [`computational-crosswalk.md`](computational-crosswalk.md) — immutable computational-owner constants and their exact Lean representations, without runtime or scientific status transfer.
 - [`source-audit.md`](source-audit.md) — immutable owner-source identity and cited-byte hashes.
 - [`dependency-audit.md`](dependency-audit.md) — selected Lean/Mathlib pins and the bounded Physlib evaluation.
 - [`trusted-base-audit.md`](trusted-base-audit.md) — trusted-base policy and required admission/axiom checks.
@@ -30,8 +31,16 @@ This directory records the formalization contract, provenance, planning state, a
 ## Planning
 
 - [`module-layout.md`](module-layout.md) — intended semantic ownership of formal source folders.
+- [`ksdft2effmass-calculations-formal-support-inventory.md`](ksdft2effmass-calculations-formal-support-inventory.md) — source-bound first-pass map from calculation contracts to existing theorem support, candidate exact formalizations, and numerical/runtime nonclaims.
 - [`../ProjectKoios/BandGauge/Decision/README.md`](../ProjectKoios/BandGauge/Decision/README.md) — implemented finite dominance, Pareto sufficiency, threshold monotonicity, and minimum-cost semantic layer.
 - [`../ProjectKoios/BandGauge/Fourier/README.md`](../ProjectKoios/BandGauge/Fourier/README.md) — implemented finite reconstruction/truncation, two-sided finite-abelian inversion, Parseval, Hermitian pairing, matrix Frobenius residual-tail identities, and the constant/uniform rank-two `weight/(2Eref²)` bridge.
+- [`../ProjectKoios/QuantumMechanics/HarmonicOscillator/README.md`](../ProjectKoios/QuantumMechanics/HarmonicOscillator/README.md) — exact physicists' Hermite eigenfunction identity, finite ladder boundary algebra, compression leakage, top-state reconstruction distortion, and explicit analytical/numerical authority boundaries.
+- [`../ProjectKoios/QuantumMechanics/FiniteDifference/README.md`](../ProjectKoios/QuantumMechanics/FiniteDifference/README.md) — reusable centered differences, complex lattice translation characters, twisted/PBC finite cycles, doubled-cycle odd extensions, exact finite Dirichlet matrix modes, and symbolic constant-region/finite-barrier transfer and interface-matching algebra.
+- [`../ProjectKoios/QuantumMechanics/FiniteDimensional/README.md`](../ProjectKoios/QuantumMechanics/FiniteDimensional/README.md) — reusable compression, decomposition-identifiability, reduction-basis, finite rank-one resolvent, spin, and Frobenius model-class fitting algebra.
+- [`../ProjectKoios/QuantumMechanics/Piab1d/README.md`](../ProjectKoios/QuantumMechanics/Piab1d/README.md) — concrete PIAB1D finite-difference boundary and exponential-mode specialization.
+- [`../ProjectKoios/SolidState/FiniteLattice/README.md`](../ProjectKoios/SolidState/FiniteLattice/README.md) — exact finite-character block folding, route commutativity, finite scalar/Bargmann/matrix gauge-loop algebra, and the rank-one projector–Bargmann trace crosswalk.
+- [`../ProjectKoios/SolidState/TightBinding/README.md`](../ProjectKoios/SolidState/TightBinding/README.md) — implemented exact tetrahedral `sp³`/`sp³s⋆` transforms, structure-factor identities, and abstract Hermitian Vogl block assembly.
+- [`SolidState/TightBinding/vogl-sp3s-star-formalization.md`](SolidState/TightBinding/vogl-sp3s-star-formalization.md) — exact statement scope, basis convention, library search, source boundary, and nonclaims for the Vogl algebra slice.
 - [`definition-and-lemma-inventory.md`](definition-and-lemma-inventory.md) — concepts and library searches required before theorem encoding.
 - [`BandGauge/Geometry/witness-separation-statement-selection.md`](BandGauge/Geometry/witness-separation-statement-selection.md) — `BG-PLAN-001` source freeze, attribution boundary, Mathlib probe, implemented signatures and remaining work.
 - [`BandGauge/higher-rank-composite-band-formalization-plan.md`](BandGauge/higher-rank-composite-band-formalization-plan.md) — source-audited Paper 3 ambient-parent, retained-reference, gauge-alignment, Fourier-truncation, and finite-Pareto plan, with later threshold and Wannier90 boundaries kept separate.

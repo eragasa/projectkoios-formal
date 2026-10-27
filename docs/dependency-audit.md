@@ -28,6 +28,20 @@ but Physlib is not adopted and importing it solely for the elementary rank-two i
 would violate the current dependency boundary. The local coordinate definitions therefore
 encode only the required standard `2 × 2` convention and are proved directly.
 
+## Mathlib tetrahedral and block-matrix API selection
+
+The solid-state tight-binding slice reuses the pinned Mathlib matrix notation and finite
+matrix multiplication, `Matrix.fromBlocks`, `Matrix.fromBlocks_multiply`, `Matrix.IsHermitian.fromBlocks`, complex conjugate transpose,
+`Complex.normSq`, and `Complex.norm_exp_I_mul_ofReal`. These declarations directly support
+the required finite transforms, bond-phase norm identity, and Hermitian block assembly.
+The explicit four-by-four and five-by-five transforms are model conventions rather than
+missing generic library structures, so they remain local definitions with direct finite
+proofs.
+
+The previously evaluated Physlib orthogonal-matrix helper could express part of the
+change-of-basis argument, but Physlib remains unadopted and would add no required theorem
+to this bounded slice. No dependency pin changed.
+
 ## Bounded Physlib evaluation (not adopted)
 
 Evaluated immutable Physlib revision:

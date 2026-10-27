@@ -1,0 +1,35 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Injectivity of the Hilbert-to-Generalized-Ket Assignment}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{QM-RIGGED-THM-002}; status \texttt{proved}. Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.hilbertToGeneralizedKet_injective}}.
+\section{Exact statement}
+Let $i:\Phi\to\mathcal H$ be the declared continuous injective dense test-space inclusion. The
+assignment
+\[\psi\longmapsto K_\psi,\qquad K_\psi(\phi)=\langle i\phi,\psi\rangle,
+\]
+from $\mathcal H$ to continuous conjugate-linear functionals on $\Phi$ is injective.
+\section{Source and assumptions}
+This is source-neutral functional analysis. The conjugate-linear functional orientation is stated
+explicitly and follows Mathlib's conjugate-linear-first inner product. Nuclearity, concrete test
+functions, and generalized spectral expansions remain outside the statement.
+\section{Proof schematic and proof}
+If $K_\psi=K_\chi$, then $y\mapsto\langle y,\psi\rangle$ and
+$y\mapsto\langle y,\chi\rangle$ agree on the dense image $i(\Phi)$. Both functions are continuous,
+so they agree on all of $\mathcal H$. Nondegeneracy in the left test argument yields
+$\psi=\chi$.
+\section{Lean realization and trusted base}
+The proof uses \path{DenseRange.equalizer} for the flipped inner-product maps and then
+\path{ext_inner_left}. Kernel-reported axioms are \path{propext},
+\path{Classical.choice}, and \path{Quot.sound}; there are no admissions.
+\section{Boundary and review}
+The result identifies Hilbert vectors inside the declared antidual orientation only. It does not
+construct non-Hilbert generalized kets, eigenvectors, or a resolution of the identity. AI-assisted
+and kernel-checked; no independent expert review is recorded.
+\end{document}

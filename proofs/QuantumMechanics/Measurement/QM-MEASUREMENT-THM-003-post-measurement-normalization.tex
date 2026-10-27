@@ -1,0 +1,34 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Positive-Outcome State Normalization}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{QM-MEASUREMENT-THM-003}; status \texttt{proved}. Lean declaration:
+\par\noindent{\scriptsize\path{ProjectKoios.QuantumMechanics.Measurement.norm_postMeasurementState_vector_eq_one}}.
+\section{Exact statement}
+If the defined probability $\lVert M_i\psi\rVert^2$ is strictly positive, the selected updated
+representative
+\[\psi_i=\lVert M_i\psi\rVert^{-1}M_i\psi\]
+has norm one.
+\section{Source and assumptions}
+This is source-neutral normalization mathematics. The strict positivity premise excludes a zero
+operation output. No assertion is made about collapse as a universal physical postulate or about
+measurements outside the declared finite bounded-operation structure.
+\section{Proof schematic and proof}
+Strict positivity implies $M_i\psi\ne0$. A nonzero vector divided by its norm has norm one. The
+constructed value is stored as a \texttt{NormalizedStateVector}, whose normalization field yields
+the exact conclusion.
+\section{Lean realization and trusted base}
+The construction uses Mathlib's \texttt{NormedSpace.normalize}; its proof rejects the zero case by
+contradicting the positive Born weight. The theorem projects the resulting normalization field.
+Kernel-reported axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound};
+there are no admissions.
+\section{Boundary and review}
+No outcome-selection dynamics, probability interpretation beyond the definition, experiment, or
+continuous-spectrum update is established. AI-assisted and kernel-checked; no independent expert
+review is recorded.
+\end{document}

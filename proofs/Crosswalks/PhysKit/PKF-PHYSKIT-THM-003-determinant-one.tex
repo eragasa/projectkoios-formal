@@ -1,0 +1,28 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\title{Proof Dossier: FCC--Bain Determinant One}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{PKF-PHYSKIT-THM-003}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.Crosswalks.PhysKit.bainToFccMatrix_det}}.
+\section{Source and statement}
+PhysKit commit \path{7157dcedd0d220673d443c1c025e35a6fd1ffa7a} declares the exact integer matrix
+\[
+U=\begin{pmatrix}1&1&0\\0&0&1\\0&-1&0\end{pmatrix}
+\]
+and reports determinant one. The Lean theorem states $\det U=1$ over $\mathbb Z$.
+\section{Proof}
+Expanding the $3\times3$ determinant gives
+$1(0\cdot0-1(-1))-1(0\cdot0-1\cdot0)+0=1$.
+Lean uses Mathlib's three-dimensional determinant formula and exact integer normalization.
+\section{Boundary and trust}
+This proves unimodularity of the encoded constant, not agreement of independently supplied
+lattice bases or any physical model. Kernel axioms are \texttt{propext},
+\texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. AI-assisted and
+kernel-checked. No independent expert review is recorded.
+\end{document}

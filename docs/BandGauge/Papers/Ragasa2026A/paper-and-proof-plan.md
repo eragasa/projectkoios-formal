@@ -139,10 +139,11 @@ fail-closed requirements are specified by
 [`../../publication-evidence-contract.md`](../../publication-evidence-contract.md).
 Weights tuned against the reported Paper A losses are not admissible evaluation weights.
 
-The prospective study of every premise, alignment, Fourier, spectral, decision,
-stability, and evidence diagnostic is specified in
-[`diagnostic-usefulness-study-plan.md`](diagnostic-usefulness-study-plan.md). That study
-requires mathematical support, analytic calibration, controlled fault injection,
+The study of every premise, alignment, Fourier, spectral, decision, stability, and
+evidence diagnostic is specified in
+[`diagnostic-usefulness-study-plan.md`](diagnostic-usefulness-study-plan.md). Its
+immutable producer-field audit is complete; the remaining prospective phases require
+mathematical support, analytic calibration, controlled fault injection,
 sensitivity analysis, predictive-value testing, redundancy ablation, cost accounting, and
 a held-out confirmation inventory before any diagnostic is promoted as useful.
 
