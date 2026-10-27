@@ -13,7 +13,7 @@ BandGauge separates reusable algebra from paper bindings.
 | `Geometry/` | admissible sets and rank-two loss geometry | unreviewed rank/scalar generalization |
 | `Hilbert/` | residual balls and weighted Frobenius algebra | replacement by bounded-operator norm |
 | `Alignment/` *(proposed)* | finite-rank gauge actions and reviewed alignment results | Fourier truncation and unequal-rank unitary claims |
-| `Decision/` | finite dominance, feasibility, minimum cost, and outcome classification | continuum frontiers and KKT claims |
+| `Decision/` | finite dominance, feasibility, minimum cost, first-passing cutoffs, and outcome classification | external inventory coverage, continuum frontiers, and KKT claims |
 | `Certificates/` | exact schemas, checkers, and soundness bridges | runtime execution and unbound publication data |
 | `Fourier/` | finite transforms, Parseval, support, truncation, Hermitian pairing, fixed-unitary equivariance | momentum-dependent gauge commutation, mesh identity, Wannier90 |
 | `Projection/` | compression, reconstruction, leakage, and support consequences | conflation with gauge, Fourier, or truncation |

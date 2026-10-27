@@ -50,6 +50,7 @@ Status: generic foundations implemented.
 
 - Finite reconstruction, inversion, Parseval, residual tails, Hermitian pairing, and fixed-unitary equivariance.
 - Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
+- First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.
 - Exact Boolean dominance, threshold, and nondominated-mask checks.
 
 Open:
@@ -59,7 +60,7 @@ Open:
 - nonuniform weighted Parseval;
 - interval objective tables and external coverage;
 - concrete Paper B/C tables; and
-- later common-threshold and Wannier90 layers.
+- runtime-bound cutoff inventories and later Wannier90 layers.
 
 ## R3 — continuum Fourier analysis
 

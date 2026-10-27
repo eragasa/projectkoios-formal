@@ -18,6 +18,7 @@ import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
 import ProjectKoios.BandGauge.Hilbert.SpectralLossBridge
 import ProjectKoios.BandGauge.Decision.FinitePareto
+import ProjectKoios.BandGauge.Decision.FiniteCutoff
 import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
 import ProjectKoios.BandGauge.Fourier.FiniteAbelianTransform
 import ProjectKoios.BandGauge.Fourier.FiniteParseval
@@ -248,6 +249,9 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Decision.exists_minimumFeasibleCost
 #print axioms ProjectKoios.BandGauge.Decision.minimumFeasibleCost_anti_of_relaxed
 #print axioms ProjectKoios.BandGauge.Decision.exists_jointFeasibilityClass_holds
+#print axioms ProjectKoios.BandGauge.Decision.exists_isFirstPassing
+#print axioms ProjectKoios.BandGauge.Decision.isFirstPassing_unique
+#print axioms ProjectKoios.BandGauge.Decision.isFirstJointPassing_iff
 #print axioms ProjectKoios.BandGauge.Fourier.truncateCoefficients_eq_of_mem
 #print axioms ProjectKoios.BandGauge.Fourier.truncateCoefficients_eq_zero_of_not_mem
 #print axioms ProjectKoios.BandGauge.Fourier.truncatedReconstruction_eq_sum
