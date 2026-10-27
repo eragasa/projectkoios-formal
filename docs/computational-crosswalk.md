@@ -5,45 +5,41 @@ Author: Eugene Joseph M. Ragasa
 Initial document completed: 2026-10-20
 -->
 
-# Computational-owner source crosswalk
+# PhysKit FCC--Bain crosswalk
 
-This crosswalk records immutable computational source constants that have explicit Lean
-representations. It does not make the owner implementation a formal dependency, verify
-runtime execution, or transfer scientific authority into this repository.
+This record binds immutable PhysKit constants to exact Lean declarations. It does not verify Python execution or transfer scientific authority.
 
-## PhysKit `FccBainCoordinateBridge3D`
+## Source
 
-- Owner repository: `projectkoios-physkit`
-- Immutable commit: `7157dcedd0d220673d443c1c025e35a6fd1ffa7a`
-- Immutable tree: `49889a01edcee57742efca568ef4ee68c9dd2bfa`
-- Source path:
-  `src/python/projectkoios/physkit/periodic/lattice/bain/bridge.py`
-- Source locators: class declaration line 16; `n_F = U n_B` convention line 25;
-  fixed matrices lines 42--49; determinant property lines 68--70; integer maps lines 72--80
-- Source-byte SHA-256:
-  `8bc4e9f0c957899a9b9c14ab75ece4aa8c82945ecb6524f0c1ecbb10067b8072`
-- Lean module:
-  `ProjectKoios/Crosswalks/PhysKit/FccBainCoordinateBridge.lean`
+One immutable PhysKit file supplies the constants.
 
-| Source contract | Lean declarations | Checked conclusion |
+- Repository: `projectkoios-physkit`
+- Commit: `7157dcedd0d220673d443c1c025e35a6fd1ffa7a`
+- Tree: `49889a01edcee57742efca568ef4ee68c9dd2bfa`
+- Path: `src/python/projectkoios/physkit/periodic/lattice/bain/bridge.py`
+- Locators: class line 16; convention line 25; matrices lines 42--49; determinant lines 68--70; integer maps lines 72--80
+- SHA-256: `8bc4e9f0c957899a9b9c14ab75ece4aa8c82945ecb6524f0c1ecbb10067b8072`
+- Lean module: `ProjectKoios/Crosswalks/PhysKit/FccBainCoordinateBridge.lean`
+
+## Mapping
+
+The mapping is exact and finite.
+
+| Source contract | Lean declarations | Conclusion |
 |---|---|---|
-| fixed matrix `bain_to_fcc_matrix` in `n_F = U n_B` | `PKF-PHYSKIT-DEF-002` | exact integer constant only |
-| fixed declared inverse `fcc_to_bain_matrix` | `PKF-PHYSKIT-DEF-003` | exact integer constant only |
-| matrices are exact inverses | `PKF-PHYSKIT-THM-001/002` | both integer matrix products equal identity |
-| determinant is one | `PKF-PHYSKIT-THM-003` | exact determinant over `ℤ` |
-| unimodularity preserves finite periodic quotient coordinates | `PKF-PHYSKIT-DEF-004--007`, `PKF-PHYSKIT-THM-004/005` | for every positive `n`, the induced maps over `ZMod n` are mutual inverses and the Bain-to-FCC map is bijective |
+| `bain_to_fcc_matrix` in `n_F = U n_B` | `PKF-PHYSKIT-DEF-002` | exact integer matrix |
+| `fcc_to_bain_matrix` | `PKF-PHYSKIT-DEF-003` | exact integer matrix |
+| two-sided inverse | `PKF-PHYSKIT-THM-001/002` | both products equal identity |
+| determinant one | `PKF-PHYSKIT-THM-003` | exact determinant over `ℤ` |
+| finite quotient map | `PKF-PHYSKIT-DEF-004--007`, `PKF-PHYSKIT-THM-004/005` | mutual inverses and bijection over `ZMod n` for positive `n` |
 
-The source uses row arrays multiplied by matrix transposes. The Lean definitions use the
-equivalent column-coordinate convention `U *ᵥ x` and `V *ᵥ x`.
+PhysKit uses row arrays with transposed matrices. Lean uses the equivalent column convention `U *ᵥ x`.
 
-The crosswalk does **not** establish:
+## Exclusions
 
-- that a live or serialized PhysKit object contains these constants;
-- that arbitrary `numpy.int64` batch operations avoid overflow;
-- that independently supplied lattices use these basis conventions;
-- that the bridge has a particular physical or material interpretation; or
-- any scientific-validation, release, or publication conclusion.
+The bridge has no runtime or scientific authority.
 
-A later runtime-binding certificate, if separately approved, must bind an immutable
-PhysKit record to these exact constants without reclassifying the mathematical theorem as
-a Python-execution proof.
+- No live-object or serialized-object binding.
+- No `numpy.int64` overflow proof.
+- No proof that external lattices use these bases.
+- No crystallographic, material, release, or publication conclusion.

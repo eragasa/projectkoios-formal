@@ -1,146 +1,84 @@
-# Planned module layout
+# Module layout
 
-The listed semantic families under `ProjectKoios/BandGauge/` contain documentation only unless an existing `.lean` file is explicitly listed in the theorem manifest. Existing directories reserve cohesive ownership boundaries; proposed families are created only after exact statement selection. Narrow source-specific computational crosswalks live separately under `ProjectKoios/Crosswalks/` only after their exact constants, immutable owner revision, and proof boundary have been selected. `ProjectKoios/QuantumMechanics/` and `ProjectKoios/SolidState/` are separate publication-independent families for reusable exact algebra. Neither a directory nor a paper plan announces an implemented API.
+Directories define semantic ownership only. A Lean API exists only when `docs/theorem-manifest.md` lists a declaration.
 
-The implemented quantum-mechanics families separate source-neutral finite-dimensional and finite-difference algebra from concrete systems. `FiniteDimensional/` owns compression residuals, additive decomposition identifiability, reduction bases, finite rank-one determinant/resolvent algebra, spin embeddings, and Frobenius model-class fitting. `FiniteDifference/` owns the centered one-dimensional stencil, complex exponential translation modes, scalar-twisted and periodic cycles, the doubled-cycle odd-extension bridge to Dirichlet boundaries, and symbolic constant-region/finite-barrier transfer algebra. `HarmonicOscillator/` owns the exact QHO mechanisms, while `Piab1d/` owns only the concrete one-dimensional box specialization. None owns runtime arrays, binary64 evidence, continuum spectral completeness, unbounded-operator domains, self-adjointness, discretization convergence, or retained-result acceptance. See the respective module READMEs.
+## BandGauge
 
-| Directory | Intended ownership | Explicit exclusions |
+BandGauge separates reusable algebra from paper bindings.
+
+| Directory | Owns | Excludes |
 |---|---|---|
-| `Foundations/` | finite index types, support vocabulary, state-space/frame/gauge definitions, rank-two real rotations and Pauli coordinates, and standard second-harmonic optimization | paper-specific thresholds and numerical records |
-| `Bloch/` | pointwise reciprocal-group sewing, covariant operator fields, sewing-compatible alignments, aligned difference fields, and abstract periodic retained-rank-two finite samples | silently treating `L²` classes as pointwise boundary data, claiming topology from sewing diagnostics, or claiming a Bloch--Floquet construction from a periodic potential |
-| `Geometry/` | admissible-set geometry, alignment losses, metric separation, and rank-two finite-dimensional consequences | unreviewed generalization to arbitrary rank or scalar field, or finite decision enumeration |
-| `Hilbert/` | reusable real Hilbert-space residual-ball geometry and finite rank-two weighted Frobenius algebra | substituting bounded-operator norm for the papers' Frobenius losses |
-| `Alignment/` *(proposed)* | finite-rank gauge actions, special-orthogonal/unitary alignment, exact recovery, and reviewed Procrustes/Kabsch results | paper channel labels, Fourier truncation, or treating unequal-rank isometries as unitary gauge equivalence |
-| `Decision/` | finite dominance, Pareto efficiency, threshold feasibility, minimum-cost attainment, robustness, and empty-set classification | plot triangulation, convexification, KKT assumptions, or continuum-frontier claims |
-| `Certificates/` | exact decidable rational-center, correlation-interval, and joint curvature-correlation enclosure schemas, and later finite interval-table, coverage, and mask certificate soundness bridges | production runtime execution, unbound publication data, or scientific validation |
-| `Fourier/` | implemented convention-neutral finite reconstruction/truncation, two-sided finite-abelian inversion, Parseval, exact Hilbert- and matrix-Frobenius tail identities, Hermitian pairing, constant/uniform rank-two paper normalization, and arbitrary-rank Frobenius/Fourier equivariance under one fixed finite unitary; later nonuniform-weight, physical-shell and source-mesh specializations, and continuum analysis | momentum-dependent gauges without additional hypotheses, Wannier90 execution, calculator output, sampled evidence, or silently identifying the generic group with a publication mesh |
-| `Projection/` | retained low-eigenpair compression, invariant-subspace reconstruction, residual/leakage bounds, and finite-support consequences | conflating projection with gauge change, disentanglement, Fourier conversion, or truncation |
-| `SpecialFunctions/` | later Jacobi–Anger, Bessel, and shell-tail infrastructure | premature dependencies before finite/continuum foundations are fixed |
-| `Papers/` | thin source crosswalks and eventual theorem instantiations | duplicated foundational proofs and ownership of publication prose |
+| `Foundations/` | finite rank-two rotations, Pauli coordinates, elementary optimization | paper data and thresholds |
+| `Bloch/` | pointwise sewing, covariant fields, compatible alignment, finite samples | Bloch--Floquet derivation, topology, `L²` point values |
+| `Geometry/` | admissible sets and rank-two loss geometry | unreviewed rank/scalar generalization |
+| `Hilbert/` | residual balls and weighted Frobenius algebra | replacement by bounded-operator norm |
+| `Alignment/` *(proposed)* | finite-rank gauge actions and reviewed alignment results | Fourier truncation and unequal-rank unitary claims |
+| `Decision/` | finite dominance, feasibility, minimum cost, and outcome classification | continuum frontiers and KKT claims |
+| `Certificates/` | exact schemas, checkers, and soundness bridges | runtime execution and unbound publication data |
+| `Fourier/` | finite transforms, Parseval, support, truncation, Hermitian pairing, fixed-unitary equivariance | momentum-dependent gauge commutation, mesh identity, Wannier90 |
+| `Projection/` | compression, reconstruction, leakage, and support consequences | conflation with gauge, Fourier, or truncation |
+| `SpecialFunctions/` | later Jacobi--Anger, Bessel, and tail results | premature dependency adoption |
+| `Papers/` | thin source contracts and instantiations | duplicated reusable proofs |
 
-Source-specific crosswalks remain outside the BandGauge semantic hierarchy:
+## Crosswalks
 
-| Directory | Intended ownership | Explicit exclusions |
+Crosswalk modules bind narrow immutable constants.
+
+| Directory | Owns | Excludes |
 |---|---|---|
-| `Crosswalks/PhysKit/` | exact source-specific constants and thin consequences for the immutable PhysKit `FccBainCoordinateBridge3D` matrix contract | mirroring the PhysKit package tree, importing Python, verifying NumPy execution, supplying a runtime superclass, or claiming crystallographic or physical applicability |
+| `Crosswalks/PhysKit/` | immutable exact FCC--Bain constants and consequences | Python execution, package mirroring, physical applicability |
 
-## Quantum-mechanics modules
+## Quantum mechanics
 
-The source-neutral quantum-mechanics foundation is a separate semantic family under
-`ProjectKoios/QuantumMechanics/`; it is not owned by `BandGauge` or by a textbook crosswalk.
+Quantum modules separate general mathematics from controlled models.
 
-| Module or directory | Intended ownership | Explicit exclusions |
+| Module | Owns | Excludes |
 |---|---|---|
-| `State.lean` | normalized complex state-vector representatives and unit-modulus phase changes | quotient rays, state preparation, or a complete physical postulate system |
-| `Measurement/FinitePureState.lean` | finite bounded measurement operations, exact norm completeness supplied as data, Born weights, and positive-probability normalization | general observables, spectral measures, unbounded operators, or continuous outcomes |
-| `Dirac.lean` | typed ordinary ket/bra aliases, brackets, bounded rank-one operators, and normalized projector properties | generalized eigenvectors or decorative syntax detached from named definitions |
-| `RiggedHilbertSpace.lean` | Hausdorff locally convex test-space embedding core and convention-sensitive Hilbert-to-test-dual injections | nuclearity, concrete Schwartz spaces, operator domains, generalized spectral completeness, or physical applicability |
-| `Operator/TestDomain.lean` | bridge from test-space endomorphisms to Mathlib partial linear operators, dense domains, invariant test domains, formal adjoints, and maximal-adjoint containment | claiming boundedness, closedness, adjoint equality, essential self-adjointness, a spectrum, or a concrete Hamiltonian |
-| `FiniteDimensional/` | source-neutral finite-dimensional algebra, including rectangular reduction bases, retained projectors, reduced-coordinate Hamiltonians, rank-one determinant/resolvent updates, exact two-state spin lifts, Frobenius-optimal spin-independent projection, and standard Pauli residual identities | runtime arrays, eigensolver or root-finder execution, binary64 error claims, serialized-artifact validity, authored coefficient matrices, spectral-root existence, time-reversal implementations, and physical interpretation or adequacy |
+| `State.lean` | normalized representatives and phase shifts | ray quotients and full postulates |
+| `Measurement/FinitePureState.lean` | finite operations and explicit norm completeness | general observables and continuous outcomes |
+| `Dirac.lean` | typed ordinary bras, kets, brackets, and rank-one operators | generalized eigenvectors |
+| `RiggedHilbertSpace.lean` | test-space inclusion and generalized functional embeddings | nuclearity and spectral completeness |
+| `Operator/TestDomain.lean` | dense partial operators and formal-adjoint containment | closedness, adjoint equality, self-adjointness, spectra |
+| `FiniteDimensional/` | compression, reduction, fitting, resolvents, and spin algebra | runtime data and physical interpretation |
+| `FiniteDifference/` | exact lattice, boundary, transfer, and barrier algebra | continuum convergence and numerical scattering |
+| `HarmonicOscillator/` | exact Hermite, ladder, truncation, and comparison algebra | runtime and continuum validation |
+| `Piab1d/` | finite one-dimensional box specialization | general finite-difference ownership |
 
-The reduction-basis module uses `Φ` for the reduced-to-full map, `P = Φ Φᵀ` for the retained
-projector, and reserves `Q = I - P` for the complementary projector. The rank-one-resolvent module
-proves conditional exact finite identities only: it requires base invertibility, requires a
-nonzero scalar denominator for the inverse formula, and takes any secular zero as a hypothesis
-rather than proving that one exists. The spin modules use
-orbital-major product indices `ι × Fin 2`, the exact lift `A ⊗ₖ I₂`, and the half-partial-trace
-projection onto that lift's range. The Pauli-residual module owns standard two-state Pauli matrices
-and abstract orbital-coefficient residual identities, but not authored calculation matrices or
-physical spin assumptions. These modules are imported by the audit surface but are not re-exported
-through the package root.
+Reduction bases use `Φ`, retained projector `P = Φ Φᵀ`, and complement `Q = I - P`. Spin indices are orbital-major `ι × Fin 2` and use `A ⊗ₖ I₂`.
 
-## Solid-state modules
+## Solid state
 
-| Directory | Intended ownership | Explicit exclusions |
+Solid-state modules remain finite and source-neutral.
+
+| Directory | Owns | Excludes |
 |---|---|---|
-| `ProjectKoios/SolidState/FiniteLattice/` | normalized finite-character folding, cell-major block supercells, exact finite Bloch-fiber diagonalization, coordinate/alignment/energy-shift/defect route algebra, finite scalar/Bargmann/matrix gauge-loop invariance, and the rank-one projector-product/Bargmann trace crosswalk | runtime Fourier or overlap matrices, runtime normalization, representative/loop/sewing selection, hopping truncations, phase unwrapping, numerical eigenspectra, Chern integrality, continuum topology, Wannier90 execution, tolerances, serialized evidence, and physical applicability |
-| `ProjectKoios/SolidState/TightBinding/` | exact tetrahedral `sp³` and `sp³s⋆` basis transforms, exact bond-phase structure factors, abstract nearest-neighbor parameter slots, structural zeros, and Hermitian block assembly | accepted empirical parameter values, numerical eigenspectra, Python/runtime validation, DFT or Wannier evidence, material adequacy, novelty, and publication claims |
+| `SolidState/FiniteLattice/` | finite folding, route identities, gauge loops, projector--Bargmann crosswalk | runtime arrays, topology, Wannier90, material claims |
+| `SolidState/TightBinding/` | exact tetrahedral `sp³`/`sp³s⋆` transforms and abstract Vogl blocks | empirical values, spectra, DFT/Wannier evidence, silicon validation |
 
-The cyclic one-dimensional specialization uses `ZMod N`. General finite-abelian declarations are
-source-neutral reusable infrastructure; the calculation crosswalk relies only on the cyclic case
-and explicit coordinate-change premises. The solid-state modules are audited but not re-exported
-through `ProjectKoios.lean`; future bridges must be reviewed explicitly.
+## Import direction
 
-## Dependency direction
-
-The intended direction is:
+Imports flow from reusable foundations toward thin bindings.
 
 ```text
-Foundations ──→ Bloch
-      ├───────→ Alignment
-      ├───────→ Geometry
-      ├───────→ Hilbert
-      ├───────→ Fourier
-      └───────→ Projection
-
-Bloch + Alignment ──→ sewn aligned differences and reference-fiber losses
-Projection + Alignment + Fourier + Hilbert ──→ Decision
-Geometry + Decision ──→ Certificates ──→ Papers through explicit bindings
-Bloch + reviewed measure/regularity contracts ──→ later Hilbert section spaces
-Foundations + Fourier ──→ later SpecialFunctions
-QuantumMechanics/FiniteDimensional/SpinEmbedding ──→ SolidState/FiniteLattice route identities
-Mathlib finite-character and matrix APIs ──→ SolidState/FiniteLattice folding
-Mathlib units, unitary groups, inner products, and determinants ──→ SolidState/FiniteLattice gauge loops
-QuantumMechanics/FiniteDimensional rank-one matrices + gauge loops ──→ projector/Bargmann crosswalk
-reviewed semantic modules ──→ thin Papers instantiations
-
-TetrahedralSp3 ──→ TetrahedralSp3sStar
-       └─────────→ TetrahedralStructureFactors ──→ VoglSp3sStar
-TetrahedralSp3sStar ─────────────────────────────→ VoglSp3sStar
-QuantumMechanics.State ──→ QuantumMechanics.Measurement.FinitePureState
-QuantumMechanics.State ──→ QuantumMechanics.Dirac
-QuantumMechanics.Dirac ──→ QuantumMechanics.RiggedHilbertSpace
-RiggedHilbertSpace ──→ QuantumMechanics.Operator.TestDomain
-TestDomain + future closed/self-adjoint analysis ──→ future generalized spectral statements
+Foundations -> Bloch, Geometry, Hilbert, Fourier, Projection
+Projection + Alignment + Fourier + Hilbert -> Decision
+Geometry + Decision -> Certificates -> thin Papers bindings
+FiniteDimensional spin algebra -> SolidState/FiniteLattice
+FiniteLadder -> TruncationDistortion
+FiniteDifference -> Piab1d
+State -> Measurement and Dirac -> RiggedHilbertSpace -> Operator/TestDomain
+TetrahedralSp3 -> TetrahedralSp3sStar and TetrahedralStructureFactors -> VoglSp3sStar
 ```
 
-Actual imports must remain narrower than this sketch. No root module should become a catch-all re-export merely because a directory exists.
+Actual imports remain narrower than this sketch. Root modules must not become catch-all re-export surfaces.
 
-The harmonic-oscillator import direction is:
+## Promotion
 
-```text
-FiniteLadder ──→ TruncationDistortion
-HermiteEigenfunction ──→ TruncationDistortion (finite/analytic energy crosswalk only)
-FiniteDifference          (independent exact stencil layer)
-FiniteComparison          (independent exact comparison layer)
-```
+Create a module family only after:
 
-The narrow `ProjectKoios.QuantumMechanics.HarmonicOscillator` module imports only these five semantic modules.
+1. selecting an exact declaration;
+2. reviewing existing library APIs;
+3. confirming ownership and import direction; and
+4. adding a manifest entry.
 
-The PIAB1D and reusable import direction is:
-
-```text
-FiniteDifference/CenteredDirichlet1D ─┐
-FiniteDifference/ExponentialMode1D ────┴→ FiniteDifference/DirichletMatrixMode1D
-FiniteDifference/DirichletMatrixMode1D ─→ FiniteDifference/TwistedCyclic1D
-FiniteDifference/TwistedCyclic1D ───────→ FiniteDifference/OddExtension1D
-FiniteDifference/TwistedCyclic1D ───────→ Piab1d/FiniteDifference ─→ Piab1d/Spectrum
-FiniteDifference/ExponentialMode1D ──────→ FiniteDifference/ConstantPotential1D
-FiniteDifference/ConstantPotential1D ────→ FiniteDifference/FiniteBarrier1D
-FiniteDifference/FiniteBarrier1D ────────→ FiniteDifference/BarrierMatching1D
-FiniteDimensional/RankOneResolvent          (independent finite rank-one algebra)
-FiniteDimensional/*                         (other source-neutral operator analysis)
-```
-
-`ExponentialMode1D` and `TwistedCyclic1D` prove translation-character and scalar real-space
-boundary algebra intended for a later reviewed Bloch bridge. The scalar twist is not definitionally
-the reciprocal-fiber sewing contract in `BandGauge/Bloch`; these modules do not establish
-Bloch--Floquet theory or identify a phase with a runtime momentum. `ConstantPotential1D` and
-`FiniteBarrier1D` and `BarrierMatching1D` keep potentials, energies, roots, amplitudes, and widths
-symbolic. The latter isolates the explicitly named left-incident algebraic convention and proves
-interface-coordinate existence/uniqueness away from coincident reciprocal roots; it does not solve
-the constrained reflection/transmission amplitudes numerically, attach flux probabilities, or
-identify a finite barrier with a hard-wall boundary.
-
-## Naming and promotion
-
-A documentation folder becomes a Lean module family only after:
-
-1. an exact theorem or definition is selected;
-2. existing library APIs are inventoried;
-3. ownership and import direction are reviewed; and
-4. the theorem manifest receives a statement-level entry.
-
-Placeholder README files are not supported import surfaces. Theorem IDs and proof dossiers
-follow semantic families. Paper IDs are reserved for genuinely source-specific
-instantiations and must not be used merely because a paper motivated a reusable theorem.
+Placeholder directories are not supported APIs.

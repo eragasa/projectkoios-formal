@@ -7,372 +7,254 @@ Initial document completed: 2026-10-19
 
 # Publication evidence acceptance contract
 
-## Status and authority
+Contract: `PKF-BG-EVIDENCE-CONTRACT/1`.
 
-Contract identifier: `PKF-BG-EVIDENCE-CONTRACT/1`.
+This contract defines Formal's acceptance boundary for compact immutable publication evidence. It is not a production schema, artifact, checked certificate, scientific validation, publication claim, or execution authorization.
 
-This document freezes the Project Koios Formal acceptance requirements for a compact,
-immutable publication-evidence package. It is a verification-sidecar contract, not a
-production serialization schema, retained numerical result, checked certificate,
-scientific validation, publication claim, or authorization to mutate an owner repository.
+The computational owner owns the producer, strict schema, canonical serializer, independent verifier, and retained artifacts. Formal may bind only a separately reviewed compact export. No current Paper A, B, or C runtime output satisfies this contract.
 
-The computational owner repository remains responsible for its producer, canonical
-serializer, strict machine-readable schema, independent verifier, and retained artifacts.
-This repository may later parse or bind a compact export only through separately reviewed
-code and Lean theorems. `projectkoios-references` remains responsible for canonical
-bibliography identity.
+## Coordinate weights
 
-No current Paper A, B, or C output satisfies this complete contract. In particular, dirty
-owner worktrees and ignored or replaceable development summaries are not eligible
-publication evidence.
+Reusable theorems may quantify over positive normalized weights. A concrete package must use an a-priori rule independent of observed losses, thresholds, pass/fail status, or Pareto outcome.
 
-## Frozen policy decisions
-
-### Coordinate weights
-
-Reusable Lean statements may quantify over arbitrary strictly positive normalized
-weights, because that is the source-faithful mathematical interface. A concrete
-publication-evidence package, however, must not contain freely chosen or post-hoc weights.
-Every accepted weight vector must be determined by a frozen rule that is independent of
-the observed pass/fail or Pareto result.
-
-The permitted determination modes are:
-
-| Code | A-priori determination rule | Required evidence |
+| Code | Rule | Required evidence |
 |---|---|---|
-| `uniform-counting` | normalized counting/Haar measure on the declared complete finite group or uniform mesh | exact mesh cardinality and `αᵢ = 1/|G|` for every point |
-| `geometric-cell` | normalized cell volumes, such as a frozen Voronoi or symmetry-reduced integration rule | exact geometry/convention, complete cells, normalization, and reproducible derivation |
-| `moment-quadrature` | weights solve frozen exactness conditions for a declared finite function/moment class | target measure, moment basis, exact constraints, feasibility certificate, and deterministic tie rule |
-| `optimized-quadrature` | weights minimize a preregistered quadrature-error functional over a fixed feasible set | objective, function class, positivity floor, symmetry constraints, solver certificate or independently checked global optimum, and deterministic tie rule |
+| `uniform-counting` | normalized counting/Haar measure on a complete finite group or uniform mesh | exact cardinality and `αᵢ = 1/|G|` |
+| `geometric-cell` | normalized cell volumes from a frozen geometric rule | geometry, convention, complete cells, normalization, reproducible derivation |
+| `moment-quadrature` | exactness for a frozen finite moment class | target measure, basis, exact constraints, feasibility certificate, deterministic tie rule |
+| `optimized-quadrature` | global minimization of a preregistered quadrature-error objective | objective, function class, positivity floor, symmetry constraints, global-optimum certificate, tie rule |
 
-For example, an optimized quadrature may solve
-
-\[
-  \min_{\alpha\in\Delta_\varepsilon}
-  \max_{f\in\mathcal F}
-  \left|\sum_i\alpha_i f(k_i)-\int f\,d\nu\right|,
-  \qquad
-  \Delta_\varepsilon=
-  \left\{\alpha:\sum_i\alpha_i=1,\ \alpha_i\ge\varepsilon>0\right\},
-\]
-
-with the target measure `ν`, finite calibration class `𝓕`, positivity floor, symmetry
-constraints, and tie-breaking rule fixed before evaluating scientific candidates.
-Finite moment classes can lead to exact linear, quadratic, or conic certificate
-obligations; a numerical optimizer alone is not proof of global optimality.
-
-Weights optimized directly to reduce a candidate's reported operator or spectral loss are
-not evaluation weights. If scientifically useful, they are explicit design variables and
-must become part of the finite decision identifier. Final fidelity must still be evaluated
-with a separate a-priori weight rule from the table above. This prevents a candidate from
-improving merely by moving weight away from unfavorable mesh points.
-
-A package may invoke uniform averaging only when its declared a-priori rule establishes
+A prospective optimized rule may solve
 
 \[
-  \alpha_i=\frac{1}{|G|}
+\min_{\alpha\in\Delta_\varepsilon}\max_{f\in\mathcal F}
+\left|\sum_i\alpha_i f(k_i)-\int f\,d\nu\right|,
+\qquad
+\Delta_\varepsilon=\{\alpha:\sum_i\alpha_i=1,\ \alpha_i\ge\varepsilon>0\}.
 \]
 
-for every mesh point. `BG-FOURIER-THM-032` is then available as a specialization. The
-theorem is not a justification for replacing a nonuniform rule by uniform weights.
+The measure, calibration class, constraints, and tie rule must be fixed before evaluating candidates. A numerical optimizer alone does not prove global optimality.
 
-Every weight record must provide:
+Weights optimized against candidate losses are design variables, not evaluation weights. Final fidelity still uses a separate a-priori rule.
 
-- the determination-mode code and immutable rule identity;
-- a stable mesh-point identifier;
-- an exact rational value, or a conservative outward-rounded rational interval;
-- a proof/check that its lower endpoint is strictly positive;
-- the declared normalization rule and an exact proof/check of that rule;
-- all geometric, moment, optimization, symmetry, and tie-breaking inputs required by the
-  selected mode; and
-- an independently reproducible derivation or optimization certificate.
+Each weight record contains:
 
-Missing a-priori provenance, post-hoc tuning, an interval that does not establish strict
-positivity, or unresolved normalization makes the weight vector ineligible for an
-accepted publication result.
+- mode code and immutable rule identity;
+- mesh-point identifier;
+- exact rational value or outward-rounded rational interval;
+- strict-positivity and normalization checks;
+- required geometry, moment, optimization, symmetry, and tie inputs; and
+- reproducible derivation or optimization certificate.
+
+Missing provenance, post-hoc tuning, unresolved positivity, or failed normalization is ineligible.
 
 ### Audited source dispositions
 
-The current immutable sources support narrower choices than the reusable arbitrary-weight
-mathematics:
+Current sources permit only the following weight rules.
 
-- **Ragasa2026A general loss:** at `ksdft2effmass` commit
-  `99a46cb59d0c6f27ada7d709f194996ef9619d9f`,
-  `docs/publications/papers/Ragasa2026a/v3/manuscript.tex:558-563` introduces positive
-  raw objective weights and normalization but does not state an a-priori derivation rule.
-  Those general weights are therefore theorem parameters, not yet eligible concrete
-  publication inputs under this contract.
-- **Ragasa2026A constructed false positive:** the same source at lines `857-860` requires
-  two equally weighted observations. This supports `uniform-counting` for that exact
-  finite construction. Lines `1273-1282` separately invoke exact uniform quadrature only
-  for the finite ordinary-lattice Parseval check.
-- **Ragasa2026B bond-orbit controls:** at the same commit,
-  `docs/publications/papers/Ragasa2026b/v2/manuscript.tex:611-623` requires orbit weights
-  to be fixed by the selected symmetry contract, and lines `712-724` select explicit
-  equal-weight triangular and FCC controls. These are model/symmetry weights, not
-  permission to tune evaluation weights after observing fidelity.
-- **Ragasa2026C D1 protocol:** at `ksdft2effmass` commit
-  `8bafdeeb6b0c75bcd7a2984d0c283a8e64fb0fd8`,
-  `experiments/periodic-reduction/higher-rank-composite-band-alignment-and-locality/experimental-protocol.tex:461-481`
-  makes equal raw sample weights mandatory, and lines `1469-1473` require equal aggregate
-  weights in the alignment record. The immediate D1 evidence contract should therefore
-  use exact `uniform-counting`, not weight optimization.
+- Paper A general loss, commit `99a46cb59d0c6f27ada7d709f194996ef9619d9f`, `docs/publications/papers/Ragasa2026a/v3/manuscript.tex:558-563`: positive normalized weights are theorem parameters; no concrete a-priori rule is stated.
+- Paper A construction, same source lines `857-860`: two equal weights support `uniform-counting`; lines `1273-1282` use exact uniform quadrature only for the ordinary-lattice Parseval check.
+- Paper B, same commit, `docs/publications/papers/Ragasa2026b/v2/manuscript.tex:611-623`: orbit weights follow the symmetry contract; lines `712-724` select equal-weight triangular and FCC controls. These are not post-hoc evaluation weights.
+- Paper C D1, commit `8bafdeeb6b0c75bcd7a2984d0c283a8e64fb0fd8`, `experiments/periodic-reduction/higher-rank-composite-band-alignment-and-locality/experimental-protocol.tex:461-481`; lines `1469-1473`: raw sample and aggregate weights are equal. Immediate D1 evidence must use `uniform-counting`.
 
-Thus no current paper requires post-hoc evaluation-weight optimization. Optimized
-quadrature remains a prospective method for a future nonuniform mesh and would require a
-separately reviewed protocol before use.
+## Support semantics
 
-### Support semantics
+Each support record selects one primary class.
 
-Every support record must select exactly one primary semantic class:
-
-| Code | Meaning | Minimum additional data | Nonclaim |
+| Code | Meaning | Required data | Nonclaim |
 |---|---|---|---|
-| `arbitrary-finite` | an explicitly listed finite subset of the declared mode inventory | complete ordered member list | no closure, shell, locality, or physical-range claim |
-| `negation-closed` | a finite support closed under mode negation | member list and checked negation closure | not necessarily a complete shell or physical range |
-| `complete-metric-shell` | all modes through a declared metric radius, with equal-radius ties retained | metric, coordinate convention, radius/shell index, tie rule, and checked completeness | not automatically a physical hopping range |
-| `source-hopping-range` | a source-specific retained hopping range | immutable source definition, lattice/basis convention, units, and exact membership rule | not automatically a metric shell |
+| `arbitrary-finite` | explicit finite subset | complete ordered members | no closure, shell, locality, or physical range |
+| `negation-closed` | finite support closed under negation | members and closure check | not necessarily a complete shell |
+| `complete-metric-shell` | all modes through a metric radius, including ties | metric, coordinates, radius/index, tie rule, completeness check | not automatically a physical hopping range |
+| `source-hopping-range` | source-defined retained range | immutable definition, lattice/basis, units, membership rule | not automatically a metric shell |
 
-Additional symmetry-orbit closure may be declared, but it does not replace the primary
-class. Hermitian truncation requires the separately checked negative-mode/conjugate-
-transpose pairing and negation closure used by `BG-FOURIER-THM-023/025`.
+Symmetry-orbit closure is additional. Hermitian truncation separately requires negative-mode/conjugate-transpose pairing and negation closure. Support enlargement, shell refinement, and physical-range refinement are different relations.
 
-Support enlargement, complete-shell refinement, and physical-range refinement are
-separate relations. A package must not silently smooth their discrete steps or infer
-continuum coverage.
+## Package envelope
 
-## Required package envelope
+Field names below specify meaning. The owner may choose serialization only after freezing a strict schema and canonical bytes.
 
-A conforming package contains the following logical records. Field names below specify
-required meaning; the owner repository may choose its serialization only after freezing a
-strict schema and canonical byte representation.
+### Identity
 
-### 1. Contract and artifact identity
+Identity fields bind canonical bytes.
 
-- contract identifier `PKF-BG-EVIDENCE-CONTRACT/1`;
-- owner schema name and immutable schema version;
-- globally unique package identifier;
-- package creation timestamp and producer version;
+- contract and owner-schema versions;
+- unique package identifier;
+- creation timestamp and producer version;
 - canonical serialization algorithm;
-- digest algorithm and digest of the canonical package bytes;
-- digest of every externally retained payload referenced by the package; and
-- explicit status: development, candidate, retained, independently verified, or
-  superseded.
+- digest algorithm, package digest, and referenced-payload digests; and
+- status: development, candidate, retained, independently verified, or superseded.
 
-Mutable labels, timestamps, or filenames are not artifact identity. A digest mismatch is
-a hard rejection.
+Filenames and timestamps are not artifact identity. Digest mismatch rejects the package.
 
-### 2. Source provenance
+### Source provenance
 
-For every scientific or computational input:
+For every input:
 
-- owner repository identity;
-- descriptive branch name;
-- full immutable commit hash;
-- repository-relative path;
-- byte digest at that commit;
-- dirty-state declaration from the producing run;
-- source role, such as protocol, model definition, threshold source, or producer code;
-  and
-- any external governed evidence or reference identifier once available.
+- repository, descriptive branch, full commit, relative path, and byte digest;
+- producing-run dirty state;
+- source role; and
+- external governed evidence/reference identity when available.
 
-A branch or tag without a commit is insufficient. Uncommitted source bytes may be
-recorded as development context but cannot support a retained publication binding.
+Uncommitted bytes may be development context but cannot support retained publication evidence.
 
-### 3. Tool and execution provenance
+### Tool and execution provenance
 
-- producer executable and version/commit;
-- independent-verifier executable and version/commit;
-- dependency lock identity;
-- numerical backend and precision mode;
-- deterministic seed or explicit statement that no randomness is used;
+Execution provenance binds the producer and verifier.
+
+- producer and independent-verifier revisions;
+- dependency lock;
+- numerical backend and precision;
+- deterministic seed or no-randomness declaration;
 - command/configuration digest;
-- hardware/resource record when numerically relevant; and
-- success, failure, or unresolved disposition for every mandatory integrity gate.
+- relevant hardware/resource record; and
+- disposition of every mandatory gate.
 
-A successful process exit is not a substitute for mandatory scientific and integrity
-gates.
+### Finite domain and mesh
 
-### 4. Finite domain and mesh
+The finite inventory must be complete and explicit.
 
-- mesh identifier and finite cardinality;
+- mesh identity, cardinality, and ordered point inventory;
 - dimension, lattice, reciprocal-coordinate, endpoint, and representative conventions;
-- exact ordered point identifiers and coordinates, or conservative rational coordinate
-  enclosures;
-- declared finite-group law when finite-abelian Fourier theorems are invoked;
+- exact coordinates or rational enclosures;
+- finite-group law when finite-abelian theorems are used;
 - construction, withheld, and refinement roles;
-- exhaustive-coverage statement limited to the declared finite inventory; and
-- the complete coordinate-weight record specified above.
+- finite-inventory coverage statement; and
+- complete coordinate-weight record.
 
-A finite mesh establishes no continuum Brillouin-zone claim.
+A finite mesh establishes no continuum claim.
 
-### 5. Representation and operator data
+### Representation and operators
 
-- ambient and retained dimensions and ranks;
-- matrix shape, index order, scalar representation, basis/frame identity, and units;
-- positive reference energy `E_ref`, represented exactly or by a conservative interval;
-- retained projectors/subspaces and reconstruction data when a spectral bridge is used;
-- Hermiticity, rank, isolation, and residual checks required by the selected protocol;
-- parent, retained-reference, aligned, interpolated, and truncated operator identities;
-  and
-- explicit distinction among oracle, retained-subspace, alignment, interpolation, and
-  truncation errors.
+Operator data must preserve representation identity.
 
-Eigenvalues alone do not establish a retained-subspace or operator bridge. At degeneracy,
-the package must use projectors, clusters, or multisets unless labeled eigenvectors are
-separately justified.
+- ambient and retained dimensions/ranks;
+- shapes, index order, scalar encoding, basis/frame identity, and units;
+- positive exact or interval `E_ref`;
+- retained projectors/subspaces and reconstruction data;
+- required Hermiticity, rank, isolation, and residual checks;
+- parent, retained, aligned, interpolated, and truncated identities; and
+- separate oracle, subspace, alignment, interpolation, and truncation errors.
 
-### 6. Alignment and sewing
+Eigenvalues alone do not establish a subspace bridge. Degeneracy requires projectors, clusters, or multisets unless labeled eigenvectors are justified.
 
-- admissible alignment family (`SO(r)`, `U(r)`, isometric compression, or another
-  source-defined family);
+### Alignment and sewing
+
+One alignment record serves every objective channel.
+
+- admissible family and rank;
 - left/right action and adjoint orientation;
-- global versus pointwise dependence;
-- stable alignment identifier used by every objective channel;
-- rank, isometry/unitarity, sewing, regularity, symmetry, and gauge-family gate results;
-- failure disposition when any mandatory gate fails; and
-- leakage data for unequal-rank compression.
+- global or pointwise dependence;
+- one stable alignment identifier for every channel;
+- unitarity/isometry, sewing, regularity, symmetry, and family gates;
+- failure dispositions; and
+- leakage for unequal-rank compression.
 
-The same candidate representation, support, and admissible alignment must satisfy all
-joint-fidelity thresholds. Per-channel choices cannot be combined into a fictitious joint
-witness.
+One candidate, support, and alignment must satisfy joint thresholds.
 
-### 7. Fourier and support record
+### Fourier and support
 
-- forward and inverse signs and normalization;
-- finite index group and representative convention;
-- coefficient ordering and complete declared mode inventory;
-- selected primary support semantic code;
-- exact support member list and membership rule;
-- negation/conjugate closure result;
-- shell metric, tie handling, and symmetry-orbit data when applicable; and
-- retained and omitted coefficient-power summaries with their normalization.
+Fourier and support conventions remain explicit.
 
-Use of the uniform rank-two residual-tail theorem additionally requires the exact uniform
-weight identity. Nonuniform momentum weights currently have no repository theorem that
-identifies their weighted residual with the unweighted coefficient tail.
+- signs, normalization, finite group, and representatives;
+- coefficient order and complete mode inventory;
+- support class, members, and membership rule;
+- negation/conjugate closure;
+- shell metric, tie, and orbit data; and
+- retained/omitted power summaries.
 
-### 8. Decision and objective table
+The uniform residual-tail specialization requires exact uniform weights. No current theorem equates a nonuniform weighted residual with the unweighted coefficient tail.
 
-- complete finite decision inventory and stable decision identifiers;
-- representation cost and every objective channel for every decision;
-- exact rational values or conservative outward-rounded rational intervals;
-- thresholds with source, units, and strict/non-strict comparison convention;
-- weak-all/strict-any minimization dominance convention;
+### Decision and objectives
+
+The decision table is a complete finite ledger.
+
+- complete finite decision inventory and stable IDs;
+- cost and all objective channels for every decision;
+- exact values or outward-rounded intervals;
+- threshold source, units, and comparison convention;
+- weak-all/strict-any dominance;
 - claimed nondominated mask;
-- minimum feasible cost and witness identifier when claimed;
-- explicit common-witness result for joint thresholds; and
-- refinement/stability records required by the protocol.
+- minimum feasible cost and witness, when claimed;
+- common-witness result; and
+- required refinement/stability records.
 
-A componentwise envelope is not an attainable decision unless one listed decision realizes
-all of its coordinates. Plot triangulations, convex hulls, or interpolated surfaces do not
-add decisions to the inventory.
+A componentwise envelope, interpolation, hull, or plot does not add an attainable decision.
 
-### 9. Checker and crosswalk result
+### Checker and crosswalk
 
-- checker repository and immutable commit;
-- checker entry point and configuration digest;
-- formal repository, commit, Lean toolchain, Mathlib revision, and theorem IDs used;
+The checker record binds exact conclusions to source claims.
+
+- checker repository, commit, entry point, and configuration digest;
+- Formal commit, Lean/Mathlib revisions, and theorem IDs;
 - accepted, rejected, or unresolved result for each obligation;
-- exact rejected/unresolved reason codes;
-- independent-verifier result over the canonical bytes; and
-- publication claim/source locations to which an accepted conclusion is crosswalked.
-
-A package is not a concrete checked scientific certificate until its identity, complete
-input binding, checker result, and target-proposition bridge are all present.
+- reason codes;
+- independent-verifier result over canonical bytes; and
+- bounded publication proposition and source locator.
 
 ## Fail-closed rules
 
-The verifier must reject, rather than guess or repair, when any of the following occurs:
+Reject on:
 
-1. unknown contract or owner-schema version;
-2. missing mandatory field or unrecognized mandatory enumeration value;
-3. noncanonical serialization or digest mismatch;
-4. missing full commit, source path, or source-byte digest;
-5. retained status derived from dirty or uncommitted source bytes;
-6. duplicate or noncanonical mesh, mode, alignment, or decision identifiers;
-7. unresolved mesh coverage or a mismatch between declared cardinality and inventory;
-8. nonpositive weight, unresolved weight positivity, or failed normalization;
-9. a weight vector without a permitted a-priori determination mode, reproducible
-   derivation, or required optimization certificate;
-10. post-hoc evaluation-weight tuning against candidate losses, thresholds, or the
-    reported Pareto outcome;
-11. a uniform-weight claim without exact equality and its declared counting/Haar rule;
-12. nonpositive or unit-inconsistent `E_ref`;
-13. matrix shape, rank, basis, frame, Hermiticity, projector, or isolation mismatch;
-14. failed alignment, sewing, regularity, symmetry, or gauge-family integrity;
-15. subtraction of operators without a common-fiber alignment identity;
-16. missing support semantic class or incomplete support membership record;
-17. split equal-radius ties in a declared complete metric shell;
-18. missing negation closure where Hermitian truncated reconstruction is claimed;
-19. incomplete decision/objective coverage;
-20. Pareto or threshold comparison based on interval overlap;
-21. different representations, supports, or alignments used for the two channels of a
-    claimed joint witness;
-22. failed independent verification; or
-23. a finite result labeled as continuum evidence.
+- unknown version, field, or enumeration; missing mandatory data; noncanonical bytes; or digest mismatch;
+- missing immutable source identity, dirty retained source, or duplicate/noncanonical identifiers;
+- mesh-cardinality or coverage mismatch;
+- nonpositive, unnormalized, post-hoc, or unjustified weights;
+- false uniform-weight claim;
+- nonpositive or unit-inconsistent `E_ref`;
+- shape, rank, basis, frame, Hermiticity, projector, isolation, alignment, sewing, regularity, symmetry, or family failure;
+- operator subtraction without a common-fiber alignment;
+- absent support class, incomplete membership, split equal-radius ties, or missing negation closure for a Hermitian claim;
+- incomplete decision/objective coverage;
+- dominance or threshold decisions from overlapping intervals;
+- different candidate choices across joint channels;
+- failed independent verification; or
+- finite evidence labeled as continuum evidence.
 
-Interval overlap produces `unresolved`, not dominance, feasibility, infeasibility, pass,
-or failure. A negative finite-domain conclusion additionally requires exhaustive declared
-coverage or a separately checked global certificate.
+Interval overlap is `unresolved`. A negative finite-domain conclusion requires exhaustive declared coverage or a separate global certificate.
 
 ## Acceptance levels
 
-The following levels must remain distinct:
+Six levels remain independent.
 
-1. **identity-bound** — immutable sources and canonical bytes are identified;
-2. **schema-validated** — the owner schema and all structural integrity gates pass;
-3. **numerically verified** — the independent verifier reproduces the declared bounded
-   computations;
-4. **formally checked** — exact exported data pass a Lean-connected checker whose
-   soundness theorem proves the stated conclusion;
-5. **crosswalked** — that conclusion is linked to a reviewed publication proposition;
-6. **scientifically assessed** — applicability and interpretation have undergone their
-   separately governed review.
+1. `identity-bound`
+2. `schema-validated`
+3. `numerically-verified`
+4. `formally-checked`
+5. `crosswalked`
+6. `scientifically-assessed`
 
-Advancing one level does not imply any later level. In particular, formal checking does
-not establish physical applicability or publication acceptance.
+No level implies the next.
 
 ## Current checker mapping
 
-| Existing infrastructure | What it can consume | Missing package boundary |
-|---|---|---|
-| `RankTwoSeparation.lean` | exact rational scalar certificate | field/matrix derivation, canonical serialization, source and artifact binding |
-| `RankTwoSeparationEnclosure.lean` | rational enclosure of an algebraic center | conservative computational enclosure for curvature and source binding |
-| `RankTwoSeparationBox.lean` | exact rational joint enclosure of positive `κ` and nonnegative `μ`, with uniform witness, containment, and separation conclusions | field derivation, canonical serialization, source and artifact binding |
-| `Ragasa2026A/CertificateBridge.lean` and `KappaEnclosureBridge.lean` | exact hypotheses connecting checked scalars or scalar intervals to canonical finite fields | concrete runtime publication matrices, weights, `κ`, `μmax`, thresholds, and parser binding |
-| `Certificates/FinitePareto.lean` | a total finite exact objective table | external inventory coverage, interval semantics, parser, and retained table binding |
-| finite Fourier modules | exact finite-group fields, supports, and constant/uniform-weight specializations | publication mesh/group identification, nonuniform-weight theorem, physical support meaning, and artifact binding |
+Existing checkers still lack runtime package bindings.
 
-These are implemented verification components, not evidence packages. The retained
-runtime evidence-package count remains zero. The exact Paper A two-observation analytic
-certificate and its degenerate-`κ` regression are source constructions encoded in Lean,
-not runtime evidence packages.
+| Infrastructure | Accepts | Missing boundary |
+|---|---|---|
+| `RankTwoSeparation.lean` | exact rational scalar certificate | field derivation, serialization, source/artifact binding |
+| `RankTwoSeparationEnclosure.lean` | rational center enclosure | conservative input enclosures and binding |
+| Paper A bridge modules | exact hypotheses connecting checked scalars to finite fields | concrete matrices, weights, parameters, thresholds, parser |
+| `Certificates/FinitePareto.lean` | total finite exact objective table | inventory coverage, interval semantics, parser, retained table |
+| finite Fourier modules | exact finite-group fields and supports | publication mesh, nonuniform weighting, physical support, artifact binding |
+
+These are verification components, not evidence packages. The runtime checked-certificate count is zero.
 
 ## First binding gate
 
-Before this repository binds its first Paper A, B, or C result, all of the following must
-be available at immutable revisions:
+The first Paper A, B, or C binding requires immutable:
 
-1. an owner-approved scientific protocol;
-2. a strict owner serialization schema and canonical serializer;
-3. a fail-closed producer;
-4. an independent direct-formula verifier;
-5. one retained package satisfying this contract;
-6. complete source, mesh, a-priori weight derivation, support, alignment, and decision
-   coverage as applicable;
-7. conservative interval treatment of floating results;
-8. a reviewed parser/checker boundary in this repository;
-9. exact theorem hypotheses connecting parsed data to the target proposition; and
-10. a publication crosswalk naming the bounded conclusion and all residual assumptions.
-
-Until those gates pass, development output may guide implementation but must not be
-counted as a checked publication certificate or immutable formal evidence.
+1. owner-approved protocol;
+2. strict schema and canonical serializer;
+3. fail-closed producer;
+4. independent direct-formula verifier;
+5. one retained conforming package;
+6. complete applicable source, mesh, weight, support, alignment, and decision coverage;
+7. conservative intervals for floating results;
+8. reviewed Formal parser/checker boundary;
+9. exact theorem hypotheses connecting data to the proposition; and
+10. publication crosswalk with residual assumptions.
 
 ## Versioning
 
-Changing field meaning, weight policy, support semantic codes, canonical identity rules,
-comparison semantics, or rejection behavior requires a new major contract version.
-Adding an optional field with unchanged acceptance meaning may use a documented minor
-revision. Historical packages remain interpreted only under the exact contract and owner
-schema versions they declare.
+A change to meaning, weight policy, support classes, canonical identity, comparison semantics, or rejection behavior requires a new major version. Optional fields with unchanged acceptance meaning may use a documented minor revision. Historical packages remain tied to their declared contract and owner-schema versions.

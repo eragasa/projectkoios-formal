@@ -1,14 +1,19 @@
 # Owner-source audit
 
+This ledger records immutable source identities, locators, byte hashes, and dirty-state limits. It does not transfer source ownership or proof status.
+
 ## Final inspected identity
+
+The final inspection resolved one clean immutable source revision.
 
 - Owner repository: `ksdft2effmass`
 - Branch: `work/paper-3-higher-rank-extension`
 - Commit: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`
-- Final owner-worktree status at last inspection: clean. The immutable local branch and commit together with the cited-byte hashes define the inspected source identity; upstream tracking availability is not used as source identity.
-- Access mode: read-only. No file, index, branch, worktree, or configuration in the owner repository was changed by this task.
+- Final worktree status: clean.
+- Identity basis: local branch, immutable commit, and cited-byte hashes; upstream tracking is irrelevant.
+- Access: read-only; no owner file, index, branch, worktree, or configuration was changed.
 
-The source directories use lowercase suffixes (`Ragasa2026a`, `Ragasa2026b`, `Ragasa2026c`); the requested Lean placeholder names use uppercase suffixes A/B/C. Inspection began while the worktree was at `593cfca64b19b34fc37f450a38419d1cf6e67a15` with relevant uncommitted changes. Another process integrated those bytes during this task. Identity and status were therefore re-resolved before recording the final audit. An unrelated untracked protocol path briefly appeared and disappeared during later concurrent activity; the cited publication paths remained clean. The final files below are clean bytes at commit `99a46c…`, and none of that concurrent activity is attributed to this task.
+Source directories use lowercase paper suffixes; Lean placeholders use uppercase A/B/C. Inspection began at `593cfca64b19b34fc37f450a38419d1cf6e67a15` with relevant uncommitted changes. Another process integrated those bytes, so identity and status were re-resolved. A later unrelated protocol path briefly appeared and disappeared; cited publication paths remained clean. The final cited files are clean bytes at `99a46c…`, and no concurrent change is attributed to this audit.
 
 ## Later attribution reinspection
 
@@ -17,6 +22,8 @@ A later read-only inspection for `BG-PLAN-001` found the same branch and HEAD, b
 This later observation does not retroactively change the worktree state recorded during the original audit. It records a new dirty-state limitation for subsequent source use.
 
 ## Inspected files and final-byte SHA-256
+
+These hashes bind the exact publication bytes.
 
 | SHA-256 | Owner-repository path |
 |---|---|

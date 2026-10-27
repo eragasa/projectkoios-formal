@@ -1,12 +1,21 @@
 # Authority boundaries
 
-| Class | What may establish it | What it may establish here | Current count |
-|---|---|---|---|
-| Exact formal proof | proposition and proof term checked by the pinned Lean kernel | only that proposition under its explicit assumptions | see `theorem-manifest.md`; no paper-specific instantiation |
-| Exact checked certificate | exact certificate data plus a specified Lean checker and a proved connection to the target proposition | only the checker theorem's conclusion | zero |
-| Numerical evidence/certificate | sampled, finite-precision, interval, or other external computation with provenance | bounded computational evidence as declared; not automatically a Lean proof | referenced externally only |
-| Calculator/runtime authority | external implementation and execution environment | operational output under that runtime's contract | none owned here |
+Each evidence class supports only its declared conclusion.
 
-The acceptance requirements in [`BandGauge/publication-evidence-contract.md`](BandGauge/publication-evidence-contract.md) determine whether a future compact artifact is eligible for binding. Specifying that contract creates no artifact, checker result, formal theorem, or scientific authority. In particular, reusable mathematics may allow arbitrary positive weights while the concrete evidence contract rejects undocumented or post-hoc evaluation weights.
+| Class | Established by | Scope |
+|---|---|---|
+| Exact formal proof | proposition and proof term checked by the pinned Lean kernel | encoded proposition under explicit assumptions |
+| Exact checked certificate | exact data, checker, and soundness theorem | checker theorem's conclusion |
+| Numerical evidence | external computation with fixed provenance and error contract | declared finite or bounded computational result |
+| Runtime authority | implementation and execution environment | output under that runtime contract |
 
-A publication label such as “theorem,” “proof,” or “exact certificate” records the source author's mathematical status. It does not become a Lean theorem until the statement and proof are encoded and audited. Floating-point margins do not become exact merely by being serialized. Conversely, a clean software build establishes compilation, not scientific correctness or validation.
+## Rules
+
+Authority never transfers implicitly between classes.
+
+- `docs/theorem-manifest.md` owns proof status.
+- `docs/BandGauge/publication-evidence-contract.md` governs future package eligibility.
+- A requirements document is not an artifact or checker result.
+- Publication prose is not Lean proof.
+- Floating-point serialization does not create exact data.
+- A successful build establishes compilation only.

@@ -1,7 +1,8 @@
 # Solid-state formalization
 
-This namespace owns source-neutral exact algebra for finite solid-state representations. It does
-not own numerical execution, material parameters, artifact acceptance, or scientific validation.
+This namespace owns source-neutral exact algebra for finite solid-state representations.
 
-`FiniteLattice/` contains finite block-supercell folding and route-commutativity results. The
-package root does not re-export this namespace.
+- `FiniteLattice/`: folding, route, gauge-loop, and projector--Bargmann algebra.
+- `TightBinding/`: exact tetrahedral `sp³`/`sp³s⋆` algebra.
+- The package root does not re-export these namespaces.
+- Numerical execution, material parameters, artifact acceptance, and scientific validation remain external.

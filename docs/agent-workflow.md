@@ -1,91 +1,95 @@
-# Agent workflow for Lean work
+# Agent workflow
 
-This document describes a bounded workflow for Pi or another coding agent assisting with Lean. An agent is a development tool, not part of Lean's logical trusted base and not an authority for scientific claims.
+Agents are development tools, not part of Lean's trusted base or scientific authority.
 
 ## Instruction surface
 
-`AGENTS.md` is the repository instruction surface. Do not add competing `SYSTEM.md`, skill, or compatibility instruction files merely to restate it. Session-level tools or skills may assist the work, but repository policy and the pinned Lean kernel remain authoritative.
+`AGENTS.md` is the repository instruction file. Do not add competing instruction files.
 
-## Required workflow
+## Workflow
+
+Development follows six bounded stages.
 
 ### 1. Establish identity
 
-Before editing:
+Record the working context before editing.
 
-- inspect the current branch, commit, worktree, and uncommitted changes;
-- read `AGENTS.md` and the applicable documentation;
-- inventory the active Lean/Lake toolchain and immutable dependency pins; and
-- resolve owner-source branch, commit, paths, and dirty-state limitations read-only.
+- Branch, commit, worktree, and dirty state.
+- Lean/Lake versions and dependency pins.
+- Relevant repository policy.
+- Owner-source repository, commit, path, locator, and dirty-state limits.
 
 ### 2. Select the statement
 
-Before proof search:
+Freeze the claim before proof search.
 
-- cite the exact source statement;
-- freeze scalar field, rank, dimension, domain, conventions, and assumptions;
-- record any proposed assumption delta;
-- choose the owning foundational module; and
-- add or update a statement-level manifest entry only after review.
+- Exact source statement and locator.
+- Scalars, rank, dimension, domain, conventions, and assumptions.
+- Source-to-Lean assumption delta.
+- Owning semantic module.
+- Proposed declaration ID and manifest entry.
 
-Do not begin with a generalized theorem merely because it appears mathematically natural.
+Do not generalize a sourced claim for convenience.
 
-### 3. Search existing libraries
+### 3. Search libraries
 
-Inspect the pinned Mathlib revision and, only when relevant, a compatible immutable Physlib revision. Record candidate declarations and why they fit or fail. Do not create a compatibility facade or duplicate a library definition to avoid a small amount of namespace work.
+Inspect the pinned Mathlib revision and Physlib only when relevant.
 
-### 4. Develop against actual goals
+- Record candidate declarations and fit.
+- Reuse library APIs when adequate.
+- Do not add compatibility facades or duplicate definitions.
 
-Use compiler or language-server goal output rather than guessing proof states. Prefer the smallest affected check while iterating, followed by the complete repository gates.
+### 4. Develop
 
-Typical local loop:
+Use the smallest affected check.
 
 ```console
 lake env lean path/to/AffectedModule.lean
-lake build
 ```
 
-The first command is appropriate only for an actual module path with its imports available. A language-server integration may be used when separately installed and reviewed; its suggestions remain untrusted until Lean accepts the resulting term.
+- Use compiler or language-server goals, not guessed proof states.
+- Reuse `.lake` and pinned dependencies.
+- Prefer one persistent clean integration worktree for sequential topics.
+- Create another worktree only for concurrent isolation.
+- Run `lake update` only for an intentional dependency change.
+- Do not add `sorry`, `admit`, or scientific axioms.
 
-Do not introduce a `sorry`, `admit`, or repository-owned scientific axiom as a planning convenience. Keep an unencoded theorem in documentation metadata until an exact statement and admissible proof-development plan are ready.
+### 5. Promote
 
-### 5. Close the audit loop
+Run the complete gate once for the exact candidate tree.
 
-Before reporting completion:
+- `./scripts/check-pins.py`
+- one cached or incremental `lake build`
+- `./scripts/audit.sh`
+- named `#print axioms` reports
+- manifest and crosswalk review
+- residual-obligation report
 
-- run `./scripts/check-pins.py`;
-- run `lake build`;
-- run `./scripts/audit.sh`;
-- record `#print axioms` for each new publication-facing declaration;
-- update the theorem manifest and source crosswalk; and
-- report residual assumptions, numerical obligations, and generated state.
+Reuse the result after staging, commit, or a byte-identical merge. Rebuild only after a source-tree, toolchain, or manifest change; a failed or interrupted build; or loss of trusted evidence.
 
-Compiler success establishes only that Lean accepted the encoded declarations.
+## Tool adoption
 
-## Agent-tooling evaluation
+Before adopting an agent tool, record:
 
-Candidate Lean skills, LSP bridges, MCP servers, proof-search wrappers, or multi-agent workflows require a read-only evaluation before adoption. Record:
-
-1. authoritative repository and maintainer;
-2. immutable revision and license;
-3. supported Lean, Lake, and Mathlib versions;
-4. commands executed and files/network data accessed;
-5. whether it modifies prompts, source, build state, or Git state;
-6. whether it can transmit unpublished source or credentials;
-7. the smallest compatibility probe; and
-8. limitations of the evidence.
-
-A third-party search result or AI description is not dependency identity or compatibility evidence. Tooling should normally remain user-level unless repository-owned configuration is necessary and separately reviewed. Operator-recorded repositories awaiting possible later evaluation are listed in [`agent-tooling-candidates.md`](agent-tooling-candidates.md); appearance there does not imply adoption.
+- owner, immutable revision, and license;
+- supported toolchains;
+- commands, files, network access, and mutations;
+- secret or unpublished-source exposure;
+- isolated compatibility probe; and
+- limitations.
 
 ## Prohibited shortcuts
 
-- treating generated tactics as proof before Lean checks them;
-- hiding admissions behind generated files or macros;
-- changing theorem assumptions to make automation succeed;
-- importing numerical outputs as exact facts without a checker theorem;
-- granting an agent permission to mutate owner repositories;
-- adding daemons, telemetry, credentials, or broad workflow machinery; or
-- claiming theorem completion from a successful harness build.
+Shortcuts must not cross the trust boundary.
 
-## Handoff record
+- Treating generated tactics as proof before Lean accepts them.
+- Hiding admissions in generated files or macros.
+- Changing assumptions to satisfy automation.
+- Treating numerical output as exact without a checker.
+- Mutating owner repositories.
+- Adding daemons, telemetry, credentials, or broad workflow machinery.
+- Claiming theorem or scientific completion from a successful build.
 
-An agent handoff should state changed paths, exact checks and results, theorem/axiom status, source identity, residual assumptions, and any protected next action. Human authorization permits the named operation; it does not transfer responsibility for technical or scientific correctness to the operator.
+### 6. Handoff
+
+Report changed paths, checks, theorem and axiom status, source identity, residual assumptions, and protected next actions.

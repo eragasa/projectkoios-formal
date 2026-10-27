@@ -1,24 +1,24 @@
 # Candidate witness catalog
 
-Catalog identifiers are planning identifiers only. They are not Lean declarations, theorem IDs, retained evidence identities, or claims of completion.
+Catalog IDs are planning IDs, not declarations or evidence records.
 
-| Planning ID | Candidate construction | Immutable source location | Intended use | Current status and limits |
-|---|---|---|---|---|
-| `BG-WIT-001` | equal-pair common witness and positive lower-bound separation bookkeeping | Ragasa2026c/v1 `manuscript.md:132` at the audited source commit | first finite geometric theorem family | `BG-DEF-001/002` and `BG-THM-001` through `BG-THM-006` implement the generic distance, decision clauses, finiteness, and real/extended bridge; scientific instantiation and reference identities remain unresolved |
-| `BG-WIT-002` | two-observation rank-two band-only false positive | Ragasa2026a/v3 `manuscript.tex:851–889` | exact finite witness for loss/admissibility geometry | promoted as `BG-RAGASA2026A-DEF-022` through `BG-RAGASA2026A-DEF-025`, `BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034`, and `BG-RAGASA2026A-THM-036/037`: exact equal weights, normalized matrices/rotations, algebraic center enclosure, checker acceptance, zero spectral loss, pass-set disjointness, exact positive distance, separation-resolution certification, and degenerate-`κ` joint-checker regression; no generalization, runtime-output, four-state-parent, material, or continuum claim |
-| `BG-WIT-003` | nearest-neighbor `2 × 2` field whose embedded lower-band operator lacks finite Fourier support | Ragasa2026b/v2 `manuscript.tex:316` | constructive projection/support counterexample | paper proof inventoried; gap and nonzero-parameter assumptions must be preserved |
-| `BG-WIT-004` | P0 exact D1 pointwise inverse/polar-factor construction | Ragasa2026c/v1 `manuscript.md:547` | later exact representation certificate statement | no implementation or numerical campaign is inferred; continuum and finite-grid roles remain separate |
+| ID | Candidate | Immutable source | Status |
+|---|---|---|---|
+| `BG-WIT-001` | common witness and positive separation | Ragasa2026c/v1 `manuscript.md:132` | generic distance results implemented; scientific instance unresolved |
+| `BG-WIT-002` | two-observation rank-two false positive | Ragasa2026a/v3 `manuscript.tex:851–889` | exact construction, checker, disjointness, distance, and regression implemented; no runtime or material claim |
+| `BG-WIT-003` | finite-range field with non-finite-support lower-band operator | Ragasa2026b/v2 `manuscript.tex:316` | paper proof inventoried; assumptions must be preserved |
+| `BG-WIT-004` | P0 D1 inverse/polar construction | Ragasa2026c/v1 `manuscript.md:547` | planned; no implementation or numerical status inferred |
 
-## Catalog entry requirements
+## Promotion requirements
 
-Before promotion to a statement-level manifest entry, a witness needs:
+Promotion requires a complete exact specification.
 
-- exact dimensions and scalar field;
-- complete formulas or data encoded without floating-point ambiguity;
-- parameter domains and nondegeneracy assumptions;
-- basis, gauge, Fourier, and support conventions;
-- the precise proposition the witness is meant to establish;
-- an assumption-delta review against the cited source; and
-- a destination module that does not duplicate paper-specific proof structure.
+- Exact dimension and scalar field.
+- Exact formulas or unambiguous data.
+- Parameter and nondegeneracy assumptions.
+- Basis, gauge, Fourier, and support conventions.
+- Exact target proposition.
+- Source assumption-delta review.
+- Semantic destination module.
 
-Numerical M2/M3, rank-three, and Wannier90 records remain external evidence and are not candidate exact witnesses unless a separately reviewed exact certificate boundary is provided.
+Numerical M2/M3, rank-three, and Wannier90 records remain external unless a separate exact certificate boundary is approved.

@@ -7,212 +7,153 @@ Initial document completed: 2026-10-27
 
 # Effort portfolio
 
-## Purpose and authority
+This file is the execution board. Detailed status remains in the linked ledgers.
 
-This document organizes current and prospective work without changing the authority of any
-proof, source, certificate, numerical result, publication, or protected action. It is the
-current execution map for Project Koios Formal, not a replacement for the detailed ledgers and
-plans.
+- Proof status: `theorem-manifest.md`
+- Trust: `trusted-base-audit.md`
+- Source identity: `source-audit.md`
+- Publication mapping: `publication-crosswalk.md`
+- Evidence boundary: `formal-vs-numerical-evidence.md`
+- Module ownership: `module-layout.md`
+- Dependency order: `roadmap.md`
 
-Authoritative status remains separated as follows:
+Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90d879dd64c7d1c3d4e83`, reviewed 2026-10-27.
 
-- [`theorem-manifest.md`](theorem-manifest.md) owns Lean declaration and proof status;
-- [`trusted-base-audit.md`](trusted-base-audit.md) owns audit requirements;
-- [`source-audit.md`](source-audit.md) owns inspected source identity and limitations;
-- [`publication-crosswalk.md`](publication-crosswalk.md) owns publication-to-formalization mapping;
-- [`formal-vs-numerical-evidence.md`](formal-vs-numerical-evidence.md) owns evidence boundaries;
-- [`module-layout.md`](module-layout.md) owns semantic source placement; and
-- [`roadmap.md`](roadmap.md) records mathematical dependency stages.
-
-The portfolio snapshot below was reviewed against remote `main` merge commit
-`95a6724ca2472d674fc90d879dd64c7d1c3d4e83` on 2026-10-27. A later repository state does
-not inherit this snapshot automatically.
+Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 ## Mission
 
-Maintain an audit-first Lean verification sidecar that proves exact propositions and checks
-explicit exact certificates without acquiring authority over computational execution, numerical
-evidence, scientific applicability, novelty, or publication status.
+Maintain an audit-first Lean sidecar for exact propositions and exact certificate checking. Formal does not own runtime execution, numerical evidence, scientific applicability, novelty, or publication status.
 
-## Portfolio hierarchy
+## Portfolios
 
-### 1. Trust, provenance, and promotion
+Seven portfolios separate ownership and evidence types.
 
-Owns toolchain and dependency pins, admission and axiom audits, manifest consistency, source
-identity, proof-dossier policy, release nonclaims, and promotion gates.
-
-It does not establish source fidelity or scientific validity merely from a successful build.
-
-### 2. Reusable exact mathematics
-
-Owns theorem families whose statements are independent of a particular runtime artifact or
-publication:
-
-- BandGauge foundations, Bloch sewing, Fourier algebra, Hilbert losses, geometry, finite
-  decisions, and generic certificate soundness;
-- QuantumMechanics finite-dimensional, finite-difference, state, measurement, Dirac,
-  rigged-space, and test-domain algebra;
-- SolidState folding, route, tight-binding, gauge-loop, and projector--Bargmann algebra; and
-- narrow immutable-source crosswalks where exact constants require an external owner.
-
-A paper or calculation may consume these results but does not become their semantic owner.
-
-### 3. Controlled-model applications
-
-Owns bounded applications of reusable mathematics, including QHO1D, PIAB1D, Mathieu1D,
-rank-one defects, finite periodic reductions, and the abstract Vogl `sp³s⋆` model.
-
-A controlled model remains separate from runtime validation and material applicability.
-
-### 4. Exact certificate bridges
-
-Owns frozen exact schemas, exact data, fail-closed checkers, checker soundness theorems,
-immutable source bindings, and retained hashes. A bridge must keep the producer, independent
-verifier, Lean checker, and scientific interpretation distinct.
-
-Floating-point JSON, runtime arrays, eigensolver output, and external-calculator execution do not
-become exact Lean inputs without a separately reviewed certificate boundary.
-
-### 5. Publication crosswalks
-
-Owns thin source-faithful instantiations and claim mapping for the Ragasa paper sequence and
-monograph. Reusable proofs remain in semantic modules. Publication crosswalks do not transfer
-formal status to numerical evidence or publication status.
-
-### 6. External numerical and scientific evidence
-
-This portfolio is owned outside Formal. It includes KSD calculation packages, independent
-numerical verification, Quantum ESPRESSO and Wannier90 execution, retained evidence, model
-applicability, novelty, and publication acceptance.
-
-Formal records only explicit source crosswalks, exact certificate bridges, and named external
-obligations.
-
-### 7. Repository operations
-
-Owns bounded topic branches, worktree isolation, checkpoint review, integration, pull-request
-review, post-merge validation, and separately authorized cleanup. A dirty multi-topic worktree is
-a partition source, not a promotion unit.
+1. **Trust and provenance:** pins, audits, source identity, dossiers, and promotion gates.
+2. **Reusable mathematics:** BandGauge, QuantumMechanics, SolidState, and narrow exact crosswalks.
+3. **Controlled models:** QHO1D, PIAB1D, Mathieu1D, defects, finite periodic reductions, and abstract Vogl algebra.
+4. **Certificate bridges:** exact schemas, checkers, source bindings, and retained hashes.
+5. **Publication crosswalks:** thin source-faithful mappings and instantiations.
+6. **External evidence:** KSD calculations, independent verification, QE/Wannier90, applicability, and publication review; owned outside Formal.
+7. **Repository operations:** topic isolation, checkpoint review, integration, and authorized cleanup.
 
 ## Status axes
 
-No effort receives one aggregate completion percentage. Report each axis independently:
+Report axes independently.
 
 | Axis | States |
 |---|---|
-| Formal statement | absent / candidate / frozen |
-| Lean implementation | absent / implemented / proved |
-| Trusted-base audit | absent / incomplete / passed |
-| Source provenance | absent / dirty-byte fingerprint / immutable |
-| Exact certificate | absent / schema candidate / checker proved / artifact checked |
+| Statement | absent / candidate / frozen |
+| Lean | absent / implemented / proved |
+| Audit | absent / incomplete / passed |
+| Provenance | absent / dirty-byte fingerprint / immutable |
+| Certificate | absent / schema candidate / checker proved / artifact checked |
 | Numerical evidence | absent / development / independently verified / retained |
-| Integration | isolated / checkpointed / merged to main |
+| Integration | isolated / checkpointed / merged |
 | Publication | unmapped / planning / source-crosswalked / externally governed |
 
-A status on one axis never transfers to another. In particular, `proved`, `artifact checked`,
-`retained`, `merged to main`, and `published` are different claims.
+No status transfers between axes.
 
-## Work-in-progress rule
+## Work-in-progress limit
 
 Keep at most:
 
-- one active mathematical or certificate effort; and
-- one active trust, documentation, or maintenance effort.
+- one mathematical or certificate effort; and
+- one trust, documentation, or maintenance effort.
 
-All other work belongs in `Ready`, `Blocked`, `Deferred`, or `Completed on main`. Adding a new
-active effort requires moving or closing an existing one.
+Everything else is ready, blocked, deferred, or completed.
 
-## Current execution board
+## Active
 
-### Active
+Two efforts occupy the current WIP limit.
 
-#### Rank-two box-certificate integration
+### Finite first-passing cutoffs
 
-Clean-port the reviewed joint `(κ, μmax)` box checker and Paper A bridge from the preserved
-old-base topic. Keep its exact rational checker, soundness theorems, source-specific regression,
-current audit coverage, proof-dossier disclosures, and runtime nonclaims together. Do not add or
-imply a KSD runtime wire, retained runtime artifact, or independently checked scientific result.
+This is the active mathematical effort.
 
-#### Portfolio maintenance
+- Clean extraction from the dirty primary checkout.
+- Exhaustive earlier-cutoff failure semantics.
+- No monotonicity assumption.
+- One common cutoff for joint passage.
+- No runtime-schema or external-coverage claim.
 
-Keep this execution board synchronized only when an effort changes category. Do not copy theorem
-inventories, source hashes, or detailed paper plans into this file.
+### Documentation maintenance
 
-### Ready for bounded review
+This is the active maintenance effort.
 
-1. **Finite first-passing cutoffs:** extract `FiniteCutoff.lean` and its direct manifest, audit,
-   documentation, and dossier changes from the dirty primary checkout into one clean topic.
-2. **Rank-two spectral perturbation:** extract `RankTwoSpectralPerturbation.lean` separately;
-   do not combine it with cutoff semantics or diagnostic-interface design.
-3. **Paper A diagnostic specification:** review the mathematical and Python-interface documents
-   as owner-side schema recommendations, not runtime implementation or accepted evidence.
+- Keep policy and indexes concise.
+- Update this board only when effort category changes.
+- Do not duplicate theorem inventories or source hashes here.
 
-### Blocked
+## Ready
 
-- projection/nonlocality promotion pending provenance, theorem-dossier, spectral-characterization,
-  and completion-status corrections;
-- a Paper A retained runtime certificate and active experiment package;
-- Paper B retained production evidence and a checked exhaustive objective table;
-- Paper C retained independent evidence and fail-closed calculator contract;
-- exact impurity-defect-2d Stage C replay;
-- rigorous QHO finite-box, discretization, and spectral bounds; and
-- authorized Vogl source reacquisition and rights review.
+Ready work has a bounded next action.
 
-### Deferred
+1. Rank-two spectral perturbation as a separate topic.
+2. Paper A diagnostic specification as an owner-side schema recommendation.
 
-- continuum topology and Chern integrality;
-- Wilson eigenphase extraction and phase unwrapping;
-- general Wannier obstruction and Wannier90 execution;
-- broad generic theorem expansion without a selected consumer;
-- Physlib adoption;
-- declaration-graph tooling and unrelated AGENTS-policy changes; and
-- branch or worktree deletion until separately authorized.
+## Blocked
 
-### Completed on main
+Blocked work lacks a required source or evidence gate.
 
-The exact-certificate readiness audit, coordinated read-only with the KSD owner, ranked the
-narrow Paper A rank-two box bridge first, the finite Mathieu1D Fourier bridge second, and the
-rank-one analytical oracle third. This ranking is a planning result, not a checked artifact or
-scientific-evidence promotion.
+- KSD exact request/result wire pending stable owner paths, frozen calculation identity, and joint schema review.
+- Projection/nonlocality promotion pending provenance, dossier, spectral-characterization, and status fixes.
+- Paper A retained runtime certificate and active package.
+- Paper B retained production evidence and exhaustive checked table.
+- Paper C retained independent evidence and fail-closed calculator contract.
+- Exact impurity-defect-2d Stage C replay.
+- Rigorous QHO finite-box, discretization, and spectral bounds.
+- Authorized Vogl source reacquisition and rights review.
 
-The merged calculation-support tranche includes:
+## Deferred
 
-- the Paper A diagnostic-producer audit;
-- QHO and PIAB1D exact finite mathematics;
-- the PhysKit FCC--Bain crosswalk;
-- reduction-basis, spin, finite-folding, and route algebra;
-- tetrahedral Vogl `sp³s⋆` exact algebra;
-- finite measurement and test-domain foundations;
-- arbitrary-rank fixed-unitary Fourier equivariance;
-- conditional rank-one resolvent-defect algebra;
-- finite gauge loops and the projector--Bargmann crosswalk; and
-- complete named axiom-report coverage for manifest declarations marked proved.
+Deferred work is outside the current WIP limit.
 
-This completion status means merged and audited exact Formal content only. It is not a release,
-scientific-evidence promotion, material-validation claim, or publication-completion claim.
+- Continuum topology and Chern integrality.
+- Wilson eigenphases and phase unwrapping.
+- General Wannier obstruction and Wannier90 execution.
+- Broad theorem expansion without a selected consumer.
+- Physlib adoption.
+- Branch and worktree deletion without explicit authorization.
 
-## Publication-program summary
+## Completed on main
 
-| Program | Formal position | Principal missing gate |
+These items are merged Formal content only.
+
+- Paper A diagnostic-producer audit.
+- QHO and PIAB1D finite mathematics.
+- PhysKit FCC--Bain bridge.
+- Reduction, spin, folding, and route algebra.
+- Tetrahedral Vogl algebra.
+- Finite measurement and test-domain foundations.
+- Fixed-unitary Fourier equivariance.
+- Rank-one resolvent algebra.
+- Gauge loops and projector--Bargmann crosswalk.
+- Rank-two box checker, conditional Paper A bridge, and exact regression.
+- Complete named axiom coverage for manifest rows marked proved.
+
+Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.
+
+## Publication programs
+
+Each program retains independent formal and evidence status.
+
+| Program | Formal position | Missing gate |
 |---|---|---|
-| Paper A | conditional source-specific results and one exact internal analytic construction | immutable runtime instance, accepted weights, independent checking, retained artifact |
-| Paper B | metadata placeholder | projection/tail results, frozen exhaustive decision table, checked Pareto mask |
+| Paper A | conditional results and one exact analytic construction | immutable runtime instance and independent checked package |
+| Paper B | metadata placeholder | projection/tail results and checked exhaustive decision table |
 | Paper C | metadata placeholder | fail-closed owner calculator and retained rank/depth/dimension evidence |
-| Paper D | planning only; no source key or Lean namespace | owner-approved immutable protocol and first-principles target |
-| Monograph projection | dirty isolated work | source, statement, dossier, and status corrections |
+| Paper D | planning only | immutable owner protocol and first-principles target |
+| Monograph projection | dirty isolated work | provenance, statement, dossier, and status corrections |
 
-Detailed scientific and readiness requirements remain in
-[`BandGauge/Papers/ragasa-series-research-plan.md`](BandGauge/Papers/ragasa-series-research-plan.md)
-and the per-paper plans.
+## Change rules
 
-## Change discipline
+Board changes must not rewrite detailed ledgers.
 
-When updating this portfolio:
-
-1. preserve the independent status axes;
-2. link to an authoritative detailed document instead of duplicating it;
-3. keep historical roadmaps and source audits intact;
-4. do not move or rename Lean declarations merely to match the portfolio hierarchy;
-5. do not treat a local worktree as a checkpoint;
-6. keep protected actions separately authorized; and
-7. record unresolved ambiguity rather than assigning optimistic status.
+- Preserve independent axes.
+- Link detailed ledgers instead of copying them.
+- Preserve historical source records.
+- Do not move Lean declarations to match this portfolio.
+- Do not treat a worktree as a checkpoint.
+- Keep protected actions separately authorized.
+- Record ambiguity instead of optimistic status.
