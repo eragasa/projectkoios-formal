@@ -1,0 +1,27 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Joint-Enclosure Check Implies Validity}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-013}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{valid_of_checkRankTwoSeparationBoxCertificate_eq_true}}.
+\section{Exact statement}
+Boolean acceptance of a rational joint $(\kappa,\mu)$ enclosure certificate implies every
+encoded validity clause for positivity, endpoint order, witness, radii, containment, and
+strict separation.
+\section{Proof and boundary}
+The checker is the decision procedure for the explicit rational conjunction. The proof
+uses \path{of_decide_eq_true} and repackages the clauses in the named validity
+structure. It provides no parser, source identity, runtime artifact, or scientific
+validation.
+
+Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. Checked with Lean \texttt{4.35.0} and Mathlib
+revision \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and
+kernel-checked; no independent expert review recorded.
+\end{document}

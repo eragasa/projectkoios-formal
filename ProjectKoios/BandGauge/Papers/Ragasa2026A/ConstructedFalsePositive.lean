@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-19
 -/
 module
 
-public import ProjectKoios.BandGauge.Papers.Ragasa2026A.CertificateBridge
+public import ProjectKoios.BandGauge.Papers.Ragasa2026A.KappaEnclosureBridge
 
 open scoped BigOperators ComplexConjugate Matrix
 open Finset
@@ -519,5 +519,87 @@ theorem constructedFalsePositive_separationResolutionCertified
   rcases constructedFalsePositive_exactSeparationDistance.2 with
     ⟨hSpectral, hOperator, hdist⟩
   exact ⟨hSpectral, hOperator, by rwa [hdist]⟩
+
+/-- `BG-RAGASA2026A-DEF-025`: the exact constructed certificate represented in the joint
+`(κ, μ)` enclosure schema, with the degenerate curvature interval `[1,1]`. -/
+def constructedFalsePositiveBoxCertificate :
+    Certificates.RankTwoSeparationBoxCertificate where
+  kappaLower := 1
+  kappaUpper := 1
+  muLower := 7 / 10
+  muUpper := 71 / 100
+  spectralBudget := 1 / 20
+  operatorBudget := 18 / 25
+  operatorRadiusUpper := 3 / 20
+  spectralLambdaRadiusUpper := 1 / 20
+  operatorLambdaRadiusUpper := 3 / 20
+  lowerShift := -1 / 5
+  lowerScale := 1 / 2
+  upperShift := 1 / 5
+  upperScale := 11 / 10
+  witnessShift := 0
+  witnessScale := 1
+
+/-- `BG-RAGASA2026A-THM-036`: the exact Paper A construction passes the joint enclosure
+checker when its curvature interval degenerates to `[1,1]`. -/
+theorem constructedFalsePositiveBoxCertificate_accepts :
+    Certificates.checkRankTwoSeparationBoxCertificate
+      constructedFalsePositiveBoxCertificate = true := by
+  norm_num [Certificates.checkRankTwoSeparationBoxCertificate,
+    Certificates.rankTwoSeparationBoxCertificateConditions,
+    constructedFalsePositiveBoxCertificate]
+
+/-- `BG-RAGASA2026A-THM-037`: the joint `(κ, μ)` enclosure bridge recovers the exact
+constructed spectral pass and operator incompatibility at the degenerate curvature
+interval `[1,1]`. This is a regression theorem for the stronger checker, not a second
+independent publication certificate. -/
+theorem constructedFalsePositive_boxBridgeRegression :
+    constructedFalsePositiveBoxCertificate.spectralWitness ∈
+        canonicalSpectralAdmissibleSetInRectangle constructedFalsePositiveData
+          (Certificates.rankTwoParameterOfRat
+            constructedFalsePositiveBoxCertificate.lowerShift
+            constructedFalsePositiveBoxCertificate.lowerScale)
+          (Certificates.rankTwoParameterOfRat
+            constructedFalsePositiveBoxCertificate.upperShift
+            constructedFalsePositiveBoxCertificate.upperScale)
+          (constructedFalsePositiveBoxCertificate.spectralBudget : ℝ) ∧
+      0 < constructedFalsePositiveBoxCertificate.spectralWitness 1 ∧
+      Disjoint
+        (canonicalSpectralAdmissibleSetInRectangle constructedFalsePositiveData
+          (Certificates.rankTwoParameterOfRat
+            constructedFalsePositiveBoxCertificate.lowerShift
+            constructedFalsePositiveBoxCertificate.lowerScale)
+          (Certificates.rankTwoParameterOfRat
+            constructedFalsePositiveBoxCertificate.upperShift
+            constructedFalsePositiveBoxCertificate.upperScale)
+          (constructedFalsePositiveBoxCertificate.spectralBudget : ℝ))
+        (canonicalOptimizedOperatorAdmissibleSetInRectangle constructedFalsePositiveData
+          (Certificates.rankTwoParameterOfRat
+            constructedFalsePositiveBoxCertificate.lowerShift
+            constructedFalsePositiveBoxCertificate.lowerScale)
+          (Certificates.rankTwoParameterOfRat
+            constructedFalsePositiveBoxCertificate.upperShift
+            constructedFalsePositiveBoxCertificate.upperScale)
+          (constructedFalsePositiveBoxCertificate.operatorBudget : ℝ)) := by
+  have hmuLower :
+      (constructedFalsePositiveBoxCertificate.muLower : ℝ) ≤
+        maximumNormalizedOperatorCorrelation
+          (canonicalRankTwoPauliDecomposition constructedFalsePositiveData) 1 := by
+    norm_num [constructedFalsePositiveBoxCertificate]
+    rw [constructedFalsePositive_maximumNormalizedCorrelation]
+    exact Certificates.sevenTenths_lt_inv_sqrtTwo_lt_seventyOneHundredths.1.le
+  have hmuUpper :
+      maximumNormalizedOperatorCorrelation
+          (canonicalRankTwoPauliDecomposition constructedFalsePositiveData) 1 ≤
+        (constructedFalsePositiveBoxCertificate.muUpper : ℝ) := by
+    norm_num [constructedFalsePositiveBoxCertificate]
+    rw [constructedFalsePositive_maximumNormalizedCorrelation]
+    exact Certificates.sevenTenths_lt_inv_sqrtTwo_lt_seventyOneHundredths.2.le
+  exact canonicalSpectralPass_and_operatorIncompatibility_of_checkedBox
+    constructedFalsePositiveData constructedFalsePositiveBoxCertificate 1
+    constructedFalsePositiveBoxCertificate_accepts
+    (by norm_num [constructedFalsePositiveBoxCertificate])
+    (by norm_num [constructedFalsePositiveBoxCertificate])
+    constructedFalsePositive_uniformWeight_and_power.2 hmuLower hmuUpper
 
 end ProjectKoios.BandGauge.Papers.Ragasa2026A

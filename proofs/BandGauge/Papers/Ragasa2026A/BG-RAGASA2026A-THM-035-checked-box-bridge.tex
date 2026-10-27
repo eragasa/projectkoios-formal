@@ -1,0 +1,30 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Joint-Enclosure Bridge}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-035}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{canonicalSpectralPass_and_operatorIncompatibility_of_checkedBox}}.
+\section{Exact statement}
+Given joint-certificate acceptance, an exact actual parent power, proofs that this power
+lies in the checked $\kappa$ interval, and proofs that the canonical $\mu_{\max}$ lies in
+the checked correlation interval, the encoded positive-scale witness passes the canonical
+spectral loss and the two canonical pass sets are disjoint in the candidate rectangle.
+\section{Source, proof, and boundary}
+This conditional bridge supports the certificate boundary associated with
+\begin{center}\small\path{Ragasa2026a/v3/manuscript.tex:851--889}\end{center}
+at owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+The proof rewrites the finite field losses to scalar ellipses and invokes the uniform
+witness and separation theorems. Field-derived interval membership remains an explicit
+hypothesis; no parser, runtime artifact, or scientific applicability is inferred. Kernel
+axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no
+admissions. Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and kernel-checked;
+no independent expert review recorded.
+\end{document}

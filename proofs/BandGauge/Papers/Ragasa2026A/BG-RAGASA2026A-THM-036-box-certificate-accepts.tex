@@ -1,0 +1,27 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Ragasa2026A Joint-Checker Regression Acceptance}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-RAGASA2026A-THM-036}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Papers.Ragasa2026A.}}\\
+{\tiny\path{constructedFalsePositiveBoxCertificate_accepts}}.
+\section{Exact statement}
+The exact Paper A two-observation certificate passes the joint $(\kappa,\mu)$ checker
+when represented with the degenerate curvature interval $[1,1]$.
+\section{Source, proof, and boundary}
+This regression uses the analytic construction at
+\begin{center}\small\path{Ragasa2026a/v3/manuscript.tex:851--889}\end{center}
+for owner commit
+\begin{center}\small\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}.\end{center}
+Lean reduces every checker clause by exact rational arithmetic. This is a second schema
+representation of the existing certificate, not independent evidence or a new certificate
+count. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; no admissions. Checked with Lean \texttt{4.35.0} and Mathlib
+revision \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and
+kernel-checked; no independent expert review recorded.
+\end{document}
