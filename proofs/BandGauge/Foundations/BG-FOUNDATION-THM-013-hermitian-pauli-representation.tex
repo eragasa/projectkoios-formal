@@ -1,0 +1,29 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Hermitian Rank-Two Pauli Representation}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOUNDATION-THM-013}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Foundations.}}\\
+{\tiny\path{eq_rankTwoHermitianMatrix_of_conjTranspose_eq_self}}.
+\section{Source and contribution boundary}
+Source-neutral supporting algebra; relation \texttt{background-only} to standard finite
+Hermitian matrix theory through pinned Mathlib. No publication-source or novelty claim.
+\section{Statement and proof}
+Every Hermitian complex $2$-by-$2$ matrix is
+\[
+\begin{pmatrix}t+z&x-iy\\x+iy&t-z\end{pmatrix},
+\]
+where $t$ is half the sum of the real diagonal entries, $z$ is half their difference,
+$x=\operatorname{Re}M_{01}$, and $y=-\operatorname{Im}M_{01}$. Hermiticity makes both
+diagonal entries real and identifies the lower-left entry with the conjugate upper-right
+entry; entrywise substitution completes the proof.
+\section{Boundary}
+This representation connects arbitrary Hermitian rank-two matrices to the coordinate
+perturbation theorem. It does not certify numerical Hermiticity or eigensolver output.
+Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Checked with Lean \texttt{4.35.0} and Mathlib revision \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and kernel-checked. No independent expert review is recorded.
+\end{document}

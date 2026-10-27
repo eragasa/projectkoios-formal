@@ -17,6 +17,7 @@ import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
 import ProjectKoios.BandGauge.Hilbert.SpectralLossBridge
+import ProjectKoios.BandGauge.Foundations.RankTwoSpectralPerturbation
 import ProjectKoios.BandGauge.Decision.FinitePareto
 import ProjectKoios.BandGauge.Decision.FiniteCutoff
 import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
@@ -309,6 +310,13 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Foundations.rankTwoRealRotation_conjTranspose_mul_pauli_mul
 #print axioms ProjectKoios.BandGauge.Foundations.rankTwoPauliMatrix_frobeniusCorrelation
 #print axioms ProjectKoios.BandGauge.Foundations.eq_rankTwoPauliMatrix_of_conjTranspose_eq_self_of_trace_eq_zero
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoHermitianMatrix_conjTranspose
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoLowerBand_mem_spectrum
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoUpperBand_mem_spectrum
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoHermitianMatrix_frobeniusSq_sub
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwo_max_band_error_le_frobenius
+#print axioms ProjectKoios.BandGauge.Foundations.eq_rankTwoHermitianMatrix_of_conjTranspose_eq_self
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoLowerBand_le_upperBand
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_traceless
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_commonPower
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.abs_operatorCorrelation_le_commonPower

@@ -1,0 +1,25 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Rank-Two Band Error Frobenius Bound}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOUNDATION-THM-012}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Foundations.}}\\
+{\tiny\path{rankTwo_max_band_error_le_frobenius}}.
+\section{Source and contribution boundary}
+Source-neutral supporting algebra; relation \texttt{background-only} to standard finite
+Hermitian perturbation theory through pinned Mathlib. No publication-source or novelty
+claim; a later diagnostic may consume this theorem without changing its authority.
+\section{Statement and proof}
+For two Hermitian rank-two Pauli-coordinate matrices, the maximum error between their
+lower bands and between their upper bands is at most the unnormalized entrywise
+Frobenius distance. The reverse triangle inequality bounds the radius change by the
+Euclidean Pauli-vector change; Cauchy--Schwarz then gives the Frobenius bound.
+\section{Boundary}
+No factor $1/\sqrt2$ appears. The rank-normalized Frobenius loss is not thereby a Weyl
+upper bound. Exact finite matrices only; no runtime evidence. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Checked with Lean \texttt{4.35.0} and Mathlib revision \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and kernel-checked. No independent expert review is recorded.
+\end{document}

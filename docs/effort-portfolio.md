@@ -67,15 +67,14 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Finite first-passing cutoffs
+### Rank-two spectral perturbation
 
 This is the active mathematical effort.
 
 - Clean extraction from the dirty primary checkout.
-- Exhaustive earlier-cutoff failure semantics.
-- No monotonicity assumption.
-- One common cutoff for joint passage.
-- No runtime-schema or external-coverage claim.
+- Exact scalar-plus-Pauli representation and canonical band values.
+- Unnormalized Frobenius band-error bound.
+- No rank-normalized Weyl, runtime-eigensolver, or physical-model claim.
 
 ### Documentation maintenance
 
@@ -89,8 +88,7 @@ This is the active maintenance effort.
 
 Ready work has a bounded next action.
 
-1. Rank-two spectral perturbation as a separate topic.
-2. Paper A diagnostic specification as an owner-side schema recommendation.
+1. Paper A diagnostic specification as an owner-side schema recommendation.
 
 ## Blocked
 
@@ -130,6 +128,7 @@ These items are merged Formal content only.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.
+- Finite first-passing cutoff semantics.
 - Complete named axiom coverage for manifest rows marked proved.
 
 Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.
