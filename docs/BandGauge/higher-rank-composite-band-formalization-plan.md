@@ -151,7 +151,7 @@ Each declared support gives one attainable cost/operator/spectral objective poin
 
 ## Implemented support
 
-Current reusable modules cover finite sewing, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, and route identities.
+Current reusable modules cover finite sewing, rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary retained-coordinate covariance, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, and route identities.
 
 They do not bind the owner protocol's runtime arrays or prove its case coverage.
 
@@ -159,7 +159,7 @@ They do not bind the owner protocol's runtime arrays or prove its case coverage.
 
 Eight obligations remain outside current proofs.
 
-1. Source-faithful finite-rank frame and projector structures.
+1. Source-faithful binding of owner frame arrays to the exact finite-frame and projector API.
 2. Exact contracts for the structured local alignment family.
 3. Endpoint sewing and polar-conditioning hypotheses.
 4. Complete support hierarchy for D1/D2/D3.
@@ -172,10 +172,10 @@ Wannier90 is absent from D1. A later owner protocol using it must separately che
 
 ## Formalization order
 
-Work proceeds from abstract frames to retained evidence.
+Work proceeds from abstract frames to retained evidence. The first two reusable algebra steps are implemented; owner-specific binding remains external.
 
-1. Freeze the finite-rank frame API and right action.
-2. Prove projector and compression covariance.
+1. Freeze the finite-rank frame API and right action. *(implemented source-neutrally)*
+2. Prove projector and compression covariance. *(implemented source-neutrally)*
 3. Encode admissible alignment families.
 4. Connect aligned fields to finite Fourier truncation.
 5. Add common-threshold decision semantics.
