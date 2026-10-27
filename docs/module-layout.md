@@ -8,7 +8,7 @@ BandGauge separates reusable algebra from paper bindings.
 
 | Directory | Owns | Excludes |
 |---|---|---|
-| `Foundations/` | finite rank-two rotations, Pauli coordinates, elementary optimization | paper data and thresholds |
+| `Foundations/` | finite rank-two rotations, Pauli coordinates, exact band values, Frobenius perturbation algebra, and elementary optimization | paper data, thresholds, runtime eigensolvers, and rank-normalized Weyl claims |
 | `Bloch/` | pointwise sewing, covariant fields, compatible alignment, finite samples | Bloch--Floquet derivation, topology, `L²` point values |
 | `Geometry/` | admissible sets and rank-two loss geometry | unreviewed rank/scalar generalization |
 | `Hilbert/` | residual balls and weighted Frobenius algebra | replacement by bounded-operator norm |
