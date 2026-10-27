@@ -16,6 +16,7 @@ Each class has a distinct conclusion.
 | Publication crosswalk | available | does not prove mapped source claims |
 | Rank-two scalar checkers | implemented | no runtime parser or publication-data binding |
 | Finite Pareto checks | implemented | no external table or coverage binding |
+| Three-way interval decisions | implemented | no parser, enclosure-production, or external inventory binding |
 | Evidence acceptance contract | specified as `PKF-BG-EVIDENCE-CONTRACT/1` | not a production schema or artifact |
 | Exact analytic source certificate | one Paper A construction | not runtime or material evidence |
 | Runtime scientific certificate | none | requires retained exact data and a bound checker result |
@@ -36,7 +37,8 @@ Only checked and crosswalked states support claims about a particular certificat
 
 Reusable infrastructure exists without a runtime publication binding.
 
-- Rank-two and finite-Pareto checkers are reusable infrastructure.
+- Rank-two, finite-Pareto, and three-way interval-decision checkers are reusable infrastructure.
+- Threshold overlap remains unresolved; it is not a decisive acceptance or rejection.
 - Paper A has one exact analytic construction encoded directly in Lean.
 - No runtime publication package or parser binding exists.
 - Generated builds, large numerical outputs, caches, and private source artifacts are not retained here.

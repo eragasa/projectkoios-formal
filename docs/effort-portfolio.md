@@ -67,14 +67,14 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Rank-two spectral perturbation
+### Three-way interval decisions
 
-This is the active mathematical effort.
+This is the active certificate effort.
 
-- Clean extraction from the dirty primary checkout.
-- Exact scalar-plus-Pauli representation and canonical band values.
-- Unnormalized Frobenius band-error bound.
-- No rank-normalized Weyl, runtime-eigensolver, or physical-model claim.
+- Source-neutral outward interval estimates.
+- Accepted, rejected, and unresolved upper-threshold semantics.
+- Joint feasibility at one common decision and finite first-passing composition.
+- No runtime parser, enclosure-production, external coverage, or scientific-evidence claim.
 
 ### Documentation maintenance
 
@@ -129,6 +129,7 @@ These items are merged Formal content only.
 - Gauge loops and projector--Bargmann crosswalk.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.
 - Finite first-passing cutoff semantics.
+- Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
 - Complete named axiom coverage for manifest rows marked proved.
 
 Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.
