@@ -67,14 +67,14 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Three-way interval decisions
+### Pointwise gauge and Fourier boundaries
 
-This is the active certificate effort.
+This is the active mathematical effort.
 
-- Source-neutral outward interval estimates.
-- Accepted, rejected, and unresolved upper-threshold semantics.
-- Joint feasibility at one common decision and finite first-passing composition.
-- No runtime parser, enclosure-production, external coverage, or scientific-evidence claim.
+- Exact character-phase shifts for vector-valued finite Fourier fields.
+- Trivial pointwise scalar-operator conjugation.
+- Higher-rank pointwise-unitary coefficient-change and Frobenius boundaries.
+- No general convolution/support, runtime-array, physical-locality, or scientific-evidence claim.
 
 ### Documentation maintenance
 
@@ -129,6 +129,7 @@ These items are merged Formal content only.
 - Gauge loops and projector--Bargmann crosswalk.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.
 - Finite first-passing cutoff semantics.
+- Three-way interval threshold, joint-feasibility, and first-passing certificates.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
 - Complete named axiom coverage for manifest rows marked proved.
 

@@ -15,7 +15,7 @@ BandGauge separates reusable algebra from paper bindings.
 | `Alignment/` *(proposed)* | finite-rank gauge actions and reviewed alignment results | Fourier truncation and unequal-rank unitary claims |
 | `Decision/` | finite dominance, feasibility, minimum cost, first-passing cutoffs, and outcome classification | external inventory coverage, continuum frontiers, and KKT claims |
 | `Certificates/` | exact schemas, checkers, and soundness bridges | runtime execution and unbound publication data |
-| `Fourier/` | finite transforms, Parseval, support, truncation, Hermitian pairing, fixed-unitary equivariance | momentum-dependent gauge commutation, mesh identity, Wannier90 |
+| `Fourier/` | finite transforms, Parseval, support, truncation, Hermitian pairing, fixed-unitary equivariance, character-phase shifts, and pointwise-gauge boundaries | arbitrary pointwise-gauge convolution/support formulas, mesh identity, Wannier90 |
 | `Projection/` | compression, reconstruction, leakage, and support consequences | conflation with gauge, Fourier, or truncation |
 | `SpecialFunctions/` | later Jacobi--Anger, Bessel, and tail results | premature dependency adoption |
 | `Papers/` | thin source contracts and instantiations | duplicated reusable proofs |

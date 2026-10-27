@@ -49,6 +49,7 @@ Open:
 Status: generic foundations implemented.
 
 - Finite reconstruction, inversion, Parseval, residual tails, Hermitian pairing, and fixed-unitary equivariance.
+- Exact character-phase mode shifts, trivial pointwise scalar-operator conjugation, coefficient separation, and pointwise-unitary Frobenius invariance.
 - Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
 - First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.
 - Exact Boolean dominance, threshold, and nondominated-mask checks.
@@ -57,6 +58,7 @@ Status: generic foundations implemented.
 Open:
 
 - aligned-difference closure and retained compression;
+- general pointwise-gauge convolution and support formulas;
 - physical support and publication-mesh bindings;
 - nonuniform weighted Parseval;
 - runtime interval serialization, enclosure-production arguments, and external coverage;
