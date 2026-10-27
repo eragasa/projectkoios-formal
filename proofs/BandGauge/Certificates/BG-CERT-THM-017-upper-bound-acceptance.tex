@@ -1,0 +1,23 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-27
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Interval Upper-Bound Acceptance}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-017}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{classifyUpperBound_eq_accepted_iff}}.
+\section{Statement and proof}
+An interval is accepted against an inclusive upper budget exactly when its endpoints are
+ordered and its upper endpoint does not exceed the budget. The proof exhausts the three
+ordered endpoint cases in the executable classifier.
+\section{Boundary}
+The result is source-neutral and assumes exact ordered inputs. It does not justify an
+external enclosure, parser, or floating-point interpretation. Kernel axiom:
+\texttt{propext}; no admissions. Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and kernel-checked;
+no independent expert review recorded.
+\end{document}

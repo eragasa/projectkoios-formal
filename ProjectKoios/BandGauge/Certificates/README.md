@@ -10,6 +10,7 @@ This directory owns exact certificate schemas, Boolean checkers, and checker-sou
 - `RankTwoSeparationEnclosure.lean`: rational center intervals and the exact bound `7/10 < 1 / √2 < 71/100`.
 - `RankTwoSeparationBox.lean`: uniform checks over positive-curvature and correlation intervals.
 - `FinitePareto.lean`: exact dominance, threshold, and nondominated-mask checks for complete finite tables.
+- `IntervalDecision.lean`: conservative accepted/rejected/unresolved upper-threshold, joint-feasibility, and first-passing checks for outward intervals.
 
 ## Boundaries
 
@@ -18,4 +19,6 @@ The checkers have narrow formal authority.
 - Checkers fail when a declared validity clause fails.
 - Field-to-certificate bindings remain explicit theorem obligations.
 - These modules do not parse runtime files or certify eigensolvers, external coverage, publication data, or scientific models.
+- Threshold-overlapping intervals are unresolved, not rejected or accepted.
+- Joint acceptance uses one decision satisfying every declared objective.
 - A generic accepted certificate is not a publication certificate.

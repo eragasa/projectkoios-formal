@@ -28,6 +28,7 @@ import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
 import ProjectKoios.BandGauge.Fourier.RankTwoWeightedBridge
 import ProjectKoios.BandGauge.Fourier.UnitaryEquivariance
 import ProjectKoios.BandGauge.Certificates.FinitePareto
+import ProjectKoios.BandGauge.Certificates.IntervalDecision
 import ProjectKoios.BandGauge.Certificates.RankTwoSeparationBox
 import ProjectKoios.BandGauge.Papers.Ragasa2026A
 import ProjectKoios.BandGauge.Papers.Ragasa2026A.ConstructedFalsePositive
@@ -303,6 +304,15 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff
+#print axioms ProjectKoios.BandGauge.Certificates.classifyUpperBound_eq_accepted_iff
+#print axioms ProjectKoios.BandGauge.Certificates.classifyUpperBound_accepted_sound
+#print axioms ProjectKoios.BandGauge.Certificates.classifyUpperBound_rejected_sound
+#print axioms ProjectKoios.BandGauge.Certificates.classifyUpperBound_eq_unresolved_iff
+#print axioms ProjectKoios.BandGauge.Certificates.classifyThresholdFeasible_accepted_sound
+#print axioms ProjectKoios.BandGauge.Certificates.classifyThresholdFeasible_rejected_sound
+#print axioms ProjectKoios.BandGauge.Certificates.classifyThresholdFeasible_eq_unresolved_iff
+#print axioms ProjectKoios.BandGauge.Certificates.classifyFirstPassing_accepted_sound
+#print axioms ProjectKoios.BandGauge.Certificates.classifyFirstPassing_rejected_sound
 #print axioms ProjectKoios.BandGauge.Foundations.secondHarmonicValue_le_maximum
 #print axioms ProjectKoios.BandGauge.Foundations.secondHarmonicValue_maximizingAngle
 #print axioms ProjectKoios.BandGauge.Foundations.canonicalSecondHarmonicMaximizingAngle_mem

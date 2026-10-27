@@ -1,0 +1,22 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-27
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Rejected Interval Soundness}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-019}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{classifyUpperBound_rejected_sound}}.
+\section{Statement and proof}
+If an exact value lies in a rejected interval, it does not satisfy the inclusive upper
+budget. For valid endpoints rejection places the budget strictly below the lower endpoint;
+for invalid endpoints the containment premise itself is impossible.
+\section{Boundary}
+Malformed data fail closed but do not establish a substantive failure without containment.
+Kernel axiom: \texttt{propext}; no admissions. Checked with Lean \texttt{4.35.0} and
+Mathlib revision \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and
+kernel-checked; no independent expert review recorded.
+\end{document}

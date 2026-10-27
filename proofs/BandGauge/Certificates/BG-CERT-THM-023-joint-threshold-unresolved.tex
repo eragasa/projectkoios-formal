@@ -1,0 +1,23 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-27
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Joint Threshold Unresolved}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-023}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{classifyThresholdFeasible_eq_unresolved_iff}}.
+\section{Statement and proof}
+Joint classification is unresolved exactly when no objective is rejected and at least one
+objective is unresolved. Exhausting the three constructors proves both directions; the
+empty-objective case remains accepted rather than unresolved.
+\section{Boundary}
+The theorem supplies no decisive feasibility status and no external inventory guarantee.
+Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound};
+no admissions. Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and kernel-checked;
+no independent expert review recorded.
+\end{document}

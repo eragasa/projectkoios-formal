@@ -52,13 +52,14 @@ Status: generic foundations implemented.
 - Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
 - First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.
 - Exact Boolean dominance, threshold, and nondominated-mask checks.
+- Conservative accepted/rejected/unresolved checks for outward interval thresholds, joint feasibility at one decision, and first passage over a supplied finite inventory.
 
 Open:
 
 - aligned-difference closure and retained compression;
 - physical support and publication-mesh bindings;
 - nonuniform weighted Parseval;
-- interval objective tables and external coverage;
+- runtime interval serialization, enclosure-production arguments, and external coverage;
 - concrete Paper B/C tables; and
 - runtime-bound cutoff inventories and later Wannier90 layers.
 

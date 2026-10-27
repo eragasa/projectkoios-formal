@@ -1,0 +1,22 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-27
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Accepted Interval Soundness}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-CERT-THM-018}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Certificates.}}\\
+{\tiny\path{classifyUpperBound_accepted_sound}}.
+\section{Statement and proof}
+If an exact value lies in an accepted interval, it satisfies the inclusive upper budget.
+Containment bounds the value by the upper endpoint, and acceptance bounds that endpoint by
+the budget; transitivity gives the result.
+\section{Boundary}
+Containment is an explicit premise, not a claim about runtime enclosure production.
+Kernel axiom: \texttt{propext}; no admissions. Checked with Lean \texttt{4.35.0} and
+Mathlib revision \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and
+kernel-checked; no independent expert review recorded.
+\end{document}
