@@ -68,12 +68,14 @@ Dependency-ordered candidate work:
    momentum-mesh coverage.
 
 The semantic finite-decision foundation is now implemented as `BG-DECISION-DEF-001`
-through `BG-DECISION-DEF-009` and `BG-DECISION-THM-001` through
-`BG-DECISION-THM-013`. It proves weak-all/strict-any dominance properties, finite
+through `BG-DECISION-DEF-011` and `BG-DECISION-THM-001` through
+`BG-DECISION-THM-016`. It proves weak-all/strict-any dominance properties, finite
 existence of efficient weak improvers, Pareto sufficiency for coordinatewise threshold
 feasibility, feasibility monotonicity, minimum-cost attainment, minimum-cost
-antitonicity under relaxed thresholds, and an exhaustive logical two-channel outcome
-classification. Exact Boolean dominance, threshold, and nondominated-mask checks and
+antitonicity under relaxed thresholds, an exhaustive logical two-channel outcome
+classification, and existence and uniqueness of a first-passing common cutoff after
+checking every earlier declared inventory member. Exact Boolean dominance, threshold,
+and nondominated-mask checks and
 their soundness/completeness bridges are also implemented as `BG-CERT-DEF-014` through
 `BG-CERT-DEF-016` and `BG-CERT-THM-010` through `BG-CERT-THM-012`. Concrete Paper B/C
 objective tables, interval comparison semantics, external inventory/mesh coverage, parser

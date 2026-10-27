@@ -1,0 +1,22 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Finite First Pass Exists}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-20}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-DECISION-THM-014}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Decision.}}\\
+{\tiny\path{exists_isFirstPassing}}.
+\section{Statement and proof}
+If a finite linearly ordered inventory contains a passing cutoff, its filtered passing
+subset is nonempty and has a minimum. That minimum passes, and no strictly earlier
+inventory member passes.
+\section{Boundary}
+Exhaustive only for the supplied finite inventory; no external coverage or monotonicity
+claim. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. AI-assisted and kernel-checked;
+no independent expert review recorded.
+\end{document}

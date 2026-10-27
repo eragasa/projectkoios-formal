@@ -184,6 +184,9 @@ Current draft dossiers:
 - [`BG-DECISION-THM-011-minimum-feasible-cost-attained.tex`](BandGauge/Decision/BG-DECISION-THM-011-minimum-feasible-cost-attained.tex); and
 - [`BG-DECISION-THM-012-minimum-cost-antitone-under-relaxation.tex`](BandGauge/Decision/BG-DECISION-THM-012-minimum-cost-antitone-under-relaxation.tex); and
 - [`BG-DECISION-THM-013-two-channel-outcome-classification.tex`](BandGauge/Decision/BG-DECISION-THM-013-two-channel-outcome-classification.tex);
+- [`BG-DECISION-THM-014-first-pass-exists.tex`](BandGauge/Decision/BG-DECISION-THM-014-first-pass-exists.tex);
+- [`BG-DECISION-THM-015-first-pass-unique.tex`](BandGauge/Decision/BG-DECISION-THM-015-first-pass-unique.tex); and
+- [`BG-DECISION-THM-016-first-joint-pass.tex`](BandGauge/Decision/BG-DECISION-THM-016-first-joint-pass.tex);
 - [`BG-FOURIER-THM-001-truncation-preserves-supported-coefficient.tex`](BandGauge/Fourier/BG-FOURIER-THM-001-truncation-preserves-supported-coefficient.tex);
 - [`BG-FOURIER-THM-002-truncation-zero-outside-support.tex`](BandGauge/Fourier/BG-FOURIER-THM-002-truncation-zero-outside-support.tex);
 - [`BG-FOURIER-THM-003-truncated-reconstruction-support-sum.tex`](BandGauge/Fourier/BG-FOURIER-THM-003-truncated-reconstruction-support-sum.tex);

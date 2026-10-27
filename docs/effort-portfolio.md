@@ -25,7 +25,7 @@ Authoritative status remains separated as follows:
 - [`roadmap.md`](roadmap.md) records mathematical dependency stages.
 
 The portfolio snapshot below was reviewed against remote `main` merge commit
-`95a6724ca2472d674fc90d879dd64c7d1c3d4e83` on 2026-10-27. A later repository state does
+`1f9e3c56b4e85c1efa75916719a50fc57c8f978a` on 2026-10-27. A later repository state does
 not inherit this snapshot automatically.
 
 ## Mission
@@ -126,12 +126,12 @@ active effort requires moving or closing an existing one.
 
 ### Active
 
-#### Rank-two box-certificate integration
+#### Finite first-passing cutoff integration
 
-Clean-port the reviewed joint `(κ, μmax)` box checker and Paper A bridge from the preserved
-old-base topic. Keep its exact rational checker, soundness theorems, source-specific regression,
-current audit coverage, proof-dossier disclosures, and runtime nonclaims together. Do not add or
-imply a KSD runtime wire, retained runtime artifact, or independently checked scientific result.
+Extract the source-neutral finite ordered-inventory semantics from the dirty primary checkout.
+Keep first passage exhaustive over every earlier declared cutoff, avoid a monotonicity assumption,
+and require one common cutoff for joint two-channel passage. Do not bind the generic definitions
+to an unstable runtime schema or claim external inventory coverage.
 
 #### Portfolio maintenance
 
@@ -140,17 +140,17 @@ inventories, source hashes, or detailed paper plans into this file.
 
 ### Ready for bounded review
 
-1. **Finite first-passing cutoffs:** extract `FiniteCutoff.lean` and its direct manifest, audit,
-   documentation, and dossier changes from the dirty primary checkout into one clean topic.
-2. **Rank-two spectral perturbation:** extract `RankTwoSpectralPerturbation.lean` separately;
+1. **Rank-two spectral perturbation:** extract `RankTwoSpectralPerturbation.lean` separately;
    do not combine it with cutoff semantics or diagnostic-interface design.
-3. **Paper A diagnostic specification:** review the mathematical and Python-interface documents
+2. **Paper A diagnostic specification:** review the mathematical and Python-interface documents
    as owner-side schema recommendations, not runtime implementation or accepted evidence.
 
 ### Blocked
 
 - projection/nonlocality promotion pending provenance, theorem-dossier, spectral-characterization,
   and completion-status corrections;
+- a KSD-owned exact request/result wire pending completion of KSD organization, stable canonical
+  owner paths, and a separately authorized joint schema review;
 - a Paper A retained runtime certificate and active experiment package;
 - Paper B retained production evidence and a checked exhaustive objective table;
 - Paper C retained independent evidence and fail-closed calculator contract;
@@ -174,6 +174,10 @@ The exact-certificate readiness audit, coordinated read-only with the KSD owner,
 narrow Paper A rank-two box bridge first, the finite Mathieu1D Fourier bridge second, and the
 rank-one analytical oracle third. This ranking is a planning result, not a checked artifact or
 scientific-evidence promotion.
+
+The rank-two box-certificate integration is merged on main. It adds exact rational uniform-box
+checking and a conditional Paper A bridge, but no KSD wire, retained runtime artifact, calculated
+four-state-parent result, or scientific-evidence promotion.
 
 The merged calculation-support tranche includes:
 
