@@ -56,120 +56,29 @@ This inventory records both implemented first-slice declarations and future sear
 | PIAB1D finite realization | scaled Dirichlet stencil, cyclic corner closure and its exact source-neutral periodic-matrix bridge, exponential Dirichlet endpoint, local recurrence, real-representability, and finite matrix eigenpair | dirty computational crosswalk; exact source-neutral mathematics | `PIAB1D-FD-DEF-001`, `PIAB1D-FD-THM-001/002`, `PIAB1D-BOUNDARY-DEF-001/002`, `LEM-001`, `THM-001` through `THM-004`, and `PIAB1D-SPECTRUM-DEF-001` through `DEF-007`, `THM-001` through `THM-019` implemented; convergence and runtime binding remain open | `QuantumMechanics/Piab1d` |
 | Exact integral coordinate bridge | fixed FCC--Bain `3 × 3` integer matrices, two-sided inverse products, determinant one, induced mutual inverses, and bijectivity modulo every positive finite size | `projectkoios-physkit` `FccBainCoordinateBridge3D` at commit `7157dcedd0d220673d443c1c025e35a6fd1ffa7a` | source constants implemented as `PKF-PHYSKIT-DEF-001` through `PKF-PHYSKIT-DEF-007`; exact results proved as `PKF-PHYSKIT-THM-001` through `PKF-PHYSKIT-THM-005`; uses Mathlib matrix multiplication, `det_fin_three`, ring-homomorphic matrix mapping, `mulVec_mulVec`, and `ZMod`; no owner runtime-object or `numpy.int64` execution binding | `Crosswalks/PhysKit` |
 
-## Reduction-basis library-search record
+## Library-search summary
 
-- Required signature: a rectangular real matrix `Φ : Matrix ι κ ℝ`, the exact premise
-  `Φᵀ Φ = I`, and typed constructions `Φ Φᵀ`, `Φᵀ H Φ`, and
-  `Φ (Φᵀ H Φ) Φᵀ`.
-- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
-  `Matrix.HasOrthogonalCols` records pairwise orthogonality but not unit column norms;
-  `Orthonormal` is the canonical vector-family predicate; square orthogonal/unitary matrix APIs do
-  not represent a genuinely rectangular injection. The module therefore introduces no duplicate
-  orthonormality predicate and uses the source equation `Φᵀ Φ = I` directly.
-- Reused Mathlib infrastructure: rectangular matrix multiplication, transpose, `mulVec`,
-  `Matrix.IsSymm`, and transpose-of-product lemmas. No missing upstream lemma was required.
-- Physlib was not relevant because the required exact finite matrix APIs are already supplied by
-  pinned Mathlib; no Physlib dependency was adopted.
-- Ownership: the source-neutral constructions belong under
-  `ProjectKoios.QuantumMechanics.FiniteDimensional`; PIAB1D dimensions, runtime arrays, and evidence
-  binding remain downstream obligations.
+All searches used Mathlib revision `56a005855ea17e0b0958f73ec801ae140b0a1679`.
 
-## Rank-one-resolvent library-search record
+| Area | Reused API | Repository-owned connection |
+|---|---|---|
+| Reduction basis | rectangular multiplication, transpose, `mulVec`, symmetry | source equation `ΦᵀΦ = I`; no duplicate orthonormality predicate |
+| Rank-one resolvent | determinant rank-one update, nonsingular inverse, row/column algebra | conjugated outer product, denominator, inverse candidate, attractive specialization |
+| Spin | Kronecker, conjugate transpose, trace, Hermitian, Frobenius norm | injections, pullbacks, partial trace, half-trace projection, explicit Pauli matrices |
+| Folding | finite characters, orthogonality, Kronecker, finite sums | cell-major block folding, row phases, block diagonalization, route identities |
+| Gauge loops | lists, units, unitary groups, inner products, trace, determinant, `Complex.arg` | path convention, endpoint cancellation, Bargmann/Wilson objects, projector trace crosswalk |
 
-- Required signature: a finite complex matrix `A`, vectors `u` and `v`, an update
-  `A + λ |u⟩⟨v|`, the scalar `1 + λ⟨v|A⁻¹|u⟩`, determinant and inverse identities under
-  explicit invertibility/nonzero premises, and the attractive self-update specialization.
-- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
-  `Matrix.det_add_replicateCol_mul_replicateRow` supplies the determinant update;
-  `Matrix.mul_nonsing_inv`, `Matrix.nonsing_inv_mul`, and
-  `Matrix.isUnit_det_of_right_inverse` supply finite inverse bridges; row/column and
-  `vecMulVec` multiplication lemmas supply the rank-one contractions. Weinstein--Aronszajn,
-  Woodbury, and Schur-complement APIs were also inspected, but no existing declaration packaged the
-  exact conjugated-vector Sherman--Morrison and secular-root signatures required here.
-- The module introduces only named connecting definitions for the conjugated outer product,
-  resolvent contraction, denominator, inverse candidate, and attractive-sign specialization. It
-  reuses Mathlib's determinant and nonsingular-inverse infrastructure rather than defining a second
-  matrix inverse.
-- Physlib was not adopted because pinned Mathlib supplies all required finite matrix algebra.
-- Ownership: source-neutral exact finite rank-one algebra belongs under
-  `ProjectKoios.QuantumMechanics.FiniteDimensional`; numerical root searches, runtime arrays,
-  retained spectra, source-specific defect parameters, and physical applicability remain
-  downstream obligations.
+Pinned Mathlib supplied the required finite algebra. Physlib was not adopted.
 
-## Spin-embedding library-search record
+## Required search record
 
-- Required signature: finite complex orbital matrices, the exact Kronecker lift `A ⊗ₖ I₂`,
-  rectangular selected-spin injections, conjugate-transpose sandwiches, and the Frobenius norm used
-  by the calculation-level contract.
-- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
-  `Mathlib.LinearAlgebra.Matrix.Kronecker` supplies `Matrix.kronecker_apply`,
-  `conjTranspose_kronecker`, `mul_kronecker_mul`, and `trace_kronecker`;
-  `Mathlib.Analysis.Matrix.Normed` supplies the scoped Frobenius norm and
-  `Matrix.frobenius_norm_def`; `Mathlib.LinearAlgebra.Matrix.Hermitian` supplies
-  `Matrix.IsHermitian`. No repository-owned replacement for these APIs was introduced.
-- The selected-spin injection, pullback, partial spin trace, and exact half-trace projection are
-  source-neutral connecting constructions absent from the inspected Mathlib API. Their exact
-  entrywise, fixed-point, trace, and Hermiticity identities are proved in `SpinEmbedding.lean` and
-  `SpinIndependentProjection.lean` rather than assumed. Mathlib has no inspected standard Pauli
-  matrix API, so `SpinPauliResidual.lean` declares the three explicit `Fin 2` matrices and proves
-  their required Hermiticity and Frobenius identities entrywise.
-- Physlib was not adopted because pinned Mathlib supplies all finite matrix, Kronecker, Hermitian,
-  trace, and Frobenius infrastructure required by this slice.
-- Ownership: abstract two-state spin-coordinate algebra belongs under
-  `ProjectKoios.QuantumMechanics.FiniteDimensional`; authored `4 × 4` coefficient matrices,
-  floating-point evidence, bindings from those matrices to the abstract residual identities, and
-  time-reversal applicability remain downstream obligations.
+Before adding a definition, record:
 
-## Finite-folding library-search record
+1. exact required signature;
+2. inspected Mathlib declarations and fit;
+3. immutable Physlib revision when relevant;
+4. smallest missing reusable lemma;
+5. downstream or upstream ownership; and
+6. namespace and import boundary.
 
-- Required signature: a normalized finite cyclic/abelian character transform, an unchanged finite
-  orbital block, a finite translation-invariant block-hopping operator, exact Bloch fibers, and
-  conjugate-transpose coordinate pullbacks.
-- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
-  finite-additive-character orthogonality and Pontryagin duality supply the complete character
-  inventory; matrix Kronecker, conjugate-transpose, multiplication, and finite-sum APIs supply the
-  block lift. No inspected Mathlib declaration directly packages the cell-major block-supercell
-  convention or the full route-commutativity statement.
-- The implementation reuses Mathlib characters and proves the normalization, block lift,
-  unit-modulus phase invariance, block diagonalization, scalar-shift transport, and subtraction
-  commutativity. `G = ZMod N` is exposed as the one-dimensional cyclic specialization.
-- Physlib was not adopted because the pinned Mathlib APIs cover this exact finite algebra.
-- Ownership: abstract exact folding and route algebra belongs under
-  `ProjectKoios.SolidState.FiniteLattice`; Python matrices, representative choices, numerical
-  tolerances, and retained evidence remain downstream obligations.
-
-## Finite gauge-loop library-search record
-
-- Required signature: an ordered finite path product, pointwise inverse-left/forward-right link
-  action, endpoint cancellation, closed-loop conjugation, scalar/Bargmann invariance, and
-  matrix-Wilson determinant invariance.
-- Mathlib inspected at pinned revision `56a005855ea17e0b0958f73ec801ae140b0a1679`:
-  `List` recursion supplies the ordered path carrier; `Units` allows invertible gauge values while
-  leaving link values noninvertible; `unitary`, `Unitary.toUnits`, `Matrix.unitaryGroup`, complex
-  inner products, `Complex.arg`, and `Matrix.det_mul` supply the phase, frame, and determinant
-  infrastructure. No inspected declaration packaged the required start-plus-tail loop convention
-  or its endpoint-cancellation theorem.
-- `GaugeLoops.lean` introduces only the connecting finite-path and named Bargmann/Wilson
-  definitions. `ProjectorBargmann.lean` freezes the ordered state-matrix convention, reuses the
-  finite rank-one matrix from `QuantumMechanics/FiniteDimensional`, proves Hermiticity and
-  conditional idempotence, and identifies the ordered product trace with the Bargmann product.
-  Both modules reuse Mathlib's unitary, inner-product, matrix, trace, determinant, and
-  complex-argument APIs.
-- Physlib was not adopted because pinned Mathlib supplies the exact algebra needed by this slice.
-- Ownership: source-neutral finite link/loop algebra belongs under
-  `ProjectKoios.SolidState.FiniteLattice`; numerical overlap construction, loop orientation,
-  reciprocal sewing, Chern integrality, continuum topology, Wannier90 execution, mesh validity,
-  retained evidence, and physical interpretation remain downstream obligations.
-
-## Required library-search record
-
-Before creating a repository-owned definition, record:
-
-1. the exact mathematical signature required by the source;
-2. Mathlib declarations inspected and why they do or do not fit;
-3. the immutable Physlib revision inspected, if relevant;
-4. any missing lemma and its smallest reusable statement;
-5. whether the result belongs downstream here or is a later upstream candidate; and
-6. the chosen namespace and import boundary.
-
-Do not create a compatibility facade or duplicate a library definition merely to match publication notation.
+Do not add compatibility facades or duplicate library definitions for notation alone.

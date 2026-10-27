@@ -1,25 +1,19 @@
 # Finite-lattice algebra
 
-`Folding.lean` defines normalized finite-character folding matrices, their orbital-block and
-unit-modulus-phase variants, translation-invariant block supercells, Bloch fibers, and exact block
-diagonalization. The one-dimensional cyclic specialization uses `G = ZMod N`.
+This directory owns exact finite folding, route, and gauge-loop algebra.
 
-`RouteCommutativity.lean` proves exact identities for coordinate pullback, scalar energy-reference
-removal, defect subtraction, folding, map composition, Hermiticity, and two-state spin lifting.
+- `Folding.lean`: normalized character folding, block supercells, Bloch fibers, and exact block diagonalization; `G = ZMod N` is the cyclic specialization.
+- `RouteCommutativity.lean`: coordinate pullback, energy shifts, defect subtraction, folding, composition, Hermiticity, and spin-lift identities.
+- `GaugeLoops.lean`: path covariance, loop conjugation, scalar/Bargmann phase invariance, and Wilson determinant invariance.
+- `ProjectorBargmann.lean`: rank-one projector products and the exact Bargmann trace identity.
 
-`GaugeLoops.lean` proves endpoint covariance of ordered link products, closed-loop conjugation,
-commutative loop and plaquette invariance, invariance of complex Bargmann products and principal
-phases under pointwise unit-modulus state phases, and conjugation/determinant invariance of finite
-matrix Wilson products under pointwise unitary frame changes.
+## Boundaries
 
-`ProjectorBargmann.lean` proves that finite rank-one state outer products are Hermitian, become
-idempotent projectors under an explicit unit-norm premise, and are invariant under pointwise
-unit-modulus phases. It factors their ordered products and identifies the product trace exactly
-with the corresponding Bargmann loop product, including equality and gauge invariance of the
-principal phases.
+The results remain finite algebraic identities.
 
-These modules do not bind Python arrays, binary64 Fourier or overlap matrices, hopping truncations,
-twist representatives, loop orientations, boundary sewing, tolerances, spectra, or retained
-calculation evidence. They do not infer normalization from runtime data or establish Chern
-integrality, continuum topology, a Wannier obstruction, Wannier90 execution, numerical-mesh
-validity, or physical applicability.
+- Gauge values are units; link values need not be invertible.
+- In the noncommutative setting, a closed product transforms by conjugation. Equality requires commutativity or a conjugation-invariant observable.
+- Projector idempotence requires unit normalization.
+- `Complex.arg` is totalized; phase invariance proves neither nonvanishing nor branch unwrapping.
+- Runtime link matrices, loop orientation, boundary sewing, tolerances, and spectra remain external.
+- The modules do not infer topology, prove Chern integrality or a Wannier obstruction, execute Wannier90, validate meshes, or establish physical applicability.

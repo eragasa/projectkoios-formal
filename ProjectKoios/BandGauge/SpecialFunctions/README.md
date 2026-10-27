@@ -1,5 +1,7 @@
 # BandGauge special functions
 
-Documentation-only folder reserved for later Jacobi–Anger, Bessel-coefficient, and shell-tail infrastructure.
+This directory is reserved for Jacobi--Anger, Bessel-coefficient, and shell-tail results.
 
-Work here is deferred until finite Fourier conventions and the required continuum foundations are fixed. The folder does not imply that Mathlib or Physlib API suitability has been established.
+- Work is deferred until the required finite and continuum Fourier conventions are fixed.
+- No Mathlib or Physlib API suitability is implied.
+- No Lean declaration currently exists in this directory.

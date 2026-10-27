@@ -1,328 +1,188 @@
 # Higher-rank composite-band formalization plan
 
-## Status and source boundary
+This plan translates one immutable owner protocol into reusable formal layers. It is not a theorem, numerical result, or scientific validation claim.
 
-This is a planning document, not a theorem inventory, numerical result, or scientific
-validation claim. Existing declaration status remains exclusive to
-[`../theorem-manifest.md`](../theorem-manifest.md).
+## Source
 
-The source inspected for this plan is:
+The plan uses one immutable protocol revision.
 
-- repository: `ksdft2effmass`;
-- branch: `work/paper-3-d1-calculator`;
-- immutable commit: `8bafdeeb6b0c75bcd7a2984d0c283a8e64fb0fd8`;
-- path:
-  `experiments/periodic-reduction/higher-rank-composite-band-alignment-and-locality/experimental-protocol.tex`.
+- Repository: `ksdft2effmass`
+- Branch: `work/paper-3-d1-calculator`
+- Commit: `8bafdeeb6b0c75bcd7a2984d0c283a8e64fb0fd8`
+- Path: `experiments/periodic-reduction/higher-rank-composite-band-alignment-and-locality/experimental-protocol.tex`
 
-The inspected owner worktree is dirty. Its protocol and sibling README have uncommitted
-science-only edits, while the Python implementation is byte-identical to the immutable
-commit. Consequently the immutable committed protocol, not the dirty file, is the only
-stable source identity recorded here. Later source edits require a new audit.
+The owner worktree was dirty: the protocol and sibling README had uncommitted science edits, while the Python implementation matched the immutable commit. Only the committed protocol is a stable source.
 
-The source protocol does **not** use `O_A`, `O_B`, and `O_C` labels, and it does not define
-a `τ_E`/`τ_O` common-admissible-set decision. The operator labels below are an explicit
-planning interpretation of the source equations, not a quotation or source claim.
+The source does not use the labels `O_A`, `O_B`, `O_C` or define a common `τ_E`/`τ_O` decision. Those labels are planning interpretations.
 
-## Source-defined multi-band experiment
+## Source experiment
 
-For retained rank `r ≥ 3`, the source uses an ambient space of dimension `2r`, a retained
-frame `F(k)`, a retained operator `K_ret(k)`, an exterior operator `D_ext(k)`, and an
-ambient unitary `W(k)`. It defines
+For retained rank `r ≥ 3`, ambient dimension `2r`, frame `F(k)`, retained operator `K_ret(k)`, exterior block `D_ext(k)`, and ambient unitary `W(k)`, the protocol defines
 
 \[
-  F(k)=W(k)E_r,
+F(k)=W(k)E_r,
+\qquad
+H_p(k)=W(k)
+\begin{pmatrix}K_{\mathrm{ret}}(k)&0\\0&D_{\mathrm{ext}}(k)\end{pmatrix}
+W(k)^\dagger.
 \]
+
+It requires
 
 \[
-  H_p(k)=W(k)
-  \begin{pmatrix}
-  K_{\mathrm{ret}}(k)&0\\
-  0&D_{\mathrm{ext}}(k)
-  \end{pmatrix}
-  W(k)^\dagger,
+F^\dagger F=I_r,
+\qquad
+P=FF^\dagger,
+\qquad
+F^\dagger H_pF=K_{\mathrm{ret}}.
 \]
 
-with exact identities
+An internal gauge `G(k) ∈ U(r)` gives
 
 \[
-  F^\dagger F=I_r,
-  \qquad
-  P=FF^\dagger,
-  \qquad
-  F^\dagger H_pF=K_{\mathrm{ret}}.
+C(k)=F(k)G(k),
+\qquad
+H_C(k)=G(k)^\dagger K_{\mathrm{ret}}(k)G(k).
 \]
 
-An internal gauge `G(k) ∈ U(r)` gives the attacked frame and represented operator
+Then `CC† = P` and the untruncated spectrum is unchanged. A right action `U(k)` aligns the candidate:
 
 \[
-  C(k)=F(k)G(k),
-  \qquad
-  H_C(k)=G(k)^\dagger K_{\mathrm{ret}}(k)G(k).
+\widehat F_U(k)=C(k)U(k),
+\qquad
+\widehat H_U(k)=U(k)^\dagger H_C(k)U(k).
 \]
 
-The projector and untruncated spectrum remain exactly unchanged:
+Alignment precedes Fourier conversion and support truncation.
 
-\[
-  CC^\dagger=P,
-  \qquad
-  \operatorname{spec}H_C=\operatorname{spec}K_{\mathrm{ret}}.
-\]
+## Planning decomposition
 
-A declared right action `U(k)` aligns candidate coordinates:
-
-\[
-  \widehat F_U(k)=C(k)U(k),
-  \qquad
-  \widehat H_U(k)=U(k)^\dagger H_C(k)U(k).
-\]
-
-Alignment is applied before Fourier conversion and truncation.
-
-## Interpretive oracle/bridge/local-model decomposition
-
-The requested three-object design can be layered over the source without changing its
-mathematics:
+The labels below are an explicit planning interpretation.
 
 ```text
-O_A = H_p                         ambient parent/oracle operator
+O_A = H_p                          ambient parent
   │ compression through F
   ▼
-O_B = F† H_p F = K_ret            retained spectral reference
-  │ internal gauge G and admissible recovery U
+O_B = F† H_p F = K_ret             retained reference
+  │ internal gauge G and recovery U
   ▼
-Ō_U = U† G† O_B G U               aligned represented field
-  │ finite Fourier transform and support truncation S
+Ō_U = U† G† O_B G U                aligned represented field
+  │ finite Fourier transform and support S
   ▼
-O_C(U,S)                          local tight-binding-type approximation
+O_C(U,S)                           local approximation
 ```
 
-Thus the tight-binding-type object is not merely the untruncated gauge attack. It is the
-support-restricted Fourier reconstruction of an aligned represented field. The exact
-source special case uses `K_ret = D_r`, a diagonal retained field with exact support
-`|R| ≤ 2` before the nonlinear gauge attack.
+`O_C` is the support-restricted Fourier reconstruction, not the untruncated attacked field. The exact P0 source case uses diagonal `K_ret = D_r` with support `|R| ≤ 2` before the nonlinear gauge attack.
 
-For an independently constructed local model rather than a truncation of the source
-field, the state-space, rank, basis, sewing, and alignment contract must be supplied
-again. Rank mismatch is not unitary gauge equivalence and belongs to a separate isometric
-compression and leakage design.
+An independently constructed local model must separately supply state-space, rank, basis, sewing, and alignment contracts. Rank mismatch is isometric compression with leakage, not unitary gauge equivalence.
 
-## Alignment families in the source
+## Alignment classes
 
-The committed D1 P0/G0 protocol compares four source-defined channels:
+The committed D1 P0/G0 protocol compares:
 
-1. **identity:** no alignment;
-2. **one global Procrustes unitary:** selected on the final construction mesh and reused;
-3. **pointwise complete-unitary Procrustes alignment:** reconstructed independently at
-   every construction point; and
-4. **known inverse-gauge oracle:** the analytic inverse of the generating attack, used as
-   a construction control rather than an attainable fitted decision.
+- identity;
+- one global Procrustes unitary selected on the construction mesh and reused;
+- pointwise complete-unitary Procrustes alignment; and
+- the known inverse gauge as a construction control, not an attainable fitted decision.
 
-The exact P0 construction makes the pointwise Procrustes and analytic inverse channels
-coincide analytically. They remain separate numerical consistency channels. A future
-restricted-circuit fit is explicitly outside D1 v1.
+In P0 the pointwise Procrustes and inverse channels coincide analytically but remain separate numerical consistency channels. A structured finite-depth restricted-circuit fit is future work outside D1 v1.
 
-These alignment families must remain separate feasible sets. Their support-error points
-must not be pooled into one Pareto set.
+The formal layer must encode each admissible family explicitly. Their feasible and Pareto sets remain separate; results for one family do not transfer to another.
 
-## Source-defined scientific question
+## Reusable theorem layers
 
-The present Paper 3 protocol asks how retained rank, noncommuting gauge-circuit depth,
-alignment family, and later spatial dimension change:
+Four layers separate finite algebra from owner evidence.
 
-- frame and operator recovery;
-- gauge-induced hopping tails;
-- errors from deliberate support truncation;
-- sampled support--operator-error--spectral-error Pareto membership;
-- mesh refinement behavior; and
-- finite rank/depth trends.
+### Frame and projector algebra
 
-It does so while the untruncated retained spectrum and projector are exactly equivalent by
-construction. This isolates representation and locality effects from parent-model error.
+This layer fixes the retained subspace.
 
-The source does not currently ask whether spectral and operator admissible sets intersect
-at `τ_E` and `τ_O`. A later threshold-decision layer may query the resulting objective
-table, but it is a new reviewed extension and must not be attributed to D1 v1.
+- `F†F = I` implies `P = FF†` is a projector.
+- Right-unitary frame action preserves `P`.
+- Compression transforms by conjugation.
 
-## Finite Fourier and error channels
+### Alignment and loss
 
-For the declared finite construction mesh, the source defines complete discrete hopping
-blocks and support-truncated reconstructions. For every alignment channel and support it
-keeps separate
+This layer fixes gauge action and comparison.
 
-\[
-  e_{\mathrm{interp}}=H_{\mathrm{full}}-H_{\mathrm{direct}},
-\]
+- Right-action convention and covariance.
+- Frobenius loss invariance under one common unitary.
+- Fixed-unitary Fourier equivariance.
+- Explicit noncommutation boundary for momentum-dependent gauges.
 
-\[
-  e_{\mathrm{trunc}}=H_{\mathrm{truncated}}-H_{\mathrm{full}},
-\]
+### Fourier and truncation
 
-\[
-  e_{\mathrm{total}}=H_{\mathrm{truncated}}-H_{\mathrm{direct}},
-\]
+This layer fixes finite representation cost.
 
-with the exact decomposition
+- Finite inversion and Parseval.
+- Matrix Frobenius residual-tail identity.
+- Complete support masks and nested-support monotonicity.
+- Hermitian pairing for negation-closed supports.
+
+### Decision layer
+
+This layer selects one common passing model.
+
+- One common support must satisfy both spectral and operator thresholds.
+- First-passing and minimum-cost statements are relative to a complete declared finite family.
+- Missing or failed cases remain explicit.
+
+The source D1 protocol does not define this `τ_E`/`τ_O` common-threshold question. It is a later reviewed decision layer whose tolerances need independent scientific authority.
+
+## Finite error and attainability boundary
+
+For each alignment channel and support, keep
 
 \[
-  e_{\mathrm{total}}=e_{\mathrm{interp}}+e_{\mathrm{trunc}}.
+e_{\mathrm{interp}}=H_{\mathrm{full}}-H_{\mathrm{direct}},\qquad
+e_{\mathrm{trunc}}=H_{\mathrm{truncated}}-H_{\mathrm{full}},
 \]
 
-The finite transform, finite aliasing/interpolation error, and deliberate support
-truncation are distinct. A finite mesh does not establish continuum Fourier decay.
-
-For each fixed rank, depth, and applicable alignment family, every declared support gives
-an attainable objective point
+and
 
 \[
-  \bigl(
-    |\Omega_S|,
-    \varepsilon_H^{\mathrm{total}}(S),
-    \varepsilon_E^{\mathrm{total}}(S)
-  \bigr).
+e_{\mathrm{total}}=H_{\mathrm{truncated}}-H_{\mathrm{direct}}
+=e_{\mathrm{interp}}+e_{\mathrm{trunc}}.
 \]
 
-Weak improvement in every coordinate and strict improvement in at least one defines the
-source sampled-Pareto rule. Plot triangulation is not interpolation or a continuum front.
+Finite aliasing or interpolation and deliberate support truncation are distinct. A finite mesh does not establish continuum Fourier decay.
 
-## Optional later fidelity decision
+Each declared support gives one attainable cost/operator/spectral objective point. Weak-all and strict-any dominance applies only to the complete declared finite table. A componentwise envelope, plot interpolation, or triangulation need not be attainable and is not a continuum Pareto front.
 
-After the D1 objective table is correctly produced and verified, a separately reviewed
-decision layer may define
+## Implemented support
 
-\[
-  \varepsilon_E(d)\le\tau_E,
-  \qquad
-  \varepsilon_O(d)\le\tau_O
-\]
+Current reusable modules cover finite sewing, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, and route identities.
 
-for the **same** attainable decision `d`, followed by minimum support cost. That layer
-would support nonempty-intersection selection, empty-intersection diagnosis, and
-requirement curves. Its tolerances require independent scientific authority; they are not
-present D1 controls.
+They do not bind the owner protocol's runtime arrays or prove its case coverage.
 
-## Wannier90 boundary
+## Missing obligations
 
-The D1 source supplies analytic frames and explicitly does not execute Wannier90. Its
-purpose is to isolate parent construction, gauge attack, alignment, Fourier conversion,
-and truncation before algorithm-selected localization is introduced.
+Eight obligations remain outside current proofs.
 
-A later protocol may replace the analytic retained frame by a low-eigenpair or
-Wannier90-produced retained frame. That future extension would need separate certificates
-for:
+1. Source-faithful finite-rank frame and projector structures.
+2. Exact contracts for the structured local alignment family.
+3. Endpoint sewing and polar-conditioning hypotheses.
+4. Complete support hierarchy for D1/D2/D3.
+5. Strict owner schema and canonical serialization.
+6. Independent verifier and retained evidence.
+7. Exact or outward-rounded objective certificates.
+8. Thin paper-specific bridge after the reusable layer is stable.
 
-- eigenpair residuals and retained-subspace identity;
-- disentanglement and rank;
-- gauge matrices and sewing;
-- oracle-to-retained reconstruction;
-- full Wannier Fourier reconstruction; and
-- support truncation.
+Wannier90 is absent from D1. A later owner protocol using it must separately check retained rank, eigenpair and subspace residuals, gauge, sewing, disentanglement, and withheld reconstruction. It remains an external witness producer, not a Lean dependency or trusted runtime.
 
-Wannier90 would remain an external witness producer, not a Lean dependency or trusted
-runtime.
+## Formalization order
 
-## Proof program
+Work proceeds from abstract frames to retained evidence.
 
-### 1. Parent and retained-subspace construction
-
-Prove the frame-isometry, projector, rank, compression, parent-spectrum union, and
-exterior-isolation implications of the declared block construction. Keep exact analytic
-construction separate from approximate numerical eigenpair residuals.
-
-### 2. Internal gauge equivalence
-
-Prove that a unitary internal gauge preserves the retained projector and untruncated
-spectrum, and that the represented field has the source conjugation orientation.
-
-### 3. Aligned difference semantics
-
-For a supplied admissible alignment, define
-
-\[
-  \Delta_U(k)=K_{\mathrm{ret}}(k)-U(k)^\dagger H_C(k)U(k).
-\]
-
-Prove that the difference is well typed, Hermitian, and sewn under the corresponding
-source hypotheses. This is the reusable operator-comparison layer.
-
-### 4. Exact recovery controls
-
-For the P0 construction, prove that the known inverse gauge recovers both the reference
-frame and retained operator. Under the required full-rank overlap hypothesis, prove the
-pointwise polar/Procrustes recovery statement with the exact right-action orientation.
-The numerical SVD remains external.
-
-### 5. Finite Fourier and truncation
-
-Freeze the source finite index group, centered representatives, signs, normalization, and
-inverse. Prove inversion, conjugate/Hermitian pairing, Parseval, nested-support tail
-monotonicity, and the full-minus-truncated tail identity.
-
-### 6. Error decomposition and spectral bounds
-
-Prove the interpolation/truncation/total matrix identity and the selected finite Hermitian
-perturbation inequalities
-
-\[
-  \max_i|\lambda_i(A)-\lambda_i(B)|
-  \le \|A-B\|_2
-  \le \|A-B\|_F.
-\]
-
-### 7. Finite sampled Pareto classification
-
-Formalize exact weak-all/strict-any dominance, nondominance, per-channel separation, and
-soundness/completeness of a claimed finite nondominated mask. Prove explicitly that a
-componentwise envelope need not be attainable.
-
-### 8. Exact certificate boundary
-
-A future compact certificate should bind every declared rank, depth, construction mesh,
-alignment disposition, support, withheld-mesh objective, refinement diagnostic, and
-Pareto flag. It must satisfy
-[`publication-evidence-contract.md`](publication-evidence-contract.md), including an
-a-priori or certified optimized quadrature rule, explicit support semantics, canonical
-artifact identity, and fail-closed rejection behavior. Outward-rounded rational intervals
-certify floating results; threshold overlap remains unresolved.
-
-## Repository placement
-
-No new broad source tree is required.
-
-| Concern | Intended owner |
-|---|---|
-| sewing-compatible pullback and aligned difference | `ProjectKoios/BandGauge/Bloch/` |
-| retained compression and reconstruction | `ProjectKoios/BandGauge/Projection/` |
-| finite transform, support, Parseval, and truncation | `ProjectKoios/BandGauge/Fourier/` |
-| admissible losses and finite Pareto statements | `ProjectKoios/BandGauge/Geometry/` |
-| exact interval, coverage, and Pareto-mask checkers | `ProjectKoios/BandGauge/Certificates/` |
-| Paper 3 bindings | a thin future Paper 3 module under `ProjectKoios/BandGauge/Papers/` |
-
-The calculator, independent verifier, serializers, schemas, Wannier90 invocation, and
-production evidence packages belong to the owner computational repository. The formal
-acceptance requirements are frozen here, but they are not the owner's machine-readable
-schema. This repository may check only compact exact certificates through an explicit
-soundness boundary.
-
-## Staged implementation
-
-1. Freeze exact Lean statements against the committed D1 source, not its dirty worktree.
-2. Add aligned-difference closure and exact internal-gauge recovery results.
-3. Add only the finite Fourier identities required by D1.
-4. Audit the owner calculator against the committed protocol before binding any output.
-5. Formalize the exact finite Pareto rule and certificate coverage.
-6. Bind one immutable, independently verified D1 result only after the owner serializer,
-   schema, verifier, and retained-evidence route exist.
-7. Add `τ_E`/`τ_O`, approximate eigenpair, unequal-rank, Wannier90, or continuum layers
-   only through separately reviewed protocols.
+1. Freeze the finite-rank frame API and right action.
+2. Prove projector and compression covariance.
+3. Encode admissible alignment families.
+4. Connect aligned fields to finite Fourier truncation.
+5. Add common-threshold decision semantics.
+6. Freeze the owner certificate schema.
+7. Verify one retained case family independently.
+8. Add source-specific instantiations and dossiers.
 
 ## Nonclaims
 
-This plan does not establish that:
-
-- the current development calculator satisfies the full committed protocol;
-- a schema-free development summary is retained scientific evidence;
-- the finite mesh controls the continuum Brillouin zone;
-- a successful alignment is unique outside the declared full-rank family;
-- the analytic D1 frames validate Wannier90 behavior;
-- a sampled Pareto set is a continuous frontier; or
-- proposed tolerances are scientifically justified.
+This plan does not establish continuum regularity, topology, Chern integrality, phase unwrapping, Wannier obstruction, Wannier90 behavior, runtime correctness, rank/depth/dimension findings, material applicability, or publication readiness.

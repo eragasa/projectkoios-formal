@@ -1,78 +1,89 @@
 # Trusted-base audit
 
-## Current trusted base
+This file defines the trust boundary and records selected historical audit results.
 
-The startup harness relies on:
+## Trusted base
 
-- the Lean 4.35.0 kernel and toolchain named by `lean-toolchain`;
-- Mathlib and its transitive dependencies at revisions resolved by `lake-manifest.json`;
-- repository-owned Lean declarations under `ProjectKoios/`; and
-- local audit scripts whose outputs are evidence about source text and named declarations, not extensions of the kernel.
+The trusted base is explicit and small.
 
-Physlib is not a dependency. Its bounded compatibility probe is documented separately and does not enlarge the current trusted base.
+- Lean 4.35.0 kernel and `lean-toolchain`.
+- Mathlib and transitive revisions in `lake-manifest.json`.
+- Repository Lean declarations under `ProjectKoios/`.
+- Audit scripts as evidence producers, not logical axioms.
 
-## Repository policy
+Physlib is not a dependency.
 
-- Do not introduce a repository-owned axiom to represent a scientific claim.
-- Do not hide `sorry`, `admit`, or equivalent admissions.
-- Do not classify a declaration as proved until `#print axioms` has been recorded for it.
-- If a declaration uses classical principles provided by Lean or Mathlib, report the actual axiom output rather than calling the proof constructive.
-- Generated code, reflection, native computation, or an external solver requires a documented soundness boundary before supporting a publication-facing theorem.
-- A clean build demonstrates elaboration and compilation only; it does not establish source fidelity or scientific validity.
+## Policy
 
-## Required audit layers
+Formal status requires visible assumptions and admissions checks.
 
-| Layer | Required check | What it establishes |
-|---|---|---|
-| Dependency identity | `./scripts/check-pins.py` | declared Mathlib and resolved Lake revisions are immutable commit IDs |
-| Build | `lake build` | repository targets elaborate and compile with the selected toolchain |
-| Text admission scan | `./scripts/audit.sh` | repository-owned Lean sources contain no scanned admission markers |
-| Manifest/audit coverage | `python3 scripts/check-audit-coverage.py` (invoked by `./scripts/audit.sh`) | every theorem or lemma marked `proved; no admissions` has one named `#print axioms` report |
-| Named axiom report | `#print axioms` in `ProjectKoios/Audit.lean` | dependencies of the named declarations as reported by Lean |
-| Manifest review | compare `docs/theorem-manifest.md` with Lean sources | reported theorem status matches declarations that actually exist |
-| Crosswalk review | compare source revision, statement, and assumptions | formal declaration has not silently changed the publication claim |
+- No repository scientific axioms.
+- No hidden `sorry`, `admit`, or equivalent admissions.
+- No `proved` status without a named `#print axioms` report.
+- Report classical axioms exactly.
+- Document soundness boundaries for reflection, native computation, generated code, or external solvers.
+- Treat builds as compilation evidence only.
+
+## Required gates
+
+Every promotion tree passes the same gate set.
+
+| Layer | Check |
+|---|---|
+| Pins | `./scripts/check-pins.py` |
+| Build | one cached or incremental `lake build` per exact candidate tree |
+| Admissions and audit coverage | `./scripts/audit.sh` |
+| Named axioms | `ProjectKoios/Audit.lean` |
+| Manifest | compare declarations with `docs/theorem-manifest.md` |
+| Crosswalk | compare source revision, statement, and assumptions |
+
+## Build reuse
+
+Build evidence is keyed by exact tree and dependency identity.
+
+- Identify evidence by source tree, `lean-toolchain`, and `lake-manifest.json`.
+- Reuse `.lake` and immutable dependency materialization.
+- Prefer one persistent clean integration worktree.
+- Run `lake update` only for dependency changes.
+- Compile affected modules during development.
+- Run the full build once for the promotion tree.
+- Reuse the result after unchanged staging, commit, or byte-identical merge.
+- Rebuild only after identity changes, failure/interruption, or loss of trusted evidence.
 
 ## Publication-facing gate
 
-Before a scientific declaration is marked proved, the audit must record:
+Record:
 
-1. its fully qualified Lean name;
-2. its exact Lean type;
-3. its source statement and immutable source identity;
-4. assumption differences;
+1. fully qualified declaration;
+2. exact Lean type;
+3. immutable source and locator;
+4. assumption delta;
 5. direct proof dependencies;
-6. `#print axioms` output;
-7. the successful pin and build checks; and
-8. any external certificate or numerical obligations that remain outside the proof.
+6. axiom report;
+7. pin and build results; and
+8. external certificate or numerical obligations.
 
-The rational rank-two checker reduces exact decidable propositions inside Lean; its soundness theorems remain kernel checked. Runtime parsing and field-to-certificate bindings are not trusted implicitly.
+## Historical tranche records
 
-Current proof IDs and statuses are listed only in `theorem-manifest.md`. No listed theorem instantiates concrete publication model data, constitutes a concrete checked scientific certificate, validates a scientific model, or authorizes a release.
+These records preserve earlier promotion evidence.
 
-## PIAB1D tranche audit (2026-10-21)
+### PIAB1D, 2026-10-21
+
+The PIAB1D tranche passed its declared gates.
 
 - `lake build`: passed, 3,126 jobs.
-- `./scripts/audit.sh`: passed; no scanned `sorry`, `admit`, or repository-owned `axiom` marker.
-- Named reports in `ProjectKoios/Audit.lean`: the new finite-dimensional, finite-difference,
-  exponential-mode, scalar-twisted/PBC, doubled-cycle odd-extension, and PIAB1D declarations report
-  only `propext`, `Classical.choice`, and `Quot.sound`.
-- The exact finite `Matrix.mulVec` results do not bind NumPy/SciPy arrays, binary64 evaluation,
-  JSON, or retained calculation results.
-- The canonical Dirichlet, periodic, and twisted exponential phases and cosine eigenvalue results
-  do not establish continuum completeness, nonzero/distinctness for every natural mode index, or a
-  Bloch--Floquet theorem. Scalar real-space twisting is not identified with reciprocal-fiber sewing.
+- `./scripts/audit.sh`: passed; it found no scanned `sorry`, `admit`, or repository-owned `axiom` marker.
+- New finite-dimensional, finite-difference, exponential-mode, scalar-twisted/PBC, doubled-cycle odd-extension, and PIAB1D reports used only `propext`, `Classical.choice`, and `Quot.sound`.
+- Exact `Matrix.mulVec` results bind no NumPy/SciPy arrays, binary64 values, JSON, or retained calculation.
+- Canonical Dirichlet, periodic, and twisted modes prove no continuum completeness, universal mode nonzero/distinctness, or Bloch--Floquet theorem. Scalar real-space twisting is not reciprocal-fiber sewing.
 
-## Symbolic finite-barrier tranche audit (2026-10-21)
+### Symbolic finite barrier, 2026-10-21
+
+The barrier tranche passed its declared gates.
 
 - `lake build`: passed, 3,129 jobs.
-- `./scripts/audit.sh`: passed; no scanned `sorry`, `admit`, or repository-owned `axiom` marker.
-- `./scripts/check-pins.py`: passed; Mathlib remains pinned to
-  `56a005855ea17e0b0958f73ec801ae140b0a1679`, and all nine resolved revisions are commit IDs.
-- `git diff --check`: passed.
-- The 44 new constant-region, transfer-matrix, finite-barrier, and interface-matching declarations
-  have unique manifest IDs with exactly one declaration-table row each.
-- The 30 named theorem/lemma reports in `ProjectKoios/Audit.lean` use only `propext`,
-  `Classical.choice`, and `Quot.sound`.
-- The exact symbolic transfer and matching results do not solve the constrained left-incident
-  scattering amplitudes, attach flux probabilities, certify numerical transmission or reflection,
-  take an infinite-barrier limit, bind runtime arrays, or establish continuum convergence.
+- `./scripts/check-pins.py` passed: Mathlib was `56a005855ea17e0b0958f73ec801ae140b0a1679`, and all nine resolved revisions were commit IDs.
+- `./scripts/audit.sh` and `git diff --check` passed; the scan found no `sorry`, `admit`, or repository-owned `axiom` marker.
+- Forty-four constant-region, transfer-matrix, finite-barrier, and interface-matching declarations had unique manifest rows.
+- Thirty named reports used only `propext`, `Classical.choice`, and `Quot.sound`.
+- The symbolic results do not solve constrained left-incident scattering amplitudes, assign flux probabilities, certify numerical transmission/reflection, take an infinite-barrier limit, bind runtime arrays, or establish continuum convergence.

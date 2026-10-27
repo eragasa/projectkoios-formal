@@ -1,61 +1,27 @@
-# Quantum-mechanics formalization modules
+# Quantum-mechanics formalization
 
-This directory owns source-neutral mathematical foundations for later quantum-mechanics
-formalization. It does not claim to encode a complete textbook postulate system, validate numerical
-execution or serialized artifacts, select a concrete Hamiltonian, or establish physical
-applicability.
+This directory owns source-neutral quantum mathematics, not a complete physical postulate system.
 
-## Current modules
+## Modules
 
-- `State.lean` defines normalized complex state-vector representatives and unit-modulus phase
-  changes. Representatives are not quotient rays.
-- `Measurement/FinitePureState.lean` defines a finite family of bounded measurement operations.
-  Squared-norm completeness is supplied explicitly as structure data.
-- `Dirac.lean` defines ordinary kets, bras, brackets, outer products, and normalized rank-one
-  projectors using Mathlib's conjugate-linear-first inner-product convention.
-- `RiggedHilbertSpace.lean` defines a Hausdorff locally convex test-space embedding core and both
-  convention-sensitive Hilbert-to-test-dual injections.
-- `Operator/TestDomain.lean` reuses Mathlib's partial-linear-map theory to turn a test-space
-  endomorphism into a densely defined Hilbert-space operator, prove test-domain invariance, and lift
-  a supplied formal-adjoint identity to maximal-adjoint containment.
-- `FiniteDimensional/` owns compression, decomposition-identifiability, model-class fitting,
-  rectangular reduction-basis, finite rank-one determinant/resolvent identities, and two-state spin
-  algebra.
-- `FiniteDifference/` owns source-neutral centered-difference, boundary-cycle, odd-extension,
-  constant-region, and finite-barrier algebra.
-- `HarmonicOscillator/` owns exact QHO Hermite, finite-ladder, truncation, finite-difference, and
-  finite-comparison mechanisms.
-- `Piab1d/` owns the concrete finite one-dimensional box specialization.
+The modules separate state, operator, and controlled-model mathematics.
 
-## Dependency direction
+- `State.lean`: normalized vector representatives and unit-modulus phase shifts; representatives are not quotient rays.
+- `Measurement/FinitePureState.lean`: finite bounded operations with explicit norm completeness.
+- `Dirac.lean`: typed bras, kets, brackets, outer products, and normalized rank-one projectors.
+- `RiggedHilbertSpace.lean`: test-space inclusion and generalized bra/ket embeddings.
+- `Operator/TestDomain.lean`: dense partial operators, formal adjoints, and maximal-adjoint containment.
+- `FiniteDimensional/`: compression, reduction, fitting, rank-one resolvents, and spin algebra.
+- `FiniteDifference/`: exact lattice, boundary, and transfer algebra.
+- `HarmonicOscillator/`: Hermite, ladder, truncation, finite-difference, and comparison results.
+- `Piab1d/`: finite particle-in-a-box specialization.
 
-```text
-State ──→ Measurement/FinitePureState
-  └─────→ Dirac ──→ RiggedHilbertSpace ──→ Operator/TestDomain
+## Conventions and boundaries
 
-FiniteDifference ──→ Piab1d
-FiniteDimensional and HarmonicOscillator remain narrow reusable families
-```
+The namespace follows Mathlib's analytic conventions.
 
-Future closedness, closability, adjoint equality, essential self-adjointness, dual extensions,
-generalized eigenvectors, and qualified spectral expansions must build in the first direction. They
-must not be inferred from dense-domain or formal-adjoint containment alone.
-
-## Convention boundary
-
-For Mathlib, `⟪ψ, φ⟫_ℂ` is conjugate-linear in `ψ` and linear in `φ`. Consequently:
-
-- an ordinary bra is a continuous linear functional on kets;
-- conversion from a ket to its ordinary Riesz bra is conjugate-linear;
-- a generalized bra in the current rigged-space convention is linear on test vectors; and
-- a generalized ket is conjugate-linear on test vectors.
-
-Named definitions are authoritative. Decorative Dirac notation should be added only after its
-parser behavior and type orientation are separately reviewed.
-
-## Source status
-
-The modules are source-neutral. Exact Shankar postulate crosswalks remain blocked on governed Search
-admission and equation-locator evidence. Concrete rigged-space choices and group-theory theorem
-crosswalks likewise require separately governed sources. No local PDF bytes or protected archive
-expression belong in this directory.
+- Mathlib's inner product is conjugate-linear in its first argument.
+- Ordinary Riesz bras depend conjugate-linearly on kets; current generalized bras are linear and generalized kets are conjugate-linear on test vectors.
+- Dense-domain and formal-adjoint results do not imply closedness, closability, adjoint equality, essential self-adjointness, generalized eigenvectors, or spectral completeness.
+- Named definitions, not decorative Dirac notation, determine type orientation.
+- The modules do not select concrete Hamiltonians, verify runtime artifacts, or establish physical applicability. Governed postulate and literature crosswalks remain external, and protected source bytes do not belong here.

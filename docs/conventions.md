@@ -1,74 +1,62 @@
 # Formalization conventions
 
-This document is a pre-encoding contract. It does not freeze one mathematical convention for every theorem. Instead, it lists the choices that each future definition and statement must expose before review.
+Every theorem family must state the conventions relevant to its claim.
 
-## Convention record required for every theorem family
+## Required record
 
-| Topic | Required record | No implicit default |
+Record every convention that affects a proposition.
+
+| Topic | Record explicitly | Never infer |
 |---|---|---|
-| Scalars | real or complex field and any ordered-field requirements | a real model must not be silently generalized to a complex one |
-| Dimension and rank | spatial dimension, retained rank, and finiteness assumptions | a fixed rank or dimension must not be renamed as arbitrary |
-| Momentum domain | finite cyclic mesh, interval representative, torus, or product torus | endpoint identification and measure are never inferred from notation alone |
-| Sampling weights | normalized counting, geometric-cell, moment-exact, or certified optimized quadrature rule | arbitrary or post-hoc evaluation weights are not accepted as publication evidence |
-| Fourier transform | sign, normalization, index group, inversion rule, and finite/continuum setting | discrete and continuum transforms are not interchangeable |
-| Matrices and operators | domain, codomain, basis/frame, adjoint, and matrix norm | a represented matrix is not identified with an abstract operator without a map |
-| Support and locality | index set, metric, shell rule, conjugate closure, and finite versus decaying support | coordinate cutoff is not physical range unless established |
-| Gauge/alignment | admissible group, pointwise or global action, and real or complex family | unrestricted alignment must not replace a source-restricted family |
-| Spectral ordering | multiplicity, ordering, gap, and retained-subspace assumptions | eigenvectors are not canonical at degeneracy |
-| Parameters | domains, positivity, compactness, bounds, and units | formulas derived on an unconstrained domain do not imply bounded-domain conclusions |
-| Error/evidence | exact equality, inequality, numerical tolerance, or external obligation | approximate equality is not rewritten as exact equality |
+| Scalars | field and order assumptions | real-to-complex generalization |
+| Dimension | spatial dimension, rank, finiteness | arbitrary rank or dimension |
+| Momentum | mesh, interval, torus, endpoints, measure | endpoint identification |
+| Weights | normalized counting, geometric, moment, or certified optimized rule | post-hoc evaluation weights |
+| Fourier | sign, normalization, group, inversion, finite/continuum domain | interchange of conventions |
+| Operators | spaces, basis/frame, adjoint, norm | matrix/operator identity without a map |
+| Support | indices, metric, shells, closure, finite/decaying semantics | physical range from coordinate cutoff |
+| Gauge | group, action, global/pointwise dependence | larger alignment family |
+| Spectrum | multiplicity, ordering, gaps, retained subspace | canonical eigenvectors at degeneracy |
+| Parameters | domains, positivity, compactness, units | bounded conclusions from unbounded formulas |
+| Evidence | equality, bound, tolerance, or external obligation | approximate-to-exact promotion |
 
-## Declaration kinds and identifiers
+## Declaration IDs
 
-Stable IDs follow the mathematical presentation of a declaration:
+IDs classify declarations without changing status.
 
-- `DEF` introduces a definition, abbreviation, structure, or named construction;
-- `LEM` records a supporting identity, rewrite rule, or intermediate result presented as a lemma;
-- `THM` records a principal result presented as a theorem.
+- `DEF`: definition, abbreviation, structure, or construction.
+- `LEM`: supporting identity or intermediate result.
+- `THM`: principal theorem.
+- Existing IDs are append-only; a changed proposition receives a new ID.
 
-Lean gives `lemma` and `theorem` the same kernel status, but that implementation fact does not
-control the author-facing classification. Public visibility, proof completion, audit coverage, and
-a proof dossier do not by themselves turn a lemma into a theorem. The declaration manifest records
-the exact kind, and established IDs remain append-only unless separately reviewed.
+## Comparison discipline
 
-## Source-specific records already observed
+Before comparing operators, identify:
 
-The publication crosswalk identifies source conventions that future encodings must preserve, including rank-two real-rotation families, positive splitting parameters, finite global alignment families, normalized torus integrals, complete metric shells, and the D1 continuum Fourier convention. These observations are traceability notes, not repository-wide defaults.
+1. state spaces;
+2. basis or frame maps;
+3. gauge or alignment action;
+4. energy reference and units; and
+5. lattice and reciprocal coordinates.
 
-For Ragasa2026A v3, the source records reduced momentum `q = k/G = ka₀/(2π)` and a negative-exponent forward Fourier transform. It also reduces the correlation-maximizing angle to `[-π/2, π/2)`; `BG-FOUNDATION-DEF-006` and `BG-RAGASA2026A-DEF-012` implement that exact half-open convention by replacing the complex-argument upper endpoint with the equivalent lower endpoint. The degenerate harmonic still has no unique reported angle. A future Fourier statement must restate the exact domain and normalization rather than relying on this prose summary.
+Projection, disentanglement, basis change, Fourier conversion, and truncation are different operations.
 
-## Equality and transport discipline
+## Certificates
 
-Before subtracting or comparing operators, a statement must identify:
+Certificate inputs remain exact and explicit.
 
-1. the state spaces;
-2. the basis or frame maps;
-3. the gauge/alignment action;
-4. the energy reference and units; and
-5. the lattice and reciprocal-coordinate convention.
+- Exact scalar certificates use rational data and comparisons before real coercion.
+- Algebraic values require proved rational enclosures.
+- Square-root bounds require squared inequalities and nonnegativity.
+- Certificate acceptance does not bind fields, thresholds, or runtime data automatically.
+- Concrete weights and supports must satisfy `BandGauge/publication-evidence-contract.md`.
 
-Exact scalar certificates use rational inputs and exact rational comparison before coercion to real geometry. Algebraic real centers may be supplied through proved rational lower and upper bounds. Square-root bounds are discharged by checked squared inequalities plus explicit nonnegativity; floating-point square roots are not trusted. Certificate acceptance remains separate from binding `κ`, `μ`, thresholds, or witness coordinates to publication matrices and runtime data.
+## Freeze rule
 
-The publication-evidence policy is frozen in
-[`BandGauge/publication-evidence-contract.md`](BandGauge/publication-evidence-contract.md).
-Reusable theorems may quantify over arbitrary strictly positive normalized weights, but a
-concrete evidence package must derive its weights a priori from normalized counting,
-geometric cells, fixed moment conditions, or a preregistered optimization problem with a
-checkable optimum. Weights tuned against the reported candidate losses are design
-variables, not evaluation weights. Every concrete support must separately identify
-whether it is arbitrary finite, negation closed, a complete metric shell, or a
-source-defined hopping range.
+A convention is frozen only after:
 
-Projection, disentanglement, basis transformation, Fourier conversion, and truncation remain different operations. A proof about one operation must not be relabeled as a result about another.
-
-## How a convention becomes frozen
-
-A convention is frozen for a theorem family only when:
-
-1. its owner-source location and revision are cited;
-2. the proposed Lean definition is reviewed against that source;
-3. any generalization or specialization is recorded as an assumption delta;
-4. the theorem manifest names the declaration and status; and
-5. dependent crosswalk rows point to that exact declaration.
-
-No convention in this document authorizes theorem implementation by itself.
+1. immutable source identity and locator;
+2. source-to-Lean review;
+3. recorded assumption delta;
+4. manifest entry; and
+5. dependent crosswalk updates.

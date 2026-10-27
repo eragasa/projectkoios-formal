@@ -1,6 +1,11 @@
 # Publication-to-formalization crosswalk
 
-Unless a later planning inspection is explicitly identified, all source locations below are in `ksdft2effmass`, branch `work/paper-3-higher-rank-extension`, commit `99a46cb59d0c6f27ada7d709f194996ef9619d9f`. “Paper proof” means a mathematical argument in publication prose; it does **not** mean Lean-checked proof. Most rows map only to metadata placeholders; the Ragasa2026C witness/separation row has the explicitly limited foundational formalization recorded below. Standard quantum, solid-state, Bloch, trace, and unitary-invariance facts are supporting dependencies rather than paper contributions; their presence in foundational modules carries no novelty claim.
+Unless noted otherwise, source locations refer to `ksdft2effmass`, branch `work/paper-3-higher-rank-extension`, commit `99a46cb59d0c6f27ada7d709f194996ef9619d9f`.
+
+- “Paper proof” means publication prose, not a Lean-checked proof.
+- Metadata placeholders do not create formal statements.
+- Supporting quantum, solid-state, Bloch, trace, and unitary results carry no novelty claim.
+- Each row states its own implemented and unresolved boundary.
 
 ## Ragasa2026A ↔ `Ragasa2026a/v3`
 

@@ -1,221 +1,131 @@
 # Ragasa2026A paper and proof plan
 
-**Author:** Eugene Joseph M. Ragasa
-**License:** Apache License, Version 2.0 (`Apache-2.0`)
-**Initial document completed:** 2026-10-19
+This plan maps Paper A claims to reusable Lean results and explicit external obligations. It does not authorize publication or promote numerical evidence.
 
-## Status
+- Author: Eugene Joseph M. Ragasa
+- License: Apache-2.0
+- Initial document completed: 2026-10-19
 
-This document records a proposed scientific, computational, and formalization program for
-Ragasa2026A. It is not publication prose, a new theorem declaration, a checked
-runtime publication certificate, numerical evidence, publication authorization, or a
-claim that the paper is complete.
+## Source
 
-The authoritative declaration ledger is
-[`../../../theorem-manifest.md`](../../../theorem-manifest.md). Current Paper A Lean
-modules contain conditional source-specific instantiations and one exact checked analytic
-two-observation construction; the generic proofs they consume remain owned by semantic
-foundational modules. The construction is not runtime evidence or four-state-parent
-validation.
+One immutable manuscript supplies the source claims.
 
-## Source identity
+- Repository: `ksdft2effmass`
+- Commit: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`
+- Path: `docs/publications/papers/Ragasa2026a/v3/manuscript.tex`
+- Constructed-proposition locator: `manuscript.tex:851–889`
+- SHA-256: `2565cf464adb9da72061cad9a3e42d94834e22455bdce7fbba2cf6452572e340`
+- Claim inventory: `docs/publications/papers/Ragasa2026a/v3/claim-and-commitment-inventory.md`
+- Inspection limit: the final cited file was clean at the immutable commit; later worktree changes are excluded.
 
-The crosswalked owner source is:
+## Thesis
 
-- repository: `ksdft2effmass`;
-- branch: `work/paper-3-higher-rank-extension`;
-- commit: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`;
-- path: `docs/publications/papers/Ragasa2026a/v3`.
+Agreement of band eigenvalues need not imply agreement of represented operators or hopping structure. A common finite-range model class can therefore pass a spectral tolerance and fail an operator tolerance.
 
-The detailed file hashes and dirty-state limitations are recorded in
-[`../../../source-audit.md`](../../../source-audit.md). Later dirty manuscript changes are
-not part of this plan's source authority.
+The paper requires two distinct layers:
 
-## Proposed paper thesis
+- exact rank-two separation geometry; and
+- externally produced evidence that a concrete parent model satisfies the theorem hypotheses.
 
-> Spectral fidelity and aligned-operator fidelity define distinct admissible sets. In a
-> controlled rank-two periodic reduction, a candidate may satisfy the spectral tolerance
-> while remaining positively separated from every operator-faithful candidate.
+## Frozen mathematical setting
 
-The central feasibility question is
+The source-facing statements retain the following hypotheses and conventions.
 
-\[
-  \exists(\lambda,\phi):
-  \quad L_E(\lambda,\phi)\le\tau_E,
-  \qquad L_O(\lambda,\phi)\le\tau_O.
-\]
+- Finite retained rank two with complex Hermitian matrix fields.
+- Strictly positive normalized sample weights and a positive reference energy.
+- One common global real rotation, with canonical angle in `[-π/2, π/2)`.
+- Explicit spectral and aligned-operator losses, candidate domain, and positive thresholds.
+- Exact centering, shared-power, correlation, containment, and separation premises.
 
-The paper should explain this incompatibility geometrically and bind at least one
-immutable computational instance to an exact or conservative interval certificate.
+The immutable source leaves general raw objective weights parametrized. A concrete publication instance therefore needs an a-priori or certified optimized quadrature rule; weights tuned against the reported losses are not admissible. The exact two-observation construction uses uniform counting weights.
 
-## Mathematical setting
+## Formal status
 
-The publication-facing setting is the source's rank-two retained problem with:
+Implemented:
 
-- strict-positive normalized coordinate weights, kept general in the reusable theorem but
-  determined a priori for every concrete publication instance;
-- one global standard real rotation;
-- momentum-dependent comparison alignment;
-- weighted finite Frobenius loss with coefficient `αᵢ/(2E_ref²)`;
-- weighted spectral loss on the same observations;
-- a declared positive candidate domain; and
-- the source's canonical angle convention in `[-π/2,π/2)`.
+- pointwise sewing and aligned sampled fields;
+- weighted Frobenius power, correlation, and loss bridges;
+- rank-two Pauli decomposition and second-harmonic optimization;
+- ellipse and candidate-rectangle intersection/distance geometry;
+- exact-center, interval, and joint box certificate checkers;
+- exact two-observation analytic false-positive construction;
+- exact checker acceptance, disjointness, distance, and degenerate-curvature regression.
 
-These hypotheses must not be strengthened, weakened, or generalized silently. The
-immutable source leaves the general raw objective weights parametrized, so they remain
-formal theorem inputs rather than eligible concrete evidence until a derivation rule is
-frozen. The paper's constructed two-observation false positive is already equally
-weighted and therefore has an a-priori `uniform-counting` specialization.
+Not implemented or not bound:
 
-## Main analytic narrative
+- periodic-potential construction of the parent fields;
+- concrete four-state-parent runtime data;
+- independent exact or interval certificate for a calculated instance;
+- continuum Bloch-space theory; and
+- material applicability.
 
-### Exact matrix-to-scalar bridge
+See `docs/theorem-manifest.md` for declaration status.
 
-The finite matrix residuals reduce to two scalar losses after exact centering,
-normalization, and correlation extraction. The bridge must retain the source's Frobenius
-norm and exact coefficients.
+## Source-to-Lean structure
 
-### Correlation harmonic
+Each source layer has one formal or external owner.
 
-For the declared rank-two rotation, prove
+| Source layer | Formal owner | Status |
+|---|---|---|
+| centered rank-two fields and shared power | `BandGauge/Papers/Ragasa2026A/RankTwoFields.lean` | proved conditionally |
+| optimized alignment correlation | `CorrelationHarmonic.lean` | proved |
+| spectral and operator loss geometry | `Hilbert/`, `Geometry/`, `OptimizedLossGeometry.lean` | proved |
+| exact scalar certificate | `Certificates/RankTwoSeparation*.lean` | checker and soundness proved |
+| source-specific bridge | `CertificateBridge.lean`, `KappaEnclosureBridge.lean` | conditional bridge proved |
+| analytic witness | `ConstructedFalsePositive.lean` | proved exactly |
+| calculated parent instance | owner runtime and retained evidence | absent |
 
-\[
-  b_\phi=b_0+c\cos(2\phi)+d\sin(2\phi),
-\]
+## Certificate path
 
-with
+A runtime-backed publication certificate must provide:
 
-\[
-  b_{\max}=b_0+\sqrt{c^2+d^2}.
-\]
+1. frozen schema and calculation identity;
+2. exact rational or outward-rounded inputs;
+3. strict parser with unknown-field rejection;
+4. producer and independent verifier;
+5. retained hashes and provenance;
+6. proof that parsed fields satisfy the Lean hypotheses; and
+7. exact checker acceptance.
 
-Use the canonical maximizing angle in `[-π/2,π/2)`. Do not claim uniqueness when
-`c=d=0`.
+Existing binary64 JSON must not be reinterpreted as exact input.
 
-### Admissible-set geometry
+A runtime-backed scientific instance must also freeze the matrices or field summaries, reference energy, positive weights, bounds for `κ` and `μmax`, candidate rectangle, thresholds, spectral witness, and positive operator-separation bound. A robust interval or open parameter region is preferable to one finely tuned point.
 
-The spectral and optimized operator sublevel sets become explicit weighted ellipses in
-the candidate coordinates. The principal exact results are:
+## Remaining exact work
 
-- sublevel-set identities;
-- nonemptiness conditions;
-- exact full-plane intersection criterion;
-- exact full-plane distance;
-- candidate-rectangle transfer under explicit full-ellipse containment; and
-- strict separation excluding a common witness.
+The highest-value unresolved theorem and bridge families are:
 
-### Certificate bridge
+- persistence under structured field perturbations beyond the checked `(κ, μmax)` box;
+- the source's smooth monotone threshold-continuum result;
+- the operator-residual/nonlocal-hopping identity under frozen Fourier conventions;
+- transported-frame covariance and attainment under explicit regularity premises; and
+- binding an immutable runtime artifact to the existing checker.
 
-A successful exact rational or outward-rounded interval certificate must imply:
+The last item checks a certificate proposition; it does not establish physical validity.
 
-1. a positive-scale spectral witness in the declared candidate rectangle;
-2. containment hypotheses required by the rectangle transfer; and
-3. positive separation from the optimized operator pass set.
+## Proof order
 
-A generic or synthetic accepted certificate is not a checked publication certificate. The
-source's exact two-observation analytic construction is now encoded and checked by
-`BG-RAGASA2026A-DEF-022` through `BG-RAGASA2026A-DEF-025`,
-`BG-RAGASA2026A-THM-029` through `BG-RAGASA2026A-THM-034`, and
-`BG-RAGASA2026A-THM-036/037`, including the exact positive admissible-set distance and
-resolution corollary. `BG-RAGASA2026A-THM-035` additionally binds simultaneous rational
-intervals for field-derived `κ` and `μmax`; the exact construction regression-tests it at
-`κ ∈ [1,1]`. These results remain distinct from a retained runtime package or a calculated
-four-state-parent result.
+Work proceeds from reusable mathematics to a narrow binding.
 
-## Computational scientific result still required
+1. Keep reusable geometry and algebra source-neutral.
+2. Keep source names and assumptions in thin Paper A modules.
+3. Freeze an owner-controlled certificate schema only after KSD ownership stabilizes.
+4. Verify one retained instance independently.
+5. Add the narrow Lean bridge.
+6. Update the publication crosswalk and dossiers.
 
-Beyond the checked analytic construction, the paper needs at least one immutable
-source-bound computational instance containing:
+## Publication evidence gates
 
-1. frozen matrices or exact field-derived summaries;
-2. frozen strict-positive weights derived by an accepted a-priori or certified optimized
-   quadrature rule, plus the reference energy;
-3. exact or outward-rounded bounds for `κ` and `μmax`;
-4. a fixed candidate rectangle;
-5. independently justified positive `τ_E` and `τ_O`;
-6. a checked positive spectral witness; and
-7. a checked positive lower bound on operator separation.
+A publication-facing result requires independent review of:
 
-A robust open parameter region or interval perturbation result is preferable to a single
-finely tuned point. Concrete weight, mesh, support, alignment, artifact-identity, and
-fail-closed requirements are specified by
-[`../../publication-evidence-contract.md`](../../publication-evidence-contract.md).
-Weights tuned against the reported Paper A losses are not admissible evaluation weights.
+- source fidelity and assumption deltas;
+- exact field and weight definitions;
+- alignment-family completeness;
+- certificate coverage and rounding;
+- runtime provenance and retained hashes;
+- scientific interpretation; and
+- novelty/citation status.
 
-The study of every premise, alignment, Fourier, spectral, decision, stability, and
-evidence diagnostic is specified in
-[`diagnostic-usefulness-study-plan.md`](diagnostic-usefulness-study-plan.md). Its
-immutable producer-field audit is complete; the remaining prospective phases require
-mathematical support, analytic calibration, controlled fault injection,
-sensitivity analysis, predictive-value testing, redundancy ablation, cost accounting, and
-a held-out confirmation inventory before any diagnostic is promoted as useful.
+## Nonclaims
 
-## Semantically organized proof dependencies
-
-The paper label does not determine proof ownership. New reusable proofs belong in the
-following semantic families:
-
-| Semantic module family | Required content |
-|---|---|
-| `Foundations/` | rank-two real rotations, Pauli decomposition, second-harmonic optimization |
-| `Bloch/` | sewing-compatible operator fields and admissible alignment pullback |
-| `Hilbert/` | weighted Frobenius algebra, spectral residuals, polarization, unitary invariance |
-| `Geometry/` | admissible sets, ellipse intersection, exact distance, rectangle transfer |
-| `Fourier/` | later residual-to-hopping identities under reviewed finite or continuum conventions |
-| `Certificates/` | rational and interval checks plus binding to immutable source summaries |
-
-The existing `ProjectKoios.BandGauge.Papers.Ragasa2026A` declarations are thin
-source-specific field and loss instantiations. Future reusable theorems should not receive
-Paper A IDs merely because this paper first needs them. Existing theorem IDs and exact
-propositions remain immutable.
-
-## Remaining proof work
-
-The highest-value unresolved theorem families are:
-
-1. persistence of positive separation under structured field perturbations beyond the
-   checked scalar `(κ, μmax)` box;
-2. the source's smooth monotone threshold-continuum result;
-3. the operator-residual/nonlocal-hopping identity under exact Fourier hypotheses;
-4. transported-frame covariance and attainment with explicit regularity premises; and
-5. runtime-data binding from an immutable artifact to the existing certificate checker.
-
-The last item is a runtime checked-certificate boundary, not a proof that the
-computational model is physically valid.
-
-## Proposed manuscript structure
-
-1. **Problem:** spectral and operator fidelity are distinct requirements.
-2. **Rank-two reduction:** fields, rotations, weights, and exact losses.
-3. **Harmonic optimization:** canonical maximizing angle and correlation bound.
-4. **Compatibility geometry:** intersection, separation, and exact distance.
-5. **Concrete certificate:** immutable inputs, rational intervals, witness, and lower
-   bound.
-6. **Interpretation:** what spectral success does and does not imply.
-7. **Limitations:** rank two, finite observations, declared alignment family, and no
-   automatic material validation.
-
-Recommended figures are:
-
-- the two admissible regions and their exact center/radius parameters;
-- the compatibility/separation phase boundary;
-- a certified witness and closest-set geometry;
-- sensitivity of the separation margin to interval uncertainty; and
-- where applicable, operator residual versus induced hopping weight.
-
-## Publication-readiness criteria
-
-Ragasa2026A is ready for a concrete scientific-result claim only when:
-
-1. the source instance and thresholds are frozen at immutable revisions;
-2. all strict-positive weight, domain, and containment assumptions are checked;
-3. uncertainty is represented conservatively rather than as floating-point equality;
-4. the certificate is accepted by a reviewed checker and independently reproduced;
-5. no rank-two, finite-observation, or alignment-family conclusion is generalized beyond
-   its hypotheses; and
-6. formal proof, numerical evidence, scientific applicability, novelty, and publication
-   status are reported separately.
-
-The existing Lean theorems establish the exact source-specific analytic construction but
-do not by themselves establish a runtime computational result, four-state-parent result,
-material claim, or publication completion.
+The current formalization does not establish runtime correctness, a calculated four-state-parent result, continuum convergence, material validity, novelty, independent expert review, release, or publication readiness.
