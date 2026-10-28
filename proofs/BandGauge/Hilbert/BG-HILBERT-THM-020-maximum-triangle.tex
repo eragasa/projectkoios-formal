@@ -1,0 +1,16 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-28
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Finite Maximum Three-Channel Bound}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-28}
+\begin{document}\raggedright\maketitle
+\section{Identity and status}
+ID \texttt{BG-HILBERT-THM-020}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Hilbert.finiteMaximumNorm_totalResidual_le_add}}.
+\section{Statement and proof}
+The maximum total residual is bounded by the maximum interpolation residual plus the maximum truncation residual. Lean rewrites the total residual field as a sum and applies the finite function-space norm triangle inequality.
+\section{Boundary and audit}
+No relation between maximizing coordinates is assumed. Axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Lean \texttt{4.35.0}, Mathlib {\scriptsize\path{56a005855ea17e0b0958f73ec801ae140b0a1679}}; AI-assisted, kernel-checked, no independent expert review recorded.
+\end{document}

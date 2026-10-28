@@ -21,6 +21,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
+Current board baseline: remote `main` merge commit `09888f1061cdb675b9797bacd8aaca87a450bec1`.
+
 ## Mission
 
 Maintain an audit-first Lean sidecar for exact propositions and exact certificate checking. Formal does not own runtime execution, numerical evidence, scientific applicability, novelty, or publication status.
@@ -65,36 +67,55 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-Two efforts occupy the current WIP limit.
+One maintenance effort occupies the current WIP limit. No mathematical or certificate
+effort is active while the validated finite maximum-tail candidate awaits separately
+authorized promotion.
 
-### Strict separation of alignment families
-
-This is the active mathematical effort.
-
-- Nonidentity constant witnesses separating identity from global alignment.
-- Two-point unitary fields separating global from complete pointwise alignment.
-- Exact counterexamples to reverse feasibility transfer.
-- No alignment selection, optimizer correctness, runtime binding, spectral adequacy, or evidence claim.
-
-### Documentation maintenance
+### KSD boundary and portfolio maintenance
 
 This is the active maintenance effort.
 
-- Keep policy and indexes concise.
-- Update this board only when effort category changes.
-- Do not duplicate theorem inventories or source hashes here.
+- Track the Periodic1D rank-one work as an external uncommitted implementation, not a
+  Formal certificate, immutable source binding, or numerical result.
+- Keep the seven-paper planning boundary synchronized at the level of effort categories;
+  detailed numerical controls and source hashes remain with the owner and source ledgers.
+- Update the source-specific crosswalk only after KSD supplies an immutable reviewed
+  revision and an exact proposition-specific request/result contract.
+
+The current KSD rank-one owner is observed on branch
+`work/periodic1d-rank1-control-v3` at base
+`bc1601f3a50dda19b994eea474ca522f2d836c26` with uncommitted typed configuration,
+result, analyzer, independent-verification, authenticated-visualization, direct-script,
+test, and documentation work. A final bounded Formal-boundary rereview on 2026-10-28
+found no blocking finding for the frozen finite calculate, independently verify, and
+authenticated render software slice or its provisional non-retained technical report.
+The rereview reproduced exact configured evaluation coordinates, 725 passing named
+comparisons, and the closed two-figure render inventory. This software review does not
+establish an immutable source identity, retained numerical evidence, scientific
+validation, or a Formal proposition. No retained execution, immutable owner revision, or
+Formal request/result wire exists.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Paper A diagnostic specification as an owner-side schema recommendation.
+1. Complete PR #17 candidate-tree revalidation and actionable rereview, then merge only
+   with separate authorization. The exact Lean results remain independent of KSD runtime
+   data and require no new theorem work for the current scalar rank-one implementation.
+2. Update the Formal proof companion from the merged gauge--truncation declaration.
+3. Resume the Paper A diagnostic owner-side schema recommendation only when it does not
+   displace the active maintenance effort.
 
 ## Blocked
 
 Blocked work lacks a required source or evidence gate.
 
-- KSD exact request/result wire pending stable owner paths, frozen calculation identity, and joint schema review.
+- KSD Periodic1D rank-one exact request/result wire pending an immutable reviewed owner
+  revision, retained hashes, a proposition-specific exact or outward-rounded schema, and
+  joint schema review. The passing uncommitted finite software slice and provisional
+  report are not an immutable Formal source binding or a checked certificate.
+- KSD Periodic1D rank-two and rank-N certificate bindings pending stable successor wires,
+  independently verified results, and retained finite objective inventories.
 - Projection/nonlocality promotion pending provenance, dossier, spectral-characterization, and status fixes.
 - Paper A retained runtime certificate and active package.
 - Paper B retained production evidence and exhaustive checked table.
@@ -126,6 +147,7 @@ These items are merged Formal content only.
 - Finite measurement and test-domain foundations.
 - Fixed-unitary Fourier equivariance.
 - Pointwise-gauge and Fourier boundaries.
+- Exact rank-two gauge--truncation noncommutation witness.
 - Finite orthonormal-frame algebra.
 - Sewn aligned-operator differences.
 - Admissible alignment-family semantics.
@@ -135,6 +157,9 @@ These items are merged Formal content only.
 - Finite first-passing cutoff semantics.
 - Three-way interval threshold, joint-feasibility, and first-passing certificates.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
+- Finite three-channel residual identity with pointwise, maximum, and root-mean-square
+  triangle bounds and exact deliberate-truncation Fourier-tail bridges.
+- Exact Hilbert and explicit matrix-Frobenius root-mean-square Fourier-tail identities.
 - Complete named axiom coverage for manifest rows marked proved.
 
 Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.
@@ -143,12 +168,15 @@ Completion means merged Formal content only. It does not mean release, evidence 
 
 Each program retains independent formal and evidence status.
 
-| Program | Formal position | Missing gate |
+| Program | Formal position | External position and missing gate |
 |---|---|---|
-| Paper A | conditional results and one exact analytic construction | immutable runtime instance and independent checked package |
-| Paper B | metadata placeholder | projection/tail results and checked exhaustive decision table |
-| Paper C | metadata placeholder | fail-closed owner calculator and retained rank/depth/dimension evidence |
-| Paper D | planning only | immutable owner protocol and first-principles target |
+| Paper A | conditional results and one exact analytic construction | KSD has analytic and development calculations but no retained active-calculation package; an immutable runtime instance and independently checked package remain missing |
+| Paper B | metadata placeholder | KSD has bounded replaceable dimensional and strain development ladders; retained production evidence and a checked exhaustive table remain missing |
+| Paper C | metadata placeholder | KSD has a D1 protocol candidate and development code; a stable result wire, independent full-result verification, and retained rank/depth evidence remain missing |
+| Paper D | planning only | KSD owns a bulk-silicon plan and provisional C48/K8 setting, but has no accepted production parent or qualified Wannier bridge |
+| Paper E | absent | KSD has pre-results common-space defect methodology but no immutable experiment or retained defect operator |
+| Paper F | finite gauge-loop and projector--Bargmann algebra only | KSD has pre-results obstruction methodology but no selected model family, invariant protocol, or retained classification; current Formal results do not establish topology |
+| Paper G | absent | KSD has a pre-results matched-SOC application plan but no authorized matched pristine/Si:P/Si:B branches or retained material result |
 | Monograph projection | dirty isolated work | provenance, statement, dossier, and status corrections |
 
 ## Change rules

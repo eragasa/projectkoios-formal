@@ -1,0 +1,16 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-28
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Odd Coefficient Is Nonzero}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-28}
+\begin{document}\raggedright\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-THM-063}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.rankTwoOddFourierCoefficient_ne_zero}}.
+\section{Statement and proof}
+The matrix $\operatorname{diag}(1/2,-1/2)$ is nonzero because its $(0,0)$ entry is $1/2\ne0$. Lean derives the contradiction from entrywise matrix equality.
+\section{Boundary and audit}
+This is an exact matrix inequality. Axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Lean \texttt{4.35.0}, Mathlib {\scriptsize\path{56a005855ea17e0b0958f73ec801ae140b0a1679}}; AI-assisted, kernel-checked, no independent expert review recorded.
+\end{document}

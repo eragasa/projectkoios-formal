@@ -1,0 +1,18 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-28
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Gauge--Truncation Noncommutation}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-28}
+\begin{document}\raggedright\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-THM-066}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_zeroModeFourierTruncation_ne}}.
+\section{Statement and proof}
+For the constant field $H=\operatorname{diag}(1,0)$ on $\mathbb Z/2\mathbb Z$ and gauge values $U(0)=I$, $U(1)=\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$,
+\[\mathcal T_{\{0\}}(\mathcal G_UH)\ne\mathcal G_U(\mathcal T_{\{0\}}H).\]
+The left side is constant after zero-mode truncation. The right side takes the distinct projector values at momenta zero and one. Equality would force those projectors to coincide, contradicting \path{BG-FOURIER-THM-065}.
+\section{Boundary and audit}
+This is one exact finite counterexample. It establishes neither a general convolution theorem nor continuum locality, smoothness, numerical evidence, or runtime correctness. Axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Lean \texttt{4.35.0}, Mathlib {\scriptsize\path{56a005855ea17e0b0958f73ec801ae140b0a1679}}; AI-assisted, kernel-checked, no independent expert review recorded.
+\end{document}

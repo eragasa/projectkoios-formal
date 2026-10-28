@@ -1,0 +1,16 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-28
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Constant Field Zero-Mode Truncation}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-28}
+\begin{document}\raggedright\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-THM-057}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.zeroModeFourierTruncation_twoPointConstantProjectorField}}.
+\section{Statement and proof}
+Zero-mode truncation fixes the constant field $H(k)=\operatorname{diag}(1,0)$ on $\mathbb Z/2\mathbb Z$. The normalized trivial coefficient is evaluated entrywise and equals $H$.
+\section{Boundary and audit}
+This is an exact two-point identity, not numerical evidence. Axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Lean \texttt{4.35.0}, Mathlib {\scriptsize\path{56a005855ea17e0b0958f73ec801ae140b0a1679}}; AI-assisted, kernel-checked, no independent expert review recorded.
+\end{document}

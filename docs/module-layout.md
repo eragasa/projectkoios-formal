@@ -11,11 +11,11 @@ BandGauge separates reusable algebra from paper bindings.
 | `Foundations/` | finite rank-two rotations, Pauli coordinates, exact band values, Frobenius perturbation algebra, and elementary optimization | paper data, thresholds, runtime eigensolvers, and rank-normalized Weyl claims |
 | `Bloch/` | pointwise sewing, covariant fields, compatible alignment, aligned operator differences, finite samples | alignment selection, self-adjointness inference, Bloch--Floquet derivation, topology, `L²` point values |
 | `Geometry/` | admissible sets and rank-two loss geometry | unreviewed rank/scalar generalization |
-| `Hilbert/` | residual balls and weighted Frobenius algebra | replacement by bounded-operator norm |
+| `Hilbert/` | residual balls, finite three-channel residual identities and norm bounds, and weighted Frobenius algebra | runtime interpolation, scalar error additivity, or replacement by a fixed bounded-operator norm |
 | `Alignment/` | rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary coordinate changes, and explicit identity/global/pointwise alignment families | Fourier truncation, runtime orthonormality, optimizer correctness, gauge selection, and unequal-rank unitary claims |
 | `Decision/` | finite dominance, feasibility, minimum cost, first-passing cutoffs, and outcome classification | external inventory coverage, continuum frontiers, and KKT claims |
 | `Certificates/` | exact schemas, checkers, and soundness bridges | runtime execution and unbound publication data |
-| `Fourier/` | finite transforms, Parseval, support, truncation, Hermitian pairing, fixed-unitary equivariance, character-phase shifts, and pointwise-gauge boundaries | arbitrary pointwise-gauge convolution/support formulas, mesh identity, Wannier90 |
+| `Fourier/` | finite transforms, Parseval, support, truncation, exact residual-channel power and root-mean-square tail bridges, pointwise and finite-maximum ambient-norm tail bounds, Hermitian pairing, fixed-unitary equivariance, character-phase shifts, pointwise-gauge boundaries, and exact finite gauge–truncation counterexamples | matrix-Frobenius maximum specialization without an explicit representation bridge, arbitrary pointwise-gauge convolution/support formulas, runtime interpolation or mesh identity, Wannier90 |
 | `Projection/` | compression, reconstruction, leakage, and support consequences | conflation with gauge, Fourier, or truncation |
 | `SpecialFunctions/` | later Jacobi--Anger, Bessel, and tail results | premature dependency adoption |
 | `Papers/` | thin source contracts and instantiations | duplicated reusable proofs |

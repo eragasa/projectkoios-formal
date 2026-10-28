@@ -18,6 +18,7 @@ import ProjectKoios.BandGauge.Alignment.FiniteFrame
 import ProjectKoios.BandGauge.Alignment.Family
 import ProjectKoios.BandGauge.Alignment.FamilySeparation
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
+import ProjectKoios.BandGauge.Hilbert.ResidualChannels
 import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
 import ProjectKoios.BandGauge.Hilbert.SpectralLossBridge
@@ -29,9 +30,11 @@ import ProjectKoios.BandGauge.Fourier.FiniteAbelianTransform
 import ProjectKoios.BandGauge.Fourier.FiniteParseval
 import ProjectKoios.BandGauge.Fourier.HermitianPairing
 import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
+import ProjectKoios.BandGauge.Fourier.ResidualChannels
 import ProjectKoios.BandGauge.Fourier.RankTwoWeightedBridge
 import ProjectKoios.BandGauge.Fourier.UnitaryEquivariance
 import ProjectKoios.BandGauge.Fourier.PointwiseGauge
+import ProjectKoios.BandGauge.Fourier.GaugeTruncationCounterexample
 import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Certificates.IntervalDecision
 import ProjectKoios.BandGauge.Certificates.RankTwoSeparationBox
@@ -232,6 +235,12 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Hilbert.hilbertBallDistance_le_dist_of_mem
 #print axioms ProjectKoios.BandGauge.Hilbert.exists_hilbertBallDistance_eq_dist
 #print axioms ProjectKoios.BandGauge.Hilbert.hilbertAdmissibleBall_admissibleSetDist_eq
+#print axioms ProjectKoios.BandGauge.Hilbert.finiteMaximumNorm_eq_sup
+#print axioms ProjectKoios.BandGauge.Hilbert.finiteRootMeanSquareNorm_eq
+#print axioms ProjectKoios.BandGauge.Hilbert.totalResidual_eq_add
+#print axioms ProjectKoios.BandGauge.Hilbert.norm_totalResidual_le_add
+#print axioms ProjectKoios.BandGauge.Hilbert.finiteMaximumNorm_totalResidual_le_add
+#print axioms ProjectKoios.BandGauge.Hilbert.finiteRootMeanSquareNorm_totalResidual_le_add
 #print axioms ProjectKoios.BandGauge.Hilbert.rankTwoWeightedFrobeniusSq_nonneg
 #print axioms ProjectKoios.BandGauge.Hilbert.abs_rankTwoWeightedFrobeniusCorrelation_le
 #print axioms ProjectKoios.BandGauge.Hilbert.rankTwoWeightedFrobeniusSq_unitary_conjugate
@@ -287,6 +296,15 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.finiteFourierCoefficient_apply
 #print axioms ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusPower_parseval
 #print axioms ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusTruncationResidual_parseval
+#print axioms ProjectKoios.BandGauge.Fourier.truncationResidual_fourierReconstruction_eq
+#print axioms ProjectKoios.BandGauge.Fourier.finiteFourierPower_truncationResidual_eq_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusPower_truncationResidual_eq_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteRootMeanSquareNorm_truncationResidual_eq_sqrt_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteRootMeanSquareNorm_truncationResidual_sq_eq_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_eq_sqrt_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_sq_eq_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.norm_truncationResidual_fourierReconstruction_le_omitted
+#print axioms ProjectKoios.BandGauge.Fourier.finiteMaximumNorm_truncationResidual_le_omitted
 #print axioms ProjectKoios.BandGauge.Fourier.rankTwoWeightedFrobeniusSq_const_eq_coefficient_mul_power
 #print axioms ProjectKoios.BandGauge.Fourier.rankTwoWeightedFrobeniusTruncationResidual_eq
 #print axioms ProjectKoios.BandGauge.Fourier.uniformFiniteWeight_pos
@@ -313,6 +331,18 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.pointwiseUnitaryConjugation_const
 #print axioms ProjectKoios.BandGauge.Fourier.exists_finiteFourierCoefficient_pointwiseUnitaryConjugation_ne
 #print axioms ProjectKoios.BandGauge.Fourier.weightedFiniteMatrixFrobeniusPower_pointwiseUnitaryConjugation
+#print axioms ProjectKoios.BandGauge.Fourier.rankTwoSwapConjugation_firstCoordinateProjector
+#print axioms ProjectKoios.BandGauge.Fourier.zeroModeFourierTruncation_eq_coefficient
+#print axioms ProjectKoios.BandGauge.Fourier.zeroModeFourierTruncation_twoPointConstantProjectorField
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_at_zero
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_at_one
+#print axioms ProjectKoios.BandGauge.Fourier.twoPointOddMode_one
+#print axioms ProjectKoios.BandGauge.Fourier.twoPointConstantProjectorField_odd_coefficient
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient
+#print axioms ProjectKoios.BandGauge.Fourier.rankTwoOddFourierCoefficient_ne_zero
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient_ne_zero
+#print axioms ProjectKoios.BandGauge.Fourier.rankTwoCoordinateProjectors_ne
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_zeroModeFourierTruncation_ne
 #print axioms ProjectKoios.BandGauge.Alignment.frameProjector_isHermitian
 #print axioms ProjectKoios.BandGauge.Alignment.frameProjector_mul_self
 #print axioms ProjectKoios.BandGauge.Alignment.rightUnitaryFrame_isOrthonormal
