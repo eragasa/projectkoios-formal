@@ -21,7 +21,7 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit `087a92a67c0bb60f361ecbd5c8aa5cb5003939c4`.
+Current board baseline: remote `main` merge commit `d72865262927453197eee89d0be62bf388c0ed07`.
 
 ## Mission
 
@@ -69,15 +69,16 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Finite three-channel residual algebra
+### Finite root-mean-square Fourier-tail normalization
 
 This is the active mathematical effort.
 
-- State the source-independent pointwise identity separating reference-to-interpolant,
-  interpolant-to-truncation, and reference-to-truncation residuals.
-- Prove the corresponding pointwise, finite-maximum, and finite root-mean-square triangle
-  bounds without asserting that the three reported errors add as scalars.
-- Bridge the deliberate-truncation leg to the existing exact finite Fourier tail.
+- Derive the exact squared finite root-mean-square norm of the deliberate-truncation
+  channel from the existing finite Parseval and residual-tail equalities.
+- Add the corresponding matrix Frobenius root-mean-square specialization rather than
+  silently using the ambient matrix norm.
+- State the required finite nonempty-domain hypotheses explicitly and preserve the
+  existing Fourier normalization.
 - Do not bind the result to KSD binary64 values, runtime meshes, eigensolvers, thresholds,
   first-passage outcomes, or scientific adequacy.
 
@@ -95,8 +96,10 @@ This is the active maintenance effort.
 The current KSD rank-one owner is observed on branch
 `work/periodic1d-rank1-control-v3` at base
 `bc1601f3a50dda19b994eea474ca522f2d836c26` with uncommitted documentation. Its
-Option B parent and finite controls are owner-local design inputs. No typed implementation,
-execution, result, retained package, or Formal request/result wire exists.
+Option B parent and finite controls are owner-local design inputs. The uncommitted owner
+material now records prospective three-channel maximum and root-mean-square controls, but
+no typed family implementation, execution, result, retained package, or Formal
+request/result wire exists.
 
 ## Ready
 
@@ -157,6 +160,8 @@ These items are merged Formal content only.
 - Finite first-passing cutoff semantics.
 - Three-way interval threshold, joint-feasibility, and first-passing certificates.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
+- Finite three-channel residual identity with pointwise, maximum, and root-mean-square
+  triangle bounds and exact deliberate-truncation Fourier-tail bridges.
 - Complete named axiom coverage for manifest rows marked proved.
 
 Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.
