@@ -13,6 +13,7 @@ import ProjectKoios.BandGauge.Geometry.AdmissibleSets
 import ProjectKoios.BandGauge.Geometry.RankTwoLoss
 import ProjectKoios.BandGauge.Bloch.Sewing
 import ProjectKoios.BandGauge.Bloch.PeriodicRankTwo
+import ProjectKoios.BandGauge.Bloch.AlignedDifference
 import ProjectKoios.BandGauge.Alignment.FiniteFrame
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
@@ -320,6 +321,15 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Alignment.reconstructCompressedOperator_rightUnitaryFrame
 #print axioms ProjectKoios.BandGauge.Alignment.frameProjector_mul_frame
 #print axioms ProjectKoios.BandGauge.Alignment.compressOperator_frameProjector
+#print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply
+#print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_operatorFieldDifference
+#print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap
+#print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_add_right
+#print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_eq_zero_iff
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_apply
+#print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_alignedOperatorDifferenceField
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_add_alignedOperatorField
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_eq_zero_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff
