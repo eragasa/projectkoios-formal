@@ -1,0 +1,21 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-28
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Pointwise Fourier Truncation Tail Bound}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-28}
+\begin{document}\raggedright\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-THM-074}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.norm_truncationResidual_fourierReconstruction_le_omitted}}.
+\section{Statement and proof}
+For coefficients $c_\chi$ in a complex normed space and retained support $S$, the deliberate-truncation residual satisfies, at every momentum $k$,
+\[
+ \left\|\sum_{\chi\notin S}\chi(k)c_\chi\right\|
+ \leq \sum_{\chi\notin S}\|c_\chi\|.
+\]
+The exact full-minus-truncated reconstruction identity first rewrites the residual as the omitted finite sum. The finite-sum triangle inequality bounds its norm by the sum of the term norms. Every additive character has norm one on the finite group, so exact complex scalar homogeneity removes every phase factor.
+\section{Boundary and audit}
+This is an exact finite ambient-norm bound for the declared character convention. It needs no nonempty-domain premise and supplies no matrix-Frobenius specialization, runtime mesh, coefficient-array, physical-range, or scientific-adequacy binding. Axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Lean \texttt{4.35.0}, Mathlib {\scriptsize\path{56a005855ea17e0b0958f73ec801ae140b0a1679}}; AI-assisted, kernel-checked, no independent expert review recorded.
+\end{document}

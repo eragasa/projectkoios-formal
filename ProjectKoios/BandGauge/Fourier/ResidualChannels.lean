@@ -18,9 +18,11 @@ through the three-channel vocabulary, then derives their exact finite root-mean-
 normalizations.
 
 The matrix root-mean-square quantity is defined from the explicit entrywise Frobenius power rather
-than the ambient matrix norm. The bridge is exact finite algebra for the repository's declared
-transform convention. It does not bind a runtime interpolant, numerical mesh, floating-point
-coefficient, physical hopping range, or scientific adequacy decision.
+than the ambient matrix norm. The maximum-norm result bounds the ambient norm at every momentum,
+and therefore its finite maximum, by the omitted coefficient one-norm tail. The bridge is exact
+finite algebra for the repository's declared transform convention. It does not bind a runtime
+interpolant, numerical mesh, floating-point coefficient, physical hopping range, or scientific
+adequacy decision.
 -/
 
 @[expose] public section
@@ -153,5 +155,52 @@ theorem finiteMatrixFrobeniusRootMeanSquare_truncationResidual_sq_eq_omitted
   exact Finset.sum_nonneg fun mode _ =>
     Finset.sum_nonneg fun i _ =>
       Finset.sum_nonneg fun j _ => sq_nonneg ‖coefficients mode i j‖
+
+omit [DecidableEq G] [Nonempty G] in
+/-- `BG-FOURIER-THM-074`: at every momentum, the norm of the deliberate-truncation channel is
+bounded by the exact one-norm tail of the omitted coefficients. -/
+theorem norm_truncationResidual_fourierReconstruction_le_omitted
+    [NormedAddCommGroup V] [NormedSpace ℂ V]
+    (support : Finset (AddChar G ℂ)) (coefficients : AddChar G ℂ → V)
+    (momentum : G) :
+    ‖truncationResidual
+        (finiteFourierReconstruction coefficients)
+        (finiteFourierReconstruction (truncateCoefficients support coefficients)) momentum‖ ≤
+      omittedWeight (fun mode => ‖coefficients mode‖) support := by
+  change ‖finiteReconstruction finiteCharacterPhase coefficients momentum -
+      truncatedReconstruction finiteCharacterPhase support coefficients momentum‖ ≤ _
+  rw [finiteReconstruction_sub_truncatedReconstruction_eq_omitted]
+  calc
+    ‖∑ mode ∈ supportᶜ, finiteCharacterPhase momentum mode • coefficients mode‖ ≤
+        ∑ mode ∈ supportᶜ,
+          ‖finiteCharacterPhase momentum mode • coefficients mode‖ :=
+      norm_sum_le supportᶜ fun mode => finiteCharacterPhase momentum mode • coefficients mode
+    _ = omittedWeight (fun mode => ‖coefficients mode‖) support := by
+      unfold omittedWeight
+      apply Finset.sum_congr rfl
+      intro mode _
+      rw [norm_smul]
+      simp [finiteCharacterPhase]
+
+omit [DecidableEq G] [Nonempty G] in
+/-- `BG-FOURIER-THM-075`: the finite maximum norm of the deliberate-truncation channel is bounded
+by the exact one-norm tail of the omitted coefficients. -/
+theorem finiteMaximumNorm_truncationResidual_le_omitted
+    [NormedAddCommGroup V] [NormedSpace ℂ V]
+    (support : Finset (AddChar G ℂ)) (coefficients : AddChar G ℂ → V) :
+    finiteMaximumNorm
+        (truncationResidual
+          (finiteFourierReconstruction coefficients)
+          (finiteFourierReconstruction (truncateCoefficients support coefficients))) ≤
+      omittedWeight (fun mode => ‖coefficients mode‖) support := by
+  unfold finiteMaximumNorm
+  have hnonneg : 0 ≤ omittedWeight (fun mode => ‖coefficients mode‖) support := by
+    unfold omittedWeight
+    exact Finset.sum_nonneg fun mode _ => norm_nonneg _
+  exact (pi_norm_le_iff_of_nonneg (x := truncationResidual
+    (finiteFourierReconstruction coefficients)
+    (finiteFourierReconstruction (truncateCoefficients support coefficients))) hnonneg).2
+      fun momentum =>
+        norm_truncationResidual_fourierReconstruction_le_omitted support coefficients momentum
 
 end ProjectKoios.BandGauge.Fourier
