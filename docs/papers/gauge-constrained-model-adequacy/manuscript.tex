@@ -1,0 +1,72 @@
+% Formal-owned working manuscript. Not a publication, scientific claim, or numerical-evidence record.
+\documentclass[11pt]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{placeins}
+\usepackage{seqsplit}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\definecolor{openobligationred}{RGB}{176,0,32}
+\newcommand{\openobligation}[1]{\textcolor{openobligationred}{#1}}
+\newcommand{\decl}[1]{\texttt{\seqsplit{#1}}}
+\newcommand{\modulepath}[1]{\texttt{\seqsplit{#1}}}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Gauge-Constrained Model Adequacy\\\large Alignment Families, Fourier Locality, and Exact Finite Decisions\\[0.4em]\normalsize Working paper}
+\author{Project Koios Formal}
+\date{Working draft}
+
+\begin{document}
+\hypersetup{pageanchor=false}
+\maketitle
+
+\begin{center}
+\fbox{\parbox{0.91\textwidth}{
+\textbf{Working-paper status.} Mathematical claims are keyed to identified Lean
+declarations and proof terms. The theorem manifest records declaration status, and the
+proof dossiers record statement-level explanations. \openobligation{Red text marks an
+open mathematical statement or theorem task in the identified Formal snapshot.}
+}}
+\end{center}
+
+\begin{abstract}
+Model-adequacy decisions for finite operator families depend on the declared class of
+admissible alignments. This working paper organizes machine-checked finite results that
+distinguish identity-only, global-unitary, and complete pointwise-unitary alignment
+families; prove forward feasibility transfer and exact failures of the reverse
+implication; separate fixed-unitary Fourier equivariance from pointwise-gauge changes of
+Fourier coefficients; and connect admissible-set geometry to exact and interval-valued
+finite decisions. The individual ingredients are largely standard finite algebra and
+set logic. Their audit-first composition gives a family-relative adequacy framework with
+explicit checker boundaries. An exact two-point rank-two witness proves that a
+pointwise gauge transformation need not commute with zero-mode Fourier truncation, and
+finite tail theorems identify the deliberate-truncation root-mean-square error and bound
+its pointwise and maximum ambient norms.
+\end{abstract}
+
+\clearpage
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+\input{docs/papers/gauge-constrained-model-adequacy/chapters/01-proof-architecture}
+\input{docs/papers/gauge-constrained-model-adequacy/chapters/02-finite-dimensional-operator-foundations}
+\input{docs/papers/gauge-constrained-model-adequacy/chapters/03-bloch-alignment-and-fourier-locality}
+\input{docs/papers/gauge-constrained-model-adequacy/chapters/04-reduction-and-decision-structure}
+\input{docs/papers/gauge-constrained-model-adequacy/chapters/05-mechanization-status-and-open-obligations}
+
+\end{document}

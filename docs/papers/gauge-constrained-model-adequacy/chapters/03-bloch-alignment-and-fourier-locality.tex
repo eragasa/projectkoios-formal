@@ -1,0 +1,495 @@
+\chapter{Bloch Frames, Alignment Families, and Fourier Locality}
+\label{ch:bloch-alignment-locality}
+
+\section{The comparison problem in finite band reduction}
+
+\subsection{From a parent Hamiltonian to a retained model}
+
+Many electronic-structure and reduced-order calculations begin with an operator that is
+too large, too detailed, or expressed in the wrong coordinates for the intended
+analysis. On a finite momentum mesh, let $\mathcal K$ denote the supplied set of crystal
+momenta and let $N_k=|\mathcal K|$. At each $k\in\mathcal K$, a parent calculation
+provides a finite Hermitian matrix
+\[
+  H_{\mathrm{parent}}(k)\in\mathbb C^{D\times D}.
+\]
+The dimension $D$ may count plane waves, localized orbitals, finite-difference degrees
+of freedom, or any other finite ambient basis; the same algebra applies to each case.
+
+Suppose the scientific question concerns only $M$ states, with $M\leq D$, such as an
+isolated band, a composite group of bands near the Fermi level, or a trial subspace used
+for downfolding. These states are assembled as the columns of a frame
+\[
+  V(k)\in\mathbb C^{D\times M}.
+\]
+When $V(k)^\dagger V(k)=I_M$, the columns are orthonormal and determine the retained
+subspace
+\[
+  \mathcal S(k)=\operatorname{Ran}V(k)
+\]
+and its ambient orthogonal projector
+\[
+  P(k)=V(k)V(k)^\dagger.
+\]
+The parent operator represented in retained coordinates is
+\[
+  h(k)=V(k)^\dagger H_{\mathrm{parent}}(k)V(k)
+  \in\mathbb C^{M\times M}.
+\]
+This matrix is the finite projected Hamiltonian. Spectral isolation and accuracy for a
+target observable are additional properties of the selected subspace.
+
+In applications, the retained frame $V(k)$ may be obtained by diagonalizing the parent
+Hamiltonian, projecting trial orbitals, disentangling a composite band manifold,
+constructing Wannier functions, or fitting a reduced model. The finite-frame theorem
+sequence in Chapter~\ref{ch:finite-operator-foundations} takes the resulting matrix
+$V(k)$ and explicit hypotheses such as $V(k)^\dagger V(k)=I_M$ as its inputs.
+
+\subsection{Why two reduced matrices cannot be compared entry by entry}
+
+The columns of $V(k)$ are coordinates, not uniquely labeled physical objects. If
+$G(k)\in U(M)$ is unitary, then
+\[
+  V(k)\longmapsto V(k)G(k)
+\]
+changes the retained basis but not the subspace $\mathcal S(k)$. The projector remains
+$P(k)$, while the compressed Hamiltonian becomes
+\[
+  h(k)\longmapsto G(k)^\dagger h(k)G(k).
+\]
+Thus the subspace is invariant, but the retained matrix is only covariant. Its entries
+and eigenvectors depend on the chosen retained coordinates even though its spectrum is
+unchanged.
+
+This distinction becomes unavoidable when comparing a reference model with a candidate
+model. Let
+\[
+  h_{\mathrm{ref}}(k),\qquad h_{\mathrm{cand}}(k)
+  \in\mathbb C^{M\times M}
+\]
+denote their retained operators. A direct difference
+$h_{\mathrm{ref}}(k)-h_{\mathrm{cand}}(k)$ is meaningful only if the two matrices are
+already expressed in the same retained coordinates. More generally, an identification
+$U(k)$ from candidate coordinates to reference coordinates must be supplied, and the
+comparison uses the pulled-back candidate operator
+\[
+  U(k)^{-1}h_{\mathrm{cand}}(k)U(k).
+\]
+The sign convention used in this repository is
+\[
+  \Delta_U(k)
+  =h_{\mathrm{ref}}(k)
+   -U(k)^{-1}h_{\mathrm{cand}}(k)U(k).
+\]
+For a unitary identification, $U(k)^{-1}=U(k)^\dagger$. The norm of $\Delta_U(k)$
+measures an operator discrepancy relative to that supplied identification. Its
+interpretation therefore includes the construction and admissibility of $U$.
+
+Band energies are insufficient for this comparison. Pointwise unitary conjugation preserves
+the eigenvalues of $h(k)$, so two fields can have identical band energies while their
+matrix-valued eigenvectors, Fourier coefficients, and real-space representations differ.
+An adequacy study that cares about operator structure must therefore specify more than a
+spectral tolerance.
+
+\subsection{Why momentum dependence affects locality}
+
+A real-space reduced model is obtained by Fourier transforming the momentum-dependent
+operator field. In conventional finite-mesh notation, its block at translation $R$ is
+\[
+  T_R[h]
+  =\frac{1}{N_k}\sum_{k\in\mathcal K}
+    e^{-\mathrm{i}k\cdot R}h(k).
+\]
+Here $R$ labels a real-space lattice translation; in the exact Lean development the
+phase factors are finite-group characters. Short-range or sparse effective models keep
+only a declared set of $R$ values. Consequently, Fourier support and the distribution of
+Frobenius power among real-space blocks are part of the model-reduction question, not
+merely presentation choices.
+
+If one constant unitary $G$ is used at every $k$, it factors through the finite Fourier
+sum:
+\[
+  T_R[G^\dagger hG]=G^\dagger T_R[h]G.
+\]
+The real-space labels are not mixed. Exact support truncation therefore commutes with
+this common change of retained coordinates, and unitary-invariant block norms are
+preserved.
+
+The situation changes when $G$ depends on $k$:
+\[
+  T_R[G(\cdot)^\dagger h(\cdot)G(\cdot)]
+  =\frac{1}{N_k}\sum_{k\in\mathcal K}
+    e^{-\mathrm{i}k\cdot R}G(k)^\dagger h(k)G(k).
+\]
+The matrices $G(k)$ can no longer be factored outside the sum. A pointwise alignment may
+therefore improve an operator comparison at each momentum while changing how the same
+field is distributed over real-space blocks. This is the tension at the center of the
+paper: pointwise spectral or operator agreement and real-space locality are not the same
+criterion. Section~\ref{sec:gauge-truncation-counterexample} gives the checked exact
+two-point witness: a varying rank-two gauge creates a nonzero odd mode and does not
+commute with zero-mode support truncation.
+
+\subsection{The admissible alignment family is part of the claim}
+
+The phrase ``optimize over the gauge'' is incomplete until the allowed gauges are
+specified. Several mathematically different questions arise:
+
+\begin{itemize}
+  \item Is no coordinate adjustment allowed, so that $U(k)=I_M$?
+  \item May one global unitary be used at every momentum?
+  \item May an arbitrary unitary be chosen independently at every momentum?
+  \item Must $U(k)$ satisfy continuity, endpoint sewing, symmetry, orientation, or a
+        finite-depth structural ansatz?
+\end{itemize}
+
+These choices define different feasible sets. Enlarging the alignment family can only
+make an existential adequacy test easier to satisfy, while the reverse implication
+fails in general. A pointwise witness belongs to the pointwise family; transfer to a
+global, smooth, or structured family requires an explicit membership proof. The strict
+family-separation theorems later in this chapter make this distinction exact.
+
+For that reason, the operative adequacy question is joint and family-relative: does one
+candidate, one support choice, and one alignment from the declared family satisfy all
+operator, spectral, and locality thresholds? Such a witness uses the same alignment for
+every objective. Envelopes, plots, and optimizer traces summarize searches rather than
+supply the existential witness or an infeasibility certificate.
+
+\subsection{Role of the finite-frame theorems}
+
+The ten finite-frame results proved in
+Chapter~\ref{ch:finite-operator-foundations} supply the algebraic foundation for this
+comparison. They show exactly which objects are invariant when only retained coordinates
+change, which objects transform covariantly, and how a compressed operator can be
+reconstructed as an ambient projector sandwich. This prevents three common category
+errors:
+
+\begin{enumerate}
+  \item treating a basis change as a change of retained subspace;
+  \item comparing compressed matrices before identifying their retained coordinates;
+        and
+  \item inferring physical or spectral adequacy from algebraic covariance alone.
+\end{enumerate}
+
+The present statements are finite and exact. Construction of $V(k)$ and $U(k)$,
+continuity, localization, and material interpretation enter through additional
+mathematical or evidential layers.
+
+\section{Relation to the research manuscript's Bloch and operator-comparison chapters}
+
+The working composite-band chapter denotes its momentum-dependent frame by
+\[
+  F(\kappa)=\begin{bmatrix}u_1(\kappa)&\cdots&u_M(\kappa)\end{bmatrix}.
+\]
+At corresponding momentum coordinates, the notation of this paper is
+\[
+  V(k)=F(\kappa)
+  =\sum_{a=1}^M |u_a(\kappa)\rangle\,{}_{\mathrm{ret}}\!\langle a|.
+\]
+Thus $V(k)$ and $F(\kappa)$ are two names for the map that inserts retained-coordinate
+vectors into an ambient Bloch fiber.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}l X X@{}}
+\toprule
+This paper & Research manuscript & Common mathematical object \\
+\midrule
+$V(k)$
+  & $F(\kappa)$
+  & momentum-dependent retained-frame embedding \\
+$|v_a(k)\rangle$
+  & $u_a(\kappa)$
+  & column $a$ of the composite Bloch frame \\
+$P_V(k)$
+  & $P(\kappa)=F(\kappa)F(\kappa)^\dagger$
+  & ambient projector field \\
+$C_{V(k)}(H(k))$
+  & $H_F(\kappa)$
+  & retained operator field \\
+$T_R[h]$
+  & $H_U(R)$ or $\langle w_{m0}|\widehat H|w_{nR}\rangle$
+  & real-space Fourier block of the retained operator \\
+\bottomrule
+\end{tabularx}
+\caption{Bloch and Fourier notation bridge to the working research manuscript.}
+\label{tab:bloch-manuscript-notation-bridge}
+\end{table}
+
+This paper uses $G(k)$ for an internal unitary change of a single retained frame and
+reserves $U(k)$ for an identification between reference and candidate retained spaces.
+The working composite-band chapter writes its internal gauge as $U(\kappa)$. These
+uses must not be merged silently: an internal gauge and a two-model identification have
+different domains, provenance, and adequacy obligations.
+
+The aligned-difference sign also differs. When the research manuscript's pristine
+operator is identified with $h_{\mathrm{ref}}$, its doped operator with
+$h_{\mathrm{cand}}$, and its map $U$ runs from reference to candidate coordinates, it
+writes
+\[
+  \Delta H_{d\to b}=U^\dagger h_{\mathrm{cand}}U-h_{\mathrm{ref}}.
+\]
+The Formal convention used here is
+\[
+  \Delta_U=h_{\mathrm{ref}}-U^{-1}h_{\mathrm{cand}}U
+  =-\Delta H_{d\to b}
+\]
+for unitary $U$. Norms are insensitive to this sign, but a signed perturbation or
+impurity interpretation is not. Any later editorial export must state the operand order.
+
+This bridge records notation observed at the same clean research-manuscript commit,
+principally in \modulepath{chapters/composite-band-gauge-alignment.tex} and
+\modulepath{chapters/operator-comparison.tex}. Formal source fixes theorem status.
+
+\section{Aligned operator differences}
+
+The Bloch layer represents a pointwise unitary alignment by an isometric linear
+equivalence $U(k)$ between reference and candidate fibers. The candidate operator is
+pulled back into the reference fiber before subtraction. Declarations
+\decl{BG-BLOCH-THM-012--020} prove pointwise evaluation, closure of shared sewing under
+subtraction, sign reversal, recovery, an exact-zero criterion, and sewing closure of the
+aligned difference.
+
+The sewing theorem assumes sewing laws for both operator fields and an alignment that
+intertwines them. Under these hypotheses, the aligned difference inherits sewing.
+Self-adjointness and regularity require their own hypotheses.
+
+\section{Alignment families are decision spaces}
+
+Declarations \decl{BG-ALIGNMENT-DEF-007--016} distinguish:
+
+\begin{itemize}
+  \item one declared singleton alignment;
+  \item identity-only alignment;
+  \item one global unitary reused at every point; and
+  \item the complete family of arbitrary pointwise unitary alignments.
+\end{itemize}
+
+Feasibility means existence of an accepted alignment inside one specified family.
+Declarations \decl{BG-ALIGNMENT-THM-011--019} prove the forward inclusions
+\[
+  \mathcal U_{\mathrm{id}}
+  \subseteq
+  \mathcal U_{\mathrm{global}}
+  \subseteq
+  \mathcal U_{\mathrm{pointwise}}
+\]
+and transfer feasibility only in that direction.
+
+Declarations \decl{BG-ALIGNMENT-THM-020--029} provide strictness witnesses when the
+relevant point and unitary inequalities are supplied. They also construct acceptance
+predicates feasible in a larger family but infeasible in a proper subfamily. Therefore a
+pointwise-alignment witness need not belong to the global-unitary or identity family.
+The result is a logical separation of decision spaces.
+
+\section{Fixed and pointwise gauge actions}
+
+A single unitary common to all finite coordinates preserves Frobenius inner products,
+powers, and differences and commutes with finite Fourier coefficient extraction,
+reconstruction, exact support truncation, and the corresponding residual. These results
+are \decl{BG-FOURIER-THM-033--047}.
+
+A pointwise unitary field has a different boundary. Declarations
+\decl{BG-FOURIER-THM-048--054} prove an exact character-phase mode shift, the triviality
+of scalar operator conjugation, coefficient separation, reduction of a constant field
+to the fixed-unitary case, conditional coefficient change for a genuinely changed
+field, and preservation of weighted pointwise Frobenius power.
+
+The last result is invariance of weighted pointwise Frobenius power. Fourier
+coefficients, support, decay, and locality require separate statements; a general
+pointwise-gauge convolution theorem is outside the current family.
+
+\section{An exact gauge--truncation counterexample}
+\label{sec:gauge-truncation-counterexample}
+
+Let the momentum group be $G=\mathbb Z/2\mathbb Z$, and define
+\[
+  P_0=\begin{bmatrix}1&0\\0&0\end{bmatrix},\qquad
+  P_1=\begin{bmatrix}0&0\\0&1\end{bmatrix},\qquad
+  S=\begin{bmatrix}0&1\\1&0\end{bmatrix}.
+\]
+The original rank-two field is constant, $H(k)=P_0$.  The pointwise unitary gauge is
+$W(0)=I$ and $W(1)=S$.  Write $H^W(k)=W(k)^\dagger H(k)W(k)$, and let
+$\mathcal T_0$ reconstruct a field after retaining only its trivial-character Fourier
+coefficient.
+
+\begin{theorem}[Two-point gauge--truncation noncommutation]
+\label{thm:two-point-gauge-truncation}
+For the exact field and gauge above, the original odd coefficient is zero, whereas
+\[
+  \widehat{H^W}_{\mathrm{odd}}
+  =\frac12\begin{bmatrix}1&0\\0&-1\end{bmatrix}\neq 0.
+\]
+Moreover,
+\[
+  \mathcal T_0(H^W)\neq (\mathcal T_0 H)^W.
+\]
+\end{theorem}
+
+\begin{proof}
+Conjugation by $S$ exchanges $P_0$ and $P_1$.  Hence $H^W(0)=P_0$ and
+$H^W(1)=P_1$.  The nontrivial character of $\mathbb Z/2\mathbb Z$ takes values $1$
+and $-1$ at the two points, so the normalized odd coefficient is
+$(P_0-P_1)/2$, while the same coefficient of the constant field vanishes.  Zero-mode
+truncation fixes $H$.  If the two displayed routes were equal, evaluating their
+zero-mode reconstruction at both momenta would force $P_0=P_1$, contradicting their
+$(0,0)$ entries.  This is the checked proof sequence
+\path{BG-FOURIER-THM-055}--\path{BG-FOURIER-THM-066}; the final declaration is
+\path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_zeroModeFourierTruncation_ne}.
+\end{proof}
+
+The theorem is a finite existence counterexample, not a universal statement about every
+momentum-dependent gauge.  It establishes neither continuum locality nor decay,
+smoothness, mesh convergence, runtime correctness, topology, or material adequacy.  In
+rank one, scalar operator conjugation is trivial, so this rank-two witness must not be
+reinterpreted as rank-one gauge-locality behavior.  The source module for the following
+crosswalk is
+\path{ProjectKoios/BandGauge/Fourier/GaugeTruncationCounterexample.lean}.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+\toprule
+ID & Exact Lean declaration and proof dossier \\
+\midrule
+\path{BG-FOURIER-THM-062}
+  & \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-062-gauged-odd-coefficient.tex} \\
+\path{BG-FOURIER-THM-064}
+  & \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient_ne_zero}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-064-gauged-odd-mode-nonzero.tex} \\
+\path{BG-FOURIER-THM-066}
+  & \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_zeroModeFourierTruncation_ne}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-066-gauge-truncation-noncommutation.tex} \\
+\bottomrule
+\end{tabularx}
+\caption{Key declarations for the exact counterexample.}
+\label{tab:gauge-truncation-crosswalk}
+\end{table}
+
+\section{Exact finite truncation tails}
+\label{sec:finite-truncation-tails}
+
+Let $G$ be a finite additive group, let $\widehat G$ be its finite character group, and
+let $c:\widehat G\to V$ be coefficients in a complex normed space.  For a declared
+support $A\subseteq\widehat G$, write $c_A$ for the coefficients obtained by setting
+all modes outside $A$ to zero, and define the deliberate-truncation residual
+\[
+  R_A(k)=\mathcal F^{-1}c(k)-\mathcal F^{-1}c_A(k).
+\]
+This is the interpolant-minus-truncated channel.  It is not the
+reference-minus-interpolant channel and is not, by itself, the total residual.
+
+\begin{theorem}[Finite Fourier-tail identities and bounds]
+\label{thm:finite-fourier-tail-bounds}
+Under the repository's finite Fourier normalization, the following hold.
+\begin{enumerate}
+  \item If $V$ is a complex Hilbert space, then
+  \[
+    \left(\frac1{|G|}\sum_{k\in G}\lVert R_A(k)\rVert^2\right)^{1/2}
+    =\left(\sum_{\chi\notin A}\lVert c(\chi)\rVert^2\right)^{1/2}.
+  \]
+  \item For complex matrix coefficients, the same identity holds with the explicit
+  entrywise Frobenius power
+  $\sum_{i,j}|R_A(k)_{ij}|^2$ and
+  $\sum_{i,j}|c(\chi)_{ij}|^2$.  The Lean root-mean-square theorems in items 1 and 2
+  carry an explicit nonempty finite-domain premise.
+  \item For any complex normed space and every $k\in G$,
+  \[
+    \lVert R_A(k)\rVert
+    \leq \sum_{\chi\notin A}\lVert c(\chi)\rVert,
+  \]
+  and therefore
+  \[
+    \max_{k\in G}\lVert R_A(k)\rVert
+    \leq \sum_{\chi\notin A}\lVert c(\chi)\rVert.
+  \]
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+The residual is definitionally the previously formalized finite Fourier truncation
+residual.  Finite Parseval gives total residual power as $|G|$ times omitted coefficient
+power; division by $\sqrt{|G|}$ yields the root-mean-square identities.  Pointwise, the
+omitted-mode reconstruction formula and the triangle inequality bound the residual by
+the sum of the norms of its summands.  Character phases disappear because each has norm
+one.  The finite maximum statement is the coordinatewise supremum lift of this same
+bound.  These steps are declarations \path{BG-FOURIER-THM-067}--
+\path{BG-FOURIER-THM-075}.
+\end{proof}
+
+The matrix root-mean-square statement uses explicit entrywise Frobenius power, not the
+ambient matrix norm.  Conversely, the maximum theorem uses the ambient norm on an
+arbitrary complex normed space; no entrywise matrix-Frobenius maximum specialization is
+claimed.  The maximum theorem requires no separate \path{Nonempty G} argument beyond
+the additive-group structure, which already supplies $0:G$; this is not an empty-domain
+claim.  None of the results binds floating-point coefficients, a runtime interpolant, a
+mesh, physical hopping range, or a scientific threshold.  They also do not assert scalar
+additivity of interpolation, truncation, and total errors.  The source module for both
+following crosswalks is
+\path{ProjectKoios/BandGauge/Fourier/ResidualChannels.lean}.
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+\toprule
+ID & Exact Lean declaration and proof dossier \\
+\midrule
+\path{BG-FOURIER-THM-067}
+  & \path{ProjectKoios.BandGauge.Fourier.truncationResidual_fourierReconstruction_eq}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-067-truncation-channel.tex} \\
+\path{BG-FOURIER-THM-068}
+  & \path{ProjectKoios.BandGauge.Fourier.finiteFourierPower_truncationResidual_eq_omitted}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-068-hilbert-tail.tex} \\
+\path{BG-FOURIER-THM-069}
+  & \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusPower_truncationResidual_eq_omitted}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-069-matrix-tail.tex} \\
+\path{BG-FOURIER-THM-070}
+  & \path{ProjectKoios.BandGauge.Fourier.finiteRootMeanSquareNorm_truncationResidual_eq_sqrt_omitted}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-070-hilbert-rms-tail.tex} \\
+\path{BG-FOURIER-THM-071}
+  & \path{ProjectKoios.BandGauge.Fourier.finiteRootMeanSquareNorm_truncationResidual_sq_eq_omitted}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-071-hilbert-rms-squared-tail.tex} \\
+\path{BG-FOURIER-THM-072}
+  & \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_eq_sqrt_omitted}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-072-matrix-frobenius-rms-tail.tex} \\
+\path{BG-FOURIER-THM-073}
+  & \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_sq_eq_omitted}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-073-matrix-frobenius-rms-squared-tail.tex} \\
+\bottomrule
+\end{tabularx}
+\caption{Exact power and root-mean-square declaration crosswalk.}
+\label{tab:rms-tail-crosswalk}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+\toprule
+ID & Exact Lean declaration and proof dossier \\
+\midrule
+\path{BG-FOURIER-THM-074}
+  & \path{ProjectKoios.BandGauge.Fourier.norm_truncationResidual_fourierReconstruction_le_omitted}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-074-pointwise-maximum-tail.tex} \\
+\path{BG-FOURIER-THM-075}
+  & \path{ProjectKoios.BandGauge.Fourier.finiteMaximumNorm_truncationResidual_le_omitted}
+    \newline \path{proofs/BandGauge/Fourier/BG-FOURIER-THM-075-finite-maximum-tail.tex} \\
+\bottomrule
+\end{tabularx}
+\caption{Exact pointwise and finite-maximum declaration crosswalk.}
+\label{tab:maximum-tail-crosswalk}
+\end{table}
+\FloatBarrier
+
+\section{Finite route algebra}
+
+The finite-lattice route layer defines coordinate pullback as $U^{\dagger}AU$.
+Declarations \decl{SS-ROUTE-THM-001--010} prove compatibility with addition,
+subtraction, composition, scalar-reference removal, Hermiticity, spin lift, folding, and
+aligned defect extraction under their explicit isometry and identification premises.
+They establish exact algebraic commutativity for the same declared maps. Nonlinear
+fitting, separately selected gauges, and different model classes define different
+routes and require separate analyses.

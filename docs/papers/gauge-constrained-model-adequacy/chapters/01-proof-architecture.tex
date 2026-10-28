@@ -1,0 +1,110 @@
+\chapter{Research Question, Proof Architecture, and Authority}
+\label{ch:proof-architecture}
+
+\section{Research question}
+
+Let $\mathcal U$ be a declared family of unitary alignment fields and let
+$\operatorname{Accept}(U)$ be an exact adequacy predicate. The central question is not
+whether some unrestricted coordinate transformation can improve a comparison. It is
+whether
+\[
+  \exists U\in\mathcal U,\;\operatorname{Accept}(U)
+\]
+holds for the declared family, and which Fourier-locality and certificate conclusions
+remain valid under that same family.
+
+The paper connects three finite facts. First, feasibility is monotone under
+proved inclusion of alignment families, while strict inclusion admits exact failures of
+the reverse implication. Second, one fixed unitary commutes with the finite Fourier and
+support-truncation operations used here, whereas a varying pointwise unitary can change
+Fourier coefficients. Third, exact and interval-valued checkers can classify a complete
+supplied finite inventory without treating threshold overlap or an incomplete search as
+a decisive outcome.
+
+The individual ingredients are mostly standard. Their formal, family-relative
+composition is the organizing contribution of this paper.
+
+\section{Purpose and proof boundary}
+
+The proof program starts from exact propositions. Each theorem has the scope expressed
+by its Lean type and explicit assumptions. Runtime conformance, physical applicability,
+and publication assessment are separate evidence questions.
+
+This paper explains the dependency structure, assumptions, and mathematical role of the
+Formal theorem families. Declaration status remains in the theorem manifest.
+
+\section{Authority order}
+
+Four Formal-owned surfaces have distinct roles.
+
+\begin{enumerate}
+  \item Lean source under \modulepath{ProjectKoios/} owns exact definitions,
+        propositions, and proof terms.
+  \item \modulepath{docs/theorem-manifest.md} owns stable declaration identifiers and
+        repository status.
+  \item Files under \modulepath{proofs/} explain individual statements, provenance,
+        assumptions, and limitations.
+  \item This manuscript synthesizes theorem families into a readable proof program.
+\end{enumerate}
+
+External manuscripts, calculation plans, schemas, and research notes provide
+motivation. Formal source fixes the theorem statements and status. Later exports name an
+immutable Formal revision and preserve the declaration identifiers used.
+
+\section{Independent status axes}
+
+The proof program keeps the following questions separate:
+
+\begin{itemize}
+  \item Is an exact proposition implemented and proved in Lean?
+  \item Which axioms does the compiled declaration report?
+  \item Has a human-readable proof dossier been written and reviewed?
+  \item Has an external certificate schema been frozen and independently verified?
+  \item Does retained numerical evidence satisfy that schema?
+  \item Are the assumptions applicable to the intended scientific system?
+  \item Has novelty, publication, or human acceptance been established?
+\end{itemize}
+
+Each axis requires its own evidence. A clean Lean build establishes the compiled
+propositions; runtime arrays, continuum limits, and material models require their own
+verification and validation records.
+
+\section{Core dependency structure}
+
+The present exact program is usefully read in six layers.
+
+\begin{description}
+  \item[Finite representation.] Matrices, finite frames, Hermitian operators,
+    compression, folding, and coordinate changes.
+  \item[Alignment and covariance.] Sewing data, aligned pullback, aligned differences,
+    and admissible alignment families.
+  \item[Fourier and locality.] Finite Abelian transforms, reconstruction, Parseval
+    identities, truncation, and fixed-versus-pointwise gauge behavior.
+  \item[Loss geometry.] Spectral and operator residuals, admissible sets, Hilbert balls,
+    rank-two ellipses, and exact separation.
+  \item[Certificates and decisions.] Exact Boolean checkers, interval dispositions,
+    Pareto predicates, and finite first-passing semantics.
+  \item[Special finite models.] Rank-one resolvent defects, rank-two perturbation,
+    tight-binding constructions, gauge loops, and projector--Bargmann identities.
+\end{description}
+
+The layers form a dependency graph. Each application selects the relevant path and
+supplies the objects and assumptions required by its theorems.
+
+\section{Difference convention}
+
+This companion uses the existing Formal convention
+\[
+  \Delta_{\mathrm{ref},\mathrm{cand}}(k)
+  =H_{\mathrm{ref}}(k)-U(k)^{-1}H_{\mathrm{cand}}(k)U(k).
+\]
+Reversing the operand order negates the difference. Any downstream narrative using the
+opposite defect convention must record the sign bridge explicitly. A change of sign is
+algebraically simple but can change the interpretation of an impurity potential or
+perturbation.
+
+\section{Export rule}
+
+An exported chapter is a narrative snapshot derived from a pinned Formal revision. Its
+record contains the commit, source tree, declaration IDs, assumptions, known axioms, and
+open external obligations. Scientific interpretation receives a separate review.
