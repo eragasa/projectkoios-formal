@@ -67,13 +67,13 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Admissible alignment-family semantics
+### Strict separation of alignment families
 
 This is the active mathematical effort.
 
-- Separate singleton, identity, global-unitary, and complete pointwise-unitary families.
-- Exact family-relative feasibility.
-- Forward feasibility transfer only along explicit family inclusion.
+- Nonidentity constant witnesses separating identity from global alignment.
+- Two-point unitary fields separating global from complete pointwise alignment.
+- Exact counterexamples to reverse feasibility transfer.
 - No alignment selection, optimizer correctness, runtime binding, spectral adequacy, or evidence claim.
 
 ### Documentation maintenance
@@ -128,6 +128,7 @@ These items are merged Formal content only.
 - Pointwise-gauge and Fourier boundaries.
 - Finite orthonormal-frame algebra.
 - Sewn aligned-operator differences.
+- Admissible alignment-family semantics.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.
