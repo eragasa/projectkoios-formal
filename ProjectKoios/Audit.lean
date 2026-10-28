@@ -15,6 +15,7 @@ import ProjectKoios.BandGauge.Bloch.Sewing
 import ProjectKoios.BandGauge.Bloch.PeriodicRankTwo
 import ProjectKoios.BandGauge.Bloch.AlignedDifference
 import ProjectKoios.BandGauge.Alignment.FiniteFrame
+import ProjectKoios.BandGauge.Alignment.Family
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
@@ -321,6 +322,15 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Alignment.reconstructCompressedOperator_rightUnitaryFrame
 #print axioms ProjectKoios.BandGauge.Alignment.frameProjector_mul_frame
 #print axioms ProjectKoios.BandGauge.Alignment.compressOperator_frameProjector
+#print axioms ProjectKoios.BandGauge.Alignment.constantAlignmentField_mem_globalAlignmentFamily
+#print axioms ProjectKoios.BandGauge.Alignment.identityAlignmentField_mem_globalAlignmentFamily
+#print axioms ProjectKoios.BandGauge.Alignment.identityAlignmentFamily_subset_globalAlignmentFamily
+#print axioms ProjectKoios.BandGauge.Alignment.globalAlignmentFamily_subset_completeAlignmentFamily
+#print axioms ProjectKoios.BandGauge.Alignment.AlignmentFeasible.mono
+#print axioms ProjectKoios.BandGauge.Alignment.alignmentFeasible_singleton_iff
+#print axioms ProjectKoios.BandGauge.Alignment.alignmentFeasible_identity_iff
+#print axioms ProjectKoios.BandGauge.Alignment.alignmentFeasible_global_iff
+#print axioms ProjectKoios.BandGauge.Alignment.alignmentFeasible_complete_iff
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply
 #print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_operatorFieldDifference
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap

@@ -87,7 +87,7 @@ The committed D1 P0/G0 protocol compares:
 
 In P0 the pointwise Procrustes and inverse channels coincide analytically but remain separate numerical consistency channels. A structured finite-depth restricted-circuit fit is future work outside D1 v1.
 
-The formal layer must encode each admissible family explicitly. Their feasible and Pareto sets remain separate; results for one family do not transfer to another.
+The formal layer encodes singleton, identity, global-unitary, and complete pointwise-unitary families explicitly. Feasibility transfers from a smaller family to a larger family only through a proved inclusion; no converse transfer is supplied. Structured restricted-circuit families and their Pareto sets remain separate future contracts.
 
 ## Reusable theorem layers
 
@@ -151,7 +151,7 @@ Each declared support gives one attainable cost/operator/spectral objective poin
 
 ## Implemented support
 
-Current reusable modules cover finite sewing, reference-minus-aligned-candidate operator differences and their sewing closure, rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary retained-coordinate covariance, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, and route identities.
+Current reusable modules cover finite sewing, reference-minus-aligned-candidate operator differences and their sewing closure, rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary retained-coordinate covariance, explicit identity/global/complete alignment-family semantics, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, and route identities.
 
 They do not bind the owner protocol's runtime arrays or prove its case coverage.
 
@@ -176,7 +176,7 @@ Work proceeds from abstract frames to retained evidence. The first two reusable 
 
 1. Freeze the finite-rank frame API and right action. *(implemented source-neutrally)*
 2. Prove projector and compression covariance. *(implemented source-neutrally)*
-3. Encode admissible alignment families.
+3. Encode identity, global-unitary, and complete pointwise-unitary alignment families. *(implemented source-neutrally; structured restricted-circuit families remain open)*
 4. Connect aligned fields to finite Fourier truncation.
 5. Add common-threshold decision semantics.
 6. Freeze the owner certificate schema.
