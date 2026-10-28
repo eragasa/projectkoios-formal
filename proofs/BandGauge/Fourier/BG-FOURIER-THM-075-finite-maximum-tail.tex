@@ -1,0 +1,21 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-28
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Finite-Maximum Fourier Truncation Tail Bound}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-28}
+\begin{document}\raggedright\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-THM-075}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.finiteMaximumNorm_truncationResidual_le_omitted}}.
+\section{Statement and proof}
+For coefficients $c_\chi$ in a complex normed space and retained support $S$, the finite maximum ambient norm of the deliberate-truncation residual obeys
+\[
+ \max_k\left\|\sum_{\chi\notin S}\chi(k)c_\chi\right\|
+ \leq \sum_{\chi\notin S}\|c_\chi\|.
+\]
+The omitted coefficient one-norm tail is nonnegative. The finite function-space norm is bounded by a nonnegative scalar exactly when every coordinate norm is bounded by that scalar. Applying \texttt{BG-FOURIER-THM-074} at each momentum therefore yields the maximum bound.
+\section{Boundary and audit}
+This is an exact finite supremum lift in the ambient norm. It assumes no monotonicity and does not add separately aggregated residual channels. It supplies no entrywise matrix-Frobenius maximum theorem, runtime mesh, binary64 interpretation, physical-range meaning, or scientific-adequacy decision. Axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Lean \texttt{4.35.0}, Mathlib {\scriptsize\path{56a005855ea17e0b0958f73ec801ae140b0a1679}}; AI-assisted, kernel-checked, no independent expert review recorded.
+\end{document}

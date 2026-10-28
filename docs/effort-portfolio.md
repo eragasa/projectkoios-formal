@@ -21,7 +21,7 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit `d72865262927453197eee89d0be62bf388c0ed07`.
+Current board baseline: remote `main` merge commit `09888f1061cdb675b9797bacd8aaca87a450bec1`.
 
 ## Mission
 
@@ -67,56 +67,54 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-Two efforts occupy the current WIP limit.
-
-### Finite root-mean-square Fourier-tail normalization
-
-This is the active mathematical effort.
-
-- Derive the exact squared finite root-mean-square norm of the deliberate-truncation
-  channel from the existing finite Parseval and residual-tail equalities.
-- Add the corresponding matrix Frobenius root-mean-square specialization rather than
-  silently using the ambient matrix norm.
-- State the required finite nonempty-domain hypotheses explicitly and preserve the
-  existing Fourier normalization.
-- Do not bind the result to KSD binary64 values, runtime meshes, eigensolvers, thresholds,
-  first-passage outcomes, or scientific adequacy.
+One maintenance effort occupies the current WIP limit. No mathematical or certificate
+effort is active while the validated finite maximum-tail candidate awaits separately
+authorized promotion.
 
 ### KSD boundary and portfolio maintenance
 
 This is the active maintenance effort.
 
-- Track the Periodic1D rank-one design as an external pre-execution source, not a Formal
-  certificate or immutable source binding.
+- Track the Periodic1D rank-one work as an external uncommitted implementation, not a
+  Formal certificate, immutable source binding, or numerical result.
 - Keep the seven-paper planning boundary synchronized at the level of effort categories;
   detailed numerical controls and source hashes remain with the owner and source ledgers.
 - Update the source-specific crosswalk only after KSD supplies an immutable reviewed
-  revision.
+  revision and an exact proposition-specific request/result contract.
 
 The current KSD rank-one owner is observed on branch
 `work/periodic1d-rank1-control-v3` at base
-`bc1601f3a50dda19b994eea474ca522f2d836c26` with uncommitted documentation. Its
-Option B parent and finite controls are owner-local design inputs. The uncommitted owner
-material now records prospective three-channel maximum and root-mean-square controls, but
-no typed family implementation, execution, result, retained package, or Formal
-request/result wire exists.
+`bc1601f3a50dda19b994eea474ca522f2d836c26` with uncommitted typed configuration,
+result, analyzer, independent-verification, authenticated-visualization, direct-script,
+test, and documentation work. A Formal-boundary review on 2026-10-28 required changes:
+the frozen `M = 1025`, shift `1/257` request currently fails exact result admission
+because producer and checker construct binary64 evaluation coordinates differently;
+verifier, plotting-inventory, identifier-binding, provenance, and documentation gaps also
+remain. Reduced software tests do not resolve those findings. No retained execution,
+independently verified result package, immutable owner revision, or Formal request/result
+wire exists.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Update the Formal proof companion from the merged gauge--truncation declaration.
-2. Resume the Paper A diagnostic owner-side schema recommendation only when it does not
-   displace the active mathematical effort.
+1. Promote the validated finite maximum-norm Fourier-tail candidate only after separate
+   authorization for commit, push, review, and merge. The exact Lean results remain
+   independent of KSD runtime data and require no new theorem work for the current
+   scalar rank-one implementation.
+2. Update the Formal proof companion from the merged gauge--truncation declaration.
+3. Resume the Paper A diagnostic owner-side schema recommendation only when it does not
+   displace the active maintenance effort.
 
 ## Blocked
 
 Blocked work lacks a required source or evidence gate.
 
-- KSD Periodic1D rank-one exact request/result wire pending an immutable owner revision,
-  typed configuration and result wires, a producer-independent verifier, retained hashes,
-  and joint schema review. The current owner-local design freeze is not an immutable
-  Formal source binding.
+- KSD Periodic1D rank-one exact request/result wire pending correction of the reviewed
+  producer/checker and contract gaps, a successful non-retained frozen-control replay,
+  an immutable owner revision, a producer-independent complete verifier, retained hashes,
+  a proposition-specific exact or outward-rounded schema, and joint schema review. The
+  current uncommitted implementation is not an immutable Formal source binding.
 - KSD Periodic1D rank-two and rank-N certificate bindings pending stable successor wires,
   independently verified results, and retained finite objective inventories.
 - Projection/nonlocality promotion pending provenance, dossier, spectral-characterization, and status fixes.
@@ -162,6 +160,7 @@ These items are merged Formal content only.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
 - Finite three-channel residual identity with pointwise, maximum, and root-mean-square
   triangle bounds and exact deliberate-truncation Fourier-tail bridges.
+- Exact Hilbert and explicit matrix-Frobenius root-mean-square Fourier-tail identities.
 - Complete named axiom coverage for manifest rows marked proved.
 
 Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.
