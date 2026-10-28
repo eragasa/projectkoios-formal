@@ -13,6 +13,7 @@ import ProjectKoios.BandGauge.Geometry.AdmissibleSets
 import ProjectKoios.BandGauge.Geometry.RankTwoLoss
 import ProjectKoios.BandGauge.Bloch.Sewing
 import ProjectKoios.BandGauge.Bloch.PeriodicRankTwo
+import ProjectKoios.BandGauge.Alignment.FiniteFrame
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
@@ -309,6 +310,16 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.pointwiseUnitaryConjugation_const
 #print axioms ProjectKoios.BandGauge.Fourier.exists_finiteFourierCoefficient_pointwiseUnitaryConjugation_ne
 #print axioms ProjectKoios.BandGauge.Fourier.weightedFiniteMatrixFrobeniusPower_pointwiseUnitaryConjugation
+#print axioms ProjectKoios.BandGauge.Alignment.frameProjector_isHermitian
+#print axioms ProjectKoios.BandGauge.Alignment.frameProjector_mul_self
+#print axioms ProjectKoios.BandGauge.Alignment.rightUnitaryFrame_isOrthonormal
+#print axioms ProjectKoios.BandGauge.Alignment.frameProjector_rightUnitaryFrame
+#print axioms ProjectKoios.BandGauge.Alignment.compressOperator_rightUnitaryFrame
+#print axioms ProjectKoios.BandGauge.Alignment.compressOperator_isHermitian
+#print axioms ProjectKoios.BandGauge.Alignment.reconstructCompressedOperator_eq_projector_sandwich
+#print axioms ProjectKoios.BandGauge.Alignment.reconstructCompressedOperator_rightUnitaryFrame
+#print axioms ProjectKoios.BandGauge.Alignment.frameProjector_mul_frame
+#print axioms ProjectKoios.BandGauge.Alignment.compressOperator_frameProjector
 #print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff

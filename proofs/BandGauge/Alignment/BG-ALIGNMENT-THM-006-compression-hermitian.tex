@@ -1,0 +1,15 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-27
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Hermiticity of Finite Frame Compression}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-ALIGNMENT-THM-006}; status \texttt{proved}. Lean declaration \path{ProjectKoios.BandGauge.Alignment.compressOperator_isHermitian}.
+\section{Statement and proof}
+If $A^\dagger=A$, then $(F^\dagger A F)^\dagger=F^\dagger A F$ for every rectangular frame $F$. The proof uses conjugate-transpose reversal and involution.
+\section{Boundary}
+Frame orthonormality is unnecessary for this algebraic closure. No spectral or runtime conclusion follows. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Checked with Lean \texttt{4.35.0} and pinned Mathlib. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

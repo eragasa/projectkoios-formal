@@ -67,14 +67,14 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Pointwise gauge and Fourier boundaries
+### Finite orthonormal-frame algebra
 
 This is the active mathematical effort.
 
-- Exact character-phase shifts for vector-valued finite Fourier fields.
-- Trivial pointwise scalar-operator conjugation.
-- Higher-rank pointwise-unitary coefficient-change and Frobenius boundaries.
-- No general convolution/support, runtime-array, physical-locality, or scientific-evidence claim.
+- Rectangular complex frames and exact column orthonormality.
+- Ambient projectors and compression/reconstruction identities.
+- Right-unitary retained-coordinate covariance and invariance.
+- No runtime-orthonormality, gauge-selection, eigensolver, physical-adequacy, or evidence claim.
 
 ### Documentation maintenance
 
@@ -125,6 +125,7 @@ These items are merged Formal content only.
 - Tetrahedral Vogl algebra.
 - Finite measurement and test-domain foundations.
 - Fixed-unitary Fourier equivariance.
+- Pointwise-gauge and Fourier boundaries.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.

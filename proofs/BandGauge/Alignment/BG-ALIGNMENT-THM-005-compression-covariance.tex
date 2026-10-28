@@ -1,0 +1,15 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-27
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Right-Unitary Compression Covariance}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-ALIGNMENT-THM-005}; status \texttt{proved}. Lean declaration \path{ProjectKoios.BandGauge.Alignment.compressOperator_rightUnitaryFrame}.
+\section{Statement and proof}
+For every ambient operator $A$, compression in frame $FU$ equals $U^\dagger(F^\dagger A F)U$. The result follows by expanding definitions, reversing the conjugate transpose of a product, and reassociating matrix multiplication.
+\section{Boundary}
+The identity does not select $U$, bind an eigensolver output, or assert Fourier support behavior. Kernel axioms are \texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions. Checked with Lean \texttt{4.35.0} and pinned Mathlib. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}
