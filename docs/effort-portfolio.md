@@ -86,22 +86,22 @@ The current KSD rank-one owner is observed on branch
 `work/periodic1d-rank1-control-v3` at base
 `bc1601f3a50dda19b994eea474ca522f2d836c26` with uncommitted typed configuration,
 result, analyzer, independent-verification, authenticated-visualization, direct-script,
-test, and documentation work. A Formal-boundary review on 2026-10-28 required changes:
-the frozen `M = 1025`, shift `1/257` request currently fails exact result admission
-because producer and checker construct binary64 evaluation coordinates differently;
-verifier, plotting-inventory, identifier-binding, provenance, and documentation gaps also
-remain. Reduced software tests do not resolve those findings. No retained execution,
-independently verified result package, immutable owner revision, or Formal request/result
-wire exists.
+test, and documentation work. A final bounded Formal-boundary rereview on 2026-10-28
+found no blocking finding for the frozen finite calculate, independently verify, and
+authenticated render software slice or its provisional non-retained technical report.
+The rereview reproduced exact configured evaluation coordinates, 725 passing named
+comparisons, and the closed two-figure render inventory. This software review does not
+establish an immutable source identity, retained numerical evidence, scientific
+validation, or a Formal proposition. No retained execution, immutable owner revision, or
+Formal request/result wire exists.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Promote the validated finite maximum-norm Fourier-tail candidate only after separate
-   authorization for commit, push, review, and merge. The exact Lean results remain
-   independent of KSD runtime data and require no new theorem work for the current
-   scalar rank-one implementation.
+1. Complete PR #17 candidate-tree revalidation and actionable rereview, then merge only
+   with separate authorization. The exact Lean results remain independent of KSD runtime
+   data and require no new theorem work for the current scalar rank-one implementation.
 2. Update the Formal proof companion from the merged gauge--truncation declaration.
 3. Resume the Paper A diagnostic owner-side schema recommendation only when it does not
    displace the active maintenance effort.
@@ -110,11 +110,10 @@ Ready work has a bounded next action.
 
 Blocked work lacks a required source or evidence gate.
 
-- KSD Periodic1D rank-one exact request/result wire pending correction of the reviewed
-  producer/checker and contract gaps, a successful non-retained frozen-control replay,
-  an immutable owner revision, a producer-independent complete verifier, retained hashes,
-  a proposition-specific exact or outward-rounded schema, and joint schema review. The
-  current uncommitted implementation is not an immutable Formal source binding.
+- KSD Periodic1D rank-one exact request/result wire pending an immutable reviewed owner
+  revision, retained hashes, a proposition-specific exact or outward-rounded schema, and
+  joint schema review. The passing uncommitted finite software slice and provisional
+  report are not an immutable Formal source binding or a checked certificate.
 - KSD Periodic1D rank-two and rank-N certificate bindings pending stable successor wires,
   independently verified results, and retained finite objective inventories.
 - Projection/nonlocality promotion pending provenance, dossier, spectral-characterization, and status fixes.
