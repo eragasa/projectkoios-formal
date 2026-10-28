@@ -14,6 +14,7 @@ This directory owns exact finite Fourier, support, truncation, Parseval, fixed-u
 - `FiniteParseval.lean`: inner-product and power Parseval identities; reconstructed residual power equals `|G|` times omitted coefficient power.
 - `HermitianPairing.lean`: negative-mode pairing and Hermitian reconstruction.
 - `MatrixFrobenius.lean`: entrywise matrix Parseval and the analogous exact Frobenius residual-tail equality.
+- `ResidualChannels.lean`: identifies the deliberate-truncation channel with the exact Fourier residual and exposes its Hilbert-power and matrix-Frobenius tail equalities.
 - `RankTwoWeightedBridge.lean`: constant weight `weight / (2 Eref²)` and the uniform specialization in which `|G|` cancels.
 - `UnitaryEquivariance.lean`: Frobenius invariance and Fourier commutation for one fixed finite-rank unitary.
 - `PointwiseGauge.lean`: character-phase mode shifts, trivial scalar-operator conjugation, pointwise matrix conjugation, coefficient separation, and pointwise Frobenius invariance.
@@ -27,6 +28,7 @@ Every specialization must freeze its convention.
 - Character multiplication of a vector field shifts mode labels; it is not scalar-operator conjugation.
 - Scalar rank-one operator conjugation is pointwise trivial and is not a gauge-locality effect.
 - A momentum-dependent higher-rank gauge that changes the field changes at least one coefficient. The explicit two-point witness proves that such a gauge need not commute with zero-mode support truncation, but it does not provide a general convolution or support formula.
+- The Fourier residual bridge does not identify a runtime interpolant, coefficient array, or support inventory with its exact inputs.
 - Uniform weights do not replace nonuniform quadrature.
 - Concrete weights and supports must satisfy `docs/BandGauge/publication-evidence-contract.md`.
 - The modules do not identify a generic finite group with a publication mesh or certify Wannier90, runtime arrays, continuum convergence, or physical locality.

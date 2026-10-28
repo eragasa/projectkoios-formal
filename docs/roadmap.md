@@ -49,6 +49,7 @@ Open:
 Status: generic foundations implemented.
 
 - Finite reconstruction, inversion, Parseval, residual tails, Hermitian pairing, and fixed-unitary equivariance.
+- Exact three-channel residual decomposition with pointwise, finite-maximum, and finite root-mean-square triangle bounds, plus exact Fourier-tail identification of the deliberate-truncation channel.
 - Exact character-phase mode shifts, trivial pointwise scalar-operator conjugation, coefficient separation, and pointwise-unitary Frobenius invariance.
 - An explicit rank-two `ZMod 2` witness in which a pointwise swap gauge creates the odd coefficient `diag(1/2,-1/2)` and does not commute with zero-mode truncation.
 - Rectangular complex frames, ambient projectors, compression/reconstruction, and right-unitary retained-coordinate covariance.
@@ -62,6 +63,7 @@ Status: generic foundations implemented.
 Open:
 
 - aligned-difference self-adjointness and owner-specific retained-frame binding;
+- runtime interpolation, evaluation-mesh, and exact/outward-rounded residual-channel bindings;
 - general pointwise-gauge convolution and support formulas;
 - physical support and publication-mesh bindings;
 - nonuniform weighted Parseval;
