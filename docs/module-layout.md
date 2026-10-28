@@ -12,7 +12,7 @@ BandGauge separates reusable algebra from paper bindings.
 | `Bloch/` | pointwise sewing, covariant fields, compatible alignment, aligned operator differences, finite samples | alignment selection, self-adjointness inference, Bloch--Floquet derivation, topology, `L²` point values |
 | `Geometry/` | admissible sets and rank-two loss geometry | unreviewed rank/scalar generalization |
 | `Hilbert/` | residual balls and weighted Frobenius algebra | replacement by bounded-operator norm |
-| `Alignment/` | rectangular complex frames, ambient projectors, compression/reconstruction, and right-unitary retained-coordinate changes | Fourier truncation, runtime orthonormality, gauge selection, and unequal-rank unitary claims |
+| `Alignment/` | rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary coordinate changes, and explicit identity/global/pointwise alignment families | Fourier truncation, runtime orthonormality, optimizer correctness, gauge selection, and unequal-rank unitary claims |
 | `Decision/` | finite dominance, feasibility, minimum cost, first-passing cutoffs, and outcome classification | external inventory coverage, continuum frontiers, and KKT claims |
 | `Certificates/` | exact schemas, checkers, and soundness bridges | runtime execution and unbound publication data |
 | `Fourier/` | finite transforms, Parseval, support, truncation, Hermitian pairing, fixed-unitary equivariance, character-phase shifts, and pointwise-gauge boundaries | arbitrary pointwise-gauge convolution/support formulas, mesh identity, Wannier90 |

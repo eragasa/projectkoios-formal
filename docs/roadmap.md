@@ -51,6 +51,7 @@ Status: generic foundations implemented.
 - Finite reconstruction, inversion, Parseval, residual tails, Hermitian pairing, and fixed-unitary equivariance.
 - Exact character-phase mode shifts, trivial pointwise scalar-operator conjugation, coefficient separation, and pointwise-unitary Frobenius invariance.
 - Rectangular complex frames, ambient projectors, compression/reconstruction, and right-unitary retained-coordinate covariance.
+- Separate singleton, identity, global-unitary, and complete pointwise-unitary alignment families with inclusion-based feasibility transfer.
 - Sewn reference-minus-aligned-candidate operator differences with exact recovery and zero criteria.
 - Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
 - First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.

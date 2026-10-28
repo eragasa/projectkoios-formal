@@ -104,7 +104,7 @@ Reusable layers serve multiple papers without inheriting their status.
 | `Bloch/` | sewing and covariant finite fields |
 | `Foundations/` | rank-two algebra and elementary optimization |
 | `Hilbert/` and `Geometry/` | loss and admissible-set geometry |
-| `Alignment/` | finite complex frames, retained compression/reconstruction, and right-unitary coordinate algebra; further gauge families remain future |
+| `Alignment/` | finite complex frames, retained compression/reconstruction, right-unitary coordinate algebra, and distinct identity/global/pointwise family semantics; structured gauge families remain future |
 | `Fourier/` | finite transforms, Parseval, and tails |
 | `Projection/` | future compression and support consequences |
 | `Decision/` | finite feasibility, cost, and Pareto semantics |

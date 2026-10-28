@@ -67,14 +67,14 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Sewn aligned-operator differences
+### Admissible alignment-family semantics
 
 This is the active mathematical effort.
 
-- Reference-minus-candidate subtraction on one finite-fiber operator space.
-- Pullback through pointwise unitary alignments.
-- Sewing closure and exact recovery and zero identities.
-- No alignment selection, self-adjointness inference, runtime binding, spectral adequacy, or evidence claim.
+- Separate singleton, identity, global-unitary, and complete pointwise-unitary families.
+- Exact family-relative feasibility.
+- Forward feasibility transfer only along explicit family inclusion.
+- No alignment selection, optimizer correctness, runtime binding, spectral adequacy, or evidence claim.
 
 ### Documentation maintenance
 
@@ -127,6 +127,7 @@ These items are merged Formal content only.
 - Fixed-unitary Fourier equivariance.
 - Pointwise-gauge and Fourier boundaries.
 - Finite orthonormal-frame algebra.
+- Sewn aligned-operator differences.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.
