@@ -67,14 +67,15 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Strict separation of alignment families
+### Gauge–truncation counterexample
 
 This is the active mathematical effort.
 
-- Nonidentity constant witnesses separating identity from global alignment.
-- Two-point unitary fields separating global from complete pointwise alignment.
-- Exact counterexamples to reverse feasibility transfer.
-- No alignment selection, optimizer correctness, runtime binding, spectral adequacy, or evidence claim.
+- An exact constant rank-two field on `ZMod 2`.
+- Identity and swap gauges at the two momenta.
+- A nonzero odd Fourier coefficient created by pointwise conjugation.
+- Exact failure of commutation with zero-mode support truncation.
+- No general convolution, continuum locality, runtime binding, or evidence claim.
 
 ### Documentation maintenance
 

@@ -32,6 +32,7 @@ import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
 import ProjectKoios.BandGauge.Fourier.RankTwoWeightedBridge
 import ProjectKoios.BandGauge.Fourier.UnitaryEquivariance
 import ProjectKoios.BandGauge.Fourier.PointwiseGauge
+import ProjectKoios.BandGauge.Fourier.GaugeTruncationCounterexample
 import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Certificates.IntervalDecision
 import ProjectKoios.BandGauge.Certificates.RankTwoSeparationBox
@@ -313,6 +314,18 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.pointwiseUnitaryConjugation_const
 #print axioms ProjectKoios.BandGauge.Fourier.exists_finiteFourierCoefficient_pointwiseUnitaryConjugation_ne
 #print axioms ProjectKoios.BandGauge.Fourier.weightedFiniteMatrixFrobeniusPower_pointwiseUnitaryConjugation
+#print axioms ProjectKoios.BandGauge.Fourier.rankTwoSwapConjugation_firstCoordinateProjector
+#print axioms ProjectKoios.BandGauge.Fourier.zeroModeFourierTruncation_eq_coefficient
+#print axioms ProjectKoios.BandGauge.Fourier.zeroModeFourierTruncation_twoPointConstantProjectorField
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_at_zero
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_at_one
+#print axioms ProjectKoios.BandGauge.Fourier.twoPointOddMode_one
+#print axioms ProjectKoios.BandGauge.Fourier.twoPointConstantProjectorField_odd_coefficient
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient
+#print axioms ProjectKoios.BandGauge.Fourier.rankTwoOddFourierCoefficient_ne_zero
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient_ne_zero
+#print axioms ProjectKoios.BandGauge.Fourier.rankTwoCoordinateProjectors_ne
+#print axioms ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_zeroModeFourierTruncation_ne
 #print axioms ProjectKoios.BandGauge.Alignment.frameProjector_isHermitian
 #print axioms ProjectKoios.BandGauge.Alignment.frameProjector_mul_self
 #print axioms ProjectKoios.BandGauge.Alignment.rightUnitaryFrame_isOrthonormal
