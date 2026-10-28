@@ -67,14 +67,14 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Finite orthonormal-frame algebra
+### Sewn aligned-operator differences
 
 This is the active mathematical effort.
 
-- Rectangular complex frames and exact column orthonormality.
-- Ambient projectors and compression/reconstruction identities.
-- Right-unitary retained-coordinate covariance and invariance.
-- No runtime-orthonormality, gauge-selection, eigensolver, physical-adequacy, or evidence claim.
+- Reference-minus-candidate subtraction on one finite-fiber operator space.
+- Pullback through pointwise unitary alignments.
+- Sewing closure and exact recovery and zero identities.
+- No alignment selection, self-adjointness inference, runtime binding, spectral adequacy, or evidence claim.
 
 ### Documentation maintenance
 
@@ -126,6 +126,7 @@ These items are merged Formal content only.
 - Finite measurement and test-domain foundations.
 - Fixed-unitary Fourier equivariance.
 - Pointwise-gauge and Fourier boundaries.
+- Finite orthonormal-frame algebra.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.
