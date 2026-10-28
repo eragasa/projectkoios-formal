@@ -21,6 +21,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
+Current board baseline: remote `main` merge commit `087a92a67c0bb60f361ecbd5c8aa5cb5003939c4`.
+
 ## Mission
 
 Maintain an audit-first Lean sidecar for exact propositions and exact certificate checking. Formal does not own runtime execution, numerical evidence, scientific applicability, novelty, or publication status.
@@ -67,35 +69,53 @@ Everything else is ready, blocked, deferred, or completed.
 
 Two efforts occupy the current WIP limit.
 
-### Gauge–truncation counterexample
+### Finite three-channel residual algebra
 
 This is the active mathematical effort.
 
-- An exact constant rank-two field on `ZMod 2`.
-- Identity and swap gauges at the two momenta.
-- A nonzero odd Fourier coefficient created by pointwise conjugation.
-- Exact failure of commutation with zero-mode support truncation.
-- No general convolution, continuum locality, runtime binding, or evidence claim.
+- State the source-independent pointwise identity separating reference-to-interpolant,
+  interpolant-to-truncation, and reference-to-truncation residuals.
+- Prove the corresponding pointwise, finite-maximum, and finite root-mean-square triangle
+  bounds without asserting that the three reported errors add as scalars.
+- Bridge the deliberate-truncation leg to the existing exact finite Fourier tail.
+- Do not bind the result to KSD binary64 values, runtime meshes, eigensolvers, thresholds,
+  first-passage outcomes, or scientific adequacy.
 
-### Documentation maintenance
+### KSD boundary and portfolio maintenance
 
 This is the active maintenance effort.
 
-- Keep policy and indexes concise.
-- Update this board only when effort category changes.
-- Do not duplicate theorem inventories or source hashes here.
+- Track the Periodic1D rank-one design as an external pre-execution source, not a Formal
+  certificate or immutable source binding.
+- Keep the seven-paper planning boundary synchronized at the level of effort categories;
+  detailed numerical controls and source hashes remain with the owner and source ledgers.
+- Update the source-specific crosswalk only after KSD supplies an immutable reviewed
+  revision.
+
+The current KSD rank-one owner is observed on branch
+`work/periodic1d-rank1-control-v3` at base
+`bc1601f3a50dda19b994eea474ca522f2d836c26` with uncommitted documentation. Its
+Option B parent and finite controls are owner-local design inputs. No typed implementation,
+execution, result, retained package, or Formal request/result wire exists.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Paper A diagnostic specification as an owner-side schema recommendation.
+1. Update the Formal proof companion from the merged gauge--truncation declaration.
+2. Resume the Paper A diagnostic owner-side schema recommendation only when it does not
+   displace the active mathematical effort.
 
 ## Blocked
 
 Blocked work lacks a required source or evidence gate.
 
-- KSD exact request/result wire pending stable owner paths, frozen calculation identity, and joint schema review.
+- KSD Periodic1D rank-one exact request/result wire pending an immutable owner revision,
+  typed configuration and result wires, a producer-independent verifier, retained hashes,
+  and joint schema review. The current owner-local design freeze is not an immutable
+  Formal source binding.
+- KSD Periodic1D rank-two and rank-N certificate bindings pending stable successor wires,
+  independently verified results, and retained finite objective inventories.
 - Projection/nonlocality promotion pending provenance, dossier, spectral-characterization, and status fixes.
 - Paper A retained runtime certificate and active package.
 - Paper B retained production evidence and exhaustive checked table.
@@ -127,6 +147,7 @@ These items are merged Formal content only.
 - Finite measurement and test-domain foundations.
 - Fixed-unitary Fourier equivariance.
 - Pointwise-gauge and Fourier boundaries.
+- Exact rank-two gauge--truncation noncommutation witness.
 - Finite orthonormal-frame algebra.
 - Sewn aligned-operator differences.
 - Admissible alignment-family semantics.
@@ -144,12 +165,15 @@ Completion means merged Formal content only. It does not mean release, evidence 
 
 Each program retains independent formal and evidence status.
 
-| Program | Formal position | Missing gate |
+| Program | Formal position | External position and missing gate |
 |---|---|---|
-| Paper A | conditional results and one exact analytic construction | immutable runtime instance and independent checked package |
-| Paper B | metadata placeholder | projection/tail results and checked exhaustive decision table |
-| Paper C | metadata placeholder | fail-closed owner calculator and retained rank/depth/dimension evidence |
-| Paper D | planning only | immutable owner protocol and first-principles target |
+| Paper A | conditional results and one exact analytic construction | KSD has analytic and development calculations but no retained active-calculation package; an immutable runtime instance and independently checked package remain missing |
+| Paper B | metadata placeholder | KSD has bounded replaceable dimensional and strain development ladders; retained production evidence and a checked exhaustive table remain missing |
+| Paper C | metadata placeholder | KSD has a D1 protocol candidate and development code; a stable result wire, independent full-result verification, and retained rank/depth evidence remain missing |
+| Paper D | planning only | KSD owns a bulk-silicon plan and provisional C48/K8 setting, but has no accepted production parent or qualified Wannier bridge |
+| Paper E | absent | KSD has pre-results common-space defect methodology but no immutable experiment or retained defect operator |
+| Paper F | finite gauge-loop and projector--Bargmann algebra only | KSD has pre-results obstruction methodology but no selected model family, invariant protocol, or retained classification; current Formal results do not establish topology |
+| Paper G | absent | KSD has a pre-results matched-SOC application plan but no authorized matched pristine/Si:P/Si:B branches or retained material result |
 | Monograph projection | dirty isolated work | provenance, statement, dossier, and status corrections |
 
 ## Change rules
