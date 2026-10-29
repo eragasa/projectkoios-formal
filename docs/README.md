@@ -38,6 +38,7 @@ Planning files organize work without changing formal status.
 - `BandGauge/Geometry/witness-separation-statement-selection.md`: `BG-PLAN-001` decision record.
 - `BandGauge/higher-rank-composite-band-formalization-plan.md`: higher-rank D1 plan.
 - `BandGauge/Papers/`: series and per-paper plans.
+- `papers/`: Formal-owned working research papers and their publication boundaries.
 - `SolidState/TightBinding/vogl-sp3s-star-formalization.md`: Vogl exact-algebra scope.
 
 ## Related indexes
@@ -45,7 +46,8 @@ Planning files organize work without changing formal status.
 These indexes point to explanatory material.
 
 - `../proofs/README.md`: proof-dossier policy.
-- `../papers/README.md`: working-paper policy.
+- `papers/README.md`: Formal-owned research-paper policy and index.
+- `../papers/README.md`: legacy synthesis-manuscript policy.
 - Module README files: local scope and exclusions.
 
 ## Status terms

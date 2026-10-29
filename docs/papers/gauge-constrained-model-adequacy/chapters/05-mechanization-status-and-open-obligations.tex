@@ -1,0 +1,100 @@
+\chapter{Mechanization Status and Open Obligations}
+\label{ch:mechanization-status}
+
+\section{Status source}
+
+The authoritative declaration inventory is \modulepath{docs/theorem-manifest.md}. The
+named axiom reports imported by \modulepath{ProjectKoios/Audit.lean} provide the audit
+surface for proved theorems and lemmas. This chapter intentionally does not duplicate a
+mutable declaration count. A later export must take its count, toolchain identity, and
+module hashes from one exact Formal revision.
+
+The current basis of this working companion is merge commit
+\decl{b56d6b8e7005515220e6c9bf42851acccb023178}, tree
+\decl{a94b113d3300ff8e692f295da82945f48fb7d6ed}.  At that tree,
+\path{ProjectKoios/BandGauge/Fourier/GaugeTruncationCounterexample.lean} has SHA-256
+\decl{3b4d9083c04592ff9982cbddf891c8243cc599ad6bc32f5e4a10f708bec6186d}, and
+\path{ProjectKoios/BandGauge/Fourier/ResidualChannels.lean} has SHA-256
+\decl{d2da775a99edf7dea2d8955a121d4929cc183be4fcf64a515ab5e002c019a28b}.
+No claim about later revisions follows from these identities.
+
+\section{Checked mathematical families}
+
+At the current snapshot, checked reusable families include:
+
+\begin{itemize}
+  \item finite Fourier transform, reconstruction, Parseval, truncation, Hermitian
+        pairing, an exact gauge--truncation counterexample, and deliberate-truncation
+        power, root-mean-square, pointwise, and maximum tail results;
+  \item finite frames, sewing, aligned differences, and alignment-family separation;
+  \item weighted Frobenius, spectral, admissible-set, and rank-two loss geometry;
+  \item exact rational, enclosure, box, Pareto, and interval decision certificates;
+  \item finite first-passing decisions;
+  \item finite folding, spin lifting, route commutativity, and tight-binding algebra;
+  \item rank-one resolvent defects and rank-two spectral perturbation;
+  \item finite gauge loops, projector products, and Bargmann identities; and
+  \item finite quantum-state, measurement, and partial-operator foundations.
+\end{itemize}
+
+Each family retains its own assumptions and nonclaims. Membership in this list does not
+mean that every prospective external statement in the same subject has been encoded.
+
+\section{Near-term exact theorem opportunities}
+
+Several bounded extensions would sharpen the proof program without importing runtime or
+material authority.
+
+\begin{enumerate}
+  \item \openobligation{Prove induced Euclidean operator-norm invariance under unitary
+        conjugation in the exact finite setting.}
+  \item \openobligation{Package the gauge invariance of a conformant two-path residual
+        for both Frobenius and operator norms.}
+  \item \openobligation{Develop a general finite pointwise-gauge convolution and
+        support formula beyond the proved two-point counterexample.}
+  \item \openobligation{Package shell-resolved Frobenius invariance under one constant
+        unitary that does not mix shell labels.}
+  \item \openobligation{Develop exact finite Feshbach or Schur-complement elimination
+        separately from spectral-gap and norm-bound certificates.}
+  \item \openobligation{Formalize a bounded projection-induced support-growth result
+        without claiming infinite-volume decay or topology.}
+\end{enumerate}
+
+\openobligation{These are proposed theorem tasks, not declarations already present in
+the manifest.}
+
+\section{Analytical and scientific obligations kept open}
+
+The current finite library does not establish:
+
+\begin{itemize}
+  \item asymptotic locality or existence of a continuum crossover radius;
+  \item discrete-to-continuum, infinite-volume, or homogenization convergence;
+  \item existence of a physically adequate smooth or symmetry-compatible alignment;
+  \item a runtime frame's exact orthonormality or a numerical interval's exact
+        containment;
+  \item Chern integrality, global branch unwrapping, or a Wannier obstruction;
+  \item Quantum ESPRESSO or Wannier90 execution, convergence, or material adequacy;
+  \item silicon-specific applicability, scientific validation, novelty, publication, or
+        human acceptance.
+\end{itemize}
+
+A future result may close one item only through a separately reviewed theorem or evidence
+contract. Closure of one item does not close the others.
+
+\section{Export checklist}
+
+Before extracting prose into an external chapter, record:
+
+\begin{enumerate}
+  \item the exact Formal repository, commit, tree, module paths, and hashes;
+  \item every declaration ID used by the exported argument;
+  \item the explicit assumptions and operand/sign conventions;
+  \item the named axiom-audit result and any remaining trusted-base limitations;
+  \item which surrounding claims remain prospective, numerical, scientific, or
+        publication-dependent; and
+  \item confirmation that the destination does not present the export as runtime or
+        material validation.
+\end{enumerate}
+
+The destination may reorganize the exposition, but it must not silently strengthen the
+formal statements or detach them from their immutable source identity.
