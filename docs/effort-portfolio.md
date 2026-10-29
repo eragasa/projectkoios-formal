@@ -69,8 +69,11 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
-effort currently occupies the WIP limit.
+One mathematical effort occupies the WIP limit: exact positive-even centered integer inventories,
+negative-Nyquist singleton removal, full-versus-removed reconstruction, normalized removed-block
+power, and symmetric ordinary support below half the mesh size. The slice is abstract and exact; it
+does not add a KSD byte parser, retained execution, runtime certificate, NumPy FFT binding, or
+scientific-validation claim. No trust, documentation, or maintenance effort is active.
 
 ## Ready
 

@@ -10,6 +10,7 @@ Initial document completed: 2026-10-19
 This directory owns exact finite Fourier, support, truncation, Parseval, fixed-unitary equivariance, and pointwise-gauge boundary results.
 
 - `FiniteReconstruction.lean`: reconstruction with an explicit caller-supplied kernel, support truncation, and exact tail decomposition; it selects no Fourier convention.
+- `CenteredEvenMesh.lean`: positive even centered integer inventories, exact deletion of the negative Nyquist representative, full-versus-removed reconstruction, normalized deleted-block power, and symmetric ordinary support below half the mesh size.
 - `FiniteAbelianTransform.lean`: conjugated-character forward transform with normalization `1 / |G|` and finite inversion.
 - `FiniteParseval.lean`: inner-product and power Parseval identities; reconstructed residual power equals `|G|` times omitted coefficient power.
 - `HermitianPairing.lean`: negative-mode pairing and Hermitian reconstruction.
@@ -29,6 +30,9 @@ Every specialization must freeze its convention.
 - Scalar rank-one operator conjugation is pointwise trivial and is not a gauge-locality effect.
 - A momentum-dependent higher-rank gauge that changes the field changes at least one coefficient. The explicit two-point witness proves that such a gauge need not commute with zero-mode support truncation, but it does not provide a general convolution or support formula.
 - The Fourier residual bridge does not identify a runtime interpolant, coefficient array, or support inventory with its exact inputs.
+- Negative-Nyquist removal is a singleton projection, not a representation-preserving equivalence: the full reconstruction differs by the explicit deleted term away from any separately established equality set.
+- The normalized negative-Nyquist power is independent of later range selection by construction. It is not an off-mesh error and is not the ordinary omitted-coefficient tail.
+- `CenteredEvenMesh` does not identify the exact centered-index equivalence with NumPy `fft`, `fftshift`, binary64 arrays, serialized bytes, or a retained KSD execution.
 - Matrix root-mean-square results use the explicit entrywise Frobenius power and do not silently substitute the ambient matrix norm.
 - The maximum-tail bound uses the ambient norm on a complex normed space. It does not imply an entrywise matrix-Frobenius maximum bound without a separate representation bridge.
 - Uniform weights do not replace nonuniform quadrature.
