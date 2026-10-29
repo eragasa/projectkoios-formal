@@ -21,7 +21,7 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit `a5d8c3097ce959afc71a2c269e3efae69bef7b35`.
+Current board baseline: remote `main` merge commit `1078380fb608269a8094c7e86776a1c0d826333a`.
 
 ## Mission
 
@@ -67,8 +67,12 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical, certificate, trust, documentation, or maintenance effort currently
-occupies the WIP limit. No runtime evidence promotion is active.
+One mathematical effort occupies the WIP limit: finite compatibility separation and
+attainment. It adds compact-set distance attainment and zero/positive separation
+converses, then specializes them to the finite candidate inventory so that nonempty
+central admissible sets have attained distance, zero distance exactly for compatibility,
+and positive distance exactly for incompatibility. No certificate, runtime evidence,
+trust, documentation, or maintenance effort is active.
 
 ## Ready
 

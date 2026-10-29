@@ -42,8 +42,9 @@ intersection problem. The checked foundation supports:
    decisions; and
 7. first-passing selection over one declared finite inventory; and
 8. a generic finite compatibility schema separating central infimum-based compatibility
-   from stronger common-alignment witness compatibility, with explicit conformant model
-   embeddings and first-compatible selection.
+   from stronger common-alignment witness compatibility, with finite central admissible
+   sets, attained separation under nonemptiness, zero/positive distance converses,
+   explicit conformant model embeddings, and first-compatible selection.
 
 The current theorem basis packages the generic exact finite logic but does not instantiate
 the complete ICMSEP study as one proposition-specific Lean theorem, and it contains no
@@ -90,11 +91,11 @@ conventions, declaration identities, and nonclaims recorded here.
 
 ## Snapshot boundary
 
-The current theorem basis is Formal merge commit
-`d9fe61eba430fd2c101dc53d85a2e0978254a718`, tree
-`f3ee73362038af9d06e736e85721c2fc55d25c6a`. The companion must be refreshed or
-explicitly marked historical after relevant theorem statements, toolchain pins, or
-manifest status change.
+The immutable predecessor of the current uncommitted proof-tranche candidate is Formal
+merge commit `1078380fb608269a8094c7e86776a1c0d826333a`, tree
+`0e9695296ab1275df87e2b4b0309e3ef8c4d24b2`. Appendix B records the candidate module
+hashes. The candidate must receive a separately authorized checkpoint and then be
+refreshed to that exact commit and tree before integration or publication review.
 
 The motivating ICMSEP source and the separate seven-paper error-channel source snapshot
 are pinned in Appendix B. Their scientific, evidence, and publication statuses do not
@@ -103,7 +104,8 @@ transfer into Formal proof status.
 ## Remaining publication-facing work
 
 - instantiate the generic finite compatibility schema with proposition-specific spectral
-  and operator losses only after their source contracts are frozen;
+  and operator losses only after their source contracts are frozen, including concrete
+  nonemptiness evidence when the finite separation converses are invoked;
 - bind a concrete model hierarchy through reviewed conformant embeddings and a complete
   declared inventory;
 - obtain independent review of the expanded aligned-difference and alignment-family

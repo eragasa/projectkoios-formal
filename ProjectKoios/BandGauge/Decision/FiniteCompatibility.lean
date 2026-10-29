@@ -371,6 +371,73 @@ theorem isFirstCompatible_iff [LinearOrder Model]
       ∀ earlier ∈ schema.modelInventory, earlier < selected → ¬ schema.Compatible earlier := by
   rfl
 
+/-- `BG-DECISION-THM-034`: the central spectral-admissible set is finite because every
+accepted candidate belongs to the declared finite candidate inventory. -/
+theorem spectralAdmissibleCandidates_finite (model : Model) :
+    (schema.spectralAdmissibleCandidates model).Finite := by
+  refine (schema.candidateInventory model).finite_toSet.subset ?_
+  intro candidate hcandidate
+  exact hcandidate.1
+
+/-- `BG-DECISION-THM-035`: the central operator-admissible set is finite because every
+accepted candidate belongs to the same declared finite candidate inventory. -/
+theorem operatorAdmissibleCandidates_finite (model : Model) :
+    (schema.operatorAdmissibleCandidates model).Finite := by
+  refine (schema.candidateInventory model).finite_toSet.subset ?_
+  intro candidate hcandidate
+  exact hcandidate.1
+
+/-- `BG-DECISION-THM-036`: when both central admissible sets are nonempty, their
+extended distance is attained by one declared spectral candidate and one declared
+operator candidate. Finiteness of the supplied inventory provides compactness. -/
+theorem exists_compatibilityEDist_eq_edist [MetricSpace Candidate]
+    {model : Model}
+    (hspectral : (schema.spectralAdmissibleCandidates model).Nonempty)
+    (hoperator : (schema.operatorAdmissibleCandidates model).Nonempty) :
+    ∃ spectralCandidate ∈ schema.spectralAdmissibleCandidates model,
+      ∃ operatorCandidate ∈ schema.operatorAdmissibleCandidates model,
+        schema.compatibilityEDist model = edist spectralCandidate operatorCandidate := by
+  exact Geometry.exists_admissibleSetEDist_eq_edist_of_compact
+    (schema.spectralAdmissibleCandidates_finite model).isCompact
+    (schema.operatorAdmissibleCandidates_finite model).isCompact
+    hspectral hoperator
+
+/-- `BG-DECISION-THM-037`: for nonempty central admissible sets in the finite candidate
+inventory, zero metric separation is equivalent to literal compatibility. -/
+theorem compatibilityEDist_eq_zero_iff_compatible [MetricSpace Candidate]
+    {model : Model}
+    (hspectral : (schema.spectralAdmissibleCandidates model).Nonempty)
+    (hoperator : (schema.operatorAdmissibleCandidates model).Nonempty) :
+    schema.compatibilityEDist model = 0 ↔ schema.Compatible model := by
+  simpa [compatibilityEDist, Compatible] using
+    (Geometry.admissibleSetEDist_eq_zero_iff_inter_nonempty_of_compact
+      (A := schema.spectralAdmissibleCandidates model)
+      (B := schema.operatorAdmissibleCandidates model)
+      (schema.spectralAdmissibleCandidates_finite model).isCompact
+      (schema.operatorAdmissibleCandidates_finite model).isCompact
+      hspectral hoperator)
+
+/-- `BG-DECISION-THM-038`: for nonempty central admissible sets in the finite candidate
+inventory, strictly positive metric separation is equivalent to incompatibility. -/
+theorem compatibilityEDist_pos_iff_not_compatible [MetricSpace Candidate]
+    {model : Model}
+    (hspectral : (schema.spectralAdmissibleCandidates model).Nonempty)
+    (hoperator : (schema.operatorAdmissibleCandidates model).Nonempty) :
+    0 < schema.compatibilityEDist model ↔ ¬ schema.Compatible model := by
+  rw [compatibilityEDist]
+  rw [Geometry.admissibleSetEDist_pos_iff_disjoint_of_compact
+    (schema.spectralAdmissibleCandidates_finite model).isCompact
+    (schema.operatorAdmissibleCandidates_finite model).isCompact
+    hspectral hoperator]
+  constructor
+  · intro hdisjoint hcompatible
+    obtain ⟨candidate, hspectralCandidate, hoperatorCandidate⟩ := hcompatible
+    exact (Set.disjoint_left.1 hdisjoint hspectralCandidate) hoperatorCandidate
+  · intro hnot
+    rw [Set.disjoint_left]
+    intro candidate hspectralCandidate hoperatorCandidate
+    exact hnot ⟨candidate, hspectralCandidate, hoperatorCandidate⟩
+
 end FiniteCompatibilitySchema
 
 end ProjectKoios.BandGauge.Decision

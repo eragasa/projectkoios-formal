@@ -3,26 +3,34 @@
 
 \section{Immutable theorem snapshot}
 
-The theorem basis used by this companion is the Project Koios Formal merge commit
+The last immutable Project Koios Formal revision underlying this uncommitted proof-tranche
+candidate is merge commit
 
 \begin{center}
-\decl{d9fe61eba430fd2c101dc53d85a2e0978254a718},
+\decl{1078380fb608269a8094c7e86776a1c0d826333a},
 \end{center}
 
 with Git tree
 
 \begin{center}
-\decl{f3ee73362038af9d06e736e85721c2fc55d25c6a}.
+\decl{0e9695296ab1275df87e2b4b0309e3ef8c4d24b2}.
 \end{center}
 
-Modules central to the alignment, residual, and compatibility narrative have the
-following SHA-256 identities at that tree:
+The candidate additionally modifies the geometry and finite-compatibility modules.  Its
+integration commit and tree do not yet exist and must replace this predecessor boundary
+after a separately authorized checkpoint.  Modules central to the alignment, residual,
+and compatibility narrative have the following SHA-256 identities in the candidate
+working tree:
 
 \begin{description}
+  \item[Admissible-set geometry.]
+    \modulepath{ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean},
+    SHA-256
+    \decl{e830b1b940ced88bc86b169261673337126583ee09e9ad9fb30ff580e9160fd8}.
   \item[Finite compatibility schema.]
     \modulepath{ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean},
     SHA-256
-    \decl{03198e7f6c4e5d9fef13108ca5523b0dbb1c0a3b66a5321ac1facbe19488f136}.
+    \decl{45e737324df4718497566d57d72ff9bd575f37d59a5f6768a101034b4c232a0d}.
   \item[Aligned operator differences.]
     \modulepath{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean},
     SHA-256
@@ -49,10 +57,12 @@ following SHA-256 identities at that tree:
     \decl{d2da775a99edf7dea2d8955a121d4929cc183be4fcf64a515ab5e002c019a28b}.
 \end{description}
 
-These identities bind the exposition to one immutable source state. No statement about a
-later revision follows merely because a declaration retains the same informal name.
-When the companion is refreshed, the commit, tree, hashes, theorem-manifest entries, and
-proof dossiers must be reviewed together.
+The predecessor revision and candidate module hashes make the pre-commit boundary
+explicit, but they do not yet constitute one immutable integrated source state.  This
+candidate is not publication-ready until an authorized checkpoint supplies a commit and
+tree and this paragraph is refreshed.  No statement about a later revision follows
+merely because a declaration retains the same informal name.  The commit, tree, hashes,
+theorem-manifest entries, and proof dossiers must be reviewed together.
 
 \section{Motivating ICMSEP problem statement}
 

@@ -57,7 +57,7 @@ Status: generic foundations implemented.
 - Sewn reference-minus-aligned-candidate operator differences with exact recovery and zero criteria.
 - Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
 - First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.
-- A generic finite spectral--operator compatibility schema with one common candidate, a nonempty alignment family, and an alignment-infimum operator criterion, a stronger one-alignment witness predicate across mandatory operator channels, explicit-attainment bridges, exact set-separation consequences, conformant model-class embeddings, and first-compatible-class selection.
+- A generic finite spectral--operator compatibility schema with one common candidate, a nonempty alignment family, and an alignment-infimum operator criterion, a stronger one-alignment witness predicate across mandatory operator channels, explicit-attainment bridges, finite central admissible sets, attained compatibility distance under nonemptiness, zero-distance/compatibility and positive-distance/incompatibility equivalences, conformant model-class embeddings, and first-compatible-class selection.
 - Exact Boolean dominance, threshold, and nondominated-mask checks.
 - Conservative accepted/rejected/unresolved checks for outward interval thresholds, joint feasibility at one decision, and first passage over a supplied finite inventory.
 

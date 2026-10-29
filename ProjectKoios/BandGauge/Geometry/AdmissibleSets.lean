@@ -139,4 +139,56 @@ theorem not_exists_jointly_admissible_of_pos_le_admissibleSetEDist
   have hdisjoint := disjoint_of_pos_le_admissibleSetEDist hpos hlower
   exact (Set.disjoint_left.1 hdisjoint hSpectral) hOperator
 
+/-- `BG-THM-035`: nonempty compact admissible sets attain their extended distance at
+an explicit pair of points. No disjointness hypothesis is needed for attainment. -/
+theorem exists_admissibleSetEDist_eq_edist_of_compact
+    {A B : Set X} (hA : IsCompact A) (hB : IsCompact B)
+    (hneA : A.Nonempty) (hneB : B.Nonempty) :
+    ∃ a ∈ A, ∃ b ∈ B, admissibleSetEDist A B = edist a b := by
+  obtain ⟨pair, hpair, hmin⟩ :=
+    (hA.prod hB).exists_isMinOn (hneA.prod hneB) continuous_edist.continuousOn
+  refine ⟨pair.1, hpair.1, pair.2, hpair.2, ?_⟩
+  apply le_antisymm
+  · exact admissibleSetEDist_le_edist_of_mem hpair.1 hpair.2
+  · rw [admissibleSetEDist]
+    refine le_iInf fun a => le_iInf fun ha => le_iInf fun b => le_iInf fun hb => ?_
+    exact hmin (a := (a, b)) ⟨ha, hb⟩
+
+/-- `BG-THM-036`: for nonempty compact admissible sets, zero extended distance is
+ equivalent to literal intersection. The nonempty hypotheses keep the empty-set value
+`⊤` outside the conclusion. -/
+theorem admissibleSetEDist_eq_zero_iff_inter_nonempty_of_compact
+    {A B : Set X} (hA : IsCompact A) (hB : IsCompact B)
+    (hneA : A.Nonempty) (hneB : B.Nonempty) :
+    admissibleSetEDist A B = 0 ↔ (A ∩ B).Nonempty := by
+  constructor
+  · intro hzero
+    by_contra hnone
+    have hdisjoint : Disjoint A B := by
+      by_contra hnot
+      exact hnone (not_disjoint_iff_nonempty_inter.mp hnot)
+    obtain ⟨_, _, _, _, _, hpos⟩ :=
+      exists_admissibleSetEDist_eq_edist_and_pos_of_compact
+        hA hB hneA hneB hdisjoint
+    rw [hzero] at hpos
+    exact (lt_irrefl 0) hpos
+  · rintro ⟨candidate, hcandidate⟩
+    exact admissibleSetEDist_eq_zero_of_mem_inter hcandidate
+
+/-- `BG-THM-037`: for nonempty compact admissible sets, strictly positive extended
+distance is equivalent to disjointness. This does not identify a positive application
+map tolerance with literal intersection. -/
+theorem admissibleSetEDist_pos_iff_disjoint_of_compact
+    {A B : Set X} (hA : IsCompact A) (hB : IsCompact B)
+    (hneA : A.Nonempty) (hneB : B.Nonempty) :
+    0 < admissibleSetEDist A B ↔ Disjoint A B := by
+  constructor
+  · intro hpos
+    exact disjoint_of_pos_le_admissibleSetEDist hpos le_rfl
+  · intro hdisjoint
+    obtain ⟨_, _, _, _, _, hpos⟩ :=
+      exists_admissibleSetEDist_eq_edist_and_pos_of_compact
+        hA hB hneA hneB hdisjoint
+    exact hpos
+
 end ProjectKoios.BandGauge.Geometry

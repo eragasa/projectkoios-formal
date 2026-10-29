@@ -49,10 +49,12 @@ rank-two ellipse, and rectangle families provide exact intersection and separati
 criteria under explicit hypotheses.  The generic finite compatibility schema now
 packages model and candidate inventories, central infimum-based compatibility, stronger
 common-alignment witness compatibility, explicit conformant model embeddings, metric
-separation, and first-compatible selection.  Certificate soundness translates accepted
-finite data into narrower propositions.  Three-way intervals preserve threshold overlap
-as unresolved, and first-passage logic selects an earliest passing element of a complete
-finite inventory without assuming monotonicity.
+separation, and first-compatible selection.  Its central admissible sets are finite; if
+both are nonempty, their metric separation is attained, vanishes exactly for central
+compatibility, and is strictly positive exactly for incompatibility.  Certificate
+soundness translates accepted finite data into narrower propositions.  Three-way
+intervals preserve threshold overlap as unresolved, and first-passage logic selects an
+earliest passing element of a complete finite inventory without assuming monotonicity.
 
 Together these results form a substantial reusable basis for the ICMSEP problem.  They
 still do not amount to an end-to-end theorem for the proposed silicon study because no
@@ -128,8 +130,9 @@ proposed study.  It still lacks:
   \item proposition-specific channel predicates binding one common support, alignment,
         intermediate field, sign convention, and evaluation inventory;
   \item checked conformant embeddings between the concrete model classes;
-  \item compactness, closedness, or direct finite geometry needed for any converse from
-        zero separation to intersection;
+  \item concrete nonemptiness evidence for both central admissible sets when invoking
+        the checked finite-inventory converses from zero separation to intersection or
+        from incompatibility to positive attained separation;
   \item a certificate covering the complete declared admissible sets; and
   \item retained exact or outward-rounded data satisfying that certificate contract.
 \end{itemize}
@@ -167,11 +170,13 @@ must retain the current common-candidate, attainment, channel-conformance, and e
 boundaries.
 \end{openproblem}
 
-\begin{openproblem}[General attained separation]
-Package the compactness, closedness, nonemptiness, and metric hypotheses under which zero
-set distance is equivalent to intersection and positive distance is attained.  Connect
-that result to the finite compatibility schema without identifying a positive map
-tolerance with literal intersection.
+\begin{openproblem}[Application-level separation instantiation]
+The generic compact-set and finite-inventory theorems now establish distance attainment,
+zero-distance compatibility, and positive-distance incompatibility when both central
+admissible sets are nonempty.  A concrete consumer must still establish that nonemptiness,
+select the candidate metric, bind the exact admissible predicates, and handle any empty-set
+branch explicitly.  Positive application map tolerance remains distinct from literal
+intersection.
 \end{openproblem}
 
 \begin{openproblem}[Proposition-specific compatibility certificate]
