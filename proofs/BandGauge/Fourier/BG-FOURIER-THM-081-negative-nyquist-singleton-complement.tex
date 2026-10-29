@@ -1,0 +1,143 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\title{Proof Dossier: Negative-Nyquist Singleton Complement}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-081} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.negativeNyquistRemovedSupport_compl} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/CenteredEvenMesh.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+The status is the status of the exact Lean proposition only.  It is not a runtime,
+scientific-validation, novelty, or publication status.
+
+\section{Exact mathematical statement}
+Let $M$ be a positive even centered mesh, let $\mathcal M$ be its finite type of centered modes,
+and let $\nu_-\in\mathcal M$ be the distinguished negative-Nyquist mode.  Define
+\[
+ S_-:=\mathcal M\setminus\{\nu_-\}
+      =\operatorname{univ}.\operatorname{erase}(\nu_-).
+\]
+Then, with complement taken inside the complete finite type $\mathcal M$,
+\[
+ S_-^{\mathsf c}=\{\nu_-\}.
+\]
+The Lean declaration is \texttt{negativeNyquistRemovedSupport\_compl}; its source signature uses
+Mathlib's finite-set complement notation.  The mathematical display above is the exact statement,
+and the repository Lean source remains authoritative.
+
+\section{Immutable source provenance}
+The declaration first entered Formal at commit
+\texttt{458e480e08a925d373f352f76c0dd4fe1fc356d7}, and its reviewed tree merged through PR~\#26
+at \texttt{ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5}.  The module SHA-256 is
+\texttt{ce13025abea15f70a6754cccf9568984150223d90c28bb62c071875fae223aca}.
+The exact locator is the declaration tagged \texttt{BG-FOURIER-THM-081} in the module above.
+
+The motivating owner inspection used the read-only KSD PR~\#80 merge
+\texttt{d8e7d1db3eaf16332e691427fb9d5949325badd6}, tree
+\texttt{23e6b97f3eddb074ab190f2576a4c2fff24e29f6}; paths and byte hashes are recorded in
+\path{docs/source-audit.md}.  The ordinary KSD checkout was dirty and was not byte authority.
+The Lean proposition is source-neutral finite-set algebra and does not bind those KSD bytes.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Item & Lean encoding & Boundary \\
+\midrule
+Mesh & positive even natural point count & used to define the centered inventory and distinguished mode \\
+Complement & \texttt{Finset} complement & relative to the full finite mode type, not to all integers \\
+Deletion & one \texttt{erase} from \texttt{univ} & no redistribution, splitting, or replacement mode \\
+Runtime relation & none & no array index, FFT, or serialized-value identity \\
+\bottomrule
+\end{tabularx}
+The source-to-Lean delta is deliberate: runtime negative-Nyquist handling motivates the name,
+whereas Lean proves only the declared singleton deletion.
+
+\section{Statement-specific prior art and contribution boundary}
+No external literature statement is claimed as controlling this elementary finite-set identity.
+The relevant background relation is \texttt{background-only}: singleton deletion and complement
+membership are standard.  No novelty or priority claim is made.  The Project Koios contribution is
+the explicit, auditable placement of this identity at the conversion--truncation boundary.
+
+\section{Proof structure and mathematical argument}
+For an arbitrary mode $m\in\mathcal M$,
+\[
+ m\in S_-^{\mathsf c}
+ \iff m\notin\operatorname{univ}.\operatorname{erase}(\nu_-)
+ \iff m=\nu_-
+ \iff m\in\{\nu_-\}.
+\]
+The middle equivalence uses that every $m$ belongs to \texttt{univ}.  Extensionality over $m$
+therefore proves equality of the two finite sets.  No arithmetic property of the integer
+representative is needed after the distinguished mode has been constructed.
+
+\section{Lean realization and dependencies}
+Lean uses finite-set extensionality followed by simplification:
+\begin{verbatim}
+  ext mode
+  simp [negativeNyquistRemovedSupport]
+\end{verbatim}
+The declaration depends on \texttt{CenteredEvenMesh.negativeNyquistMode},
+\texttt{negativeNyquistRemovedSupport}, and Mathlib finite-set complement/erase simplification.
+It was checked with Lean \texttt{4.35.0} (commit
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}) and Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.
+    negativeNyquistRemovedSupport_compl
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted.  Lean kernel checking, the repository axiom
+report, source-identity checks, and LaTeX compilation are mechanical checks, not independent expert
+review.  The maintainer checked the statement against the Lean source and theorem manifest as a
+computational materials scientist.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem does not identify a NumPy \texttt{fft}/\texttt{fftshift} result, binary64 coefficient,
+centered-origin phase, runtime frame, or KSD payload with a Lean mode.  It proves no off-node error,
+omitted Fourier tail, physical adequacy, or checked certificate.  SHA-256 identities establish
+byte correlation only.
+
+\section{Unresolved questions}
+A future owner-specific bridge must separately specify the exact/outward runtime contract and prove
+that its deletion semantics instantiate this abstract singleton deletion.  Any Nyquist splitting or
+redistribution requires a different definition and theorem layer.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact source and Lean statement checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}
