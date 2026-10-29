@@ -1,0 +1,53 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-29
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Finite Operator-Admissible Inventory}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-29}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-035} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.operatorAdmissibleCandidates_finite} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean} \\
+Module SHA-256 & \texttt{45e737324df4718497566d57d72ff9bd575f37d59a5f6768a101034b4c232a0d} \\
+\bottomrule\end{tabularx}
+\section{Exact mathematical statement}
+For every model in a supplied finite compatibility schema, the set of candidates that
+belong to the declared candidate inventory, have a nonempty alignment family, and pass
+the aligned-operator infimum budget is finite.
+\section{Provenance and proof argument}
+The Formal proof companion at merge
+\texttt{1078380fb608269a8094c7e86776a1c0d826333a} identifies finite-set compactness as the
+route to exact separation converses. Operator acceptance includes candidate-inventory
+membership as its first conjunct. Hence the operator-admissible set is a subset of the
+finite inventory coercion and is finite. The argument does not inspect or attain the
+alignment infimum.
+\section{Lean realization}
+\begin{lstlisting}
+theorem operatorAdmissibleCandidates_finite (model : Model) :
+    (schema.operatorAdmissibleCandidates model).Finite
+\end{lstlisting}
+\section{Trusted base and review}
+Lean \texttt{4.35.0}, Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}:
+\begin{lstlisting}
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+No admissions or repository-owned axioms occur. AI-assisted and kernel-checked; no
+independent expert review is recorded.
+\section{Scientific and evidence boundaries}
+The theorem supplies finite-set compactness only. It does not prove nonemptiness,
+alignment attainment, channel conformance, optimizer correctness, inventory coverage,
+or runtime evidence.
+\end{document}

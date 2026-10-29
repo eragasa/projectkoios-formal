@@ -1,0 +1,61 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-29
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∃}{{$\exists$}}1 {∈}{{$\in$}}1 {↔}{{$\leftrightarrow$}}1
+           {∩}{{$\cap$}}1 {¬}{{$\neg$}}1}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Positive Distance Is Finite Incompatibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-29}
+\begin{document}\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}\toprule
+Statement ID & \texttt{BG-DECISION-THM-038} \\
+Status & \texttt{proved} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.compatibilityEDist_pos_iff_not_compatible} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean} \\
+Module SHA-256 & \texttt{45e737324df4718497566d57d72ff9bd575f37d59a5f6768a101034b4c232a0d} \\
+\bottomrule\end{tabularx}
+\section{Exact mathematical statement}
+For a metric candidate carrier and a model whose central spectral and operator admissible
+sets are both nonempty,
+\[
+  0<\operatorname{compatibilityEDist}(j)
+  \quad\Longleftrightarrow\quad
+  \neg\operatorname{Compatible}(j).
+\]
+\section{Provenance and proof argument}
+This is the finite-inventory negative counterpart selected by the Formal proof companion
+at merge \texttt{1078380fb608269a8094c7e86776a1c0d826333a}. Finiteness supplies compactness.
+The compact positive-distance theorem converts positivity to disjointness. Disjointness
+of the spectral and operator admissible sets is equivalent to failure of their nonempty
+intersection, which is exactly failure of central compatibility.
+\section{Lean realization}
+\begin{lstlisting}
+theorem compatibilityEDist_pos_iff_not_compatible [MetricSpace Candidate]
+    {model : Model}
+    (hspectral : (schema.spectralAdmissibleCandidates model).Nonempty)
+    (hoperator : (schema.operatorAdmissibleCandidates model).Nonempty) :
+    0 < schema.compatibilityEDist model ↔ ¬ schema.Compatible model
+\end{lstlisting}
+\section{Trusted base and review}
+Lean \texttt{4.35.0}, Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}:
+\begin{lstlisting}
+depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+No admissions or repository-owned axioms occur. AI-assisted and kernel-checked; no
+independent expert review is recorded.
+\section{Scientific and evidence boundaries}
+The result is exact only for the supplied finite inventory and explicit nonempty sets. It
+does not produce a certificate lower bound, prove runtime enclosure, establish inventory
+coverage, or imply that an incompatible model class is physically invalid.
+\end{document}

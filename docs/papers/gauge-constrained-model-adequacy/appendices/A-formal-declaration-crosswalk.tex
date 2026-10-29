@@ -251,10 +251,10 @@ entrywise matrix-Frobenius specialization.
 \toprule
 Declaration range & Principal source & Scope represented in Chapter~\ref{ch:reduction-decision} \\
 \midrule
-\decl{BG-THM-001--034}
+\decl{BG-THM-001--037}
   & \modulepath{ProjectKoios/BandGauge/Geometry/}
-  & common witnesses, certified separation, rank-two admissible regions, and exact set
-    distances \\
+  & common witnesses, compact attainment, zero/positive separation converses, rank-two
+    admissible regions, and exact set distances \\
 \decl{BG-HILBERT-THM-001--015}
   & \modulepath{ProjectKoios/BandGauge/Hilbert/}
   & ball geometry, weighted Frobenius algebra, and spectral/operator residual bridges \\
@@ -277,10 +277,11 @@ Declaration range & Principal source & Scope represented in Chapter~\ref{ch:redu
   & \modulepath{ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean}
   & finite model/candidate inventories, infimum and witness compatibility, mandatory
     channels, conformant embeddings, metric separation, and first-compatible selection \\
-\decl{BG-DECISION-THM-017--033}
+\decl{BG-DECISION-THM-017--038}
   & \modulepath{ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean}
   & infimum/attainment bridges, common-candidate and common-alignment semantics,
-    compatibility transfer, separation, and finite first-compatible theorems \\
+    compatibility transfer, finite-set distance attainment and zero/positive converses,
+    and finite first-compatible theorems \\
 \decl{QM-RESOLVENT-THM-001--014}
   & \modulepath{ProjectKoios/QuantumMechanics/FiniteDimensional/RankOneResolvent.lean}
   & exact rank-one resolvent, determinant, secular, kernel, and Hermiticity identities \\
@@ -300,7 +301,8 @@ Declaration range & Principal source & Scope represented in Chapter~\ref{ch:redu
 
 These declarations now package the generic finite spectral--operator compatibility
 logic, including alignment-infimum and stronger common-witness semantics, explicit
-model embeddings, separation, and first-compatible selection.  No declaration in the
+model embeddings, finite central admissible sets, attained separation under nonemptiness,
+zero/positive distance converses, and first-compatible selection.  No declaration in the
 pinned snapshot instantiates the schema with the complete ICMSEP model hierarchy,
 application-specific losses, tolerances, supports, channel contracts, or retained
 certificate.  Chapter~\ref{ch:mechanization-status} records that proposition-specific
@@ -309,7 +311,7 @@ assembly as open.
 \section{Mechanization status at the pinned snapshot}
 
 The theorem manifest is the authoritative declaration inventory. At the pinned snapshot,
-the repository audit covers 637 proved theorem or lemma rows and 641 unique named axiom
+the repository audit covers 645 proved theorem or lemma rows and 649 unique named axiom
 reports. The repository-owned Lean sources contain no \texttt{sorry}, \texttt{admit}, or
 repository-owned \texttt{axiom} declaration. Individual reports may include the standard
 foundational dependencies \texttt{propext}, \texttt{Classical.choice}, and
