@@ -6,6 +6,7 @@ Formal proof completed: 2026-10-27
 -/
 module
 
+public import Mathlib.Analysis.InnerProductSpace.Adjoint
 public import ProjectKoios.BandGauge.Bloch.Sewing
 
 /-!
@@ -16,8 +17,10 @@ reference field and a candidate field pulled back through a pointwise unitary al
 covariance is closed under subtraction, so a sewing-compatible alignment yields a sewn difference
 field on the reference fibers.
 
-The results are exact pointwise algebra. They do not assert self-adjointness, choose an alignment,
-bind runtime arrays, verify a numerical transport, or establish physical or spectral adequacy.
+The results are exact pointwise algebra. Under complete-space and pointwise self-adjointness
+hypotheses, subtraction and unitary pullback preserve self-adjointness. The module does not choose
+an alignment, bind runtime arrays, verify a numerical transport, or establish physical or spectral
+adequacy.
 -/
 
 @[expose] public section
@@ -139,5 +142,43 @@ theorem alignedOperatorDifferenceField_eq_zero_iff
     alignedOperatorDifferenceField alignment reference candidate = 0 ↔
       reference = alignedOperatorField alignment candidate := by
   exact operatorFieldDifference_eq_zero_iff _ _
+
+/-- `BG-BLOCH-THM-021`: pointwise subtraction preserves self-adjointness on a complete complex
+inner-product space. -/
+theorem operatorFieldDifference_selfAdjoint
+    [CompleteSpace E]
+    {reference candidate : K → E →L[ℂ] E}
+    (href : ∀ k, IsSelfAdjoint (reference k))
+    (hcand : ∀ k, IsSelfAdjoint (candidate k)) :
+    ∀ k, IsSelfAdjoint (operatorFieldDifference reference candidate k) := by
+  intro k
+  exact (href k).sub (hcand k)
+
+/-- `BG-BLOCH-THM-022`: pulling a pointwise self-adjoint candidate field back through a unitary
+alignment preserves pointwise self-adjointness. -/
+theorem alignedOperatorField_selfAdjoint
+    [CompleteSpace Eref] [CompleteSpace Ecand]
+    (alignment : K → Eref ≃ₗᵢ[ℂ] Ecand)
+    (candidate : K → Ecand →L[ℂ] Ecand)
+    (hcand : ∀ k, IsSelfAdjoint (candidate k)) :
+    ∀ k, IsSelfAdjoint (alignedOperatorField alignment candidate k) := by
+  intro k
+  simpa only [alignedOperatorField, LinearIsometryEquiv.coe_toContinuousLinearEquiv,
+    LinearIsometryEquiv.coe_toLinearIsometry, LinearIsometry.coe_toContinuousLinearMap,
+    ← (alignment k).adjoint_eq_symm, ContinuousLinearMap.comp_assoc] using
+    (hcand k).adjoint_conj ((alignment k : Eref ≃ₗᵢ[ℂ] Ecand) : Eref →L[ℂ] Ecand)
+
+/-- `BG-BLOCH-THM-023`: a pointwise self-adjoint reference minus a pointwise self-adjoint
+unitarily pulled-back candidate is pointwise self-adjoint. -/
+theorem alignedOperatorDifferenceField_selfAdjoint
+    [CompleteSpace Eref] [CompleteSpace Ecand]
+    (alignment : K → Eref ≃ₗᵢ[ℂ] Ecand)
+    (reference : K → Eref →L[ℂ] Eref)
+    (candidate : K → Ecand →L[ℂ] Ecand)
+    (href : ∀ k, IsSelfAdjoint (reference k))
+    (hcand : ∀ k, IsSelfAdjoint (candidate k)) :
+    ∀ k, IsSelfAdjoint (alignedOperatorDifferenceField alignment reference candidate k) := by
+  exact operatorFieldDifference_selfAdjoint href
+    (alignedOperatorField_selfAdjoint alignment candidate hcand)
 
 end ProjectKoios.BandGauge.Bloch

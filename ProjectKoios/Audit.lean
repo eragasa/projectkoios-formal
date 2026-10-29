@@ -421,6 +421,9 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_alignedOperatorDifferenceField
 #print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_add_alignedOperatorField
 #print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_eq_zero_iff
+#print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_selfAdjoint
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorField_selfAdjoint
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_selfAdjoint
 #print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff
