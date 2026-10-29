@@ -49,6 +49,7 @@ Open:
 Status: generic foundations implemented.
 
 - Finite reconstruction, inversion, Parseval, residual tails, Hermitian pairing, and fixed-unitary equivariance.
+- Positive even centered integer inventories, exact negative-Nyquist singleton removal, full-versus-removed reconstruction, normalized removed-block power independent of later range selection, and symmetric ordinary support below half the mesh size.
 - Exact three-channel residual decomposition with pointwise, finite-maximum, and finite root-mean-square triangle bounds, plus exact Hilbert and explicit matrix-Frobenius power and root-mean-square Fourier-tail identities and pointwise and finite-maximum ambient-norm tail bounds for the deliberate-truncation channel.
 - Exact character-phase mode shifts, trivial pointwise scalar-operator conjugation, coefficient separation, and pointwise-unitary Frobenius invariance.
 - An explicit rank-two `ZMod 2` witness in which a pointwise swap gauge creates the odd coefficient `diag(1/2,-1/2)` and does not commute with zero-mode truncation.
@@ -66,6 +67,7 @@ Open:
 - aligned-difference self-adjointness and owner-specific retained-frame binding;
 - matrix-Frobenius maximum-tail specialization after selecting an explicit representation bridge;
 - runtime interpolation, evaluation-mesh, and exact/outward-rounded residual-channel bindings;
+- an exact owner-specific bridge from NumPy `fft`/`fftshift` and its centered-origin phase convention to the abstract centered inventory and coefficient field;
 - general pointwise-gauge convolution and support formulas;
 - physical support and publication-mesh bindings;
 - nonuniform weighted Parseval;

@@ -27,6 +27,7 @@ import ProjectKoios.BandGauge.Decision.FinitePareto
 import ProjectKoios.BandGauge.Decision.FiniteCutoff
 import ProjectKoios.BandGauge.Decision.FiniteCompatibility
 import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
+import ProjectKoios.BandGauge.Fourier.CenteredEvenMesh
 import ProjectKoios.BandGauge.Fourier.FiniteAbelianTransform
 import ProjectKoios.BandGauge.Fourier.FiniteParseval
 import ProjectKoios.BandGauge.Fourier.HermitianPairing
@@ -302,6 +303,19 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.LinearMap.map_finiteReconstruction
 #print axioms ProjectKoios.BandGauge.Fourier.LinearMap.map_truncateCoefficients
 #print axioms ProjectKoios.BandGauge.Fourier.omittedWeight_anti
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.two_mul_halfCount
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.centeredRepresentativeAt_mem
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.centeredIndexEquiv_apply
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.card_centeredRepresentatives
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.negativeNyquist_mem_centeredRepresentatives
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.negativeNyquistRemovedSupport_compl
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.ordinaryRepresentatives_eq_erase_negativeNyquist
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.mem_symmetricIntegerSupport_neg_iff
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.symmetricIntegerSupport_subset_ordinaryRepresentatives
+#print axioms ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.negativeNyquist_not_mem_symmetricIntegerSupport
+#print axioms ProjectKoios.BandGauge.Fourier.finiteReconstruction_eq_negativeNyquistRemoved_add
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedNegativeNyquistPower_eq_removed_omittedWeight
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedNegativeNyquistPower_range_independent
 #print axioms ProjectKoios.BandGauge.Fourier.finiteCharacterKernel
 #print axioms ProjectKoios.BandGauge.Fourier.finiteFourierReconstruction_coefficients
 #print axioms ProjectKoios.BandGauge.Fourier.card_smul_finiteFourierCoefficient

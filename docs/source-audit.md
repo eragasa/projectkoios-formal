@@ -58,6 +58,37 @@ later inspection does not replace the publication-source identity or cited-byte 
 recorded above, and it does not transfer development calculator output into retained
 publication evidence.
 
+## Periodic1D Architecture v3 centered-even convention inspection
+
+The abstract centered-even finite-mode module was selected after a read-only inspection of the
+exact KSD PR #80 merge tree:
+
+- owner repository: `ksdft2effmass`;
+- merged topic branch: `work/v3-component-coherence`;
+- topic head: `30c548906595fffc137a2fd8e5c9a7b3e2d7446d`;
+- merge commit: `d8e7d1db3eaf16332e691427fb9d5949325badd6`;
+- merge tree: `23e6b97f3eddb074ab190f2576a4c2fff24e29f6`;
+- access mode: read-only `git show` export of the merge tree into
+  `/tmp/ksdft2effmass-phase4-d8e7d1d`;
+- dirty-state limitation: the ordinary local KSD checkout was at another revision with 112
+  short-status entries and was not used as byte authority or modified.
+
+| SHA-256 at the PR #80 merge tree | Owner-repository path | Inspection use |
+|---|---|---|
+| `8f7244046d772716ed7f5c60022385c2c7b9a99d841489971a00783ae2bcaf7e` | `python/src/ksdft2effmass/solidstate/hopping_transforms.py` | centered-even FFT indexing, centered-origin factor, and negative-Nyquist deletion context |
+| `dd1fc629ad538f00a54f1ddd7ca2ab38ba2795402a9c8fd30fbb2d9ae7f8f51c` | `python/src/ksdft2effmass/solidstate/reciprocal_paths.py` | owner-declared half-open centered coordinate convention; not an exact runtime-value binding |
+| `30c3e69db41fa771e69558176b9286db63438a61014b20fc90c076b6a56388ca` | `calculations/periodic1d/rank1/fourier-locality/protocol.md` | rank-one construction/evaluation and conversion-versus-truncation boundary |
+| `3d34c9a7aa09b4eba04ed45b1a14dbdb9d4329bb701b2d8236b3a3e310c47da8` | `calculations/periodic1d/rank2/composite-band-alignment-locality/protocol.md` | rank-two centered-even and residual-channel context |
+| `72cc76242ec8c983edcf49ce60ea494e6c0ed63cee62bbfc766686075b428baf` | `docs/architecture/v3/ksdft2effmass/periodic1d/formal.md` | Formal/KSD ownership and future certificate boundary |
+
+The resulting Lean declarations are source-neutral exact finite algebra. They do not identify
+NumPy `fft`, `fftshift`, the centered-origin factor, binary64 coefficient arrays, runtime frames,
+serialized bytes, retained results, or KSD certificate payloads with the abstract coefficient
+function. The negative-Nyquist operation is formalized as a singleton deletion whose missing
+reconstruction term is explicit. Its normalized removed-block power is distinct from both
+off-mesh reconstruction error and later ordinary support-truncation tails. The current runtime
+checked-certificate count remains zero.
+
 ## Harmonic-oscillator computational crosswalk inspection
 
 The harmonic-oscillator modules are source-neutral exact mathematics. Their computational
