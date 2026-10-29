@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`db403cd95893766c010cb85a43bf21ca59524f1f`, tree
-`47ffab7ffe3c26abb23301c7179aed1088c997cf`, integrating PR #24.
+`ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5`, tree
+`7bb5e3c2f4d7fa452b51e4e567738dd7f208d297`, integrating PR #26.
 
 ## Mission
 
@@ -69,11 +69,8 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort occupies the WIP limit: exact positive-even centered integer inventories,
-negative-Nyquist singleton removal, full-versus-removed reconstruction, normalized removed-block
-power, and symmetric ordinary support below half the mesh size. The slice is abstract and exact; it
-does not add a KSD byte parser, retained execution, runtime certificate, NumPy FFT binding, or
-scientific-validation claim. No trust, documentation, or maintenance effort is active.
+No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
+effort currently occupies the WIP limit.
 
 ## Ready
 
@@ -148,6 +145,14 @@ These items are merged Formal content only.
   triangle bounds and exact deliberate-truncation Fourier-tail bridges.
 - Exact Hilbert and explicit matrix-Frobenius root-mean-square Fourier-tail identities.
 - Pointwise and finite-maximum ambient-norm omitted-tail bounds.
+- Exact positive-even centered integer inventories, a distinguished negative-Nyquist mode,
+  singleton-removal support, full-versus-removed reconstruction with the deleted term explicit,
+  normalized removed-block Frobenius power, and symmetric ordinary support below half the mesh
+  size. This abstract slice merged through PR #26 at commit
+  `ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5`, tree
+  `7bb5e3c2f4d7fa452b51e4e567738dd7f208d297`; it supplies no NumPy FFT/`fftshift`
+  binding, binary64 identity, retained execution, runtime certificate, or scientific-validation
+  claim.
 - The Formal-owned spectral--operator compatibility proof companion, initially merged at
   `ca00a56b2462d00a67dd830742c2c27eef4c34cd` and refreshed at
   `b998c09550161193e8edbe3aeaa9d93d183693fa` with the finite compatibility schema; its
