@@ -1,0 +1,140 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\title{Proof Dossier: Normalized Power of the Removed Negative-Nyquist Block}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-087} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.normalizedNegativeNyquistPower_eq_removed_omittedWeight} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/CenteredEvenMesh.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $M$ be a positive even centered mesh with mode type $\mathcal M$ and distinguished mode
+$\nu_-$.  Let $I$ be a nonempty finite index type and let
+$C:\mathcal M\to\operatorname{Matrix}(I,I;\mathbb C)$.  Define
+\[
+ P_-(C):=\frac{1}{|I|}\sum_{i,j\in I}|C_{\nu_-}(i,j)|^2.
+\]
+If $S_-=\mathcal M\setminus\{\nu_-\}$ and
+$w(m)=\sum_{i,j}|C_m(i,j)|^2$, then
+\[
+ P_-(C)=\frac{\operatorname{omittedWeight}(w,S_-)}{|I|}.
+\]
+This is the exact equality in \texttt{BG-FOURIER-THM-087}; it is not an inequality or an
+approximation.
+
+\section{Immutable source provenance}
+The declaration was introduced at Formal commit
+\texttt{458e480e08a925d373f352f76c0dd4fe1fc356d7}; its reviewed tree merged through PR~\#26 at
+\texttt{ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5}.  The module SHA-256 is
+\texttt{ce13025abea15f70a6754cccf9568984150223d90c28bb62c071875fae223aca}; the locator is
+\texttt{BG-FOURIER-THM-087} in the owning module.
+
+The removed-block diagnostic was motivated by a read-only inspection of KSD PR~\#80 merge
+\texttt{d8e7d1db3eaf16332e691427fb9d5949325badd6}, tree
+\texttt{23e6b97f3eddb074ab190f2576a4c2fff24e29f6}.  Exact inspected paths and hashes are recorded in
+\path{docs/source-audit.md}.  The local KSD worktree was dirty and not used as byte authority.  The
+Lean coefficient function is abstract and is not identified with the runtime coefficient array.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Item & Lean encoding & Boundary \\
+\midrule
+Block index & finite nonempty type $I$ & normalization denominator is the matrix dimension $|I|$ \\
+Block power & entrywise sum $\sum_{i,j}|C(i,j)|^2$ & squared Frobenius quantity, not an operator norm \\
+Omitted set & complement of the removed support & exactly the singleton $\{\nu_-\}$ \\
+Range & real number & no floating-point interpretation or enclosure \\
+\bottomrule
+\end{tabularx}
+Nonemptiness makes the intended dimension normalization meaningful.  The theorem itself is an exact
+rewriting of the singleton omitted sum; it does not compare powers across meshes or ranges.
+
+\section{Statement-specific prior art and contribution boundary}
+Evaluation of a finite sum over a singleton and the entrywise Frobenius sum are standard and
+\texttt{background-only}.  No novelty or priority claim is made.  The contribution is the explicit
+separation of removed negative-Nyquist power from the later symmetric-support omitted tail and from
+off-node reconstruction error.
+
+\section{Proof structure and mathematical argument}
+By \texttt{BG-FOURIER-THM-081}, the complement of $S_-$ is $\{\nu_-\}$.  Therefore
+\[
+ \operatorname{omittedWeight}(w,S_-)
+   =\sum_{m\in S_-^{\mathsf c}}w(m)
+   =\sum_{m\in\{\nu_-\}}w(m)
+   =w(\nu_-).
+\]
+Expanding $w(\nu_-)$ gives the double entrywise norm-square sum in $P_-(C)$.  Dividing both
+identical real expressions by $|I|$ yields the conclusion.
+
+\section{Lean realization and dependencies}
+The Lean proof is
+\begin{verbatim}
+  simp [normalizedNegativeNyquistPower, omittedWeight]
+\end{verbatim}
+Simplification unfolds both definitions, uses the singleton-complement theorem through its
+\texttt{simp} attribute, and evaluates the singleton sum.  The mathematical content of the short
+tactic proof is the complement identity \texttt{BG-FOURIER-THM-081}.
+
+Toolchain: Lean \texttt{4.35.0}, commit
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.BandGauge.Fourier.
+    normalizedNegativeNyquistPower_eq_removed_omittedWeight
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean development and dossier prose were AI-assisted.  Lean kernel checking, simplification,
+hashing, source scans, and LaTeX compilation are automated checks and are not independent expert
+review.  The maintainer checked the statement against the Lean source, source audit, and theorem
+manifest.  No independent mathematical, scientific, novelty, or publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem authenticates no coefficient bytes and proves no runtime orthonormality, Fourier
+normalization, binary64 rounding property, off-node reconstruction error, or material adequacy.
+The removed-block power is not the ordinary omitted-tail power produced by a later support cutoff.
+It is also not a checked certificate or a scientific disposition.
+
+\section{Unresolved questions}
+A future proposition-specific exact/outward contract must bind the matrix index inventory,
+coefficient enclosures, normalization, mode identity, and deletion semantics.  A matrix-Frobenius
+maximum-tail specialization remains separate, as does any Nyquist redistribution policy.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact singleton power identity and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

@@ -69,8 +69,12 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
-effort currently occupies the WIP limit.
+One documentation effort occupies the WIP limit: publication-facing proof dossiers for the
+centered-even singleton complement, symmetric ordinary-support inclusion, explicit removed-term
+reconstruction, and normalized removed-block power (`BG-FOURIER-THM-081`, `084`, `086`, and
+`087`). The dossiers explain already merged exact propositions and do not bind runtime arrays,
+create a certificate, or establish numerical, scientific, novelty, or publication status. No
+mathematical, certificate, runtime-evidence, trust, or maintenance effort is active.
 
 ## Ready
 

@@ -1,0 +1,139 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\title{Proof Dossier: Reconstruction After Negative-Nyquist Deletion}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-086} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.finiteReconstruction_eq_negativeNyquistRemoved_add} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/CenteredEvenMesh.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $M$ be a positive even centered mesh with finite mode type $\mathcal M$ and distinguished
+negative-Nyquist mode $\nu_-$.  Let $V$ be an additive commutative complex module, let
+$\phi:Q\times\mathcal M\to\mathbb C$ be any synthesis kernel, and let
+$c:\mathcal M\to V$ be any coefficient field.  For every $q\in Q$,
+\[
+ \sum_{m\in\mathcal M}\phi(q,m)c_m
+ =\sum_{m\in\mathcal M\setminus\{\nu_-\}}\phi(q,m)c_m
+   +\phi(q,\nu_-)c_{\nu_-}.
+\]
+Scalar multiplication is understood in $V$.  The Lean declaration states this with
+\texttt{finiteReconstruction} and \texttt{negativeNyquistRemovedReconstruction}; it assumes only
+\texttt{AddCommMonoid V} and \texttt{Module Complex V}.
+
+\section{Immutable source provenance}
+The exact declaration was introduced at Formal commit
+\texttt{458e480e08a925d373f352f76c0dd4fe1fc356d7}, reviewed and merged through PR~\#26 at
+\texttt{ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5}.  The owning module SHA-256 is
+\texttt{ce13025abea15f70a6754cccf9568984150223d90c28bb62c071875fae223aca}; the exact locator is
+\texttt{BG-FOURIER-THM-086}.
+
+Motivation came from the centered-even convention inspected read-only at KSD PR~\#80 merge
+\texttt{d8e7d1db3eaf16332e691427fb9d5949325badd6}, tree
+\texttt{23e6b97f3eddb074ab190f2576a4c2fff24e29f6}.  The owner paths, hashes, and dirty-checkout
+limitation are in \path{docs/source-audit.md}.  The relation is motivational only: the theorem is
+kernel-agnostic and does not bind KSD execution or bytes.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Item & Lean encoding & Boundary \\
+\midrule
+Mode inventory & finite centered-mode subtype & exact abstract type, not a runtime array \\
+Removed support & full inventory minus $\nu_-$ & one deletion; no coefficient redistribution \\
+Kernel & arbitrary complex-valued function $\phi$ & no Fourier character or normalization assumption \\
+Coefficient carrier & additive commutative complex module $V$ & no norm, topology, matrix rank, or Hermiticity needed \\
+Sign & full equals removed plus deleted term & not a representation-preserving equivalence \\
+\bottomrule
+\end{tabularx}
+The result is stronger in algebraic generality but deliberately weaker in application meaning than
+a statement about a concrete FFT reconstruction.
+
+\section{Statement-specific prior art and contribution boundary}
+Finite-sum partition by a retained support and its complement is standard and
+\texttt{background-only}.  No novelty or priority claim is made for the algebra.  The Project Koios
+contribution is to expose the exact missing term rather than silently treating negative-Nyquist
+deletion as an equivalent centered representation.
+
+\section{Proof structure and mathematical argument}
+The generic retained--omitted decomposition gives
+\[
+ \sum_{m\in\mathcal M}\phi(q,m)c_m
+ =\sum_{m\in S_-}\phi(q,m)c_m
+  +\sum_{m\in S_-^{\mathsf c}}\phi(q,m)c_m.
+\]
+By \texttt{BG-FOURIER-THM-081}, $S_-^{\mathsf c}=\{\nu_-\}$.  A sum over this singleton is
+$\phi(q,\nu_-)c_{\nu_-}$.  Substituting the definition of the removed reconstruction produces the
+stated identity.  No limiting or norm argument occurs.
+
+\section{Lean realization and dependencies}
+Lean first applies
+\path{finiteReconstruction_eq_truncated_add_omitted}.  Simplification then unfolds
+\texttt{negativeNyquistRemovedReconstruction}, rewrites the omitted complement using the singleton
+result, and evaluates the singleton sum.  The critical local dependency is
+\texttt{BG-FOURIER-THM-081}; the generic decomposition is in
+\path{ProjectKoios/BandGauge/Fourier/FiniteReconstruction.lean}.
+
+Toolchain: Lean \texttt{4.35.0}, commit
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.BandGauge.Fourier.
+    finiteReconstruction_eq_negativeNyquistRemoved_add
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and exposition were AI-assisted and checked against the source and theorem manifest
+by the maintainer.  Lean kernel checking, simplification, build output, hashing, and LaTeX
+compilation are automation, not independent expert review.  No independent mathematical,
+scientific, novelty, or publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+This exact identity is not an off-node reconstruction bound and supplies no maximum or
+root-mean-square error.  It does not show that binary64 runtime coefficients equal $c$, that a
+runtime phase equals $\phi$, or that a mesh represents a physical reciprocal path.  It proves no
+ordinary omitted-tail claim, spectral adequacy, material applicability, or checked certificate.
+
+\section{Unresolved questions}
+A future exact/outward owner bridge must separately authenticate the runtime inventory, coefficient
+field, kernel, sign, phase, and deletion operation.  Any split or redistributed Nyquist coefficient
+would require a new reconstruction theorem rather than this singleton-deletion identity.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact decomposition and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

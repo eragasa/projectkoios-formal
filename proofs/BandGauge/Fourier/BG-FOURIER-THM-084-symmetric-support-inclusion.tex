@@ -1,0 +1,137 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+
+\title{Proof Dossier: Symmetric Ordinary Support Inclusion}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-084} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.symmetricIntegerSupport_subset_ordinaryRepresentatives} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/CenteredEvenMesh.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let a positive even mesh have point count $N$ and half-count $h=N/2$.  Its centered integer
+inventory is $[-h,h)\cap\mathbb Z$, its ordinary inventory deletes $-h$, and the symmetric
+range-$R$ support is $[-R,R]\cap\mathbb Z$.  For every natural $R$,
+\[
+ R<h\quad\Longrightarrow\quad
+ [-R,R]\cap\mathbb Z
+ \subseteq \bigl([-h,h)\cap\mathbb Z\bigr)\setminus\{-h\}.
+\]
+An ASCII rendering of the authoritative Lean signature (with finite-set order read as subset) is
+\begin{verbatim}
+theorem symmetricIntegerSupport_subset_ordinaryRepresentatives
+    (mesh : CenteredEvenMesh) (maximumRange : Nat)
+    (hRange : maximumRange < mesh.halfCount) :
+    symmetricIntegerSupport maximumRange <= mesh.ordinaryRepresentatives
+\end{verbatim}
+
+\section{Immutable source provenance}
+The declaration was introduced at Formal commit
+\texttt{458e480e08a925d373f352f76c0dd4fe1fc356d7}; its reviewed tree merged in PR~\#26 at
+\texttt{ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5}.  The owning module SHA-256 is
+\texttt{ce13025abea15f70a6754cccf9568984150223d90c28bb62c071875fae223aca}; the locator is
+\texttt{BG-FOURIER-THM-084} in that module.
+
+The naming and half-open centered convention were selected after read-only inspection of KSD
+PR~\#80 merge \texttt{d8e7d1db3eaf16332e691427fb9d5949325badd6}, tree
+\texttt{23e6b97f3eddb074ab190f2576a4c2fff24e29f6}.  Exact owner paths, hashes, and the dirty local
+checkout limitation are recorded in \path{docs/source-audit.md}.  The theorem does not identify
+its integer support with any runtime support array.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+Item & Lean encoding & Boundary \\
+\midrule
+Point count & positive and even & supplies a natural half-count with $2h=N$ \\
+Centered inventory & integer half-open interval $[-h,h)$ & negative endpoint included; positive endpoint excluded \\
+Ordinary inventory & erase the integer $-h$ & deletion, not an equivalent reindexing \\
+Range condition & strict natural inequality $R<h$ & equality $R=h$ is intentionally excluded \\
+\bottomrule
+\end{tabularx}
+The statement is exact integer support algebra.  It does not assert that a runtime truncation uses
+this support or that coefficients outside it are small.
+
+\section{Statement-specific prior art and contribution boundary}
+The interval inclusion is elementary ordered-integer arithmetic; no external source is claimed to
+control it.  Standard interval and finite-set facts are \texttt{background-only}.  No novelty or
+priority claim is made.  The contribution is an explicit reusable boundary showing why a symmetric
+ordinary support strictly below the half-count cannot contain the deleted negative-Nyquist mode.
+
+\section{Proof structure and mathematical argument}
+Take $m\in[-R,R]\cap\mathbb Z$.  Then $-R\le m\le R$.  Since $R<h$,
+\[
+ -h<-R\le m\le R<h.
+\]
+Consequently $m\in[-h,h)\cap\mathbb Z$ and $m\ne-h$.  These are exactly the two membership
+conditions for $m$ to lie in the centered inventory with $-h$ erased.  Since $m$ was arbitrary,
+the desired finite-set inclusion follows.
+
+\section{Lean realization and dependencies}
+Lean unfolds \texttt{symmetricIntegerSupport}, \texttt{ordinaryRepresentatives},
+\texttt{centeredRepresentatives}, and \texttt{negativeNyquist}; it then converts finite-set
+membership into integer inequalities and closes both obligations with \texttt{omega}.  The theorem
+depends only on the centered-mesh definitions and Mathlib integer-interval membership.
+
+Toolchain: Lean \texttt{4.35.0}, commit
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.
+    symmetricIntegerSupport_subset_ordinaryRepresentatives
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean development and dossier exposition were AI-assisted.  The \texttt{omega} tactic and Lean
+kernel checked the encoded arithmetic; this is not an independent mathematical or scientific
+review.  The maintainer compared the prose with the exact source and theorem manifest.  No
+independent expert, novelty, or publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+This inclusion proves neither Fourier convergence nor a truncation-error estimate.  It binds no
+NumPy convention, centered coordinate, binary64 coefficient, evaluation mesh, retained artifact,
+or material model.  It does not turn the removed Nyquist power into an ordinary omitted-tail power
+and does not create or check a runtime certificate.
+
+\section{Unresolved questions}
+An owner-specific bridge must still authenticate the runtime point count, integer representatives,
+range, sign convention, and support construction.  The $R=h$ boundary and any Nyquist
+redistribution belong to separate statements.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact arithmetic and provenance checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}
