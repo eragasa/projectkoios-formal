@@ -1,0 +1,316 @@
+\chapter{Formal Declaration Crosswalk and Mechanization Status}
+\label{app:formal-crosswalk}
+\small
+\sloppy
+\hbadness=10000
+
+\section{Purpose of the crosswalk}
+
+This appendix binds the mathematical exposition to stable declaration identifiers,
+exact Lean names, source modules, and statement-level proof dossiers. The identifiers
+are editorial handles; the Lean declarations and their proof terms remain authoritative.
+A range in the tables means that every identifier in the inclusive range is represented
+in the theorem manifest. It does not authorize a stronger aggregate statement than the
+individual declarations prove.
+
+\section{Finite-frame sequence}
+
+The definitions and ten theorems in Chapter~\ref{ch:finite-operator-foundations} are
+implemented in
+\modulepath{ProjectKoios/BandGauge/Alignment/FiniteFrame.lean}. Their statement dossiers
+are stored under \modulepath{proofs/BandGauge/Alignment/}.
+
+\begin{description}
+  \item[\decl{BG-ALIGNMENT-THM-001}.]
+    \path{ProjectKoios.BandGauge.Alignment.frameProjector_isHermitian};
+    dossier \modulepath{BG-ALIGNMENT-THM-001-projector-hermitian.tex}.
+    This is Theorem~\ref{thm:bg-alignment-001}; it has no orthonormality premise.
+
+  \item[\decl{BG-ALIGNMENT-THM-002}.]
+    \path{ProjectKoios.BandGauge.Alignment.frameProjector_mul_self};
+    dossier \modulepath{BG-ALIGNMENT-THM-002-projector-idempotent.tex}.
+    This is Theorem~\ref{thm:bg-alignment-002}; exact frame orthonormality is required.
+
+  \item[\decl{BG-ALIGNMENT-THM-003}.]
+    \path{ProjectKoios.BandGauge.Alignment.rightUnitaryFrame_isOrthonormal};
+    dossier \modulepath{BG-ALIGNMENT-THM-003-right-unitary-orthonormal.tex}.
+    This is Theorem~\ref{thm:bg-alignment-003}.
+
+  \item[\decl{BG-ALIGNMENT-THM-004}.]
+    \path{ProjectKoios.BandGauge.Alignment.frameProjector_rightUnitaryFrame};
+    dossier \modulepath{BG-ALIGNMENT-THM-004-projector-right-unitary.tex}.
+    This is Theorem~\ref{thm:bg-alignment-004}; it does not require orthonormality.
+
+  \item[\decl{BG-ALIGNMENT-THM-005}.]
+    \path{ProjectKoios.BandGauge.Alignment.compressOperator_rightUnitaryFrame};
+    dossier \modulepath{BG-ALIGNMENT-THM-005-compression-covariance.tex}.
+    This is Theorem~\ref{thm:bg-alignment-005}.
+
+  \item[\decl{BG-ALIGNMENT-THM-006}.]
+    \path{ProjectKoios.BandGauge.Alignment.compressOperator_isHermitian};
+    dossier \modulepath{BG-ALIGNMENT-THM-006-compression-hermitian.tex}.
+    This is Theorem~\ref{thm:bg-alignment-006}; frame orthonormality is not required.
+
+  \item[\decl{BG-ALIGNMENT-THM-007}.]
+    \path{ProjectKoios.BandGauge.Alignment.reconstructCompressedOperator_eq_projector_sandwich};
+    dossier \modulepath{BG-ALIGNMENT-THM-007-reconstruction-projector-sandwich.tex}.
+    This is Theorem~\ref{thm:bg-alignment-007}.
+
+  \item[\decl{BG-ALIGNMENT-THM-008}.]
+    \path{ProjectKoios.BandGauge.Alignment.reconstructCompressedOperator_rightUnitaryFrame};
+    dossier \modulepath{BG-ALIGNMENT-THM-008-reconstruction-right-unitary.tex}.
+    This is Theorem~\ref{thm:bg-alignment-008}; it does not require orthonormality.
+
+  \item[\decl{BG-ALIGNMENT-THM-009}.]
+    \path{ProjectKoios.BandGauge.Alignment.frameProjector_mul_frame};
+    dossier \modulepath{BG-ALIGNMENT-THM-009-projector-fixes-frame.tex}.
+    This is Theorem~\ref{thm:bg-alignment-009}.
+
+  \item[\decl{BG-ALIGNMENT-THM-010}.]
+    \path{ProjectKoios.BandGauge.Alignment.compressOperator_frameProjector};
+    dossier \modulepath{BG-ALIGNMENT-THM-010-compressed-projector-identity.tex}.
+    This is Theorem~\ref{thm:bg-alignment-010}.
+\end{description}
+
+The definitions used by the sequence are
+\decl{IsOrthonormalFrame}, \decl{frameProjector}, \decl{rightUnitaryFrame},
+\decl{compressOperator}, and \decl{reconstructCompressedOperator}. Exact
+orthonormality is a hypothesis, not a conclusion about a runtime frame.
+
+\section{Bloch alignment and alignment families}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y Y@{}}
+\toprule
+Declaration range & Source module & Mathematical role \\
+\midrule
+\decl{BG-BLOCH-THM-012--020}
+  & \modulepath{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean}
+  & pointwise difference identities, shared-sewing closure, sign reversal, recovery,
+    zero criteria, and aligned-difference sewing \\
+\decl{BG-ALIGNMENT-DEF-007--016}
+  & \modulepath{ProjectKoios/BandGauge/Alignment/Family.lean}
+  & singleton, identity, global-unitary, and complete pointwise alignment families and
+    their feasibility predicates \\
+\decl{BG-ALIGNMENT-THM-011--019}
+  & \modulepath{ProjectKoios/BandGauge/Alignment/Family.lean}
+  & family membership, forward inclusions, and feasibility transfer \\
+\decl{BG-ALIGNMENT-THM-020--029}
+  & \modulepath{ProjectKoios/BandGauge/Alignment/FamilySeparation.lean}
+  & strict family separation and exact reverse-feasibility counterexamples \\
+\bottomrule
+\end{tabularx}
+\caption{Aligned-difference and alignment-family implementation crosswalk.}
+\label{tab:alignment-family-implementation-crosswalk}
+\end{table}
+
+The corresponding dossiers are under \modulepath{proofs/BandGauge/Bloch/} and
+\modulepath{proofs/BandGauge/Alignment/}. The strictness declarations use supplied point
+and unitary inequalities. Their constructed acceptance predicates establish logical
+separation of decision spaces; they do not certify the outcome of a scientific
+application.
+
+\section{Three-channel residual calculus}
+
+The source-independent finite residual algebra used in
+Theorem~\ref{thm:three-channel-residual-calculus} is implemented in
+\modulepath{ProjectKoios/BandGauge/Hilbert/ResidualChannels.lean}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y Y@{}}
+\toprule
+Declaration range & Formal objects & Mathematical role \\
+\midrule
+\decl{BG-HILBERT-DEF-013--016}
+  & \decl{FiniteResidualField}, \decl{interpolationResidual},
+    \decl{truncationResidual}, \decl{totalResidual}
+  & the common finite field type and the three signed residual channels \\
+\decl{BG-HILBERT-DEF-017--018}
+  & \decl{finiteMaximumNorm}, \decl{finiteRootMeanSquareNorm}
+  & the finite maximum and root-mean-square summaries \\
+\decl{BG-HILBERT-THM-016--017}
+  & maximum-as-supremum and explicit RMS square-sum formula
+  & normalization and interpretation of the two aggregate norms \\
+\decl{BG-HILBERT-THM-018--021}
+  & exact decomposition and pointwise, maximum, and RMS bounds
+  & the three-channel identity and its norm-triangle consequences \\
+\bottomrule
+\end{tabularx}
+\caption{Finite three-channel residual implementation crosswalk.}
+\label{tab:three-channel-implementation-crosswalk}
+\end{table}
+
+The four principal declarations are:
+
+\begin{description}
+  \item[\decl{BG-HILBERT-THM-018}.]
+    \path{ProjectKoios.BandGauge.Hilbert.totalResidual_eq_add};
+    dossier \modulepath{BG-HILBERT-THM-018-residual-decomposition.tex}.
+  \item[\decl{BG-HILBERT-THM-019}.]
+    \path{ProjectKoios.BandGauge.Hilbert.norm_totalResidual_le_add};
+    dossier \modulepath{BG-HILBERT-THM-019-pointwise-triangle.tex}.
+  \item[\decl{BG-HILBERT-THM-020}.]
+    \path{ProjectKoios.BandGauge.Hilbert.finiteMaximumNorm_totalResidual_le_add};
+    dossier \modulepath{BG-HILBERT-THM-020-maximum-triangle.tex}.
+  \item[\decl{BG-HILBERT-THM-021}.]
+    \path{ProjectKoios.BandGauge.Hilbert.finiteRootMeanSquareNorm_totalResidual_le_add};
+    dossier \modulepath{BG-HILBERT-THM-021-rms-triangle.tex}.
+\end{description}
+
+The dossiers are stored under \modulepath{proofs/BandGauge/Hilbert/}.  The exact identity
+requires one common intermediate field.  The aggregate theorems are inequalities and do
+not assert additivity of reported scalar errors.  The formal RMS definition is totalized
+on an empty inventory; the scientific formulas in the main text use the ordinary
+nonempty finite-inventory interpretation.
+
+\section{Fourier and gauge families}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y Y@{}}
+\toprule
+Declaration range & Source module & Mathematical role \\
+\midrule
+\decl{BG-FOURIER-THM-033--047}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/UnitaryEquivariance.lean}
+  & fixed-unitary preservation and commutation with the finite Fourier and truncation
+    constructions \\
+\decl{BG-FOURIER-THM-048--054}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/PointwiseGauge.lean}
+  & mode shift, scalar-conjugation boundary, coefficient change, and pointwise
+    Frobenius-power preservation \\
+\decl{BG-FOURIER-THM-055--066}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/GaugeTruncationCounterexample.lean}
+  & exact two-point rank-two gauge--truncation counterexample \\
+\decl{BG-FOURIER-THM-067--075}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/ResidualChannels.lean}
+  & deliberate-truncation residual, omitted power, root-mean-square identities, and
+    pointwise and finite-maximum bounds \\
+\bottomrule
+\end{tabularx}
+\caption{Fourier and gauge implementation crosswalk.}
+\label{tab:fourier-gauge-implementation-crosswalk}
+\end{table}
+
+The key declarations for Theorem~\ref{thm:two-point-gauge-truncation} are:
+
+\begin{description}
+  \item[\decl{BG-FOURIER-THM-062}.]
+    \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient};
+    dossier \modulepath{BG-FOURIER-THM-062-gauged-odd-coefficient.tex}.
+  \item[\decl{BG-FOURIER-THM-064}.]
+    \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient_ne_zero};
+    dossier \modulepath{BG-FOURIER-THM-064-gauged-odd-mode-nonzero.tex}.
+  \item[\decl{BG-FOURIER-THM-066}.]
+    \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_zeroModeFourierTruncation_ne};
+    dossier \modulepath{BG-FOURIER-THM-066-gauge-truncation-noncommutation.tex}.
+\end{description}
+
+The declaration sequence for Theorem~\ref{thm:finite-fourier-tail-bounds} is:
+
+\begin{description}
+  \item[\decl{BG-FOURIER-THM-067}.]
+    \path{ProjectKoios.BandGauge.Fourier.truncationResidual_fourierReconstruction_eq}.
+  \item[\decl{BG-FOURIER-THM-068}.]
+    \path{ProjectKoios.BandGauge.Fourier.finiteFourierPower_truncationResidual_eq_omitted}.
+  \item[\decl{BG-FOURIER-THM-069}.]
+    \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusPower_truncationResidual_eq_omitted}.
+  \item[\decl{BG-FOURIER-THM-070}.]
+    \path{ProjectKoios.BandGauge.Fourier.finiteRootMeanSquareNorm_truncationResidual_eq_sqrt_omitted}.
+  \item[\decl{BG-FOURIER-THM-071}.]
+    \path{ProjectKoios.BandGauge.Fourier.finiteRootMeanSquareNorm_truncationResidual_sq_eq_omitted}.
+  \item[\decl{BG-FOURIER-THM-072}.]
+    \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_eq_sqrt_omitted}.
+  \item[\decl{BG-FOURIER-THM-073}.]
+    \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_sq_eq_omitted}.
+  \item[\decl{BG-FOURIER-THM-074}.]
+    \path{ProjectKoios.BandGauge.Fourier.norm_truncationResidual_fourierReconstruction_le_omitted}.
+  \item[\decl{BG-FOURIER-THM-075}.]
+    \path{ProjectKoios.BandGauge.Fourier.finiteMaximumNorm_truncationResidual_le_omitted}.
+\end{description}
+
+The dossiers follow the stable filenames
+\modulepath{proofs/BandGauge/Fourier/BG-FOURIER-THM-067-truncation-channel.tex}
+through
+\modulepath{proofs/BandGauge/Fourier/BG-FOURIER-THM-075-finite-maximum-tail.tex}.
+The two root-mean-square families require the explicit nonempty-domain premise recorded
+in their Lean types. The maximum-norm result uses the ambient norm and is not an
+entrywise matrix-Frobenius specialization.
+
+\section{Reduction, certificates, and finite decisions}
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y Y@{}}
+\toprule
+Declaration range & Principal source & Scope represented in Chapter~\ref{ch:reduction-decision} \\
+\midrule
+\decl{BG-THM-001--034}
+  & \modulepath{ProjectKoios/BandGauge/Geometry/}
+  & common witnesses, certified separation, rank-two admissible regions, and exact set
+    distances \\
+\decl{BG-HILBERT-THM-001--015}
+  & \modulepath{ProjectKoios/BandGauge/Hilbert/}
+  & ball geometry, weighted Frobenius algebra, and spectral/operator residual bridges \\
+\decl{BG-FOUNDATION-THM-008--014}
+  & \modulepath{ProjectKoios/BandGauge/Foundations/RankTwoSpectralPerturbation.lean}
+  & canonical Hermitian rank-two spectra and Frobenius perturbation bounds \\
+\decl{BG-CERT-THM-001--009}, \decl{BG-CERT-THM-013--016}
+  & \modulepath{ProjectKoios/BandGauge/Certificates/}
+  & exact, enclosure, and box separation certificates \\
+\decl{BG-CERT-THM-010--012}
+  & \modulepath{ProjectKoios/BandGauge/Certificates/FinitePareto.lean}
+  & exact finite dominance, feasibility, and efficient-mask checks \\
+\decl{BG-CERT-THM-017--025}
+  & \modulepath{ProjectKoios/BandGauge/Certificates/IntervalDecision.lean}
+  & accepted, rejected, and unresolved interval decisions and their soundness \\
+\decl{BG-DECISION-THM-014--016}
+  & \modulepath{ProjectKoios/BandGauge/Decision/FiniteCutoff.lean}
+  & first passing and first joint-passing semantics on a finite inventory \\
+\decl{QM-RESOLVENT-THM-001--014}
+  & \modulepath{ProjectKoios/QuantumMechanics/FiniteDimensional/RankOneResolvent.lean}
+  & exact rank-one resolvent, determinant, secular, kernel, and Hermiticity identities \\
+\decl{SS-GAUGE-THM-001--023}
+  & \modulepath{ProjectKoios/SolidState/FiniteLattice/}
+  & finite gauge loops, determinant invariance, projector products, and Bargmann
+    identities \\
+\decl{SS-ROUTE-THM-001--010}
+  & \modulepath{ProjectKoios/SolidState/FiniteLattice/RouteCommutativity.lean}
+  & finite pullback, spin, folding, and defect-extraction route algebra \\
+\bottomrule
+\end{tabularx}
+\caption{Declaration families supporting the reduction and decision narrative.}
+\label{tab:reduction-decision-implementation-crosswalk}
+\end{table}
+\FloatBarrier
+
+These declarations supply components of the spectral--operator compatibility argument.
+No declaration in the pinned snapshot packages the complete ICMSEP model hierarchy,
+both application-specific losses, the alignment optimization, admissible-set
+intersection or separation, and first-compatible-class selection into one end-to-end
+proposition.  Chapter~\ref{ch:mechanization-status} records that assembly as open.
+
+\section{Mechanization status at the pinned snapshot}
+
+The theorem manifest is the authoritative declaration inventory. At the pinned snapshot,
+the repository audit covers 620 proved theorem or lemma rows and 624 unique named axiom
+reports. The repository-owned Lean sources contain no \texttt{sorry}, \texttt{admit}, or
+repository-owned \texttt{axiom} declaration. Individual reports may include the standard
+foundational dependencies \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound}; the exact report for each declaration is recorded in the theorem
+manifest and imported by \modulepath{ProjectKoios/Audit.lean}.
+
+Checked reusable families include finite Fourier transformation and truncation, finite
+frames and alignment families, weighted Frobenius and admissible-set geometry, exact and
+interval certificates, finite first-passing decisions, finite lattice folding and route
+algebra, rank-one resolvents, rank-two perturbation, finite gauge loops and Bargmann
+identities, and finite quantum-state, measurement, and partial-operator foundations.
+Membership in this inventory means that the exact Lean proposition is proved. It does
+not imply runtime conformance, continuum validity, physical applicability, novelty, or
+publication status.

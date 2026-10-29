@@ -1,65 +1,124 @@
-# Gauge-constrained model adequacy
+# Compatibility of spectral and operator reductions
 
-This directory contains a Formal-owned working paper on alignment-family-relative operator adequacy, Fourier locality, and exact finite decisions. It is not a submitted paper, publication, novelty determination, scientific-validation record, runtime certificate, or owner of numerical evidence.
+This directory contains a Formal-owned proof companion for the central model-adequacy
+problem stated in the ICMSEP extended abstract: whether spectral and aligned-operator
+criteria admit one common Hamiltonian within each class of a declared model hierarchy.
+Its mathematical presentation is intended to be publication quality, while its proofs,
+assumptions, crosswalks, and reproducibility appendices remain more detailed than a
+final narrative article.
 
-## Proposed question
+The companion is not itself a submission, publication, novelty determination,
+scientific-validation record, runtime certificate, or owner of numerical evidence.
+Those statuses require separate evidence and authorization.
 
-How does the declared alignment family change a finite model-adequacy decision, and which conclusions survive fixed or pointwise unitary changes of representation?
+## Mathematical question
 
-The current checked foundation supports three connected statements:
+For each candidate model class `M_j`, spectral and operator losses define admissible
+sets `A_E,j` and `A_H,j`. The primary exact question is whether
 
-1. feasibility transfers from a smaller alignment family to a larger family through explicit inclusion, while reverse transfer fails in general;
-2. one fixed unitary commutes with the finite Fourier and truncation constructions formalized here, while pointwise unitary conjugation may change Fourier coefficients even though it preserves pointwise Frobenius power; and
-3. exact admissible-set, interval, and first-passing logic can classify a declared finite inventory without promoting threshold overlap or incomplete coverage to a decisive result.
+```text
+A_E,j ∩ A_H,j ≠ ∅,
+```
 
-The explicit two-point rank-two gauge--truncation counterexample and the finite root-mean-square and maximum Fourier-tail results are proved in the pinned Formal snapshot.
+so that one candidate satisfies both criteria. If the sets are disjoint, their distance
+may quantify the obstruction under explicit metric and attainment hypotheses. Repeating
+the joint decision over a finite ordered hierarchy identifies the first tested class
+that admits a common endpoint.
 
-## Mathematical authority
+Alignment families, Fourier locality, and truncation are supporting parts of the
+operator-admissibility criterion. They are not substitutes for the spectral–operator
+intersection problem. The checked foundation supports:
+
+1. finite retained-space, compression, reconstruction, and alignment identities;
+2. explicit separation of identity, global-unitary, and pointwise-unitary alignment
+   families;
+3. fixed-unitary Fourier equivariance and an exact pointwise-gauge/truncation
+   counterexample;
+4. an exact interpolation–truncation–total residual identity with pointwise, maximum,
+   and root-mean-square triangle bounds;
+5. finite root-mean-square and maximum Fourier-tail control for the deliberate-
+   truncation leg;
+6. exact admissible-set geometries, certificate soundness, and three-way interval
+   decisions; and
+7. first-passing selection over one declared finite inventory.
+
+The current theorem basis does not yet package the complete ICMSEP study as one
+end-to-end Lean proposition, and it contains no retained bulk-silicon runtime
+certificate.
+
+## Editorial architecture
+
+The mathematical narrative comes first. The five numbered chapters develop the central
+spectral–operator compatibility problem, operator foundations, alignment and Fourier
+analysis, admissible-set and certificate logic, and the remaining end-to-end formal
+obligations. Code-facing material is kept in appendices:
+
+- `appendices/A-formal-declaration-crosswalk.tex` records declaration IDs, Lean names,
+  module locations, proof-dossier locations, and mechanization status;
+- `appendices/B-provenance-and-reproducibility.tex` records the immutable Formal
+  snapshot, the motivating ICMSEP source identity, hashes, authority hierarchy, audit
+  boundary, and export requirements; and
+- `appendices/C-notation-bridges.tex` records notation and sign bridges to inspected
+  research sources; and
+- `appendices/D-seven-paper-error-channel-crosswalk.tex` records the source-qualified
+  development and evidence boundary of the residual-channel program across
+  `Ragasa2026a` through `Ragasa2026g`.
+
+The main text may state that a result is exact or machine checked when that fact matters
+to the argument, but repository mechanics, source paths, hashes, audit commands, and
+workflow checklists belong in the appendices.
+
+## Authority
 
 The authority order is:
 
 1. Lean declarations and proof terms under `ProjectKoios/`;
 2. declaration identity and status in `docs/theorem-manifest.md`;
 3. statement-level explanations under `proofs/`;
-4. synthesis in this working paper.
+4. synthesis in this proof companion.
 
-Prospective external manuscripts and research notes may motivate work but do not determine theorem statements or status here. Later exported prose must identify the exact Formal commit and declaration IDs from which it was derived.
-
-## Layout
-
-- `manuscript.tex` — composition root, abstract, and status warning;
-- `chapters/01-proof-architecture.tex` — question, authority, status axes, and dependency structure;
-- `chapters/02-finite-dimensional-operator-foundations.tex` — representation-neutral finite frames, projectors, compression, and reconstruction;
-- `chapters/03-bloch-alignment-and-fourier-locality.tex` — momentum-indexed frames, aligned differences, alignment families, gauge actions, and Fourier locality;
-- `chapters/04-reduction-and-decision-structure.tex` — admissibility, certificates, perturbation, and finite decisions;
-- `chapters/05-mechanization-status-and-open-obligations.tex` — checked families, publication gaps, and proposed theorem work.
+The ICMSEP extended abstract owns the motivating scientific problem statement, not the
+exact Lean propositions or their proof status. Any shortened publication derived from
+this companion must preserve the common-candidate quantifier, exact hypotheses, operand
+conventions, declaration identities, and nonclaims recorded here.
 
 ## Snapshot boundary
 
-The current theorem basis is Formal merge commit `b56d6b8e7005515220e6c9bf42851acccb023178`, tree `a94b113d3300ff8e692f295da82945f48fb7d6ed`. The paper must be refreshed or explicitly marked historical after theorem statements, toolchain pins, or manifest status change.
+The current theorem basis is Formal merge commit
+`b56d6b8e7005515220e6c9bf42851acccb023178`, tree
+`a94b113d3300ff8e692f295da82945f48fb7d6ed`. The companion must be refreshed or
+explicitly marked historical after relevant theorem statements, toolchain pins, or
+manifest status change.
 
-## Required work before publication assessment
+The motivating ICMSEP source and the separate seven-paper error-channel source snapshot
+are pinned in Appendix B. Their scientific, evidence, and publication statuses do not
+transfer into Formal proof status.
 
-- verify every manuscript claim against its exact declaration and proof dossier;
-- render unproved mathematical statements and proposed theorem tasks in red until a matching checked declaration exists;
-- keep the proved two-point gauge--truncation counterexample pinned to its exact declarations and scope;
-- add a declaration-to-section crosswalk;
-- write the mathematical arguments rather than only inventorying theorem families;
-- follow each displayed theorem proof with ordinary scholarly prose explaining its role in the paper, without formulaic significance headings;
+## Remaining publication-facing work
+
+- formalize the end-to-end finite compatibility schema and its model-hierarchy binding;
+- instantiate proposition-specific spectral and operator losses only after their source
+  contracts are frozen;
+- expand selected aligned-difference and alignment-family arguments where useful;
 - complete prior-art and novelty review;
 - add an independently checked bibliography;
 - obtain independent mathematical and artifact review; and
-- decide whether a frozen finite case study belongs in the paper.
+- decide whether a frozen finite case study belongs in this companion or in a later
+  application paper.
+
+These tasks concern completeness and publication readiness. They do not downgrade the
+proof status of declarations already checked in Lean.
 
 ## Local build
 
 Compile into a temporary directory:
 
 ```bash
-mkdir -p /tmp/projectkoios-gauge-adequacy-paper
+mkdir -p /tmp/projectkoios-spectral-operator-compatibility
 latexmk -pdf \
-  -output-directory=/tmp/projectkoios-gauge-adequacy-paper \
+  -output-directory=/tmp/projectkoios-spectral-operator-compatibility \
   docs/papers/gauge-constrained-model-adequacy/manuscript.tex
 ```
 
-A successful LaTeX build establishes formatting only. It does not check Lean or establish scientific authority.
+A successful LaTeX build establishes formatting only. It does not check Lean, numerical
+execution, physical applicability, or scientific authority.

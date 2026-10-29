@@ -1,100 +1,243 @@
-\chapter{Mechanization Status and Open Obligations}
+\chapter{Synthesis, Mechanization Boundary, and Open Problems}
 \label{ch:mechanization-status}
 
-\section{Status source}
+\section{The compatibility problem recovered}
 
-The authoritative declaration inventory is \modulepath{docs/theorem-manifest.md}. The
-named axiom reports imported by \modulepath{ProjectKoios/Audit.lean} provide the audit
-surface for proved theorems and lemmas. This chapter intentionally does not duplicate a
-mutable declaration count. A later export must take its count, toolchain identity, and
-module hashes from one exact Formal revision.
+The central conclusion of this companion is that spectral and operator reduction must be
+posed as a common-model problem.  For each declared candidate class
+$\mathfrak M_j$, spectral and aligned-operator criteria define two admissible sets.  The
+primary exact question is whether those sets contain one common Hamiltonian.  When they
+do not, an exact or certified lower bound on their metric separation can quantify the
+obstruction under the declared geometry.  Repeating the decision over a finite ordered
+hierarchy identifies the first tested class that passes the joint criterion.
 
-The current basis of this working companion is merge commit
-\decl{b56d6b8e7005515220e6c9bf42851acccb023178}, tree
-\decl{a94b113d3300ff8e692f295da82945f48fb7d6ed}.  At that tree,
-\path{ProjectKoios/BandGauge/Fourier/GaugeTruncationCounterexample.lean} has SHA-256
-\decl{3b4d9083c04592ff9982cbddf891c8243cc599ad6bc32f5e4a10f708bec6186d}, and
-\path{ProjectKoios/BandGauge/Fourier/ResidualChannels.lean} has SHA-256
-\decl{d2da775a99edf7dea2d8955a121d4929cc183be4fcf64a515ab5e002c019a28b}.
-No claim about later revisions follows from these identities.
+This formulation keeps the quantifiers visible.  One spectrally successful model and a
+different operator-successful model do not prove compatibility.  One favorable
+alignment for a fixed candidate is only a witness inside the operator branch.  A
+locality diagnostic, a support choice, and a certificate must also refer to the same
+candidate whenever the decision contract requires a common endpoint.
 
-\section{Checked mathematical families}
+The alignment and Fourier results should therefore be read in their proper role.  They
+define and constrain $\mathfrak A_{H,j}$; they do not replace
+$\mathfrak A_{E,j}\cap\mathfrak A_{H,j}\neq\varnothing$ as the research question.
 
-At the current snapshot, checked reusable families include:
+\section{What the exact finite theory contributes}
+
+The finite-frame sequence distinguishes retained subspaces from retained coordinates.
+Projectors are invariant under right-unitary frame changes, compressed matrices are
+covariant, and reconstructed ambient operators are invariant.  These facts establish
+which differences are physical candidates for an operator residual and which are merely
+coordinate changes.
+
+The aligned-difference and family theorems make the operator criterion
+family-relative.  Identity, global-unitary, and complete pointwise-unitary families
+answer different questions.  Inclusion gives one-way feasibility transfer; strictness
+witnesses disprove reverse transfer in general.
+
+The Fourier theorems identify a second structural boundary.  One common unitary
+commutes with finite Fourier coefficient extraction and exact support truncation.
+Pointwise conjugation preserves pointwise unitary-invariant power but can redistribute
+Fourier weight.  The three-channel calculus places deliberate truncation between an
+interpolant and its support-restricted approximation, proves the exact vector
+decomposition of total residual, and bounds its pointwise, maximum, and root-mean-square
+norms.  The exact rank-two counterexample demonstrates gauge--truncation
+noncommutation, while the finite-tail results give positive control only of the
+deliberate-truncation leg after a support has been declared.
+
+The geometry and decision theorems address the outer compatibility layer.  Closed-ball,
+rank-two ellipse, and rectangle families provide exact intersection and separation
+criteria under explicit hypotheses.  Certificate soundness translates accepted finite
+data into those propositions.  Three-way intervals preserve threshold overlap as
+unresolved, and first-passage logic selects an earliest passing element of a complete
+finite inventory without assuming monotonicity.
+
+Together these results form a substantial reusable basis for the ICMSEP problem.  They
+do not yet amount to an end-to-end theorem for the proposed silicon study.
+
+\section{Development of the error-channel program}
+\label{sec:seven-paper-error-channel-development}
+
+The seven-paper research program uses the three-channel calculus as a recurring
+approximation core, not as a universal partition of every uncertainty.  In the first
+controlled rank-two study, the decomposition is operational: reference-to-interpolant,
+interpolant-to-truncated, and reference-to-truncated consequences are reported
+separately.  Cyclic conversion is retained as an additional diagnostic rather than
+being folded into one of those three channels.  The second study carries the same core
+across spatial dimension, lattice geometry, complete physical-support inventories, and
+synthetic strain.  There the separate channels help distinguish whether a final error
+floor comes from finite interpolation or from the deliberate support restriction.
+
+The multiband program makes the limits of the three-channel description explicit.
+Projection, disentanglement, downfolding, frame selection, alignment-family restriction,
+finite conversion, interpolation, and truncation are different operations.  The final
+interpolation--truncation--total chain remains available once three conformant fields
+have been constructed, but it is nested inside this finer ledger.  A successful
+three-channel identity does not certify the upstream projector, gauge, or alignment.
+
+The first-principles silicon study changes scale again.  Its top-level proposed budget
+separates parent-model discrepancy, numerical or discretization error, local-extraction
+error, and model-reduction error.  The three-channel calculus can support the localized
+representation and support-truncation subproblem, but it cannot replace those four
+application-level categories.  Moreover, the study is pre-results: no production
+silicon evidence or proposition-specific Formal certificate is supplied here.
+
+For pristine--defect subtraction, an aligned difference is meaningful only after the
+two operators have been placed on a qualified common retained space with a common
+scalar energy reference.  Finite-size, projection, localization, alignment,
+energy-reference, transform, and truncation errors must remain visible.  The obstruction
+program adds a still earlier gate: if a required global or symmetry-compatible
+alignment cannot be constructed, the intended global aligned residual may be
+undefined, so a numerical three-channel report cannot repair the missing comparison
+map.  The final spin--orbit impurity program may use nested three-channel decompositions
+inside qualified model classes only after matched pristine and doped SOC branches,
+common-space alignment, and energy referencing have passed their own gates.
+
+This development gives the residual calculus a precise programmatic role.  It is a
+transversal verification spine for conformant approximation chains, subordinate to the
+common-Hamiltonian compatibility question and embedded within broader error ontologies
+where the science requires them.  The immutable owner-source identities, paper-by-paper
+roles, and current evidence boundaries are recorded in
+Appendix~\ref{app:seven-paper-error-channel-crosswalk}.  Papers D--G remain pre-results
+or prospective at that source snapshot; no numerical or publication status transfers
+from this synthesis.
+
+\section{Current mechanization boundary}
+
+The current Formal snapshot proves the component theorem families listed in
+Appendix~\ref{app:formal-crosswalk}.  It does not currently package the entire adequacy
+study as one generic object containing all of the following:
 
 \begin{itemize}
-  \item finite Fourier transform, reconstruction, Parseval, truncation, Hermitian
-        pairing, an exact gauge--truncation counterexample, and deliberate-truncation
-        power, root-mean-square, pointwise, and maximum tail results;
-  \item finite frames, sewing, aligned differences, and alignment-family separation;
-  \item weighted Frobenius, spectral, admissible-set, and rank-two loss geometry;
-  \item exact rational, enclosure, box, Pareto, and interval decision certificates;
-  \item finite first-passing decisions;
-  \item finite folding, spin lifting, route commutativity, and tight-binding algebra;
-  \item rank-one resolvent defects and rank-two spectral perturbation;
-  \item finite gauge loops, projector products, and Bargmann identities; and
-  \item finite quantum-state, measurement, and partial-operator foundations.
+  \item a finite ordered hierarchy of model classes and explicit inclusion maps;
+  \item a candidate parameterization for each class;
+  \item a spectral loss tied to the selected observables;
+  \item an aligned operator loss with its weights, supports, alignment family, and any
+        mandatory conformant residual channels;
+  \item exact spectral and operator tolerances and any separate map tolerance;
+  \item compactness, finiteness, or coverage premises needed for global conclusions;
+  \item a common-witness compatibility predicate;
+  \item a separation certificate for the full admissible sets; and
+  \item a first-compatible-class theorem instantiated with proposition-specific data.
 \end{itemize}
 
-Each family retains its own assumptions and nonclaims. Membership in this list does not
-mean that every prospective external statement in the same subject has been encoded.
+Nor does the snapshot contain a retained runtime certificate for a bulk-silicon DFT or
+Wannier calculation.  The current checked-certificate count at that external boundary
+is zero.  The proposed first-principles parent, numerical fitting, withheld validation,
+and material interpretation remain outside the formal result.
 
-\section{Near-term exact theorem opportunities}
+This boundary is not a defect in the component proofs.  It records the remaining work
+needed to turn a theorem library into a proposition-specific adequacy decision.
 
-Several bounded extensions would sharpen the proof program without importing runtime or
-material authority.
+\section{Priority open finite problems}
 
-\begin{enumerate}
-  \item \openobligation{Prove induced Euclidean operator-norm invariance under unitary
-        conjugation in the exact finite setting.}
-  \item \openobligation{Package the gauge invariance of a conformant two-path residual
-        for both Frobenius and operator norms.}
-  \item \openobligation{Develop a general finite pointwise-gauge convolution and
-        support formula beyond the proved two-point counterexample.}
-  \item \openobligation{Package shell-resolved Frobenius invariance under one constant
-        unitary that does not mix shell labels.}
-  \item \openobligation{Develop exact finite Feshbach or Schur-complement elimination
-        separately from spectral-gap and norm-bound certificates.}
-  \item \openobligation{Formalize a bounded projection-induced support-growth result
-        without claiming infinite-volume decay or topology.}
-\end{enumerate}
+The following extensions are ordered by their relationship to the central compatibility
+question.
 
-\openobligation{These are proposed theorem tasks, not declarations already present in
-the manifest.}
+\begin{openproblem}[End-to-end finite adequacy schema]
+Define a generic finite structure containing a candidate inventory or parameter domain,
+spectral and aligned-operator losses, tolerances, alignment family, and common-witness
+compatibility predicate.  Prove that membership in both admissible sets is equivalent to
+the fully expanded joint witness under explicit attainment hypotheses.
+\end{openproblem}
 
-\section{Analytical and scientific obligations kept open}
+This theorem should preserve the distinction between an infimum and an attained
+alignment minimum and should not assume that runtime optimization found the global
+minimum.
 
-The current finite library does not establish:
+\begin{openproblem}[Conformant model-hierarchy transfer]
+State sufficient conditions under which inclusion
+$\mathfrak M_j\subseteq\mathfrak M_{j'}$ transfers compatibility forward.  The theorem
+must include conformity of the candidate embedding, losses, tolerances, supports, and
+alignment families rather than relying on the word ``nested.''
+\end{openproblem}
+
+\begin{openproblem}[General attained separation]
+Package the compactness, closedness, nonemptiness, and metric hypotheses under which zero
+set distance is equivalent to intersection and positive distance is attained.  Connect
+that result to the finite compatibility schema without identifying a positive map
+tolerance with literal intersection.
+\end{openproblem}
+
+\begin{openproblem}[Proposition-specific compatibility certificate]
+Specify exact certificate data that can establish either one common admissible candidate
+or a positive lower bound separating the complete declared admissible sets.  The checker
+contract must bind the model class, loss definitions, tolerances, metric, alignment
+family, and coverage claim.
+\end{openproblem}
+
+\begin{openproblem}[Operator-norm equivariance]
+Establish invariance of the induced Euclidean operator norm under finite unitary
+conjugation and package it for aligned operator differences.  This would support
+operator-norm criteria without changing the alignment-family semantics.
+\end{openproblem}
+
+\begin{openproblem}[Conformant two-path residuals]
+Formulate a two-path comparison in which both routes use the same admissible alignment,
+and prove gauge invariance of the resulting residual under explicit conformity
+hypotheses.  Separately selected gauges define different routes.
+\end{openproblem}
+
+\begin{openproblem}[Pointwise-gauge convolution]
+Derive a general finite convolution formula for Fourier coefficients under pointwise
+unitary conjugation, with support consequences specializing to the proved two-point
+counterexample.  The theorem should remain finite and should not be presented as an
+infinite-volume decay result.
+\end{openproblem}
+
+\begin{openproblem}[Shell-resolved fixed-unitary invariance]
+For a declared real-space shell decomposition, prove Frobenius invariance under one
+constant unitary acting internally on retained coordinates without mixing shell labels.
+\end{openproblem}
+
+\begin{openproblem}[Finite elimination]
+Develop exact finite Feshbach or Schur-complement elimination separately from
+spectral-gap and norm-bound certificates.  State invertibility and domain hypotheses
+explicitly and do not infer infinite-volume consequences from the finite formula.
+\end{openproblem}
+
+\begin{openproblem}[Projection-induced support growth]
+Prove a bounded finite support-growth statement for a specified projection mechanism.
+Quantify the finite support relation without claiming exponential decay, continuum
+localization, or topology.
+\end{openproblem}
+
+\section{Analytical, numerical, and scientific questions beyond the finite theory}
+
+Several required questions lie outside the present exact finite theorem basis:
 
 \begin{itemize}
-  \item asymptotic locality or existence of a continuum crossover radius;
-  \item discrete-to-continuum, infinite-volume, or homogenization convergence;
-  \item existence of a physically adequate smooth or symmetry-compatible alignment;
-  \item a runtime frame's exact orthonormality or a numerical interval's exact
-        containment;
-  \item Chern integrality, global branch unwrapping, or a Wannier obstruction;
-  \item Quantum ESPRESSO or Wannier90 execution, convergence, or material adequacy;
-  \item silicon-specific applicability, scientific validation, novelty, publication, or
-        human acceptance.
+  \item construction and convergence of the first-principles parent Hamiltonian;
+  \item validation of the selected Wannier subspace and its real-space decay;
+  \item scientific justification of spectral observables, weights, and tolerances;
+  \item completeness of the tested model hierarchy;
+  \item global correctness of nonlinear fitting and alignment optimization;
+  \item exact certification of runtime orthonormality and interval containment;
+  \item withheld-wavevector and material-specific validation;
+  \item asymptotic locality, continuum crossover, and infinite-volume convergence;
+  \item Chern integrality, branch unwrapping, and Wannier obstruction theorems; and
+  \item novelty, publication readiness, and independent scientific acceptance.
 \end{itemize}
 
-A future result may close one item only through a separately reviewed theorem or evidence
-contract. Closure of one item does not close the others.
+These questions are independent.  Closing one does not close the others.  A checked
+finite Fourier identity does not validate a DFT calculation; a converged numerical
+calculation does not prove that its binary64 output satisfies an exact certificate; and
+a common finite candidate does not establish that the candidate class is physically
+complete.
 
-\section{Export checklist}
+\section{Role of the proof companion}
 
-Before extracting prose into an external chapter, record:
+This document is a formal proof companion to the spectral--operator model-adequacy
+program.  Its purpose is to expose the exact mathematical structure, show which
+component results are already machine checked, and identify the missing bridges without
+promoting prospective application claims into theorems.
 
-\begin{enumerate}
-  \item the exact Formal repository, commit, tree, module paths, and hashes;
-  \item every declaration ID used by the exported argument;
-  \item the explicit assumptions and operand/sign conventions;
-  \item the named axiom-audit result and any remaining trusted-base limitations;
-  \item which surrounding claims remain prospective, numerical, scientific, or
-        publication-dependent; and
-  \item confirmation that the destination does not present the export as runtime or
-        material validation.
-\end{enumerate}
+A shorter scientific publication may select only the results needed for one narrative.
+Such extraction should begin with the common-model compatibility question, not with the
+alignment machinery.  Alignment families, Fourier locality, and certificate logic then
+appear where they support the operator criterion, separation result, and model-selection
+decision.
 
-The destination may reorganize the exposition, but it must not silently strengthen the
-formal statements or detach them from their immutable source identity.
+The appendices preserve declaration identities, immutable source provenance, and
+notation bridges for that later extraction.  Editorial compression may shorten the
+argument; it may not change the quantifier structure, replace separate witnesses by a
+common one, or strengthen the finite theorem basis into a material-validation claim.

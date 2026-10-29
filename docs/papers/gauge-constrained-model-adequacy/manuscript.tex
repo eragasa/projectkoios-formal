@@ -1,4 +1,4 @@
-% Formal-owned working manuscript. Not a publication, scientific claim, or numerical-evidence record.
+% Formal-owned proof companion. Publication-quality mathematical exposition; not itself a publication or scientific-validation record.
 \documentclass[11pt]{report}
 
 \usepackage[T1]{fontenc}
@@ -11,49 +11,51 @@
 \usepackage{placeins}
 \usepackage{seqsplit}
 \usepackage{tabularx}
-\usepackage{xcolor}
 
-\definecolor{openobligationred}{RGB}{176,0,32}
-\newcommand{\openobligation}[1]{\textcolor{openobligationred}{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{Z}{>{\raggedright\arraybackslash}p{0.23\textwidth}}
+\def\UrlBreaks{\do\/\do-\do.\do_}
+\Urlmuskip=0mu plus 1mu
+\setlength{\emergencystretch}{3em}
 \newcommand{\decl}[1]{\texttt{\seqsplit{#1}}}
-\newcommand{\modulepath}[1]{\texttt{\seqsplit{#1}}}
+\newcommand{\modulepath}[1]{\nolinkurl{#1}}
 
 \newtheorem{theorem}{Theorem}[chapter]
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{openproblem}[theorem]{Open Problem}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
-\title{Gauge-Constrained Model Adequacy\\\large Alignment Families, Fourier Locality, and Exact Finite Decisions\\[0.4em]\normalsize Working paper}
+\title{Compatibility of Spectral and Operator Reductions\\
+\large Admissible-Set Geometry, Alignment, Fourier Locality, and Exact Finite Decisions\\[0.5em]
+\normalsize A Formal Proof Companion}
 \author{Project Koios Formal}
-\date{Working draft}
+\date{}
 
 \begin{document}
 \hypersetup{pageanchor=false}
 \maketitle
 
-\begin{center}
-\fbox{\parbox{0.91\textwidth}{
-\textbf{Working-paper status.} Mathematical claims are keyed to identified Lean
-declarations and proof terms. The theorem manifest records declaration status, and the
-proof dossiers record statement-level explanations. \openobligation{Red text marks an
-open mathematical statement or theorem task in the identified Formal snapshot.}
-}}
-\end{center}
-
 \begin{abstract}
-Model-adequacy decisions for finite operator families depend on the declared class of
-admissible alignments. This working paper organizes machine-checked finite results that
-distinguish identity-only, global-unitary, and complete pointwise-unitary alignment
-families; prove forward feasibility transfer and exact failures of the reverse
-implication; separate fixed-unitary Fourier equivariance from pointwise-gauge changes of
-Fourier coefficients; and connect admissible-set geometry to exact and interval-valued
-finite decisions. The individual ingredients are largely standard finite algebra and
-set logic. Their audit-first composition gives a family-relative adequacy framework with
-explicit checker boundaries. An exact two-point rank-two witness proves that a
-pointwise gauge transformation need not commute with zero-mode Fourier truncation, and
-finite tail theorems identify the deliberate-truncation root-mean-square error and bound
-its pointwise and maximum ambient norms.
+A spectral fit and an aligned operator fit need not select the same reduced Hamiltonian.
+The central model-adequacy problem is therefore to determine, within each class of a
+declared model hierarchy, whether the spectral and operator admissible sets contain one
+common candidate; when they do not, their metric separation quantifies the obstruction.
+This proof companion develops exact finite mathematics supporting that problem. It
+distinguishes retained subspaces from retained coordinates, places alignment-family
+selection inside the operator criterion, separates fixed-unitary Fourier equivariance
+from pointwise-gauge mode mixing, and connects admissible-set geometry to exact and
+interval-valued finite decisions. An exact three-channel calculus separates
+reference-to-interpolant, interpolant-to-truncated, and reference-to-truncated residuals;
+it proves their vector identity and pointwise, maximum, and root-mean-square triangle
+bounds without asserting scalar-error additivity. An exact two-point rank-two
+construction shows that a pointwise gauge need not commute with zero-mode Fourier
+truncation, while finite-tail identities control only the deliberate-truncation leg.
+The resulting framework supports common-witness compatibility and first-tested-model
+selection without claiming that a first-principles calculation, runtime certificate, or
+material validation has been completed. Declaration-level traceability, source identities, mechanization status,
+and reproducibility metadata are collected in the appendices.
 \end{abstract}
 
 \clearpage
@@ -68,5 +70,11 @@ its pointwise and maximum ambient norms.
 \input{docs/papers/gauge-constrained-model-adequacy/chapters/03-bloch-alignment-and-fourier-locality}
 \input{docs/papers/gauge-constrained-model-adequacy/chapters/04-reduction-and-decision-structure}
 \input{docs/papers/gauge-constrained-model-adequacy/chapters/05-mechanization-status-and-open-obligations}
+
+\appendix
+\input{docs/papers/gauge-constrained-model-adequacy/appendices/A-formal-declaration-crosswalk}
+\input{docs/papers/gauge-constrained-model-adequacy/appendices/B-provenance-and-reproducibility}
+\input{docs/papers/gauge-constrained-model-adequacy/appendices/C-notation-bridges}
+\input{docs/papers/gauge-constrained-model-adequacy/appendices/D-seven-paper-error-channel-crosswalk}
 
 \end{document}

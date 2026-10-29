@@ -1,85 +1,323 @@
-\chapter{Reduction, Certificates, and Finite Decisions}
+\chapter{Admissible-Set Compatibility, Certificates, and Model Selection}
 \label{ch:reduction-decision}
 
-\section{Admissible-set geometry}
+\section{Returning to the full reduction problem}
 
-For two subsets of one declared metric candidate space, the Formal geometry layer
-separates a common witness from positive certified separation. Declarations
-\decl{BG-THM-001--008} prove that a feasible pair bounds set distance above, a common
-candidate forces zero distance, a positive lower bound forces disjointness, and
-nonempty compact disjoint sets attain positive distance. Threshold-defined spectral and
-operator sets are one application of these general facts.
+The preceding chapters developed the operator branch of the adequacy problem: retained
+spaces, coordinate alignment, aligned differences, Fourier representation, and
+truncation.  We now restore the spectral criterion and the candidate-model quantifier.
+For each declared model class $\mathfrak M_j$, the question is whether the spectral and
+operator criteria accept one common Hamiltonian.
 
-A global separation conclusion requires a positive certificate on the declared
-candidate space. The metric, losses, thresholds, and alignment family are part of that
-claim; searches and plots are diagnostic inputs rather than separation proofs.
+Let $\Theta_j$ be the parameter domain and let
+\[
+  \Phi_j:\Theta_j\longrightarrow\mathfrak M_j,
+  \qquad \theta\longmapsto H_j(\theta)
+\]
+be the candidate map.  The parameterization need not be injective, but the losses and
+model metric must be explicit about whether they act on parameters or Hamiltonians.  A
+parameter-space distance is not automatically a Hamiltonian-space distance, and two
+parameter vectors representing the same Hamiltonian must not be treated as physically
+distinct unless that distinction is intended.
+
+Given a spectral loss $\mathcal L_{E,j}$, an aligned operator loss
+$\mathcal L_{H,j}$, an alignment family $\mathcal U_j$, and tolerances $\tau_E$ and
+$\tau_H$, define
+\[
+  \mathfrak A_{E,j}
+  =\{H_j(\theta):\mathcal L_{E,j}(\theta)\leq\tau_E\}
+\]
+and
+\[
+  \mathfrak A_{H,j}
+  =\left\{H_j(\theta):
+      \inf_{C\in\mathcal U_j}\mathcal L_{H,j}(C,\theta)
+      \leq\tau_H
+    \right\}.
+\]
+The exact model-adequacy proposition is
+\[
+  \operatorname{Compatible}(j)
+  \;:\!\Longleftrightarrow\;
+  \mathfrak A_{E,j}\cap\mathfrak A_{H,j}\neq\varnothing.
+\]
+When the alignment infimum is attained, unfolding the definitions gives the coupled
+witness structure
+\[
+  \exists\theta\in\Theta_j,\ \exists C\in\mathcal U_j,
+  \quad
+  \mathcal L_{E,j}(\theta)\leq\tau_E
+  \quad\text{and}\quad
+  \mathcal L_{H,j}(C,\theta)\leq\tau_H.
+\]
+Without attainment, membership defined by an infimum at the threshold boundary need not
+supply an alignment realizing that bound; an attainment theorem or an explicitly
+relaxed approximate-witness statement is then required.  This distinction is essential
+in an exact treatment.
+
+The formal theorem families summarized below provide reusable pieces of this statement.
+They do not yet constitute one generic Lean structure containing
+$\Theta_j$, $\Phi_j$, both losses, the alignment optimization, and the complete model
+hierarchy.  The end-to-end assembly remains an explicit open item rather than an implied
+result.
+
+\section{Spectral and operator criteria are different predicates}
+
+The spectral criterion acts on selected spectral data.  Depending on the application,
+it may compare ordered eigenvalues, gaps, valley locations, effective masses, or other
+derived quantities.  The finite formal basis includes exact rank-two eigenvalue
+formulas, ordered-band perturbation bounds, and spectral-residual expansions under
+explicit hypotheses.  These results justify particular finite spectral inequalities;
+they do not validate a numerical eigensolver or establish that a selected observable is
+the scientifically appropriate one.
+
+The operator criterion acts on matrix information after alignment.  A representative
+real-space loss has the form
+\[
+  \mathcal L_{H,j}(C,\theta)
+  =\sum_R\omega_R
+    \left\|
+      H_{\mathrm{ref}}(R)
+      -C\,H_j(R;\theta)\,C^\dagger
+    \right\|_{\mathrm F}^2,
+\]
+with the direction of $C$ adjusted consistently with the adopted pullback convention.
+More structured versions may use momentum-dependent alignments, shell decompositions,
+or additional symmetry constraints.  The weights, retained translations, norm, and
+alignment family are all part of the predicate.
+
+Spectral equality does not imply operator equality.  Unitary conjugation preserves a
+matrix spectrum while changing its entries, and different real-space Hamiltonians may
+agree on a selected finite spectral inventory.  Conversely, a small weighted operator
+residual does not automatically bound every derived spectral quantity unless a theorem
+connects the chosen operator norm and observable.  The two admissible sets must
+therefore remain separate until their intersection is tested.
+
+\section{Common-witness semantics}
+
+The intersection formulation prevents three invalid substitutions.
+
+First, independently fitted minimizers do not supply a common endpoint.  If
+$H_E\in\mathfrak A_{E,j}$ and $H_H\in\mathfrak A_{H,j}$ but $H_E\neq H_H$, then the two
+successes show only that each set is nonempty.
+
+Second, separately chosen alignments cannot be combined unless the proposition permits
+them.  A joint operator criterion requiring one common $C$ must be witnessed by that
+same $C$ for every operator objective it contains.
+
+Third, a favorable support or cutoff selected for one residual channel cannot be paired
+with a different support selected for another channel when the scientific claim asks
+for one reduced Hamiltonian.  Candidate, alignment, support, and threshold witnesses
+must be shared exactly as specified by the predicate.
+
+These are logical restrictions rather than optimization preferences.  No amount of
+post-processing can turn incompatible witnesses into the existential witness required
+by the intersection.
+
+\section{Channelwise operator admissibility}
+\label{sec:channelwise-operator-admissibility}
+
+The three-channel calculus of
+Section~\ref{sec:three-channel-residual-calculus} refines the operator predicate without
+changing the outer common-Hamiltonian question.  For a candidate parameter $\theta$, an
+alignment $C$, and a support choice $A$, suppose the contract constructs one aligned
+interpolant $H_{\mathrm{int}}(C,\theta)$ and one truncation of that same field
+$H_{\mathrm{tr}}(C,\theta,A)$.  The associated channel losses may be written
+\[
+  e_{\mathrm{int}}(C,\theta),\qquad
+  e_{\mathrm{trunc}}(C,\theta,A),\qquad
+  e_{\mathrm{total}}(C,\theta,A),
+\]
+using one declared pointwise, maximum, or root-mean-square norm.  The exact calculus
+then supplies
+\[
+  e_{\mathrm{total}}(C,\theta,A)
+  \leq
+  e_{\mathrm{int}}(C,\theta)
+  +e_{\mathrm{trunc}}(C,\theta,A).
+\]
+It does not make the three reported scalars additive.
+
+An application may require separate budgets
+\[
+  e_{\mathrm{int}}\leq\tau_{\mathrm{int}},\qquad
+  e_{\mathrm{trunc}}\leq\tau_{\mathrm{trunc}},\qquad
+  e_{\mathrm{total}}\leq\tau_{\mathrm{total}}.
+\]
+All mandatory inequalities must then hold for the same $\theta$, $C$, $A$, intermediate
+field, and evaluation inventory.  Separate minimizers of the three losses establish
+only separate existential statements.  In particular, the minimum interpolation error
+plus the minimum truncation error need not bound the total error of any one candidate.
+
+The triangle theorem can propagate component budgets to a total budget when
+$\tau_{\mathrm{int}}+\tau_{\mathrm{trunc}}\leq\tau_{\mathrm{total}}$ and the witnesses
+are conformant.  The converse does not hold: a small total error can coexist with large
+component errors because of cancellation.  A decision contract may therefore retain
+all three channels to distinguish numerical interpolation quality from deliberate
+model reduction even when only the total field enters the outer operator admissible
+set.
+
+The exact Fourier-tail results specialize $e_{\mathrm{trunc}}$ only.  Conversion,
+projection, disentanglement, localization, alignment construction, finite-size, and
+parent-model errors require additional contracts and cannot be charged to that Fourier
+tail by relabeling.
+
+\section{Set distance and exact incompatibility}
+
+Let $X_j$ be a declared metric space containing both admissible sets, with metric
+$d_j$.  Their separation is
+\[
+  \delta_j^*
+  =\inf_{\substack{H_E\in\mathfrak A_{E,j}\\
+                    H_H\in\mathfrak A_{H,j}}}
+     d_j(H_E,H_H).
+\]
+When either admissible set is empty, the application must declare how separation is
+represented; ordinary infimum notation over an empty product does not by itself provide
+the intended diagnostic.  Nonemptiness is therefore a substantive premise in the exact
+set-distance theorems used here.
+
+If the sets intersect, their distance is zero.  A certified positive lower bound proves
+disjointness.  The implication from zero distance back to intersection is not valid for
+arbitrary sets.  It becomes valid in the checked finite geometries through explicit
+attainment, compactness, closedness, or direct algebraic characterization.
+
+This distinction resolves an ambiguity that can otherwise enter informal model-
+adequacy language.  There are at least three different conclusions:
+
+\begin{enumerate}
+  \item literal compatibility: $\mathfrak A_{E,j}\cap\mathfrak A_{H,j}\neq\varnothing$;
+  \item exact zero separation under hypotheses that make zero distance decisive; and
+  \item tolerance-level map compatibility:
+        $\delta_j^*\leq\tau_{\mathrm{map}}$.
+\end{enumerate}
+
+The third is an application-defined relaxation of the first.  It is not a theorem that
+a nonzero map tolerance produces one Hamiltonian satisfying both original losses.
 
 \section{Exact finite loss geometry}
 
-The Hilbert and rank-two layers provide checked special cases rather than a universal
-model-reduction theorem. \decl{BG-HILBERT-THM-001--015} cover exact ball geometry,
-weighted Frobenius algebra, and finite spectral and operator residual bridges.
-\decl{BG-THM-009--034} cover the canonical rank-two loss floor, ellipse sublevel sets,
-intersection criteria, exact distances, and explicit rectangle-containment transfer.
+Several checked geometries instantiate this general picture.  In a Hilbert space,
+closed balls with centers $c_1,c_2$ and radii $r_1,r_2$ intersect exactly when
+\[
+  \lVert c_1-c_2\rVert\leq r_1+r_2.
+\]
+When the balls are disjoint, their set distance is
+\[
+  \lVert c_1-c_2\rVert-r_1-r_2.
+\]
+This supplies a representation-independent compatibility theorem once the two losses
+have been proved equivalent to distances from the relevant centers.
 
-The spectral perturbation declarations \decl{BG-FOUNDATION-THM-008--014} prove exact
-properties of canonical Hermitian $2\times2$ matrices and bound maximum sorted-band
-error by the unnormalized entrywise Frobenius distance. Numerical eigensolvers and
-meshes belong to the numerical-verification layer.
+The weighted Frobenius layer establishes nonnegativity, Cauchy--Schwarz, polarization,
+invariance under common unitary conjugation, and expansions of spectral and operator
+residuals.  Under centering and common-power hypotheses, matrix-valued comparisons
+reduce to scalar geometric data.  Those hypotheses are not automatic consequences of
+using a Frobenius norm.
 
-\section{Checked certificates}
+For canonical Hermitian $2\times2$ families, admissible regions become explicit ellipses
+or rectangles in coefficient space.  Their intersections and exact set distances can
+be evaluated symbolically.  The same representation gives an exact bound from
+unnormalized entrywise Frobenius matrix error to ordered-band error.
 
-The certificate layer contains exact data structures and checkers whose soundness is
-proved in Lean.  The rank-two separation families
-\decl{BG-CERT-THM-001--009} and \decl{BG-CERT-THM-013--016} connect Boolean
-acceptance to exact witness, containment, and strict-separation propositions, including
-uniform box conclusions under the encoded endpoint hypotheses.  The separate finite
-Pareto family \decl{BG-CERT-THM-010--012} proves exact dominance, threshold-feasibility,
-and efficient-mask checker equivalences for one supplied finite objective table; it does
-not establish external inventory coverage.
+These results demonstrate how an instance of the spectral--operator compatibility
+problem can become exactly decidable.  They are bounded specializations, not a proof
+that every model class has elliptical loss geometry or that every runtime admissible
+set is compact and exhaustively represented.
 
-No retained runtime certificate is created by these theorems. A future external package
-must still freeze its schema, independently verify its producer, justify exact or
-outward-rounded inputs, retain hashes and provenance, and bind those values to the exact
-checker proposition.
+\section{Exact certificates}
 
-\section{Interval dispositions}
+A certificate is finite data together with a checker and a theorem connecting checker
+acceptance to a mathematical proposition.  In the rank-two geometry, the certificate
+families verify exact witnesses, spectral enclosures, containment in admissible regions,
+and strict separation.  Box certificates replace a single approximate point by a
+product of exact endpoint intervals and prove uniform conclusions for every point in
+the box under the encoded endpoint hypotheses.
 
-Declarations \decl{BG-CERT-THM-017--025} use three outcomes for upper-bound intervals:
-accepted, rejected, and unresolved.  Acceptance requires a valid interval whose upper
-endpoint passes.  For valid endpoints, rejection occurs when the lower endpoint lies
-strictly above the budget.  Invalid endpoint order also fails closed to \emph{rejected},
-but no substantive failure conclusion follows without an explicit containment premise;
-a malformed interval cannot contain an exact value.  A valid interval overlapping the
-threshold is unresolved.
+For the central adequacy problem, a positive certificate may establish one common
+candidate in both admissible sets.  A negative certificate must establish separation of
+the full declared sets, not merely failure of two optimizer outputs to coincide.  The
+checker proposition must identify the model class, losses, tolerances, metric,
+alignment family, and candidate-domain coverage to which its conclusion applies.
 
-Joint acceptance requires every objective to accept for the same candidate. One
-rejected objective supplies joint rejection; otherwise at least one unresolved objective
-leaves the joint result unresolved. Soundness requires explicit containment of each exact
-value. Canonical serialization and binary64 storage require a separate enclosure argument
-to provide that containment.
+A separate finite Pareto layer checks dominance, threshold feasibility, and membership
+in an efficient mask for one supplied finite table of objective values.  Its soundness
+concerns that table.  It does not establish that the table contains every scientifically
+relevant candidate, alignment, support, or model class.
 
-\section{Finite first-passing semantics}
+The logical direction of a certificate theorem is crucial.  Checker acceptance may
+imply a precise proposition because the checker consumes data satisfying an exact
+contract.  The theorem does not show that arbitrary runtime output satisfies that
+contract.  A runtime bridge must additionally freeze the schema, reject malformed or
+unknown data, justify exact or outward-rounded inputs, retain provenance, and
+independently verify the producer.  Serialization integrity authenticates bytes; it
+does not convert floating-point values into exact enclosures.
 
-Declarations \decl{BG-DECISION-THM-014--016} define and characterize first passage on a
-complete supplied finite inventory. Every earlier declared cutoff must fail, and one
-common cutoff must satisfy all objectives in the joint version. No monotonicity premise
-is needed.
+\section{Three-way interval decisions}
 
-This result governs a complete declared finite radius, support, or cutoff inventory.
-Continuum and asymptotic crossover claims require additional analytical results.
+Suppose an exact nonnegative quantity $q$ is enclosed by $[\ell,u]$ and the acceptance
+budget is $\tau$.  A sound upper-bound decision has three substantive cases:
 
-\section{Finite defect and loop algebra}
+\begin{enumerate}
+  \item \emph{accepted} when the interval is valid and $u\leq\tau$;
+  \item \emph{rejected} when the interval is valid and $\tau<\ell$; and
+  \item \emph{unresolved} when the valid interval overlaps the threshold.
+\end{enumerate}
 
-The rank-one resolvent family \decl{QM-RESOLVENT-THM-001--014} proves exact outer-product,
-determinant, Sherman--Morrison, secular-zero, kernel-vector, and Hermiticity results under
-explicit invertibility and denominator premises. A supplied secular root has exact
-consequences; root existence, uniqueness, monotonicity, and infinite-volume behavior are
-not proved.
+The unresolved case records that the supplied information does not decide the exact
+comparison.  Replacing it by acceptance or rejection would add information absent from
+the enclosure.
 
-The finite gauge-loop and projector--Bargmann declarations
-\decl{SS-GAUGE-THM-001--023} prove closed-product covariance, commutative invariance
-where applicable, Wilson-loop determinant invariance, rank-one projector identities,
-and the ordered projector-product/Bargmann-product crosswalk. Nonvanishing, Wilson-loop
-eigenphase invariance, phase unwrapping, Chern integrality, continuum topology, and
-Wannier obstruction are not established by those results.
+Malformed endpoint order is handled fail-closed: the checker classifies it as rejected.
+That classification is structural rather than substantive.  A malformed interval
+cannot contain an exact value, so no conclusion that the underlying quantity exceeds
+the budget follows without a separate containment premise.
+
+For the spectral--operator problem, joint acceptance requires both criteria to accept
+for the same candidate and all required operator channels to accept for the same
+alignment and support.  One substantively rejected objective is sufficient for joint
+rejection of that candidate.  Otherwise, any unresolved mandatory objective leaves the
+joint result unresolved.  Candidate-level rejection is not model-class infeasibility
+unless the candidate inventory is complete or a global separation theorem covers the
+class.
+
+\section{Selection over a finite model hierarchy}
+
+Let $J$ be the finite ordered inventory of tested model classes.  A class $j\in J$ is
+the first compatible class when
+\[
+  \operatorname{Compatible}(j)
+\]
+and every earlier declared class is incompatible.  The definition inspects the finite
+order directly and therefore requires no monotonicity assumption.
+
+This finite first-passage construction matches the model-selection question in the
+extended abstract: identify the smallest tested class supporting a common spectral and
+operator endpoint.  The word ``tested'' is essential.  The result is relative to the
+inventory $J$, its ordering, and the exact compatibility predicate.  It does not select
+the smallest member of every possible Hamiltonian family.
+
+If class inclusions and criterion conformity have been proved, feasibility may transfer
+forward through the hierarchy.  Without those proofs, the finite decision must check
+each class independently.  Likewise, the maximum of separately selected first-passing
+spectral and operator classes need not be a joint first-passing class unless a theorem
+shows that their witnesses can be made common.
+
+\section{Additional exact finite reductions}
+
+Two additional theorem families illustrate the same discipline.  For a rank-one
+perturbation of an invertible finite operator, determinant and Sherman--Morrison
+identities reduce the perturbed problem to a scalar secular factor.  A supplied exact
+zero gives a kernel vector under explicit invertibility and denominator hypotheses.
+The algebra does not prove existence or uniqueness of a root or convergence to an
+infinite-volume defect state.
+
+For finite gauge loops, an ordered product of link matrices transforms by conjugation at
+the base point.  Determinants are invariant under the supplied closed-loop gauge action,
+and rank-one projector products admit an exact Bargmann-product interpretation.  These
+identities do not establish continuum topology, global phase unwrapping, Chern
+integrality, or a Wannier obstruction.
+
+The governing principle is the same as for model adequacy: an exact finite result is
+indexed by its domain, hypotheses, comparison maps, and decision contract.  It gains no
+additional scientific scope merely by being machine checked.

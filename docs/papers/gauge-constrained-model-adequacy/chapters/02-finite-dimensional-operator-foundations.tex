@@ -34,9 +34,11 @@ mistaken for a change of model.
 
 The ten theorems in this chapter establish those finite identities without invoking
 periodicity, crystal momentum, Fourier transformation, or spatial locality. They form a
-representation-neutral foundation that can be reused for Bloch frames, trial subspaces,
-finite quantum systems, and other matrix reductions. The later Bloch chapter adds the
-extra structure carried by a momentum-indexed family of frames.
+representation-neutral foundation for the aligned operator criterion
+$\mathfrak A_{H,j}$ and can be reused for Bloch frames, trial subspaces, finite quantum
+systems, and other matrix reductions. They do not define the spectral admissible set or
+settle its intersection with the operator-admissible set. The later Bloch chapter adds
+the extra structure carried by a momentum-indexed family of frames.
 
 \section{Definitions and notation}
 
@@ -47,11 +49,11 @@ Let the ambient and retained Hilbert spaces be
   \mathcal H_{\mathrm{ret}}\cong\mathbb C^M,
   \qquad M\leq D.
 \]
-The Lean declarations use arbitrary finite index types rather than natural-number
-indices; $D$ and $M$ denote their cardinalities in the standard matrix notation used
-here.  The modeling notation assumes $M\leq D$, but the Lean definitions and theorem
-statements impose no separate cardinality inequality; exact frame orthonormality appears
-as an explicit equation wherever it is needed.  The symbol $\dagger$ denotes conjugate
+The results are stated for arbitrary finite index types rather than only for canonical
+natural-number indices; $D$ and $M$ denote their cardinalities in the standard matrix
+notation used here. The modeling notation assumes $M\leq D$, but the theorem statements
+impose no separate cardinality inequality; exact frame orthonormality appears as an
+explicit equation wherever it is needed.  The symbol $\dagger$ denotes conjugate
 transpose, and $I_D$ and $I_M$ denote the identity matrices on the ambient and retained
 spaces.
 
@@ -115,74 +117,9 @@ This is an exact hypothesis. It is not inferred from a floating-point tolerance.
 The operator $H$ is Hermitian when $H^\dagger=H$.
 \end{definition}
 
-\begin{remark}[Formal correspondence]
-In \modulepath{ProjectKoios/BandGauge/Alignment/FiniteFrame.lean}, the definitions above
-are named \decl{IsOrthonormalFrame}, \decl{frameProjector},
-\decl{rightUnitaryFrame}, \decl{compressOperator}, and
-\decl{reconstructCompressedOperator}. The prose proofs below explain the checked Lean
-theorems but do not replace their proof terms.
-\end{remark}
-
-\section{Relation to the research manuscript's finite-dimensional foundation}
-
-The working \texttt{ksdft2effmass} research manuscript uses the same representation-neutral
-objects in its finite-dimensional-foundations and projection-and-retained-spaces
-chapters. Table~\ref{tab:finite-manuscript-notation-bridge} records the notation bridge.
-
-\begin{table}[ht]
-\centering
-\small
-\begin{tabularx}{\textwidth}{@{}l X X@{}}
-\toprule
-This paper & Research manuscript & Common mathematical object \\
-\midrule
-$V$
-  & $V$
-  & $D\times M$ retained-frame embedding \\
-$|v_a\rangle$
-  & $|\phi_a\rangle$
-  & column $a$ of the retained frame \\
-$P_V=VV^\dagger$
-  & $P$ or $\widehat P_{\mathcal S}$
-  & ambient projector onto the retained subspace \\
-$C_V(H)=V^\dagger HV$
-  & $H_{\mathcal S}$
-  & operator matrix in retained coordinates \\
-$R_V(H)=VC_V(H)V^\dagger$
-  & $PHP$ embedded in the parent space
-  & reconstructed retained operator in ambient coordinates \\
-$V_G=VG$
-  & $V'=VG$
-  & right-unitary change of retained frame \\
-\bottomrule
-\end{tabularx}
-\caption{Representation-neutral notation bridge to the working research manuscript.}
-\label{tab:finite-manuscript-notation-bridge}
-\end{table}
-
-The theorem correspondence is likewise direct. Declarations
-\decl{BG-ALIGNMENT-THM-001}, \decl{BG-ALIGNMENT-THM-002},
-\decl{BG-ALIGNMENT-THM-009}, and \decl{BG-ALIGNMENT-THM-010} justify the projector
-properties used in the projection discussion. Declarations
-\decl{BG-ALIGNMENT-THM-003} and \decl{BG-ALIGNMENT-THM-004} justify right-unitary frame
-changes and projector invariance; \decl{BG-ALIGNMENT-THM-004} realizes the formula
-presented prospectively as \texttt{PRF-05.01}. Declaration
-\decl{BG-ALIGNMENT-THM-005} realizes compression covariance, presented prospectively as
-\texttt{PRF-05.02}. The remaining results establish Hermiticity of compression,
-projector-sandwich reconstruction, and reconstruction invariance.
-
-This bridge is editorial, not authoritative. It records notation observed in the clean
-\texttt{ksdft2effmass} worktree on branch
-\decl{work/monograph-representation-carriers-and-derivation-graphs} at commit
-\decl{e3d8a51b30e2072aa4bb116eb46389e342fc00fc}, principally in
-\modulepath{chapters/finite-dimensional-foundations.tex} and
-\modulepath{chapters/projection-and-retained-spaces.tex}. Those chapters supply the
-source notation for this bridge. The Lean declarations identified here fix the exact
-statements and proof status.
-
 \section{Finite-frame theorem sequence}
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-001}: Hermiticity of the frame operator]
+\begin{theorem}[Hermiticity of the frame operator]
 \label{thm:bg-alignment-001}
 For every finite complex frame $V\in\mathbb C^{D\times M}$,
 \[
@@ -207,7 +144,7 @@ type operator in the ambient space, whereas only an orthonormal frame makes that
 operator an orthogonal projector. The distinction prevents approximate normalization
 from being hidden inside a symmetry claim.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-002}: Idempotence of an orthonormal-frame projector]
+\begin{theorem}[Idempotence of an orthonormal-frame projector]
 \label{thm:bg-alignment-002}
 If $V^\dagger V=I_M$, then
 \[
@@ -233,7 +170,7 @@ question concerns which states are retained rather than how a basis for those st
 written. The theorem is also the point at which exact orthonormality becomes essential;
 without it, $VV^\dagger$ need not be a projector.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-003}: Orthonormality after a retained unitary]
+\begin{theorem}[Orthonormality after a retained unitary]
 \label{thm:bg-alignment-003}
 If $V^\dagger V=I_M$ and $G$ is unitary, then $V_G=VG$ is also an orthonormal frame:
 \[
@@ -257,7 +194,7 @@ return different orthonormal bases for the same retained subspace. This theorem 
 that such a mixing remains inside the class of admissible orthonormal frames. Smoothness,
 optimization, and physical selection enter only when a particular gauge is chosen.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-004}: Projector invariance under a retained unitary]
+\begin{theorem}[Projector invariance under a retained unitary]
 \label{thm:bg-alignment-004}
 For every frame $V$ and every retained-space unitary $G$,
 \[
@@ -282,7 +219,7 @@ This invariance is the basic reason that a subspace comparison should not penali
 pure retained-coordinate rotation. It also explains why projector agreement is weaker
 than entrywise agreement of compressed operators.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-005}: Covariance of operator compression]
+\begin{theorem}[Covariance of operator compression]
 \label{thm:bg-alignment-005}
 For every ambient operator $H$, frame $V$, and retained-space unitary $G$,
 \[
@@ -307,7 +244,7 @@ invariant information such as its characteristic polynomial is not. This covaria
 why operator comparisons must first place both reduced matrices in a common retained
 coordinate system. Selection of the aligning unitary $G$ is a separate problem.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-006}: Hermiticity of compression]
+\begin{theorem}[Hermiticity of compression]
 \label{thm:bg-alignment-006}
 If $H^\dagger=H$, then for every frame $V$,
 \[
@@ -332,7 +269,7 @@ Hermitian and can therefore be treated as a valid finite Hermitian eigenproblem.
 closure is algebraic. Spectral approximation and subspace adequacy require additional
 hypotheses.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-007}: Reconstruction is a projector sandwich]
+\begin{theorem}[Reconstruction is a projector sandwich]
 \label{thm:bg-alignment-007}
 For every frame $V$ and ambient operator $H$,
 \[
@@ -357,7 +294,7 @@ restriction to the chosen frame operator, rather than an unexplained smaller mat
 For an orthonormal frame this is the familiar projected operator $P_VHP_V$; the theorem
 itself carefully avoids assuming that $P_V$ is already idempotent.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-008}: Reconstruction invariance]
+\begin{theorem}[Reconstruction invariance]
 \label{thm:bg-alignment-008}
 For every frame $V$, retained-space unitary $G$, and ambient operator $H$,
 \[
@@ -381,7 +318,7 @@ alter representation but not the reconstructed reduced operator. It provides a
 basis-independent comparison object and guards against treating a similarity transform
 as a physical discrepancy.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-009}: The projector fixes its frame]
+\begin{theorem}[The projector fixes its frame]
 \label{thm:bg-alignment-009}
 If $V^\dagger V=I_M$, then
 \[
@@ -401,7 +338,7 @@ ambient projection leaves the represented retained states unchanged, a basic
 consistency condition for interpreting those columns as the range of $P_V$. On the orthogonal
 complement, the projector acts as zero rather than as the ambient identity.
 
-\begin{theorem}[\texttt{BG-ALIGNMENT-THM-010}: Compression of the retained projector]
+\begin{theorem}[Compression of the retained projector]
 \label{thm:bg-alignment-010}
 If $V^\dagger V=I_M$, then the compression of $P_V$ is the retained identity:
 \[
