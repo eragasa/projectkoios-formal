@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`71d078d36b361fced70595d95bc987a73f7e93f1`, tree
-`8d2ea1a81b222b34ba77accb60dddda17ac83d91`, integrating PR #28.
+`c4ef5f33543225849fcd07606d5d4d4a3f258dc4`, tree
+`f38d62af57ea678fc47f3aa2df4e6f4de4d6d10d`, integrating PR #30.
 
 ## Mission
 
@@ -69,12 +69,8 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One documentation effort occupies the WIP limit: publication-facing proof dossiers for the
-centered-even singleton complement, symmetric ordinary-support inclusion, explicit removed-term
-reconstruction, and normalized removed-block power (`BG-FOURIER-THM-081`, `084`, `086`, and
-`087`). The dossiers explain already merged exact propositions and do not bind runtime arrays,
-create a certificate, or establish numerical, scientific, novelty, or publication status. No
-mathematical, certificate, runtime-evidence, trust, or maintenance effort is active.
+No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
+effort currently occupies the WIP limit.
 
 ## Ready
 
@@ -167,7 +163,10 @@ These items are merged Formal content only.
   `ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5`, tree
   `7bb5e3c2f4d7fa452b51e4e567738dd7f208d297`; it supplies no NumPy FFT/`fftshift`
   binding, binary64 identity, retained execution, runtime certificate, or scientific-validation
-  claim.
+  claim. Human-readable proof dossiers for `BG-FOURIER-THM-081`, `084`, `086`, and `087` merged
+  through PR #30 at commit `c4ef5f33543225849fcd07606d5d4d4a3f258dc4`, tree
+  `f38d62af57ea678fc47f3aa2df4e6f4de4d6d10d`; they explain the checked propositions but do not
+  replace Lean or establish independent expert review, novelty, or publication readiness.
 - The Formal-owned spectral--operator compatibility proof companion, initially merged at
   `ca00a56b2462d00a67dd830742c2c27eef4c34cd` and refreshed at
   `b998c09550161193e8edbe3aeaa9d93d183693fa` with the finite compatibility schema; its
