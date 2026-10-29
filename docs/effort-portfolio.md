@@ -21,7 +21,7 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit `09888f1061cdb675b9797bacd8aaca87a450bec1`.
+Current board baseline: remote `main` merge commit `ca00a56b2462d00a67dd830742c2c27eef4c34cd`.
 
 ## Mission
 
@@ -67,44 +67,36 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One maintenance effort occupies the current WIP limit. No mathematical or certificate
-effort is active while the validated finite maximum-tail candidate awaits separately
-authorized promotion.
+One mathematical effort occupies the current WIP limit. No certificate bridge or runtime
+evidence promotion is active.
 
-### KSD boundary and portfolio maintenance
+### Generic finite compatibility schema
 
-This is the active maintenance effort.
+This is the active mathematical effort in isolated branch
+`work/finite-compatibility-schema`, based on remote `main` merge
+`ca00a56b2462d00a67dd830742c2c27eef4c34cd`.
 
-- Track the Periodic1D rank-one work as an external uncommitted implementation, not a
-  Formal certificate, immutable source binding, or numerical result.
-- Keep the seven-paper planning boundary synchronized at the level of effort categories;
-  detailed numerical controls and source hashes remain with the owner and source ledgers.
-- Update the source-specific crosswalk only after KSD supplies an immutable reviewed
-  revision and an exact proposition-specific request/result contract.
+- Formalize finite model and candidate inventories with separate spectral and aligned-
+  operator losses and budgets.
+- Define central compatibility with one common candidate, a nonempty alignment family, and
+  an alignment-infimum operator criterion.
+- Keep that raw infimum passage distinct from the stronger predicate requiring explicit
+  attainment and one alignment witness across every mandatory operator channel.
+- Transfer feasibility only through explicit conformant model embeddings.
+- Connect literal admissible-set intersection, positive separation, and first-compatible-
+  class selection without claiming global minimality or external inventory coverage.
 
-The current KSD rank-one owner is observed on branch
-`work/periodic1d-rank1-control-v3` at base
-`bc1601f3a50dda19b994eea474ca522f2d836c26` with uncommitted typed configuration,
-result, analyzer, independent-verification, authenticated-visualization, direct-script,
-test, and documentation work. A final bounded Formal-boundary rereview on 2026-10-28
-found no blocking finding for the frozen finite calculate, independently verify, and
-authenticated render software slice or its provisional non-retained technical report.
-The rereview reproduced exact configured evaluation coordinates, 725 passing named
-comparisons, and the closed two-figure render inventory. This software review does not
-establish an immutable source identity, retained numerical evidence, scientific
-validation, or a Formal proposition. No retained execution, immutable owner revision, or
-Formal request/result wire exists.
+This effort is generic exact mathematics. It creates no KSD runtime certificate,
+scientific-adequacy theorem, retained numerical evidence, or publication claim.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Complete PR #17 candidate-tree revalidation and actionable rereview, then merge only
-   with separate authorization. The exact Lean results remain independent of KSD runtime
-   data and require no new theorem work for the current scalar rank-one implementation.
-2. Update the Formal proof companion from the merged gauge--truncation declaration.
-3. Resume the Paper A diagnostic owner-side schema recommendation only when it does not
-   displace the active maintenance effort.
+1. Complete source, manifest, axiom, and audit review of the finite compatibility schema.
+2. Request separate authorization before creating a checkpoint commit, push, PR, or merge.
+3. Expand aligned-difference and alignment-family proof dossiers only after the schema
+   boundary is stable and the work remains within the WIP limit.
 
 ## Blocked
 
@@ -160,6 +152,9 @@ These items are merged Formal content only.
 - Finite three-channel residual identity with pointwise, maximum, and root-mean-square
   triangle bounds and exact deliberate-truncation Fourier-tail bridges.
 - Exact Hilbert and explicit matrix-Frobenius root-mean-square Fourier-tail identities.
+- Pointwise and finite-maximum ambient-norm omitted-tail bounds.
+- The Formal-owned spectral--operator compatibility proof companion, merged as documentation
+  at `ca00a56b2462d00a67dd830742c2c27eef4c34cd`.
 - Complete named axiom coverage for manifest rows marked proved.
 
 Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.
