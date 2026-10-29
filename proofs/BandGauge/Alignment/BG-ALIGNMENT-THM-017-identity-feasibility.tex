@@ -2,8 +2,53 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Identity Alignment Feasibility}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}ID \texttt{BG-ALIGNMENT-THM-017}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Alignment.alignmentFeasible_identity_iff}.
-\section{Statement and proof}Identity-family feasibility is exactly acceptance of the constant identity alignment, by the singleton-family characterization.
-\section{Boundary}No nonidentity alignment is tested and no adequacy follows without an authoritative acceptance predicate. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Identity-Family Feasibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-ALIGNMENT-THM-017}; status \texttt{proved; no admissions}.  Lean declaration
+\path{ProjectKoios.BandGauge.Alignment.alignmentFeasible_identity_iff} in
+\path{ProjectKoios/BandGauge/Alignment/Family.lean}.
+
+\section{Exact mathematical statement}
+Feasibility in the identity-only family is equivalent to acceptance of the constant identity alignment field.
+
+\section{Assumptions and conventions}
+Reference and candidate fibers are the same Hilbert space.  The acceptance predicate remains arbitrary.
+
+\section{Mathematical argument}
+The identity family is definitionally the singleton containing the identity alignment field.  Specializing the singleton-feasibility theorem yields the equivalence directly.
+
+\section{Lean realization}
+The Lean proof follows the mathematical argument directly using the definitions and the
+previously proved helper declarations in the same module family.  The declaration was checked
+with Lean \texttt{4.35.0} and Mathlib commit \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite mathematics at Formal merge
+\texttt{d9fe61eba430fd2c101dc53d85a2e0978254a718}.  No external manuscript controls the Lean statement, and no priority or
+novelty claim is made for the underlying algebra or set theory.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom.  The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+Passing this criterion tests one prescribed alignment only.  It must not be presented as feasibility over global or pointwise gauge freedom.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest.  Kernel checking
+establishes the exact proposition only.  No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}

@@ -46,13 +46,18 @@ deliberate-truncation leg after a support has been declared.
 
 The geometry and decision theorems address the outer compatibility layer.  Closed-ball,
 rank-two ellipse, and rectangle families provide exact intersection and separation
-criteria under explicit hypotheses.  Certificate soundness translates accepted finite
-data into those propositions.  Three-way intervals preserve threshold overlap as
-unresolved, and first-passage logic selects an earliest passing element of a complete
+criteria under explicit hypotheses.  The generic finite compatibility schema now
+packages model and candidate inventories, central infimum-based compatibility, stronger
+common-alignment witness compatibility, explicit conformant model embeddings, metric
+separation, and first-compatible selection.  Certificate soundness translates accepted
+finite data into narrower propositions.  Three-way intervals preserve threshold overlap
+as unresolved, and first-passage logic selects an earliest passing element of a complete
 finite inventory without assuming monotonicity.
 
 Together these results form a substantial reusable basis for the ICMSEP problem.  They
-do not yet amount to an end-to-end theorem for the proposed silicon study.
+still do not amount to an end-to-end theorem for the proposed silicon study because no
+application-specific losses, inventories, tolerances, embeddings, channel predicates, or
+retained certificate are supplied.
 
 \section{Development of the error-channel program}
 \label{sec:seven-paper-error-channel-development}
@@ -104,20 +109,27 @@ from this synthesis.
 \section{Current mechanization boundary}
 
 The current Formal snapshot proves the component theorem families listed in
-Appendix~\ref{app:formal-crosswalk}.  It does not currently package the entire adequacy
-study as one generic object containing all of the following:
+Appendix~\ref{app:formal-crosswalk} and packages their outer finite logic in
+\decl{FiniteCompatibilitySchema}.  That schema contains finite model and candidate
+inventories, spectral and aligned-operator losses and budgets, alignment families,
+mandatory channel predicates, central and witness compatibility, conformant embeddings,
+metric separation, and first-compatible selection.
+
+The snapshot does not instantiate that schema with the scientific data required by the
+proposed study.  It still lacks:
 
 \begin{itemize}
-  \item a finite ordered hierarchy of model classes and explicit inclusion maps;
-  \item a candidate parameterization for each class;
-  \item a spectral loss tied to the selected observables;
-  \item an aligned operator loss with its weights, supports, alignment family, and any
-        mandatory conformant residual channels;
-  \item exact spectral and operator tolerances and any separate map tolerance;
-  \item compactness, finiteness, or coverage premises needed for global conclusions;
-  \item a common-witness compatibility predicate;
-  \item a separation certificate for the full admissible sets; and
-  \item a first-compatible-class theorem instantiated with proposition-specific data.
+  \item a frozen application-specific model inventory and its external-coverage claim;
+  \item candidate maps tying exact schema values to the intended Hamiltonians;
+  \item spectral observables, aligned operator losses, weights, supports, and tolerances
+        selected and justified for the application;
+  \item proposition-specific channel predicates binding one common support, alignment,
+        intermediate field, sign convention, and evaluation inventory;
+  \item checked conformant embeddings between the concrete model classes;
+  \item compactness, closedness, or direct finite geometry needed for any converse from
+        zero separation to intersection;
+  \item a certificate covering the complete declared admissible sets; and
+  \item retained exact or outward-rounded data satisfying that certificate contract.
 \end{itemize}
 
 Nor does the snapshot contain a retained runtime certificate for a bulk-silicon DFT or
@@ -125,30 +137,32 @@ Wannier calculation.  The current checked-certificate count at that external bou
 is zero.  The proposed first-principles parent, numerical fitting, withheld validation,
 and material interpretation remain outside the formal result.
 
-This boundary is not a defect in the component proofs.  It records the remaining work
-needed to turn a theorem library into a proposition-specific adequacy decision.
+This boundary is not a defect in the generic schema.  It records the remaining work
+needed to instantiate exact finite logic as a proposition-specific adequacy decision.
 
 \section{Priority open finite problems}
 
 The following extensions are ordered by their relationship to the central compatibility
 question.
 
-\begin{openproblem}[End-to-end finite adequacy schema]
-Define a generic finite structure containing a candidate inventory or parameter domain,
-spectral and aligned-operator losses, tolerances, alignment family, and common-witness
-compatibility predicate.  Prove that membership in both admissible sets is equivalent to
-the fully expanded joint witness under explicit attainment hypotheses.
+\begin{openproblem}[Proposition-specific schema instantiation]
+Instantiate the generic finite compatibility schema with one frozen model inventory,
+exact candidate representation, spectral and aligned-operator losses, finite budgets,
+alignment families, and mandatory conformant channel predicates.  Bind the application
+objects to the intended Hamiltonians without importing runtime authority into Lean.
 \end{openproblem}
 
-This theorem should preserve the distinction between an infimum and an attained
-alignment minimum and should not assume that runtime optimization found the global
-minimum.
+The instantiation must preserve the distinction between the central infimum criterion
+and the stronger common-alignment witness predicate.  It must not assume that runtime
+optimization found a global minimum or that nominal model nesting supplies a conformant
+embedding.
 
-\begin{openproblem}[Conformant model-hierarchy transfer]
-State sufficient conditions under which inclusion
-$\mathfrak M_j\subseteq\mathfrak M_{j'}$ transfers compatibility forward.  The theorem
-must include conformity of the candidate embedding, losses, tolerances, supports, and
-alignment families rather than relying on the word ``nested.''
+\begin{openproblem}[Heterogeneous model carriers]
+The first generic schema uses one shared candidate carrier and one shared alignment
+carrier across model classes.  Develop a dependent or explicitly transported extension
+only if a concrete consumer cannot use a reviewed common carrier.  Any such extension
+must retain the current common-candidate, attainment, channel-conformance, and embedding
+boundaries.
 \end{openproblem}
 
 \begin{openproblem}[General attained separation]

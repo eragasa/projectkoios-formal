@@ -2,9 +2,56 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Aligned Operator-Difference Recovery}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}
-ID \texttt{BG-BLOCH-THM-019}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_add_alignedOperatorField}.
-\section{Statement and proof}Adding the pulled-back candidate field to the aligned difference exactly recovers the reference field. The generic operator-difference recovery theorem applies directly.
-\section{Boundary}This is an exact algebraic identity, not an inverse-solver or data-recovery claim. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Recovery from the Aligned Difference}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-BLOCH-THM-019}; status \texttt{proved; no admissions}.  Lean declaration
+\path{ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_add_alignedOperatorField} in
+\path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean}.
+
+\section{Exact mathematical statement}
+Adding the pulled-back candidate field to the aligned difference recovers the reference field exactly:
+\[
+  \Delta_C+H_{\mathrm{cand}}^{C}=H_{\mathrm{ref}}.
+\]
+
+\section{Assumptions and conventions}
+Only the supplied alignment and the two operator fields are required.  No sewing or norm assumption enters this additive identity.
+
+\section{Mathematical argument}
+The aligned difference is defined as the generic difference between the reference and pulled-back candidate fields.  The additive-group identity $(A-B)+B=A$ applies pointwise to continuous linear maps.  The theorem therefore reuses the generic recovery lemma with the aligned candidate as its second field.
+
+\section{Lean realization}
+The Lean proof follows the mathematical argument directly using the definitions and the
+previously proved helper declarations in the same module family.  The declaration was checked
+with Lean \texttt{4.35.0} and Mathlib commit \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite mathematics at Formal merge
+\texttt{d9fe61eba430fd2c101dc53d85a2e0978254a718}.  No external manuscript controls the Lean statement, and no priority or
+novelty claim is made for the underlying algebra or set theory.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom.  The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+The exact field identity does not imply additivity of norms or scalar error summaries.  It also does not validate any numerical construction of the fields.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest.  Kernel checking
+establishes the exact proposition only.  No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}

@@ -21,7 +21,7 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit `ca00a56b2462d00a67dd830742c2c27eef4c34cd`.
+Current board baseline: remote `main` merge commit `d9fe61eba430fd2c101dc53d85a2e0978254a718`.
 
 ## Mission
 
@@ -67,36 +67,37 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort occupies the current WIP limit. No certificate bridge or runtime
-evidence promotion is active.
+One documentation and maintenance effort occupies the current WIP limit. No mathematical
+or certificate effort and no runtime evidence promotion is active.
 
-### Generic finite compatibility schema
+### Finite-compatibility companion integration
 
-This is the active mathematical effort in isolated branch
-`work/finite-compatibility-schema`, based on remote `main` merge
-`ca00a56b2462d00a67dd830742c2c27eef4c34cd`.
+This is the active maintenance effort in isolated branch
+`work/finite-compatibility-companion-integration`, based on remote `main` merge
+`d9fe61eba430fd2c101dc53d85a2e0978254a718`.
 
-- Formalize finite model and candidate inventories with separate spectral and aligned-
-  operator losses and budgets.
-- Define central compatibility with one common candidate, a nonempty alignment family, and
-  an alignment-infimum operator criterion.
-- Keep that raw infimum passage distinct from the stronger predicate requiring explicit
-  attainment and one alignment witness across every mandatory operator channel.
-- Transfer feasibility only through explicit conformant model embeddings.
-- Connect literal admissible-set intersection, positive separation, and first-compatible-
-  class selection without claiming global minimality or external inventory coverage.
+- Refresh the proof companion from its historical theorem snapshot to the merge containing
+  the generic finite compatibility schema.
+- Crosswalk central infimum-based compatibility, stronger common-alignment witness
+  compatibility, conformant embeddings, separation, and first-compatible selection.
+- Replace the now-closed generic-schema open problems with proposition-specific
+  instantiation and heterogeneous-carrier obligations.
+- Expand only the aligned-difference and alignment-family dossiers directly supporting
+  the operator and compatibility criteria.
 
-This effort is generic exact mathematics. It creates no KSD runtime certificate,
-scientific-adequacy theorem, retained numerical evidence, or publication claim.
+This effort changes exposition, provenance, and dossier detail only. It creates no new Lean
+theorem, KSD runtime certificate, retained numerical evidence, scientific-adequacy result,
+or publication claim. Source-to-prose, declaration-name, hash, audit, LaTeX, and ocular
+artifact validation is complete for the uncommitted candidate.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Complete source, manifest, axiom, and audit review of the finite compatibility schema.
-2. Request separate authorization before creating a checkpoint commit, push, PR, or merge.
-3. Expand aligned-difference and alignment-family proof dossiers only after the schema
-   boundary is stable and the work remains within the WIP limit.
+1. Create one documentation-only checkpoint commit only after separate authorization.
+2. Treat push, PR, rereview, merge, and cleanup as further separate authorization gates.
+3. Resume proposition-specific schema design only after KSD supplies a frozen exact or
+   outward-rounded request/result contract.
 
 ## Blocked
 
@@ -147,6 +148,9 @@ These items are merged Formal content only.
 - Gauge loops and projector--Bargmann crosswalk.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.
 - Finite first-passing cutoff semantics.
+- Generic finite spectral--operator compatibility with central infimum semantics, stronger
+  common-alignment witness semantics, explicit conformant embeddings, metric separation,
+  and first-compatible-class selection.
 - Three-way interval threshold, joint-feasibility, and first-passing certificates.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
 - Finite three-channel residual identity with pointwise, maximum, and root-mean-square

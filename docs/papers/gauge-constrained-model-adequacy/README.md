@@ -40,11 +40,14 @@ intersection problem. The checked foundation supports:
    truncation leg;
 6. exact admissible-set geometries, certificate soundness, and three-way interval
    decisions; and
-7. first-passing selection over one declared finite inventory.
+7. first-passing selection over one declared finite inventory; and
+8. a generic finite compatibility schema separating central infimum-based compatibility
+   from stronger common-alignment witness compatibility, with explicit conformant model
+   embeddings and first-compatible selection.
 
-The current theorem basis does not yet package the complete ICMSEP study as one
-end-to-end Lean proposition, and it contains no retained bulk-silicon runtime
-certificate.
+The current theorem basis packages the generic exact finite logic but does not instantiate
+the complete ICMSEP study as one proposition-specific Lean theorem, and it contains no
+retained bulk-silicon runtime certificate.
 
 ## Editorial architecture
 
@@ -85,8 +88,8 @@ conventions, declaration identities, and nonclaims recorded here.
 ## Snapshot boundary
 
 The current theorem basis is Formal merge commit
-`b56d6b8e7005515220e6c9bf42851acccb023178`, tree
-`a94b113d3300ff8e692f295da82945f48fb7d6ed`. The companion must be refreshed or
+`d9fe61eba430fd2c101dc53d85a2e0978254a718`, tree
+`f3ee73362038af9d06e736e85721c2fc55d25c6a`. The companion must be refreshed or
 explicitly marked historical after relevant theorem statements, toolchain pins, or
 manifest status change.
 
@@ -96,10 +99,12 @@ transfer into Formal proof status.
 
 ## Remaining publication-facing work
 
-- formalize the end-to-end finite compatibility schema and its model-hierarchy binding;
-- instantiate proposition-specific spectral and operator losses only after their source
-  contracts are frozen;
-- expand selected aligned-difference and alignment-family arguments where useful;
+- instantiate the generic finite compatibility schema with proposition-specific spectral
+  and operator losses only after their source contracts are frozen;
+- bind a concrete model hierarchy through reviewed conformant embeddings and a complete
+  declared inventory;
+- obtain independent review of the expanded aligned-difference and alignment-family
+  dossiers;
 - complete prior-art and novelty review;
 - add an independently checked bibliography;
 - obtain independent mathematical and artifact review; and

@@ -273,6 +273,14 @@ Declaration range & Principal source & Scope represented in Chapter~\ref{ch:redu
 \decl{BG-DECISION-THM-014--016}
   & \modulepath{ProjectKoios/BandGauge/Decision/FiniteCutoff.lean}
   & first passing and first joint-passing semantics on a finite inventory \\
+\decl{BG-DECISION-DEF-012--027}
+  & \modulepath{ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean}
+  & finite model/candidate inventories, infimum and witness compatibility, mandatory
+    channels, conformant embeddings, metric separation, and first-compatible selection \\
+\decl{BG-DECISION-THM-017--033}
+  & \modulepath{ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean}
+  & infimum/attainment bridges, common-candidate and common-alignment semantics,
+    compatibility transfer, separation, and finite first-compatible theorems \\
 \decl{QM-RESOLVENT-THM-001--014}
   & \modulepath{ProjectKoios/QuantumMechanics/FiniteDimensional/RankOneResolvent.lean}
   & exact rank-one resolvent, determinant, secular, kernel, and Hermiticity identities \\
@@ -290,16 +298,18 @@ Declaration range & Principal source & Scope represented in Chapter~\ref{ch:redu
 \end{table}
 \FloatBarrier
 
-These declarations supply components of the spectral--operator compatibility argument.
-No declaration in the pinned snapshot packages the complete ICMSEP model hierarchy,
-both application-specific losses, the alignment optimization, admissible-set
-intersection or separation, and first-compatible-class selection into one end-to-end
-proposition.  Chapter~\ref{ch:mechanization-status} records that assembly as open.
+These declarations now package the generic finite spectral--operator compatibility
+logic, including alignment-infimum and stronger common-witness semantics, explicit
+model embeddings, separation, and first-compatible selection.  No declaration in the
+pinned snapshot instantiates the schema with the complete ICMSEP model hierarchy,
+application-specific losses, tolerances, supports, channel contracts, or retained
+certificate.  Chapter~\ref{ch:mechanization-status} records that proposition-specific
+assembly as open.
 
 \section{Mechanization status at the pinned snapshot}
 
 The theorem manifest is the authoritative declaration inventory. At the pinned snapshot,
-the repository audit covers 620 proved theorem or lemma rows and 624 unique named axiom
+the repository audit covers 637 proved theorem or lemma rows and 641 unique named axiom
 reports. The repository-owned Lean sources contain no \texttt{sorry}, \texttt{admit}, or
 repository-owned \texttt{axiom} declaration. Individual reports may include the standard
 foundational dependencies \texttt{propext}, \texttt{Classical.choice}, and
