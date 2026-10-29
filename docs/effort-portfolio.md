@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5`, tree
-`7bb5e3c2f4d7fa452b51e4e567738dd7f208d297`, integrating PR #26.
+`71d078d36b361fced70595d95bc987a73f7e93f1`, tree
+`8d2ea1a81b222b34ba77accb60dddda17ac83d91`, integrating PR #28.
 
 ## Mission
 
@@ -69,11 +69,8 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort occupies the WIP limit: pointwise self-adjointness closure for ordinary
-and aligned reference-minus-candidate continuous-linear-map fields under explicit complete-space
-and pointwise self-adjointness hypotheses. It does not choose an alignment, authenticate runtime
-operators, or establish spectral or numerical adequacy. No certificate, runtime-evidence, trust,
-documentation, or maintenance effort is active.
+No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
+effort currently occupies the WIP limit.
 
 ## Ready
 
@@ -93,8 +90,14 @@ Blocked work lacks a required source or evidence gate.
   revision, retained hashes, a proposition-specific exact or outward-rounded schema, and
   joint schema review. The passing uncommitted finite software slice and provisional
   report are not an immutable Formal source binding or a checked certificate.
-- KSD Periodic1D rank-two and rank-N certificate bindings pending stable successor wires,
-  independently verified results, and retained finite objective inventories.
+- KSD Periodic1D rank-two and rank-N certificate bindings pending a frozen proposition-specific
+  exact or outward-rounded request/result contract, separate review, separate implementation
+  authorization, independently verified results, and retained finite objective inventories. The
+  two-notification coordination requirement is complete for the native Phase 5 first slice at KSD
+  revision `806ecb0418fd9ec4da76d7caf826e4d9356322f5`, tree
+  `37a173ed220b81394706e0af3c76f279ca6f1b3c`, but that binary64 transport/status API is not a
+  Formal certificate input; no parser or runtime binding is authorized, and the checked
+  runtime-certificate count remains zero.
 - Projection/nonlocality promotion pending provenance, dossier, spectral-characterization, and status fixes.
 - Paper A retained runtime certificate and active package.
 - Paper B retained production evidence and exhaustive checked table.
@@ -128,7 +131,12 @@ These items are merged Formal content only.
 - Pointwise-gauge and Fourier boundaries.
 - Exact rank-two gauge--truncation noncommutation witness.
 - Finite orthonormal-frame algebra.
-- Sewn aligned-operator differences.
+- Sewn aligned-operator differences, including pointwise self-adjointness closure for ordinary
+  subtraction, unitary pullback, and reference-minus-pulled-back-candidate fields under complete
+  fiber-space and explicit pointwise self-adjointness hypotheses. The closure merged through PR #28
+  at commit `71d078d36b361fced70595d95bc987a73f7e93f1`, tree
+  `8d2ea1a81b222b34ba77accb60dddda17ac83d91`; it does not select an alignment, authenticate
+  runtime operators, or establish spectral or numerical adequacy.
 - Admissible alignment-family semantics.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
