@@ -21,7 +21,9 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit `1078380fb608269a8094c7e86776a1c0d826333a`.
+Current board baseline: remote `main` merge commit
+`db403cd95893766c010cb85a43bf21ca59524f1f`, tree
+`47ffab7ffe3c26abb23301c7179aed1088c997cf`, integrating PR #24.
 
 ## Mission
 
@@ -67,12 +69,8 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort occupies the WIP limit: finite compatibility separation and
-attainment. It adds compact-set distance attainment and zero/positive separation
-converses, then specializes them to the finite candidate inventory so that nonempty
-central admissible sets have attained distance, zero distance exactly for compatibility,
-and positive distance exactly for incompatibility. No certificate, runtime evidence,
-trust, documentation, or maintenance effort is active.
+No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
+effort currently occupies the WIP limit.
 
 ## Ready
 
@@ -135,7 +133,12 @@ These items are merged Formal content only.
 - Finite first-passing cutoff semantics.
 - Generic finite spectral--operator compatibility with central infimum semantics, stronger
   common-alignment witness semantics, explicit conformant embeddings, metric separation,
-  and first-compatible-class selection.
+  and first-compatible-class selection; its finite-separation extension proves compact
+  nonempty-set distance attainment and specializes finite central admissible sets to
+  attained distance under nonemptiness, zero distance exactly for compatibility, and
+  positive distance exactly for incompatibility. The extension merged through PR #24 at
+  commit `db403cd95893766c010cb85a43bf21ca59524f1f`, tree
+  `47ffab7ffe3c26abb23301c7179aed1088c997cf`.
 - Three-way interval threshold, joint-feasibility, and first-passing certificates.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
 - Finite three-channel residual identity with pointwise, maximum, and root-mean-square
