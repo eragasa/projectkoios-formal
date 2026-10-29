@@ -2,9 +2,65 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Vanishing Operator Difference}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}
-ID \texttt{BG-BLOCH-THM-016}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_eq_zero_iff}.
-\section{Statement and proof}The reference-minus-candidate field is zero exactly when the two exact fields are extensionally equal. The proof applies function extensionality and the additive zero-difference criterion.
-\section{Boundary}No floating-point tolerance or runtime equality is represented. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Zero Criterion for Operator Differences}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-BLOCH-THM-016}; status \texttt{proved; no admissions}. Lean declaration
+\path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_eq_zero_iff} in
+\path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean}.
+
+\section{Exact mathematical statement}
+The declared reference-minus-candidate field vanishes exactly when the two operator fields are
+equal:
+\[
+  \operatorname{Diff}(H_{\mathrm{ref}},H_{\mathrm{cand}})=0
+  \quad\Longleftrightarrow\quad
+  H_{\mathrm{ref}}=H_{\mathrm{cand}}.
+\]
+
+\section{Assumptions and conventions}
+Both fields act on the same complex fiber. Equality and zero are exact function and
+continuous-linear-map equalities, not tolerance-level numerical predicates.
+
+\section{Mathematical argument}
+For the forward direction, evaluate the zero-field equality at each point. The resulting
+continuous-linear-map equality says the pointwise difference is zero, so
+$H_{\mathrm{ref}}(k)=H_{\mathrm{cand}}(k)$. Function extensionality gives field equality. For
+the reverse direction, substitute equal fields; every pointwise self-difference is zero.
+
+\section{Lean realization}
+The forward proof uses \texttt{congrFun}, simplifies the zero function evaluation, and applies
+\texttt{sub\_eq\_zero.mp}; the reverse proof substitutes and simplifies. It was checked with Lean
+\texttt{4.35.0} and Mathlib commit
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite additive algebra at Formal merge
+\texttt{b998c09550161193e8edbe3aeaa9d93d183693fa}. No external manuscript controls the Lean
+statement, and no priority or novelty claim is made.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom. The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+Exact equality is not a positive-tolerance fit, spectral match, runtime comparison, or scientific
+adequacy decision.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest. Kernel checking
+establishes the exact proposition only. No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}

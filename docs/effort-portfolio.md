@@ -21,7 +21,7 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit `d9fe61eba430fd2c101dc53d85a2e0978254a718`.
+Current board baseline: remote `main` merge commit `b998c09550161193e8edbe3aeaa9d93d183693fa`.
 
 ## Mission
 
@@ -67,37 +67,18 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One documentation and maintenance effort occupies the current WIP limit. No mathematical
-or certificate effort and no runtime evidence promotion is active.
-
-### Finite-compatibility companion integration
-
-This is the active maintenance effort in isolated branch
-`work/finite-compatibility-companion-integration`, based on remote `main` merge
-`d9fe61eba430fd2c101dc53d85a2e0978254a718`.
-
-- Refresh the proof companion from its historical theorem snapshot to the merge containing
-  the generic finite compatibility schema.
-- Crosswalk central infimum-based compatibility, stronger common-alignment witness
-  compatibility, conformant embeddings, separation, and first-compatible selection.
-- Replace the now-closed generic-schema open problems with proposition-specific
-  instantiation and heterogeneous-carrier obligations.
-- Expand only the aligned-difference and alignment-family dossiers directly supporting
-  the operator and compatibility criteria.
-
-This effort changes exposition, provenance, and dossier detail only. It creates no new Lean
-theorem, KSD runtime certificate, retained numerical evidence, scientific-adequacy result,
-or publication claim. Source-to-prose, declaration-name, hash, audit, LaTeX, and ocular
-artifact validation is complete for the uncommitted candidate.
+No mathematical, certificate, trust, documentation, or maintenance effort currently
+occupies the WIP limit. No runtime evidence promotion is active.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Create one documentation-only checkpoint commit only after separate authorization.
-2. Treat push, PR, rereview, merge, and cleanup as further separate authorization gates.
-3. Resume proposition-specific schema design only after KSD supplies a frozen exact or
+1. Conduct a citation-gap and provenance-audited bibliography tranche for the proof
+   companion only after separate scope authorization.
+2. Resume proposition-specific schema design only after KSD supplies a frozen exact or
    outward-rounded request/result contract.
+3. Treat commits, pushes, PRs, merges, and cleanup as separate authorization gates.
 
 ## Blocked
 
@@ -157,8 +138,11 @@ These items are merged Formal content only.
   triangle bounds and exact deliberate-truncation Fourier-tail bridges.
 - Exact Hilbert and explicit matrix-Frobenius root-mean-square Fourier-tail identities.
 - Pointwise and finite-maximum ambient-norm omitted-tail bounds.
-- The Formal-owned spectral--operator compatibility proof companion, merged as documentation
-  at `ca00a56b2462d00a67dd830742c2c27eef4c34cd`.
+- The Formal-owned spectral--operator compatibility proof companion, initially merged at
+  `ca00a56b2462d00a67dd830742c2c27eef4c34cd` and refreshed at
+  `b998c09550161193e8edbe3aeaa9d93d183693fa` with the finite compatibility schema; its
+  directly supporting aligned-difference dossiers `BG-BLOCH-THM-012--020` and
+  alignment-family dossiers `BG-ALIGNMENT-THM-011--029` now carry expanded proof records.
 - Complete named axiom coverage for manifest rows marked proved.
 
 Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.

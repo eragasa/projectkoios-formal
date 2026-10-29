@@ -2,9 +2,61 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Operator-Difference Recovery}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}
-ID \texttt{BG-BLOCH-THM-015}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_add_right}.
-\section{Statement and proof}Adding the candidate field to reference minus candidate recovers the reference field. The proof is pointwise additive cancellation.
-\section{Boundary}This is exact field equality, not a numerical reconstruction test. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Recovery from an Operator Difference}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-BLOCH-THM-015}; status \texttt{proved; no admissions}. Lean declaration
+\path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_add_right} in
+\path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean}.
+
+\section{Exact mathematical statement}
+Adding the candidate field to the reference-minus-candidate difference recovers the reference
+field exactly:
+\[
+  \operatorname{Diff}(H_{\mathrm{ref}},H_{\mathrm{cand}})
+  +H_{\mathrm{cand}}=H_{\mathrm{ref}}.
+\]
+
+\section{Assumptions and conventions}
+Both fields act on the same complex fiber. No sewing, norm, self-adjointness, or invertibility
+premise is required.
+
+\section{Mathematical argument}
+The identity is pointwise $(a-b)+b=a$ in the additive group of continuous linear maps. Apply it
+at every point and use function extensionality to conclude equality of the operator fields.
+
+\section{Lean realization}
+The proof applies function extensionality, unfolds the declared difference, and lets
+simplification close the additive identity. It was checked with Lean \texttt{4.35.0} and Mathlib
+commit \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite additive algebra at Formal merge
+\texttt{b998c09550161193e8edbe3aeaa9d93d183693fa}. No external manuscript controls the Lean
+statement, and no priority or novelty claim is made.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom. The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+This is algebraic recovery from a defined difference, not recovery of missing runtime data or an
+inverse-problem result. It does not imply additivity of norms or scalar error summaries.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest. Kernel checking
+establishes the exact proposition only. No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}

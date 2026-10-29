@@ -2,9 +2,61 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Reversing an Operator Difference}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}
-ID \texttt{BG-BLOCH-THM-014}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap}.
-\section{Statement and proof}Candidate minus reference is the negation of reference minus candidate. The proof is pointwise additive-group algebra.
-\section{Boundary}The sign convention is explicit and carries no loss, norm, or physical interpretation. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Operand Reversal for Operator Differences}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-BLOCH-THM-014}; status \texttt{proved; no admissions}. Lean declaration
+\path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap} in
+\path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean}.
+
+\section{Exact mathematical statement}
+Reversing the two operator fields negates their declared difference:
+\[
+  \operatorname{Diff}(H_{\mathrm{cand}},H_{\mathrm{ref}})
+  =-\operatorname{Diff}(H_{\mathrm{ref}},H_{\mathrm{cand}}).
+\]
+
+\section{Assumptions and conventions}
+Both fields act on the same complex fiber. The definition always places its first argument on
+the left, so swapping arguments changes reference-minus-candidate to candidate-minus-reference.
+
+\section{Mathematical argument}
+At each point the swapped field is $H_{\mathrm{cand}}-H_{\mathrm{ref}}$. The additive-group
+identity $b-a=-(a-b)$ identifies this with the pointwise negation of the original difference.
+Function extensionality then lifts the pointwise equality to equality of operator fields.
+
+\section{Lean realization}
+The Lean proof applies function extensionality in the point variable and simplifies the unfolded
+difference with \texttt{neg\_sub}. It was checked with Lean \texttt{4.35.0} and Mathlib commit
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite additive algebra at Formal merge
+\texttt{b998c09550161193e8edbe3aeaa9d93d183693fa}. No external manuscript controls the Lean
+statement, and no priority or novelty claim is made.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom. The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+Negation preserves norm summaries but not signed fields. This theorem does not authorize mixing
+opposite sign conventions without an explicit conversion.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest. Kernel checking
+establishes the exact proposition only. No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}
