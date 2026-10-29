@@ -69,8 +69,11 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
-effort currently occupies the WIP limit.
+One mathematical effort occupies the WIP limit: pointwise self-adjointness closure for ordinary
+and aligned reference-minus-candidate continuous-linear-map fields under explicit complete-space
+and pointwise self-adjointness hypotheses. It does not choose an alignment, authenticate runtime
+operators, or establish spectral or numerical adequacy. No certificate, runtime-evidence, trust,
+documentation, or maintenance effort is active.
 
 ## Ready
 

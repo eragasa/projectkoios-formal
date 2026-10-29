@@ -55,7 +55,7 @@ Status: generic foundations implemented.
 - An explicit rank-two `ZMod 2` witness in which a pointwise swap gauge creates the odd coefficient `diag(1/2,-1/2)` and does not commute with zero-mode truncation.
 - Rectangular complex frames, ambient projectors, compression/reconstruction, and right-unitary retained-coordinate covariance.
 - Separate singleton, identity, global-unitary, and complete pointwise-unitary alignment families with inclusion-based feasibility transfer and explicit strict-separation witnesses.
-- Sewn reference-minus-aligned-candidate operator differences with exact recovery and zero criteria.
+- Sewn reference-minus-aligned-candidate operator differences with exact recovery and zero criteria, plus pointwise self-adjointness closure under complete-space and explicit self-adjointness hypotheses.
 - Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
 - First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.
 - A generic finite spectral--operator compatibility schema with one common candidate, a nonempty alignment family, and an alignment-infimum operator criterion, a stronger one-alignment witness predicate across mandatory operator channels, explicit-attainment bridges, finite central admissible sets, attained compatibility distance under nonemptiness, zero-distance/compatibility and positive-distance/incompatibility equivalences, conformant model-class embeddings, and first-compatible-class selection.
@@ -64,7 +64,7 @@ Status: generic foundations implemented.
 
 Open:
 
-- aligned-difference self-adjointness and owner-specific retained-frame binding;
+- owner-specific retained-frame and self-adjointness-hypothesis binding;
 - matrix-Frobenius maximum-tail specialization after selecting an explicit representation bridge;
 - runtime interpolation, evaluation-mesh, and exact/outward-rounded residual-channel bindings;
 - an exact owner-specific bridge from NumPy `fft`/`fftshift` and its centered-origin phase convention to the abstract centered inventory and coefficient field;
