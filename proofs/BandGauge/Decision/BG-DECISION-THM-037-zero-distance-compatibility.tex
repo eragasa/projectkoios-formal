@@ -8,7 +8,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
-\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∃}{{$\exists$}}1 {∈}{{$\in$}}1 {↔}{{$\leftrightarrow$}}1
+           {∩}{{$\cap$}}1 {¬}{{$\neg$}}1}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \title{Proof Dossier: Zero Distance Is Finite Compatibility}
 \author{Eugene Joseph M. Ragasa}
@@ -40,11 +42,11 @@ zero-distance/intersection theorem then applies, and unfolding \texttt{Compatibl
 identifies nonempty intersection with central compatibility.
 \section{Lean realization}
 \begin{lstlisting}
-theorem compatibilityEDist_eq_zero_iff_compatible
-    [MetricSpace Candidate] {model : Model}
+theorem compatibilityEDist_eq_zero_iff_compatible [MetricSpace Candidate]
+    {model : Model}
     (hspectral : (schema.spectralAdmissibleCandidates model).Nonempty)
     (hoperator : (schema.operatorAdmissibleCandidates model).Nonempty) :
-    schema.compatibilityEDist model = 0 iff schema.Compatible model
+    schema.compatibilityEDist model = 0 ↔ schema.Compatible model
 \end{lstlisting}
 \section{Trusted base and review}
 Lean \texttt{4.35.0}, Mathlib

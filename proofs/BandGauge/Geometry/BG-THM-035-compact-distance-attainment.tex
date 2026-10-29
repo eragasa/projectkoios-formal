@@ -8,7 +8,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
-\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∃}{{$\exists$}}1 {∈}{{$\in$}}1 {↔}{{$\leftrightarrow$}}1
+           {∩}{{$\cap$}}1 {¬}{{$\neg$}}1}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \title{Proof Dossier: Compact Admissible-Set Distance Attainment}
 \author{Eugene Joseph M. Ragasa}
@@ -56,8 +58,7 @@ minimality against every $(a',b')\in A\times B$. Antisymmetry identifies the val
 theorem exists_admissibleSetEDist_eq_edist_of_compact
     {A B : Set X} (hA : IsCompact A) (hB : IsCompact B)
     (hneA : A.Nonempty) (hneB : B.Nonempty) :
-    exists a in A, exists b in B,
-      admissibleSetEDist A B = edist a b
+    ∃ a ∈ A, ∃ b ∈ B, admissibleSetEDist A B = edist a b
 \end{lstlisting}
 The proof uses \texttt{IsCompact.prod}, \texttt{IsCompact.exists\_isMinOn},
 \texttt{continuous\_edist}, and the explicit iterated infimum definition.

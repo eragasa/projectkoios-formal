@@ -8,7 +8,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
-\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∃}{{$\exists$}}1 {∈}{{$\in$}}1 {↔}{{$\leftrightarrow$}}1
+           {∩}{{$\cap$}}1 {¬}{{$\neg$}}1}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \title{Proof Dossier: Compact Zero Distance and Intersection}
 \author{Eugene Joseph M. Ragasa}
@@ -46,11 +48,12 @@ value $\top$.
 theorem admissibleSetEDist_eq_zero_iff_inter_nonempty_of_compact
     {A B : Set X} (hA : IsCompact A) (hB : IsCompact B)
     (hneA : A.Nonempty) (hneB : B.Nonempty) :
-    admissibleSetEDist A B = 0 iff (A inter B).Nonempty
+    admissibleSetEDist A B = 0 ↔ (A ∩ B).Nonempty
 \end{lstlisting}
-The reverse direction uses
-\texttt{exists\_admissibleSetEDist\_eq\_edist\_and\_pos\_of\_compact}; the forward
-intersection-to-zero direction uses \texttt{admissibleSetEDist\_eq\_zero\_of\_mem\_inter}.
+The forward zero-to-intersection direction uses
+\path{exists_admissibleSetEDist_eq_edist_and_pos_of_compact}; the reverse
+intersection-to-zero direction uses
+\path{admissibleSetEDist_eq_zero_of_mem_inter}.
 \section{Trusted base and review}
 Lean \texttt{4.35.0}, Mathlib
 \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}:

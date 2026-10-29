@@ -8,7 +8,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
-\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∃}{{$\exists$}}1 {∈}{{$\in$}}1 {↔}{{$\leftrightarrow$}}1
+           {∩}{{$\cap$}}1 {¬}{{$\neg$}}1}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \title{Proof Dossier: Finite Compatibility Distance Attainment}
 \author{Eugene Joseph M. Ragasa}
@@ -42,9 +44,9 @@ theorem exists_compatibilityEDist_eq_edist [MetricSpace Candidate]
     {model : Model}
     (hspectral : (schema.spectralAdmissibleCandidates model).Nonempty)
     (hoperator : (schema.operatorAdmissibleCandidates model).Nonempty) :
-    exists cE in schema.spectralAdmissibleCandidates model,
-      exists cH in schema.operatorAdmissibleCandidates model,
-        schema.compatibilityEDist model = edist cE cH
+    ∃ spectralCandidate ∈ schema.spectralAdmissibleCandidates model,
+      ∃ operatorCandidate ∈ schema.operatorAdmissibleCandidates model,
+        schema.compatibilityEDist model = edist spectralCandidate operatorCandidate
 \end{lstlisting}
 \section{Trusted base and review}
 Lean \texttt{4.35.0}, Mathlib

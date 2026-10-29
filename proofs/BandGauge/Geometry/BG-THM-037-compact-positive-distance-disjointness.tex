@@ -8,7 +8,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
-\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∃}{{$\exists$}}1 {∈}{{$\in$}}1 {↔}{{$\leftrightarrow$}}1
+           {∩}{{$\cap$}}1 {¬}{{$\neg$}}1}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \title{Proof Dossier: Compact Positive Distance and Disjointness}
 \author{Eugene Joseph M. Ragasa}
@@ -44,7 +46,7 @@ attainment theorem rather than introducing a new distance convention.
 theorem admissibleSetEDist_pos_iff_disjoint_of_compact
     {A B : Set X} (hA : IsCompact A) (hB : IsCompact B)
     (hneA : A.Nonempty) (hneB : B.Nonempty) :
-    0 < admissibleSetEDist A B iff Disjoint A B
+    0 < admissibleSetEDist A B ↔ Disjoint A B
 \end{lstlisting}
 \section{Trusted base and review}
 Lean \texttt{4.35.0}, Mathlib

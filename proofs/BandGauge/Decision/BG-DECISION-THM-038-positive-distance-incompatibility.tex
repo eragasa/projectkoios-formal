@@ -8,7 +8,9 @@
 \usepackage[margin=1in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
-\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={∃}{{$\exists$}}1 {∈}{{$\in$}}1 {↔}{{$\leftrightarrow$}}1
+           {∩}{{$\cap$}}1 {¬}{{$\neg$}}1}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
 \title{Proof Dossier: Positive Distance Is Finite Incompatibility}
 \author{Eugene Joseph M. Ragasa}
@@ -38,11 +40,11 @@ of the spectral and operator admissible sets is equivalent to failure of their n
 intersection, which is exactly failure of central compatibility.
 \section{Lean realization}
 \begin{lstlisting}
-theorem compatibilityEDist_pos_iff_not_compatible
-    [MetricSpace Candidate] {model : Model}
+theorem compatibilityEDist_pos_iff_not_compatible [MetricSpace Candidate]
+    {model : Model}
     (hspectral : (schema.spectralAdmissibleCandidates model).Nonempty)
     (hoperator : (schema.operatorAdmissibleCandidates model).Nonempty) :
-    0 < schema.compatibilityEDist model iff not schema.Compatible model
+    0 < schema.compatibilityEDist model ↔ ¬ schema.Compatible model
 \end{lstlisting}
 \section{Trusted base and review}
 Lean \texttt{4.35.0}, Mathlib
