@@ -65,7 +65,10 @@ obligations. Code-facing material is kept in appendices:
   research sources; and
 - `appendices/D-seven-paper-error-channel-crosswalk.tex` records the source-qualified
   development and evidence boundary of the residual-channel program across
-  `Ragasa2026a` through `Ragasa2026g`.
+  `Ragasa2026a` through `Ragasa2026g`;
+- `references.bib` contains the external background bibliography; and
+- `citation-audit.md` records each included source's persistent identity, inspected
+  metadata surface, use, and authority boundary.
 
 The main text may state that a result is exact or machine checked when that fact matters
 to the argument, but repository mechanics, source paths, hashes, audit commands, and
@@ -106,7 +109,7 @@ transfer into Formal proof status.
 - obtain independent review of the expanded aligned-difference and alignment-family
   dossiers;
 - complete prior-art and novelty review;
-- add an independently checked bibliography;
+- obtain independent review of the provenance-audited background bibliography;
 - obtain independent mathematical and artifact review; and
 - decide whether a frozen finite case study belongs in this companion or in a later
   application paper.

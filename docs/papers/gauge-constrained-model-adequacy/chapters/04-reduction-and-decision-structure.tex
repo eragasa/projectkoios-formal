@@ -273,6 +273,11 @@ does not convert floating-point values into exact enclosures.
 
 \section{Three-way interval decisions}
 
+Interval analysis supplies the broader enclosure framework for certified statements
+about quantities known only through bounds~\cite{MooreKearfottCloud2009}. The decision
+semantics below are the exact, application-facing specialization checked by the Formal
+declarations.
+
 Suppose an exact nonnegative quantity $q$ is enclosed by $[\ell,u]$ and the acceptance
 budget is $\tau$.  A sound upper-bound decision has three substantive cases:
 
