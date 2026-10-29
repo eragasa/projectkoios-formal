@@ -1,0 +1,101 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-26
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Fixed-Unitary Frobenius Inner-Product Invariance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-26}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-035} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.matrixFrobeniusInner_fixedUnitaryConjugation} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/UnitaryEquivariance.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For finite square complex matrices $A,B$ and one unitary matrix $U$, define $\Phi_U(A)=U^{\dagger}AU$.  With the entrywise complex Frobenius inner product
+\[
+  \langle A,B\rangle_F=\sum_{i,j}\overline{A_{ij}}B_{ij},
+\]
+one has $\langle\Phi_U(A),\Phi_U(B)\rangle_F=\langle A,B\rangle_F$.
+
+\section{Immutable Formal provenance}
+The declaration was introduced at Formal commit
+\texttt{669b1e4f97454ab4f54fb38cf5cbd7f0c46e3aa1} and merged through PR~\#2 at
+\texttt{265fb7cb1a0b448cf3d069d4c1de9e5af1a912f8}.  It is present at the dossier base
+\texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
+\texttt{bd6343b72f8448e789f94fd1efd6187f4ed4f6163c35c5a6a18b505503ee78d9}; the exact locator is \texttt{BG-FOURIER-THM-035}.
+
+The declaration is source-neutral finite Fourier and matrix algebra.  It supplies a reusable exact boundary and does not formalize a runtime FFT, mesh, gauge-selection algorithm, or physical locality claim.
+
+\section{Assumptions, conventions, and statement delta}
+The index type is finite and decidable.  The same square unitary acts on both matrices.  The inner product is the unnormalized entrywise complex Frobenius inner product.
+The Lean proposition is authoritative.  This prose restatement neither strengthens the hypotheses
+nor supplies an application binding.
+
+\section{Statement-specific prior art and contribution boundary}
+Unitary invariance of the Hilbert--Schmidt/Frobenius inner product is standard \texttt{background-only} matrix algebra.  The contribution here is an exact finite-rank Lean declaration with the repository's normalization made explicit.
+
+\section{Proof structure and mathematical argument}
+First rewrite the entrywise inner product as $\operatorname{tr}(A^{\dagger}B)$.  The conjugated product reduces to
+\[
+ (U^{\dagger}AU)^{\dagger}(U^{\dagger}BU)=U^{\dagger}A^{\dagger}BU
+\]
+using $UU^{\dagger}=I$.  Cyclicity and unitary trace invariance then return $\operatorname{tr}(A^{\dagger}B)$.
+
+\section{Lean realization and dependencies}
+The proof uses \texttt{matrixFrobeniusInner\_eq\_trace}, trace cyclicity, conjugate-transpose multiplication, and \texttt{trace\_fixedUnitaryConjugation}.  The declaration was rechecked with Lean \texttt{4.35.0} at commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.BandGauge.Fourier.
+    matrixFrobeniusInner_fixedUnitaryConjugation
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted and checked against the source and theorem
+manifest by the maintainer.  Lean kernel checking, build output, hashing, and LaTeX compilation are
+automation, not independent expert review.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem concerns one exact unitary matrix.  It does not authenticate runtime arrays, floating-point unitarity, matrix dimensions, weights, or a physical basis convention.  No runtime certificate is created by this dossier, and compilation of this
+PDF proves nothing beyond successful typesetting.
+
+\section{Unresolved questions}
+A numerical bridge must separately enclose matrix entries and establish the exact or outward-certified unitary premise.  Momentum-dependent transformations are outside this statement.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-26 & initial dossier & AI-assisted maintainer review & exact proposition, proof structure, and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

@@ -1,0 +1,98 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-26
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Wilson-Product Determinant Gauge Invariance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-26}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{SS-GAUGE-THM-011} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.SolidState.FiniteLattice.wilsonLoopDet_unitaryGaugeInvariant} \\
+Owning module & \path{ProjectKoios/SolidState/FiniteLattice/GaugeLoops.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For finite square complex link matrices $L_{xy}$ and pointwise unitary frames $G_x$, form the ordered closed Wilson product.  Under
+$L_{xy}\mapsto G_x^{-1}L_{xy}G_y$, its determinant is invariant:
+\[
+ \det W(L^G)=\det W(L).
+\]
+
+\section{Immutable Formal provenance}
+The declaration was introduced at Formal commit
+\texttt{934fc934665cfda7791133e067f8004341e9ccfc} and merged through PR~\#2 at
+\texttt{265fb7cb1a0b448cf3d069d4c1de9e5af1a912f8}.  It is present at the dossier base
+\texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
+\texttt{fc6f5b4aba375ada1b4809952e577ade36f4e04514315dd1f9251f228ceacdfb}; the exact locator is \texttt{SS-GAUGE-THM-011}.
+
+The declaration is source-neutral finite gauge-loop algebra.  It binds no momentum mesh, band frame, sampled gap, material calculation, continuum bundle, or topological invariant.
+
+\section{Assumptions, conventions, and statement delta}
+The matrix index type is finite.  Gauge matrices are unitary, while individual link matrices need not be invertible.  The loop is a finite ordered base-and-tail inventory.
+The Lean proposition is authoritative.  This prose restatement neither strengthens the hypotheses
+nor supplies an application binding.
+
+\section{Statement-specific prior art and contribution boundary}
+Conjugation covariance of a closed matrix product and determinant invariance are standard \texttt{background-only} finite gauge algebra.  No topological novelty claim is made.
+
+\section{Proof structure and mathematical argument}
+Telescoping of internal frame factors gives $W(L^G)=G_b^{-1}W(L)G_b$ at the base vertex $b$.  Multiplicativity of determinant yields
+$\det(G_b^{-1})\det W\det(G_b)$, and the first and last factors multiply to one.
+
+\section{Lean realization and dependencies}
+The proof depends on \texttt{wilsonLoopProduct\_unitaryGaugeTransform}, determinant multiplicativity, and the unit property of the base gauge matrix.  The declaration was rechecked with Lean \texttt{4.35.0} at commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.SolidState.FiniteLattice.
+    wilsonLoopDet_unitaryGaugeInvariant
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted and checked against the source and theorem
+manifest by the maintainer.  Lean kernel checking, build output, hashing, and LaTeX compilation are
+automation, not independent expert review.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+Determinant invariance is not eigenphase continuity, phase unwrapping, a topological invariant, or a certificate that runtime links arise from an isolated band frame.  No runtime certificate is created by this dossier, and compilation of this
+PDF proves nothing beyond successful typesetting.
+
+\section{Unresolved questions}
+A future application must authenticate every link, frame, loop ordering, and any nonvanishing or spectral hypotheses used to interpret the determinant phase.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-26 & initial dossier & AI-assisted maintainer review & exact proposition, proof structure, and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

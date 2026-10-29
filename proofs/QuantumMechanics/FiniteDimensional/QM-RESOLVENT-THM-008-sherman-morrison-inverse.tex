@@ -1,0 +1,98 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-26
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Sherman--Morrison Resolvent Identity}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-26}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{QM-RESOLVENT-THM-008} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.QuantumMechanics.FiniteDimensional.inv_rankOnePerturbation} \\
+Owning module & \path{ProjectKoios/QuantumMechanics/FiniteDimensional/RankOneResolvent.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $d=1+\gamma\langle v|A^{-1}|u\rangle$.  If $A$ is invertible and $d\ne0$, then
+\[
+ (A+\gamma|u\rangle\langle v|)^{-1}
+ =A^{-1}-\frac{\gamma}{d}
+   |A^{-1}u\rangle\langle v|A^{-1}.
+\]
+
+\section{Immutable Formal provenance}
+The declaration was introduced at Formal commit
+\texttt{c516cc46d5d118ca1d316a364e71692cbe892d5e} and merged through PR~\#2 at
+\texttt{265fb7cb1a0b448cf3d069d4c1de9e5af1a912f8}.  It is present at the dossier base
+\texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
+\texttt{4469d83d3b267574b2ec533273a81267b8ed889eeaf70decd1997c0d8e6582cb}; the exact locator is \texttt{QM-RESOLVENT-THM-008}.
+
+The declaration is source-neutral finite rank-one matrix algebra.  A KSD calculation motivated the module, but no authored matrix, vector, energy, root, tolerance, eigensolver output, or retained artifact is bound by this theorem.
+
+\section{Assumptions, conventions, and statement delta}
+All matrices are finite square complex matrices.  Both base invertibility and the nonzero scalar denominator are explicit hypotheses.  The right bra-row uses the repository's conjugation convention.
+The Lean proposition is authoritative.  This prose restatement neither strengthens the hypotheses
+nor supplies an application binding.
+
+\section{Statement-specific prior art and contribution boundary}
+The Sherman--Morrison identity is standard \texttt{background-only} matrix algebra.  The contribution is an exact finite Lean statement connected to the module's determinant and resolvent definitions.
+
+\section{Proof structure and mathematical argument}
+The preceding theorem constructs the displayed candidate and proves that multiplying it on the right by the updated matrix gives the identity.  The nonzero denominator and base invertibility imply the update determinant is a unit.  Uniqueness of left and right inverses then identifies the nonsingular inverse with the candidate.
+
+\section{Lean realization and dependencies}
+The main local dependency is \texttt{rankOnePerturbation\_mul\_rankOneInverseCandidate}; Mathlib supplies nonsingular-inverse identities and the finite determinant/right-inverse bridge.  The declaration was rechecked with Lean \texttt{4.35.0} at commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.QuantumMechanics.FiniteDimensional.
+    inv_rankOnePerturbation
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted and checked against the source and theorem
+manifest by the maintainer.  Lean kernel checking, build output, hashing, and LaTeX compilation are
+automation, not independent expert review.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The identity is conditional and exact.  It provides no conditioning estimate, stable numerical algorithm, rounding analysis, root bracket, or runtime inversion certificate.  No runtime certificate is created by this dossier, and compilation of this
+PDF proves nothing beyond successful typesetting.
+
+\section{Unresolved questions}
+Applications need certified nonvanishing enclosures for both determinant and denominator if those quantities originate in numerical computation.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-26 & initial dossier & AI-assisted maintainer review & exact proposition, proof structure, and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

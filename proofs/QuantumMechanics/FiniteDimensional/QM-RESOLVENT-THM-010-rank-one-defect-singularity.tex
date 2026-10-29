@@ -1,0 +1,99 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-26
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Rank-One Defect Singularity Criterion}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-26}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{QM-RESOLVENT-THM-010} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.QuantumMechanics.FiniteDimensional.det_rankOneDefectMatrix_eq_zero_iff} \\
+Owning module & \path{ProjectKoios/QuantumMechanics/FiniteDimensional/RankOneResolvent.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For invertible finite $A$, vector $v$, and complex magnitude $g$,
+\[
+ \det(A-g|v\rangle\langle v|)=0
+ \quad\Longleftrightarrow\quad
+ 1-g\langle v|A^{-1}|v\rangle=0.
+\]
+
+\section{Immutable Formal provenance}
+The declaration was introduced at Formal commit
+\texttt{c516cc46d5d118ca1d316a364e71692cbe892d5e} and merged through PR~\#2 at
+\texttt{265fb7cb1a0b448cf3d069d4c1de9e5af1a912f8}.  It is present at the dossier base
+\texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
+\texttt{4469d83d3b267574b2ec533273a81267b8ed889eeaf70decd1997c0d8e6582cb}; the exact locator is \texttt{QM-RESOLVENT-THM-010}.
+
+The declaration is source-neutral finite rank-one matrix algebra.  A KSD calculation motivated the module, but no authored matrix, vector, energy, root, tolerance, eigensolver output, or retained artifact is bound by this theorem.
+
+\section{Assumptions, conventions, and statement delta}
+Base invertibility is explicit.  The magnitude is complex in this theorem.  The scalar secular expression is evaluated exactly at supplied data; no parameter search is part of the proposition.
+The Lean proposition is authoritative.  This prose restatement neither strengthens the hypotheses
+nor supplies an application binding.
+
+\section{Statement-specific prior art and contribution boundary}
+Reduction of a rank-one singularity test to a scalar secular equation is standard \texttt{background-only} finite matrix theory.  No novelty or root-existence claim is made.
+
+\section{Proof structure and mathematical argument}
+Specialize the determinant factorization to coupling $-g$ and equal ket and bra.  Because $\det A\ne0$, the product
+$\det A\,(1-g\langle v|A^{-1}|v\rangle)$ vanishes exactly when the scalar factor vanishes.
+
+\section{Lean realization and dependencies}
+The proof uses \texttt{det\_rankOneDefectMatrix}, multiplication by a nonzero determinant, and the definitions of the defect matrix and secular value.  The declaration was rechecked with Lean \texttt{4.35.0} at commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.QuantumMechanics.FiniteDimensional.
+    det_rankOneDefectMatrix_eq_zero_iff
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted and checked against the source and theorem
+manifest by the maintainer.  Lean kernel checking, build output, hashing, and LaTeX compilation are
+automation, not independent expert review.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The equivalence does not prove that a secular zero exists or is unique, locate one, bound numerical error, count bound states, or identify a physical defect.  No runtime certificate is created by this dossier, and compilation of this
+PDF proves nothing beyond successful typesetting.
+
+\section{Unresolved questions}
+Existence, monotonicity, and root isolation require additional hypotheses and separate theorems or exact/outward certificates.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-26 & initial dossier & AI-assisted maintainer review & exact proposition, proof structure, and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

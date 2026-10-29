@@ -1,0 +1,98 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-26
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Bargmann Loop-Product Gauge Invariance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-26}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{SS-GAUGE-THM-008} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.SolidState.FiniteLattice.bargmannLoopProduct_phaseGaugeState} \\
+Owning module & \path{ProjectKoios/SolidState/FiniteLattice/GaugeLoops.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $\psi_x$ be vectors in a complex inner-product space and let $p_x\in U(1)$ be independent vertex phases.  For any finite ordered closed loop,
+\[
+ \prod_{(x,y)\ \mathrm{along\ loop}}
+   \langle p_x\psi_x,p_y\psi_y\rangle
+ =\prod_{(x,y)\ \mathrm{along\ loop}}\langle\psi_x,\psi_y\rangle.
+\]
+
+\section{Immutable Formal provenance}
+The declaration was introduced at Formal commit
+\texttt{934fc934665cfda7791133e067f8004341e9ccfc} and merged through PR~\#2 at
+\texttt{265fb7cb1a0b448cf3d069d4c1de9e5af1a912f8}.  It is present at the dossier base
+\texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
+\texttt{fc6f5b4aba375ada1b4809952e577ade36f4e04514315dd1f9251f228ceacdfb}; the exact locator is \texttt{SS-GAUGE-THM-008}.
+
+The declaration is source-neutral finite gauge-loop algebra.  It binds no momentum mesh, band frame, sampled gap, material calculation, continuum bundle, or topological invariant.
+
+\section{Assumptions, conventions, and statement delta}
+The loop is represented by a base vertex and finite tail list.  Phases have unit modulus.  States need not be normalized and overlaps need not be nonzero.  Mathlib's inner product is conjugate-linear in the first argument.
+The Lean proposition is authoritative.  This prose restatement neither strengthens the hypotheses
+nor supplies an application binding.
+
+\section{Statement-specific prior art and contribution boundary}
+Cancellation of local phases in a closed Bargmann product is standard \texttt{background-only} gauge algebra.  The audited declaration makes the finite ordering and phase convention explicit.
+
+\section{Proof structure and mathematical argument}
+Each transformed link acquires $p_x^{-1}$ on the left and $p_y$ on the right.  In the ordered product, internal factors cancel telescopically.  Closure cancels the final phase with the base phase, leaving the original product.
+
+\section{Lean realization and dependencies}
+The proof uses \texttt{bargmannLink\_phaseGaugeState} and the commutative closed-loop gauge-invariance theorem for complex link values.  The declaration was rechecked with Lean \texttt{4.35.0} at commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.SolidState.FiniteLattice.
+    bargmannLoopProduct_phaseGaugeState
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted and checked against the source and theorem
+manifest by the maintainer.  Lean kernel checking, build output, hashing, and LaTeX compilation are
+automation, not independent expert review.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The product may be zero.  The theorem does not provide a smooth gauge, sampled gap, continuum holonomy, Chern invariant, numerical phase-unwrapping rule, or runtime-state authentication.  No runtime certificate is created by this dossier, and compilation of this
+PDF proves nothing beyond successful typesetting.
+
+\section{Unresolved questions}
+Applications must separately bind the ordered loop and exact states.  Nonvanishing and any continuum interpretation need additional evidence and theorems.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-26 & initial dossier & AI-assisted maintainer review & exact proposition, proof structure, and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}
