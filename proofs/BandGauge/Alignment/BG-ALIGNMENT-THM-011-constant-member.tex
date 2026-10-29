@@ -2,8 +2,58 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Constant Alignment Membership}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}ID \texttt{BG-ALIGNMENT-THM-011}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Alignment.constantAlignmentField_mem_globalAlignmentFamily}.
-\section{Statement and proof}A field formed from one unitary at every point belongs to the global-unitary family, witnessed by that unitary.
-\section{Boundary}Exact family membership only; no optimizer or runtime claim. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. Lean \texttt{4.35.0}, pinned Mathlib. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Constant Alignment Membership}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-ALIGNMENT-THM-011}; status \texttt{proved; no admissions}. Lean declaration
+\path{ProjectKoios.BandGauge.Alignment.constantAlignmentField_mem_globalAlignmentFamily} in
+\path{ProjectKoios/BandGauge/Alignment/Family.lean}.
+
+\section{Exact mathematical statement}
+For every complex linear isometric equivalence $U$ between the reference and candidate fibers,
+the field that equals $U$ at every point belongs to the global-unitary alignment family.
+
+\section{Assumptions and conventions}
+The unitary equivalence $U$ is supplied. The global family consists precisely of fields induced
+by one equivalence common to every point. No nonempty point-domain hypothesis is needed.
+
+\section{Mathematical argument}
+Membership in the global family asks for an equivalence whose constant field equals the proposed
+field. Choose the supplied $U$ itself. The required equality is reflexive, so $U$ and
+\texttt{rfl} form the complete membership witness.
+
+\section{Lean realization}
+The proof is the existential pair \texttt{\(\langle U, rfl\rangle\)} after unfolding global-family
+membership. It was checked with Lean \texttt{4.35.0} and Mathlib commit
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite set membership at Formal merge
+\texttt{b998c09550161193e8edbe3aeaa9d93d183693fa}. No external manuscript controls the Lean
+statement, and no priority or novelty claim is made.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom. The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+The theorem records family membership only. It does not construct $U$, optimize over the global
+family, certify a runtime matrix, or establish scientific acceptance.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest. Kernel checking
+establishes the exact proposition only. No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}

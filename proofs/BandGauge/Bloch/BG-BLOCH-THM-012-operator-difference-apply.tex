@@ -2,9 +2,63 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Operator-Difference Evaluation}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}
-ID \texttt{BG-BLOCH-THM-012}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply}.
-\section{Statement and proof}The reference-minus-candidate operator field evaluates to the difference of the two operator values. This follows definitionally from pointwise subtraction.
-\section{Boundary}Source-neutral exact algebra only; no runtime, alignment-selection, self-adjointness, or adequacy claim. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. Lean \texttt{4.35.0}, pinned Mathlib. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Operator-Difference Evaluation}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-BLOCH-THM-012}; status \texttt{proved; no admissions}. Lean declaration
+\path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply} in
+\path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean}.
+
+\section{Exact mathematical statement}
+For operator fields $H_{\mathrm{ref}}$ and $H_{\mathrm{cand}}$ on one fiber space, every
+point $k$, and every vector $v$,
+\[
+  \bigl(H_{\mathrm{ref}}-H_{\mathrm{cand}}\bigr)(k)v
+  =H_{\mathrm{ref}}(k)v-H_{\mathrm{cand}}(k)v,
+\]
+where the left side uses the declared pointwise operator-field difference.
+
+\section{Assumptions and conventions}
+Both fields act on the same complex inner-product-space fiber. The operand order is
+reference minus candidate. No sewing, self-adjointness, finiteness, or alignment premise is used.
+
+\section{Mathematical argument}
+The operator-field difference is defined pointwise by subtracting the two continuous linear
+maps at $k$. Continuous-linear-map subtraction is itself evaluated pointwise on $v$. Expanding
+these two definitions yields the displayed equality without an auxiliary estimate.
+
+\section{Lean realization}
+The Lean proof is definitional reduction, recorded by \texttt{rfl}. The declaration was checked
+with Lean \texttt{4.35.0} and Mathlib commit
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite operator algebra at Formal merge
+\texttt{b998c09550161193e8edbe3aeaa9d93d183693fa}. No external manuscript controls the Lean
+statement, and no priority or novelty claim is made for the underlying algebra.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom. The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+The identity fixes exact evaluation and sign conventions only. It does not select an alignment,
+certify runtime arrays, prove Hermiticity, compare spectra, or establish adequacy.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest. Kernel checking
+establishes the exact proposition only. No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}
