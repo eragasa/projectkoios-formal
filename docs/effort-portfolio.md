@@ -21,7 +21,7 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit `b998c09550161193e8edbe3aeaa9d93d183693fa`.
+Current board baseline: remote `main` merge commit `a5d8c3097ce959afc71a2c269e3efae69bef7b35`.
 
 ## Mission
 
@@ -74,8 +74,8 @@ occupies the WIP limit. No runtime evidence promotion is active.
 
 Ready work has a bounded next action.
 
-1. Conduct a citation-gap and provenance-audited bibliography tranche for the proof
-   companion only after separate scope authorization.
+1. Obtain independent review of the proof companion's provenance-audited background
+   bibliography before publication extraction.
 2. Resume proposition-specific schema design only after KSD supplies a frozen exact or
    outward-rounded request/result contract.
 3. Treat commits, pushes, PRs, merges, and cleanup as separate authorization gates.
@@ -143,6 +143,9 @@ These items are merged Formal content only.
   `b998c09550161193e8edbe3aeaa9d93d183693fa` with the finite compatibility schema; its
   directly supporting aligned-difference dossiers `BG-BLOCH-THM-012--020` and
   alignment-family dossiers `BG-ALIGNMENT-THM-011--029` now carry expanded proof records.
+- A bounded external-background bibliography with DOI-level provenance, explicit
+  citation-use boundaries, and a citation audit distinct from novelty assessment and
+  owner-source authority.
 - Complete named axiom coverage for manifest rows marked proved.
 
 Completion means merged Formal content only. It does not mean release, evidence promotion, material validation, or publication completion.

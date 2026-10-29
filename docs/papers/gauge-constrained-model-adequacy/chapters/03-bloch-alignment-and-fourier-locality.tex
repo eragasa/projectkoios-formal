@@ -15,6 +15,10 @@ provides a finite Hermitian matrix
 \]
 The dimension $D$ may count plane waves, localized orbitals, finite-difference degrees
 of freedom, or any other finite ambient basis; the same algebra applies to each case.
+Momentum-indexed Bloch descriptions and their real-space Wannier representations provide
+the historical background for this setup~\cite{Bloch1929,Wannier1937}; modern reviews
+survey the associated gauge, localization, interpolation, and application
+questions~\cite{MarzariEtAl2012}.
 
 Suppose the scientific question concerns only $M$ states, with $M\leq D$, such as an
 isolated band, a composite group of bands near the Fermi level, or a trial subspace used
@@ -41,9 +45,11 @@ target observable are additional properties of the selected subspace.
 
 In applications, the retained frame $V(k)$ may be obtained by diagonalizing the parent
 Hamiltonian, projecting trial orbitals, disentangling a composite band manifold,
-constructing Wannier functions, or fitting a reduced model. The finite-frame theorem
-sequence in Chapter~\ref{ch:finite-operator-foundations} takes the resulting matrix
-$V(k)$ and explicit hypotheses such as $V(k)^\dagger V(k)=I_M$ as its inputs.
+constructing Wannier functions, or fitting a reduced model; the composite-band
+construction is described, for example, by Souza, Marzari, and
+Vanderbilt~\cite{SouzaMarzariVanderbilt2001}. The finite-frame theorem sequence in
+Chapter~\ref{ch:finite-operator-foundations} takes the resulting matrix $V(k)$ and
+explicit hypotheses such as $V(k)^\dagger V(k)=I_M$ as its inputs.
 
 \subsection{Why two reduced matrices cannot be compared entry by entry}
 
@@ -84,6 +90,9 @@ The sign convention adopted throughout this companion is
 For a unitary identification, $U(k)^{-1}=U(k)^\dagger$. The norm of $\Delta_U(k)$
 measures an operator discrepancy relative to that supplied identification. Its
 interpretation therefore includes the construction and admissibility of $U$.
+Orthogonal Procrustes analysis is one classical source of constrained least-squares
+alignments~\cite{Schonemann1966}, but the formal results here take $U$ as supplied data;
+they do not certify how a numerical procedure constructed it.
 
 Band energies are insufficient for this comparison. Pointwise unitary conjugation preserves
 the eigenvalues of $h(k)$, so two fields can have identical band energies while their
@@ -127,7 +136,11 @@ field is distributed over real-space blocks. This is a structural tension inside
 operator-admissibility branch: pointwise spectral or operator agreement and real-space
 locality are not the same criterion. Section~\ref{sec:gauge-truncation-counterexample}
 gives the checked exact two-point witness: a varying rank-two gauge creates a nonzero
-odd mode and does not commute with zero-mode support truncation.
+odd mode and does not commute with zero-mode support truncation. Continuum conclusions
+about smooth periodic Bloch frames, exponential Wannier localization, or topological
+obstruction require additional analytic and bundle-theoretic hypotheses of the kind
+studied by Panati and by Brouder et al.~\cite{Panati2007,BrouderEtAl2007}; they are not
+consequences of this finite witness.
 
 \subsection{The admissible alignment family is part of the claim}
 
