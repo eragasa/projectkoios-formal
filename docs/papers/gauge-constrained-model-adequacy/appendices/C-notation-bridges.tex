@@ -1,0 +1,220 @@
+\chapter{Notation and Source-Manuscript Bridges}
+\label{app:notation-bridges}
+\small
+\sloppy
+\hbadness=10000
+
+\section{Inspected source identity}
+
+The retained-space, Bloch-frame, and aligned-difference bridges in this appendix were
+prepared from the clean \texttt{ksdft2effmass} worktree on branch
+\decl{work/monograph-representation-carriers-and-derivation-graphs} at commit
+\decl{e3d8a51b30e2072aa4bb116eb46389e342fc00fc}. The inspected sources were the research
+monograph chapters
+
+\begin{itemize}
+  \item \modulepath{chapters/finite-dimensional-foundations.tex};
+  \item \modulepath{chapters/projection-and-retained-spaces.tex};
+  \item \modulepath{chapters/composite-band-gauge-alignment.tex}; and
+  \item \modulepath{chapters/operator-comparison.tex}.
+\end{itemize}
+
+The ICMSEP compatibility bridge and the three-channel residual sign bridge use the
+separate immutable owner-source snapshots recorded in Appendix~\ref{app:provenance}.
+Every bridge is editorial. The inspected manuscripts supply notation and motivation;
+the Formal declarations identified in Appendix~\ref{app:formal-crosswalk} determine
+exact statement and proof status.
+
+\section{ICMSEP compatibility notation}
+
+The ICMSEP extended-abstract source pinned in Appendix~\ref{app:provenance} supplies the
+overall model-adequacy problem.  Table~\ref{tab:icmsep-compatibility-bridge} records its
+relation to the notation of Chapters~\ref{ch:proof-architecture} and
+\ref{ch:reduction-decision}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}l Y Y@{}}
+\toprule
+Proof companion & ICMSEP source & Mathematical role \\
+\midrule
+$\mathfrak M_j$
+  & $\mathfrak M_j$
+  & candidate tight-binding model class in the declared hierarchy \\
+$H_j(\theta)$
+  & $\mathbf H(\boldsymbol\theta)$
+  & one candidate Hamiltonian in that class \\
+$\mathcal L_{E,j}(\theta)$
+  & $\mathcal L_E(\boldsymbol\theta)$
+  & spectral loss \\
+$\mathcal L_{H,j}(C,\theta)$
+  & $\mathcal L_H(\mathbf C,\boldsymbol\theta)$
+  & aligned operator loss \\
+$\mathcal U_j$
+  & $\mathcal U$
+  & admissible alignment family \\
+$\mathfrak A_{E,j}$, $\mathfrak A_{H,j}$
+  & $\mathfrak A_{E,j}$, $\mathfrak A_{H,j}$
+  & spectral and operator admissible sets \\
+$\delta_j^*$
+  & $\delta_j^*$
+  & metric separation of the two admissible sets \\
+\bottomrule
+\end{tabularx}
+\caption{Compatibility-problem notation bridge to the ICMSEP extended abstract.}
+\label{tab:icmsep-compatibility-bridge}
+\end{table}
+
+The source writes a minimum over $\mathbf C\in\mathcal U$.  The companion uses an
+infimum until attainment has been supplied, and then recovers the minimum formulation.
+It also distinguishes literal nonempty intersection from acceptance under a positive
+map tolerance.  These are scope clarifications, not changes to the source's motivating
+question.
+
+\section{Finite-dimensional retained-space notation}
+
+The source manuscript and Chapter~\ref{ch:finite-operator-foundations} use the same
+representation-neutral objects with the notation shown in
+Table~\ref{tab:finite-manuscript-notation-bridge}.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}l Y Y@{}}
+\toprule
+Proof companion & Source manuscript & Common mathematical object \\
+\midrule
+$V$
+  & $V$
+  & $D\times M$ retained-frame embedding \\
+$|v_a\rangle$
+  & $|\phi_a\rangle$
+  & column $a$ of the retained frame \\
+$P_V=VV^\dagger$
+  & $P$ or $\widehat P_{\mathcal S}$
+  & ambient projector onto the retained subspace \\
+$C_V(H)=V^\dagger HV$
+  & $H_{\mathcal S}$
+  & operator matrix in retained coordinates \\
+$R_V(H)=VC_V(H)V^\dagger$
+  & $PHP$ embedded in the parent space
+  & reconstructed retained operator in ambient coordinates \\
+$V_G=VG$
+  & $V'=VG$
+  & right-unitary change of retained frame \\
+\bottomrule
+\end{tabularx}
+\caption{Representation-neutral notation bridge to the inspected source manuscript.}
+\label{tab:finite-manuscript-notation-bridge}
+\end{table}
+
+The source propositions labeled \texttt{PRF-05.01} and \texttt{PRF-05.02} correspond,
+respectively, to projector invariance under a retained unitary and covariance of
+compression. In the Formal snapshot these are
+\decl{BG-ALIGNMENT-THM-004} and \decl{BG-ALIGNMENT-THM-005}. The nearby projector and
+reconstruction claims are supported by \decl{BG-ALIGNMENT-THM-001--010} under the exact
+premises listed in Appendix~\ref{app:formal-crosswalk}.
+
+\section{Bloch-frame and Fourier notation}
+
+The source composite-band chapter writes its momentum-dependent frame as
+\[
+  F(\kappa)=\begin{bmatrix}u_1(\kappa)&\cdots&u_M(\kappa)\end{bmatrix}.
+\]
+At corresponding momentum coordinates, the notation of the proof companion is
+\[
+  V(k)=F(\kappa)
+  =\sum_{a=1}^M |u_a(\kappa)\rangle\,{}_{\mathrm{ret}}\!\langle a|.
+\]
+Thus $V(k)$ and $F(\kappa)$ are two names for the map that inserts retained-coordinate
+vectors into an ambient Bloch fiber.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}l Y Y@{}}
+\toprule
+Proof companion & Source manuscript & Common mathematical object \\
+\midrule
+$V(k)$
+  & $F(\kappa)$
+  & momentum-dependent retained-frame embedding \\
+$|v_a(k)\rangle$
+  & $u_a(\kappa)$
+  & column $a$ of the composite Bloch frame \\
+$P_V(k)$
+  & $P(\kappa)=F(\kappa)F(\kappa)^\dagger$
+  & ambient projector field \\
+$C_{V(k)}(H(k))$
+  & $H_F(\kappa)$
+  & retained operator field \\
+$T_R[h]$
+  & $H_U(R)$ or $\langle w_{m0}|\widehat H|w_{nR}\rangle$
+  & real-space Fourier block of the retained operator \\
+\bottomrule
+\end{tabularx}
+\caption{Bloch and Fourier notation bridge to the inspected source manuscript.}
+\label{tab:bloch-manuscript-notation-bridge}
+\end{table}
+
+The companion uses $G(k)$ for an internal unitary change of one retained frame and
+reserves $U(k)$ for an identification between reference and candidate retained spaces.
+The source composite-band chapter uses $U(\kappa)$ for its internal gauge. These symbols
+must not be identified solely because their matrices are square and unitary: an internal
+frame gauge and a two-model identification have different domains, provenance, and
+adequacy obligations.
+
+\section{Aligned-difference sign bridge}
+
+When the source manuscript's pristine operator is identified with
+$h_{\mathrm{ref}}$, its doped operator with $h_{\mathrm{cand}}$, and its map $U$ runs
+from reference to candidate coordinates, the source writes
+\[
+  \Delta H_{d\to b}=U^\dagger h_{\mathrm{cand}}U-h_{\mathrm{ref}}.
+\]
+The convention adopted in this companion is
+\[
+  \Delta_U=h_{\mathrm{ref}}-U^{-1}h_{\mathrm{cand}}U.
+\]
+For a unitary $U$ with the corresponding direction, this gives
+\[
+  \Delta_U=-\Delta H_{d\to b}.
+\]
+Norms are insensitive to the sign, but signed perturbations, impurity potentials, and
+response coefficients are not. Any editorial extraction must preserve both the operand
+order and the direction assigned to $U$.
+
+\section{Three-channel residual sign bridge}
+
+Section~\ref{sec:three-channel-residual-calculus} and the Lean declarations use
+reference-minus-approximation conventions:
+\[
+  \Delta_{\mathrm{int}}^{\mathrm F}=H_{\mathrm{ref}}-H_{\mathrm{int}},\qquad
+  \Delta_{\mathrm{trunc}}^{\mathrm F}=H_{\mathrm{int}}-H_{\mathrm{tr}},\qquad
+  \Delta_{\mathrm{total}}^{\mathrm F}=H_{\mathrm{ref}}-H_{\mathrm{tr}}.
+\]
+The signed spectral residuals in the inspected \decl{Ragasa2026a} source use the opposite
+order at every step:
+\[
+  \Delta_{\mathrm{int}}^{\mathrm A}=H_{\mathrm{int}}-H_{\mathrm{ref}},\qquad
+  \Delta_{\mathrm{trunc}}^{\mathrm A}=H_{\mathrm{tr}}-H_{\mathrm{int}},\qquad
+  \Delta_{\mathrm{total}}^{\mathrm A}=H_{\mathrm{tr}}-H_{\mathrm{ref}}.
+\]
+Consequently
+\[
+  \Delta_x^{\mathrm A}=-\Delta_x^{\mathrm F}
+  \quad\text{for }x\in\{\mathrm{int},\mathrm{trunc},\mathrm{total}\}.
+\]
+Simultaneous sign reversal preserves the additive chain and every norm reported in this
+companion.  It does not permit signed fields from the two conventions to be combined
+without conversion.  The inspected \decl{Ragasa2026b} source presents its three
+channels through a symmetric error functional $\mathcal E(X,Y)$; that scalar notation
+suppresses operand orientation but does not create scalar additivity.
+
+\section{Status of the bridge}
+
+The source-manuscript entries \texttt{PRF-*} are prospective editorial propositions.
+They do not own the exact statements or proof status. The bridge records where the
+source notation and the formal declarations agree, while the Lean type and proof term
+remain authoritative whenever wording or scope differs.

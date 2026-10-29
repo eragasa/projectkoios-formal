@@ -1,0 +1,254 @@
+\chapter{Provenance, Reproducibility, and Authority Boundaries}
+\label{app:provenance}
+
+\section{Immutable theorem snapshot}
+
+The theorem basis used by this companion is the Project Koios Formal merge commit
+
+\begin{center}
+\decl{b56d6b8e7005515220e6c9bf42851acccb023178},
+\end{center}
+
+with Git tree
+
+\begin{center}
+\decl{a94b113d3300ff8e692f295da82945f48fb7d6ed}.
+\end{center}
+
+Three modules central to the Chapter~\ref{ch:bloch-alignment-locality} additions have
+the following SHA-256 identities at that tree:
+
+\begin{description}
+  \item[Three-channel residual algebra.]
+    \modulepath{ProjectKoios/BandGauge/Hilbert/ResidualChannels.lean},
+    SHA-256
+    \decl{38d0604da95a88a85ecc818037fedda0fb73ee9a51055bffa0a6891d8a4ee150}.
+  \item[Gauge--truncation counterexample.]
+    \modulepath{ProjectKoios/BandGauge/Fourier/GaugeTruncationCounterexample.lean},
+    SHA-256
+    \decl{3b4d9083c04592ff9982cbddf891c8243cc599ad6bc32f5e4a10f708bec6186d}.
+  \item[Residual channels and finite tails.]
+    \modulepath{ProjectKoios/BandGauge/Fourier/ResidualChannels.lean},
+    SHA-256
+    \decl{d2da775a99edf7dea2d8955a121d4929cc183be4fcf64a515ab5e002c019a28b}.
+\end{description}
+
+These identities bind the exposition to one immutable source state. No statement about a
+later revision follows merely because a declaration retains the same informal name.
+When the companion is refreshed, the commit, tree, hashes, theorem-manifest entries, and
+proof dossiers must be reviewed together.
+
+\section{Motivating ICMSEP problem statement}
+
+The central spectral--operator compatibility question is taken from the owner repository
+\nolinkurl{https://github.com/eragasa/ksdft2effmass.git}.  The source was inspected
+read-only on 2026-10-29 at commit
+
+\begin{center}
+\decl{4835e7bf9161729cc8f0537bcc13db083896a6ae},
+\end{center}
+
+with tree
+
+\begin{center}
+\decl{fd641fb8a4efe7a5ef4d5da9c49f126e1e03e355}.
+\end{center}
+
+The checked-out branch was
+\decl{work/monograph-current-library-capabilities}.  The owner worktree was broadly
+dirty, so no repository-wide clean-state claim is made.  The two inspected source files
+below were nevertheless byte-identical to the blobs at the recorded commit:
+
+\begin{description}
+  \item[Submitted-format extended abstract.]
+    \modulepath{docs/publications/conferences/ICMSEP2026/ICMSEP-extended-abstract_02.docx},
+    Git blob \decl{d23a7ae3bb137fa6d31f25ace37ba7e25fdd51a7},
+    SHA-256
+    \decl{4b1a2302ab47f7401b0531d9a89c29dfb05cebfc93e51eab1b8b2c96c351fa13}.
+  \item[Markdown companion source.]
+    \modulepath{docs/publications/conferences/ICMSEP2026/ksdft2effmass.ICMEP2026.abstract.md},
+    Git blob \decl{dfcf5d0ea84a1f81843bd778bea3c8760b66b85d},
+    SHA-256
+    \decl{d1cf59403dc085d30f17e2bc46db321d9f25840c6f91a762ef157a59bf450ade}.
+\end{description}
+
+The extended abstract asks whether spectral and operator criteria admit one common
+tight-binding Hamiltonian within declared tolerances, repeats that test over a nested
+model hierarchy, and uses admissible-set separation when no common endpoint exists.
+That problem statement controls the narrative hierarchy of this companion.  It does not
+control Lean theorem types or proof status, and its prospective first-principles and
+validation statements are not promoted here into completed scientific results.
+
+\section{Seven-paper error-channel source snapshot}
+\label{sec:seven-paper-source-snapshot}
+
+The programmatic account in
+Section~\ref{sec:seven-paper-error-channel-development} and
+Appendix~\ref{app:seven-paper-error-channel-crosswalk} was inspected read-only in the
+same owner repository at commit
+
+\begin{center}
+\decl{542ea2c4f16baaf4f3e905c2d833cc95db105dfe},
+\end{center}
+
+with tree
+
+\begin{center}
+\decl{ae9390fcda3d9142fab83b615104b55b094f8086}.
+\end{center}
+
+The checked-out branch was \decl{work/periodic1d-rank1-control-v3}; the worktree and all
+listed source paths were clean at inspection on 2026-10-29.  The source identities are:
+
+\begin{description}
+  \item[Program roadmap.]
+    \modulepath{docs/publications/conferences/ICMSEP2026/paper-program-roadmap.md};
+    blob \decl{4db8f5617e7a557378da54e37fffdf03e29e2161};
+    SHA-256 \decl{f0cbf0ee15fbaa5f8df80d0fe2d3ffabf02de7cfa3cb34c230c143d3e794b5f5}.
+  \item[Experiment-to-paper allocation.]
+    \modulepath{docs/publications/papers/experiment-to-paper-allocation.md};
+    blob \decl{28d7fe01f176328cdd52268bd8339afce37d202c};
+    SHA-256 \decl{e51954b0c2210617235b3e18d57577fe2d76691c099b3cc9d47ef6774fd9dd39}.
+  \item[\decl{Ragasa2026a} v3.]
+    \modulepath{docs/publications/papers/Ragasa2026a/v3/manuscript.tex};
+    blob \decl{ac4dd332e9fc92fcd24c77875cdabbfc6e7852e9};
+    SHA-256 \decl{02c20cf087cc7272ba45bb271d617a081582514c618bcdb6fe1c39d389d88d74}.
+  \item[\decl{Ragasa2026b} v2.]
+    \modulepath{docs/publications/papers/Ragasa2026b/v2/manuscript.tex};
+    blob \decl{6e9dfef21e0cb7c33c56f8e01265510dcb9d88e1};
+    SHA-256 \decl{d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf}.
+  \item[\decl{Ragasa2026b} diagnostic definitions.]
+    \modulepath{docs/publications/papers/Ragasa2026b/v2/appendix_diagnostics.tex};
+    blob \decl{e8b62942faea8962cdc8767b1f201962588f3cfa};
+    SHA-256 \decl{262b14b192a5893bd99a71d9457664a2c2d498f16af6e545b48273b26ac9e76d}.
+  \item[\decl{Ragasa2026c} v1.]
+    \modulepath{docs/publications/papers/Ragasa2026c/v1/manuscript.tex};
+    blob \decl{4f1bd997ca3296f64472c9788f2668de4d1767bc};
+    SHA-256 \decl{baf453722d96cf5b0360a0b80bfa1580465a1db7fe91167583943db10701baf4}.
+  \item[\decl{Ragasa2026d} v1.]
+    \modulepath{docs/publications/papers/Ragasa2026d/v1/manuscript.tex};
+    blob \decl{248cbb6f32e3d1842cfc6be698a2001d1dbd6ff2};
+    SHA-256 \decl{bb4aed2614777870c8607c7e67b43dbb133a51c672ac14cec6acf85004a18363}.
+  \item[\decl{Ragasa2026e} v1.]
+    \modulepath{docs/publications/papers/Ragasa2026e/v1/manuscript.tex};
+    blob \decl{c896ffdb4c5ba52f5dbb8185b0738ceaaab755bd};
+    SHA-256 \decl{72b60ef8cd2ba5505edeb4acce31ac004721c8ee5f6cee570729e19e870f8b76}.
+  \item[\decl{Ragasa2026f} v1.]
+    \modulepath{docs/publications/papers/Ragasa2026f/v1/manuscript.tex};
+    blob \decl{af1e156b467a3ac4bf39e8b9e5a86f6896a4160a};
+    SHA-256 \decl{a11a78b1a5cba72efb4e56695f4b9f1543369e97da7fcc149bee51f53913839c}.
+  \item[\decl{Ragasa2026g} v1.]
+    \modulepath{docs/publications/papers/Ragasa2026g/v1/manuscript.tex};
+    blob \decl{c2b26e248d30f082276a0a3ca41a2b42d951b9ad};
+    SHA-256 \decl{c52cc2f73f32c28a95ea2003004d36668b6cfa4c48d103d013c890af1cf42316}.
+\end{description}
+
+These owner sources establish editorial scope, terminology, and lifecycle status for the
+seven-paper program.  They do not determine Lean theorem types, prove that a numerical
+channel was evaluated correctly, or transfer controlled-model evidence into a material
+claim.
+
+\section{Authority hierarchy}
+
+Four Formal-owned surfaces have distinct roles:
+
+\begin{enumerate}
+  \item Lean source under \modulepath{ProjectKoios/} owns exact definitions,
+        propositions, and proof terms.
+  \item \modulepath{docs/theorem-manifest.md} owns stable declaration identifiers and
+        repository status.
+  \item Files under \modulepath{proofs/} provide statement-level explanations,
+        assumptions, provenance, and limitations.
+  \item This companion synthesizes those declarations into a continuous mathematical
+        argument.
+\end{enumerate}
+
+External manuscripts, calculation plans, schemas, and research notes may motivate the
+formal program. They do not determine theorem statements or proof status. If prose in an
+external source and a Lean type differ, the Lean type controls the formal claim and the
+editorial crosswalk must record the discrepancy.
+
+\section{Independent status axes}
+
+The following questions remain logically independent:
+
+\begin{itemize}
+  \item Is an exact proposition implemented and proved in Lean?
+  \item Which axioms does the compiled declaration report?
+  \item Has its human-readable proof dossier been reviewed?
+  \item Has an external certificate schema been frozen and independently verified?
+  \item Does retained numerical evidence satisfy that schema?
+  \item Are the theorem's assumptions applicable to the intended scientific system?
+  \item Has novelty, publication, or human acceptance been established?
+\end{itemize}
+
+A positive answer on one axis cannot be transferred to another without additional
+evidence. In particular, a clean Lean build does not certify runtime arrays, and a
+reproducible numerical calculation does not prove an exact theorem unless an explicit
+checked-certificate bridge connects its retained data to the theorem's premises.
+
+\section{Dependency and toolchain boundary}
+
+The pinned Formal snapshot uses Lean \decl{4.35.0}. Mathlib is pinned to immutable commit
+\decl{56a005855ea17e0b0958f73ec801ae140b0a1679}; the dependency inspection reports nine
+resolved revisions as commit identities. The durable dependency record is
+\modulepath{lake-manifest.json}. A reproducibility review must inspect that file and must
+not replace its immutable revisions with floating branches or tags.
+
+The minimum repository validation boundary consists of:
+
+\begin{enumerate}
+  \item a successful Lake build for the exact Lean input tree, toolchain, and manifest;
+  \item immutable dependency-pin inspection;
+  \item an audit for admissions and repository-owned axioms;
+  \item coverage of proved declarations by named axiom reports; and
+  \item confirmation that generated build state is ignored rather than committed.
+\end{enumerate}
+
+A LaTeX build has a different meaning. It establishes that the exposition is
+syntactically renderable and permits visual inspection of the resulting pages. It does
+not elaborate Lean, validate a scientific model, or authenticate numerical evidence.
+
+\section{Runtime certificate boundary}
+
+The current runtime checked-certificate count for this companion is zero. No binary64
+JSON payload, runtime array, eigensolver output, mesh, or serialized result is silently
+reinterpreted as exact Lean input.
+
+A future proposition-specific bridge must provide, at minimum:
+
+\begin{itemize}
+  \item a frozen schema that rejects unknown fields and missing mandatory data;
+  \item exact values or outward-rounded enclosures with a documented rounding policy;
+  \item separate producer and independently reviewed verifier implementations;
+  \item retained canonical bytes, hashes, source revision, toolchain identity, and
+        provenance;
+  \item a precise statement of the Lean proposition established when the checker
+        accepts; and
+  \item strict separation between verification of the certificate and scientific
+        assessment of the modeled system.
+\end{itemize}
+
+Canonical serialization can authenticate a byte sequence. It cannot make binary64 data
+exact, establish enclosure, prove mesh completeness, or certify physical applicability.
+
+\section{Requirements for editorial extraction}
+
+A shortened publication or external chapter derived from this companion must record:
+
+\begin{enumerate}
+  \item the exact Formal repository, commit, tree, relevant module paths, and hashes;
+  \item every declaration ID used by the extracted argument;
+  \item the explicit assumptions and operand, sign, normalization, and domain
+        conventions;
+  \item the named axiom-audit result and remaining trusted-base limitations;
+  \item which surrounding claims remain prospective, numerical, analytical,
+        scientific, or publication dependent; and
+  \item confirmation that the destination does not present the formal export as runtime
+        verification or material validation.
+\end{enumerate}
+
+Editorial extraction may reorganize and shorten the exposition. It must not silently
+strengthen a theorem, remove a premise, merge distinct alignment families, treat an
+unresolved interval as decisive, or detach a statement from its immutable source
+identity.
