@@ -55,11 +55,29 @@ supply an alignment realizing that bound; an attainment theorem or an explicitly
 relaxed approximate-witness statement is then required.  This distinction is essential
 in an exact treatment.
 
-The formal theorem families summarized below provide reusable pieces of this statement.
-They do not yet constitute one generic Lean structure containing
-$\Theta_j$, $\Phi_j$, both losses, the alignment optimization, and the complete model
-hierarchy.  The end-to-end assembly remains an explicit open item rather than an implied
-result.
+The checked finite compatibility schema now packages this quantifier structure at a
+generic level.  A value of
+\decl{FiniteCompatibilitySchema} supplies a finite model inventory, a finite candidate
+inventory for each model, spectral and aligned-operator losses with model-relative
+budgets, a candidate-relative alignment family, and a finite inventory of mandatory
+operator-channel predicates.  Losses take values in the extended nonnegative reals so
+that the alignment infimum retains the empty-family boundary.  Central operator
+acceptance additionally requires the declared alignment family to be nonempty.
+
+The declaration \decl{Compatible} uses the alignment-infimum criterion and literal
+intersection of spectral and operator admissible sets.  The stronger declaration
+\decl{WitnessCompatible} requires one common candidate and one alignment that lies in
+the declared family, passes the operator budget, and satisfies every mandatory channel.
+Thus the formal API does not infer a minimizing alignment from threshold-boundary
+membership.  Theorems \decl{BG-DECISION-THM-017--023} separate infimum bounds,
+attainment, and witness promotion; \decl{BG-DECISION-THM-024--026} identify central and
+witness compatibility and prove only the justified implication from the stronger notion
+to the central one.
+
+This generic assembly does not instantiate $\Theta_j$, $\Phi_j$, either scientific loss,
+the budgets, supports, or channel contracts for silicon or any KSD calculation.  It is
+therefore an exact schema for the end-to-end finite logic, not an end-to-end scientific
+adequacy theorem or runtime certificate.
 
 \section{Spectral and operator criteria are different predicates}
 
@@ -298,10 +316,20 @@ inventory $J$, its ordering, and the exact compatibility predicate.  It does not
 the smallest member of every possible Hamiltonian family.
 
 If class inclusions and criterion conformity have been proved, feasibility may transfer
-forward through the hierarchy.  Without those proofs, the finite decision must check
-each class independently.  Likewise, the maximum of separately selected first-passing
-spectral and operator classes need not be a joint first-passing class unless a theorem
-shows that their witnesses can be made common.
+forward through the hierarchy.  The formal
+\decl{ConformantModelEmbedding} does not encode nesting by name alone: it requires an
+injective candidate map and explicit preservation of candidate membership, spectral
+passage, alignment-family nonemptiness, alignment-infimum passage, and full operator
+witnesses.  Theorems \decl{BG-DECISION-THM-029--030} then transfer central and stronger
+witness compatibility separately.  Without such data, the finite decision must check
+each class independently.
+
+The declarations \decl{BG-DECISION-THM-031--033} instantiate the existing first-passing
+logic with central compatibility.  They prove existence when at least one declared class
+passes, uniqueness, and the expanded condition that every earlier inventory member
+fails.  Likewise, the maximum of separately selected first-passing spectral and
+operator classes need not be a joint first-passing class unless a theorem shows that
+their witnesses can be made common.
 
 \section{Additional exact finite reductions}
 

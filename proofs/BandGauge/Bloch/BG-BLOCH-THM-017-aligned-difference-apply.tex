@@ -2,9 +2,59 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Aligned Operator-Difference Evaluation}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}
-ID \texttt{BG-BLOCH-THM-017}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_apply}.
-\section{Statement and proof}The aligned difference applies as the reference action minus the candidate action transported into the candidate fiber and back. This is the definitional expansion of unitary pullback and subtraction.
-\section{Boundary}The pointwise alignment is supplied, not selected or verified numerically. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Aligned Operator-Difference Evaluation}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-BLOCH-THM-017}; status \texttt{proved; no admissions}.  Lean declaration
+\path{ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_apply} in
+\path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean}.
+
+\section{Exact mathematical statement}
+For every point $k$ and reference-fiber vector $v$, the aligned difference is
+\[
+ \Delta_C(k)v
+ =H_{\mathrm{ref}}(k)v
+  -C(k)^{-1}\bigl(H_{\mathrm{cand}}(k)(C(k)v)\bigr).
+\]
+The operand order is reference minus pulled-back candidate.
+
+\section{Assumptions and conventions}
+The alignment field is supplied pointwise as a complex linear isometric equivalence from the reference fiber to the candidate fiber.  No sewing, self-adjointness, minimization, or runtime premise is used.
+
+\section{Mathematical argument}
+Expand the definition of the aligned difference.  It is the generic operator-field difference between the reference and the aligned candidate.  Expanding the aligned candidate applies the forward alignment, then the candidate operator, then the inverse alignment.  Continuous-linear-map subtraction evaluates pointwise, giving the displayed identity by definitional reduction.
+
+\section{Lean realization}
+The Lean proof follows the mathematical argument directly using the definitions and the
+previously proved helper declarations in the same module family.  The declaration was checked
+with Lean \texttt{4.35.0} and Mathlib commit \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite mathematics at Formal merge
+\texttt{d9fe61eba430fd2c101dc53d85a2e0978254a718}.  No external manuscript controls the Lean statement, and no priority or
+novelty claim is made for the underlying algebra or set theory.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom.  The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+The theorem fixes the sign and transport convention used by later losses.  It does not select or optimize an alignment, prove Hermiticity of the difference, certify a runtime frame, or compare spectra.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest.  Kernel checking
+establishes the exact proposition only.  No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}

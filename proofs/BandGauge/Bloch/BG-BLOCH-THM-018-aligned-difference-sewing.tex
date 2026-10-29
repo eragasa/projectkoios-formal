@@ -2,9 +2,53 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Sewing of an Aligned Operator Difference}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}
-ID \texttt{BG-BLOCH-THM-018}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Bloch.isBlochOperatorField_alignedOperatorDifferenceField}.
-\section{Statement and proof}A sewn reference field minus a candidate pulled back by a sewing-compatible unitary alignment is sewn on the reference fibers. Combine aligned-pullback covariance with subtraction closure.
-\section{Boundary}The result does not establish self-adjointness, choose an alignment, or certify runtime sewing. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Sewing Closure of the Aligned Difference}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-BLOCH-THM-018}; status \texttt{proved; no admissions}.  Lean declaration
+\path{ProjectKoios.BandGauge.Bloch.isBlochOperatorField_alignedOperatorDifferenceField} in
+\path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean}.
+
+\section{Exact mathematical statement}
+If the reference and candidate operator fields obey their respective sewing laws and the alignment intertwines the two sewing transports, then the reference-minus-pulled-back-candidate difference obeys the reference sewing law.
+
+\section{Assumptions and conventions}
+The two sewing data, the pointwise unitary alignment, and all three covariance hypotheses are explicit.  The theorem does not infer any of them from sampled arrays or endpoint matching.
+
+\section{Mathematical argument}
+The alignment covariance theorem first transports the candidate field to the reference fibers and proves that this pulled-back field obeys the reference sewing law.  Sewing covariance is closed under subtraction because the sewing transport is linear and therefore maps a difference to the difference of the transported values.  Applying that closure theorem to the reference field and pulled-back candidate proves the result.
+
+\section{Lean realization}
+The Lean proof follows the mathematical argument directly using the definitions and the
+previously proved helper declarations in the same module family.  The declaration was checked
+with Lean \texttt{4.35.0} and Mathlib commit \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite mathematics at Formal merge
+\texttt{d9fe61eba430fd2c101dc53d85a2e0978254a718}.  No external manuscript controls the Lean statement, and no priority or
+novelty claim is made for the underlying algebra or set theory.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom.  The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+This is an exact closure result on the supplied group action.  It proves neither continuity nor smoothness in momentum, self-adjointness, optimizer correctness, topology, or physical adequacy.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest.  Kernel checking
+establishes the exact proposition only.  No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}

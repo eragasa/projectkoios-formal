@@ -2,8 +2,53 @@
 % SPDX-License-Identifier: Apache-2.0
 % Author: Eugene Joseph M. Ragasa
 % Formal proof completed: 2026-10-27
-\documentclass[11pt]{article}\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
-\title{Proof Dossier: Singleton Alignment Feasibility}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-27}
-\begin{document}\maketitle\section{Identity and status}ID \texttt{BG-ALIGNMENT-THM-016}; status \texttt{proved}. Declaration \path{ProjectKoios.BandGauge.Alignment.alignmentFeasible_singleton_iff}.
-\section{Statement and proof}A singleton alignment family is feasible exactly when its sole alignment satisfies the supplied acceptance predicate. Singleton membership identifies any witness with that alignment.
-\section{Boundary}The acceptance predicate is caller-supplied and carries no runtime or scientific authority. Kernel axioms: \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound}; no admissions. AI-assisted and kernel-checked; no independent expert review recorded.\end{document}
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Singleton-Family Feasibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-27}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+Statement ID \texttt{BG-ALIGNMENT-THM-016}; status \texttt{proved; no admissions}.  Lean declaration
+\path{ProjectKoios.BandGauge.Alignment.alignmentFeasible_singleton_iff} in
+\path{ProjectKoios/BandGauge/Alignment/Family.lean}.
+
+\section{Exact mathematical statement}
+Feasibility in the singleton family $\{C\}$ is equivalent to acceptance of its sole alignment $C$.
+
+\section{Assumptions and conventions}
+The alignment and acceptance predicate are arbitrary; no topology or decidability assumption is needed.
+
+\section{Mathematical argument}
+In the forward direction, singleton membership identifies the feasible witness with $C$, after which its acceptance proof rewrites to acceptance of $C$.  In the reverse direction, use $C$ itself, its singleton membership, and the supplied acceptance proof.
+
+\section{Lean realization}
+The Lean proof follows the mathematical argument directly using the definitions and the
+previously proved helper declarations in the same module family.  The declaration was checked
+with Lean \texttt{4.35.0} and Mathlib commit \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Provenance and contribution boundary}
+This is source-neutral finite mathematics at Formal merge
+\texttt{d9fe61eba430fd2c101dc53d85a2e0978254a718}.  No external manuscript controls the Lean statement, and no priority or
+novelty claim is made for the underlying algebra or set theory.
+
+\section{Audit result}
+The named axiom report lists \texttt{propext}, \texttt{Classical.choice}, and
+\texttt{Quot.sound} and no repository-owned axiom.  The repository admission audit found no
+\texttt{sorry} or \texttt{admit} in the checked source.
+
+\section{Boundary and nonclaims}
+This is logical normalization of an existential over a singleton, not an optimizer or uniqueness theorem for a larger family.
+
+\section{Review status}
+AI-assisted exposition, checked against the Lean source and theorem manifest.  Kernel checking
+establishes the exact proposition only.  No independent expert mathematical, scientific,
+novelty, or publication review is recorded by this dossier.
+
+\end{document}
