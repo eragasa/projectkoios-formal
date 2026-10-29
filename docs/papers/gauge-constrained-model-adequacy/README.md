@@ -91,11 +91,11 @@ conventions, declaration identities, and nonclaims recorded here.
 
 ## Snapshot boundary
 
-The immutable predecessor of the current uncommitted proof-tranche candidate is Formal
-merge commit `1078380fb608269a8094c7e86776a1c0d826333a`, tree
-`0e9695296ab1275df87e2b4b0309e3ef8c4d24b2`. Appendix B records the candidate module
-hashes. The candidate must receive a separately authorized checkpoint and then be
-refreshed to that exact commit and tree before integration or publication review.
+The current theorem basis is Formal checkpoint commit
+`57720829b0611b48293837f4ae20146fff09b4c5`, tree
+`4a12333b548fecc233b89b36c2e957112d7a3c9a`. Appendix B records the central module
+hashes at that exact source state. The companion must be refreshed or explicitly marked
+historical after relevant theorem statements, toolchain pins, or manifest status change.
 
 The motivating ICMSEP source and the separate seven-paper error-channel source snapshot
 are pinned in Appendix B. Their scientific, evidence, and publication statuses do not
