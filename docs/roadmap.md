@@ -60,6 +60,8 @@ Status: generic foundations implemented.
 - First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.
 - A generic finite spectral--operator compatibility schema with one common candidate, a nonempty alignment family, and an alignment-infimum operator criterion, a stronger one-alignment witness predicate across mandatory operator channels, explicit-attainment bridges, finite central admissible sets, attained compatibility distance under nonemptiness, zero-distance/compatibility and positive-distance/incompatibility equivalences, conformant model-class embeddings, and first-compatible-class selection.
 - An exact finite-maximum aligned-operator loss with same-alignment perturbation and budget-headroom bounds, plus an adapter that retains an application-supplied alignment carrier while projecting its pointwise unitary field into the generic witness/central compatibility predicates.
+- Precise mandatory operator channels: exact `ENNReal` error values with channel-specific upper budgets, separately typed nonnumeric structural requirements, and a tagged same-candidate/same-alignment adapter into the generic schema.
+- Exact minimizer existence for nonempty finite alignment families, conversion of infimum passage to a concrete budget-feasible alignment, and conditional central/witness compatibility equivalence under a separate minimizer-channel-conformance premise.
 - Exact Boolean dominance, threshold, and nondominated-mask checks.
 - Conservative accepted/rejected/unresolved checks for outward interval thresholds, joint feasibility at one decision, and first passage over a supplied finite inventory.
 
@@ -74,7 +76,7 @@ Open:
 - nonuniform weighted Parseval;
 - runtime interval serialization, enclosure-production arguments, and external coverage;
 - concrete Paper B/C tables; and
-- concrete owner-specific compatibility inventories, heterogeneous candidate-carrier embeddings, cross-gauge stability bridges, and proposition-specific certificate bindings;
+- concrete owner-specific error-channel taxonomies and compatibility inventories, verified structural-requirement contracts, heterogeneous candidate-carrier embeddings, cross-gauge stability bridges, and proposition-specific certificate bindings;
 - runtime-bound cutoff inventories and later Wannier90 layers.
 
 ## R3 — continuum Fourier analysis

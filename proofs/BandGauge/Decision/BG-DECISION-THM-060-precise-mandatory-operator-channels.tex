@@ -1,0 +1,89 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Precise Mandatory Operator Channels}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-060} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.withMandatoryOperatorChannels_alignmentChannelsAccept_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/OperatorChannels.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Fix one model $m$, candidate $c$, and alignment $a$.  The precise channel data contain a finite error-channel inventory $E_m$ and a finite structural-requirement inventory $R_m$.  Every $e\in E_m$ has an exact value $v(m,c,a,e)\in[0,\infty]$ and its own exact upper budget $b(m,e)$.  Every $r\in R_m$ has a supplied proposition $P(m,c,a,r)$.  After the tagged adapter replaces the generic channel fields, generic alignment-channel acceptance is equivalent to
+\[
+  \bigl(\forall e\in E_m,\ v(m,c,a,e)\le b(m,e)\bigr)
+  \quad\land\quad
+  \bigl(\forall r\in R_m,\ P(m,c,a,r)\bigr).
+\]
+The same $m$, $c$, and $a$ occur in every obligation.
+
+\section{Immutable Formal provenance}
+The declaration is introduced on Formal base commit
+\texttt{af55852071a3d15cd21ccde31db095c5596da40c}, tree
+\texttt{5ce8ba5215b6f2880d36bf484afa9980b2ae0770}.  The owning-module SHA-256 is
+\texttt{1dda7e4bf2c1ac487bc8e0ed1b713097e07ef995869842022873be9037079a3d}; the locator is \texttt{OperatorChannels.lean:144} and \texttt{BG-DECISION-THM-060}.  An amended topic commit is not claimed before separate checkpoint authorization.
+
+\section{Assumptions, conventions, and statement delta}
+Error channels use exact extended nonnegative values and upper-threshold passage only.  Structural requirements are propositions, not numeric residuals.  The two identifier types remain disjoint under a sum tag.  Either finite subinventory may be empty, in which case its universal condition is vacuous.  The theorem refines the meaning of generic mandatory channels without changing prior generic declarations.
+
+\section{Prior art and contribution boundary}
+Tagged sums, finite universal predicates, and upper-threshold checks are standard, classified \texttt{background-only}.  The repository contribution is the explicit semantic separation and exact adapter at its compatibility boundary.  No study-specific taxonomy, novelty, priority, applicability, or publication claim is made.
+
+\section{Proof structure and mathematical argument}
+The combined inventory is the disjoint sum of $E_m$ and $R_m$.  Case analysis on a tagged member sends a left tag to its exact error inequality and a right tag to its structural proposition.  Universal passage over the disjoint sum is therefore exactly the conjunction of the two finite universal predicates.  The schema adapter preserves all nonchannel fields definitionally.
+
+\section{Lean realization and dependencies}
+The proof reverses \texttt{accepts\_iff\_tagged\_channels}; after unfolding the adapter, its tagged universal predicate is definitionally the generic \texttt{AlignmentChannelsAccept}.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  FiniteCompatibilitySchema.
+    withMandatoryOperatorChannels_alignmentChannelsAccept_iff
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{AI, automation, and review record}
+The theorem integration and exposition were AI-assisted and checked by the maintainer.  Lean proof checking is not independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem authenticates no channel identifier, error value, budget, structural proposition, runtime source, binary64 datum, enclosure, or external inventory.  It proves no additive relationship among errors and does not identify the precise channels of any consuming study.  The current checked runtime-certificate count remains zero.
+
+\section{Unresolved questions}
+A concrete consumer must freeze its error-channel taxonomy, exact or outward-enclosed values, channel-specific budgets, structural requirements, complete finite inventories, and rejection behavior.  Those bindings remain owner-repository obligations.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & error/structural separation and common-witness semantics checked; no runtime promotion \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

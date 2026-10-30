@@ -1,0 +1,87 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Alignment-Family Attainment}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-051} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.exists_attainsAlignedOperatorLoss_of_finite} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/FiniteAlignmentAttainment.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Fix one model class $m$ and one candidate $c$.  Let $A_{m,c}$ be its declared set of alignments and let $L_{m,c}:A\to[0,\infty]$ be the exact aligned-operator loss.  If $A_{m,c}$ is finite and nonempty, then there exists $a_*\in A_{m,c}$ such that
+\[
+  L_{m,c}(a_*)\le L_{m,c}(a)\qquad\text{for every }a\in A_{m,c}.
+\]
+Thus $a_*$ satisfies the existing \texttt{AttainsAlignedOperatorLoss} predicate.
+
+\section{Immutable Formal provenance}
+The declaration is introduced on Formal base commit
+\texttt{af55852071a3d15cd21ccde31db095c5596da40c}, tree
+\texttt{5ce8ba5215b6f2880d36bf484afa9980b2ae0770}.  The owning-module SHA-256 is
+\texttt{131db0236710b92a3dd5025d369003cee3c853132772cf8d0e4afe650d00f842}; the locator is \texttt{FiniteAlignmentAttainment.lean:44} and \texttt{BG-DECISION-THM-051}.  A topic commit is not claimed before separate checkpoint authorization.
+
+\section{Assumptions, conventions, and statement delta}
+The alignment family is an exact set with explicit finiteness and nonemptiness proofs.  The loss takes values in extended nonnegative reals, a linear order.  The theorem adds mathematical attainment to the prior infimum interface.  It does not assert uniqueness, mandatory-channel passage, runtime optimizer success, or that an external inventory is complete.
+
+\section{Prior art and contribution boundary}
+Minimum attainment for a linearly ordered-valued function on a nonempty finite set is elementary finite-order mathematics, classified \texttt{background-only}.  The repository contribution is its exact specialization to the declared alignment-family and loss interfaces.  No novelty, priority, applicability, or publication claim is made.
+
+\section{Proof structure and mathematical argument}
+Apply finite-set minimum-image attainment to $A_{m,c}$ and $L_{m,c}$.  It returns an element $a_*$, a proof $a_*\in A_{m,c}$, and the required comparison with every other family member.  These are exactly the two components of \texttt{AttainsAlignedOperatorLoss}.
+
+\section{Lean realization and dependencies}
+The proof invokes \texttt{Set.exists\_min\_image} and packages its membership and minimum properties directly.  It depends on the generic compatibility schema but no concrete operator representation.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  FiniteCompatibilitySchema.
+    exists_attainsAlignedOperatorLoss_of_finite
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{AI, automation, and review record}
+The theorem integration and exposition were AI-assisted and checked by the maintainer.  Lean proof checking is not independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem establishes only finite exact minimization.  It does not authenticate an alignment inventory, floating-point loss, optimizer trace, eigensolver, runtime array, mesh, external source, or certificate.  The current checked runtime-certificate count remains zero.
+
+\section{Unresolved questions}
+A concrete consumer must freeze the alignment family, exact loss interpretation, mandatory channels, and source identity.  Runtime enumeration and optimizer correspondence remain owner-repository obligations.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & finite/nonempty hypotheses and attainment boundary checked; no runtime promotion \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`77d2f88eb48cf91de7350af66483c51fb7d15f55`, tree
-`75e082cb85f30625963f2f8b6244ccc5f66fab62`, integrating PR #34.
+`af55852071a3d15cd21ccde31db095c5596da40c`, tree
+`5ce8ba5215b6f2880d36bf484afa9980b2ae0770`, integrating PR #36.
 
 ## Mission
 
@@ -70,15 +70,17 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/aligned-operator-budget` topic, based on remote `main` commit
-`77d2f88eb48cf91de7350af66483c51fb7d15f55`, develops an exact finite-maximum
-aligned-operator loss, same-alignment perturbation and budget-headroom bounds, and a concrete
-data adapter into the generic finite compatibility schema. The bounded slice includes its
-declaration ledger, audits, module documentation, selected explanatory dossiers, and the folded
-post-PR #34 portfolio update. It does not authenticate runtime operators, prove optimizer
-attainment, compare different gauges, create a certificate, or establish spectral, continuum, or
-scientific adequacy. No separate trust, documentation, or maintenance effort occupies the second
-WIP slot.
+`work/finite-alignment-attainment` topic, based on remote `main` commit
+`af55852071a3d15cd21ccde31db095c5596da40c`, precisely separates exact upper-bounded
+error channels from nonnumeric structural requirements, proves exact minimizer existence for
+nonempty finite alignment families, and uses it to connect infimum-based operator passage to a
+concrete budget-feasible alignment. A tagged adapter preserves one common candidate and alignment,
+and conditional central-to-witness bridges retain the separate mandatory-channel premise. The
+bounded slice includes its declaration ledger, audits, module documentation, selected explanatory
+dossiers, and the folded post-PR #36 portfolio update. It does not choose a study-specific error
+taxonomy, authenticate runtime optimizers or operators, infer channels from finiteness, compare
+different gauges, create a certificate, or establish spectral, continuum, or scientific adequacy.
+No separate trust, documentation, or maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -154,6 +156,14 @@ These items are merged Formal content only.
   alignments, uses one common alignment for pair stability, and does not authenticate runtime
   operators, compare different gauges without a bridge, establish spectral or scientific adequacy,
   or create a certificate.
+- The finite aligned-operator budget and compatibility-adapter slice is proved as
+  `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
+  dossiers. It merged through PR #36 at commit
+  `af55852071a3d15cd21ccde31db095c5596da40c`, tree
+  `5ce8ba5215b6f2880d36bf484afa9980b2ae0770`; it preserves the richer common alignment carrier
+  while projecting its exact pointwise unitary field, uses one common alignment for stability and
+  mandatory channels, and establishes no runtime binding, optimizer attainment, cross-gauge
+  comparison, external inventory coverage, certificate, or scientific adequacy.
 - Admissible alignment-family semantics.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
