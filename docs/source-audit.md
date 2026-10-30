@@ -373,3 +373,19 @@ runtime orthonormality check, optimizer branch, null-space completion, serializa
 artifact, or certificate. A positive-semidefinite witness proves mathematical global minimality.
 Uniqueness requires an explicit positive-definite factor and is not inferred in the rank-deficient
 case. The checked runtime-certificate count remains zero.
+
+### Finite-mesh extension
+
+`ProjectKoios/BandGauge/Alignment/FiniteMeshProcrustes.lean` is a source-neutral exact extension of
+the same selected objective, not a new external scientific claim. It sums the local squared
+objectives with equal weight, accepts one exact polar witness at every finite mesh point, and proves
+pointwise and summed minimality. Equality with the summed minimum forces field equality only when
+every local positive factor is positive definite. The exact known-inverse theorem is conditional on
+pointwise frame equality and is labeled as a control rather than universal ground truth.
+
+The matrix-unitary bridge does not assume a direct matrix-to-isometry coercion. It maps the matrix
+to a Euclidean continuous linear map, proves the two unitary identities using conjugate-transpose/
+adjoint compatibility, and then applies Mathlib's unitary linear-isometry equivalence. The bridge
+places identity, constant, and arbitrary matrix-unitary fields into the already declared identity,
+global, and complete alignment families. It authenticates no external mesh, runtime polar factor,
+SVD, numerical rank, tolerance, optimizer, or serialized evidence.

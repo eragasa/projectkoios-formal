@@ -1,0 +1,106 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Finite-Mesh Unitary-Procrustes Minimality}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-ALIGNMENT-THM-052} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Alignment.finiteMeshPolarMinimizer_is_global} \\
+Owning module & \path{ProjectKoios/BandGauge/Alignment/FiniteMeshProcrustes.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $K$ be a finite mesh and let $A_k,B_k\in\mathbb C^{m\times n}$ for every $k\in K$.
+For a unitary field $U=(U_k)_{k\in K}$ define the unweighted summed objective
+\[
+  J_K(U)=\sum_{k\in K}\lVert A_kU_k-B_k\rVert_F^2.
+\]
+Suppose that at every mesh point exact data $Q_k,H_k$ satisfy
+\[
+  Q_k^*Q_k=I,\qquad H_k\succeq0,\qquad A_k^*B_k=Q_kH_k.
+\]
+Then the pointwise polar-witness field $Q=(Q_k)_{k\in K}$ is a global minimizer:
+\[
+  J_K(Q)\le J_K(U)
+\]
+for every unitary field $U$. No cross-point regularity or common-unitary restriction is imposed.
+
+\section{Sources and statement relation}
+The local mathematical source is Nicholas J. Higham, \emph{Functions of Matrices: Theory and
+Computation}, SIAM, 2008, Chapter~8, Theorem~8.6, DOI
+\texttt{10.1137/1.9780898717778.ch8}. The Formal local theorem is
+\texttt{BG-ALIGNMENT-THM-044}: for the right action $A_kU_k$ and cross matrix $A_k^*B_k$, one
+supplied positive-semidefinite polar witness minimizes one local objective. The present theorem is
+a source-neutral finite-sum lift and asserts no new external scientific claim.
+
+The Formal base is merge commit \texttt{66523cbd5065d5fa3a3ad0f326e40b29c753f574}, tree
+\texttt{c3b79feef16671ddf55044af0754bf91728384b4}. The owning-module SHA-256 is
+\texttt{5f87ab4d4420cef80e866c89e8f54a91ecd8619dc92fc1bdbc5c109812901b79}; the source locator is
+\texttt{FiniteMeshProcrustes.lean:212} and \texttt{BG-ALIGNMENT-THM-052}. No topic commit is
+claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+The mesh and matrix dimensions are finite. Each $Q_k$ is exactly unitary and each $H_k$ is exactly
+positive semidefinite. The objective is an equal-weight finite sum of squared Frobenius norms. The
+theorem does not infer mesh weights, continuity, sewing, or a relation among different $Q_k$.
+
+\section{Proof structure}
+For every $k$, the supplied polar witness and \texttt{BG-ALIGNMENT-THM-044} give
+\[
+  \lVert A_kQ_k-B_k\rVert_F^2
+  \le \lVert A_kU_k-B_k\rVert_F^2.
+\]
+Finite sums preserve pointwise inequalities. Summing this inequality over all $k\in K$ gives the
+claimed global inequality. No attainment argument or runtime optimizer is needed because the
+minimizing field is part of the exact supplied witness.
+
+\section{Lean realization and trusted base}
+The proof unfolds the two finite sums, applies \texttt{Finset.sum\_le\_sum}, and discharges each
+summand with \texttt{finiteMeshPolarMinimizer\_pointwise}. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Alignment.
+  finiteMeshPolarMinimizer_is_global
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Numerical, certificate, and scientific boundaries}
+The theorem does not construct the witnesses, execute or verify SVD, authenticate a numerical
+mesh, test floating orthonormality or rank, choose tolerances, verify an optimizer, parse retained
+bytes, or check a certificate. It establishes no Fourier locality, convergence, physical adequacy,
+novelty, or publication status. The checked runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, bibliography, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must separately bind the mesh, frames, exact or outward-verified polar witnesses,
+objective normalization, source identity, rank policy, retained hashes, and fail-closed verifier.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & local exact minima sum to a global field minimum; runtime witnesses remain external \\
+\bottomrule
+\end{tabularx}
+\end{document}
