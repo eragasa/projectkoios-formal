@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`00e9ee158fb153b5109fbb35f156ca087ea079fd`, tree
-`fe5e9cd5b440745e3644a1478c6f5639a5282b5b`, integrating PR #40.
+`66523cbd5065d5fa3a3ad0f326e40b29c753f574`, tree
+`c3b79feef16671ddf55044af0754bf91728384b4`, integrating PR #41.
 
 ## Mission
 
@@ -70,16 +70,18 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/complex-unitary-procrustes` topic, based on remote `main` merge commit
-`00e9ee158fb153b5109fbb35f156ca087ea079fd`, formalizes the exact complex-unitary right-action
-objective `‖candidate * gauge - reference‖_F²` with cross matrix
-`candidateᴴ * reference`. An exact unitary/positive-semidefinite polar witness proves global
-minimality, while positive definiteness supplies uniqueness. The bounded slice includes its
-consumer and source audit, declaration ledger, axiom audit, module documentation, selected
-explanatory dossiers, and the folded post-PR #40 portfolio update. It does not construct or
-authenticate a NumPy SVD, floating rank, tolerance, runtime optimizer, null-space completion,
-serialized artifact, or certificate; rank-deficient uniqueness remains unclaimed. No separate
-trust, documentation, or maintenance effort occupies the second WIP slot.
+`work/finite-mesh-procrustes-hierarchy` topic, based on remote `main` merge commit
+`66523cbd5065d5fa3a3ad0f326e40b29c753f574`, extends the exact complex-unitary right-action
+objective to a finite mesh. It sums the pointwise objectives, accepts one supplied exact polar
+witness per point, proves pointwise and summed global minimality, requires positive definiteness at
+every point for summed uniqueness, compares the pointwise field with constant and identity fields,
+and proves conditional exact known-inverse zero-objective controls. A separate matrix-unitary
+bridge proves exact isometry from matrix unitarity and places matrix fields in the existing
+identity/global/complete alignment-family hierarchy. The bounded slice includes declaration and
+axiom ledgers, module/source documentation, smoke checks, and selected explanatory dossiers. It
+does not construct or authenticate a mesh, NumPy SVD, floating rank, tolerance, runtime optimizer,
+null-space completion, serialized artifact, or certificate; rank-deficient uniqueness remains
+unclaimed. No separate trust, documentation, or maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -185,6 +187,14 @@ These items are merged Formal content only.
   prove no external inventory completeness, all composed obligations retain one common
   model/candidate/alignment witness, and no runtime value, optimizer, certificate, or scientific
   adequacy is authenticated.
+- Exact complex-unitary right Procrustes algebra is proved as `BG-ALIGNMENT-DEF-017--020` and
+  `BG-ALIGNMENT-THM-030--045`, with selected dossiers for global minimality and conditional
+  uniqueness. The slice merged through PR #41 at commit
+  `66523cbd5065d5fa3a3ad0f326e40b29c753f574`, tree
+  `c3b79feef16671ddf55044af0754bf91728384b4`; the objective is ordinary right-unitary
+  `‖candidate * gauge - reference‖_F²` with cross matrix `candidateᴴ * reference`, the polar witness
+  is exact supplied data, uniqueness requires positive definiteness, and no runtime SVD, rank,
+  tolerance, optimizer, null-space completion, certificate, or scientific adequacy is authenticated.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit

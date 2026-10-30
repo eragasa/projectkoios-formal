@@ -147,6 +147,21 @@ authenticates no runtime frame, orthonormality check, NumPy SVD, floating rank, 
 branch, null-space completion, serialization, enclosure, or certificate. Positive-semidefinite
 rank-deficient factors still prove minimality but do not imply uniqueness.
 
+## Selected finite-mesh Procrustes tranche
+
+The finite-mesh extension has selected dossiers for `BG-ALIGNMENT-THM-052` and
+`BG-ALIGNMENT-THM-058`. They cover global minimization of the summed objective from one supplied
+exact local polar witness per mesh point and equality of an explicit exact known-inverse control
+with the unique pointwise polar field under positive definiteness at every point. The pointwise
+minimum, summed uniqueness, constant/identity comparisons, zero-objective control, and exact
+matrix-unitary embedding into identity/global/complete alignment families remain fully recorded in
+Lean and the theorem manifest without separate dossiers.
+
+The summed objective uses equal finite weights and imposes no cross-point regularity. The known
+inverse is a conditional control, not universal ground truth. No theorem constructs a polar
+witness, authenticates a runtime mesh, verifies SVD/rank/tolerance behavior, selects a
+rank-deficient completion, binds external arrays, or checks a certificate.
+
 ## Required contents
 
 A dossier records:

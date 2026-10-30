@@ -19,6 +19,7 @@ import ProjectKoios.BandGauge.Alignment.FiniteFrame
 import ProjectKoios.BandGauge.Alignment.Family
 import ProjectKoios.BandGauge.Alignment.FamilySeparation
 import ProjectKoios.BandGauge.Alignment.UnitaryProcrustes
+import ProjectKoios.BandGauge.Alignment.FiniteMeshProcrustes
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.ResidualChannels
 import ProjectKoios.BandGauge.Hilbert.FourStageResidualChannels
@@ -467,6 +468,19 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.score_le
 #print axioms ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.objective_minimal
 #print axioms ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.eq_minimizer_of_objective_eq
+#print axioms ProjectKoios.BandGauge.Alignment.matrixUnitaryAlignment_one
+#print axioms ProjectKoios.BandGauge.Alignment.matrixUnitaryAlignmentField_mem_complete
+#print axioms ProjectKoios.BandGauge.Alignment.constantMatrixUnitaryAlignmentField_mem_global
+#print axioms ProjectKoios.BandGauge.Alignment.identityMatrixUnitaryAlignmentField_mem_identity
+#print axioms ProjectKoios.BandGauge.Alignment.finiteMeshProcrustesObjective_nonneg
+#print axioms ProjectKoios.BandGauge.Alignment.finiteMeshPolarMinimizer_pointwise
+#print axioms ProjectKoios.BandGauge.Alignment.finiteMeshPolarMinimizer_is_global
+#print axioms ProjectKoios.BandGauge.Alignment.finiteMeshPolarMinimizer_unique
+#print axioms ProjectKoios.BandGauge.Alignment.finiteMeshPolarMinimizer_le_constant
+#print axioms ProjectKoios.BandGauge.Alignment.finiteMeshPolarMinimizer_le_identity
+#print axioms ProjectKoios.BandGauge.Alignment.knownInverseUnitaryField_objective_zero
+#print axioms ProjectKoios.BandGauge.Alignment.knownInverseUnitaryField_is_global
+#print axioms ProjectKoios.BandGauge.Alignment.knownInverseUnitaryField_eq_polarMinimizer
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply
 #print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_operatorFieldDifference
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap

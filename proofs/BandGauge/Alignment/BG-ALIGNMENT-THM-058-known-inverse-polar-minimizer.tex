@@ -1,0 +1,112 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Known-Inverse and Finite-Mesh Polar Minimizer}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-ALIGNMENT-THM-058} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Alignment.knownInverseUnitaryField_eq_polarMinimizer} \\
+Owning module & \path{ProjectKoios/BandGauge/Alignment/FiniteMeshProcrustes.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $K$ be finite and let $A_k,B_k\in\mathbb C^{m\times n}$. Suppose exact polar-witness data
+$Q_k,H_k$ satisfy
+\[
+  Q_k^*Q_k=I,\qquad H_k\succ0,\qquad A_k^*B_k=Q_kH_k
+\]
+for every $k\in K$. Let $O=(O_k)_{k\in K}$ be an exact unitary known-inverse control satisfying
+\[
+  A_kO_k=B_k\qquad\text{for every }k\in K.
+\]
+Then
+\[
+  O_k=Q_k\qquad\text{for every }k\in K,
+\]
+or equivalently the two unitary fields are equal.
+
+\section{Sources and statement relation}
+The local polar-minimizer background is Nicholas J. Higham, \emph{Functions of Matrices: Theory
+and Computation}, SIAM, 2008, Chapter~8, Theorem~8.6, DOI
+\texttt{10.1137/1.9780898717778.ch8}. Formal's local uniqueness theorem
+\texttt{BG-ALIGNMENT-THM-045} requires a positive-definite polar factor. The present statement
+combines that exact local rigidity with a finite-mesh zero-objective control. It does not claim
+that a known inverse exists for an arbitrary scientific calculation.
+
+The Formal base is merge commit \texttt{66523cbd5065d5fa3a3ad0f326e40b29c753f574}, tree
+\texttt{c3b79feef16671ddf55044af0754bf91728384b4}. The owning-module SHA-256 is
+\texttt{5f87ab4d4420cef80e866c89e8f54a91ecd8619dc92fc1bdbc5c109812901b79}; the source locator is
+\texttt{FiniteMeshProcrustes.lean:324} and \texttt{BG-ALIGNMENT-THM-058}. No topic commit is
+claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+Every matrix equation and positivity hypothesis is exact. Positive definiteness is required at
+every mesh point; positive semidefiniteness alone would prove minimality but not uniqueness. The
+known-inverse field is supplied data and is labeled a control. No runtime inverse, SVD, numerical
+rank decision, or null-space completion is inferred.
+
+\section{Proof structure}
+The known-inverse equations imply
+\[
+  J_K(O)=\sum_{k\in K}\lVert A_kO_k-B_k\rVert_F^2=0.
+\]
+Every summed objective is nonnegative, while pointwise polar minimality gives
+$J_K(Q)\le J_K(O)=0$. Hence $J_K(O)=J_K(Q)$. Because every local factor $H_k$ is positive
+definite, equality of the summed objective with its minimum invokes the finite-mesh uniqueness
+theorem and yields $O=Q$.
+
+The proof does not infer equality of summands merely from a zero sum without sign information:
+nonnegativity is proved separately from the exact squared Frobenius representation.
+
+\section{Lean realization and trusted base}
+The proof uses \texttt{BG-ALIGNMENT-THM-050}, \texttt{052}, \texttt{053}, and \texttt{056}.
+Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Alignment.
+  knownInverseUnitaryField_eq_polarMinimizer
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Numerical, certificate, and scientific boundaries}
+The theorem authenticates no numerical oracle, runtime frame equality, SVD, positive-definite rank
+test, mesh, tolerance, optimizer, serialization, or certificate. A model-specific known inverse can
+serve as an implementation control, but this theorem does not promote it to universal ground truth,
+a practical fitted solution, or evidence of scientific adequacy. The checked runtime-certificate
+count remains zero.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, bibliography, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must separately establish exact or outward-verified frame equality, pointwise positive
+definiteness, matrix unitarity, mesh identity, source provenance, retained hashes, and verifier
+soundness. Failure of any runtime premise prevents application of the theorem.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & exact known inverse equals the unique positive-definite polar field; no runtime oracle is authenticated \\
+\bottomrule
+\end{tabularx}
+\end{document}
