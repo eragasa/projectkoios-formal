@@ -1,0 +1,95 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Combined Precise-Channel Acceptance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-077} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteMandatoryOperatorChannelData.combine_accepts_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/MandatoryChannelComposition.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $D_1$ and $D_2$ be precise mandatory-channel datasets on the same model, candidate, and
+alignment carriers. Their error identifiers are tagged by $E_1\sqcup E_2$, and their structural
+identifiers by $S_1\sqcup S_2$. For every common model $m$, candidate $c$, and alignment $a$,
+\[
+ \operatorname{Accepts}(D_1\mathbin{\oplus}D_2;m,c,a)
+ \quad\Longleftrightarrow\quad
+ \operatorname{Accepts}(D_1;m,c,a)\ \land\
+ \operatorname{Accepts}(D_2;m,c,a).
+\]
+Each original error inequality and each original nonnumeric structural proposition remains
+mandatory at the same $(m,c,a)$.
+
+\section{Immutable Formal provenance}
+The declaration is developed against Formal base merge commit
+\texttt{5ce81b3f5373b57177179abb93700a097f9e1ba3}, tree
+\texttt{137ecc251a934f95f79feb2518ebe1f9c6b6f929}. The owning-module SHA-256 is
+\texttt{8fb609f42289780c511f7317069c26bf784b9d5daff85c92739008675c2b465e}; the locator is
+\texttt{MandatoryChannelComposition.lean:124} and \texttt{BG-DECISION-THM-077}. A topic commit
+is not claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+The two datasets share the model, candidate, and alignment types but may use different error and
+structural identifier types. Error values and budgets are exact \texttt{ENNReal} quantities.
+Structural requirements remain propositions. Sum tags prevent collisions without asserting that
+either inventory is externally complete. Empty input inventories remain vacuous.
+
+\section{Proof structure}
+The combined error inventory is the disjoint sum of the original error inventories, and constructor
+case analysis dispatches values and budgets to the corresponding input. Thus combined error
+acceptance is equivalent to both original error acceptances. The same argument applies independently
+to the disjoint structural inventories and predicates. Expanding precise acceptance into its error
+and structural conjuncts, applying both equivalences, and reassociating conjunction proves the
+statement.
+
+\section{Lean realization and trusted base}
+The proof reuses \texttt{BG-DECISION-THM-075} and \texttt{BG-DECISION-THM-076}, then closes
+propositional reassociation. No decision procedure evaluates an external value. Toolchain: Lean
+\texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  FiniteMandatoryOperatorChannelData.combine_accepts_iff
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{Scientific, numerical, and certificate boundaries}
+Composition authenticates no inventory origin, runtime value, structural evidence, candidate,
+alignment, optimizer, serialization, enclosure, or source artifact. It proves no external taxonomy
+completeness and creates no certificate. The checked runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The proof and dossier were AI-assisted and checked by the maintainer. Lean proof checking is not
+independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must freeze complete error and structural inventories, exact or outward-enclosed values,
+budgets, witness carriers, source identities, retained hashes, and fail-closed verification before
+claiming external coverage.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & both datasets retained at one witness; no completeness promotion \\
+\bottomrule
+\end{tabularx}
+\end{document}

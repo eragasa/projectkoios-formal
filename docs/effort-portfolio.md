@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`01c9b0a0cd3776d2edfc82e514e11408d6a96f34`, tree
-`fddc9e3225b0edf9e80e9301e3b7426d1df6e788`, integrating PR #38.
+`5ce81b3f5373b57177179abb93700a097f9e1ba3`, tree
+`137ecc251a934f95f79feb2518ebe1f9c6b6f929`, integrating PR #39.
 
 ## Mission
 
@@ -70,19 +70,19 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/four-stage-budget-synthesis` topic, based on remote `main` merge commit
-`01c9b0a0cd3776d2edfc82e514e11408d6a96f34`, adds exact four-channel budget records,
-an explicit total-headroom premise, and component-to-total passage for the existing source-neutral
-four-stage residual adapter. It expands adapted alignment-channel acceptance, conformant operator
-witnesses, operator-witness acceptance, and witness compatibility into exact three-component
-conditions under that premise while preserving the original model/candidate inventories,
-alignment families, spectral criterion, aligned-operator loss, and central budgets. The bounded
-slice includes its declaration ledger, audits, module documentation, selected explanatory
-dossiers, and the folded post-PR #38 portfolio update. It does not assert scalar-error additivity,
-infer headroom from runtime data, add structural coverage, authenticate runtime stages or values,
-claim that four channels exhaust a consumer's broader ledger, create a certificate, or establish
-spectral, continuum, physical, or scientific adequacy. No separate trust, documentation, or
-maintenance effort occupies the second WIP slot.
+`work/mandatory-channel-composition` topic, based on remote `main` merge commit
+`5ce81b3f5373b57177179abb93700a097f9e1ba3`, introduces disjoint composition of two
+precise mandatory-channel datasets and proves that all error and structural obligations from both
+inputs pass at one common model, candidate, and alignment. It lifts composition through
+alignment-channel acceptance, conformant operator witnesses, operator-witness acceptance, and
+witness compatibility, then specializes the construction to extend the four-stage residual adapter
+with consumer-supplied error channels and structural requirements while retaining conditional
+total-channel redundancy under explicit headroom. The bounded slice includes its declaration
+ledger, audits, module documentation, selected explanatory dossiers, and the folded post-PR #39
+portfolio update. It does not establish external taxonomy completeness, infer headroom, erase
+structural obligations, authenticate runtime values or inventories, create a certificate, or
+establish spectral, continuum, physical, or scientific adequacy. No separate trust, documentation,
+or maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -172,6 +172,14 @@ These items are merged Formal content only.
   `fddc9e3225b0edf9e80e9301e3b7426d1df6e788`; component fields add exactly, scalar summaries
   satisfy inequalities only, the structural inventory is empty, and no runtime stage, complete
   study ledger, certificate, or scientific adequacy is established.
+- Four-stage budget synthesis and exact component-level compatibility witnesses are proved as
+  `BG-DECISION-DEF-045--050` and `BG-DECISION-THM-065--072`, with two selected explanatory
+  dossiers. The slice merged through PR #39 at commit
+  `5ce81b3f5373b57177179abb93700a097f9e1ba3`, tree
+  `137ecc251a934f95f79feb2518ebe1f9c6b6f929`; total-channel redundancy requires explicit
+  component-budget headroom, every theorem retains one common model/candidate/alignment witness,
+  and no runtime headroom, structural coverage, external completeness, certificate, or scientific
+  adequacy is inferred.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit
