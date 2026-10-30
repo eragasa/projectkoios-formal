@@ -1,0 +1,88 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Norm of a Unitarily Pulled-Back Operator Action}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-024} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.alignedOperatorField_apply_norm} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/AlignedDifferenceBounds.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $U_k:E_{\mathrm{ref}}\to E_{\mathrm{cand}}$ be a supplied complex-linear isometric equivalence and let $C_k$ be a bounded complex-linear operator on the candidate fiber.  For every reference vector $v$,
+\[
+ \lVert U_k^{-1}C_kU_kv\rVert=\lVert C_kU_kv\rVert.
+\]
+
+\section{Immutable Formal provenance}
+The declaration is introduced in a topic tree based on Formal commit
+\texttt{5c60f8a6892f0be5eab554466fc2c42e926656d9}, tree
+\texttt{7ae6d7a2df05b151e996856ac0413fc53745c076}.  This dossier pins the owning-module bytes by SHA-256
+\texttt{cc567d1963948706aa2d1adc88b135aec0dfaf8a2196f5607654421dabea65b7} and the exact locator \texttt{BG-BLOCH-THM-024}.  A Git checkpoint identity is operational metadata established only by a separately authorized commit; the module hash identifies the reviewed theorem bytes independently of that action.
+
+The result is source-neutral exact operator algebra motivated by the already selected higher-rank aligned-operator comparison consumer.  It does not formalize external numerical data.
+
+\section{Assumptions, conventions, and statement delta}
+The alignment is supplied pointwise and is exactly unitary through Lean's linear-isometry equivalence type.  No completeness, self-adjointness, finite dimensionality, sewing, or optimizer hypothesis is needed.  The Lean proposition is authoritative; the displayed equation is only its notation-level restatement.
+
+\section{Prior art and contribution boundary}
+Norm preservation by a linear isometry is standard \texttt{background-only} mathematics.  No novelty or priority claim is made.  The repository contribution is the typed connection to the exact aligned-operator-field convention.
+
+\section{Proof structure and mathematical argument}
+By definition, the pulled-back action is $U_k^{-1}(C_k(U_kv))$.  The inverse of a linear isometric equivalence preserves norm, so applying norm preservation to the candidate vector $C_k(U_kv)$ gives the equality immediately.
+
+\section{Lean realization and dependencies}
+The proof unfolds the application of \texttt{alignedOperatorField} and applies
+\path{LinearIsometryEquiv.norm_map} to \path{(alignment k).symm}.  It was checked with Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Bloch.
+  alignedOperatorField_apply_norm
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or \texttt{admit}.
+
+\section{AI, automation, and review record}
+The proof and exposition were AI-assisted and maintainer-reviewed.  Lean kernel checking, hashing, build execution, and LaTeX compilation are automation, not independent expert review.  No independent mathematical, scientific, novelty, or publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem authenticates no alignment, operator, array, mesh, or runtime norm.  It supplies no cross-gauge comparison, spectral estimate, continuum statement, certificate, or physical-adequacy conclusion.  Typesetting this dossier adds no proof authority.
+
+\section{Unresolved questions}
+Any application must bind one common exact alignment and exact operators.  Binary64 inputs require a separate outward-enclosure contract and proposition-specific checker before they can support a Formal conclusion.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact statement, proof, dependencies, and nonclaims checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

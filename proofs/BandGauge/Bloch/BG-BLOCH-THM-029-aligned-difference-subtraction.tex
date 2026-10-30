@@ -1,0 +1,94 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Subtraction Identity for Same-Alignment Differences}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-029} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_sub} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/AlignedDifferenceBounds.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For one supplied alignment $U$ and two pairs of reference and candidate fields, write
+$\Delta_U(R,C)=R-U^{-1}CU$.  Then the exact field identity is
+\[
+ \Delta_U(R_L,C_L)-\Delta_U(R_R,C_R)
+ =\Delta_U(R_L-R_R,C_L-C_R).
+\]
+
+\section{Immutable Formal provenance}
+The theorem is introduced in a topic tree based on Formal commit
+\texttt{5c60f8a6892f0be5eab554466fc2c42e926656d9}, tree
+\texttt{7ae6d7a2df05b151e996856ac0413fc53745c076}.  The owning module is pinned by SHA-256
+\texttt{cc567d1963948706aa2d1adc88b135aec0dfaf8a2196f5607654421dabea65b7}; its exact locator is \texttt{BG-BLOCH-THM-029}.  Commit creation remains a separately authorized operation and is not presumed here.
+
+This is source-neutral exact algebra serving the selected stability analysis.  It binds no external field or calculation.
+
+\section{Assumptions, conventions, and statement delta}
+All four fields use the same supplied pointwise unitary alignment.  This common-alignment hypothesis is essential to the statement: the theorem does not compare values produced under two different gauges.  Subtraction always follows the declared reference-minus-pulled-back-candidate convention.
+
+\section{Prior art and contribution boundary}
+Linearity of conjugation and additive rearrangement are standard \texttt{background-only} algebra.  No novelty claim is made.  The repository contribution is the typed field identity needed before a same-alignment stability bound can be stated without ambiguity.
+
+\section{Proof structure and mathematical argument}
+At each $k$ and vector $v$, expand both aligned differences.  Linearity of $U_k^{-1}$ gives
+\[
+ U_k^{-1}(C_{L,k}-C_{R,k})U_kv
+ =U_k^{-1}C_{L,k}U_kv-U_k^{-1}C_{R,k}U_kv.
+\]
+The remaining equality is an additive-group rearrangement.  Pointwise extensionality then gives equality of operator fields.
+
+\section{Lean realization and dependencies}
+The proof uses function and continuous-linear-map extensionality, \path{map_sub}, and Lean's \texttt{abel} tactic after unfolding the aligned-difference application.  It was checked with Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Bloch.
+  alignedOperatorDifferenceField_sub
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission scan finds no repository-owned \texttt{axiom}, \texttt{sorry}, or \texttt{admit}.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and maintainer-reviewed.  Kernel checking and automation are not independent expert review.  No independent mathematical, scientific, novelty, bibliography, or publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem is an exact algebraic identity only.  It does not show that either difference is small, that a runtime alignment is common, that a selected gauge is optimal, or that any spectrum or material property is accurate.  It creates no parser or certificate.
+
+\section{Unresolved questions}
+Different-alignment comparison would require an explicit transition or gauge bridge and is not obtained by reusing this theorem.  Runtime use also requires exact or outward-enclosed bindings for every operator field.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & common-alignment premise and exact subtraction order checked; no independent review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

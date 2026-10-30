@@ -48,6 +48,19 @@ certificate, or scientific model. In particular, fixed-unitary Fourier equivaria
 momentum-dependent gauges, the resolvent equation does not itself prove a nonzero eigenvector, and
 finite loop-phase invariance does not establish continuum topology.
 
+## Selected aligned-operator norm and stability tranche
+
+The source-neutral aligned-difference extension has selected dossiers for
+`BG-BLOCH-THM-024`, `027`, `029`, `031`, and `032`. They cover unitary-pullback action-norm
+and exact operator-norm preservation, the aligned-difference operator-norm budget, the exact
+same-alignment subtraction identity, and the resulting operator-norm stability bound. The intermediate pointwise inequalities
+and pullback-linearity theorem remain fully recorded in Lean and the theorem manifest without
+separate dossiers.
+
+All four statements require one supplied common alignment where two pairs of fields are compared.
+They do not authenticate an alignment, compare different gauges, bind runtime operators or
+binary64 values, estimate spectra, prove continuum adequacy, or create a certificate.
+
 ## Required contents
 
 A dossier records:
