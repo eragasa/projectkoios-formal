@@ -69,8 +69,12 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
-effort currently occupies the WIP limit.
+One documentation effort occupies the WIP limit: publication-facing proof dossiers for selected
+aligned-difference self-adjointness, fixed-unitary Fourier, finite rank-one resolvent, and finite
+gauge-loop/projector--Bargmann declarations. The tranche explains already proved exact
+propositions and adds no theorem, runtime binding, certificate, numerical or scientific validation,
+novelty assessment, or publication status. No mathematical, certificate, runtime-evidence, trust,
+or maintenance effort is active.
 
 ## Ready
 

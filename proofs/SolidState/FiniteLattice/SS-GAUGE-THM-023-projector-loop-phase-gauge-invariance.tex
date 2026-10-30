@@ -1,0 +1,97 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-26
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Projector-Loop Phase Gauge Invariance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-26}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{SS-GAUGE-THM-023} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.SolidState.FiniteLattice.projectorLoopPhase_phaseGaugeState} \\
+Owning module & \path{ProjectKoios/SolidState/FiniteLattice/ProjectorBargmann.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For a finite ordered loop of vectors and independent unit-modulus vertex phases, the principal argument of the trace of the ordered rank-one state-matrix product is unchanged:
+\[
+ \arg\operatorname{tr}\!\left(\prod_x |p_x\psi_x\rangle\langle p_x\psi_x|\right)
+ =\arg\operatorname{tr}\!\left(\prod_x |\psi_x\rangle\langle\psi_x|\right).
+\]
+
+\section{Immutable Formal provenance}
+The declaration was introduced at Formal commit
+\texttt{e6c9ad895eeb84608eb43292eacffd5d4d552b6e} and merged through PR~\#2 at
+\texttt{265fb7cb1a0b448cf3d069d4c1de9e5af1a912f8}.  It is present at the dossier base
+\texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
+\texttt{bc0d57bd9d3420527bd4289f6e6a2b343ccfa5d8007211473dfdceca4501a3d3}; the exact locator is \texttt{SS-GAUGE-THM-023}.
+
+The declaration is source-neutral finite rank-one and loop algebra.  It is a crosswalk between two exact finite expressions, not a certificate for runtime frames or a continuum-topology theorem.
+
+\section{Assumptions, conventions, and statement delta}
+The loop and state dimension are finite.  The complex argument is Mathlib's totalized principal argument, including at zero.  No nonvanishing, normalization, or branch-continuity hypothesis is present.
+The Lean proposition is authoritative.  This prose restatement neither strengthens the hypotheses
+nor supplies an application binding.
+
+\section{Statement-specific prior art and contribution boundary}
+Phase invariance of a finite rank-one loop under local $U(1)$ changes is standard \texttt{background-only}.  The declaration records an exact finite, totalized statement without interpreting it as topology.
+
+\section{Proof structure and mathematical argument}
+Use the projector/Bargmann phase crosswalk on both sides.  \texttt{SS-GAUGE-THM-008} makes the underlying closed Bargmann product invariant, so applying the principal argument returns equal phases.
+
+\section{Lean realization and dependencies}
+The direct dependencies are \texttt{projectorLoopPhase\_eq\_bargmannLoopPhase} and \texttt{bargmannLoopPhase\_phaseGaugeState}.  The declaration was rechecked with Lean \texttt{4.35.0} at commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.SolidState.FiniteLattice.
+    projectorLoopPhase_phaseGaugeState
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted and checked against the source and theorem
+manifest by the maintainer.  Lean kernel checking, build output, hashing, and LaTeX compilation are
+automation, not independent expert review.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+At a zero loop product the argument is totalized and carries no geometric-phase interpretation.  The theorem gives no phase unwrapping, continuity, topology, runtime frame certificate, or material conclusion.  No runtime certificate is created by this dossier, and compilation of this
+PDF proves nothing beyond successful typesetting.
+
+\section{Unresolved questions}
+Nonvanishing and continuum interpretations require separate exact hypotheses.  Any plotted phase still needs an authenticated owner-controlled projection from checked input data.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-26 & initial dossier & AI-assisted maintainer review & exact proposition, proof structure, and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

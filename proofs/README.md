@@ -31,6 +31,23 @@ proofs/BandGauge/Geometry/BG-THM-002-common-witness.tex
 
 The directory tree is the dossier index. `docs/theorem-manifest.md` is the status index.
 
+## Selected finite gauge and operator tranche
+
+The publication-facing tranche below records selected structural results rather than every helper
+in the owning modules.
+
+| Family | Dossier IDs | Exact scope |
+|---|---|---|
+| Aligned operator differences | `BG-BLOCH-THM-021--023` | subtraction, unitary pullback, and reference-minus-pulled-back-candidate self-adjointness |
+| Fixed-unitary Fourier algebra | `BG-FOURIER-THM-035`, `043`, `046`, `047` | Frobenius inner-product invariance and equivariance of coefficient extraction, truncated reconstruction, and the truncation residual |
+| Finite rank-one resolvent algebra | `QM-RESOLVENT-THM-005`, `008`, `010`, `013` | determinant factorization, Sherman--Morrison inversion, the scalar singularity criterion, and the conditional defect equation |
+| Finite gauge and projector loops | `SS-GAUGE-THM-008`, `011`, `020`, `023` | Bargmann-product and Wilson-determinant invariance, projector--Bargmann equality, and projector-loop phase invariance |
+
+These dossiers add no theorem and bind no runtime field, matrix, mesh, frame, support, root,
+certificate, or scientific model. In particular, fixed-unitary Fourier equivariance does not cover
+momentum-dependent gauges, the resolvent equation does not itself prove a nonzero eigenvector, and
+finite loop-phase invariance does not establish continuum topology.
+
 ## Required contents
 
 A dossier records:

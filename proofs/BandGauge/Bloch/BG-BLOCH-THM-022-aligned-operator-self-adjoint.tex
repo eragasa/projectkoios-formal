@@ -1,0 +1,101 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Self-Adjointness Under Unitary Pullback}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-022} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.alignedOperatorField_selfAdjoint} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $E_{\rm ref}$ and $E_{\rm cand}$ be complete complex inner-product spaces.  For each $k\in K$, let $U_k:E_{\rm ref}\simeq E_{\rm cand}$ be a linear isometric equivalence and let $C_k$ be self-adjoint on $E_{\rm cand}$.  Then
+\[
+  U_k^{-1}C_kU_k
+\]
+is self-adjoint on $E_{\rm ref}$ for every $k$.
+
+\section{Immutable Formal provenance}
+The declaration was introduced at Formal commit
+\texttt{954d400ac3a1d80eb983d4d53d9ad1d09332ecd5} and merged through PR~\#28 at
+\texttt{71d078d36b361fced70595d95bc987a73f7e93f1}.  It is present at the dossier base
+\texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
+\texttt{e15bd4f76e4e2cc148092a9c6c80e500ae25e837d5fddf5a3aee5d050e9ea34a}; the exact locator is \texttt{BG-BLOCH-THM-022}.
+
+The declaration is source-neutral finite-dimensional operator algebra.  It was introduced in the aligned-difference self-adjointness checkpoint and does not formalize an external scientific or numerical claim.
+
+\section{Assumptions, conventions, and statement delta}
+The alignment is supplied pointwise as a unitary linear isometric equivalence; it is not inferred or optimized.  Both fibers are complete.  Candidate self-adjointness is an explicit pointwise hypothesis.
+The Lean proposition is authoritative.  This prose restatement neither strengthens the hypotheses
+nor supplies an application binding.
+
+\section{Statement-specific prior art and contribution boundary}
+Unitary conjugation preserving self-adjointness is standard \texttt{background-only} operator algebra.  No novelty claim is made.  The audited contribution is its precise use for possibly different reference and candidate fibers.
+
+\section{Proof structure and mathematical argument}
+For fixed $k$, the adjoint of a unitary pullback satisfies
+\[
+ (U_k^{-1}C_kU_k)^*=U_k^{-1}C_k^*U_k.
+\]
+Since $C_k^*=C_k$, the right side is the original pullback.  Lean rewrites the adjoint of the isometry as its inverse and applies Mathlib's self-adjoint conjugation lemma.
+
+\section{Lean realization and dependencies}
+The declaration uses \texttt{LinearIsometryEquiv.adjoint\_eq\_symm}, continuous-linear-map composition, and \texttt{IsSelfAdjoint.adjoint\_conj}.  The declaration was rechecked with Lean \texttt{4.35.0} at commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.BandGauge.Bloch.
+    alignedOperatorField_selfAdjoint
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted and checked against the source and theorem
+manifest by the maintainer.  Lean kernel checking, build output, hashing, and LaTeX compilation are
+automation, not independent expert review.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+No theorem selects $U_k$, checks a runtime frame, enforces sewing or smoothness, or identifies a physical gauge.  Pointwise self-adjointness does not provide a sampled or continuum spectral gap.  No runtime certificate is created by this dossier, and compilation of this
+PDF proves nothing beyond successful typesetting.
+
+\section{Unresolved questions}
+A later application bridge must authenticate the fibers, candidate field, and every supplied alignment.  Additional regularity or restricted-family conditions require separate statements.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact proposition, proof structure, and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

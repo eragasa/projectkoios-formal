@@ -1,0 +1,100 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Self-Adjointness of an Operator-Field Difference}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-021} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.operatorFieldDifference_selfAdjoint} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $K$ be any index type and let $E$ be a complete complex inner-product space.  For bounded complex-linear operator fields $R,C:K\to\mathcal L(E)$, if $R_k$ and $C_k$ are self-adjoint for every $k$, then
+\[
+  (R-C)_k=R_k-C_k\quad\text{is self-adjoint for every }k.
+\]
+
+\section{Immutable Formal provenance}
+The declaration was introduced at Formal commit
+\texttt{954d400ac3a1d80eb983d4d53d9ad1d09332ecd5} and merged through PR~\#28 at
+\texttt{71d078d36b361fced70595d95bc987a73f7e93f1}.  It is present at the dossier base
+\texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
+\texttt{e15bd4f76e4e2cc148092a9c6c80e500ae25e837d5fddf5a3aee5d050e9ea34a}; the exact locator is \texttt{BG-BLOCH-THM-021}.
+
+The declaration is source-neutral finite-dimensional operator algebra.  It was introduced in the aligned-difference self-adjointness checkpoint and does not formalize an external scientific or numerical claim.
+
+\section{Assumptions, conventions, and statement delta}
+Completeness of $E$ is explicit because the Mathlib adjoint API for continuous linear maps uses a complete inner-product space.  Both input fields carry pointwise self-adjointness hypotheses.  The subtraction order is left minus right.
+The Lean proposition is authoritative.  This prose restatement neither strengthens the hypotheses
+nor supplies an application binding.
+
+\section{Statement-specific prior art and contribution boundary}
+Closure of bounded self-adjoint operators under subtraction is standard \texttt{background-only} functional analysis.  No novelty or priority claim is made.  The Project Koios contribution is the explicit, audited field-level declaration used by the aligned comparison layer.
+
+\section{Proof structure and mathematical argument}
+Fix $k$.  The hypotheses give $R_k^*=R_k$ and $C_k^*=C_k$.  Additivity of the adjoint gives
+\[
+ (R_k-C_k)^*=R_k^*-C_k^*=R_k-C_k.
+\]
+Thus the difference is self-adjoint at every index.  Lean invokes \texttt{IsSelfAdjoint.sub} pointwise.
+
+\section{Lean realization and dependencies}
+The proof depends on Mathlib's self-adjointness API for continuous linear maps and on \texttt{operatorFieldDifference}, which is pointwise subtraction.  No finite-dimensionality, basis, spectrum, or norm is used.  The declaration was rechecked with Lean \texttt{4.35.0} at commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} and Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms
+  ProjectKoios.BandGauge.Bloch.
+    operatorFieldDifference_selfAdjoint
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and review record}
+The Lean proof and this exposition were AI-assisted and checked against the source and theorem
+manifest by the maintainer.  Lean kernel checking, build output, hashing, and LaTeX compilation are
+automation, not independent expert review.  No independent mathematical, scientific, novelty, or
+publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem does not authenticate either field, establish that an operator is bounded in a concrete computation, or cover unbounded operators and their domains.  It proves no spectral bound, numerical residual, or physical adequacy claim.  No runtime certificate is created by this dossier, and compilation of this
+PDF proves nothing beyond successful typesetting.
+
+\section{Unresolved questions}
+A consuming certificate would have to authenticate the exact operator fields and all hypotheses.  Unbounded Hamiltonians would require a separate domain-sensitive formalization.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact proposition, proof structure, and boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}
