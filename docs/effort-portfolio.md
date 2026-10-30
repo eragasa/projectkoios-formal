@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`5c60f8a6892f0be5eab554466fc2c42e926656d9`, tree
-`7ae6d7a2df05b151e996856ac0413fc53745c076`, integrating PR #33.
+`77d2f88eb48cf91de7350af66483c51fb7d15f55`, tree
+`75e082cb85f30625963f2f8b6244ccc5f66fab62`, integrating PR #34.
 
 ## Mission
 
@@ -70,14 +70,15 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/aligned-difference-bounds` topic, based on remote `main` commit
-`5c60f8a6892f0be5eab554466fc2c42e926656d9`, develops exact action/operator-norm
-bounds and same-alignment subtraction/Lipschitz stability for aligned operator
-differences. The bounded slice includes its declaration ledger, audits, module documentation,
-and selected explanatory dossiers. It does not select or authenticate an alignment, compare
-different gauges, bind runtime arrays or binary64 values, create a certificate, or establish
-spectral, continuum, or scientific adequacy. No separate trust, documentation, or maintenance
-effort occupies the second WIP slot.
+`work/aligned-operator-budget` topic, based on remote `main` commit
+`77d2f88eb48cf91de7350af66483c51fb7d15f55`, develops an exact finite-maximum
+aligned-operator loss, same-alignment perturbation and budget-headroom bounds, and a concrete
+data adapter into the generic finite compatibility schema. The bounded slice includes its
+declaration ledger, audits, module documentation, selected explanatory dossiers, and the folded
+post-PR #34 portfolio update. It does not authenticate runtime operators, prove optimizer
+attainment, compare different gauges, create a certificate, or establish spectral, continuum, or
+scientific adequacy. No separate trust, documentation, or maintenance effort occupies the second
+WIP slot.
 
 ## Ready
 
@@ -144,6 +145,15 @@ These items are merged Formal content only.
   at commit `71d078d36b361fced70595d95bc987a73f7e93f1`, tree
   `8d2ea1a81b222b34ba77accb60dddda17ac83d91`; it does not select an alignment, authenticate
   runtime operators, or establish spectral or numerical adequacy.
+- Exact unitary-pullback action/operator-norm preservation, aligned-difference action and
+  operator-norm bounds, same-alignment subtraction identities, and pointwise/operator-norm
+  Lipschitz stability are proved as `BG-BLOCH-THM-024--032`. Five selected explanatory dossiers
+  cover `BG-BLOCH-THM-024`, `027`, `029`, `031`, and `032`. The slice merged through PR #34 at
+  commit `77d2f88eb48cf91de7350af66483c51fb7d15f55`, tree
+  `75e082cb85f30625963f2f8b6244ccc5f66fab62`; it requires supplied exact pointwise unitary
+  alignments, uses one common alignment for pair stability, and does not authenticate runtime
+  operators, compare different gauges without a bridge, establish spectral or scientific adequacy,
+  or create a certificate.
 - Admissible alignment-family semantics.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
