@@ -1,0 +1,100 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Operator-Norm Bound for an Aligned Difference}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-027} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.norm_alignedOperatorDifferenceField_le} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/AlignedDifferenceBounds.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For a supplied pointwise unitary alignment $U_k$, reference operator $R_k$, and candidate operator $C_k$, define
+\[
+ \Delta_k=R_k-U_k^{-1}C_kU_k.
+\]
+Then the exact continuous-linear-map norms satisfy
+\[
+ \lVert\Delta_k\rVert\leq \lVert R_k\rVert+\lVert C_k\rVert.
+\]
+
+\section{Immutable Formal provenance}
+The declaration is introduced in a topic tree based on Formal commit
+\texttt{5c60f8a6892f0be5eab554466fc2c42e926656d9}, tree
+\texttt{7ae6d7a2df05b151e996856ac0413fc53745c076}.  The owning-module SHA-256 is
+\texttt{cc567d1963948706aa2d1adc88b135aec0dfaf8a2196f5607654421dabea65b7}; the exact locator is \texttt{BG-BLOCH-THM-027}.  A separately authorized Git checkpoint may later add commit identity without changing this byte-level theorem identity.
+
+The theorem is source-neutral exact operator mathematics for the selected aligned operator-budget consumer.  No runtime or publication source is asserted as an instance.
+
+\section{Assumptions, conventions, and statement delta}
+The sign convention is reference minus pulled-back candidate.  The alignment is exact and supplied, and both operands are bounded complex-linear operators.  The theorem does not require self-adjointness or sewing.  It bounds the operator norm, not a Frobenius norm, sampled maximum, RMS summary, or eigenvalue error.
+
+\section{Prior art and contribution boundary}
+The operator triangle inequality and norm preservation by unitary maps are standard \texttt{background-only} facts.  No novelty claim is made.  The contribution is their exact integration with the repository's typed aligned-difference definition.
+
+\section{Proof structure and mathematical argument}
+For every $v$, the action-level triangle inequality gives
+\[
+ \lVert\Delta_kv\rVert\leq\lVert R_kv\rVert+\lVert C_kU_kv\rVert.
+\]
+Each term is bounded by its operator norm times the vector norm, and $\lVert U_kv\rVert=\lVert v\rVert$.  Therefore
+\[
+ \lVert\Delta_kv\rVert\leq(\lVert R_k\rVert+\lVert C_k\rVert)\lVert v\rVert.
+\]
+The defining upper-bound property of the operator norm yields the result.
+
+\section{Lean realization and dependencies}
+The direct repository dependency is \texttt{BG-BLOCH-THM-026}.  The proof applies
+\path{ContinuousLinearMap.opNorm_le_bound}; its nonnegativity premise follows from norm nonnegativity.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Bloch.
+  norm_alignedOperatorDifferenceField_le
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission marker occurs in the proof.
+
+\section{AI, automation, and review record}
+The proof and dossier were AI-assisted and checked by the maintainer.  Kernel checking, build logs, hashes, and PDF compilation are automation rather than independent review.  No independent expert, bibliography, novelty, or publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+This is a universal upper bound, not a claim that any observed budget is small or adequate.  It does not authenticate runtime operators or alignment, estimate spectra, prove a sampled gap, bind binary64 values, or create a certificate.  A SHA-256 digest establishes byte identity only.
+
+\section{Unresolved questions}
+A consuming certificate would need exact or outward operator-norm enclosures and one authenticated common alignment.  Whether this bound is sharp or scientifically adequate is application-owned evidence.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact proposition and proof chain checked; no runtime or independent-review status \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

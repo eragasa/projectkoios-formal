@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`3b394c3aa56c6909d29cfa69fcbb53f7d494e2fd`, tree
-`89c1e237a76e93b30a57e5424a5f36b796f6f966`, integrating PR #32.
+`5c60f8a6892f0be5eab554466fc2c42e926656d9`, tree
+`7ae6d7a2df05b151e996856ac0413fc53745c076`, integrating PR #33.
 
 ## Mission
 
@@ -69,8 +69,15 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
-effort currently occupies the WIP limit.
+One mathematical effort occupies the WIP limit: the isolated
+`work/aligned-difference-bounds` topic, based on remote `main` commit
+`5c60f8a6892f0be5eab554466fc2c42e926656d9`, develops exact action/operator-norm
+bounds and same-alignment subtraction/Lipschitz stability for aligned operator
+differences. The bounded slice includes its declaration ledger, audits, module documentation,
+and selected explanatory dossiers. It does not select or authenticate an alignment, compare
+different gauges, bind runtime arrays or binary64 values, create a certificate, or establish
+spectral, continuum, or scientific adequacy. No separate trust, documentation, or maintenance
+effort occupies the second WIP slot.
 
 ## Ready
 

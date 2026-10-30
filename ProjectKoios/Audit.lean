@@ -14,6 +14,7 @@ import ProjectKoios.BandGauge.Geometry.RankTwoLoss
 import ProjectKoios.BandGauge.Bloch.Sewing
 import ProjectKoios.BandGauge.Bloch.PeriodicRankTwo
 import ProjectKoios.BandGauge.Bloch.AlignedDifference
+import ProjectKoios.BandGauge.Bloch.AlignedDifferenceBounds
 import ProjectKoios.BandGauge.Alignment.FiniteFrame
 import ProjectKoios.BandGauge.Alignment.Family
 import ProjectKoios.BandGauge.Alignment.FamilySeparation
@@ -424,6 +425,15 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_selfAdjoint
 #print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorField_selfAdjoint
 #print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_selfAdjoint
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorField_apply_norm
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_apply_norm_le
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_apply_norm_le_opNorm
+#print axioms ProjectKoios.BandGauge.Bloch.norm_alignedOperatorDifferenceField_le
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorField_sub
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_sub
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_apply_sub_apply_norm_le
+#print axioms ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_sub_norm_le
+#print axioms ProjectKoios.BandGauge.Bloch.norm_alignedOperatorField_eq
 #print axioms ProjectKoios.BandGauge.Certificates.checkDominates_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.checkThresholdFeasible_eq_true_iff
 #print axioms ProjectKoios.BandGauge.Certificates.paretoEfficientMask_eq_true_iff

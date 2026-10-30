@@ -1,0 +1,92 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Exact Operator-Norm Preservation Under Unitary Pullback}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-032} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.norm_alignedOperatorField_eq} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/AlignedDifferenceBounds.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For a supplied complex-linear isometric equivalence $U_k:E_{\mathrm{ref}}\to E_{\mathrm{cand}}$ and bounded candidate operator $C_k$, unitary pullback preserves the exact operator norm:
+\[
+ \lVert U_k^{-1}C_kU_k\rVert=\lVert C_k\rVert.
+\]
+
+\section{Immutable Formal provenance}
+The declaration is introduced in a topic tree based on Formal commit
+\texttt{5c60f8a6892f0be5eab554466fc2c42e926656d9}, tree
+\texttt{7ae6d7a2df05b151e996856ac0413fc53745c076}.  The owning-module SHA-256 is
+\texttt{cc567d1963948706aa2d1adc88b135aec0dfaf8a2196f5607654421dabea65b7}; the exact locator is \texttt{BG-BLOCH-THM-032}.  A Git checkpoint identity is not asserted before the separately authorized commit gate.
+
+The statement is source-neutral exact operator algebra serving the selected aligned operator-budget consumer.  No external runtime object is represented.
+
+\section{Assumptions, conventions, and statement delta}
+The alignment is supplied and exactly unitary by type.  The theorem requires bounded complex-linear operators but no finite-dimensionality, self-adjointness, sewing, or spectral assumptions.  It concerns the continuous-linear-map operator norm, not Frobenius, maximum-sample, RMS, or eigenvalue error.
+
+\section{Prior art and contribution boundary}
+Unitary invariance of operator norm is standard \texttt{background-only} mathematics.  No novelty or priority claim is made.  The repository contribution is its exact typed specialization to the aligned-field pullback convention.
+
+\section{Proof structure and mathematical argument}
+For the forward inequality, apply the definition of operator norm and the action identity
+\[
+ \lVert U_k^{-1}C_kU_kv\rVert=\lVert C_kU_kv\rVert
+ \leq\lVert C_k\rVert\lVert v\rVert.
+\]
+For the reverse inequality, write every candidate vector as $w=U_k(U_k^{-1}w)$ and apply the same argument to the pulled-back operator.  The inverse isometry preserves $\lVert w\rVert$, yielding both inequalities and hence equality.
+
+\section{Lean realization and dependencies}
+Both directions use \path{ContinuousLinearMap.opNorm_le_bound}.  The action equality is \texttt{BG-BLOCH-THM-024}; norm preservation uses \path{LinearIsometryEquiv.norm_map}, and surjectivity is expressed by \path{apply_symm_apply}.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Bloch.
+  norm_alignedOperatorField_eq
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+The repository admission scan reports no repository-owned \texttt{axiom}, \texttt{sorry}, or \texttt{admit}.
+
+\section{AI, automation, and review record}
+The Lean proof and exposition were AI-assisted and checked by the maintainer.  Kernel checking, builds, hashing, and LaTeX compilation are automation rather than independent expert review.  No independent mathematical, scientific, novelty, bibliography, or publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+Exact norm invariance does not authenticate a runtime alignment or candidate operator.  It does not bound rounding, prove a spectrum or gap, select a gauge, compare different alignments, establish physical adequacy, or create a certificate.  The module digest establishes byte identity only.
+
+\section{Unresolved questions}
+A runtime consumer must separately bind an exact or outward-enclosed operator norm and the common alignment.  Different-gauge comparisons require an explicit transition bridge rather than this theorem alone.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & two-sided norm argument and evidence boundaries checked; no independent expert review \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

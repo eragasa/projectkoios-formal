@@ -1,0 +1,95 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Operator-Norm Stability Under One Common Alignment}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-BLOCH-THM-031} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Bloch.alignedOperatorDifferenceField_sub_norm_le} \\
+Owning module & \path{ProjectKoios/BandGauge/Bloch/AlignedDifferenceBounds.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For one supplied alignment $U_k$, define $\Delta_{L,k}=R_{L,k}-U_k^{-1}C_{L,k}U_k$ and $\Delta_{R,k}=R_{R,k}-U_k^{-1}C_{R,k}U_k$.  Then
+\[
+ \lVert\Delta_{L,k}-\Delta_{R,k}\rVert
+ \leq \lVert R_{L,k}-R_{R,k}\rVert
+      +\lVert C_{L,k}-C_{R,k}\rVert.
+\]
+All norms are exact continuous-linear-map operator norms.
+
+\section{Immutable Formal provenance}
+The declaration is introduced in a topic tree based on Formal commit
+\texttt{5c60f8a6892f0be5eab554466fc2c42e926656d9}, tree
+\texttt{7ae6d7a2df05b151e996856ac0413fc53745c076}.  The owning-module byte identity is SHA-256
+\texttt{cc567d1963948706aa2d1adc88b135aec0dfaf8a2196f5607654421dabea65b7}; the exact locator is \texttt{BG-BLOCH-THM-031}.  A Git commit is not claimed before separate checkpoint authorization.
+
+The theorem is reusable source-neutral stability algebra with an existing aligned operator-budget consumer.  It is not a runtime error bar.
+
+\section{Assumptions, conventions, and statement delta}
+Both comparisons use one common exact alignment.  This theorem makes no claim when the left and right pairs are evaluated in different gauges.  It assumes exact bounded complex-linear operators, not floating-point matrices or interval enclosures.  Self-adjointness and sewing are unnecessary for this norm inequality.
+
+\section{Prior art and contribution boundary}
+The result follows from standard linearity and the operator-norm triangle bound, both \texttt{background-only}.  No novelty or priority claim is made.  The repository contribution is a precisely typed stability statement that preserves the common-alignment requirement.
+
+\section{Proof structure and mathematical argument}
+By \texttt{BG-BLOCH-THM-029},
+\[
+ \Delta_U(R_L,C_L)-\Delta_U(R_R,C_R)
+ =\Delta_U(R_L-R_R,C_L-C_R).
+\]
+Apply \texttt{BG-BLOCH-THM-027} to this new aligned difference.  Its reference and candidate operands are exactly the two field changes on the right-hand side, yielding the claimed bound.
+
+\section{Lean realization and dependencies}
+The proof specializes the field subtraction identity at $k$, rewrites the left-hand operator difference, and invokes \path{norm_alignedOperatorDifferenceField_le}.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Bloch.
+  alignedOperatorDifferenceField_sub_norm_le
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission marker occurs in this proof.
+
+\section{AI, automation, and review record}
+The proof and exposition were AI-assisted and checked by the maintainer.  Lean, hashes, and LaTeX are automated checks, not independent expert review.  No independent scientific, mathematical, novelty, bibliography, or publication review is recorded.
+
+\section{Scientific, numerical, and certificate boundaries}
+The inequality does not authenticate common alignment, bound binary64 rounding, prove eigensolver correctness, compare spectra, show continuum isolation, or establish a mandatory threshold.  A small right-hand side is not supplied by the theorem.  No runtime certificate exists.
+
+\section{Unresolved questions}
+A proposition-specific consumer must provide one authenticated alignment, exact or outward-enclosed operator changes, declared norms and thresholds, and an independent verifier.  Cross-alignment stability remains a separate mathematical problem.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & exact bound and common-alignment limitation checked; no external-evidence promotion \\
+\bottomrule
+\end{tabularx}
+
+\end{document}
