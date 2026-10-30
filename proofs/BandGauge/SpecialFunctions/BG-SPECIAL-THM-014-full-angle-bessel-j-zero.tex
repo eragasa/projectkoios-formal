@@ -1,0 +1,99 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Full-Angle Zeroth-Bessel Exponential Integral}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-31}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-SPECIAL-THM-014} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.SpecialFunctions.fullAngleCosineExponentialKernel_eq_besselJZero} \\
+Owning module & \path{ProjectKoios/BandGauge/SpecialFunctions/BesselJZeroIntegral.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+Source-proof attribution & \texttt{naok1}; Apache-2.0 local adaptation \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For every real $z$,
+\[
+  \int_0^{2\pi} \exp\!\bigl(i z\cos\theta\bigr)\,d\theta
+   = 2\pi\,J_0(z),
+\]
+where $J_0$ is Mathlib's \texttt{Complex.besselJ 0}. The parameter is real and the equality is in
+$\mathbb C$.
+
+\section{Immutable source identity and relation}
+The proof architecture is adapted from
+\texttt{QuantumTheory.Transport.polarFourierZerothAngularKernel\_eq\_besselJ} in
+\texttt{naoki-cpp/LeanCondensedMatter}, merged PR~\#3802 at commit
+\texttt{47d64b9d2e85522dbbef295bf0ce3d2a1d0afe87}, tree
+\texttt{20efdb151b64d0b18826de9beb4010d965f10b1a}. The source file blob is
+\texttt{adb66f516780cbe8f63d82054ca7a3b7dbb096cc}; its SHA-256 is
+\texttt{608fdf0281c7a25c3d132e669ac25ce18ce25f2b8300458e29a4d9e7146facac}.
+The source repository and local port are Apache-2.0 licensed. Exact audit details are recorded in
+\path{docs/source-audit.md}. The external package is not a Project Koios dependency.
+
+The local module SHA-256 at dossier preparation is
+\texttt{17b2722518c8dfec0bebc2ec89f09125a3d31a0526a1687a99260507eeffd532}. The Formal base is
+merge commit \texttt{7188b05149c598d2edc7ec8eb2af331c54b313ad}; no topic commit is claimed before
+checkpoint authorization.
+
+\section{Conventions and contribution boundary}
+The integral is the exact complex Bochner interval integral over $[0,2\pi]$, the phase sign is
+positive, and the angular coordinate is not normalized to period one in this theorem. The identity
+is classical; no mathematical novelty claim is made. The local contribution is a narrow,
+source-neutral, provenance-audited interface to Mathlib's actual \texttt{Complex.besselJ}, rather
+than a new integral-defined function or a broad condensed-matter dependency.
+
+\section{Proof structure}
+Define $M_n=\int_0^{2\pi}\cos^n\theta\,d\theta$. The standard two-step recurrence gives
+$M_{2n}=2\pi(2n)!/(4^n(n!)^2)$ and $M_{2n+1}=0$. Expand the exponential as its norm-convergent
+factorial series. A summable majorant $|z|^n/n!$ justifies termwise interval integration. Odd terms
+vanish, while each even term equals $2\pi$ times the corresponding coefficient in Mathlib's
+regularized-hypergeometric definition of $J_0$. Summing yields the claimed identity.
+
+\section{Lean realization and trusted base}
+The realization uses cosine-power integration, dominated convergence, the normed-space exponential
+series, \texttt{Complex.Gamma\_nat\_eq\_factorial}, and the pinned definition of
+\texttt{Complex.besselJ}. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.SpecialFunctions.
+  fullAngleCosineExponentialKernel_eq_besselJZero
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+The theorem authenticates no external phase convention, runtime value, floating-point evaluation,
+quadrature rule, finite mesh, serialization, physical model, comparator, certificate, or
+finite-to-continuum argument. Kernel checking is not independent mathematical, source-fidelity,
+scientific, novelty, editorial, or publication review.
+
+\section{AI, automation, and review record}
+The port and dossier were AI-assisted and checked by the maintainer. The immutable external theorem
+was independently rebuilt in its source repository during provenance audit, but no independent
+review of this local patch is claimed.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-31 & initial dossier & AI-assisted maintainer review & exact identity proved; local patch review and all runtime/scientific bindings remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}
