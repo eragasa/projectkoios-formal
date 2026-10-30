@@ -69,17 +69,8 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort occupies the WIP limit: the isolated
-`work/one-circle-bessel-integral` topic, based on remote `main` merge commit
-`7188b05149c598d2edc7ec8eb2af331c54b313ad`, ports the minimum source-neutral full-angle `J₀`
-integral proof with Apache-2.0 attribution to immutable `LeanCondensedMatter` merge commit
-`47d64b9d2e85522dbbef295bf0ce3d2a1d0afe87`. It adds the normalized period-one circle sine bridge,
-arbitrary finite product powers, exact 2-D `J₀(a)²`, and exact 3-D `J₀(2a/3)³` scaling corollaries.
-It includes immutable source identity, declaration and axiom ledgers, module/source documentation,
-smallest-target checks, and selected explanatory dossiers. It does not bind an external coordinate
-or phase convention, authenticate quadrature or a runtime mesh, establish finite-to-continuum
-convergence, or certify a KSD comparator or scientific conclusion. No separate trust,
-documentation, or maintenance effort occupies the second WIP slot.
+No mathematical or certificate effort occupies the first WIP slot. No trust, documentation, or
+maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -224,6 +215,18 @@ These items are merged Formal content only.
   `de6d0fc700670a27fe7ccaf79eb8da3a4838e17e`; it fixes the carrier and product Haar probability
   measure and proves exact 2-D square and 3-D cube laws, but by itself binds no external coordinate,
   phase, quadrature, finite mesh, runtime comparator, convergence claim, certificate, or scientific
+  conclusion.
+- The full-angle `J₀` integral and normalized one-circle bridge are proved as
+  `BG-SPECIAL-DEF-001--002`, `BG-SPECIAL-THM-001--014`, `BG-FOURIER-DEF-057--058`, and
+  `BG-FOURIER-THM-128--133`, with selected dossiers for the full-angle and normalized-circle
+  identities. The source-neutral Apache-2.0 port is attributed to immutable `LeanCondensedMatter`
+  merge commit `47d64b9d2e85522dbbef295bf0ce3d2a1d0afe87`. The slice merged through PR #46 at
+  commit `9f27941db0472683fd3971c462301ab6e0a3d046`, tree
+  `cc5030f6227b0c2acfa7cfd48dd9a2d1fe038d5e`; it fixes standard Haar probability measure,
+  positive phase, the coordinate `sin (2πx)`, and no extra `2π` in the real amplitude, then derives
+  arbitrary finite product powers and exact 2-D/3-D corollaries. It does not bind an external
+  coordinate or phase convention, authenticate quadrature or a runtime mesh, establish
+  finite-to-continuum convergence, or certify a KSD comparator, external certificate, or scientific
   conclusion.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
