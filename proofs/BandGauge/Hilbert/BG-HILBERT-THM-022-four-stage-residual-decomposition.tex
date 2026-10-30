@@ -1,0 +1,79 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Exact Four-Stage Residual Decomposition}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-HILBERT-THM-022} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Hilbert.totalResidual_eq_interpolation_add_conversion_add_truncation} \\
+Owning module & \path{ProjectKoios/BandGauge/Hilbert/FourStageResidualChannels.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For four finite fields $F_{\rm ref},F_{\rm int},F_{\rm conv},F_{\rm trunc}$ valued in an additive commutative group, define
+\[
+r_{\rm int}=F_{\rm ref}-F_{\rm int},\quad
+r_{\rm conv}=F_{\rm int}-F_{\rm conv},\quad
+r_{\rm trunc}=F_{\rm conv}-F_{\rm trunc},\quad
+r_{\rm total}=F_{\rm ref}-F_{\rm trunc}.
+\]
+Then, as an exact field identity,
+\[
+ r_{\rm total}=r_{\rm int}+r_{\rm conv}+r_{\rm trunc}.
+\]
+
+\section{Immutable Formal provenance}
+The declaration is developed against Formal base commit
+\texttt{0062d687c1306c1df85d9c674fdf0239d05a8624}, tree
+\texttt{cd60a1bb5cd005547338398621be3c596c865aa4}. The owning-module SHA-256 is
+\texttt{3931c865c24db66dd42ac65c922742448402134dbc071e596df686d124e3dfec}; the locator is
+\texttt{FourStageResidualChannels.lean:50} and \texttt{BG-HILBERT-THM-022}. A topic commit is not claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+Subtraction signs are fixed by the displayed definitions. The conversion channel is distinct from deliberate truncation. The theorem requires only additive commutative-group algebra; it assumes no norm, mesh, interpolation algorithm, conversion implementation, or Fourier support.
+
+\section{Proof structure}
+At every finite coordinate, the right-hand side is
+\[
+(F_{\rm ref}-F_{\rm int})+(F_{\rm int}-F_{\rm conv})+(F_{\rm conv}-F_{\rm trunc}).
+\]
+The two intermediate fields cancel, leaving $F_{\rm ref}-F_{\rm trunc}$. Function extensionality lifts the pointwise identity to the field identity.
+
+\section{Lean realization and trusted base}
+Lean unfolds the four residual definitions, applies function extensionality, and closes the additive-group normalization with \texttt{simp}. Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Hilbert.
+  totalResidual_eq_interpolation_add_conversion_add_truncation
+-- [propext, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{Scientific, numerical, and certificate boundaries}
+This is exact abstract algebra. It does not authenticate any runtime stage, field, byte stream, binary64 value, conversion route, truncation inventory, or source artifact. It does not imply that scalar error summaries add exactly. The current checked runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The proof and dossier were AI-assisted and checked by the maintainer. Lean proof checking is not independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & exact cancellation and nonclaims checked; no runtime promotion \\
+\bottomrule
+\end{tabularx}
+\end{document}

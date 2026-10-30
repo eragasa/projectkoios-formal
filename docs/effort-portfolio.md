@@ -70,17 +70,18 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/finite-alignment-attainment` topic, based on remote `main` commit
-`af55852071a3d15cd21ccde31db095c5596da40c`, precisely separates exact upper-bounded
-error channels from nonnumeric structural requirements, proves exact minimizer existence for
-nonempty finite alignment families, and uses it to connect infimum-based operator passage to a
-concrete budget-feasible alignment. A tagged adapter preserves one common candidate and alignment,
-and conditional central-to-witness bridges retain the separate mandatory-channel premise. The
-bounded slice includes its declaration ledger, audits, module documentation, selected explanatory
-dossiers, and the folded post-PR #36 portfolio update. It does not choose a study-specific error
-taxonomy, authenticate runtime optimizers or operators, infer channels from finiteness, compare
-different gauges, create a certificate, or establish spectral, continuum, or scientific adequacy.
-No separate trust, documentation, or maintenance effort occupies the second WIP slot.
+`work/four-stage-residual-channels` topic, based on remote `main` commit
+`0062d687c1306c1df85d9c674fdf0239d05a8624`, introduces a source-neutral four-stage
+reference/interpolation/conversion/deliberate-truncation residual ledger. It proves the exact
+three-component field decomposition and pointwise, finite-maximum, and finite root-mean-square
+triangle bounds, then instantiates the precise error-channel interface with four named
+finite-maximum channels and channel-specific budgets, with acceptance preserved by coordinatewise
+budget relaxation. The bounded slice includes its declaration
+ledger, audits, module documentation, selected explanatory dossiers, and the folded post-PR #37
+portfolio update. It does not assert scalar-error additivity, authenticate runtime stages or values,
+claim that four channels exhaust a consumer's broader ledger, create a certificate, or establish
+spectral, continuum, physical, or scientific adequacy. No separate trust, documentation, or
+maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -156,6 +157,13 @@ These items are merged Formal content only.
   alignments, uses one common alignment for pair stability, and does not authenticate runtime
   operators, compare different gauges without a bridge, establish spectral or scientific adequacy,
   or create a certificate.
+- Precise mandatory operator channels and finite alignment-family attainment are proved as
+  `BG-DECISION-DEF-032--040` and `BG-DECISION-THM-051--060`. The slice merged through PR #37
+  at commit `0062d687c1306c1df85d9c674fdf0239d05a8624`, tree
+  `cd60a1bb5cd005547338398621be3c596c865aa4`; exact upper-bounded error values remain distinct
+  from nonnumeric structural requirements, finite minimization does not imply mandatory-channel
+  passage, and the result authenticates no runtime inventory, optimizer, external value, or
+  certificate.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit
