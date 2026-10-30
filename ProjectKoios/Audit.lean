@@ -38,6 +38,7 @@ import ProjectKoios.BandGauge.Decision.FourStageResidualBudgetSynthesis
 import ProjectKoios.BandGauge.Decision.MandatoryChannelComposition
 import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
 import ProjectKoios.BandGauge.Fourier.CenteredEvenMesh
+import ProjectKoios.BandGauge.Fourier.MetricShellSupport
 import ProjectKoios.BandGauge.Fourier.FiniteAbelianTransform
 import ProjectKoios.BandGauge.Fourier.FiniteParseval
 import ProjectKoios.BandGauge.Fourier.HermitianPairing
@@ -356,6 +357,36 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.finiteReconstruction_eq_negativeNyquistRemoved_add
 #print axioms ProjectKoios.BandGauge.Fourier.normalizedNegativeNyquistPower_eq_removed_omittedWeight
 #print axioms ProjectKoios.BandGauge.Fourier.normalizedNegativeNyquistPower_range_independent
+#print axioms ProjectKoios.BandGauge.Fourier.mem_attainedMetricRadii
+#print axioms ProjectKoios.BandGauge.Fourier.mem_attainedMetricRadiiThrough
+#print axioms ProjectKoios.BandGauge.Fourier.mem_metricShell
+#print axioms ProjectKoios.BandGauge.Fourier.attainedMetricRadiiThrough_mono
+#print axioms ProjectKoios.BandGauge.Fourier.metricShell_subset_inventory
+#print axioms ProjectKoios.BandGauge.Fourier.metricShell_mono
+#print axioms ProjectKoios.BandGauge.Fourier.metricShell_tie_iff
+#print axioms ProjectKoios.BandGauge.Fourier.neg_mem_metricShell_iff
+#print axioms ProjectKoios.BandGauge.Fourier.smul_mem_metricShell_iff
+#print axioms ProjectKoios.BandGauge.Fourier.smul_mem_metricShell
+#print axioms ProjectKoios.BandGauge.Fourier.metricShell_ne_iff_exists_between
+#print axioms ProjectKoios.BandGauge.Fourier.metricShell_ne_iff_exists_attained_between
+#print axioms ProjectKoios.BandGauge.Fourier.metricShell_ssubset_of_lt_attained
+#print axioms ProjectKoios.BandGauge.Fourier.metricShell_card_lt_of_lt_attained
+#print axioms ProjectKoios.BandGauge.Fourier.attainedMetricRadius_eq_of_shell_eq
+#print axioms ProjectKoios.BandGauge.Fourier.metricShell_eq_iff_no_attained_between
+#print axioms ProjectKoios.BandGauge.Fourier.exists_attainedMetricRadiusThrough_of_shell_ne
+#print axioms ProjectKoios.BandGauge.Fourier.squareShellIndex_nonneg
+#print axioms ProjectKoios.BandGauge.Fourier.triangularShellIndex_nonneg
+#print axioms ProjectKoios.BandGauge.Fourier.simpleCubicShellIndex_nonneg
+#print axioms ProjectKoios.BandGauge.Fourier.fccShellIndex_nonneg
+#print axioms ProjectKoios.BandGauge.Fourier.squareShellIndex_neg
+#print axioms ProjectKoios.BandGauge.Fourier.triangularShellIndex_neg
+#print axioms ProjectKoios.BandGauge.Fourier.simpleCubicShellIndex_neg
+#print axioms ProjectKoios.BandGauge.Fourier.fccShellIndex_neg
+#print axioms ProjectKoios.BandGauge.Fourier.squareShellIndex_swap
+#print axioms ProjectKoios.BandGauge.Fourier.triangularShellIndex_swap
+#print axioms ProjectKoios.BandGauge.Fourier.triangularShellIndex_rotate
+#print axioms ProjectKoios.BandGauge.Fourier.simpleCubicShellIndex_swap12
+#print axioms ProjectKoios.BandGauge.Fourier.fccShellIndex_swap12
 #print axioms ProjectKoios.BandGauge.Fourier.finiteCharacterKernel
 #print axioms ProjectKoios.BandGauge.Fourier.finiteFourierReconstruction_coefficients
 #print axioms ProjectKoios.BandGauge.Fourier.card_smul_finiteFourierCoefficient

@@ -11,6 +11,7 @@ This directory owns exact finite Fourier, support, truncation, Parseval, fixed-u
 
 - `FiniteReconstruction.lean`: reconstruction with an explicit caller-supplied kernel, support truncation, and exact tail decomposition; it selects no Fourier convention.
 - `CenteredEvenMesh.lean`: positive even centered integer inventories, exact deletion of the negative Nyquist representative, full-versus-removed reconstruction, normalized deleted-block power, and symmetric ordinary support below half the mesh size.
+- `MetricShellSupport.lean`: complete finite metric shells, exact attained-radius inventories, tie retention, conditional inversion/symmetry closure, no-skipped-shell theorems, and square, triangular, simple-cubic, and normalized FCC integer shell indices.
 - `FiniteAbelianTransform.lean`: conjugated-character forward transform with normalization `1 / |G|` and finite inversion.
 - `FiniteParseval.lean`: inner-product and power Parseval identities; reconstructed residual power equals `|G|` times omitted coefficient power.
 - `HermitianPairing.lean`: negative-mode pairing and Hermitian reconstruction.
@@ -37,5 +38,7 @@ Every specialization must freeze its convention.
 - The maximum-tail bound uses the ambient norm on a complex normed space. It does not imply an entrywise matrix-Frobenius maximum bound without a separate representation bridge.
 - Uniform weights do not replace nonuniform quadrature.
 - Concrete weights and supports must satisfy `docs/BandGauge/publication-evidence-contract.md`.
+- A complete metric shell is exact only relative to its supplied inventory, radius, cutoff, and invariance hypotheses. It does not authenticate a serialized inventory, turn a metric radius into a source-defined hopping range, or prove external orbit coverage.
+- The square, triangular, simple-cubic, and FCC shell indices use exact dimensionless reduced integer coordinates; lattice constants, physical units, basis connectivity, and material interpretation remain external.
 - The modules do not identify a generic finite group with a publication mesh or certify Wannier90, runtime arrays, continuum convergence, or physical locality.
 - Physlib revision `adc97f054083132000567cb09ff8f7b1f073400d` was inspected but remains unadopted and unnecessary for this layer.

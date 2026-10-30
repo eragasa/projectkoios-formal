@@ -162,6 +162,20 @@ inverse is a conditional control, not universal ground truth. No theorem constru
 witness, authenticates a runtime mesh, verifies SVD/rank/tolerance behavior, selects a
 rank-deficient completion, binds external arrays, or checks a certificate.
 
+## Selected complete metric-shell tranche
+
+The source-neutral metric-shell extension has selected dossiers for `BG-FOURIER-THM-100` and
+`BG-FOURIER-THM-105`. They cover the exact characterization of every finite shell change by an
+attained radius and the capped no-skipped-shell consequence. Shell membership, nesting, equal-
+radius ties, conditional inversion and symmetry closure, strict support/cardinality growth, and
+the square, triangular, simple-cubic, and normalized FCC integer-index algebra remain fully
+recorded in Lean and the theorem manifest without separate dossiers.
+
+The results are conditional on one declared finite inventory, exact radius, and cutoff cap. They
+do not authenticate an external or serialized inventory, admit a runtime symmetry group, identify
+metric radius with physical hopping range, verify calculated block counts, or establish Fourier
+or continuum convergence, material adequacy, scientific acceptance, or a certificate.
+
 ## Required contents
 
 A dossier records:

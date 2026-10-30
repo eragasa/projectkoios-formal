@@ -1,0 +1,104 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: No Skipped Finite Metric Shell Below a Cap}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-105} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.exists_attainedMetricRadiusThrough_of_shell_ne} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/MetricShellSupport.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $M$ be a finite mode inventory, $\rho$ an exact linearly ordered radius, and
+\[
+ \operatorname{shell}(S)=\{R\in M:\rho(R)\le S\},\qquad
+ \operatorname{attained}_{\le C}(M)=\{r:\exists R\in M,\ r=\rho(R)\ \text{and}\ r\le C\}.
+\]
+If $S\le T\le C$ and the shells at $S$ and $T$ differ, then there exists
+$r\in\operatorname{attained}_{\le C}(M)$ with
+\[
+  S<r\le T.
+\]
+Consequently, every support change observed through the cap is represented in the exact capped
+attained-radius inventory.
+
+\section{Source relation and immutable identity}
+KSD's 2-D/3-D protocols require the analyzed support hierarchy to enumerate every attainable
+metric shell through a frozen cap and not split equal-radius ties. This theorem isolates the
+source-neutral ``no skipped shell'' consequence for any exact finite inventory. The read-only
+source identity is KSD commit \texttt{fcfc4d5fa76b08c040a02c97a109eb5f5fc06e48}, tree
+\texttt{fe8b47b33fcf0b24c5b28f8799ed220e3f6d7d20}; the five inspected protocol paths and SHA-256
+fingerprints are recorded in \path{docs/source-audit.md}. Dirty owner-worktree bytes were excluded.
+
+The Formal base is PR~\#42 merge commit
+\texttt{4902864c19b412320e56c984fe9cc98a4ad3bd89}, tree
+\texttt{8e0e7bfdd20b245ff8160cd7fc6f302c8bfd661a}. The owning-module SHA-256 is
+\texttt{aee5915990170b1516f9808f288f0af1d8f9f7daae9d0c0f0910a1441068ca3f}; the declaration
+starts at \texttt{MetricShellSupport.lean:234}. No topic commit is claimed before checkpoint
+authorization.
+
+\section{Assumptions and conventions}
+The theorem assumes one finite inventory, one exact radius function, ordered cutoffs
+$S\le T\le C$, and an actual inequality of the two exact supports. It does not assume that every
+value in the ambient ordered type is attainable. Empty inventories are allowed, but then the shell
+inequality premise is impossible and yields no external coverage claim.
+
+\section{Proof structure}
+Apply \texttt{BG-FOURIER-THM-100} to the distinct shells. This gives an attained witness radius
+$r$ with $S<r\le T$. Since $T\le C$, transitivity gives $r\le C$. The same radius witness therefore
+belongs to the finite filtered image $\operatorname{attained}_{\le C}(M)$, while preserving both
+gap inequalities. The proof is an exact finite consequence, not an enumeration algorithm.
+
+\section{Lean realization and trusted base}
+The proof invokes the attained-radius shell-change equivalence, unfolds the capped filter through
+its membership theorem, and closes the cap inequality by transitivity. Toolchain: Lean
+\texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Fourier.
+  exists_attainedMetricRadiusThrough_of_shell_ne
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+The theorem does not prove that an external list equals $M$, that a runtime loop emitted every
+$r$, or that a caller used the declared cap. It does not turn shell completeness into physical
+hopping-range completeness, source-horizon sufficiency, Fourier convergence, continuum
+convergence, model adequacy, or material validation. The checked runtime-certificate count remains
+zero.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must bind the exact inventory, metric and coordinates, symmetry/orbit closure, cutoff
+cap, deterministic enumeration, artifact hashes, and verifier rejection rules. Physical range and
+scientific interpretation require separate owner-controlled evidence.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & every exact shell change below the cap has a capped attained witness; runtime completeness remains external \\
+\bottomrule
+\end{tabularx}
+\end{document}
