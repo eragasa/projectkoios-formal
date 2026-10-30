@@ -150,6 +150,42 @@ momentum mesh, Fourier inventory, external artifact, physical model, or acceptan
 Pointwise field equality on a supplied finite index type does not authenticate the external mesh
 or establish continuum regularity or coverage.
 
+## Normalized product-torus factorization statement selection
+
+The normalized product-torus module uses the same immutable KSD inspection identity, access mode,
+dirty-state limitation, and orthogonal 2-D/3-D file hashes recorded above. The statement family was
+selected from these exact locators:
+
+- orthogonal 2-D protocol, lines 414--435: the constant-frame flat parent, uniform integration on
+  `T²`, the asserted `J₀(a)²` comparator, and the explicit separation between that analytic
+  comparator and finite-mesh evidence; and
+- orthogonal 3-D protocol, lines 359--381: the constant-frame flat parent, the explicit assertion
+  that uniform integration on `T³` factorizes, the asserted `J₀(2a/3)³` comparator, and the same
+  analytic-versus-finite-mesh boundary.
+
+The reusable integration step is a thin specialization of pinned Mathlib theorems
+`MeasureTheory.integral_fintype_prod_eq_prod` and
+`MeasureTheory.integral_fintype_prod_eq_pow` at Mathlib commit
+`56a005855ea17e0b0958f73ec801ae140b0a1679`, tree
+`0db52fa68e6b0c5b917c22bc6383325391a00610`, file
+`Mathlib/MeasureTheory/Integral/Pi.lean`, lines 105--126, file SHA-256
+`43c50a9d9a683b2050e145154410a7260c3dd84f3ec3010630cc6b90572afcd9`.
+The unit-circle normalization is recorded in
+`Mathlib/MeasureTheory/Integral/IntervalIntegral/Periodic.lean`, lines 230--236, file SHA-256
+`9aea999167a463bbd43b9989cf51a5cf8e6e1cf09ec474b7bfd0c6c051a8dae5`.
+No novelty or priority claim is made for finite-product Fubini factorization or normalized Haar
+measure.
+
+Formal fixes the carrier to a finite function type into Mathlib's `UnitAddCircle` and fixes the
+measure to the finite product of its standard total-mass-one Haar measure. It proves the exact
+factorization of supplied coordinate-separable complex fields and exponentials of supplied
+coordinatewise additive complex phases, including square and cube corollaries. It deliberately
+does not prove the one-circle Bessel evaluation needed to identify either one-dimensional factor
+with `J₀`, identify KSD's half-open reduced coordinates with `UnitAddCircle`, authenticate the
+external phase formula or amplitude scaling, parse a runtime field, validate quadrature, compare a
+finite mesh to the integral, establish convergence, or certify either KSD comparator. The current
+checked runtime-certificate count remains zero.
+
 ## Harmonic-oscillator computational crosswalk inspection
 
 The harmonic-oscillator modules are source-neutral exact mathematics. Their computational

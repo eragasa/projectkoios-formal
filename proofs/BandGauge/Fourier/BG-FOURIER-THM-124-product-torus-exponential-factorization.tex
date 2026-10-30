@@ -1,0 +1,110 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Exponential Factorization on a Normalized Product Torus}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-31}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-124} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_exp_separablePhase} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/NormalizedProductTorus.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $D$ be a finite coordinate type, let $\mathbb T_1=\mathbb R/\mathbb Z$ carry its
+standard Haar probability measure $\mu$, and give $\mathbb T_1^D$ the product measure
+$\mu^D$. For supplied complex phases $\varphi_d:\mathbb T_1\to\mathbb C$,
+\[
+ \int_{\mathbb T_1^D}
+   \exp\!\left(\sum_{d\in D}\varphi_d(q_d)\right)\,d\mu^D(q)
+ =\prod_{d\in D}\int_{\mathbb T_1}\exp(\varphi_d(t))\,d\mu(t).
+\]
+The proposition includes the carrier and measure convention; they are not inferred from external
+$\mathbb T^D$ notation.
+
+\section{Source relation and immutable identity}
+The statement is source-neutral finite-product integration selected for KSD's flat-parent
+comparators. The orthogonal 2-D protocol at lines 414--435 states a uniform $\mathbb T^2$
+comparator with a squared one-dimensional Bessel factor; the orthogonal 3-D protocol at lines
+359--381 explicitly says uniform $\mathbb T^3$ integration factorizes and states a cubed factor.
+The immutable KSD identity is commit
+\texttt{fcfc4d5fa76b08c040a02c97a109eb5f5fc06e48}, tree
+\texttt{fe8b47b33fcf0b24c5b28f8799ed220e3f6d7d20}; exact paths, hashes, access mode, and the dirty
+owner-worktree limitation are recorded in \path{docs/source-audit.md}.
+
+The Formal base is PR~\#44 merge commit
+\texttt{24263f08a5b69fc34be3073bc724a3b0ad4b80d6}, tree
+\texttt{2cbef2a05174f5ad491392b40dd4265a751ed932}. The owning-module SHA-256 is
+\texttt{a9d7a1fb58123cbeeb8e8474b6e8b54d847d59a962945fe09db3f84a42c746c8}.
+No topic commit is claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+The coordinate type is finite. Every coordinate carrier is Mathlib's \texttt{UnitAddCircle}; every
+coordinate measure is its standard total-mass-one Haar measure; and the joint measure is
+\texttt{Measure.pi}. The phases are arbitrary exact complex functions. No continuity or separate
+integrability assumption appears because Mathlib's product-integral identity gives the equality
+for the Bochner-integral convention, including its nonintegrable fallback semantics.
+
+\section{Prior art and contribution boundary}
+Finite-product Fubini factorization and $\exp(\sum z_d)=\prod\exp(z_d)$ are standard and carry no
+local novelty claim. The Lean proof specializes pinned Mathlib theorem
+\texttt{MeasureTheory.integral\_fintype\_prod\_eq\_prod}. The local contribution is the narrow,
+audited BandGauge interface that fixes the normalized torus carrier and states the exponential
+phase consequence without importing a Bessel, runtime, or scientific claim.
+
+\section{Proof structure}
+Pointwise, the complex exponential converts the finite phase sum into the product of coordinate
+exponentials. Apply finite-product Fubini to that separable field under the product measure. The
+resulting factor for coordinate $d$ is exactly the one-circle average of
+$\exp(\varphi_d)$, and the finite product of those factors is the right-hand side.
+
+\section{Lean realization and trusted base}
+The proof rewrites with \texttt{Complex.exp\_sum} and invokes the pinned finite-product integral
+identity from \path{Mathlib/MeasureTheory/Integral/Pi.lean}, lines 105--112. Toolchain: Lean
+\texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Fourier.
+  normalizedProductTorusAverage_exp_separablePhase
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+The theorem does not evaluate any one-circle factor as a Bessel function, bind KSD reduced
+coordinates or phase scaling, authenticate a finite mesh or quadrature, bound discretization
+error, establish finite-to-continuum convergence, or verify a runtime comparator. It supplies no
+material, adequacy, novelty, certificate, or publication conclusion.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A KSD consumer must separately bind its half-open coordinates to \texttt{UnitAddCircle}, prove its
+phase is the declared coordinate sum with the frozen amplitude convention, establish the relevant
+one-circle integral, and independently verify any finite-mesh approximation and retained artifact.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-31 & initial dossier & AI-assisted maintainer review & exact normalized product factorization proved; Bessel and runtime bindings remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

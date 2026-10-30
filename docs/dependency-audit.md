@@ -20,6 +20,7 @@ Current modules reuse the following APIs.
 - Finite Hermitian spectra: `Matrix.IsHermitian.eigenvalues`, `eigenvectorUnitary`, and `conjStarAlgAut_star_eigenvectorUnitary` from `Mathlib.Analysis.Matrix.Spectrum`.
 - Matrix and block algebra: finite multiplication, `Matrix.fromBlocks`, conjugate transpose, Hermitian predicates, `Complex.normSq`, and complex exponential norm identities.
 - Fourier algebra: finite additive characters, orthogonality, and Pontryagin duality.
+- Normalized product-torus integration: `UnitAddCircle`, its standard total-mass-one Haar measure, finite product measures, `integral_fintype_prod_eq_prod`, and `integral_fintype_prod_eq_pow` from pinned Mathlib's `IntervalIntegral.Periodic` and `Integral.Pi` modules.
 - Quantum partial operators: Mathlib `LinearPMap`, formal adjoints, maximal adjoints, closedness, and closability APIs.
 
 The spectral construction is exact and noncomputable. It is not an eigensolver or numerical certificate. Local Pauli and tetrahedral matrices encode model conventions absent from the inspected generic APIs.
