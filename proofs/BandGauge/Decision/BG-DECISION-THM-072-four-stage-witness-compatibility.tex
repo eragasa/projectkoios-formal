@@ -1,0 +1,101 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Four-Stage Component Witness Compatibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-072} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.withFourStageMaximumResidualChannels_witnessCompatible_iff_components} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/FourStageResidualBudgetSynthesis.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Fix a finite compatibility schema, model $m$, model-indexed four-stage residual fields, and exact
+four-stage budgets with total headroom at $m$. After replacing only the schema's mandatory-channel
+fields by the narrow four-stage adapter, witness compatibility is equivalent to the existence of
+one candidate $c$ and one alignment $a$ such that:
+\begin{enumerate}
+\item $c$ passes the original schema's spectral criterion at $m$;
+\item $c$ belongs to the original candidate inventory;
+\item $a$ belongs to the original alignment family for $(m,c)$;
+\item the original aligned-operator loss at $(m,c,a)$ lies below the original operator budget; and
+\item at the same $(m,c,a)$, interpolation, conversion, and deliberate-truncation finite-maximum
+residual values lie below their respective exact component budgets.
+\end{enumerate}
+The total residual channel passes by the separate total-headroom theorem.
+
+\section{Immutable Formal provenance}
+The declaration is developed against Formal base merge commit
+\texttt{01c9b0a0cd3776d2edfc82e514e11408d6a96f34}, tree
+\texttt{fddc9e3225b0edf9e80e9301e3b7426d1df6e788}. The owning-module SHA-256 is
+\texttt{29ab3ea5a0da3a6fea9addb4e8437cb015a1e7f561243d452720c9505317f2d8}; the locator is
+\texttt{FourStageResidualBudgetSynthesis.lean:269} and \texttt{BG-DECISION-THM-072}. A topic
+commit is not claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+Witness compatibility is stronger than alignment-infimum compatibility: it retains one explicit
+alignment across the central operator budget and every mandatory channel. All channel values and
+budgets are exact \texttt{ENNReal} quantities. Total headroom is explicit. The adapter has no
+structural requirements and does not alter the schema's nonchannel fields.
+
+\section{Proof structure}
+The generic witness-compatible predicate first expands to one common spectrally accepted candidate
+with operator-witness acceptance. Because the adapter preserves spectral data definitionally, the
+spectral conjunct is unchanged. The operator-witness theorem
+\texttt{BG-DECISION-THM-071} expands the remaining conjunct to candidate membership and one
+alignment carrying family membership, central operator-budget passage, and all three component
+residual inequalities. Conditional total-channel passage is inherited from
+\texttt{BG-DECISION-THM-067} through the same alignment-channel adapter.
+
+\section{Lean realization and trusted base}
+The Lean proof changes only the outer witness-compatible expression and simplifies with the exact
+operator-witness equivalence. No alignment is selected computationally and no optimizer is called.
+Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.
+  withFourStageMaximumResidualChannels_witnessCompatible_iff_components
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem authenticates no runtime candidate, alignment, optimizer, residual field, budget,
+headroom calculation, inventory, source artifact, serialization, or enclosure. The empty structural
+inventory supplies no structural coverage. It establishes no central-to-witness converse beyond
+this explicit witness predicate, no external coverage, no scientific adequacy, and no certificate.
+The checked runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The proof and dossier were AI-assisted and checked by the maintainer. Lean proof checking is not
+independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must freeze complete error and structural contracts, exact or outward values, common
+candidate/alignment data, total headroom, retained hashes, source identity, enclosure policy, and
+independent verification before external use.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & same-candidate/same-alignment expansion checked; no runtime promotion \\
+\bottomrule
+\end{tabularx}
+\end{document}
