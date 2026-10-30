@@ -311,3 +311,65 @@ rank-one projector-product trace with the Bargmann product. These modules do not
 runtime arrays, infer normalization from floating-point data, execute the utility, validate
 eigenphases, certify a mesh, establish Chern integrality or continuum topology, prove a Wannier
 obstruction, execute Wannier90, or establish physical applicability.
+
+## Complex-unitary right-Procrustes inspection
+
+The exact right-action objective and polar-witness result were selected after a bounded literature,
+consumer-contract, and pinned-Mathlib inspection.
+
+### Mathematical source
+
+- Nicholas J. Higham, *Functions of Matrices: Theory and Computation*, SIAM, 2008,
+  ISBN `978-0-898716-46-7`, Chapter 8, Theorem 8.6;
+- chapter DOI: `10.1137/1.9780898717778.ch8`;
+- author-maintained book metadata:
+  `https://nhigham.com/functions-of-matrices-theory-and-computation/`; and
+- author-maintained explanatory background, “What is the Polar Decomposition?”, 2020-07-28:
+  `https://nhigham.com/2020/07/28/what-is-the-polar-decomposition/`.
+
+Higham's convention is adapted, not silently copied: the Formal objective is explicitly
+`minimize ‖candidate * gauge - reference‖_F²` with a right-acting complex unitary and cross matrix
+`candidateᴴ * reference`. The real special-orthogonal determinant constraint and generalized
+metric/indefinite polar decompositions are outside this module.
+
+### Consumer contracts
+
+The `projectkoios-optimization` contract was inspected read-only at immutable commit
+`ef608716ae9f515f56406dd517c1a8b7487d3391`. Its current exact source locators were:
+
+| SHA-256 | Owner-repository path |
+|---|---|
+| `7f76acfef497f4b8e0f012705c1da4861458c7b6625c95463e496ee61c5e5dc5` | `src/python/projectkoios/optimization/alignment/procrustes.py` |
+| `355681584b1bf81088dd664e17b4a2e039c1d96acb22d1740f3588c3e6d01411` | `src/python/projectkoios/optimization/alignment/numpy/procrustes.py` |
+
+The KSD immutable dependency pin was
+`7ac5376bcb97e29f6927dda4d4ef714ed2e32140`; the pinned optimization contract source had SHA-256
+`ad08a703628d3742fb3ee8086acf2720a48fe8c94b58b0a2e4a1cb0c5dd118e7`. KSD was inspected
+read-only at local commit `4835e7bf9161729cc8f0537bcc13db083896a6ae`, three commits ahead of remote
+`5aaff25b784c7d1bc079a3030a73be387dc11a0f`, in an otherwise dirty worktree. The cited paths were
+unmodified and were read from immutable `HEAD` blobs:
+
+| SHA-256 | Owner-repository path |
+|---|---|
+| `e0deceebb75d84304eb02f80d1734afc0cd36be611dbd741d63298e96de33240` | `python/src/ksdft2effmass/solid_state/band_frames.py` |
+| `3e5124fe785cfc75d5a2bb80030e6bccf9c4bcb82ed540de9c2a4e32b57400ea` | `python/src/ksdft2effmass/solid_state/frame_alignment.py` |
+
+These consumers use ordinary complex-unitary right action and cross matrix
+`candidate_frame.magnitude.conj().T @ reference_frame.magnitude`. No overlap metric, Gram metric,
+metric-unitary constraint, or complex-oblique gauge contract was found in the audited paths.
+Rank-deficient runtime policy deliberately withholds an arbitrary null-space unitary completion.
+
+### Mathlib feasibility and authority boundary
+
+The implementation uses Mathlib commit `56a005855ea17e0b0958f73ec801ae140b0a1679`: matrix
+spectral decomposition, positive-semidefinite/positive-definite eigenvalue signs, cyclic trace
+identities, the finite unitary group, and the scoped Frobenius norm. No ready-made polar-decomposition
+declaration was found. Formal therefore accepts an exact factorization witness
+`candidateᴴ * reference = minimizer * positiveFactor`; it does not claim unconditional construction
+of that witness from an external matrix.
+
+The Lean result authenticates no NumPy SVD, binary64 matrix, floating numerical rank, tolerance,
+runtime orthonormality check, optimizer branch, null-space completion, serialization, retained
+artifact, or certificate. A positive-semidefinite witness proves mathematical global minimality.
+Uniqueness requires an explicit positive-definite factor and is not inferred in the rank-deficient
+case. The checked runtime-certificate count remains zero.

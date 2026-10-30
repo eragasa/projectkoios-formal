@@ -18,6 +18,7 @@ import ProjectKoios.BandGauge.Bloch.AlignedDifferenceBounds
 import ProjectKoios.BandGauge.Alignment.FiniteFrame
 import ProjectKoios.BandGauge.Alignment.Family
 import ProjectKoios.BandGauge.Alignment.FamilySeparation
+import ProjectKoios.BandGauge.Alignment.UnitaryProcrustes
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.ResidualChannels
 import ProjectKoios.BandGauge.Hilbert.FourStageResidualChannels
@@ -450,6 +451,22 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Alignment.exists_alignmentFeasible_larger_not_smaller_of_ssubset
 #print axioms ProjectKoios.BandGauge.Alignment.exists_globalFeasible_not_identityFeasible
 #print axioms ProjectKoios.BandGauge.Alignment.exists_completeFeasible_not_globalFeasible
+#print axioms ProjectKoios.BandGauge.Alignment.frobeniusPower_eq_sum
+#print axioms ProjectKoios.BandGauge.Alignment.frobeniusPower_eq_norm_sq
+#print axioms ProjectKoios.BandGauge.Alignment.unitary_entry_norm_le_one
+#print axioms ProjectKoios.BandGauge.Alignment.unitary_column_power
+#print axioms ProjectKoios.BandGauge.Alignment.unitary_eq_one_of_diag_re_one
+#print axioms ProjectKoios.BandGauge.Alignment.re_trace_unitary_mul_diagonal_le
+#print axioms ProjectKoios.BandGauge.Alignment.re_trace_unitary_mul_diagonal_eq_sum_imp_eq_one
+#print axioms ProjectKoios.BandGauge.Alignment.re_trace_unitary_mul_posSemidef_le_trace
+#print axioms ProjectKoios.BandGauge.Alignment.re_trace_unitary_mul_posDef_eq_trace_imp_eq_one
+#print axioms ProjectKoios.BandGauge.Alignment.frobeniusPower_sub
+#print axioms ProjectKoios.BandGauge.Alignment.frobeniusPower_rightUnitaryFrame
+#print axioms ProjectKoios.BandGauge.Alignment.rightUnitaryProcrustesObjective_expansion
+#print axioms ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.score_eq_trace
+#print axioms ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.score_le
+#print axioms ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.objective_minimal
+#print axioms ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.eq_minimizer_of_objective_eq
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply
 #print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_operatorFieldDifference
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap

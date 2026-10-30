@@ -1,0 +1,109 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Positive-Definite Uniqueness for Unitary Procrustes}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-ALIGNMENT-THM-045} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.eq_minimizer_of_objective_eq} \\
+Owning module & \path{ProjectKoios/BandGauge/Alignment/UnitaryProcrustes.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $A,B\in\mathbb C^{m\times n}$ and let exact data $Q,H$ satisfy
+\[
+  Q^*Q=I,\qquad H\succ0,\qquad A^*B=QH.
+\]
+For any unitary $R$, if
+\[
+  \lVert AR-B\rVert_F^2=\lVert AQ-B\rVert_F^2,
+\]
+then $R=Q$. Thus the supplied polar-witness minimizer is unique under the explicit
+positive-definite-factor hypothesis.
+
+\section{Sources and statement relation}
+The result adapts the nonsingular uniqueness clause accompanying the unitary Procrustes result in
+Nicholas J. Higham, \emph{Functions of Matrices: Theory and Computation}, SIAM, 2008,
+Chapter~8, Theorem~8.6, DOI \texttt{10.1137/1.9780898717778.ch8}. Formal uses the directly
+checkable condition $H\succ0$ on the supplied exact positive factor. It does not infer this
+condition from a floating numerical rank.
+
+The consumer and immutable source identities are recorded in \path{docs/source-audit.md}. The
+Formal base is merge commit \texttt{00e9ee158fb153b5109fbb35f156ca087ea079fd}, tree
+\texttt{fe5e9cd5b440745e3644a1478c6f5639a5282b5b}. The owning-module SHA-256 is
+\texttt{9417f71d4094c4597dd0b8abb0c930ac9292be1d07892f9962b1e045242e931d}; the source locator is
+\texttt{UnitaryProcrustes.lean:431} and \texttt{BG-ALIGNMENT-THM-045}. No topic commit is claimed
+before checkpoint authorization.
+
+\section{Assumptions and conventions}
+The objective has the fixed orientation $\lVert AR-B\rVert_F^2$, the action is on the right, and
+the cross matrix is $A^*B$. The positive-definite premise is stronger than positive
+semidefiniteness and excludes the null directions responsible for nonunique rank-deficient unitary
+completions. No claim is made that a runtime tolerance correctly decides this premise.
+
+\section{Proof structure}
+Equality of objectives and the exact Frobenius/trace expansion imply equality of the real trace
+scores. Set $W=R^*Q$, which is unitary. The polar factorization reduces score equality to
+\[
+  \operatorname{Re}\operatorname{tr}(WH)=\operatorname{tr}(H).
+\]
+Diagonalize $H=U\operatorname{diag}(d_i)U^*$ with every $d_i>0$. Conjugating $W$ by $U$ preserves
+unitarity. The trace equality becomes
+\[
+  \sum_i d_i\operatorname{Re}(\widetilde W_{ii})=\sum_i d_i.
+\]
+Every diagonal real part is at most one. Strict positivity of every $d_i$ forces all diagonal real
+parts to equal one. Unitarity then forces every diagonal entry to be one and every off-diagonal
+entry to vanish, so $\widetilde W=I$, hence $W=I$ and $R=Q$.
+
+\section{Lean realization and trusted base}
+The proof uses \texttt{BG-ALIGNMENT-THM-034}, \texttt{036}, \texttt{038}, \texttt{041}, and
+\texttt{042}. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Alignment.
+  RightUnitaryProcrustesPolarWitness.eq_minimizer_of_objective_eq
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Rank-deficient and runtime boundaries}
+Positive-semidefinite rank-deficient factors are intentionally outside this uniqueness theorem.
+Their polar witnesses still prove global minimality through \texttt{BG-ALIGNMENT-THM-044}, but
+Formal does not select an arbitrary unitary completion on a null space. The theorem authenticates
+no SVD, rank threshold, runtime branch, binary64 value, optimizer, serialization, or certificate.
+It establishes no physical applicability, scientific validation, novelty, or publication status.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, bibliography, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+Any external uniqueness claim must supply an exact or outward-verified positive-definite factor and
+must keep numerical rank policy and failure handling in the owning runtime contract.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & uniqueness proved only from explicit positive definiteness; rank-deficient completion remains external \\
+\bottomrule
+\end{tabularx}
+\end{document}
