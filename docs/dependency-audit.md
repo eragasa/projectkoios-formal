@@ -21,9 +21,19 @@ Current modules reuse the following APIs.
 - Matrix and block algebra: finite multiplication, `Matrix.fromBlocks`, conjugate transpose, Hermitian predicates, `Complex.normSq`, and complex exponential norm identities.
 - Fourier algebra: finite additive characters, orthogonality, and Pontryagin duality.
 - Normalized product-torus integration: `UnitAddCircle`, its standard total-mass-one Haar measure, finite product measures, `integral_fintype_prod_eq_prod`, and `integral_fintype_prod_eq_pow` from pinned Mathlib's `IntervalIntegral.Periodic` and `Integral.Pi` modules.
+- Zeroth-Bessel integral: Mathlib's `Complex.besselJ`, `regularizedHGFun`, `Gamma_nat_eq_factorial`, cosine-power integrals, dominated convergence for interval integrals, exponential-series summation, periodic interval translation, and `UnitAddCircle.intervalIntegral_preimage`. Pinned Mathlib does not itself expose the resulting full-angle or normalized-circle `J₀` theorem.
 - Quantum partial operators: Mathlib `LinearPMap`, formal adjoints, maximal adjoints, closedness, and closability APIs.
 
 The spectral construction is exact and noncomputable. It is not an eigensolver or numerical certificate. Local Pauli and tetrahedral matrices encode model conventions absent from the inspected generic APIs.
+
+## LeanCondensedMatter source inspection
+
+`naoki-cpp/LeanCondensedMatter` was inspected at immutable merge commit
+`47d64b9d2e85522dbbef295bf0ce3d2a1d0afe87` as the Apache-2.0 source of the full-angle `J₀`
+proof architecture. It resolves to the same Lean and Mathlib versions and its relevant module built
+successfully during audit. It is not adopted as a package dependency: the local port contains only
+the source-neutral special-functions chain, with immutable attribution recorded in
+`docs/source-audit.md`.
 
 ## Physlib probe
 

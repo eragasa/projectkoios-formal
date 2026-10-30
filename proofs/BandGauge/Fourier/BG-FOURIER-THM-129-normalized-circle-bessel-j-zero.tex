@@ -1,0 +1,103 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Normalized One-Circle Bessel Identity}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-31}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-129} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.integral_exp_oneCircleSinePhase_eq_besselJZero} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/NormalizedCircleBessel.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $\mathbb T_1=\mathbb R/\mathbb Z$ carry its standard Haar probability measure, and define
+$s(q)$ through the standard complex-circle map, so that $s([x])=\sin(2\pi x)$. For every real
+amplitude $b$,
+\[
+  \int_{\mathbb T_1}\exp\!\bigl(i b\,s(q)\bigr)\,dq=J_0(b),
+\]
+where $J_0$ is Mathlib's \texttt{Complex.besselJ 0}. The phase sign is positive and no extra
+factor of $2\pi$ is included in $b$.
+
+\section{Source relation and immutable identity}
+The full-angle input is \texttt{BG-SPECIAL-THM-014}, whose proof is attributed to the immutable
+Apache-2.0 source recorded in its dossier and \path{docs/source-audit.md}. This theorem is a
+Project Koios-owned normalization bridge using pinned Mathlib's \texttt{UnitAddCircle} APIs.
+
+The normalization was selected for source-neutral reuse by KSD's 2-D and 3-D flat-parent
+comparators. Immutable KSD source identity is commit
+\texttt{fcfc4d5fa76b08c040a02c97a109eb5f5fc06e48}, tree
+\texttt{fe8b47b33fcf0b24c5b28f8799ed220e3f6d7d20}; the relevant protocol locators and hashes are
+recorded in \path{docs/source-audit.md}. This theorem does not assert that KSD's notation or runtime
+phase equals the Lean input.
+
+The local module SHA-256 at dossier preparation is
+\texttt{0f1a1e808d87302cfa51dbad27dc971fd349a8a9dd40ac063653be46a3f72961}. The Formal base is
+merge commit \texttt{7188b05149c598d2edc7ec8eb2af331c54b313ad}; no topic commit is claimed before
+checkpoint authorization.
+
+\section{Assumptions and conventions}
+The carrier is Mathlib's \texttt{UnitAddCircle}; its standard Haar measure has total mass one. A
+real representative $x$ maps to $\sin(2\pi x)$. The exact complex phase is $i b\sin(2\pi x)$.
+These choices fix endpoint identification, scaling, normalization, and sign internally, but they do
+not authenticate any external convention.
+
+\section{Proof structure}
+Use \texttt{UnitAddCircle.intervalIntegral\_preimage} to rewrite the normalized circle average as
+an integral over $x\in[0,1]$. Substitute $\theta=2\pi x$, producing a factor $(2\pi)^{-1}$. Shift
+$\sin\theta$ to $\cos(\theta-\pi/2)$ and use $2\pi$ periodicity to restore the interval
+$[0,2\pi]$. Apply \texttt{BG-SPECIAL-THM-014}; the normalization factor cancels $2\pi$.
+
+\section{Lean realization and trusted base}
+The proof uses the standard quotient-to-circle map, \texttt{UnitAddCircle.intervalIntegral\_preimage},
+interval scaling and translation, \texttt{Real.cos\_sub\_pi\_div\_two}, and periodic interval
+translation. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Fourier.
+  integral_exp_oneCircleSinePhase_eq_besselJZero
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Downstream exact consequences}
+The existing normalized product-torus factorization gives an arbitrary finite cardinality power,
+$J_0(a)^2$ on \texttt{Fin 2}, $J_0(b)^3$ on \texttt{Fin 3}, and the exact substitution
+$b=2a/3$. Those corollaries remain source-neutral mathematical identities, not authenticated KSD
+comparators.
+
+\section{Evidence and interpretation boundaries}
+The theorem does not bind an external half-open coordinate, phase formula, amplitude, or measure;
+authenticate quadrature, finite meshes, runtime values, binary64, or serialization; establish
+finite-to-continuum convergence; or certify a scientific comparator, model, certificate, or
+publication claim. The checked runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The Lean bridge and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, source-fidelity, numerical, scientific, novelty, or publication review.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-31 & initial dossier & AI-assisted maintainer review & normalized identity proved; external/runtime binding and independent patch review remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

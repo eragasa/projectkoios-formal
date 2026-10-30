@@ -13,6 +13,7 @@ Record every convention that affects a proposition.
 | Momentum | mesh, interval, torus, endpoints, measure | endpoint identification |
 | Weights | normalized counting, geometric, moment, or certified optimized rule | post-hoc evaluation weights |
 | Fourier | sign, normalization, group, inversion, finite/continuum domain | interchange of conventions |
+| Special functions | exact library function, order, phase sign, coordinate scaling, and measure normalization | equality of differently normalized integral formulas |
 | Operators | spaces, basis/frame, adjoint, norm | matrix/operator identity without a map |
 | Support | indices, metric, shells, closure, finite/decaying semantics | physical range from coordinate cutoff |
 | Gauge | group, action, global/pointwise dependence | larger alignment family |
@@ -40,6 +41,13 @@ Before comparing operators, identify:
 5. lattice and reciprocal coordinates.
 
 Projection, disentanglement, basis change, Fourier conversion, and truncation are different operations.
+
+## Normalized-circle Bessel convention
+
+The implemented one-circle `J₀` bridge uses Mathlib's `Complex.besselJ 0`, `UnitAddCircle`, its
+standard Haar probability measure, the representative coordinate `sin (2πx)`, positive phase
+`i b sin (2πx)`, and no extra `2π` in the real amplitude `b`. Any external consumer must prove its
+own coordinate, phase, scaling, and measure identification before reusing the result.
 
 ## Certificates
 

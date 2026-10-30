@@ -86,7 +86,7 @@ Open:
 
 ## R3 — continuum Fourier analysis
 
-Status: normalized finite product-torus factorization implemented; broader continuum layer deferred.
+Status: normalized finite product-torus factorization and the exact normalized sine-phase `J₀` bridge implemented; broader continuum layer deferred.
 
 Implemented:
 
@@ -94,26 +94,35 @@ Implemented:
 - finite product of standard unit-circle Haar measures and exact total mass one;
 - normalized factorization of coordinate-separable complex averages;
 - exponential factorization for coordinatewise additive phases; and
-- equal-coordinate power laws, including exact 2-D square and 3-D cube corollaries.
+- equal-coordinate power laws, including exact 2-D square and 3-D cube corollaries;
+- the standard period-one sine coordinate and positive sine phase;
+- the normalized one-circle average `J₀(b)`; and
+- exact 2-D `J₀(a)²` and 3-D `J₀(2a/3)³` scaling corollaries.
 
 Open:
 
 - source-specific torus coordinate, endpoint, phase, and measure bindings;
-- one-circle Bessel integral evaluations;
 - continuum Fourier coefficients, normalization, and Parseval;
 - finite-to-continuum hypotheses and quadrature error; and
 - projection/alignment/locality consequences.
 
-The factorization results must not be promoted into a Bessel identity, runtime comparator, finite-mesh result, or scientific claim without the missing bridges.
+The exact Bessel identities must not be promoted into a runtime comparator, finite-mesh result, or scientific claim without the missing external bindings and numerical bridges.
 
 ## R4 — special functions and tails
 
-Status: deferred until Fourier conventions are fixed.
+Status: zeroth-order full-angle Bessel integral implemented through an attributed local port; broader family deferred.
 
-- Jacobi--Anger expansions.
-- Bessel identities.
-- Shell coefficients.
-- Factorial or constrained-series bounds.
+Implemented:
+
+- full-angle cosine moments and parity;
+- termwise exponential integration with a factorial majorant; and
+- `∫₀²π exp(i z cos θ) dθ = 2π J₀(z)` for real `z`.
+
+Open:
+
+- full Jacobi--Anger expansions and nonzero-order Bessel identities;
+- shell coefficients; and
+- factorial or constrained-series tail bounds.
 
 ## R5 — publication instantiation
 

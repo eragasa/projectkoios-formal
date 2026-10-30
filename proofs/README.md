@@ -199,10 +199,22 @@ field factorization, and `Fin 2` square and `Fin 3` cube corollaries remain full
 and the theorem manifest without separate dossiers.
 
 The carrier is explicitly a finite product of Mathlib unit additive circles and the measure is the
-product of their standard Haar probability measures. The theorems do not evaluate a one-circle
-integral as a Bessel function, bind an external half-open coordinate or phase convention,
-authenticate quadrature or a runtime mesh, prove finite-to-continuum convergence, or certify a KSD
-analytic comparator, material model, certificate, or scientific conclusion.
+product of their standard Haar probability measures. These factorization theorems alone do not
+evaluate a one-circle integral as a Bessel function or bind an external convention.
+
+## Selected zeroth-Bessel tranche
+
+The attributed source-neutral Bessel extension has selected dossiers for `BG-SPECIAL-THM-014` and
+`BG-FOURIER-THM-129`. They cover the full-angle exponential-cosine integral in terms of Mathlib's
+`Complex.besselJ` and its normalized period-one positive sine-phase consequence. Intermediate
+cosine-moment, summability, coefficient, arbitrary-product, 2-D square, and 3-D cube/scaling results
+remain fully recorded in Lean and the theorem manifest without separate dossiers.
+
+The dossiers preserve immutable provenance to the Apache-2.0 `LeanCondensedMatter` proof while
+making clear that the external package is not a dependency. Neither theorem binds an external
+half-open coordinate or runtime phase convention, authenticates quadrature or a runtime mesh,
+proves finite-to-continuum convergence, or certifies a KSD analytic comparator, material model,
+certificate, or scientific conclusion.
 
 ## Required contents
 

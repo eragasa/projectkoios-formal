@@ -70,14 +70,14 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/normalized-product-torus-factorization` topic, based on remote `main` merge commit
-`24263f08a5b69fc34be3073bc724a3b0ad4b80d6`, formalizes the unit additive circle, its normalized
-finite product Haar measure, coordinate-separable complex-average factorization, exponential
-factorization for additive phases, equal-coordinate power laws, and explicit 2-D square and 3-D
-cube corollaries. It includes immutable read-only KSD protocol locators, pinned Mathlib theorem
-locators, declaration and axiom ledgers, module/source documentation, smoke checks, and selected
-explanatory dossiers. It does not prove a one-circle Bessel integral, bind an external coordinate or
-phase convention, authenticate quadrature or a runtime mesh, establish finite-to-continuum
+`work/one-circle-bessel-integral` topic, based on remote `main` merge commit
+`7188b05149c598d2edc7ec8eb2af331c54b313ad`, ports the minimum source-neutral full-angle `J₀`
+integral proof with Apache-2.0 attribution to immutable `LeanCondensedMatter` merge commit
+`47d64b9d2e85522dbbef295bf0ce3d2a1d0afe87`. It adds the normalized period-one circle sine bridge,
+arbitrary finite product powers, exact 2-D `J₀(a)²`, and exact 3-D `J₀(2a/3)³` scaling corollaries.
+It includes immutable source identity, declaration and axiom ledgers, module/source documentation,
+smallest-target checks, and selected explanatory dossiers. It does not bind an external coordinate
+or phase convention, authenticate quadrature or a runtime mesh, establish finite-to-continuum
 convergence, or certify a KSD comparator or scientific conclusion. No separate trust,
 documentation, or maintenance effort occupies the second WIP slot.
 
@@ -217,6 +217,14 @@ These items are merged Formal content only.
   matrix-unitary bridge supplies exact identity/global/complete family membership, and no mesh,
   runtime SVD/rank/tolerance behavior, optimizer, null-space completion, certificate, or
   scientific adequacy is authenticated.
+- Normalized finite product-torus integration is proved as `BG-FOURIER-DEF-052--056` and
+  `BG-FOURIER-THM-119--127`, with selected dossiers for exponential factorization and the
+  equal-phase power law. The slice merged through PR #45 at commit
+  `7188b05149c598d2edc7ec8eb2af331c54b313ad`, tree
+  `de6d0fc700670a27fe7ccaf79eb8da3a4838e17e`; it fixes the carrier and product Haar probability
+  measure and proves exact 2-D square and 3-D cube laws, but by itself binds no external coordinate,
+  phase, quadrature, finite mesh, runtime comparator, convergence claim, certificate, or scientific
+  conclusion.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit
