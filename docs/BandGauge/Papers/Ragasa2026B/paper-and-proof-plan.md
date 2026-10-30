@@ -77,14 +77,17 @@ Implemented reusable support:
 - finite Fourier reconstruction and residual tails;
 - matrix Frobenius Parseval;
 - finite dominance, efficiency, feasibility, and minimum-cost theorems;
-- exact finite Pareto checkers; and
+- exact finite Pareto checkers;
+- source-neutral complete finite metric shells with nesting, tie retention, conditional inversion and
+  symmetry closure, attained-radius enumeration, no-skipped-shell semantics, and exact square,
+  triangular, simple-cubic, and normalized FCC reduced-coordinate indices; and
 - rank-two spectral/operator loss geometry.
 
 Missing support:
 
 - source-specific spectral projection and support-destruction theorem;
 - special-function coefficient and tail theorems;
-- complete-shell encoding;
+- owner-specific external inventory, symmetry-action, cap, and physical-range bindings;
 - exact objective-table schema and external coverage proof; and
 - retained production evidence.
 

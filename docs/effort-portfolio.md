@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`66523cbd5065d5fa3a3ad0f326e40b29c753f574`, tree
-`c3b79feef16671ddf55044af0754bf91728384b4`, integrating PR #41.
+`4902864c19b412320e56c984fe9cc98a4ad3bd89`, tree
+`8e0e7bfdd20b245ff8160cd7fc6f302c8bfd661a`, integrating PR #42.
 
 ## Mission
 
@@ -69,19 +69,19 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort occupies the WIP limit: the isolated
-`work/finite-mesh-procrustes-hierarchy` topic, based on remote `main` merge commit
-`66523cbd5065d5fa3a3ad0f326e40b29c753f574`, extends the exact complex-unitary right-action
-objective to a finite mesh. It sums the pointwise objectives, accepts one supplied exact polar
-witness per point, proves pointwise and summed global minimality, requires positive definiteness at
-every point for summed uniqueness, compares the pointwise field with constant and identity fields,
-and proves conditional exact known-inverse zero-objective controls. A separate matrix-unitary
-bridge proves exact isometry from matrix unitarity and places matrix fields in the existing
-identity/global/complete alignment-family hierarchy. The bounded slice includes declaration and
+One mathematical effort occupies the WIP limit: the isolated `work/metric-shell-support` topic,
+based on remote `main` merge commit `4902864c19b412320e56c984fe9cc98a4ad3bd89`, formalizes
+complete finite metric shells for the current KSD 2-D/3-D support hierarchy. The bounded slice
+proves exact cutoff nesting, equal-radius tie retention, conditional inversion and symmetry-orbit
+closure, strict support and block-count growth at every attained radius, and no-skipped-shell
+semantics over attained radii. It supplies exact dimensionless reduced-coordinate square, triangular,
+simple-cubic, and normalized FCC shell indices with nonnegativity and selected generator
+invariances. The slice includes immutable read-only KSD protocol fingerprints, declaration and
 axiom ledgers, module/source documentation, smoke checks, and selected explanatory dossiers. It
-does not construct or authenticate a mesh, NumPy SVD, floating rank, tolerance, runtime optimizer,
-null-space completion, serialized artifact, or certificate; rank-deficient uniqueness remains
-unclaimed. No separate trust, documentation, or maintenance effort occupies the second WIP slot.
+does not authenticate an external inventory or symmetry group, identify a metric shell with a
+source-defined physical hopping range, bind lattice constants or units, verify runtime block
+counts, or establish convergence, material adequacy, or scientific acceptance. No separate trust,
+documentation, or maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -195,6 +195,15 @@ These items are merged Formal content only.
   `‖candidate * gauge - reference‖_F²` with cross matrix `candidateᴴ * reference`, the polar witness
   is exact supplied data, uniqueness requires positive definiteness, and no runtime SVD, rank,
   tolerance, optimizer, null-space completion, certificate, or scientific adequacy is authenticated.
+- The finite-mesh Procrustes hierarchy is proved as `BG-ALIGNMENT-DEF-021--029` and
+  `BG-ALIGNMENT-THM-046--058`, with selected dossiers for summed global minimality and the exact
+  known-inverse/unique-polar-field control. The slice merged through PR #42 at commit
+  `4902864c19b412320e56c984fe9cc98a4ad3bd89`, tree
+  `8e0e7bfdd20b245ff8160cd7fc6f302c8bfd661a`; one supplied exact polar witness per mesh point
+  yields the summed minimum, uniqueness requires positive definiteness at every point, the
+  matrix-unitary bridge supplies exact identity/global/complete family membership, and no mesh,
+  runtime SVD/rank/tolerance behavior, optimizer, null-space completion, certificate, or
+  scientific adequacy is authenticated.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit

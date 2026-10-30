@@ -89,6 +89,36 @@ reconstruction term is explicit. Its normalized removed-block power is distinct 
 off-mesh reconstruction error and later ordinary support-truncation tails. The current runtime
 checked-certificate count remains zero.
 
+## KSD 2-D/3-D complete metric-shell protocol inspection
+
+The complete metric-shell module was selected after a read-only immutable-tree inspection of the
+current KSD 2-D/3-D protocol family:
+
+- owner repository: `ksdft2effmass`;
+- inspected branch: `work/periodic23-band-equivalence-artifact-ownership`;
+- immutable commit: `fcfc4d5fa76b08c040a02c97a109eb5f5fc06e48`;
+- immutable tree: `fe8b47b33fcf0b24c5b28f8799ed220e3f6d7d20`;
+- access mode: read-only `git show` exports into `/tmp/ksd-metric-shell-fcfc4d5f`;
+- dirty-state limitation: the ordinary worktree contained 169 status entries from an active
+  uncommitted ownership migration, including modified and deleted calculation-workflow files, so
+  working-tree bytes were not used as authority and no owner file, index, branch, or configuration
+  was changed.
+
+| SHA-256 at `fcfc4d5f…` | Owner-repository path | Inspection use |
+|---|---|---|
+| `fbf444cb4d485e09db63df6a27e6b3e8e6c7fdaac54cdfba04fa16ad06ccda69` | `experiments/model-adequacy/periodic2d/band-equivalence-versus-hopping-locality/experimental-protocol.tex` | square signed-permutation orbits, squared radius, equal-radius shell retention, and no-skipped-support requirement |
+| `2f730d6db77a0f7f4fe64e1b3c95c31a9aea8ed02fa1885f82660adc96f5f0c3` | `experiments/model-adequacy/periodic3d/band-equivalence-versus-hopping-locality/experimental-protocol.tex` | cubic signed-permutation orbits, block-count cost, nesting, and no-skipped-support requirement |
+| `819ba806b9ff193b1c88a6e5ea5619c78d17589cd18ebc5980b4e874a746a736` | `experiments/model-adequacy/periodic2d_nonorthog/band-equivalence-versus-hopping-locality/experimental-protocol.tex` | triangular metric index `R₁²+R₁R₂+R₂²` and metric-preserving orbit requirement |
+| `cb9a26fce5729e6922c034e7673a1426b4d9cd086abcd4d7a92ce3088f880ad1` | `experiments/model-adequacy/periodic3d_nonorthog/band-equivalence-versus-hopping-locality/experimental-protocol.tex` | normalized FCC index `R₁²+R₂²+R₃²+R₁R₂+R₁R₃+R₂R₃` and metric-preserving orbit requirement |
+| `498c0d9ec3477055f2807dd9f48057352de1a4646ecd0c74cde4d0e3804c951e` | `experiments/model-adequacy/band-equivalence-dimensional-comparison/comparison-protocol.md` | complete-shell consumption and discrete shell--scale decision boundary |
+
+The Lean module proves source-neutral finite support mathematics. It does not identify a KSD
+serialized inventory with the declared `Finset`, admit an external point group, prove runtime orbit
+coverage, convert a metric shell to a source-defined hopping range, authenticate block counts, or
+establish numerical convergence, scientific acceptance, or material validity. The formula
+specializations use dimensionless reduced integer coordinates and do not encode lattice constants,
+units, basis connectivity, or calculated output.
+
 ## Harmonic-oscillator computational crosswalk inspection
 
 The harmonic-oscillator modules are source-neutral exact mathematics. Their computational

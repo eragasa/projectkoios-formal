@@ -1,0 +1,111 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Every Finite Metric-Shell Change Has an Attained Radius}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-100} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.metricShell_ne_iff_exists_attained_between} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/MetricShellSupport.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $M$ be a finite inventory in an ambient mode type $\mathcal X$, let
+$\rho:\mathcal X\to L$ take values in a linearly ordered radius type, and define
+\[
+  \operatorname{shell}(S)=\{R\in M:\rho(R)\le S\},\qquad
+  \operatorname{attained}(M)=\{\rho(R):R\in M\}.
+\]
+For cutoffs $S\le T$,
+\[
+ \operatorname{shell}(S)\ne\operatorname{shell}(T)
+ \quad\Longleftrightarrow\quad
+ \exists r\in\operatorname{attained}(M),\ S<r\le T.
+\]
+Thus a support change is neither inferred from a continuous radius model nor hidden between
+attained values: it has an exact witness in the declared finite inventory.
+
+\section{Source relation and immutable identity}
+The statement is source-neutral finite-order mathematics selected for KSD's requirement that the
+2-D square and 3-D cubic sampled shell inventories include every attainable squared radius through
+a cap, and that triangular/FCC supports use their declared metric indices rather than coordinate
+squares. The read-only source identity is KSD commit
+\texttt{fcfc4d5fa76b08c040a02c97a109eb5f5fc06e48}, tree
+\texttt{fe8b47b33fcf0b24c5b28f8799ed220e3f6d7d20}; exact paths and hashes are in
+\path{docs/source-audit.md}. The owner worktree was dirty, so only immutable \texttt{git show}
+bytes were used.
+
+The Formal base is PR~\#42 merge commit
+\texttt{4902864c19b412320e56c984fe9cc98a4ad3bd89}, tree
+\texttt{8e0e7bfdd20b245ff8160cd7fc6f302c8bfd661a}. The owning-module SHA-256 is
+\texttt{aee5915990170b1516f9808f288f0af1d8f9f7daae9d0c0f0910a1441068ca3f}; the declaration
+starts at \texttt{MetricShellSupport.lean:172}. No topic commit is claimed before checkpoint
+authorization.
+
+\section{Assumptions and conventions}
+The inventory is a Lean \texttt{Finset}; finiteness is therefore part of the type. Radius values
+are exact and linearly ordered. Both shells use the same inventory and radius function. No metric,
+negation, symmetry, geometry, or nonemptiness assumption is needed for this theorem.
+
+\section{Proof structure}
+First prove the element-witness form
+\[
+ \operatorname{shell}(S)\ne\operatorname{shell}(T)
+ \Longleftrightarrow
+ \exists R\in M,\ S<\rho(R)\le T.
+\]
+If no such $R$ exists, monotonicity gives
+$\operatorname{shell}(S)\subseteq\operatorname{shell}(T)$, while every member of the second shell
+must also have radius at most $S$; hence the shells are equal. Conversely, a mode in the displayed
+radius gap belongs to the second shell and not the first. Mapping the witness $R$ to $r=\rho(R)$
+gives an attained radius. Membership in the finite image supplies the reverse witness.
+
+\section{Lean realization and trusted base}
+The proof uses finite-set extensionality, filter membership, monotonicity of $\le$, and
+\texttt{Finset.mem\_image}. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Fourier.
+  metricShell_ne_iff_exists_attained_between
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+The theorem does not authenticate $M$, compute a runtime inventory, admit an external symmetry
+group, or prove that a metric radius is a physical hopping range. It establishes no Fourier-tail
+bound, interpolation error, convergence, material validity, scientific acceptance, or certificate.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must separately bind exact coordinates, the complete external inventory, metric,
+cutoff cap, symmetry/orbit convention, units, retained hashes, and fail-closed verification.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & exact finite shell changes have attained witnesses; external inventory admission remains open \\
+\bottomrule
+\end{tabularx}
+\end{document}
