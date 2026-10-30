@@ -119,6 +119,37 @@ establish numerical convergence, scientific acceptance, or material validity. Th
 specializations use dimensionless reduced integer coordinates and do not encode lattice constants,
 units, basis connectivity, or calculated output.
 
+## Rank-two unitary-conjugation band-invariance statement selection
+
+The rank-two conjugation module uses the same immutable KSD inspection identity, access mode,
+dirty-state limitation, and five file hashes recorded above. Its consumer-facing statement was
+selected from these exact locators:
+
+- orthogonal 2-D protocol, lines 70--85: momentum-dependent unitary similarity preserves band
+  spectra, while locality and post-truncation representation cost can differ;
+- orthogonal 3-D protocol, lines 69--82: the corresponding 3-D spectrum/locality and operator-versus-
+  eigenvalue boundary;
+- nonorthogonal 2-D protocol, lines 69--73: pointwise eigenvalues of rotated rank-two fields agree
+  exactly while Fourier support can differ; and
+- nonorthogonal 3-D protocol, lines 34--37: complete reference and rotated rank-two fields are
+  pointwise unitarily equivalent before truncation.
+
+The generic spectrum step is a thin specialization of Mathlib theorem
+`Unitary.spectrum_star_left_conjugate` at pinned Mathlib commit
+`56a005855ea17e0b0958f73ec801ae140b0a1679`, tree
+`0db52fa68e6b0c5b917c22bc6383325391a00610`, file
+`Mathlib/Algebra/Star/Unitary.lean`, lines 479--483, file SHA-256
+`2048264165355c0466762359dbbd2429dc5f8580f092e97b7676cd1ea4f7aab3`.
+Formal adds source-neutral rank-two scalar-plus-Pauli coordinate consequences and the pointwise
+lower/upper-band-field corollary; it makes no priority claim for unitary spectral invariance.
+
+The exact unitary and the equality identifying the conjugated matrix with supplied post-conjugation
+Pauli coordinates are hypotheses. The module does not construct, parse, or authenticate a runtime
+gauge, floating-point orthonormality test, eigensolver, ordered eigenvalue array, band tracker,
+momentum mesh, Fourier inventory, external artifact, physical model, or acceptance decision.
+Pointwise field equality on a supplied finite index type does not authenticate the external mesh
+or establish continuum regularity or coverage.
+
 ## Harmonic-oscillator computational crosswalk inspection
 
 The harmonic-oscillator modules are source-neutral exact mathematics. Their computational

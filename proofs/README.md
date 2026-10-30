@@ -176,6 +176,19 @@ do not authenticate an external or serialized inventory, admit a runtime symmetr
 metric radius with physical hopping range, verify calculated block counts, or establish Fourier
 or continuum convergence, material adequacy, scientific acceptance, or a certificate.
 
+## Selected rank-two unitary-conjugation tranche
+
+The exact rank-two conjugation extension has selected dossiers for `BG-FOUNDATION-THM-024` and
+`BG-FOUNDATION-THM-025`. They cover equality of both canonical bands under one exact supplied
+complex-unitary conjugation witness and the pointwise field-level corollary on a supplied finite
+index type. Spectrum, trace, determinant, scalar-coordinate, Pauli-radius, and separate lower/upper-band
+lemmas remain fully recorded in Lean and the theorem manifest without separate dossiers.
+
+The generic spectrum step specializes pinned Mathlib unitary spectrum invariance. The supplied
+unitary and post-conjugation coordinate equality are exact hypotheses. No theorem constructs or
+authenticates a runtime gauge, floating orthonormality, eigensolver, band tracker, momentum mesh,
+external artifact, certificate, Fourier support, truncation error, or scientific adequacy.
+
 ## Required contents
 
 A dossier records:

@@ -1,0 +1,109 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Pointwise Rank-Two Unitary Band-Field Invariance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-31}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOUNDATION-THM-025} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Foundations.rankTwoFiniteBandFields_eq_of_pointwiseUnitaryConjugation} \\
+Owning module & \path{ProjectKoios/BandGauge/Foundations/RankTwoConjugation.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $K$ be a finite index type. For eight real coordinate fields
+$t,x,y,z,T,X,Y,Z:K\to\mathbb R$ and an exact unitary field
+$U:K\to U(2)$, assume for every $k\in K$ that
+\[
+ H(T_k,X_k,Y_k,Z_k)=U_k^*H(t_k,x_k,y_k,z_k)U_k.
+\]
+Then the canonical lower-band functions are equal and the canonical upper-band functions are
+equal:
+\[
+ \bigl(k\mapsto T_k-r(X_k,Y_k,Z_k)\bigr)
+ =\bigl(k\mapsto t_k-r(x_k,y_k,z_k)\bigr),
+\]
+\[
+ \bigl(k\mapsto T_k+r(X_k,Y_k,Z_k)\bigr)
+ =\bigl(k\mapsto t_k+r(x_k,y_k,z_k)\bigr).
+\]
+The finite type $K$ may be a finite momentum mesh, but the theorem does not authenticate an
+external mesh or use any mesh geometry.
+
+\section{Source relation and immutable identity}
+This source-neutral corollary supports the KSD orthogonal and nonorthogonal 2-D/3-D protocol
+statements that complete reference and rotated rank-two fields are pointwise unitarily equivalent
+and have equal pointwise eigenvalues before truncation. The read-only owner identity is KSD commit
+\texttt{fcfc4d5fa76b08c040a02c97a109eb5f5fc06e48}, tree
+\texttt{fe8b47b33fcf0b24c5b28f8799ed220e3f6d7d20}; exact hashes and locators are recorded in
+\path{docs/source-audit.md}. Only immutable \texttt{git show} bytes were authoritative because
+the owner worktree was dirty.
+
+The Formal base is PR~\#43 merge commit
+\texttt{2b3e6d7f7acfdf78d48b3b8177f7676e16bd1287}, tree
+\texttt{15bf4cebd53772f2c8b6e559c634f5e0d75c9f30}. The declaration begins at
+\texttt{RankTwoConjugation.lean:175}. No topic commit is claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+There is one exact unitary and one exact coordinate equality at every index. The coordinate
+convention and canonical band definitions are those of the rank-two foundation module. Finiteness
+is supplied through a \texttt{Fintype} instance; no topology, continuity, sewing, periodicity,
+ordering algorithm, or quadrature assumption is present.
+
+\section{Proof structure}
+Apply function extensionality separately to the lower- and upper-band functions. At each index,
+instantiate \texttt{BG-FOUNDATION-THM-022} and \texttt{BG-FOUNDATION-THM-023} with the local
+coordinates, unitary, and conjugation equality. The two pointwise equalities become the required
+function equalities.
+
+\section{Lean realization and trusted base}
+Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Foundations.
+  rankTwoFiniteBandFields_eq_of_pointwiseUnitaryConjugation
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+Quantification over a supplied finite index type is not authentication of a runtime mesh and does not
+establish mesh completeness, reciprocal geometry, periodic sewing, regularity, continuum
+coverage, band tracking, or numerical accuracy. The result does not verify a computed gauge,
+coordinate conversion, eigensolver, serialization, Fourier transform, truncation, or scientific
+model. In particular, exact pre-truncation band equality does not imply equal finite-support
+representations or equal post-truncation errors.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A finite-mesh consumer must bind the exact evaluation inventory and every local matrix, coordinate,
+and unitary witness through retained hashes and a proposition-specific fail-closed certificate. A
+continuum consumer additionally needs explicit topology, periodicity, and regularity hypotheses.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-31 & initial dossier & AI-assisted maintainer review & finite-index field equality proved; mesh and runtime witness authentication remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

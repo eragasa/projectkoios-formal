@@ -27,6 +27,7 @@ import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
 import ProjectKoios.BandGauge.Hilbert.SpectralLossBridge
 import ProjectKoios.BandGauge.Foundations.RankTwoSpectralPerturbation
+import ProjectKoios.BandGauge.Foundations.RankTwoConjugation
 import ProjectKoios.BandGauge.Decision.FinitePareto
 import ProjectKoios.BandGauge.Decision.FiniteCutoff
 import ProjectKoios.BandGauge.Decision.FiniteCompatibility
@@ -559,6 +560,17 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Foundations.rankTwo_max_band_error_le_frobenius
 #print axioms ProjectKoios.BandGauge.Foundations.eq_rankTwoHermitianMatrix_of_conjTranspose_eq_self
 #print axioms ProjectKoios.BandGauge.Foundations.rankTwoLowerBand_le_upperBand
+#print axioms ProjectKoios.BandGauge.Foundations.spectrum_unitaryConjugateRankTwoMatrix
+#print axioms ProjectKoios.BandGauge.Foundations.trace_unitaryConjugateRankTwoMatrix
+#print axioms ProjectKoios.BandGauge.Foundations.det_unitaryConjugateRankTwoMatrix
+#print axioms ProjectKoios.BandGauge.Foundations.trace_rankTwoHermitianMatrix
+#print axioms ProjectKoios.BandGauge.Foundations.det_rankTwoHermitianMatrix
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoScalar_eq_of_unitaryConjugation
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoBandRadius_eq_of_unitaryConjugation
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoLowerBand_eq_of_unitaryConjugation
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoUpperBand_eq_of_unitaryConjugation
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoBands_eq_of_unitaryConjugation
+#print axioms ProjectKoios.BandGauge.Foundations.rankTwoFiniteBandFields_eq_of_pointwiseUnitaryConjugation
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_traceless
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_commonPower
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.abs_operatorCorrelation_le_commonPower
