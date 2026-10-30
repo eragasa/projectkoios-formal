@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`5ce81b3f5373b57177179abb93700a097f9e1ba3`, tree
-`137ecc251a934f95f79feb2518ebe1f9c6b6f929`, integrating PR #39.
+`00e9ee158fb153b5109fbb35f156ca087ea079fd`, tree
+`fe5e9cd5b440745e3644a1478c6f5639a5282b5b`, integrating PR #40.
 
 ## Mission
 
@@ -70,19 +70,16 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/mandatory-channel-composition` topic, based on remote `main` merge commit
-`5ce81b3f5373b57177179abb93700a097f9e1ba3`, introduces disjoint composition of two
-precise mandatory-channel datasets and proves that all error and structural obligations from both
-inputs pass at one common model, candidate, and alignment. It lifts composition through
-alignment-channel acceptance, conformant operator witnesses, operator-witness acceptance, and
-witness compatibility, then specializes the construction to extend the four-stage residual adapter
-with consumer-supplied error channels and structural requirements while retaining conditional
-total-channel redundancy under explicit headroom. The bounded slice includes its declaration
-ledger, audits, module documentation, selected explanatory dossiers, and the folded post-PR #39
-portfolio update. It does not establish external taxonomy completeness, infer headroom, erase
-structural obligations, authenticate runtime values or inventories, create a certificate, or
-establish spectral, continuum, physical, or scientific adequacy. No separate trust, documentation,
-or maintenance effort occupies the second WIP slot.
+`work/complex-unitary-procrustes` topic, based on remote `main` merge commit
+`00e9ee158fb153b5109fbb35f156ca087ea079fd`, formalizes the exact complex-unitary right-action
+objective `‖candidate * gauge - reference‖_F²` with cross matrix
+`candidateᴴ * reference`. An exact unitary/positive-semidefinite polar witness proves global
+minimality, while positive definiteness supplies uniqueness. The bounded slice includes its
+consumer and source audit, declaration ledger, axiom audit, module documentation, selected
+explanatory dossiers, and the folded post-PR #40 portfolio update. It does not construct or
+authenticate a NumPy SVD, floating rank, tolerance, runtime optimizer, null-space completion,
+serialized artifact, or certificate; rank-deficient uniqueness remains unclaimed. No separate
+trust, documentation, or maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -180,6 +177,14 @@ These items are merged Formal content only.
   component-budget headroom, every theorem retains one common model/candidate/alignment witness,
   and no runtime headroom, structural coverage, external completeness, certificate, or scientific
   adequacy is inferred.
+- Mandatory-channel composition and the extended four-stage witness expansion are proved as
+  `BG-DECISION-DEF-051--053` and `BG-DECISION-THM-073--086`, with two selected explanatory
+  dossiers. The slice merged through PR #40 at commit
+  `00e9ee158fb153b5109fbb35f156ca087ea079fd`, tree
+  `fe5e9cd5b440745e3644a1478c6f5639a5282b5b`; disjoint tags prevent identifier collision but
+  prove no external inventory completeness, all composed obligations retain one common
+  model/candidate/alignment witness, and no runtime value, optimizer, certificate, or scientific
+  adequacy is authenticated.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit

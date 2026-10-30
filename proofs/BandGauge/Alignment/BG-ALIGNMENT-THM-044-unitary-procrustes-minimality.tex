@@ -1,0 +1,114 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Complex-Unitary Right-Procrustes Minimality}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-ALIGNMENT-THM-044} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Alignment.RightUnitaryProcrustesPolarWitness.objective_minimal} \\
+Owning module & \path{ProjectKoios/BandGauge/Alignment/UnitaryProcrustes.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $A,B\in\mathbb C^{m\times n}$. For a unitary $R\in\mathbb C^{n\times n}$ define
+\[
+  J(R)=\lVert AR-B\rVert_F^2.
+\]
+Suppose exact data $Q,H$ satisfy
+\[
+  Q^*Q=I,\qquad H\succeq0,\qquad A^*B=QH.
+\]
+Then for every unitary $R$,
+\[
+  J(Q)\le J(R).
+\]
+The action is on the right and the cross matrix is $A^*B$.
+
+\section{Sources and statement relation}
+The statement adapts Nicholas J. Higham, \emph{Functions of Matrices: Theory and
+Computation}, SIAM, 2008, Chapter~8, Theorem~8.6, DOI
+\texttt{10.1137/1.9780898717778.ch8}. Higham's polar-decomposition discussion also states that
+unitary polar factors solve the complex Procrustes problem. The source orientation is translated
+explicitly to the audited consumer objective $\lVert AR-B\rVert_F$; no special-orthogonal,
+metric-unitary, indefinite, or oblique variant is asserted.
+
+The consumer and immutable source identities are recorded in \path{docs/source-audit.md}. The
+Formal base is merge commit \texttt{00e9ee158fb153b5109fbb35f156ca087ea079fd}, tree
+\texttt{fe5e9cd5b440745e3644a1478c6f5639a5282b5b}. The owning-module SHA-256 is
+\texttt{9417f71d4094c4597dd0b8abb0c930ac9292be1d07892f9962b1e045242e931d}; the source locator is
+\texttt{UnitaryProcrustes.lean:419} and \texttt{BG-ALIGNMENT-THM-044}. No topic commit is claimed
+before checkpoint authorization.
+
+\section{Assumptions and conventions}
+Matrices are finite and complex. Mathlib's scoped Frobenius norm is used through the proved bridge
+$\operatorname{Re}\operatorname{tr}(X^*X)=\lVert X\rVert_F^2$. The witness factorization is exact
+mathematical input. Positive semidefiniteness is an exact proposition, not a floating eigenvalue
+classification. Rank deficiency is allowed and no uniqueness is inferred here.
+
+\section{Proof structure}
+First expand
+\[
+  J(R)=\lVert A\rVert_F^2+\lVert B\rVert_F^2
+       -2\operatorname{Re}\operatorname{tr}(R^*A^*B).
+\]
+The first two terms are independent of $R$. Substituting $A^*B=QH$ reduces the score for $R$ to
+$\operatorname{Re}\operatorname{tr}(R^*QH)$. The relative matrix $R^*Q$ is unitary. Diagonalize
+$H$ with the finite Hermitian spectral theorem. Its eigenvalues are nonnegative, and each diagonal
+entry of a unitary has real part at most one, so
+\[
+  \operatorname{Re}\operatorname{tr}(R^*QH)\le\operatorname{tr}(H).
+\]
+At $R=Q$, the score is exactly $\operatorname{tr}(H)$. Reversing the sign of the score term gives
+$J(Q)\le J(R)$.
+
+\section{Lean realization and trusted base}
+The proof uses \texttt{BG-ALIGNMENT-THM-037}, \texttt{041}, \texttt{042}, and \texttt{043}.
+Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Alignment.
+  RightUnitaryProcrustesPolarWitness.objective_minimal
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Numerical, certificate, and scientific boundaries}
+The theorem does not construct $Q$ or $H$, execute or verify NumPy SVD, test runtime
+orthonormality, choose a floating rank or tolerance, select a rank-deficient null-space completion,
+authenticate an optimizer, parse serialization, or check a retained certificate. It proves no
+physical applicability, scientific adequacy, novelty, or publication status. The checked
+runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, bibliography, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must separately bind exact or outward-verified frames, orthonormality, a proposition-
+specific polar witness, source identity, retained hashes, rank policy, and fail-closed verification.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & exact witness proves global minimality; runtime SVD and certificates remain external \\
+\bottomrule
+\end{tabularx}
+\end{document}

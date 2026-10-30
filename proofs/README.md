@@ -133,6 +133,20 @@ structural obligations. No theorem authenticates runtime inventory construction,
 alignment selection, numerical values, enclosures, certificates, scientific adequacy, or
 publication status.
 
+## Selected complex-unitary Procrustes tranche
+
+The exact right-action Procrustes extension has selected dossiers for `BG-ALIGNMENT-THM-044`
+and `BG-ALIGNMENT-THM-045`. They cover global minimality from a supplied exact polar witness and
+uniqueness when its positive factor is positive definite. Frobenius/trace identities, unitary entry
+and column bounds, diagonal and positive-semidefinite trace inequalities, objective expansion, and
+score lemmas remain fully recorded in Lean and the theorem manifest without separate dossiers.
+
+The objective is explicitly `‖candidate * gauge - reference‖_F²`, with a right-acting complex
+unitary and cross matrix `candidateᴴ * reference`. The witness proves mathematical optimality but
+authenticates no runtime frame, orthonormality check, NumPy SVD, floating rank, tolerance, optimizer
+branch, null-space completion, serialization, enclosure, or certificate. Positive-semidefinite
+rank-deficient factors still prove minimality but do not imply uniqueness.
+
 ## Required contents
 
 A dossier records:
