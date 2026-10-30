@@ -1,0 +1,97 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Extended Four-Stage Witness Compatibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-086} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.withExtendedFourStageMaximumResidualChannels_witnessCompatible_iff_components} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/MandatoryChannelComposition.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Fix a compatibility schema, model $m$, four-stage fields and budgets, and an additional precise
+error/structural dataset $D$. Assume the total budget dominates the sum of the interpolation,
+conversion, and deliberate-truncation budgets. After replacing only the schema's channel fields by
+the composed adapter, witness compatibility is equivalent to one candidate $c$ and one alignment
+$a$ satisfying all of the following:
+\begin{enumerate}
+\item the original spectral criterion and candidate inventory membership;
+\item original alignment-family membership and aligned-operator budget passage;
+\item interpolation, conversion, and deliberate-truncation finite-maximum budget passage; and
+\item every error inequality and structural proposition in $D$.
+\end{enumerate}
+All obligations use the same $(m,c,a)$. The total residual channel follows from explicit headroom.
+
+\section{Immutable Formal provenance}
+The declaration is developed against Formal base merge commit
+\texttt{5ce81b3f5373b57177179abb93700a097f9e1ba3}, tree
+\texttt{137ecc251a934f95f79feb2518ebe1f9c6b6f929}. The owning-module SHA-256 is
+\texttt{8fb609f42289780c511f7317069c26bf784b9d5daff85c92739008675c2b465e}; the locator is
+\texttt{MandatoryChannelComposition.lean:358} and \texttt{BG-DECISION-THM-086}. A topic commit
+is not claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+All error values and budgets are exact \texttt{ENNReal} quantities; structural requirements are
+nonnumeric propositions. The additional dataset is supplied and may itself have empty inventories.
+The adapter preserves all original nonchannel schema fields. Headroom is an explicit exact premise,
+not runtime evidence.
+
+\section{Proof structure}
+Generic witness compatibility first expands to one spectrally accepted candidate with one
+conformant operator alignment. The extended conformant-witness theorem
+\texttt{BG-DECISION-THM-085} preserves original family membership and operator-budget passage,
+uses the total-headroom result to reduce the narrow residual part to three component inequalities,
+and retains exact acceptance of $D$ as an additional conjunct. Simplification yields the stated
+common-candidate/common-alignment characterization.
+
+\section{Lean realization and trusted base}
+The proof changes only the outer witness predicate and simplifies with the exact conformant-witness
+equivalence. No candidate, alignment, or optimizer is computed. Toolchain: Lean \texttt{4.35.0}
+at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.
+  withExtendedFourStageMaximumResidualChannels_witnessCompatible_iff_components
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem authenticates no runtime field, budget, headroom calculation, extra inventory,
+structural evidence, candidate, alignment, optimizer, source artifact, serialization, or enclosure.
+Composition proves no external taxonomy completeness, and the narrow residual adapter alone still
+has no structural coverage. No certificate is created; the checked runtime-certificate count is zero.
+
+\section{AI, automation, and review record}
+The proof and dossier were AI-assisted and checked by the maintainer. Lean proof checking is not
+independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must freeze complete error and structural contracts, exact or outward values, common
+witness data, total headroom, source identities, retained hashes, enclosure policy, and independent
+verification before external use.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & extra obligations retained at one witness; no runtime promotion \\
+\bottomrule
+\end{tabularx}
+\end{document}

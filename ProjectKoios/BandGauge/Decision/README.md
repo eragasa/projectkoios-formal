@@ -14,6 +14,7 @@ This directory owns finite multiobjective decision semantics.
 - `FiniteAlignmentAttainment.lean`: exact minimizer existence for nonempty finite alignment families, concrete budget-witness extraction, and conditional equivalence between central and witness compatibility when attaining alignments separately pass all mandatory channels.
 - `FourStageResidualChannels.lean`: named interpolation, conversion, deliberate-truncation, and total residual error channels, exact finite-maximum values, a narrow precise-channel adapter with no structural requirements, and preservation under coordinatewise budget relaxation.
 - `FourStageResidualBudgetSynthesis.lean`: exact four-channel budget records, explicit total headroom, component-to-total budget synthesis, and a narrow adapter exposing component passage through conformant operator witnesses and witness compatibility.
+- `MandatoryChannelComposition.lean`: disjoint composition of precise error/structural datasets, exact same-witness acceptance and compatibility bridges, and extension of the four-stage adapter with consumer-supplied mandatory channels.
 
 ## Boundaries
 
@@ -27,6 +28,7 @@ The finite inventory remains explicit.
 - Error-channel passage means exactly an `ENNReal` error value below its own channel-specific upper budget. Structural requirements are separately typed nonnumeric propositions; joint passage uses one common candidate and alignment. Empty inventories remain vacuous and prove no external coverage.
 - The narrow four-stage adapter declares exactly four finite-maximum residual channels and an empty structural inventory. It does not claim that those four channels exhaust a consuming study's broader ledger.
 - The total channel is redundant only under the explicit premise that the total upper budget is at least the sum of the three component upper budgets. This is a sufficient budget relation, not scalar-error additivity or runtime headroom evidence.
+- Channel composition uses disjoint tags and requires both input datasets at one common model, candidate, and alignment. Composition preserves every supplied obligation but does not prove either input or their union externally complete.
 - A nonempty finite alignment family supplies mathematical attainment, not runtime optimizer correctness. Finiteness does not imply mandatory-channel passage; the channel-conformance premise remains separate.
 - Model-class transfer requires an explicit conformant embedding; nominal nesting alone transfers nothing.
 - The module owns no paper-specific tables, plots, interpolation, convexification, KKT assumptions, runtime serialization, or numerical evidence.

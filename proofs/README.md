@@ -118,6 +118,21 @@ scalar-error additivity, supply structural requirements, establish external inve
 authenticate a runtime optimizer or numerical value, create a certificate, or confer scientific or
 publication status.
 
+## Selected mandatory-channel composition tranche
+
+The channel-composition extension has selected dossiers for `BG-DECISION-THM-077` and
+`BG-DECISION-THM-086`. They cover exact same-witness acceptance of two disjointly tagged precise
+error/structural datasets and the resulting four-stage witness-compatibility expansion with every
+consumer-supplied extra channel retained. Inventory equations, separate error and structural
+acceptance, intermediate alignment-channel and conformant-witness bridges, and extended
+component acceptance remain fully recorded in Lean and the theorem manifest.
+
+Disjoint composition prevents identifier collision but proves no external taxonomy completeness.
+The narrow four-stage structural inventory remains empty; only supplied extra data can add
+structural obligations. No theorem authenticates runtime inventory construction, candidate or
+alignment selection, numerical values, enclosures, certificates, scientific adequacy, or
+publication status.
+
 ## Required contents
 
 A dossier records:
