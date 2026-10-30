@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`c4ef5f33543225849fcd07606d5d4d4a3f258dc4`, tree
-`f38d62af57ea678fc47f3aa2df4e6f4de4d6d10d`, integrating PR #30.
+`3b394c3aa56c6909d29cfa69fcbb53f7d494e2fd`, tree
+`89c1e237a76e93b30a57e5424a5f36b796f6f966`, integrating PR #32.
 
 ## Mission
 
@@ -69,12 +69,8 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One documentation effort occupies the WIP limit: publication-facing proof dossiers for selected
-aligned-difference self-adjointness, fixed-unitary Fourier, finite rank-one resolvent, and finite
-gauge-loop/projector--Bargmann declarations. The tranche explains already proved exact
-propositions and adds no theorem, runtime binding, certificate, numerical or scientific validation,
-novelty assessment, or publication status. No mathematical, certificate, runtime-evidence, trust,
-or maintenance effort is active.
+No mathematical, certificate, runtime-evidence, trust, documentation, or maintenance
+effort currently occupies the WIP limit.
 
 ## Ready
 
@@ -144,6 +140,13 @@ These items are merged Formal content only.
 - Admissible alignment-family semantics.
 - Rank-one resolvent algebra.
 - Gauge loops and projector--Bargmann crosswalk.
+- Selected publication-facing proof dossiers for aligned-difference self-adjointness
+  (`BG-BLOCH-THM-021--023`), fixed-unitary Fourier algebra (`BG-FOURIER-THM-035`, `043`, `046`,
+  and `047`), finite rank-one resolvent algebra (`QM-RESOLVENT-THM-005`, `008`, `010`, and `013`),
+  and finite gauge/projector loops (`SS-GAUGE-THM-008`, `011`, `020`, and `023`). The 15-dossier
+  tranche merged through PR #32 at commit `3b394c3aa56c6909d29cfa69fcbb53f7d494e2fd`, tree
+  `89c1e237a76e93b30a57e5424a5f36b796f6f966`; it adds no theorem and confers no runtime,
+  certificate, scientific-validation, topology, novelty, independent-review, or publication status.
 - Rank-two box checker, conditional Paper A bridge, and exact regression.
 - Finite first-passing cutoff semantics.
 - Generic finite spectral--operator compatibility with central infimum semantics, stronger
