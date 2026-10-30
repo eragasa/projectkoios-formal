@@ -12,6 +12,7 @@ This directory owns finite multiobjective decision semantics.
 - `AlignedOperatorBudget.lean`: exact finite-maximum aligned-operator loss, same-alignment perturbation stability and budget headroom, and an explicit adapter from concrete finite operator data to the generic compatibility schema.
 - `OperatorChannels.lean`: precise separation of exact upper-bounded error channels from nonnumeric structural requirements, with one tagged adapter into the generic compatibility schema.
 - `FiniteAlignmentAttainment.lean`: exact minimizer existence for nonempty finite alignment families, concrete budget-witness extraction, and conditional equivalence between central and witness compatibility when attaining alignments separately pass all mandatory channels.
+- `FourStageResidualChannels.lean`: named interpolation, conversion, deliberate-truncation, and total residual error channels, exact finite-maximum values, a narrow precise-channel adapter with no structural requirements, and preservation under coordinatewise budget relaxation.
 
 ## Boundaries
 
@@ -23,6 +24,7 @@ The finite inventory remains explicit.
 - Applications may bundle support, intermediate-field, sign-convention, and evaluation-inventory data into the alignment carrier when those choices must remain common across channels. The concrete adapter projects that carrier to the exact pointwise unitary field used by the operator loss without discarding the other common data.
 - Finite aligned-loss stability compares two reference/candidate pairs under one common alignment. It supplies no comparison between different gauges.
 - Error-channel passage means exactly an `ENNReal` error value below its own channel-specific upper budget. Structural requirements are separately typed nonnumeric propositions; joint passage uses one common candidate and alignment. Empty inventories remain vacuous and prove no external coverage.
+- The narrow four-stage adapter declares exactly four finite-maximum residual channels and an empty structural inventory. It does not claim that those four channels exhaust a consuming study's broader ledger.
 - A nonempty finite alignment family supplies mathematical attainment, not runtime optimizer correctness. Finiteness does not imply mandatory-channel passage; the channel-conformance premise remains separate.
 - Model-class transfer requires an explicit conformant embedding; nominal nesting alone transfers nothing.
 - The module owns no paper-specific tables, plots, interpolation, convexification, KKT assumptions, runtime serialization, or numerical evidence.

@@ -20,6 +20,7 @@ import ProjectKoios.BandGauge.Alignment.Family
 import ProjectKoios.BandGauge.Alignment.FamilySeparation
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.ResidualChannels
+import ProjectKoios.BandGauge.Hilbert.FourStageResidualChannels
 import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
 import ProjectKoios.BandGauge.Hilbert.SpectralLossBridge
@@ -30,6 +31,7 @@ import ProjectKoios.BandGauge.Decision.FiniteCompatibility
 import ProjectKoios.BandGauge.Decision.AlignedOperatorBudget
 import ProjectKoios.BandGauge.Decision.OperatorChannels
 import ProjectKoios.BandGauge.Decision.FiniteAlignmentAttainment
+import ProjectKoios.BandGauge.Decision.FourStageResidualChannels
 import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
 import ProjectKoios.BandGauge.Fourier.CenteredEvenMesh
 import ProjectKoios.BandGauge.Fourier.FiniteAbelianTransform
@@ -250,6 +252,10 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Hilbert.norm_totalResidual_le_add
 #print axioms ProjectKoios.BandGauge.Hilbert.finiteMaximumNorm_totalResidual_le_add
 #print axioms ProjectKoios.BandGauge.Hilbert.finiteRootMeanSquareNorm_totalResidual_le_add
+#print axioms ProjectKoios.BandGauge.Hilbert.totalResidual_eq_interpolation_add_conversion_add_truncation
+#print axioms ProjectKoios.BandGauge.Hilbert.norm_totalResidual_le_three
+#print axioms ProjectKoios.BandGauge.Hilbert.finiteMaximumNorm_totalResidual_le_three
+#print axioms ProjectKoios.BandGauge.Hilbert.finiteRootMeanSquareNorm_totalResidual_le_three
 #print axioms ProjectKoios.BandGauge.Hilbert.rankTwoWeightedFrobeniusSq_nonneg
 #print axioms ProjectKoios.BandGauge.Hilbert.abs_rankTwoWeightedFrobeniusCorrelation_le
 #print axioms ProjectKoios.BandGauge.Hilbert.rankTwoWeightedFrobeniusSq_unitary_conjugate
@@ -321,6 +327,10 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Decision.FiniteMandatoryOperatorChannelData.channelPasses_structural
 #print axioms ProjectKoios.BandGauge.Decision.FiniteMandatoryOperatorChannelData.accepts_iff_tagged_channels
 #print axioms ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.withMandatoryOperatorChannels_alignmentChannelsAccept_iff
+#print axioms ProjectKoios.BandGauge.Decision.fourStageMaximumErrorValue_total_le
+#print axioms ProjectKoios.BandGauge.Decision.maximumFourStageResidualChannelData_errorInventory
+#print axioms ProjectKoios.BandGauge.Decision.maximumFourStageResidualChannelData_accepts_iff
+#print axioms ProjectKoios.BandGauge.Decision.maximumFourStageResidualChannelData_accepts_mono_budget
 #print axioms ProjectKoios.BandGauge.Fourier.truncateCoefficients_eq_of_mem
 #print axioms ProjectKoios.BandGauge.Fourier.truncateCoefficients_eq_zero_of_not_mem
 #print axioms ProjectKoios.BandGauge.Fourier.truncatedReconstruction_eq_sum

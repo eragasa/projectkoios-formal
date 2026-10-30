@@ -90,6 +90,20 @@ separate exact inputs, mandatory-channel conformance is an explicit independent 
 theorem authenticates runtime enumeration, optimizer behavior, external inventory coverage,
 binary64 values, or a certificate.
 
+## Selected four-stage residual-channel tranche
+
+The source-neutral four-stage extension has selected dossiers for `BG-HILBERT-THM-022`,
+`BG-HILBERT-THM-025`, and `BG-DECISION-THM-063`. They cover the exact interpolation--conversion--
+deliberate-truncation field decomposition, the corresponding finite root-mean-square triangle
+bound, and exact four-channel finite-maximum budget acceptance. Pointwise and finite-maximum intermediate bounds, complete four-channel
+inventory, and budget-relaxation monotonicity remain fully recorded in Lean and the theorem
+manifest.
+
+The component fields add exactly, but their scalar norm summaries generally satisfy inequalities
+only. The narrow adapter's empty structural inventory proves no structural coverage, and the four
+named residual channels need not exhaust any consuming study's broader error ledger. The dossiers
+authenticate no runtime stage, value, inventory, enclosure, or certificate.
+
 ## Required contents
 
 A dossier records:

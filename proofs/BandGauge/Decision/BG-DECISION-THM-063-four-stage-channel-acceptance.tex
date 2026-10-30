@@ -1,0 +1,79 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Precise Four-Stage Channel Acceptance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-063} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.maximumFourStageResidualChannelData_accepts_iff} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/FourStageResidualChannels.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Fix one model $m$, candidate $c$, and alignment $a$. For each named residual channel
+\[
+E=\{\mathrm{interpolation},\mathrm{conversion},\mathrm{truncation},\mathrm{total}\},
+\]
+let $v_e(m,c,a)\in[0,\infty]$ be its exact finite-maximum norm and let $b_e(m)$ be its channel-specific upper budget. Acceptance by the narrow four-stage adapter is equivalent to
+\[
+ v_{\rm int}\le b_{\rm int}\ \land\
+ v_{\rm conv}\le b_{\rm conv}\ \land\
+ v_{\rm trunc}\le b_{\rm trunc}\ \land\
+ v_{\rm total}\le b_{\rm total}.
+\]
+All four inequalities use the same $m,c,a$.
+
+\section{Immutable Formal provenance}
+The declaration is developed against Formal base commit
+\texttt{0062d687c1306c1df85d9c674fdf0239d05a8624}, tree
+\texttt{cd60a1bb5cd005547338398621be3c596c865aa4}. The owning-module SHA-256 is
+\texttt{7b8444c521ee4ecc041cfb2d01a531d9216238647734e81e892f8b4bc249c8cc}; the locator is
+\texttt{FourStageResidualChannels.lean:112} and \texttt{BG-DECISION-THM-063}. A topic commit is not claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+Each error value is the exact finite supremum norm embedded into \texttt{ENNReal}. Passage is inclusive upper-threshold passage. The adapter's structural-requirement inventory is empty, so its structural branch is vacuous. That narrow choice is explicit and does not remove requirements from any broader consumer schema.
+
+\section{Proof structure}
+The adapter's error inventory is the full four-element enumeration. Expanding precise acceptance gives a universal inequality over this inventory plus the vacuous structural predicate. The forward direction specializes the universal inequality to each constructor. The reverse direction performs exhaustive constructor case analysis.
+
+\section{Lean realization and trusted base}
+The proof unfolds precise acceptance only at the adapter boundary. It constructs or eliminates the four-way universal predicate by cases on \texttt{FourStageResidualErrorChannel}; no numerical decision procedure is invoked. Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  maximumFourStageResidualChannelData_accepts_iff
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem authenticates no runtime value, budget, field, alignment, inventory origin, serialization, or enclosure. Four source-neutral residual channels need not exhaust a study-specific error ledger. Empty structural passage establishes no structural coverage. No certificate is created, and the checked runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The proof and dossier were AI-assisted and checked by the maintainer. Lean proof checking is not independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must freeze its complete error taxonomy, exact or outward-enclosed values, budgets, structural requirements, inventories, source identity, and fail-closed verification contract before any external result can be bound.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & four inequalities and empty structural boundary checked; no runtime promotion \\
+\bottomrule
+\end{tabularx}
+\end{document}
