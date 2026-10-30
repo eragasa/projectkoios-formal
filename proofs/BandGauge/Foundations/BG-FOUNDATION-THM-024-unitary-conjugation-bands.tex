@@ -1,0 +1,110 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Exact Rank-Two Unitary-Conjugation Band Invariance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-31}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOUNDATION-THM-024} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Foundations.rankTwoBands_eq_of_unitaryConjugation} \\
+Owning module & \path{ProjectKoios/BandGauge/Foundations/RankTwoConjugation.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For real coordinates $t,x,y,z,T,X,Y,Z$, let
+\[
+ H(t,x,y,z)=\begin{pmatrix}t+z&x-iy\\x+iy&t-z\end{pmatrix},
+ \qquad r(x,y,z)=\sqrt{x^2+y^2+z^2}.
+\]
+Let $U$ be an exact complex $2\times2$ unitary. If
+\[
+ H(T,X,Y,Z)=U^*H(t,x,y,z)U,
+\]
+then both canonical band values agree:
+\[
+ T-r(X,Y,Z)=t-r(x,y,z),\qquad
+ T+r(X,Y,Z)=t+r(x,y,z).
+\]
+
+\section{Source relation and immutable identity}
+This source-neutral theorem supports the KSD 2-D/3-D protocol statement that pointwise unitary
+similarity preserves band spectra before truncation. The read-only owner identity is KSD commit
+\texttt{fcfc4d5fa76b08c040a02c97a109eb5f5fc06e48}, tree
+\texttt{fe8b47b33fcf0b24c5b28f8799ed220e3f6d7d20}; exact file hashes and line locators are in
+\path{docs/source-audit.md}. The owner worktree was dirty, so only immutable \texttt{git show}
+bytes were used.
+
+The generic spectrum dependency is Mathlib's
+\texttt{Unitary.spectrum\_star\_left\_conjugate} at pinned Mathlib commit
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}, tree
+\texttt{0db52fa68e6b0c5b917c22bc6383325391a00610}; no priority claim is made. The Formal base is
+PR~\#43 merge commit \texttt{2b3e6d7f7acfdf78d48b3b8177f7676e16bd1287}, tree
+\texttt{15bf4cebd53772f2c8b6e559c634f5e0d75c9f30}. The declaration begins at
+\texttt{RankTwoConjugation.lean:162}. No topic commit is claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+The unitary is supplied as an exact member of \texttt{Matrix.unitaryGroup (Fin 2) $\mathbb C$}.
+Both source and conjugated matrices are supplied in the same real scalar-plus-Pauli convention.
+The equality with $U^*HU$ is an exact hypothesis, not a checked runtime result. The canonical
+lower and upper bands are $t-r$ and $t+r$; their order was proved separately.
+
+\section{Proof structure}
+Cyclicity of trace and $UU^*=I$ prove trace invariance, while multiplicativity of determinant and
+$U^*U=I$ prove determinant invariance. The coordinate formulas
+\[
+ \operatorname{tr}H(t,x,y,z)=2t,
+ \qquad \det H(t,x,y,z)=t^2-(x^2+y^2+z^2)
+\]
+first force $T=t$ and then equality of the squared Pauli radii. Applying the nonnegative square root
+gives equal radii. Substitution into $t-r$ and $t+r$ proves the conjunction.
+
+\section{Lean realization and trusted base}
+The theorem composes \texttt{BG-FOUNDATION-THM-020--023}. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Foundations.
+  rankTwoBands_eq_of_unitaryConjugation
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+This is an exact conditional proposition. It does not construct or authenticate $U$, verify
+floating-point orthonormality, parse arrays, check a similarity residual, validate eigensolver
+output, sort runtime eigenvalues, track bands, authenticate a mesh, or establish physical or
+material equivalence. It says nothing about Fourier support or post-truncation error except when a
+separate theorem and exact hypotheses are supplied.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must separately bind exact or outward-enclosed matrix entries, the unitary witness,
+post-conjugation coordinates, evaluation inventory, artifact hashes, and a fail-closed checker to a
+frozen proposition-specific certificate contract.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-31 & initial dossier & AI-assisted maintainer review & exact conditional band equality proved; runtime gauge and artifact admission remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

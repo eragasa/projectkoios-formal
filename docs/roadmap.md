@@ -18,7 +18,7 @@ Status: substantially implemented.
 - Metric admissible-set geometry.
 - Pointwise Bloch sewing and finite rank-two samples.
 - Hilbert-ball and weighted Frobenius geometry.
-- Rank-two fields, exact canonical band values, unnormalized Frobenius perturbation bound, spectral decomposition, and correlation optimization.
+- Rank-two fields, exact canonical band values, exact complex-unitary spectrum/trace/determinant and lower/upper-band invariance, pointwise band-field invariance, unnormalized Frobenius perturbation bound, spectral decomposition, and correlation optimization.
 
 Open:
 

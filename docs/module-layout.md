@@ -8,7 +8,7 @@ BandGauge separates reusable algebra from paper bindings.
 
 | Directory | Owns | Excludes |
 |---|---|---|
-| `Foundations/` | finite rank-two rotations, Pauli coordinates, exact band values, Frobenius perturbation algebra, and elementary optimization | paper data, thresholds, runtime eigensolvers, and rank-normalized Weyl claims |
+| `Foundations/` | finite rank-two rotations, Pauli coordinates, exact band values, complex-unitary spectrum/trace/determinant/band invariance, Frobenius perturbation algebra, and elementary optimization | runtime gauge or coordinate-witness authentication, paper data, thresholds, eigensolvers, band tracking, meshes, and rank-normalized Weyl claims |
 | `Bloch/` | pointwise sewing, covariant fields, compatible alignment, aligned operator differences, conditional pointwise self-adjointness closure, exact action/operator-norm bounds, same-alignment subtraction and Lipschitz stability, finite samples | alignment selection, comparisons across different gauges without a bridge, runtime norm inference, Bloch--Floquet derivation, spectral conclusions, topology, `L²` point values |
 | `Geometry/` | admissible sets, compact distance attainment and zero/positive separation criteria, and rank-two loss geometry | unreviewed rank/scalar generalization |
 | `Hilbert/` | residual balls, finite reference/interpolation/conversion/deliberate-truncation residual identities and pointwise/maximum/RMS norm bounds, and weighted Frobenius algebra | runtime stage authentication, scalar error additivity, or replacement by a fixed bounded-operator norm |

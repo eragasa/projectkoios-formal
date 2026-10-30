@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`4902864c19b412320e56c984fe9cc98a4ad3bd89`, tree
-`8e0e7bfdd20b245ff8160cd7fc6f302c8bfd661a`, integrating PR #42.
+`2b3e6d7f7acfdf78d48b3b8177f7676e16bd1287`, tree
+`15bf4cebd53772f2c8b6e559c634f5e0d75c9f30`, integrating PR #43.
 
 ## Mission
 
@@ -69,19 +69,17 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort occupies the WIP limit: the isolated `work/metric-shell-support` topic,
-based on remote `main` merge commit `4902864c19b412320e56c984fe9cc98a4ad3bd89`, formalizes
-complete finite metric shells for the current KSD 2-D/3-D support hierarchy. The bounded slice
-proves exact cutoff nesting, equal-radius tie retention, conditional inversion and symmetry-orbit
-closure, strict support and block-count growth at every attained radius, and no-skipped-shell
-semantics over attained radii. It supplies exact dimensionless reduced-coordinate square, triangular,
-simple-cubic, and normalized FCC shell indices with nonnegativity and selected generator
-invariances. The slice includes immutable read-only KSD protocol fingerprints, declaration and
-axiom ledgers, module/source documentation, smoke checks, and selected explanatory dossiers. It
-does not authenticate an external inventory or symmetry group, identify a metric shell with a
-source-defined physical hopping range, bind lattice constants or units, verify runtime block
-counts, or establish convergence, material adequacy, or scientific acceptance. No separate trust,
-documentation, or maintenance effort occupies the second WIP slot.
+One mathematical effort occupies the WIP limit: the isolated
+`work/rank-two-conjugation-band-invariance` topic, based on remote `main` merge commit
+`2b3e6d7f7acfdf78d48b3b8177f7676e16bd1287`, formalizes exact complex-unitary conjugation of
+rank-two matrices. The bounded slice specializes Mathlib spectrum invariance, proves trace and
+determinant invariance, derives scalar-coordinate and Pauli-radius equality for exact supplied
+coordinate witnesses, proves equality of the canonical lower and upper bands, and lifts the result
+pointwise to supplied finite index types including finite momentum meshes. It includes immutable read-only KSD
+protocol locators, declaration and axiom ledgers, module/source documentation, smoke checks, and
+selected explanatory dossiers. It does not construct or authenticate runtime gauges, floating
+orthonormality, eigensolvers, band tracking, meshes, external artifacts, certificates, or scientific
+adequacy. No separate trust, documentation, or maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -195,6 +193,14 @@ These items are merged Formal content only.
   `‖candidate * gauge - reference‖_F²` with cross matrix `candidateᴴ * reference`, the polar witness
   is exact supplied data, uniqueness requires positive definiteness, and no runtime SVD, rank,
   tolerance, optimizer, null-space completion, certificate, or scientific adequacy is authenticated.
+- Complete finite metric-shell mathematics is proved as `BG-FOURIER-DEF-045--051` and
+  `BG-FOURIER-THM-089--118`, with selected dossiers for shell-change characterization and capped
+  no-skipped-shell semantics. The slice merged through PR #43 at commit
+  `2b3e6d7f7acfdf78d48b3b8177f7676e16bd1287`, tree
+  `15bf4cebd53772f2c8b6e559c634f5e0d75c9f30`; completeness is relative to a supplied finite
+  inventory, exact radius, cutoff cap, and explicit invariance hypotheses, and does not authenticate
+  external inventories, physical hopping ranges, runtime counts, convergence, material adequacy,
+  certificates, or scientific acceptance.
 - The finite-mesh Procrustes hierarchy is proved as `BG-ALIGNMENT-DEF-021--029` and
   `BG-ALIGNMENT-THM-046--058`, with selected dossiers for summed global minimality and the exact
   known-inverse/unique-polar-field control. The slice merged through PR #42 at commit
