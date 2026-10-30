@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`af55852071a3d15cd21ccde31db095c5596da40c`, tree
-`5ce8ba5215b6f2880d36bf484afa9980b2ae0770`, integrating PR #36.
+`01c9b0a0cd3776d2edfc82e514e11408d6a96f34`, tree
+`fddc9e3225b0edf9e80e9301e3b7426d1df6e788`, integrating PR #38.
 
 ## Mission
 
@@ -70,15 +70,16 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/four-stage-residual-channels` topic, based on remote `main` commit
-`0062d687c1306c1df85d9c674fdf0239d05a8624`, introduces a source-neutral four-stage
-reference/interpolation/conversion/deliberate-truncation residual ledger. It proves the exact
-three-component field decomposition and pointwise, finite-maximum, and finite root-mean-square
-triangle bounds, then instantiates the precise error-channel interface with four named
-finite-maximum channels and channel-specific budgets, with acceptance preserved by coordinatewise
-budget relaxation. The bounded slice includes its declaration
-ledger, audits, module documentation, selected explanatory dossiers, and the folded post-PR #37
-portfolio update. It does not assert scalar-error additivity, authenticate runtime stages or values,
+`work/four-stage-budget-synthesis` topic, based on remote `main` merge commit
+`01c9b0a0cd3776d2edfc82e514e11408d6a96f34`, adds exact four-channel budget records,
+an explicit total-headroom premise, and component-to-total passage for the existing source-neutral
+four-stage residual adapter. It expands adapted alignment-channel acceptance, conformant operator
+witnesses, operator-witness acceptance, and witness compatibility into exact three-component
+conditions under that premise while preserving the original model/candidate inventories,
+alignment families, spectral criterion, aligned-operator loss, and central budgets. The bounded
+slice includes its declaration ledger, audits, module documentation, selected explanatory
+dossiers, and the folded post-PR #38 portfolio update. It does not assert scalar-error additivity,
+infer headroom from runtime data, add structural coverage, authenticate runtime stages or values,
 claim that four channels exhaust a consumer's broader ledger, create a certificate, or establish
 spectral, continuum, physical, or scientific adequacy. No separate trust, documentation, or
 maintenance effort occupies the second WIP slot.
@@ -164,6 +165,13 @@ These items are merged Formal content only.
   from nonnumeric structural requirements, finite minimization does not imply mandatory-channel
   passage, and the result authenticates no runtime inventory, optimizer, external value, or
   certificate.
+- The source-neutral four-stage residual ledger and narrow precise-channel adapter are proved as
+  `BG-HILBERT-DEF-019--020`, `BG-HILBERT-THM-022--025`, `BG-DECISION-DEF-041--044`, and
+  `BG-DECISION-THM-061--064`, with three selected explanatory dossiers. The slice merged through
+  PR #38 at commit `01c9b0a0cd3776d2edfc82e514e11408d6a96f34`, tree
+  `fddc9e3225b0edf9e80e9301e3b7426d1df6e788`; component fields add exactly, scalar summaries
+  satisfy inequalities only, the structural inventory is empty, and no runtime stage, complete
+  study ledger, certificate, or scientific adequacy is established.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit

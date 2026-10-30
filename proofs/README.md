@@ -104,6 +104,20 @@ only. The narrow adapter's empty structural inventory proves no structural cover
 named residual channels need not exhaust any consuming study's broader error ledger. The dossiers
 authenticate no runtime stage, value, inventory, enclosure, or certificate.
 
+## Selected four-stage budget-synthesis tranche
+
+The budget-synthesis extension has selected dossiers for `BG-DECISION-THM-067` and
+`BG-DECISION-THM-072`. They cover the conditional redundancy of the total channel when the total
+upper budget dominates the sum of the three component upper budgets, and the resulting exact
+component-level expansion of witness compatibility for one common candidate and alignment.
+Intermediate component-to-total, four-channel acceptance, alignment-channel, conformant-witness,
+and operator-witness results remain fully recorded in Lean and the theorem manifest.
+
+Total headroom is an explicit exact premise, not runtime evidence. The result does not assert
+scalar-error additivity, supply structural requirements, establish external inventory coverage,
+authenticate a runtime optimizer or numerical value, create a certificate, or confer scientific or
+publication status.
+
 ## Required contents
 
 A dossier records:

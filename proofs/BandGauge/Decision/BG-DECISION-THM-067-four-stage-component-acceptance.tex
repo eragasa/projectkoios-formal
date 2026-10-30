@@ -1,0 +1,104 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Four-Stage Component Acceptance under Total Headroom}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+\begin{document}
+\raggedright
+\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-067} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.maximumFourStageResidualChannelData_budget_accepts_iff_components} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/FourStageResidualBudgetSynthesis.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Fix one model $m$, candidate $c$, alignment $a$, and exact upper-budget record
+$b=(b_{\rm int},b_{\rm conv},b_{\rm trunc},b_{\rm total})$. Let the corresponding exact
+finite-maximum residual values be $v_{\rm int},v_{\rm conv},v_{\rm trunc},v_{\rm total}$.
+Assume explicit total headroom
+\[
+ b_{\rm int}+b_{\rm conv}+b_{\rm trunc}\le b_{\rm total}.
+\]
+Then acceptance by the narrow four-channel adapter is equivalent to
+\[
+ v_{\rm int}\le b_{\rm int}\ \land\
+ v_{\rm conv}\le b_{\rm conv}\ \land\
+ v_{\rm trunc}\le b_{\rm trunc}.
+\]
+The total-channel inequality follows from these three inequalities and headroom; it is not deleted
+without that premise.
+
+\section{Immutable Formal provenance}
+The declaration is developed against Formal base merge commit
+\texttt{01c9b0a0cd3776d2edfc82e514e11408d6a96f34}, tree
+\texttt{fddc9e3225b0edf9e80e9301e3b7426d1df6e788}. The owning-module SHA-256 is
+\texttt{29ab3ea5a0da3a6fea9addb4e8437cb015a1e7f561243d452720c9505317f2d8}; the locator is
+\texttt{FourStageResidualBudgetSynthesis.lean:140} and \texttt{BG-DECISION-THM-067}. A topic
+commit is not claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+All values and budgets are exact \texttt{ENNReal} quantities. Passage uses inclusive upper
+thresholds. The four residual fields share one model, candidate, alignment, index carrier, and normed
+value space. The adapter's structural inventory is empty. Headroom is supplied exact data; no
+runtime computation or provenance is inferred.
+
+\section{Proof structure}
+Expanding four-channel acceptance yields the three component inequalities and the total inequality.
+The forward direction discards only the already-proved total conjunct. For the reverse direction,
+the exact residual-field decomposition first gives the finite-maximum triangle bound
+\[
+ v_{\rm total}\le v_{\rm int}+v_{\rm conv}+v_{\rm trunc}.
+\]
+Coordinatewise component passage bounds this sum by the component budget sum, and the explicit
+headroom premise bounds that sum by $b_{\rm total}$. The original four-channel acceptance theorem
+then closes the result.
+
+\section{Lean realization and trusted base}
+The proof reuses \texttt{BG-DECISION-THM-061}, the component-to-total budget theorem
+\texttt{BG-DECISION-THM-065}, and exact acceptance expansion
+\texttt{BG-DECISION-THM-066}. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  maximumFourStageResidualChannelData_budget_accepts_iff_components
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem proves conditional redundancy of one exact channel check only. It does not assert
+scalar-error equality, infer headroom, add structural coverage, authenticate a runtime value or
+stage, prove external inventory completeness, or create a certificate. The checked
+runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The proof and dossier were AI-assisted and checked by the maintainer. Lean proof checking is not
+independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must supply its complete error taxonomy, structural requirements, exact or outward
+values, exact budgets and headroom, common witness data, immutable source identity, and fail-closed
+verification contract.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-30 & initial dossier & AI-assisted maintainer review & conditional total redundancy checked; no runtime promotion \\
+\bottomrule
+\end{tabularx}
+\end{document}
