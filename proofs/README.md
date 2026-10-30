@@ -75,6 +75,21 @@ alignment carrier with an explicit pointwise-unitary projection. They do not par
 runtime data, prove an optimizer exists, compare different gauges, create a certificate, establish
 external inventory coverage, or confer scientific or publication status.
 
+## Selected precise-channel and finite alignment-attainment tranche
+
+The precise-channel and finite-family layer has selected dossiers for `BG-DECISION-THM-051`,
+`056`, and `060`. They cover exact minimizer existence on a nonempty finite alignment family,
+the resulting conditional equivalence between central and witness compatibility, and the tagged
+adapter that identifies generic mandatory-channel acceptance with all exact upper-bounded error
+channels and all nonnumeric structural requirements. The intermediate branch equations, infimum,
+concrete-budget, operator-witness, and one-way compatibility bridges remain fully recorded in Lean
+and the theorem manifest without separate dossiers.
+
+Finiteness supplies mathematical attainment only. Error budgets and structural requirements are
+separate exact inputs, mandatory-channel conformance is an explicit independent premise, and no
+theorem authenticates runtime enumeration, optimizer behavior, external inventory coverage,
+binary64 values, or a certificate.
+
 ## Required contents
 
 A dossier records:

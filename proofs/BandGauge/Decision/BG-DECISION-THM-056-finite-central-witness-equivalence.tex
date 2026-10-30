@@ -1,0 +1,88 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Central--Witness Compatibility Equivalence}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-056} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteCompatibilitySchema.compatible_iff_witnessCompatible_of_finite} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/FiniteAlignmentAttainment.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Fix one model class.  Assume, for every candidate in its declared finite candidate inventory, that:
+\begin{enumerate}
+\item the candidate's alignment family is finite; and
+\item every exact minimizer of the aligned-operator loss passes all mandatory channels.
+\end{enumerate}
+Then the model is centrally compatible---one common candidate passes the spectral budget and the alignment-infimum operator budget with a nonempty family---if and only if it is witness-compatible---one common candidate and one concrete alignment pass both budgets and all mandatory channels.
+
+\section{Immutable Formal provenance}
+The declaration is introduced on Formal base commit
+\texttt{af55852071a3d15cd21ccde31db095c5596da40c}, tree
+\texttt{5ce8ba5215b6f2880d36bf484afa9980b2ae0770}.  The owning-module SHA-256 is
+\texttt{131db0236710b92a3dd5025d369003cee3c853132772cf8d0e4afe650d00f842}; the locator is \texttt{FiniteAlignmentAttainment.lean:116} and \texttt{BG-DECISION-THM-056}.  A topic commit is not claimed before separate checkpoint authorization.
+
+\section{Assumptions, conventions, and statement delta}
+Central compatibility already supplies nonemptiness for the common candidate's family.  Finiteness then supplies an exact minimizer; the independent minimizer-channel premise makes that same alignment conformant.  Through the precise tagged adapter, conformance may mean all channel-specific exact error inequalities and all separately typed structural requirements.  The theorem does not infer either class of obligation from finiteness and does not equate infimum and witness semantics for infinite families or without channel conformance.
+
+\section{Prior art and contribution boundary}
+Finite minimum attainment and elementary logical equivalence are standard, classified \texttt{background-only}.  The repository contribution is the exact conditional bridge between its deliberately separated central and witness compatibility predicates.  No novelty, priority, applicability, or publication claim is made.
+
+\section{Proof structure and mathematical argument}
+For the forward direction, central compatibility provides one common candidate with spectral and central operator acceptance.  Finite-family attainment provides a loss-minimizing alignment, central passage places its loss within budget, and the explicit channel hypothesis supplies every mandatory channel for that same minimizer.  The resulting candidate and alignment establish witness compatibility.  The reverse direction is the existing generic witness-to-central implication and needs no finiteness premise.
+
+\section{Lean realization and dependencies}
+The proof composes \texttt{witnessCompatible\_of\_compatible\_of\_finite} with \texttt{compatible\_of\_witnessCompatible}.  All carriers, losses, budgets, inventories, and channel predicates remain abstract exact data.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  FiniteCompatibilitySchema.
+    compatible_iff_witnessCompatible_of_finite
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{AI, automation, and review record}
+The theorem integration and exposition were AI-assisted and checked by the maintainer.  Lean proof checking is not independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem proves a conditional exact equivalence.  It does not authenticate candidate or alignment inventories, establish runtime minimization, validate mandatory-channel implementations, interpret binary64 data, prove spectral isolation or continuum adequacy, or create a certificate.  The current checked runtime-certificate count remains zero.
+
+\section{Unresolved questions}
+A concrete consumer must freeze and independently verify the finite family and minimizer-channel premises.  External inventory coverage, parser binding, enclosure production, runtime rejection behavior, and physical interpretation remain owner-repository obligations.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & central/witness and finite/channel distinctions checked; no external-evidence promotion \\
+\bottomrule
+\end{tabularx}
+
+\end{document}
