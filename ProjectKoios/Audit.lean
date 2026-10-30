@@ -40,6 +40,7 @@ import ProjectKoios.BandGauge.Decision.MandatoryChannelComposition
 import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
 import ProjectKoios.BandGauge.Fourier.CenteredEvenMesh
 import ProjectKoios.BandGauge.Fourier.MetricShellSupport
+import ProjectKoios.BandGauge.Fourier.NormalizedProductTorus
 import ProjectKoios.BandGauge.Fourier.FiniteAbelianTransform
 import ProjectKoios.BandGauge.Fourier.FiniteParseval
 import ProjectKoios.BandGauge.Fourier.HermitianPairing
@@ -388,6 +389,15 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.triangularShellIndex_rotate
 #print axioms ProjectKoios.BandGauge.Fourier.simpleCubicShellIndex_swap12
 #print axioms ProjectKoios.BandGauge.Fourier.fccShellIndex_swap12
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedProductTorusMeasure_univ
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_one
+#print axioms ProjectKoios.BandGauge.Fourier.exp_separableProductTorusPhase
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_separable
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_sameFactor_eq_pow
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_exp_separablePhase
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_exp_samePhase_eq_pow
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_exp_finTwo_eq_sq
+#print axioms ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_exp_finThree_eq_cube
 #print axioms ProjectKoios.BandGauge.Fourier.finiteCharacterKernel
 #print axioms ProjectKoios.BandGauge.Fourier.finiteFourierReconstruction_coefficients
 #print axioms ProjectKoios.BandGauge.Fourier.card_smul_finiteFourierCoefficient

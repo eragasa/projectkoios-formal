@@ -189,6 +189,21 @@ unitary and post-conjugation coordinate equality are exact hypotheses. No theore
 authenticates a runtime gauge, floating orthonormality, eigensolver, band tracker, momentum mesh,
 external artifact, certificate, Fourier support, truncation error, or scientific adequacy.
 
+## Selected normalized product-torus tranche
+
+The source-neutral normalized product-torus extension has selected dossiers for
+`BG-FOURIER-THM-124` and `BG-FOURIER-THM-125`. They cover factorization of the normalized average
+of an exponential of coordinatewise additive phases and the equal-phase cardinality-power law.
+The explicit total-mass-one normalization, pointwise exponential identity, arbitrary separable-
+field factorization, and `Fin 2` square and `Fin 3` cube corollaries remain fully recorded in Lean
+and the theorem manifest without separate dossiers.
+
+The carrier is explicitly a finite product of Mathlib unit additive circles and the measure is the
+product of their standard Haar probability measures. The theorems do not evaluate a one-circle
+integral as a Bessel function, bind an external half-open coordinate or phase convention,
+authenticate quadrature or a runtime mesh, prove finite-to-continuum convergence, or certify a KSD
+analytic comparator, material model, certificate, or scientific conclusion.
+
 ## Required contents
 
 A dossier records:

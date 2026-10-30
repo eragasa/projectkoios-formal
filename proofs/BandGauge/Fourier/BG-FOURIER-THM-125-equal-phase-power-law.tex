@@ -1,0 +1,105 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Equal-Phase Power Law on a Normalized Product Torus}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-31}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-125} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_exp_samePhase_eq_pow} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/NormalizedProductTorus.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $D$ be finite, let $\mathbb T_1=\mathbb R/\mathbb Z$ carry its standard Haar probability
+measure $\mu$, and let $\varphi:\mathbb T_1\to\mathbb C$ be one supplied phase. Then
+\[
+ \int_{\mathbb T_1^D}
+   \exp\!\left(\sum_{d\in D}\varphi(q_d)\right)\,d\mu^D(q)
+ =\left(\int_{\mathbb T_1}\exp(\varphi(t))\,d\mu(t)\right)^{|D|}.
+\]
+For $D=\operatorname{Fin}(2)$ and $D=\operatorname{Fin}(3)$, separately named checked
+corollaries give the square and cube.
+
+\section{Source relation and immutable identity}
+The orthogonal KSD 2-D flat-parent protocol states the squared comparator at lines 414--435, and
+the orthogonal 3-D protocol states the factorized cubed comparator at lines 359--381. The source
+identity is KSD commit \texttt{fcfc4d5fa76b08c040a02c97a109eb5f5fc06e48}, tree
+\texttt{fe8b47b33fcf0b24c5b28f8799ed220e3f6d7d20}. The exact source paths, SHA-256 fingerprints,
+read-only access mode, and dirty-state limitation are recorded in \path{docs/source-audit.md}.
+
+The Formal base is PR~\#44 merge commit
+\texttt{24263f08a5b69fc34be3073bc724a3b0ad4b80d6}, tree
+\texttt{2cbef2a05174f5ad491392b40dd4265a751ed932}. The owning-module SHA-256 is
+\texttt{a9d7a1fb58123cbeeb8e8474b6e8b54d847d59a962945fe09db3f84a42c746c8}.
+No topic commit is claimed before checkpoint authorization.
+
+\section{Assumptions and conventions}
+The theorem uses a finite coordinate type, Mathlib's unit additive circle in every coordinate, the
+finite product of its standard total-mass-one Haar measure, and one exact complex phase reused in
+every coordinate. The dimension is the exact cardinality of $D$. The theorem does not infer that
+an external phase family has equal coordinate factors.
+
+\section{Prior art and contribution boundary}
+The result is a standard equal-factor specialization of finite-product Fubini, not a novelty claim.
+The Lean proof specializes pinned Mathlib theorem
+\texttt{MeasureTheory.integral\_fintype\_prod\_eq\_pow}. The local contribution is a typed,
+normalized BandGauge statement with explicit dimension-cardinality, square, cube, and evidence
+boundaries suitable for later source-specific bridges.
+
+\section{Proof structure}
+Use $\exp(\sum_d\varphi(q_d))=\prod_d\exp(\varphi(q_d))$. Finite-product Fubini turns the
+joint average into the product of one-circle averages. Since every coordinate factor is identical,
+the finite product is the corresponding scalar power with exponent $|D|$.
+
+\section{Lean realization and trusted base}
+The proof uses \texttt{Complex.exp\_sum} and the equal-factor power theorem in
+\path{Mathlib/MeasureTheory/Integral/Pi.lean}, lines 119--126. Toolchain: Lean
+\texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Fourier.
+  normalizedProductTorusAverage_exp_samePhase_eq_pow
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+The right-hand one-circle integral is deliberately unevaluated. The theorem does not identify it
+with $J_0(a)$ or $J_0(2a/3)$, prove the KSD phase or scaling, certify a continuum comparator,
+authenticate a quadrature or mesh, or bound numerical error. The exact square and cube corollaries
+do not transfer scientific, certificate, or publication status.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Unresolved consumer obligations}
+A consumer must prove the coordinate phase identification and one-circle integral under its frozen
+coordinate convention, then separately verify any numerical approximation, source artifact,
+tolerance, and retained result. A Bessel theorem, if later adopted, requires its own source and
+statement audit.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-10-31 & initial dossier & AI-assisted maintainer review & exact cardinality-power law proved; one-circle evaluation and external binding remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

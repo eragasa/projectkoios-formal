@@ -86,14 +86,25 @@ Open:
 
 ## R3 — continuum Fourier analysis
 
-Status: deferred.
+Status: normalized finite product-torus factorization implemented; broader continuum layer deferred.
 
-- Torus representation and measure.
-- Continuum normalization and Parseval.
-- Finite-to-continuum hypotheses.
-- Projection/alignment/locality consequences.
+Implemented:
 
-Finite results must not be promoted by analogy.
+- explicit carrier `Dimension → UnitAddCircle` for finite dimension types;
+- finite product of standard unit-circle Haar measures and exact total mass one;
+- normalized factorization of coordinate-separable complex averages;
+- exponential factorization for coordinatewise additive phases; and
+- equal-coordinate power laws, including exact 2-D square and 3-D cube corollaries.
+
+Open:
+
+- source-specific torus coordinate, endpoint, phase, and measure bindings;
+- one-circle Bessel integral evaluations;
+- continuum Fourier coefficients, normalization, and Parseval;
+- finite-to-continuum hypotheses and quadrature error; and
+- projection/alignment/locality consequences.
+
+The factorization results must not be promoted into a Bessel identity, runtime comparator, finite-mesh result, or scientific claim without the missing bridges.
 
 ## R4 — special functions and tails
 

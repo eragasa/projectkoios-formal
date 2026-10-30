@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board baseline: remote `main` merge commit
-`2b3e6d7f7acfdf78d48b3b8177f7676e16bd1287`, tree
-`15bf4cebd53772f2c8b6e559c634f5e0d75c9f30`, integrating PR #43.
+`24263f08a5b69fc34be3073bc724a3b0ad4b80d6`, tree
+`2cbef2a05174f5ad491392b40dd4265a751ed932`, integrating PR #44.
 
 ## Mission
 
@@ -70,16 +70,16 @@ Everything else is ready, blocked, deferred, or completed.
 ## Active
 
 One mathematical effort occupies the WIP limit: the isolated
-`work/rank-two-conjugation-band-invariance` topic, based on remote `main` merge commit
-`2b3e6d7f7acfdf78d48b3b8177f7676e16bd1287`, formalizes exact complex-unitary conjugation of
-rank-two matrices. The bounded slice specializes Mathlib spectrum invariance, proves trace and
-determinant invariance, derives scalar-coordinate and Pauli-radius equality for exact supplied
-coordinate witnesses, proves equality of the canonical lower and upper bands, and lifts the result
-pointwise to supplied finite index types including finite momentum meshes. It includes immutable read-only KSD
-protocol locators, declaration and axiom ledgers, module/source documentation, smoke checks, and
-selected explanatory dossiers. It does not construct or authenticate runtime gauges, floating
-orthonormality, eigensolvers, band tracking, meshes, external artifacts, certificates, or scientific
-adequacy. No separate trust, documentation, or maintenance effort occupies the second WIP slot.
+`work/normalized-product-torus-factorization` topic, based on remote `main` merge commit
+`24263f08a5b69fc34be3073bc724a3b0ad4b80d6`, formalizes the unit additive circle, its normalized
+finite product Haar measure, coordinate-separable complex-average factorization, exponential
+factorization for additive phases, equal-coordinate power laws, and explicit 2-D square and 3-D
+cube corollaries. It includes immutable read-only KSD protocol locators, pinned Mathlib theorem
+locators, declaration and axiom ledgers, module/source documentation, smoke checks, and selected
+explanatory dossiers. It does not prove a one-circle Bessel integral, bind an external coordinate or
+phase convention, authenticate quadrature or a runtime mesh, establish finite-to-continuum
+convergence, or certify a KSD comparator or scientific conclusion. No separate trust,
+documentation, or maintenance effort occupies the second WIP slot.
 
 ## Ready
 
@@ -193,6 +193,13 @@ These items are merged Formal content only.
   `‖candidate * gauge - reference‖_F²` with cross matrix `candidateᴴ * reference`, the polar witness
   is exact supplied data, uniqueness requires positive definiteness, and no runtime SVD, rank,
   tolerance, optimizer, null-space completion, certificate, or scientific adequacy is authenticated.
+- Exact complex-unitary rank-two conjugation invariance is proved as
+  `BG-FOUNDATION-DEF-014--016` and `BG-FOUNDATION-THM-015--025`, with selected dossiers for
+  canonical-band equality and the pointwise finite-field corollary. The slice merged through PR #44
+  at commit `24263f08a5b69fc34be3073bc724a3b0ad4b80d6`, tree
+  `2cbef2a05174f5ad491392b40dd4265a751ed932`; exact supplied unitary and coordinate witnesses are
+  required, and no runtime gauge, eigensolver, band tracker, momentum mesh, external artifact,
+  certificate, or scientific adequacy is authenticated.
 - Complete finite metric-shell mathematics is proved as `BG-FOURIER-DEF-045--051` and
   `BG-FOURIER-THM-089--118`, with selected dossiers for shell-change characterization and capped
   no-skipped-shell semantics. The slice merged through PR #43 at commit
