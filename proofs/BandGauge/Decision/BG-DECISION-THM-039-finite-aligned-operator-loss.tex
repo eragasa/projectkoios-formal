@@ -1,0 +1,90 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Maximum Aligned-Operator Loss}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-039} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteAlignedOperatorCompatibilityData.finiteAlignedOperatorLoss_eq_sup} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/AlignedOperatorBudget.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For a finite evaluation type $K$, exact operator fields $R_k,C_k$, and one supplied pointwise unitary alignment $U_k$, define
+\[
+ L_U(R,C)=\left\|k\mapsto R_k-U_k^{-1}C_kU_k\right\|_{\infty}.
+\]
+Then
+\[
+ L_U(R,C)=\sup_{k\in K}\left\|R_k-U_k^{-1}C_kU_k\right\|_{\mathrm{op}}.
+\]
+Lean records both sides in the extended nonnegative reals.  The finite supremum is zero for an empty inventory.
+
+\section{Immutable Formal provenance}
+The declaration is introduced in a topic tree based on Formal merge commit
+\texttt{77d2f88eb48cf91de7350af66483c51fb7d15f55}, tree
+\texttt{75e082cb85f30625963f2f8b6244ccc5f66fab62}.  The owning-module SHA-256 is
+\texttt{cbc141ebe77f51e84954e284bf0ca0ea9f8fca37c3f59028c973a864b787d286}; the source locator is \texttt{AlignedOperatorBudget.lean:97} and \texttt{BG-DECISION-THM-039}.  No topic-commit identity is asserted before its separate checkpoint.
+
+\section{Assumptions, conventions, and statement delta}
+The index type is finite.  Fibers are complex inner-product spaces, and each $U_k$ is an exact complex linear isometric equivalence.  The difference convention is reference minus pulled-back candidate.  No nonemptiness, sewing, self-adjointness, spectral gap, or runtime representation is assumed.
+
+\section{Prior art and contribution boundary}
+The equality is the standard supremum norm on a finite product, marked \texttt{background-only}.  No novelty or priority claim is made.  The repository contribution is the exact typed connection between the aligned-difference field and the loss consumed by the compatibility adapter.
+
+\section{Proof structure and mathematical argument}
+The definition of \texttt{finiteAlignedOperatorLoss} is the nonnegative norm of the entire finite field.  Mathlib's norm on a finite dependent function is the supremum of the coordinate nonnegative norms.  Rewriting that definition yields the displayed equality; coercion into extended nonnegative reals preserves the finite supremum.
+
+\section{Lean realization and dependencies}
+The proof unfolds the concrete loss and rewrites by \texttt{Pi.nnnorm\_def}; normalization discharges the coercion equality.  It depends on \texttt{BG-BLOCH-DEF-013}.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  FiniteAlignedOperatorCompatibilityData.finiteAlignedOperatorLoss_eq_sup
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{AI, automation, and review record}
+The proof and dossier were AI-assisted and maintainer-reviewed.  Lean, hashes, and LaTeX are automated checks, not independent mathematical, scientific, bibliography, novelty, or publication review.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem does not authenticate $R$, $C$, $U$, $K$, or any runtime array.  It gives no floating-point enclosure, eigensolver guarantee, optimizer result, spectral estimate, physical adequacy result, or certificate.  ``Finite maximum'' is relative only to the supplied inventory.
+
+\section{Unresolved questions}
+A consumer must separately bind an exact or outward-enclosed finite inventory and operator norm, authenticate one common alignment, and verify every mandatory channel.  Continuum control and cross-gauge comparison remain external.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & finite-supremum identity and empty-inventory boundary checked; no runtime promotion \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

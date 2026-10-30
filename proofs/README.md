@@ -57,9 +57,23 @@ same-alignment subtraction identity, and the resulting operator-norm stability b
 and pullback-linearity theorem remain fully recorded in Lean and the theorem manifest without
 separate dossiers.
 
-All four statements require one supplied common alignment where two pairs of fields are compared.
-They do not authenticate an alignment, compare different gauges, bind runtime operators or
-binary64 values, estimate spectra, prove continuum adequacy, or create a certificate.
+Each selected statement uses a supplied exact alignment; the stability result uses one common
+alignment for both pairs of fields. They do not authenticate an alignment, compare different
+gauges, bind runtime operators or binary64 values, estimate spectra, prove continuum adequacy,
+or create a certificate.
+
+## Selected finite aligned-operator budget tranche
+
+The concrete compatibility adapter has selected dossiers for `BG-DECISION-THM-039`, `044`,
+`047`, and `050`. They cover the finite maximum operator-norm interpretation, same-alignment
+loss stability, construction of a conformant operator witness from an exact concrete budget, and
+the resulting witness-compatibility bridge. Intermediate maximum-field and headroom results remain
+fully recorded in Lean and the theorem manifest without separate dossiers.
+
+These statements use exact supplied fields, inventories, budgets, channel predicates, and an
+alignment carrier with an explicit pointwise-unitary projection. They do not parse or authenticate
+runtime data, prove an optimizer exists, compare different gauges, create a certificate, establish
+external inventory coverage, or confer scientific or publication status.
 
 ## Required contents
 

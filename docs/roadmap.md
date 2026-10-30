@@ -59,6 +59,7 @@ Status: generic foundations implemented.
 - Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
 - First-passing existence and uniqueness over supplied finite inventories, including one-cutoff joint passage without monotonicity.
 - A generic finite spectral--operator compatibility schema with one common candidate, a nonempty alignment family, and an alignment-infimum operator criterion, a stronger one-alignment witness predicate across mandatory operator channels, explicit-attainment bridges, finite central admissible sets, attained compatibility distance under nonemptiness, zero-distance/compatibility and positive-distance/incompatibility equivalences, conformant model-class embeddings, and first-compatible-class selection.
+- An exact finite-maximum aligned-operator loss with same-alignment perturbation and budget-headroom bounds, plus an adapter that retains an application-supplied alignment carrier while projecting its pointwise unitary field into the generic witness/central compatibility predicates.
 - Exact Boolean dominance, threshold, and nondominated-mask checks.
 - Conservative accepted/rejected/unresolved checks for outward interval thresholds, joint feasibility at one decision, and first passage over a supplied finite inventory.
 
@@ -73,7 +74,7 @@ Open:
 - nonuniform weighted Parseval;
 - runtime interval serialization, enclosure-production arguments, and external coverage;
 - concrete Paper B/C tables; and
-- concrete compatibility inventories, heterogeneous candidate/alignment-carrier embeddings, and proposition-specific certificate bindings;
+- concrete owner-specific compatibility inventories, heterogeneous candidate-carrier embeddings, cross-gauge stability bridges, and proposition-specific certificate bindings;
 - runtime-bound cutoff inventories and later Wannier90 layers.
 
 ## R3 — continuum Fourier analysis

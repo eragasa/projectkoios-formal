@@ -1,0 +1,93 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Aligned-Operator Loss Stability}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-044} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteAlignedOperatorCompatibilityData.finiteAlignedOperatorLoss_le_add_perturbation} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/AlignedOperatorBudget.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For one supplied alignment $U$ and two reference/candidate pairs $(R_L,C_L)$ and $(R_R,C_R)$,
+\[
+ L_U(R_L,C_L)\leq L_U(R_R,C_R)
+ +\lVert R_L-R_R\rVert_\infty+\lVert C_L-C_R\rVert_\infty.
+\]
+Every field norm is the finite maximum of exact continuous-linear-map operator norms.
+
+\section{Immutable Formal provenance}
+The declaration is introduced on Formal base commit
+\texttt{77d2f88eb48cf91de7350af66483c51fb7d15f55}, tree
+\texttt{75e082cb85f30625963f2f8b6244ccc5f66fab62}.  The module SHA-256 is
+\texttt{cbc141ebe77f51e84954e284bf0ca0ea9f8fca37c3f59028c973a864b787d286}; the exact locator is \texttt{AlignedOperatorBudget.lean:174} and \texttt{BG-DECISION-THM-044}.  A topic commit is not claimed before separate checkpoint authorization.
+
+\section{Assumptions, conventions, and statement delta}
+Both pairs use the same exact pointwise unitary alignment.  The theorem does not compare $U_L$ with $U_R$ and contains no hidden alignment-mismatch term.  The two fiber carriers and finite evaluation type are fixed.  Sewing, self-adjointness, nonemptiness, and spectral hypotheses are unnecessary.
+
+\section{Prior art and contribution boundary}
+This is a normed-space reverse-triangle/Lipschitz estimate, classified \texttt{background-only}.  The contribution is the exact finite-field specialization preserving the common-alignment requirement used by the operator-budget consumer.  No novelty or priority claim is made.
+
+\section{Proof structure and mathematical argument}
+Let $\Delta_L=R_L-U^{-1}C_LU$ and $\Delta_R=R_R-U^{-1}C_RU$.  The reverse triangle estimate gives
+\[
+ \lVert\Delta_L\rVert_\infty\leq
+ \lVert\Delta_R\rVert_\infty+\lVert\Delta_L-\Delta_R\rVert_\infty.
+\]
+The finite lift of \texttt{BG-BLOCH-THM-031} bounds the last term by the two input-field changes.  Coercion of nonnegative norms into extended nonnegative reals preserves addition and order.
+
+\section{Lean realization and dependencies}
+The proof combines \texttt{norm\_le\_norm\_add\_norm\_sub'} with \texttt{BG-DECISION-THM-043}, then transports the resulting real inequality through nonnegative and extended-nonnegative coercions.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  FiniteAlignedOperatorCompatibilityData.
+    finiteAlignedOperatorLoss_le_add_perturbation
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{AI, automation, and review record}
+The proof and exposition were AI-assisted and checked by the maintainer.  Kernel checking, hashes, and rendering are not independent expert, scientific, novelty, bibliography, or publication review.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem supplies no numerical value for the perturbation radius and does not authenticate a common gauge.  It does not bound binary64 rounding, verify interpolation or eigensolvers, compare spectra, prove continuum isolation, establish a threshold, or create a certificate.
+
+\section{Unresolved questions}
+A concrete consumer needs exact or outward-enclosed field perturbations and a verified common-alignment binding.  Stability across distinct alignments requires a separate theorem with an explicit alignment-mismatch term.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & inequality direction and common-alignment boundary checked; no runtime evidence \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

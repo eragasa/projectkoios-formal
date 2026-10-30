@@ -1,0 +1,91 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-30
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\titlespacing*{\section}{0pt}{1.6ex plus .4ex minus .2ex}{0.7ex}
+
+\title{Proof Dossier: Finite Aligned Witness Compatibility}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-30}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-DECISION-THM-050} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Decision.FiniteAlignedOperatorCompatibilityData.witnessCompatible_of_finiteAlignedOperatorLoss} \\
+Owning module & \path{ProjectKoios/BandGauge/Decision/AlignedOperatorBudget.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+A model $m$ is witness-compatible in the adapted schema if there exist one candidate $c$ and one alignment-carrier value $a$ such that:
+\begin{enumerate}
+\item $c$ belongs to the declared finite candidate inventory;
+\item its exact spectral loss is within the declared spectral budget;
+\item $a$ belongs to the declared family for $(m,c)$;
+\item the concrete finite aligned-operator loss projected from $a$ is within the operator budget; and
+\item every mandatory channel accepts the same $(m,c,a)$.
+\end{enumerate}
+The theorem proves the forward construction from these five explicit premises.
+
+\section{Immutable Formal provenance}
+The declaration is introduced on Formal base commit
+\texttt{77d2f88eb48cf91de7350af66483c51fb7d15f55}, tree
+\texttt{75e082cb85f30625963f2f8b6244ccc5f66fab62}.  The owning-module SHA-256 is
+\texttt{cbc141ebe77f51e84954e284bf0ca0ea9f8fca37c3f59028c973a864b787d286}; the locator is \texttt{AlignedOperatorBudget.lean:272} and \texttt{BG-DECISION-THM-050}.  A topic commit is not claimed before separate checkpoint authorization.
+
+\section{Assumptions, conventions, and statement delta}
+All inventories, losses, budgets, fields, family membership, and channel predicates are supplied exact data.  One common candidate satisfies both spectral and operator branches.  One common alignment carrier satisfies the operator budget and every mandatory channel.  The theorem does not replace central infimum compatibility or assert an infimum minimizer.
+
+\section{Prior art and contribution boundary}
+The final step is standard existential/conjunction introduction, classified \texttt{background-only}.  The repository contribution is the exact bridge from finite aligned operator norms to the already-separated witness-compatibility semantics.  No novelty, priority, applicability, or publication claim is made.
+
+\section{Proof structure and mathematical argument}
+Candidate membership and the spectral inequality form \texttt{SpectralAccepts}.  By \texttt{BG-DECISION-THM-048}, candidate membership together with the family, concrete operator-budget, and all-channel premises forms \texttt{OperatorWitnessAccepts}.  Pairing those two facts with the same candidate is exactly \texttt{WitnessCompatible}.
+
+\section{Lean realization and dependencies}
+The proof supplies $c$ as the existential witness, constructs spectral acceptance, and invokes \texttt{operatorWitnessAccepts\_of\_finiteAlignedOperatorLoss} with the same $a$.  Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Decision.
+  FiniteAlignedOperatorCompatibilityData.
+    witnessCompatible_of_finiteAlignedOperatorLoss
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned admission occurs.
+
+\section{AI, automation, and review record}
+The theorem integration and exposition were AI-assisted and checked by the maintainer.  Lean proof checking is not independent scientific, mathematical, novelty, bibliography, or publication review.
+
+\section{Scientific, numerical, and certificate boundaries}
+The theorem proves only the exact conditional proposition.  It does not establish candidate adequacy, runtime provenance, mesh coverage, spectral isolation, alignment correctness, channel completeness, binary64 interpretation, external-inventory coverage, or certificate validity.  The current checked runtime-certificate count remains zero.
+
+\section{Unresolved questions}
+A proposition-specific consumer must freeze and independently verify all five premises, retain authenticated source bytes, and define rejection behavior.  Runtime parsing and physical interpretation remain owner-repository obligations.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-10-30 & initial dossier & AI-assisted maintainer review & common candidate/alignment/channel semantics checked; no external-evidence promotion \\
+\bottomrule
+\end{tabularx}
+
+\end{document}
