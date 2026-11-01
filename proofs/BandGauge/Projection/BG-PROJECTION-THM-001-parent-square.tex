@@ -1,0 +1,182 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={ℝ}{{$\mathbb R$}}1 {ℂ}{{$\mathbb C$}}1 {•}{{$\mathbin\bullet$}}1}
+\newcommand{\StatementID}{BG-PROJECTION-THM-001}
+\newcommand{\LeanDeclaration}{ProjectKoios.BandGauge.Projection.twoBandParentLaurentMatrix\_sq}
+\title{Project Koios Formal Proof Dossier\\\large The Rank-Two Laurent Parent Squares to Its Scalar Radicand}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}
+\sloppy
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \path{BG-PROJECTION-THM-001} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Projection.twoBandParentLaurentMatrix_sq} \\
+Owning module & \path{ProjectKoios/BandGauge/Projection/LaurentObstruction.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+Formal proof completed & 2026-10-20 \\
+\bottomrule\end{tabularx}
+
+This status describes one algebraic Lean theorem. It is not a claim that the full
+spectral-projection proposition, any numerical result, or the publication is formally
+complete.
+
+\section{Exact mathematical statement}
+Let $\Delta,t\in\mathbb R$ and work in the complex Laurent-polynomial ring
+$\mathbb C[z,z^{-1}]$. Define
+\[
+ H(z)=\begin{pmatrix}
+ \Delta&t(1+z^{-1})\\
+ t(1+z)&-\Delta
+ \end{pmatrix},\qquad
+ r(z)=\Delta^2+2t^2+t^2z+t^2z^{-1}.
+\]
+Then
+\[
+ H(z)^2=r(z)I_2.
+\]
+There is no nondegeneracy premise on this supporting identity.
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \texttt{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Source path & \path{docs/publications/papers/Ragasa2026b/v2/manuscript.tex} \\
+Source locator & lines 316--330, especially the matrix and radicand defining the eigenvalues \\
+Source SHA-256 & \path{d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf} \\
+Dirty-state limitation & cited bytes are the clean immutable commit recorded by the owner-source audit \\
+\bottomrule\end{tabularx}
+
+The Lean theorem \emph{adapts} the source matrix into a Laurent-polynomial identity. It
+is supporting algebra for, but is not identical to, the source proposition.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}XXX@{}}\toprule
+Source convention & Lean encoding & Delta or limitation \\
+\midrule
+One momentum variable $z=e^{ik}$ & integer Laurent exponents in
+\texttt{LaurentPolynomial $\mathbb C$} & unit-circle evaluation is not used by this algebraic declaration \\
+Rank two in the displayed basis & \texttt{Matrix (Fin 2) (Fin 2)} & basis is fixed exactly \\
+Real $\Delta,t$ & exact coercion into $\mathbb C$ & no floating-point data \\
+Source proposition assumes $\Delta t\ne0$ & this algebraic identity is proved for all
+$\Delta,t$ & broader validity is used only as standard supporting algebra, not as a
+broader projection claim \\
+Nearest-neighbor support & only exponents $-1,0,1$ occur in the definition & no physical
+metric or hopping-distance theorem \\
+\bottomrule\end{tabularx}
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}\toprule
+Relation & Canonical identity & Locator & Role and caveat \\
+\midrule
+adapts & owner source above; canonical literature identity unresolved &
+\texttt{manuscript.tex:316--330} & supplies the exact parent and radicand; no priority
+claim is made for matrix multiplication \\
+\bottomrule\end{tabularx}
+
+No accepted external reference is asserted for this elementary identity. A missing
+reference record would not make the algebra novel.
+
+\section{Motivation and contribution boundary}
+The identity exposes why the scalar square root in the two-band eigenvalues is precisely
+the Laurent radicand used by the obstruction theorem. Its value is traceable exact
+bookkeeping between the parent and the algebraic obstruction. Matrix multiplication and
+Laurent monomial arithmetic are standard; this dossier makes no novelty claim for them.
+
+\section{Proof schematic}
+\[
+\boxed{H(z),\ r(z)}
+\Longrightarrow
+\boxed{z^{-1}z=zz^{-1}=1}
+\Longrightarrow
+\begin{cases}
+(H^2)_{12}=(H^2)_{21}=0,\\
+(H^2)_{11}=(H^2)_{22}=r(z)
+\end{cases}
+\Longrightarrow
+\boxed{H(z)^2=r(z)I_2}.
+\]
+
+\section{Human-readable mathematical argument}
+Multiply the two matrices. The upper-right entry is
+$\Delta t(1+z^{-1})-\Delta t(1+z^{-1})=0$, and the lower-left entry cancels in the same
+way. For the first diagonal entry,
+\[
+ \Delta^2+t^2(1+z^{-1})(1+z)
+ =\Delta^2+t^2(2+z+z^{-1})=r(z),
+\]
+because $z^{-1}z=1$ in the Laurent ring. The other diagonal entry has the factors in
+the opposite order and gives the same value. Thus the square is $r(z)I_2$.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem twoBandParentLaurentMatrix_sq (gap hopping : ℝ) :
+  twoBandParentLaurentMatrix gap hopping *
+      twoBandParentLaurentMatrix gap hopping =
+    twoBandLaurentRadicand gap hopping •
+      (1 : Matrix (Fin 2) (Fin 2) (LaurentPolynomial ℂ))
+\end{lstlisting}
+The proof uses matrix extensionality, the four \texttt{Fin 2} cases,
+\texttt{LaurentPolynomial.T\_add}, and normalized commutative-ring arithmetic.
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Lean toolchain & Lean 4.35.0 \\
+Mathlib revision & \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Additional dependencies & none \\
+Principal imports & Laurent polynomials, complex basics, matrix notation \\
+Validation & see \path{docs/trusted-base-audit.md} for historical exact-source and named-audit artifacts \\
+Promotion & current reconciliation tree still requires promotion gates \\
+\bottomrule\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Projection.twoBandParentLaurentMatrix_sq
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+There are no repository-owned axioms or admissions in the declaration.
+
+\section{AI, automation, and comprehension record}
+The theorem selection, proof exploration, Lean tactic script, and dossier prose were
+AI-assisted. Lean elaboration and kernel checking validated the exact declaration.
+\texttt{ring}, \texttt{ring\_nf}, \texttt{norm\_num}, simplification, and finite-case
+automation produced proof terms checked by Lean. The maintainer selected the source
+claim and reviewed the displayed algebra and boundaries. No independent expert
+mathematical review has occurred.
+
+\section{Scientific and evidence boundaries}
+This theorem contains no numerical input, certificate, runtime artifact, material model,
+or physical validation. By itself it does not prove that the matrix is a Bloch Hamiltonian
+of a material, derive its spectral projectors, or prove that a projected operator has
+infinite hopping support. Those source-specific algebraic bridges are supplied separately
+by \path{BG-PROJECTION-THM-003--008}.
+
+\section{Unresolved questions}
+Canonical prior-art identity remains unresolved through the References owner. Quantitative
+hopping decay is outside this theorem and its companion counterexample.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-10-20 & initial & AI-assisted implementation; Lean kernel check & exact supporting
+identity proved; no independent expert review \\
+2026-10-20 & companion integration & Lean kernel check & full source proposition completed
+separately as \path{BG-PROJECTION-THM-008} \\
+\bottomrule\end{tabularx}
+\end{document}

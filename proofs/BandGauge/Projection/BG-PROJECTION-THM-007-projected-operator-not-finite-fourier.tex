@@ -1,0 +1,102 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: The Embedded Lower-Band Operator Is Not Finite Fourier}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}\sloppy\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \path{BG-PROJECTION-THM-007} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Projection.twoBandProjectedOperator_not_hasFiniteMatrixFourierSupport} \\
+Owning module & \path{ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+
+\section{Exact mathematical statement}
+For real $\Delta,t$ with $\Delta t\ne0$, the matrix circle function
+\[
+ K(k)=\frac12\bigl(H(k)-d(k)I\bigr)
+\]
+has no representation by a $2\times2$ matrix over
+$\mathbb C[z,z^{-1}]$ evaluated at $z=e^{ik}$.
+
+\section{Source provenance and relationship}
+This theorem \emph{formalizes} the non-finite-matrix-Fourier conclusion of
+\path{manuscript.tex:328--340} and \path{appendix_proofs.tex:24--28} in owner commit
+\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}. The respective source hashes are
+\texttt{d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf}
+and
+\texttt{614fad3426a941a9a1c5ad4c73ca917b55007b525a1a3a76970d5d7df5af7d19}.
+
+\section{Assumptions, conventions, and delta}
+The exact source assumption $\Delta t\ne0$ is preserved. Matrix finite Fourier support
+means one Laurent-polynomial matrix represents all four entries for every real angle.
+The theorem concerns the exact embedded operator, not a truncation or approximation.
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}\toprule
+Relation & Identity & Locator & Role \\
+\midrule
+formalizes & owner source above & Appendix proof lines 24--28 & final matrix-support contradiction \\
+depends-on & \path{BG-PROJECTION-THM-004} & theorem manifest & scalar dispersion is not finite Fourier \\
+background-only & external identity unresolved & unverified & entry extraction from a matrix Laurent representation; no novelty claim \\
+\bottomrule\end{tabularx}
+
+\section{Motivation and contribution boundary}
+This theorem lifts the scalar obstruction to the actual embedded rank-two operator. It
+does not yet state that the parent itself is finite support or identify the sandwich; those
+are combined by the final proposition theorem.
+
+\section{Proof schematic and argument}
+Assume a Laurent-polynomial matrix $M(z)$ represents $K(k)$. Its $(1,1)$ entry satisfies
+\[
+ M_{11}(e^{ik})=\frac12(\Delta-d(k)).
+\]
+Therefore the Laurent polynomial $\Delta-2M_{11}(z)$ represents $d(k)$ on the unit circle,
+contradicting \path{BG-PROJECTION-THM-004}. Hence no such matrix exists.
+
+\section{Lean realization}
+The Lean proof extracts entry \texttt{(0,0)} from the assumed matrix-function equality,
+constructs the explicit scalar Laurent polynomial
+\texttt{C gap - C 2 * matrix 0 0}, and closes the exact linear identity before invoking
+the scalar obstruction. Toolchain: Lean 4.35.0, Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Projection.twoBandProjectedOperator_not_hasFiniteMatrixFourierSupport
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+\section{AI, automation, and comprehension record}
+The implementation and prose were AI-assisted. Lean kernel checking validates the exact
+claim. Simplification and linear-combination automation produced checked proof terms. The
+maintainer reviewed the diagonal extraction. No independent expert review occurred.
+
+\section{Scientific and evidence boundaries}
+The theorem is an exact analytic counterexample component. It contains no runtime or
+numerical evidence, decay rate, material binding, or universal claim.
+
+\section{Unresolved questions}
+Quantitative Fourier-coefficient decay and optimal finite truncation error remain outside
+this theorem. Canonical external prior-art identity remains unresolved.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Process & Outcome \\
+\midrule
+2026-10-20 & initial & AI-assisted implementation; Lean kernel check & matrix-valued non-finiteness proved under the source hypothesis; no independent expert review \\
+\bottomrule\end{tabularx}
+\end{document}

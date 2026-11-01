@@ -189,6 +189,26 @@ unitary and post-conjugation coordinate equality are exact hypotheses. No theore
 authenticates a runtime gauge, floating orthonormality, eigensolver, band tracker, momentum mesh,
 external artifact, certificate, Fourier support, truncation error, or scientific adequacy.
 
+## Selected projection-support counterexample tranche
+
+The source-specific two-band projection tranche has dossiers for
+`BG-PROJECTION-THM-001` through `BG-PROJECTION-THM-008`:
+
+- [`BG-PROJECTION-THM-001-parent-square.tex`](BandGauge/Projection/BG-PROJECTION-THM-001-parent-square.tex);
+- [`BG-PROJECTION-THM-002-laurent-square-root-obstruction.tex`](BandGauge/Projection/BG-PROJECTION-THM-002-laurent-square-root-obstruction.tex);
+- [`BG-PROJECTION-THM-003-unit-circle-injectivity.tex`](BandGauge/Projection/BG-PROJECTION-THM-003-unit-circle-injectivity.tex);
+- [`BG-PROJECTION-THM-004-dispersion-not-finite-fourier.tex`](BandGauge/Projection/BG-PROJECTION-THM-004-dispersion-not-finite-fourier.tex);
+- [`BG-PROJECTION-THM-005-projector-specification.tex`](BandGauge/Projection/BG-PROJECTION-THM-005-projector-specification.tex);
+- [`BG-PROJECTION-THM-006-projector-sandwich.tex`](BandGauge/Projection/BG-PROJECTION-THM-006-projector-sandwich.tex);
+- [`BG-PROJECTION-THM-007-projected-operator-not-finite-fourier.tex`](BandGauge/Projection/BG-PROJECTION-THM-007-projected-operator-not-finite-fourier.tex); and
+- [`BG-PROJECTION-THM-008-spectral-projection-destroys-finite-support.tex`](BandGauge/Projection/BG-PROJECTION-THM-008-spectral-projection-destroys-finite-support.tex).
+
+They cover the exact Laurent parent/radicand algebra, odd extreme-support obstruction,
+injective unit-circle evaluation, positive-dispersion non-finiteness, algebraic lower-band
+projector and sandwich identities, and the final matrix-valued finite-support contradiction.
+The result is one exact counterexample under `Δt ≠ 0`; it is not a universal projection,
+decay-rate, runtime-evidence, material, novelty, release, or publication claim.
+
 ## Selected normalized product-torus tranche
 
 The source-neutral normalized product-torus extension has selected dossiers for

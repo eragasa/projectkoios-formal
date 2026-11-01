@@ -87,3 +87,23 @@ The barrier tranche passed its declared gates.
 - Forty-four constant-region, transfer-matrix, finite-barrier, and interface-matching declarations had unique manifest rows.
 - Thirty named reports used only `propext`, `Classical.choice`, and `Quot.sound`.
 - The symbolic results do not solve constrained left-incident scattering amplitudes, assign flux probabilities, certify numerical transmission/reflection, take an infinite-barrier limit, bind runtime arrays, or establish continuum convergence.
+
+### Two-band projection-support counterexample, 2026-10-20
+
+Historical artifacts preserved in the original dirty worktree show exact module and audit
+compilation under Lean 4.35.0 and pinned Mathlib revision
+`56a005855ea17e0b0958f73ec801ae140b0a1679`.
+
+- Dirty worktree base commit: `26603110e9d64cd51c9101eff68060307f258a18`.
+- Preserved dirty-state patch SHA-256: `1385c7a92ab645f72eec8634defa640ecbb5f0083d7f70f3a75e3f0ee271e57e`.
+- `LaurentObstruction.lean` SHA-256: `30ade56110a43ea1f884b992b821dc0e127772a86324e65bb4d975cba25b59ff`; compiled `.olean` SHA-256: `b1327d646a3307a55ef18f03da189b83a0bd23a88a2872641f226faed3da796a`.
+- `SpectralProjectionRange.lean` SHA-256: `6cb39a3825085cde2294ab8f594e62912f3ed9d9b72c16211f472599675b47d9`; compiled `.olean` SHA-256: `e8c373622847113788c5ab308aafb9d96d8f52466bc4f37adaa4192ebbf450dd`.
+- The corresponding `ProjectKoios/Audit.olean` SHA-256 is `5496e256802b7de24d528fede735866973713b1ef8ccd43b8a3b19addf86d5ac`; its trace records all eight named projection reports.
+- `BG-PROJECTION-THM-001` through `BG-PROJECTION-THM-008` report only `propext`, `Classical.choice`, and `Quot.sound`.
+
+These historical artifacts establish compilation of the preserved source bytes, not freshness
+of the current reconciliation tree or a full promotion build. A current exact-tree build,
+pin check, audit, manifest check, and crosswalk review remain required before promotion. The
+results prove only the exact analytic counterexample; they do not establish numerical,
+material, runtime-evidence, localization-rate, universal-projection, release, or publication
+claims.

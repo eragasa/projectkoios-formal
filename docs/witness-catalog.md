@@ -6,7 +6,7 @@ Catalog IDs are planning IDs, not declarations or evidence records.
 |---|---|---|---|
 | `BG-WIT-001` | common witness and positive separation | Ragasa2026c/v1 `manuscript.md:132` | generic distance results implemented; scientific instance unresolved |
 | `BG-WIT-002` | two-observation rank-two false positive | Ragasa2026a/v3 `manuscript.tex:851–889` | exact construction, checker, disjointness, distance, and regression implemented; no runtime or material claim |
-| `BG-WIT-003` | finite-range field with non-finite-support lower-band operator | Ragasa2026b/v2 `manuscript.tex:316` | paper proof inventoried; assumptions must be preserved |
+| `BG-WIT-003` | finite-range field with non-finite-support lower-band operator | Ragasa2026b/v2 `manuscript.tex:316–340`; `appendix_proofs.tex:11–28` | formalized by `BG-PROJECTION-DEF-001` through `011` and `BG-PROJECTION-THM-001` through `008`; exact source assumption `Δt ≠ 0` preserved; no decay, runtime, or material claim |
 | `BG-WIT-004` | P0 D1 inverse/polar construction | Ragasa2026c/v1 `manuscript.md:547` | planned; no implementation or numerical status inferred |
 
 ## Promotion requirements

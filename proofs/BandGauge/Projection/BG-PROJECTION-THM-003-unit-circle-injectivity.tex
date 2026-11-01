@@ -1,0 +1,103 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: Injectivity of Laurent Evaluation on the Unit Circle}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}\sloppy\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \path{BG-PROJECTION-THM-003} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Projection.evalLaurentOnUnitCircle_injective} \\
+Owning module & \path{ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+
+\section{Exact mathematical statement}
+For $f,g\in\mathbb C[z,z^{-1}]$, if
+$f(e^{ik})=g(e^{ik})$ for every $k\in\mathbb R$, then $f=g$.
+
+\section{Source provenance and relationship}
+This theorem \emph{formalizes} the uniqueness step used in
+\texttt{ksdft2effmass} commit
+\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f},
+\path{docs/publications/papers/Ragasa2026b/v2/appendix_proofs.tex:16--18},
+SHA-256
+\texttt{614fad3426a941a9a1c5ad4c73ca917b55007b525a1a3a76970d5d7df5af7d19}.
+The cited bytes are clean bytes at that immutable commit.
+
+\section{Assumptions, conventions, and delta}
+The source writes $z=e^{ik}$ informally. Lean freezes this as
+\texttt{LaurentPolynomial $\mathbb C$} evaluated with
+\texttt{LaurentPolynomial.eval2} at the complex unit $e^{ik}$. Equality is required for
+all real angles. The theorem is a general Laurent uniqueness lemma rather than a claim
+specific to the two-band coefficients; this is reusable supporting mathematics for the
+exact source step.
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}\toprule
+Relation & Identity & Locator & Role \\
+\midrule
+formalizes & owner source above & Appendix proof lines 16--18 & required implication in the paper proof \\
+background-only & canonical external identity unresolved & unverified & standard polynomial root finiteness; no novelty claim \\
+\bottomrule\end{tabularx}
+
+\section{Motivation and contribution boundary}
+The theorem prevents a function-level equality on the circle from being silently treated
+as coefficient equality. Its contribution is a checked bridge between the source Fourier
+language and the Laurent ring, not a claim of originality for polynomial uniqueness.
+
+\section{Proof schematic and argument}
+Apply the claim to $q=f-g$. Mathlib's Laurent localization theorem supplies
+$n\in\mathbb N$ and $p\in\mathbb C[X]$ with
+$p=qz^n$. If $q$ vanishes on the unit circle, then $p$ vanishes there as well. The arc
+$\{e^{ik}:0\le k\le\pi\}$ is infinite because the real interval is infinite and the
+circle exponential is injective on it. Polynomial root finiteness forces $p=0$.
+Since $z^n$ is a unit in the Laurent ring, $q=0$, hence $f=g$.
+
+\section{Lean realization}
+The proof uses \path{LaurentPolynomial.exists_T_pow},
+\path{Polynomial.eq_zero_of_infinite_isRoot}, \path{Set.Icc_infinite},
+\path{Circle.exp_injOn_Icc}, and \path{LaurentPolynomial.isUnit_T}. The toolchain is
+Lean 4.35.0 with Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}; no additional dependency is adopted.
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Projection.evalLaurentOnUnitCircle_injective
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+\section{AI, automation, and comprehension record}
+The statement selection, Lean proof search, implementation, and dossier prose were
+AI-assisted. Lean elaboration and kernel checking validate the exact declaration. The
+maintainer reviewed the reduction to ordinary polynomial roots and the infinite-arc
+argument. No independent expert review has occurred.
+
+\section{Scientific and evidence boundaries}
+This is exact algebra and elementary complex analysis. It consumes no numerical or
+runtime evidence and proves no localization rate, material claim, or universal statement
+about spectral projection.
+
+\section{Unresolved questions}
+Canonical external prior-art identity remains unresolved through References. A broader
+multidimensional torus uniqueness API is not part of this theorem.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Process & Outcome \\
+\midrule
+2026-10-20 & initial & AI-assisted implementation; Lean kernel check & exact unit-circle Laurent uniqueness proved; no independent expert review \\
+\bottomrule\end{tabularx}
+\end{document}

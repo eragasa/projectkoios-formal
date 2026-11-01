@@ -26,6 +26,30 @@ Current modules reuse the following APIs.
 
 The spectral construction is exact and noncomputable. It is not an eigensolver or numerical certificate. Local Pauli and tetrahedral matrices encode model conventions absent from the inspected generic APIs.
 
+## Laurent-polynomial projection obstruction
+
+The selected Ragasa2026b algebraic slice requires a complex Laurent polynomial indexed by
+`ℤ`, exact convolution coefficients, finite coefficient support, support containment under
+multiplication, and maximum-support arguments. The pinned Mathlib revision supplies these
+through `LaurentPolynomial`, `AddMonoidAlgebra.coeff_mul`,
+`AddMonoidAlgebra.support_coeff_mul_subset`, `Finsupp.support_nonempty_iff`,
+`Finset.max'_mem`, `Finset.le_max'`, and pointwise addition of finite supports.
+`Mathlib.Algebra.MonoidAlgebra.Degree` was inspected for support/degree infrastructure, but
+no specialized theorem was found that directly excludes a Laurent-polynomial square whose
+largest nonzero exponent is odd. The repository-owned private helper proves only the needed
+extreme-coefficient convolution fact, while public `BG-PROJECTION-THM-002` preserves the
+source assumption `Δt ≠ 0`.
+
+`LaurentPolynomial.C`, `LaurentPolynomial.T`, and standard `2 × 2` matrix notation encode
+the parent exactly. `BG-PROJECTION-THM-001` verifies its square directly. For the
+unit-circle bridge, Mathlib supplies `LaurentPolynomial.eval₂`,
+`LaurentPolynomial.exists_T_pow`, `Polynomial.eq_zero_of_infinite_isRoot`,
+`Set.Icc_infinite`, and `Circle.exp_injOn_Icc`. `BG-PROJECTION-THM-003` composes these to
+prove the exact Laurent-evaluation injectivity needed by the paper proof. The remaining
+projector identities use only matrix/scalar ring algebra and the already proved parent
+square. No Physlib API is needed, no new dependency is adopted, and these declarations are
+not proposed upstream in the current work.
+
 ## LeanCondensedMatter source inspection
 
 `naoki-cpp/LeanCondensedMatter` was inspected at immutable merge commit

@@ -1,12 +1,12 @@
 # Ragasa2026B paper and proof plan
 
-This plan defines the unimplemented Paper B program.
+This plan defines the partially implemented Paper B program.
 
 - Author: Eugene Joseph M. Ragasa
 - License: Apache-2.0
 - Initial document completed: 2026-10-19
 
-This is a proposed program. The Paper B Lean namespace is a zero-statement metadata placeholder.
+This is a proposed program. The Paper B Lean namespace remains a zero-statement metadata placeholder. The first analytic proposition is proved in the reusable `BandGauge/Projection` module; later analytic and computational claims remain planned.
 
 ## Source
 
@@ -81,11 +81,12 @@ Implemented reusable support:
 - source-neutral complete finite metric shells with nesting, tie retention, conditional inversion and
   symmetry closure, attained-radius enumeration, no-skipped-shell semantics, and exact square,
   triangular, simple-cubic, and normalized FCC reduced-coordinate indices; and
-- rank-two spectral/operator loss geometry.
+- rank-two spectral/operator loss geometry; and
+- the exact source-specific two-band projection counterexample, implemented as
+  `BG-PROJECTION-DEF-001` through `011` and `BG-PROJECTION-THM-001` through `008`.
 
 Missing support:
 
-- source-specific spectral projection and support-destruction theorem;
 - special-function coefficient and tail theorems;
 - owner-specific external inventory, symmetry-action, cap, and physical-range bindings;
 - exact objective-table schema and external coverage proof; and
@@ -110,8 +111,10 @@ Plots and interpolated landscapes are derived views, not the decision record.
 
 The work starts with statement and support conventions.
 
-1. Freeze the exact paper statements and support convention.
-2. Formalize projection-induced nonlocality in a reusable module.
+1. Freeze the exact paper statements and support convention. The first proposition's
+   Laurent/unit-circle convention is frozen; later claim conventions remain open.
+2. Formalize projection-induced nonlocality in a reusable module. Completed for the exact
+   two-band source proposition as `BG-PROJECTION-THM-008`.
 3. Prove the source coefficient and tail bounds.
 4. Freeze the owner-side exhaustive table schema.
 5. Independently verify one retained table.
@@ -119,4 +122,4 @@ The work starts with statement and support conventions.
 
 ## Nonclaims
 
-No current declaration proves the Paper B thesis, a concrete minimum shell, a complete runtime table, continuum convergence, material applicability, novelty, release, or publication readiness.
+No current declaration proves the full Paper B thesis, a concrete minimum shell, a complete runtime table, continuum convergence, material applicability, novelty, release, or publication readiness. `BG-PROJECTION-THM-008` proves only the exact first analytic counterexample under its stated source assumptions.

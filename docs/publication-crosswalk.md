@@ -28,11 +28,11 @@ The ledger labels dispersive homotopy, finite-mesh hopping, truncation, and rang
 
 ## Ragasa2026B ↔ `Ragasa2026b/v2`
 
-Primary source: `manuscript.tex`; v2 says it preserves v1 mathematics and scope. Formal target: `ProjectKoios.BandGauge.Papers.Ragasa2026B.placeholder`. The proposed scientific, evidence, and semantic proof-dependency plan is [`BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md); it does not instantiate the placeholder.
+Primary source: `manuscript.tex`; v2 says it preserves v1 mathematics and scope. The Paper B namespace target remains `ProjectKoios.BandGauge.Papers.Ragasa2026B.placeholder`; the first source proposition is instead proved in the reusable projection module. The proposed scientific, evidence, and semantic proof-dependency plan is [`BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md`](BandGauge/Papers/Ragasa2026B/paper-and-proof-plan.md). Neither the reusable theorem nor the plan instantiates the paper placeholder or completes later Paper B claims.
 
 | Publication declaration/location | Source status | Lean status |
 |---|---|---|
-| “Spectral projection can destroy finite hopping support,” `manuscript.tex:316` | proposition with paper proof in Appendix A | placeholder; no statement |
+| “Spectral projection can destroy finite hopping support,” `manuscript.tex:316–340`; proof `appendix_proofs.tex:11–28` | proposition with paper proof in Appendix A | proved exactly by `BG-PROJECTION-THM-008` under the source assumption `Δt ≠ 0`. `BG-PROJECTION-THM-001/002` prove the parent-square and Laurent non-square core; `003/004` prove unit-circle Laurent uniqueness and non-finiteness of the positive dispersion; `005/006` verify the lower-band projector specification and `P₋HP₋=(H-dI)/2`; and `007` proves the matrix-valued non-finite-Fourier conclusion. The reusable projection module owns the result, so the Paper B namespace remains metadata-only and later paper results remain open. |
 | “Multidimensional flat-parent residual--locality identity,” `manuscript.tex:410` | theorem for stated `d ∈ {2,3}`, flat-parent, rotation, and amplitude assumptions | placeholder; no statement |
 | “Shell-resolved coefficients and factorial Fourier-tail bound,” `manuscript.tex:450` | theorem with explicit shell-cap premise and paper proof | placeholder; no statement |
 | “Monotonicity and the small-amplitude dimension law,” `manuscript.tex:507` | corollary under the orthogonal flat-parent assumptions | placeholder; no statement |
