@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-19
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.FiniteParseval
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Parseval
 public import Mathlib.Analysis.Complex.Norm
 public import Mathlib.Data.Matrix.Basic
 
@@ -27,7 +27,7 @@ proved.  No bounded-operator norm, physical shell, external mesh, or continuum c
 open scoped BigOperators
 open Fintype (card)
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 variable {G m n : Type*} [AddCommGroup G] [Fintype G] [DecidableEq G]
   [Fintype m] [Fintype n]
@@ -130,4 +130,4 @@ theorem finiteMatrixFrobeniusTruncationResidual_parseval
           intro mode hmode
           exact heq mode hmode
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.FiniteAbelian

@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-19
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.FiniteParseval
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Parseval
 public import Mathlib.LinearAlgebra.Matrix.ConjTranspose
 
 /-!
@@ -26,7 +26,7 @@ that a support is a complete metric shell, or establish an external publication 
 open scoped BigOperators ComplexConjugate Matrix
 open Fintype (card)
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 variable {G n : Type*} [AddCommGroup G] [Fintype G] [DecidableEq G]
 
@@ -104,4 +104,4 @@ theorem truncatedFiniteFourierReconstruction_conjTranspose_eq_self
   intro mode
   exact truncateCoefficients_neg_eq_conjTranspose support hclosed coefficients hpair mode
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.FiniteAbelian

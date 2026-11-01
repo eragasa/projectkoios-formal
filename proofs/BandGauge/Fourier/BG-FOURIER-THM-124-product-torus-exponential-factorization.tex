@@ -20,8 +20,8 @@
 \toprule
 Statement ID & \texttt{BG-FOURIER-THM-124} \\
 Status & proved; no admissions \\
-Lean declaration & \path{ProjectKoios.BandGauge.Fourier.normalizedProductTorusAverage_exp_separablePhase} \\
-Owning module & \path{ProjectKoios/BandGauge/Fourier/NormalizedProductTorus.lean} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.Torus.normalizedProductTorusAverage_exp_separablePhase} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/Torus/NormalizedProduct.lean} \\
 Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
 \bottomrule
 \end{tabularx}
@@ -54,6 +54,8 @@ The Formal base is PR~\#44 merge commit
 \texttt{a9d7a1fb58123cbeeb8e8474b6e8b54d847d59a962945fe09db3f84a42c746c8}.
 No topic commit is claimed before checkpoint authorization.
 
+The recorded module hash authenticates the historical pre-hierarchy source bytes at the stated base. The current declaration and module locator are recorded in \texttt{docs/migrations/fourier-domain-hierarchy.md}.
+
 \section{Assumptions and conventions}
 The coordinate type is finite. Every coordinate carrier is Mathlib's \texttt{UnitAddCircle}; every
 coordinate measure is its standard total-mass-one Haar measure; and the joint measure is
@@ -80,7 +82,7 @@ identity from \path{Mathlib/MeasureTheory/Integral/Pi.lean}, lines 105--112. Too
 \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
 \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
 \begin{verbatim}
-#print axioms ProjectKoios.BandGauge.Fourier.
+#print axioms ProjectKoios.BandGauge.Fourier.Torus.
   normalizedProductTorusAverage_exp_separablePhase
 -- [propext, Classical.choice, Quot.sound]
 \end{verbatim}

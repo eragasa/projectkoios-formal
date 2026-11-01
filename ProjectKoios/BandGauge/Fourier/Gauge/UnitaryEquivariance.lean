@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-26
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.MatrixFrobenius
 public import Mathlib.LinearAlgebra.Matrix.Trace
 public import Mathlib.LinearAlgebra.UnitaryGroup
 
@@ -27,7 +27,9 @@ matrix, mesh, hopping inventory, quadrature, or physical gauge.
 
 open scoped BigOperators ComplexConjugate Matrix
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Gauge
+
+open ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 variable {G ι : Type*} [AddCommGroup G] [Fintype G] [DecidableEq G]
   [Fintype ι] [DecidableEq ι]
@@ -271,4 +273,4 @@ theorem finiteFourierTruncationResidual_fixedUnitaryConjugation
     truncatedFiniteFourierReconstruction_fixedUnitaryConjugation]
   exact (map_sub (fixedUnitaryConjugation U) _ _).symm
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Gauge

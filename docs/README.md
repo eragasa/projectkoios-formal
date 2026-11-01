@@ -50,6 +50,10 @@ Planning files organize work without changing formal status.
 - `papers/`: Formal-owned, publication-quality proof companions and their publication boundaries.
 - `SolidState/TightBinding/vogl-sp3s-star-formalization.md`: Vogl exact-algebra scope.
 
+## Structural migrations
+
+- `migrations/fourier-domain-hierarchy.md`: complete stable-ID crosswalk from the former flat Fourier namespace to the `FiniteAbelian`, `Gauge`, `Support`, `Torus`, and `Residual` families.
+
 ## Related indexes
 
 These indexes point to explanatory material.

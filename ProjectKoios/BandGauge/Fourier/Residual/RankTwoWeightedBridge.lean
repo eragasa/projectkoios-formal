@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-19
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.MatrixFrobenius
 public import ProjectKoios.BandGauge.Hilbert.WeightedFrobenius
 
 /-!
@@ -29,7 +29,9 @@ accepted by these declarations.
 open scoped BigOperators
 open Fintype (card)
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Residual
+
+open ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 open ProjectKoios.BandGauge.Hilbert
 
@@ -91,4 +93,4 @@ theorem uniformRankTwoWeightedFrobeniusTruncationResidual_eq
   have hcard : (card G : ℝ) ≠ 0 := by exact_mod_cast Fintype.card_ne_zero
   field_simp
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Residual

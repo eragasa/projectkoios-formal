@@ -23,8 +23,8 @@
 \toprule
 Statement ID & \texttt{BG-FOURIER-THM-081} \\
 Status & proved; no admissions \\
-Lean declaration & \path{ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.negativeNyquistRemovedSupport_compl} \\
-Owning module & \path{ProjectKoios/BandGauge/Fourier/CenteredEvenMesh.lean} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.Support.CenteredEvenMesh.negativeNyquistRemovedSupport_compl} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/Support/CenteredEvenMesh.lean} \\
 Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
 \bottomrule
 \end{tabularx}
@@ -52,6 +52,8 @@ The declaration first entered Formal at commit
 at \texttt{ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5}.  The module SHA-256 is
 \texttt{ce13025abea15f70a6754cccf9568984150223d90c28bb62c071875fae223aca}.
 The exact locator is the declaration tagged \texttt{BG-FOURIER-THM-081} in the module above.
+
+The recorded module hash authenticates the historical pre-hierarchy source bytes at the stated base. The current declaration and module locator are recorded in \texttt{docs/migrations/fourier-domain-hierarchy.md}.
 
 The motivating owner inspection used the read-only KSD PR~\#80 merge
 \texttt{d8e7d1db3eaf16332e691427fb9d5949325badd6}, tree
@@ -106,7 +108,7 @@ It was checked with Lean \texttt{4.35.0} (commit
 \section{Trusted base and axiom report}
 \begin{verbatim}
 #print axioms
-  ProjectKoios.BandGauge.Fourier.CenteredEvenMesh.
+  ProjectKoios.BandGauge.Fourier.Support.CenteredEvenMesh.
     negativeNyquistRemovedSupport_compl
 -- [propext, Classical.choice, Quot.sound]
 \end{verbatim}

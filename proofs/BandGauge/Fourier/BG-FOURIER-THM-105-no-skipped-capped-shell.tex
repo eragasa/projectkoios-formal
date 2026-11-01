@@ -20,8 +20,8 @@
 \toprule
 Statement ID & \texttt{BG-FOURIER-THM-105} \\
 Status & proved; no admissions \\
-Lean declaration & \path{ProjectKoios.BandGauge.Fourier.exists_attainedMetricRadiusThrough_of_shell_ne} \\
-Owning module & \path{ProjectKoios/BandGauge/Fourier/MetricShellSupport.lean} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.Support.exists_attainedMetricRadiusThrough_of_shell_ne} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/Support/MetricShell.lean} \\
 Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
 \bottomrule
 \end{tabularx}
@@ -55,6 +55,8 @@ The Formal base is PR~\#42 merge commit
 starts at \texttt{MetricShellSupport.lean:234}. No topic commit is claimed before checkpoint
 authorization.
 
+The recorded module hash authenticates the historical pre-hierarchy source bytes at the stated base. The current declaration and module locator are recorded in \texttt{docs/migrations/fourier-domain-hierarchy.md}.
+
 \section{Assumptions and conventions}
 The theorem assumes one finite inventory, one exact radius function, ordered cutoffs
 $S\le T\le C$, and an actual inequality of the two exact supports. It does not assume that every
@@ -73,7 +75,7 @@ its membership theorem, and closes the cap inequality by transitivity. Toolchain
 \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
 \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
 \begin{verbatim}
-#print axioms ProjectKoios.BandGauge.Fourier.
+#print axioms ProjectKoios.BandGauge.Fourier.Support.
   exists_attainedMetricRadiusThrough_of_shell_ne
 -- [propext, Classical.choice, Quot.sound]
 \end{verbatim}

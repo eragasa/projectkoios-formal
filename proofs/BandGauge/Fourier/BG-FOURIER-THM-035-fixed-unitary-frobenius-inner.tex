@@ -26,8 +26,8 @@
 \toprule
 Statement ID & \texttt{BG-FOURIER-THM-035} \\
 Status & proved; no admissions \\
-Lean declaration & \path{ProjectKoios.BandGauge.Fourier.matrixFrobeniusInner_fixedUnitaryConjugation} \\
-Owning module & \path{ProjectKoios/BandGauge/Fourier/UnitaryEquivariance.lean} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.Gauge.matrixFrobeniusInner_fixedUnitaryConjugation} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/Gauge/UnitaryEquivariance.lean} \\
 Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
 \bottomrule
 \end{tabularx}
@@ -45,6 +45,8 @@ The declaration was introduced at Formal commit
 \texttt{265fb7cb1a0b448cf3d069d4c1de9e5af1a912f8}.  It is present at the dossier base
 \texttt{d1cc9d5f6ed5b5b1cc8e34ad69b3d40d3104c3f4}.  The owning module SHA-256 is
 \texttt{bd6343b72f8448e789f94fd1efd6187f4ed4f6163c35c5a6a18b505503ee78d9}; the exact locator is \texttt{BG-FOURIER-THM-035}.
+
+The recorded module hash authenticates the historical pre-hierarchy source bytes at the stated base. The current declaration and module locator are recorded in \texttt{docs/migrations/fourier-domain-hierarchy.md}.
 
 The declaration is source-neutral finite Fourier and matrix algebra.  It supplies a reusable exact boundary and does not formalize a runtime FFT, mesh, gauge-selection algorithm, or physical locality claim.
 
@@ -69,7 +71,7 @@ The proof uses \texttt{matrixFrobeniusInner\_eq\_trace}, trace cyclicity, conjug
 \section{Trusted base and axiom report}
 \begin{verbatim}
 #print axioms
-  ProjectKoios.BandGauge.Fourier.
+  ProjectKoios.BandGauge.Fourier.Gauge.
     matrixFrobeniusInner_fixedUnitaryConjugation
 -- [propext, Classical.choice, Quot.sound]
 \end{verbatim}

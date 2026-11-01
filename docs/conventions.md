@@ -29,6 +29,10 @@ IDs classify declarations without changing status.
 - `LEM`: supporting identity or intermediate result.
 - `THM`: principal theorem.
 - Existing IDs are append-only; a changed proposition receives a new ID.
+- The hierarchical Fourier migration retains historical `BG-FOURIER-DEF-*` and
+  `BG-FOURIER-THM-*` IDs. New declarations use family-scoped streams:
+  `BG-FOURIER-FINITE-*`, `BG-FOURIER-GAUGE-*`, `BG-FOURIER-SUPPORT-*`,
+  `BG-FOURIER-TORUS-*`, or `BG-FOURIER-RESIDUAL-*`.
 
 ## Comparison discipline
 

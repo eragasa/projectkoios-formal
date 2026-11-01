@@ -117,5 +117,5 @@ The source-neutral product-mesh tranche passed its declared Lean gates.
 - `./scripts/audit.sh`: passed with 847 proved theorem/lemma rows and 851 unique named axiom reports; the scan found no repository-owned admitted declaration marker.
 - The new module defines six witness objects (`BG-FOURIER-DEF-059`--`064`) and proves 26 declarations (`BG-FOURIER-THM-134`--`159`), including generic finite-product results and explicit `Fin 2` and `Fin 3` specializations.
 - All 26 new named reports use only `propext`, `Classical.choice`, and `Quot.sound`.
-- `ProjectKoios/BandGauge/Fourier/ProductGaugeLocalitySeparation.lean` has SHA-256 `709237449b6ddbcb6fce3e2ab83bc9b09ffe2cb392ecff6f0f23ea9e5f2a21a9`.
+- At that historical tranche, `ProjectKoios/BandGauge/Fourier/ProductGaugeLocalitySeparation.lean` had SHA-256 `709237449b6ddbcb6fce3e2ab83bc9b09ffe2cb392ecff6f0f23ea9e5f2a21a9`; the later hierarchy migration is recorded separately and does not rewrite this historical byte identity.
 - The exact finite identities do not authenticate an external torus coordinate or gauge, a runtime mesh or comparator, quadrature, finite-mesh approximation, physical hopping range, finite-to-continuum convergence, or scientific adequacy.

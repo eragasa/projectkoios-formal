@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-27
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.UnitaryEquivariance
+public import ProjectKoios.BandGauge.Fourier.Gauge.UnitaryEquivariance
 
 /-!
 # Pointwise gauges and finite Fourier modes
@@ -26,7 +26,9 @@ bind runtime arrays, or assign physical locality to a Fourier coefficient.
 
 open scoped BigOperators ComplexConjugate Matrix
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Gauge
+
+open ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 variable {G V ι : Type*} [AddCommGroup G] [Fintype G] [DecidableEq G]
 
@@ -161,4 +163,4 @@ theorem weightedFiniteMatrixFrobeniusPower_pointwiseUnitaryConjugation
 
 end Matrix
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Gauge

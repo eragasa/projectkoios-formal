@@ -32,7 +32,7 @@ open MeasureTheory
 
 @[expose] public section
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Torus
 
 /-- `BG-FOURIER-DEF-052`: the normalized finite product torus indexed by `Dimension`.
 Each coordinate is the unit additive circle. -/
@@ -161,4 +161,4 @@ theorem normalizedProductTorusAverage_exp_finThree_eq_cube
   simpa using
     (normalizedProductTorusAverage_exp_samePhase_eq_pow (Dimension := Fin 3) phase)
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Torus

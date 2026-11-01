@@ -231,7 +231,7 @@ identification of the even coefficients with Mathlib's regularized-hypergeometri
 Apache-2.0 provenance in its source header. `LeanCondensedMatter` is not added as a dependency, and
 no unrelated transport, condensed-matter, or project-specific API is copied.
 
-`ProjectKoios/BandGauge/Fourier/NormalizedCircleBessel.lean` is a separately owned thin bridge. It
+`ProjectKoios/BandGauge/Fourier/Torus/NormalizedCircleBessel.lean` is a separately owned thin bridge. It
 fixes the carrier to `UnitAddCircle`, its standard Haar probability measure, the period-one
 coordinate `sin(2πx)`, positive phase `i b sin(2πx)`, and no extra `2π` in `b`. It proves the
 normalized one-circle identity and exact finite-product powers, including source-neutral 2-D

@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-31
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.NormalizedProductTorus
+public import ProjectKoios.BandGauge.Fourier.Torus.NormalizedProduct
 public import ProjectKoios.BandGauge.SpecialFunctions.BesselJZeroIntegral
 public import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
@@ -28,7 +28,7 @@ open scoped MeasureTheory
 
 @[expose] public section
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Torus
 
 /-- `BG-FOURIER-DEF-057`: the sine coordinate on the unit additive circle induced by its standard
 map to the complex unit circle. For a real representative `x`, this is `sin (2πx)`. -/
@@ -147,4 +147,4 @@ theorem normalizedProductTorusAverage_exp_finThree_twoThirdsSinePhase_eq_besselJ
   exact normalizedProductTorusAverage_exp_finThree_sameSinePhase_eq_besselJZero_cube
     (2 * amplitude / 3)
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Torus

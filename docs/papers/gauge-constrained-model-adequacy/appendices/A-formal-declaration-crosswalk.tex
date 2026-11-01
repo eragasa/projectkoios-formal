@@ -177,18 +177,18 @@ nonempty finite-inventory interpretation.
 Declaration range & Source module & Mathematical role \\
 \midrule
 \decl{BG-FOURIER-THM-033--047}
-  & \modulepath{ProjectKoios/BandGauge/Fourier/UnitaryEquivariance.lean}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/Gauge/UnitaryEquivariance.lean}
   & fixed-unitary preservation and commutation with the finite Fourier and truncation
     constructions \\
 \decl{BG-FOURIER-THM-048--054}
-  & \modulepath{ProjectKoios/BandGauge/Fourier/PointwiseGauge.lean}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/Gauge/PointwiseGauge.lean}
   & mode shift, scalar-conjugation boundary, coefficient change, and pointwise
     Frobenius-power preservation \\
 \decl{BG-FOURIER-THM-055--066}
-  & \modulepath{ProjectKoios/BandGauge/Fourier/GaugeTruncationCounterexample.lean}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/Gauge/TruncationCounterexample.lean}
   & exact two-point rank-two gauge--truncation counterexample \\
 \decl{BG-FOURIER-THM-067--075}
-  & \modulepath{ProjectKoios/BandGauge/Fourier/ResidualChannels.lean}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/Residual/Channels.lean}
   & deliberate-truncation residual, omitted power, root-mean-square identities, and
     pointwise and finite-maximum bounds \\
 \bottomrule
@@ -201,13 +201,13 @@ The key declarations for Theorem~\ref{thm:two-point-gauge-truncation} are:
 
 \begin{description}
   \item[\decl{BG-FOURIER-THM-062}.]
-    \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient};
+    \path{ProjectKoios.BandGauge.Fourier.Gauge.pointwiseSwapConjugation_odd_coefficient};
     dossier \modulepath{BG-FOURIER-THM-062-gauged-odd-coefficient.tex}.
   \item[\decl{BG-FOURIER-THM-064}.]
-    \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_odd_coefficient_ne_zero};
+    \path{ProjectKoios.BandGauge.Fourier.Gauge.pointwiseSwapConjugation_odd_coefficient_ne_zero};
     dossier \modulepath{BG-FOURIER-THM-064-gauged-odd-mode-nonzero.tex}.
   \item[\decl{BG-FOURIER-THM-066}.]
-    \path{ProjectKoios.BandGauge.Fourier.pointwiseSwapConjugation_zeroModeFourierTruncation_ne};
+    \path{ProjectKoios.BandGauge.Fourier.Gauge.pointwiseSwapConjugation_zeroModeFourierTruncation_ne};
     dossier \modulepath{BG-FOURIER-THM-066-gauge-truncation-noncommutation.tex}.
 \end{description}
 
@@ -215,23 +215,23 @@ The declaration sequence for Theorem~\ref{thm:finite-fourier-tail-bounds} is:
 
 \begin{description}
   \item[\decl{BG-FOURIER-THM-067}.]
-    \path{ProjectKoios.BandGauge.Fourier.truncationResidual_fourierReconstruction_eq}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.truncationResidual_fourierReconstruction_eq}.
   \item[\decl{BG-FOURIER-THM-068}.]
-    \path{ProjectKoios.BandGauge.Fourier.finiteFourierPower_truncationResidual_eq_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteFourierPower_truncationResidual_eq_omitted}.
   \item[\decl{BG-FOURIER-THM-069}.]
-    \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusPower_truncationResidual_eq_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteMatrixFrobeniusPower_truncationResidual_eq_omitted}.
   \item[\decl{BG-FOURIER-THM-070}.]
-    \path{ProjectKoios.BandGauge.Fourier.finiteRootMeanSquareNorm_truncationResidual_eq_sqrt_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteRootMeanSquareNorm_truncationResidual_eq_sqrt_omitted}.
   \item[\decl{BG-FOURIER-THM-071}.]
-    \path{ProjectKoios.BandGauge.Fourier.finiteRootMeanSquareNorm_truncationResidual_sq_eq_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteRootMeanSquareNorm_truncationResidual_sq_eq_omitted}.
   \item[\decl{BG-FOURIER-THM-072}.]
-    \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_eq_sqrt_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_eq_sqrt_omitted}.
   \item[\decl{BG-FOURIER-THM-073}.]
-    \path{ProjectKoios.BandGauge.Fourier.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_sq_eq_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_sq_eq_omitted}.
   \item[\decl{BG-FOURIER-THM-074}.]
-    \path{ProjectKoios.BandGauge.Fourier.norm_truncationResidual_fourierReconstruction_le_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.norm_truncationResidual_fourierReconstruction_le_omitted}.
   \item[\decl{BG-FOURIER-THM-075}.]
-    \path{ProjectKoios.BandGauge.Fourier.finiteMaximumNorm_truncationResidual_le_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteMaximumNorm_truncationResidual_le_omitted}.
 \end{description}
 
 The dossiers follow the stable filenames

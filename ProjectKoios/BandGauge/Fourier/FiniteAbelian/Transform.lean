@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-19
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Reconstruction
 public import Mathlib.Analysis.Fourier.FiniteAbelian.PontryaginDuality
 
 /-!
@@ -27,7 +27,7 @@ continuum Fourier theorem.
 open scoped BigOperators ComplexConjugate
 open Fintype (card)
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 variable {G V : Type*} [AddCommGroup G] [Fintype G] [DecidableEq G]
 
@@ -77,4 +77,4 @@ theorem finiteFourierReconstruction_coefficients [AddCommMonoid V] [Module ℂ V
   simp_rw [hreorder, ← Finset.mul_sum, finiteCharacterKernel]
   simp
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.FiniteAbelian
