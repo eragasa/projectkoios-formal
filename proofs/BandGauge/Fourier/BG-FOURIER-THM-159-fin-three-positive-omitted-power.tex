@@ -5,9 +5,11 @@
 \documentclass[10pt]{article}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{listings}
 \usepackage[margin=0.75in]{geometry}
 \usepackage[hidelinks]{hyperref}
 \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
 \title{Proof Dossier: Three-Dimensional Gauge--Locality Separation}
 \author{Eugene Joseph M. Ragasa}
 \date{Formal proof completed: 2026-11-01}
@@ -76,11 +78,10 @@ The proof reuses finite Fourier inversion and Parseval, the exact swap-unitary c
 and rank-two unitary band invariance.  Toolchain: Lean \texttt{4.35.0} at
 \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
 \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
-\begin{verbatim}
-#print axioms ProjectKoios.BandGauge.Fourier.
-  finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Fourier.finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos
 -- [propext, Classical.choice, Quot.sound]
-\end{verbatim}
+\end{lstlisting}
 No repository-owned axiom, \texttt{sorry}, or admission occurs.
 
 \section{Evidence and interpretation boundaries}
