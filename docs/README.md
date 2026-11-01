@@ -24,6 +24,12 @@ Policy files define evidence and workflow boundaries.
 - `conventions.md`: required theorem-family conventions.
 - `agent-workflow.md`: bounded development and promotion procedure.
 
+## Derived audit views
+
+Derived audit views inspect existing formal state without changing theorem or evidence status.
+
+- `declaration-dependency-graph.md`: optional non-building graph generation from an already validated compiled audit environment.
+
 ## Architecture and planning
 
 Planning files organize work without changing formal status.

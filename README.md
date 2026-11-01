@@ -43,6 +43,15 @@ lake build
 ./scripts/audit.sh
 ```
 
+Optional dependency-graph generation is non-gating and reuses an already validated Audit artifact:
+
+```console
+./scripts/declaration-dependency-graph.sh
+```
+
+The graph script never builds or refreshes compiled Lake artifacts; it writes only ignored graph
+outputs under `.lake/build/audit/`.
+
 - Reuse `.lake` and immutable dependency materialization.
 - Run `lake update` only for intentional dependency changes.
 - Do not rebuild after staging, committing, or merging a byte-identical tree.
