@@ -1,6 +1,6 @@
 import ProjectKoios.Formal.Authority
 
-/-! Metadata only. No claim from Ragasa2026b is stated or proved here. -/
+/-! Metadata only. No claim from Ragasa2026b is stated or proved in this paper namespace. -/
 
 namespace ProjectKoios.BandGauge.Papers.Ragasa2026B
 
@@ -15,6 +15,6 @@ def placeholder : PublicationPlaceholder where
   formalStatementCount := 0
   provedScientificTheoremCount := 0
   checkedCertificateCount := 0
-  warning := "PLACEHOLDER ONLY: publication prose and proofs have not been encoded in Lean."
+  warning := "PAPER-NAMESPACE PLACEHOLDER ONLY: the reusable projection module proves the first Paper B proposition, but no Paper B declaration is instantiated here and later Paper B claims remain open."
 
 end ProjectKoios.BandGauge.Papers.Ragasa2026B

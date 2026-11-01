@@ -1,0 +1,105 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-01
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{listings}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: Three-Dimensional Gauge--Locality Separation}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-01}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOURIER-THM-159} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/ProductGaugeLocalitySeparation.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $G=(\mathbb Z/2\mathbb Z)^3$, let $P_0=\operatorname{diag}(1,0)$, and let
+$H(k)=P_0$.  On the first momentum coordinate, define $U(k)$ to be the identity when
+$k_0=0$ and the coordinate-swap matrix when $k_0\ne0$.  Put
+$H_U(k)=U(k)^\dagger H(k)U(k)$.  For the repository's normalized finite Fourier transform,
+\[
+ \sum_{\chi\notin\{0\}}\sum_{i,j=0}^{1}
+   \left\lVert\widehat{H_U}(\chi)_{ij}\right\rVert^2>0.
+\]
+This is the exact omitted matrix-Frobenius power after retaining only the trivial character.
+
+\section{Supporting separation statements}
+The same witness has exact pointwise lower- and upper-band equality
+(\texttt{BG-FOURIER-THM-157}), while gauge conjugation and zero-mode truncation do not commute
+(\texttt{BG-FOURIER-THM-158}).  The generic theorem
+\texttt{BG-FOURIER-THM-150} also gives exact full Fourier reconstruction.  Thus the formal
+separation is between pointwise ordered-band equality and finite Fourier locality, not between
+spectra.
+
+\section{Source relation and immutable identity}
+This is source-neutral finite mathematics extending the repository's exact two-point witness
+\texttt{BG-FOURIER-THM-066}.  It is not copied from, bound to, or asserted as a certificate for a
+KSD execution.  The Formal base is merge commit
+\texttt{8f1629b9cc7646e4806a9c8b0ec047d526a5dc32}, tree
+\texttt{56b3699f537ce6c14b02db524941c576dc854e1d}.  At dossier preparation, the module SHA-256 is
+\texttt{709237449b6ddbcb6fce3e2ab83bc9b09ffe2cb392ecff6f0f23ea9e5f2a21a9}.
+No topic commit is claimed before separate checkpoint authorization.
+
+\section{Assumptions and conventions}
+The momentum group is exactly \texttt{Fin 3 $\to$ ZMod 2}.  The selected coordinate is zero.
+The fiber is the exact complex $2\times2$ matrix carrier.  Forward coefficients use the
+repository's factor $1/|G|$ and conjugated additive characters; reconstruction is unnormalized.
+The retained support is exactly the singleton trivial character.  Frobenius power is the finite
+sum of entrywise squared complex norms.
+
+\section{Proof structure}
+The constant field is fixed by zero-mode truncation.  At all-zero momentum the varying gauge is the
+identity, whereas at the momentum supported on the selected coordinate it is the swap; the gauged
+field therefore takes the two distinct coordinate-projector values.  Hence zero-mode truncation
+cannot commute with pointwise gauge conjugation, and the resulting truncation residual is nonzero.
+A nonzero finite matrix field has strictly positive entrywise Frobenius power.  Exact finite matrix
+Parseval identifies that residual power with $|G|$ times omitted coefficient power.  Since
+$|G|>0$, the omitted power is strictly positive.  The proof is dimension-parametric; this theorem
+freezes the explicit three-dimensional carrier.
+
+\section{Lean realization and trusted base}
+The proof reuses finite Fourier inversion and Parseval, the exact swap-unitary conjugation identity,
+and rank-two unitary band invariance.  Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Fourier.finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+No repository-owned axiom, \texttt{sorry}, or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+The theorem does not authenticate a runtime mesh, array, gauge, frame, eigensolver, Fourier
+implementation, support inventory, tolerance, quadrature rule, artifact, or hash.  It does not
+identify the binary product mesh with a Brillouin zone, turn omitted power into a physical hopping
+range, prove finite-to-continuum convergence, or establish model adequacy, material validity, or a
+scientific conclusion.  The checked runtime-certificate count remains zero.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and kernel-checked in maintainer context.  This is not
+independent mathematical, numerical, scientific, novelty, or publication review.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule
+2026-11-01 & initial dossier & AI-assisted maintainer review & exact finite theorem proved; external/runtime binding and independent patch review remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

@@ -54,6 +54,7 @@ Status: generic foundations implemented.
 - Exact reference/interpolation/conversion/deliberate-truncation residual decomposition with pointwise, finite-maximum, and finite root-mean-square triangle bounds, plus exact Hilbert and explicit matrix-Frobenius power and root-mean-square Fourier-tail identities and pointwise and finite-maximum ambient-norm tail bounds for the deliberate-truncation channel.
 - Exact character-phase mode shifts, trivial pointwise scalar-operator conjugation, coefficient separation, and pointwise-unitary Frobenius invariance.
 - An explicit rank-two `ZMod 2` witness in which a pointwise swap gauge creates the odd coefficient `diag(1/2,-1/2)` and does not commute with zero-mode truncation.
+- An arbitrary-finite-dimensional binary product-mesh lift, with explicit 2-D and 3-D cases, in which exact pointwise Hermiticity and ordered-band equality coexist with exact full Fourier reconstruction, zero-mode-truncation noncommutation, and strictly positive omitted matrix-Frobenius power.
 - Rectangular complex frames, ambient projectors, compression/reconstruction, and right-unitary retained-coordinate covariance.
 - Exact complex-unitary right Procrustes algebra for `‖candidate * gauge - reference‖_F²`, including the cross matrix `candidateᴴ * reference`, Frobenius/trace expansion, polar-witness global minimality, and uniqueness under an explicit positive-definite factor; no runtime SVD, rank, tolerance, or rank-deficient completion is authenticated.
 - A finite-mesh Procrustes hierarchy that sums local objectives, lifts one supplied polar witness per point to pointwise and global minimality, requires positive definiteness at every point for summed uniqueness, compares against constant and identity fields, proves exact known-inverse zero-objective controls, and embeds unitary matrices into the abstract identity/global/complete alignment families; no mesh, runtime witness, optimizer, or certificate is authenticated.
@@ -83,6 +84,14 @@ Open:
 - concrete Paper B/C tables; and
 - concrete owner-specific error-channel taxonomies and compatibility inventories, verified structural-requirement contracts, heterogeneous candidate-carrier embeddings, cross-gauge stability bridges, and proposition-specific certificate bindings;
 - runtime-bound cutoff inventories and later Wannier90 layers.
+
+The first Ragasa2026b projection proposition is completed as
+`BG-PROJECTION-DEF-001` through `011` and `BG-PROJECTION-THM-001` through `008`. The proof
+encodes the nearest-neighbor Laurent parent, verifies its scalar square, proves the
+source-assumption Laurent square-root obstruction, establishes unit-circle Laurent
+uniqueness, verifies the lower-band projector and sandwich identity, and derives the final
+matrix-valued non-finite-support conclusion. Later projection questions—quantitative decay,
+higher rank, multidimensional parents, and general preservation criteria—remain open.
 
 ## R3 — continuum Fourier analysis
 
@@ -126,7 +135,7 @@ Open:
 
 ## R5 — publication instantiation
 
-Status: Paper A has conditional bridges and one exact analytic construction; Papers B/C remain placeholders.
+Status: Paper A has conditional bridges and one exact analytic construction; the Paper B namespace remains a placeholder while its first proposition is proved in the reusable projection module; Paper C remains a placeholder.
 
 - Keep reusable theorems in semantic modules.
 - Keep runtime evidence, source fidelity, formal status, applicability, and publication status separate.

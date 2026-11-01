@@ -1,0 +1,196 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,
+  literate={ℝ}{{$\mathbb R$}}1 {ℂ}{{$\mathbb C$}}1 {¬}{{$\neg$}}1
+           {∃}{{$\exists$}}1 {≠}{{$\ne$}}1}
+\newcommand{\StatementID}{BG-PROJECTION-THM-002}
+\newcommand{\LeanDeclaration}{ProjectKoios.BandGauge.Projection.twoBandLaurentRadicand\_not\_sq}
+\title{Project Koios Formal Proof Dossier\\\large Laurent Square-Root Obstruction for the Two-Band Radicand}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}
+\sloppy
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \path{BG-PROJECTION-THM-002} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Projection.twoBandLaurentRadicand_not_sq} \\
+Owning module & \path{ProjectKoios/BandGauge/Projection/LaurentObstruction.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+Formal proof completed & 2026-10-20 \\
+\bottomrule\end{tabularx}
+
+This status applies only to the exact Laurent-polynomial non-square theorem below. The
+complete publication proposition is proved separately by \path{BG-PROJECTION-THM-008}.
+
+\section{Exact mathematical statement}
+For $\Delta,t\in\mathbb R$ with $\Delta t\ne0$, define
+\[
+ r(z)=\Delta^2+2t^2+t^2z+t^2z^{-1}\in\mathbb C[z,z^{-1}].
+\]
+Then no $f\in\mathbb C[z,z^{-1}]$ satisfies $f^2=r$:
+\[
+ \neg\,\exists f\in\mathbb C[z,z^{-1}],\qquad f(z)^2=r(z).
+\]
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Owner repository & \texttt{ksdft2effmass} \\
+Navigation branch & \texttt{work/paper-3-higher-rank-extension} \\
+Immutable commit & \path{99a46cb59d0c6f27ada7d709f194996ef9619d9f} \\
+Statement path and locator & \path{docs/publications/papers/Ragasa2026b/v2/manuscript.tex:316--340} \\
+Proof path and locator & \path{docs/publications/papers/Ragasa2026b/v2/appendix_proofs.tex:11--24} \\
+Statement SHA-256 & \path{d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf} \\
+Proof SHA-256 & \path{614fad3426a941a9a1c5ad4c73ca917b55007b525a1a3a76970d5d7df5af7d19} \\
+Dirty-state limitation & cited bytes are the clean immutable commit recorded by the owner-source audit \\
+\bottomrule\end{tabularx}
+
+The declaration \emph{formalizes} the Laurent-polynomial contradiction in the appendix.
+It does not formalize the preceding implication from a finite Fourier function on the
+unit circle to a Laurent-polynomial identity.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}XXX@{}}\toprule
+Source assumption or convention & Lean encoding & Delta or limitation \\
+\midrule
+$\Delta t\ne0$ & exact real premise \texttt{gap * hopping != 0} & preserved exactly \\
+Finite Fourier expression in $z=e^{ik}$ & finite-support
+\texttt{LaurentPolynomial $\mathbb C$} indexed by $\mathbb Z$ & this theorem begins only
+after the Laurent identity has been obtained \\
+Right-hand support $\{-1,0,1\}$ & exact three-term Laurent definition & only the
+positive extreme is used by the Lean contradiction \\
+Complex coefficients for a hypothetical square root &
+\texttt{f : LaurentPolynomial $\mathbb C$} & matches the stronger complex-coefficient
+possibility, hence also excludes real coefficients \\
+Source proof mentions smallest and largest exponents & Lean proof uses the largest
+exponent and the nonzero coefficient at exponent $1$ & same conclusion and source
+assumption; no omitted case \\
+\bottomrule\end{tabularx}
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}\toprule
+Relation & Canonical identity & Locator & Role and caveat \\
+\midrule
+formalizes & owner source above; canonical literature identity unresolved &
+\path{appendix_proofs.tex:11--24} & supplies the stated extreme-support argument \\
+background-only & unresolved & unverified & finite-support convolution and parity are
+standard algebra; no novelty or priority claim is made \\
+\bottomrule\end{tabularx}
+
+The References owner has not supplied an accepted external prior-art identity for this
+specific elementary obstruction. A bounded search or absence of a citation would not
+establish originality.
+
+\section{Motivation and contribution boundary}
+The theorem isolates the exact algebraic obstruction behind the source counterexample:
+a Laurent square has an even largest exponent, whereas the radicand has a nonzero term at
+exponent $1$ and no terms above it. The contribution here is a traceable, kernel-checked
+encoding of that argument, not a claim that the algebraic idea is new.
+
+\section{Proof schematic}
+\[
+\boxed{f^2=r,\ \Delta t\ne0}
+\Longrightarrow
+\boxed{[z^1]r=t^2\ne0\ \Longrightarrow\ 1\in\operatorname{supp}(f^2)}
+\Longrightarrow
+\boxed{1\le2n,\quad n=\max\operatorname{supp}(f)}
+\]
+\[
+\boxed{[z^{2n}]f^2=([z^n]f)^2\ne0}
+\Longrightarrow
+\boxed{2n\le1}
+\Longrightarrow
+\boxed{2n=1}
+\Longrightarrow\bot.
+\]
+The second boxed implication uses that every coefficient of $r$ above exponent $1$ is
+zero. The last contradiction is integer parity.
+
+\section{Human-readable mathematical argument}
+Assume that $f^2=r$. Since $\Delta t\ne0$, in particular $t\ne0$, and the coefficient
+of $z^1$ in $r$ is $t^2\ne0$. Thus $f$ is nonzero. Let $n$ be the largest exponent with
+nonzero coefficient in $f$.
+
+Because the coefficient of $z^1$ in $f^2$ is nonzero, the convolution-support inclusion
+provides exponents $a,b$ in the support of $f$ with $a+b=1$. Both are at most $n$, so
+$1\le2n$.
+
+At exponent $2n$, the only support pair that can contribute to the convolution is
+$(n,n)$: if $x<n$ then $2n-x>n$ and its coefficient vanishes. Hence
+$[z^{2n}]f^2=([z^n]f)^2\ne0$. But $r$ has no nonzero coefficient above exponent $1$,
+so $2n\le1$. Combining the inequalities gives $2n=1$, impossible for an integer $n$.
+Therefore no such Laurent polynomial exists.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem twoBandLaurentRadicand_not_sq
+    (gap hopping : ℝ) (gap_mul_hopping_ne : gap * hopping ≠ 0) :
+    ¬ ∃ f : LaurentPolynomial ℂ,
+      f ^ 2 = twoBandLaurentRadicand gap hopping
+\end{lstlisting}
+The private implementation lemma computes the extreme convolution coefficient. The main
+proof uses \texttt{support\_coeff\_mul\_subset}, finite-support maximum lemmas, and exact
+integer arithmetic.
+
+\noindent
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Lean toolchain & Lean 4.35.0 \\
+Mathlib revision & \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Additional dependencies & none; Physlib not adopted \\
+Principal imports & Laurent polynomials and add-monoid-algebra degree/support infrastructure \\
+Validation & see \path{docs/trusted-base-audit.md} for historical exact-source and named-audit artifacts \\
+Promotion & current reconciliation tree still requires promotion gates \\
+\bottomrule\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Projection.twoBandLaurentRadicand_not_sq
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+There are no repository-owned axioms or admissions in the declaration.
+
+\section{AI, automation, and comprehension record}
+The theorem selection, proof search, Lean implementation, and dossier prose were
+AI-assisted. Lean elaboration and kernel checking validated the exact declaration.
+Simplification, \texttt{norm\_num}, and \texttt{omega} produced proof terms checked by
+Lean. The maintainer selected the source passage and reviewed the support/parity argument
+and the stated boundaries. No independent expert mathematical review has occurred.
+
+\section{Scientific and evidence boundaries}
+This exact theorem has no numerical premise and consumes no runtime or scientific
+evidence. By itself it does not show that a finite Fourier function equal to the positive
+square root yields the displayed Laurent identity or identify $P_-HP_-$. Those bridges and
+the final matrix-valued conclusion are proved separately by
+\path{BG-PROJECTION-THM-003--008}. It says nothing about a material Hamiltonian.
+
+\section{Unresolved questions}
+\begin{itemize}
+\item Resolve statement-specific external prior-art identity through References.
+\item Obtain independent expert review if this proof package becomes publication-facing.
+\item Quantitative Fourier decay and truncation error remain outside the exact
+counterexample.
+\end{itemize}
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-10-20 & initial & AI-assisted implementation; Lean kernel check & Laurent
+square-root obstruction proved under the source assumption; independent expert review
+remains open \\
+2026-10-20 & companion integration & Lean kernel check & unit-circle, projector, and final
+matrix bridges completed separately through \path{BG-PROJECTION-THM-008} \\
+\bottomrule\end{tabularx}
+\end{document}

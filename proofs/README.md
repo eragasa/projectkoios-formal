@@ -189,6 +189,26 @@ unitary and post-conjugation coordinate equality are exact hypotheses. No theore
 authenticates a runtime gauge, floating orthonormality, eigensolver, band tracker, momentum mesh,
 external artifact, certificate, Fourier support, truncation error, or scientific adequacy.
 
+## Selected projection-support counterexample tranche
+
+The source-specific two-band projection tranche has dossiers for
+`BG-PROJECTION-THM-001` through `BG-PROJECTION-THM-008`:
+
+- [`BG-PROJECTION-THM-001-parent-square.tex`](BandGauge/Projection/BG-PROJECTION-THM-001-parent-square.tex);
+- [`BG-PROJECTION-THM-002-laurent-square-root-obstruction.tex`](BandGauge/Projection/BG-PROJECTION-THM-002-laurent-square-root-obstruction.tex);
+- [`BG-PROJECTION-THM-003-unit-circle-injectivity.tex`](BandGauge/Projection/BG-PROJECTION-THM-003-unit-circle-injectivity.tex);
+- [`BG-PROJECTION-THM-004-dispersion-not-finite-fourier.tex`](BandGauge/Projection/BG-PROJECTION-THM-004-dispersion-not-finite-fourier.tex);
+- [`BG-PROJECTION-THM-005-projector-specification.tex`](BandGauge/Projection/BG-PROJECTION-THM-005-projector-specification.tex);
+- [`BG-PROJECTION-THM-006-projector-sandwich.tex`](BandGauge/Projection/BG-PROJECTION-THM-006-projector-sandwich.tex);
+- [`BG-PROJECTION-THM-007-projected-operator-not-finite-fourier.tex`](BandGauge/Projection/BG-PROJECTION-THM-007-projected-operator-not-finite-fourier.tex); and
+- [`BG-PROJECTION-THM-008-spectral-projection-destroys-finite-support.tex`](BandGauge/Projection/BG-PROJECTION-THM-008-spectral-projection-destroys-finite-support.tex).
+
+They cover the exact Laurent parent/radicand algebra, odd extreme-support obstruction,
+injective unit-circle evaluation, positive-dispersion non-finiteness, algebraic lower-band
+projector and sandwich identities, and the final matrix-valued finite-support contradiction.
+The result is one exact counterexample under `Δt ≠ 0`; it is not a universal projection,
+decay-rate, runtime-evidence, material, novelty, release, or publication claim.
+
 ## Selected normalized product-torus tranche
 
 The source-neutral normalized product-torus extension has selected dossiers for
@@ -215,6 +235,19 @@ making clear that the external package is not a dependency. Neither theorem bind
 half-open coordinate or runtime phase convention, authenticates quadrature or a runtime mesh,
 proves finite-to-continuum convergence, or certifies a KSD analytic comparator, material model,
 certificate, or scientific conclusion.
+
+## Selected multidimensional gauge--locality separation tranche
+
+The source-neutral binary product-mesh extension has selected dossiers for
+`BG-FOURIER-THM-156` and `BG-FOURIER-THM-159`. They cover strictly positive omitted
+matrix-Frobenius power after zero-mode truncation for the explicit `Fin 2 → ZMod 2` and
+`Fin 3 → ZMod 2` witnesses. Exact Hermiticity, pointwise spectrum and ordered-band equality,
+full Fourier reconstruction, truncation noncommutation, and the dimension-parametric versions
+remain fully recorded in Lean and the theorem manifest without separate dossiers.
+
+These theorems establish an exact finite representation-locality separation only. They do not
+bind a runtime mesh, gauge, frame, eigensolver, coefficient array, physical hopping range,
+finite-to-continuum limit, material model, certificate, or scientific conclusion.
 
 ## Required contents
 

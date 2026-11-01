@@ -1,0 +1,110 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: Algebraic Specification of the Lower-Band Projector}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}\sloppy\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \path{BG-PROJECTION-THM-005} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Projection.twoBandLowerBandProjector_specification} \\
+Owning module & \path{ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+
+\section{Exact mathematical statement}
+For the source parent $H(k)$, positive dispersion $d(k)$, and $\Delta t\ne0$, define
+\[
+ P_-(k)=\frac12\left(I-\frac{H(k)}{d(k)}\right).
+\]
+Then, for every real $k$,
+\[
+ P_-(k)^2=P_-(k),\qquad H(k)P_-(k)=-d(k)P_-(k).
+\]
+
+\section{Source provenance and relationship}
+This theorem \emph{derives} the algebraic projector properties implicit in the lower-band
+notation of \path{manuscript.tex:324--334} at owner commit
+\path{99a46cb59d0c6f27ada7d709f194996ef9619d9f}, manuscript SHA-256
+\texttt{d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf}.
+The cited source bytes are clean at that immutable commit.
+
+\section{Assumptions, conventions, and delta}
+The source assumption $\Delta t\ne0$ is preserved, implying $d(k)>0$ and making $d^{-1}$
+well defined. Matrices use the displayed source basis. The theorem records idempotency and
+the lower eigenrelation explicitly; these are consequences of the source parent-square
+identity, not an additional physical claim.
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}\toprule
+Relation & Identity & Locator & Role \\
+\midrule
+derives & owner source above & manuscript lines 324--334 & justifies the symbol $P_-$ \\
+depends-on & \path{BG-PROJECTION-THM-001} & theorem manifest & supplies $H^2=d^2I$ after circle evaluation \\
+background-only & canonical external identity unresolved & unverified & standard two-eigenvalue projector formula; no novelty claim \\
+\bottomrule\end{tabularx}
+
+\section{Motivation and contribution boundary}
+The theorem prevents the phrase ``lower-band projector'' from resting only on a name. It
+checks idempotency and places the formula's range in the $-d$ eigenspace. It does not
+separately prove self-adjointness, establish a general spectral theorem, or bind a material
+model.
+
+\section{Proof schematic and argument}
+From $H^2=d^2I$ and $d\ne0$, expand
+\[
+ P_-^2=\tfrac14(I-2H/d+H^2/d^2)=\tfrac12(I-H/d)=P_-.
+\]
+Similarly,
+\[
+ HP_-=\tfrac12(H-H^2/d)=\tfrac12(H-dI)=-dP_-.
+\]
+The positivity of $d$ follows from the nonzero gap term in its defining square root.
+
+\section{Lean realization}
+Private matrix-algebra lemmas prove idempotency and the eigenrelation from a generic
+rank-two operator-square hypothesis. The source theorem instantiates them with
+\path{twoBandParentOnUnitCircle_sq}. Scalar denominators are discharged with exact
+field normalization. Toolchain: Lean 4.35.0, Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Projection.twoBandLowerBandProjector_specification
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+\section{AI, automation, and comprehension record}
+The implementation and prose were AI-assisted. Lean kernel checking validates the exact
+conjunction. Field simplification and ring normalization produced checked proof terms.
+The maintainer reviewed both displayed expansions. No independent expert review has
+occurred.
+
+\section{Scientific and evidence boundaries}
+The theorem is pointwise exact matrix algebra. It does not prove locality, decay, a
+numerical eigensystem, physical validity, or a universal statement about projectors.
+
+\section{Unresolved questions}
+A separate Hermiticity/self-adjointness declaration could support a more general abstract
+orthogonal-projector API, but is not needed for the exact source sandwich identity.
+Canonical external prior-art identity remains unresolved.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Process & Outcome \\
+\midrule
+2026-10-20 & initial & AI-assisted implementation; Lean kernel check & projector idempotency and lower-eigenrelation proved; no independent expert review \\
+\bottomrule\end{tabularx}
+\end{document}

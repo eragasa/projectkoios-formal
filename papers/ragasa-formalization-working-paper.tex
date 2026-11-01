@@ -250,6 +250,16 @@ $b_0+\sqrt{c^2+d^2}$, a canonical maximizer in $[-\pi/2,\pi/2)$, and
 $|b_{\max}/\kappa|\le1$, and the exact finite matrix loss centered at
 $\mu_{\max}=b_{\max}/\kappa$. The Pauli coordinates are extracted canonically from the
 proved Hermitian traceless matrices rather than supplied as an external witness.
+BG-FOUNDATION-DEF-010--013 and BG-FOUNDATION-THM-008--014 separately identify the
+exact lower and upper spectral values of a general Hermitian rank-two Pauli-coordinate
+matrix, prove that every Hermitian complex $2$-by-$2$ matrix has this form, and prove that
+its maximum sorted-band error is bounded by the unnormalized entrywise Frobenius
+distance. This supports the corrected mathematical semantics of the Paper A perturbation
+diagnostic; it does not validate a producer value divided by $\sqrt{2}$ or bind any runtime
+artifact. BG-DECISION-DEF-010/011 and BG-DECISION-THM-014--016 formalize first-passing
+cutoffs: the selected member passes, every earlier declared member fails, and a joint pass
+uses one cutoff for both channels. These results assume only a supplied finite ordered
+inventory, not monotonicity or external coverage.
 BG-RAGASA2026A-DEF-016--021 and BG-RAGASA2026A-THM-021--026 then instantiate the
 canonical real losses, their full-plane admissible-set intersection and exact distance,
 and their candidate-rectangle transfer under explicit full-ellipse containment.

@@ -69,8 +69,10 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical or certificate effort occupies the first WIP slot. No trust, documentation, or
-maintenance effort occupies the second WIP slot.
+The first WIP slot contains the isolated source-neutral finite multidimensional gauge–locality
+separation milestone: exact binary product-mesh 2-D/3-D witnesses with equal ordered bands,
+zero-mode-truncation noncommutation, and positive omitted Fourier power. No trust,
+documentation, or maintenance effort occupies the second WIP slot.
 
 ## Ready
 
