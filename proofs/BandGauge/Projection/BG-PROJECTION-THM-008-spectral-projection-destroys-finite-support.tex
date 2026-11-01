@@ -1,0 +1,136 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: Spectral Projection Can Destroy Finite Hopping Support}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}\sloppy\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \path{BG-PROJECTION-THM-008} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Projection.spectralProjection_can_destroy_finite_hopping_support} \\
+Owning module & \path{ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+
+\section{Exact mathematical statement}
+For any real $\Delta,t$ with $\Delta t\ne0$, let
+\[
+ H(k)=\begin{pmatrix}\Delta&t(1+e^{-ik})\\t(1+e^{ik})&-\Delta\end{pmatrix},
+\quad d(k)=\sqrt{\Delta^2+4t^2\cos^2(k/2)},
+\quad P_-(k)=\frac12(I-H(k)/d(k)).
+\]
+Then $H$ has a $2\times2$ complex Laurent-polynomial representation, while
+$k\mapsto P_-(k)H(k)P_-(k)$ has none.
+
+\section{Source provenance and relationship}
+This theorem \emph{formalizes} the complete proposition ``Spectral projection can destroy
+finite hopping support'' in \path{manuscript.tex:316--340}, with proof in
+\path{appendix_proofs.tex:11--28}, under
+\path{docs/publications/papers/Ragasa2026b/v2/} at owner commit
+\path{99a46cb59d0c6f27ada7d709f194996ef9619d9f}. Manuscript SHA-256:
+\texttt{d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf};
+proof SHA-256:
+\texttt{614fad3426a941a9a1c5ad4c73ca917b55007b525a1a3a76970d5d7df5af7d19}.
+The cited bytes are clean at the immutable owner commit.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}XXX@{}}\toprule
+Source & Lean & Delta \\
+\midrule
+$\Delta t\ne0$ & exact real product premise & preserved exactly \\
+finite hopping/Fourier support & Laurent-polynomial representation at $e^{ik}$ & convention frozen explicitly \\
+lower spectral projector $P_-$ & formula $(I-H/d)/2$, proved idempotent with lower-eigenrelation & semantic role checked algebraically \\
+not matrix-valued finite Fourier & no representing Laurent-polynomial matrix & exact, pointwise for all real angles \\
+\bottomrule\end{tabularx}
+No universal claim about all spectral projections is added.
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}\toprule
+Relation & Identity & Locator & Role \\
+\midrule
+formalizes & owner source proposition & manuscript lines 316--340 & exact theorem and assumptions \\
+depends-on & \path{BG-PROJECTION-THM-001--007} & theorem manifest & algebra, uniqueness, projector, and non-finiteness chain \\
+background-only & canonical external identity unresolved & unverified & elementary Laurent and rank-two algebra; no priority claim \\
+\bottomrule\end{tabularx}
+
+\section{Motivation and contribution boundary}
+The theorem supplies an exact counterexample to preservation of finite hopping support by
+spectral projection. The formal contribution is a complete traceable proof of the source
+proposition. It does not show that every projection is nonlocal, quantify decay, or
+establish novelty relative to unresolved literature.
+
+\section{Proof schematic}
+\[
+ H\in M_2(\mathbb C[z,z^{-1}]),\quad H^2=d^2I
+ \Longrightarrow P_-^2=P_-,\ HP_-=-dP_-,\ P_-HP_-=(H-dI)/2.
+\]
+\[
+ d\ \hbox{finite Fourier}
+ \Longrightarrow d^2\ \hbox{a Laurent square}
+ \Longrightarrow\bot.
+\]
+\[
+ P_-HP_-\ \hbox{finite Fourier}
+ \Longrightarrow d\ \hbox{finite Fourier}
+ \Longrightarrow\bot.
+\]
+
+\section{Human-readable mathematical argument}
+The displayed parent is itself a Laurent-polynomial matrix supported at exponents
+$-1,0,1$. Its square is the scalar radicand times the identity. If the positive dispersion
+were finite Fourier, unit-circle Laurent uniqueness would turn its squared functional
+identity into a Laurent square, contradicting the odd extreme-support obstruction. The
+formula $P_-=(I-H/d)/2$ is idempotent and selects the $-d$ eigenspace, and direct algebra
+gives $P_-HP_-=(H-dI)/2$. If this final matrix were finite Fourier, its first diagonal
+entry would make $d$ finite Fourier, the contradiction above.
+
+\section{Lean realization}
+The final declaration pairs the explicit Laurent witness for the parent with the
+non-finite-support theorem for the projector sandwich, rewriting the latter by the exact
+sandwich identity. The complete dependency chain is kernel checked under Lean 4.35.0 and
+Mathlib revision \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}; no additional
+library is adopted.
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Projection.spectralProjection_can_destroy_finite_hopping_support
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+There are no repository-owned axioms or admissions.
+
+\section{AI, automation, and comprehension record}
+The theorem selection, proof search, Lean code, and dossier prose were AI-assisted. Lean
+elaboration and kernel checking validate the exact proposition. Ring, field, positivity,
+integer, simplification, and linear-combination automation produced checked proof terms.
+The maintainer selected the source passage and reviewed the full algebraic dependency
+chain and scientific boundaries. No independent expert review has occurred.
+
+\section{Scientific and evidence boundaries}
+This is an exact analytic counterexample. It consumes no sampled data, calculation output,
+certificate, runtime artifact, or material parameter binding. It proves neither a decay
+rate nor a truncation error and does not authorize publication or release.
+
+\section{Unresolved questions}
+Quantitative long-range decay, multidimensional generalization, higher-rank projector
+criteria, and canonical external prior-art identity remain open. Independent expert
+review is still required for publication-facing reliance.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Process & Outcome \\
+\midrule
+2026-10-20 & initial & AI-assisted implementation; Lean kernel check & complete source proposition proved under exact assumptions; no independent expert review \\
+\bottomrule\end{tabularx}
+\end{document}

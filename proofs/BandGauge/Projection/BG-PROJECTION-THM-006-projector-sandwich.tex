@@ -1,0 +1,99 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: Exact Lower-Band Projector Sandwich Identity}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}\sloppy\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \path{BG-PROJECTION-THM-006} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Projection.twoBandLowerBandProjector_sandwich} \\
+Owning module & \path{ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+
+\section{Exact mathematical statement}
+For every $k\in\mathbb R$ and real $\Delta,t$ satisfying $\Delta t\ne0$, the source
+parent, dispersion, and lower-band projector satisfy
+\[
+ P_-(k)H(k)P_-(k)=\frac12\bigl(H(k)-d(k)I\bigr).
+\]
+
+\section{Source provenance and relationship}
+This theorem \emph{formalizes} equation \texttt{eq:projected-range} in
+\path{docs/publications/papers/Ragasa2026b/v2/manuscript.tex:328--334}, owner commit
+\path{99a46cb59d0c6f27ada7d709f194996ef9619d9f}, SHA-256
+\texttt{d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf}.
+
+\section{Assumptions, conventions, and delta}
+The exact source nondegeneracy $\Delta t\ne0$ is preserved. The projector, parent, and
+positive dispersion are the declarations inventoried as
+\path{BG-PROJECTION-DEF-006/009/010/011}. Equality is pointwise in real momentum and
+exact over complex $2\times2$ matrices. There is no numerical approximation.
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}\toprule
+Relation & Identity & Locator & Role \\
+\midrule
+formalizes & owner source equation & manuscript lines 328--334 & exact displayed identity \\
+depends-on & \path{BG-PROJECTION-THM-001/005} & theorem manifest & parent square and projector specification \\
+background-only & external identity unresolved & unverified & standard rank-two projector algebra; no novelty claim \\
+\bottomrule\end{tabularx}
+
+\section{Motivation and contribution boundary}
+This identity connects the algebraic projector to the exact matrix function whose finite
+Fourier support is tested next. It does not itself prove non-finiteness or a universal
+projection theorem.
+
+\section{Proof schematic and argument}
+Use $P_-=(I-H/d)/2$ and $H^2=d^2I$. Direct expansion gives
+\[
+ P_-HP_-=\frac14(I-H/d)H(I-H/d)
+ =\frac12(H-dI).
+\]
+The gap hypothesis makes $d$ nonzero, so each cancellation is valid.
+
+\section{Lean realization}
+A private generic matrix lemma expands the sandwich using matrix/scalar multiplication,
+substitutes the parent-square theorem, and normalizes the remaining field expression.
+The source declaration instantiates it at each angle. Toolchain: Lean 4.35.0, Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}; no additional dependency.
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Projection.twoBandLowerBandProjector_sandwich
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+\section{AI, automation, and comprehension record}
+The implementation and prose were AI-assisted. Lean kernel checking validates the exact
+identity. Field and ring normalization produced checked proof terms. The maintainer
+reviewed the expansion and source correspondence. No independent expert review occurred.
+
+\section{Scientific and evidence boundaries}
+No runtime artifact, numerical eigensystem, material interpretation, hopping truncation,
+or decay estimate is involved.
+
+\section{Unresolved questions}
+A general reusable theorem for arbitrary finite-dimensional involutive algebras may be
+worth extracting later. Canonical external prior-art identity remains unresolved.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Process & Outcome \\
+\midrule
+2026-10-20 & initial & AI-assisted implementation; Lean kernel check & exact source sandwich identity proved; no independent expert review \\
+\bottomrule\end{tabularx}
+\end{document}

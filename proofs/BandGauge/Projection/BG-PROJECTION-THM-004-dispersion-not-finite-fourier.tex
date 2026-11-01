@@ -1,0 +1,109 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-20
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage{listings}
+\usepackage[margin=1in]{geometry}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\title{Proof Dossier: The Two-Band Dispersion Is Not Finite Fourier}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-10-20}
+\begin{document}\sloppy\maketitle
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lX@{}}\toprule
+Statement ID & \path{BG-PROJECTION-THM-004} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Projection.twoBandDispersion_not_hasFiniteFourierSupport} \\
+Owning module & \path{ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean} \\
+Axioms & \texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound} \\
+\bottomrule\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $\Delta,t\in\mathbb R$ with $\Delta t\ne0$ and
+\[
+ d(k)=\sqrt{\Delta^2+4t^2\cos^2(k/2)}.
+\]
+There is no $f\in\mathbb C[z,z^{-1}]$ such that
+$f(e^{ik})=d(k)$ for every $k\in\mathbb R$.
+
+\section{Source provenance and relationship}
+This theorem \emph{formalizes} the scalar non-finite-Fourier conclusion in
+\texttt{ksdft2effmass} commit
+\texttt{99a46cb59d0c6f27ada7d709f194996ef9619d9f}:
+\path{manuscript.tex:324--330} and
+\path{appendix_proofs.tex:11--24}. The full source paths are under
+\path{docs/publications/papers/Ragasa2026b/v2/}. The manuscript and proof SHA-256 values
+are respectively
+\texttt{d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf}
+and
+\texttt{614fad3426a941a9a1c5ad4c73ca917b55007b525a1a3a76970d5d7df5af7d19}.
+
+\section{Assumptions, conventions, and delta}
+The exact source hypothesis $\Delta t\ne0$ is preserved. Finite Fourier support is frozen
+as existence of one complex Laurent polynomial representing the circle function for all
+real angles. The positive real square root is used exactly. No decay, approximation, or
+almost-everywhere weakening is introduced.
+
+\section{Statement-specific prior art}
+\begin{tabularx}{\textwidth}{@{}lXXX@{}}\toprule
+Relation & Identity & Locator & Role \\
+\midrule
+formalizes & owner source above & Appendix proof lines 11--24 & exact square-root obstruction \\
+depends-on & \path{BG-PROJECTION-THM-002/003} & theorem manifest & Laurent non-square and unit-circle injectivity \\
+background-only & external identity unresolved & unverified & standard support parity; no novelty claim \\
+\bottomrule\end{tabularx}
+
+\section{Motivation and contribution boundary}
+This is the scalar obstruction that forces the projected matrix out of every finite
+Fourier class. The formal contribution is traceability from the source dispersion to an
+exact Laurent contradiction; it does not assert originality of the elementary argument.
+
+\section{Proof schematic and argument}
+Assume $f(e^{ik})=d(k)$. Squaring gives
+\[
+ f(e^{ik})^2=\Delta^2+4t^2\cos^2(k/2)
+ =\Delta^2+2t^2+t^2(e^{ik}+e^{-ik}).
+\]
+By unit-circle injectivity, $f^2$ equals the source Laurent radicand in
+$\mathbb C[z,z^{-1}]$. This contradicts \path{BG-PROJECTION-THM-002}, which excludes a
+Laurent square root under $\Delta t\ne0$.
+
+\section{Lean realization}
+The proof combines the exact real identity \path{Real.sq_sqrt}, the evaluated radicand
+identity, \path{evalLaurentOnUnitCircle_injective}, and
+\path{twoBandLaurentRadicand_not_sq}. Toolchain: Lean 4.35.0, Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}, no additional dependency.
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.BandGauge.Projection.twoBandDispersion_not_hasFiniteFourierSupport
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+
+\section{AI, automation, and comprehension record}
+The implementation and prose were AI-assisted. Lean kernel checking validates the exact
+claim; simplification, coercion normalization, ring normalization, and positivity tactics
+produce checked proof terms. The maintainer reviewed the trigonometric/Laurent identity
+and contradiction chain. No independent expert review has occurred.
+
+\section{Scientific and evidence boundaries}
+No numerical data, runtime artifact, material model, hopping-decay rate, or truncation
+bound is involved. The result is the exact source counterexample's scalar component.
+
+\section{Unresolved questions}
+Canonical external prior-art identity remains unresolved. Quantitative decay of the
+non-finite Fourier coefficients is outside this theorem.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllX@{}}\toprule
+Date & Revision & Process & Outcome \\
+\midrule
+2026-10-20 & initial & AI-assisted implementation; Lean kernel check & exact scalar non-finiteness proved under the source hypothesis; no independent expert review \\
+\bottomrule\end{tabularx}
+\end{document}

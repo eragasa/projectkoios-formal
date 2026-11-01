@@ -18,8 +18,9 @@ The construction is exact analytic source mathematics. It is not a calculated fo
 
 ## Other papers
 
-The remaining namespaces carry no scientific theorem.
+The remaining paper namespaces carry no scientific theorem.
 
-- `Ragasa2026B.lean` and `Ragasa2026C.lean` are metadata-only placeholders.
+- `Ragasa2026B.lean` remains a metadata-only placeholder. Its first source proposition is proved in the reusable `BandGauge/Projection` module rather than duplicated in the paper namespace; later Paper B claims remain open.
+- `Ragasa2026C.lean` remains a metadata-only placeholder.
 - Planning documents under `docs/BandGauge/Papers/` do not create declarations or authorize publication.
 - `docs/theorem-manifest.md` is the declaration ledger.

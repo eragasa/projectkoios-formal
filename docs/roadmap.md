@@ -84,6 +84,14 @@ Open:
 - concrete owner-specific error-channel taxonomies and compatibility inventories, verified structural-requirement contracts, heterogeneous candidate-carrier embeddings, cross-gauge stability bridges, and proposition-specific certificate bindings;
 - runtime-bound cutoff inventories and later Wannier90 layers.
 
+The first Ragasa2026b projection proposition is completed as
+`BG-PROJECTION-DEF-001` through `011` and `BG-PROJECTION-THM-001` through `008`. The proof
+encodes the nearest-neighbor Laurent parent, verifies its scalar square, proves the
+source-assumption Laurent square-root obstruction, establishes unit-circle Laurent
+uniqueness, verifies the lower-band projector and sandwich identity, and derives the final
+matrix-valued non-finite-support conclusion. Later projection questions—quantitative decay,
+higher rank, multidimensional parents, and general preservation criteria—remain open.
+
 ## R3 — continuum Fourier analysis
 
 Status: normalized finite product-torus factorization and the exact normalized sine-phase `J₀` bridge implemented; broader continuum layer deferred.
@@ -126,7 +134,7 @@ Open:
 
 ## R5 — publication instantiation
 
-Status: Paper A has conditional bridges and one exact analytic construction; Papers B/C remain placeholders.
+Status: Paper A has conditional bridges and one exact analytic construction; the Paper B namespace remains a placeholder while its first proposition is proved in the reusable projection module; Paper C remains a placeholder.
 
 - Keep reusable theorems in semantic modules.
 - Keep runtime evidence, source fidelity, formal status, applicability, and publication status separate.

@@ -33,12 +33,24 @@ These hashes bind the exact publication bytes.
 | `b993c8f35249a3decedd0039f956c15a24ca7ffe11ada0dbb821ece435bb6b42` | `docs/publications/papers/Ragasa2026a/v3/supplementary.tex` |
 | `b12ac427ac2e0322e4d5362ee5bd70bec3ea427802f5e3d0dd2156bc0852665b` | `docs/publications/papers/Ragasa2026b/v2/README.md` |
 | `d8d5951d8d7ed75355b5d94f37fcbddc70c1466897a5770dbe9f877e60016daf` | `docs/publications/papers/Ragasa2026b/v2/manuscript.tex` |
+| `eb83d5f1da16eec66ccc6b18fae96a9d155c563263e163e1d0c5b0fc659eeb9b` | `docs/publications/papers/Ragasa2026b/v2/appendices.tex` |
+| `614fad3426a941a9a1c5ad4c73ca917b55007b525a1a3a76970d5d7df5af7d19` | `docs/publications/papers/Ragasa2026b/v2/appendix_proofs.tex` |
 | `f2fa27a11936a470130022ba8bdf76fdd6b2e22d9323d13a005c31f9888ddd93` | `docs/publications/papers/Ragasa2026c/v1/README.md` |
 | `153992c3567c40c18d48e52897280be49cf4e0b8c2efac562dc0e96a092cabad` | `docs/publications/papers/Ragasa2026c/v1/manuscript.md` |
 | `b76cd37c244a0d2ec023fa37449b3e65bd9ae16255917858811be784603e9e0d` | `docs/publications/papers/Ragasa2026c/v1/appendices/A-1-extracted-evidence-boundary.md` |
 | `40b4658e2a074fcb75431d10642f689caf54b5671f4d03d793aaadc7c4ded8f2` | `docs/publications/papers/Ragasa2026c/v1/appendices/A-2-d1-p0-g0-isolation-gap-certificate.tex` |
 
 Hashes identify inspected bytes; they do not transfer ownership or evidence into this repository.
+
+## Projection-source reconciliation reinspection
+
+On 2026-11-01, the four Ragasa2026b hashes above were reverified read-only with
+`git show` at immutable commit `99a46cb59d0c6f27ada7d709f194996ef9619d9f`. The active
+owner checkout was then on branch `work/monograph-current-library-capabilities`, ahead of
+its upstream and dirty in many unrelated paths. No active-worktree publication bytes were
+used, and no owner file, index, branch, worktree, or configuration was changed. This dirty
+checkout limits claims about the active owner tree but does not alter the cited immutable
+commit bytes.
 
 ## Later Paper 3 protocol planning inspection
 
