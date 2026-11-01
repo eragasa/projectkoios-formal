@@ -62,7 +62,11 @@ Required outputs:
 - exact or interval objectives;
 - independently checked Pareto and minimum-cost conclusions.
 
-Current state: generic Fourier and finite-decision foundations exist; paper-specific projection, special-function, table, and evidence layers do not.
+Current state: the exact first source proposition is proved in the reusable projection
+layer as `BG-PROJECTION-THM-008`, with supporting declarations
+`BG-PROJECTION-THM-001--007`; the Paper B namespace remains metadata-only. Paper-specific
+coefficient and tail formulas, complete runtime tables, independently checked evidence,
+and later source claims remain open.
 
 Detailed plan: `Ragasa2026B/paper-and-proof-plan.md`.
 
@@ -111,7 +115,7 @@ Reusable layers serve multiple papers without inheriting their status.
 | `Hilbert/` and `Geometry/` | loss and admissible-set geometry |
 | `Alignment/` | finite complex frames, retained compression/reconstruction, right-unitary coordinate algebra, and distinct identity/global/pointwise family semantics; structured gauge families remain future |
 | `Fourier/` | finite transforms, Parseval, and tails |
-| `Projection/` | future compression and support consequences |
+| `Projection/` | exact spectral-projection finite-support counterexample and future compression/support consequences |
 | `Decision/` | finite feasibility, cost, and Pareto semantics |
 | `Certificates/` | exact checkers and soundness |
 | `Papers/` | source-specific bindings only |

@@ -68,7 +68,7 @@ recommended owner-side field or object name.
 | A-DIAG-A06 | aligned onsite-block Frobenius residual | `aligned_onsite_block_frobenius_residual` |
 | A-DIAG-A07 | comparison-minus-reference non-onsite power | `comparison_minus_reference_nononsite_power` |
 | A-DIAG-A08 | maximum frame-change covariance residual over reference energy | `maximum_frame_change_covariance_residual_over_energy_reference` |
-| A-DIAG-A09 | non-onsite residual/cross decomposition | `nononsite_residual_decomposition` |
+| A-DIAG-A09 | non-onsite residual/cross/scale decomposition | `nononsite_residual_decomposition` |
 | A-DIAG-F01 | maximum conjugate-pairing defect over reference energy | `maximum_conjugate_pairing_defect_over_energy_reference` |
 | A-DIAG-F02 | maximum complete-transform reconstruction defect over reference energy | `maximum_complete_transform_reconstruction_defect_over_energy_reference` |
 | A-DIAG-F03 | Parseval power defect | `parseval_power_defect` |
@@ -276,8 +276,10 @@ class AlignedOnsiteBlockResidual:
 
 @dataclass(frozen=True, slots=True)
 class NononsiteResidualDecomposition:
+    aligned_reference_scale: float
     residual_power: float
-    signed_reference_residual_cross_term: float
+    signed_aligned_reference_residual_cross_term: float
+    signed_scale_power_term: float
     signed_comparison_minus_reference_power: float
     decomposition_closure_defect: float
 
@@ -405,7 +407,7 @@ class CutoffPassEvidence:
     support_id: str
     order_index: int
     disposition: PassDisposition
-    signed_margin: FloatInterval
+    signed_margin: FloatInterval | None
 
 
 @dataclass(frozen=True, slots=True)
@@ -486,7 +488,7 @@ class MomentumRefinementChange:
     coarse_mesh_id: str
     fine_mesh_id: str
     maximum_objective_change: float
-    minimum_signed_margin: FloatInterval
+    minimum_signed_margin: FloatInterval | None
     decision_changed: bool | None
     disposition: DiagnosticDisposition
     reason_code: str | None
@@ -511,9 +513,9 @@ class EvaluationSeparationDiagnostic:
 @dataclass(frozen=True, slots=True)
 class IndependentReconstructionDiscrepancy:
     verifier_id: str
-    verified_cutoff_ids: tuple[str, ...]
-    maximum_matrix_discrepancy: float
-    maximum_spectral_discrepancy: float
+    verified_case_cutoff_ids: tuple[tuple[str, str], ...]
+    maximum_matrix_discrepancy_over_energy_reference: float
+    maximum_spectral_discrepancy_over_energy_reference: float
     disposition: DiagnosticDisposition
     reason_code: str | None
 
@@ -525,6 +527,11 @@ class HeldoutAmplitudeInterpolantError:
     maximum_target_error: ScalarDiagnostic
     minimum_decision_margin: ScalarDiagnostic
 ```
+
+For R01 and first-pass evidence (S05/S06/S08/R03), a `not-applicable` disposition
+requires the corresponding optional margin to be `None`; pass, fail, or
+threshold-ambiguous dispositions retain the reviewed interval. R06 coverage is the exact
+set of `(case_id, cutoff_id)` pairs, not separate case and cutoff counts.
 
 R09 is `not-applicable` when no amplitude interpolant is admitted. R04 concerns only the
 frozen finite parameter inventory and must not be labeled continuum robustness.
@@ -635,7 +642,7 @@ schema identity because several field meanings and object shapes change.
 | `maximum_parent_hermiticity_defect` plus later Hermiticity fields | Move to `StageHermiticityDefect` records with exact stage coverage. |
 | `excess_nonzero_hopping_weight` | Rename to signed `comparison_minus_reference_nononsite_power`. |
 | `normalized_excess_nonzero_hopping_weight` | Remove or give an explicit signed numerator/denominator name and zero-denominator disposition. |
-| `flat_identity_departure` | Replace by `NononsiteResidualDecomposition`; retain residual power, signed cross term, and closure defect separately. |
+| `flat_identity_departure` | Replace by `NononsiteResidualDecomposition`; retain residual power, the scale-weighted aligned-reference cross term, the scale-power term, and closure defect separately. |
 | `retained_blocks` | Pair with `maximum_retained_support_radius`; never use one as an alias for the other. |
 | `maximum_covariant_defect` | Rename and bind to the exact frame-change convention and stages. |
 | `BandEquivalenceLocalityVerificationDiagnostics.passes` | Derive from separate fail-closed evidence gates; do not let one Boolean hide a missing coverage or identity check. |

@@ -308,7 +308,9 @@ same declared convention.
 Let
 
 \[
- \delta T_R=T_D(R)-\lambda_*R(\phi_*)^\dagger T_H(R)R(\phi_*).
+ A_R=R(\phi_*)^\dagger T_H(R)R(\phi_*),
+ \qquad
+ \delta T_R=T_D(R)-\lambda_*A_R.
 \]
 
 For non-onsite modes define separately
@@ -316,18 +318,27 @@ For non-onsite modes define separately
 \[
  D_{\ne0}=\sum_{R\ne0}\|\delta T_R\|_{F,*}^2,
  \qquad
- C_{\ne0}=2\sum_{R\ne0}\operatorname{Re}
- \langle T_H(R),\delta T_R\rangle_{F,*},
+ C_{\ne0}=2\lambda_*\sum_{R\ne0}
+ \langle A_R,\delta T_R\rangle_{F,*},
 \]
 
-where `⟨A,B⟩_{F,*}=Re tr(A†B)/(2E_ref²)`. Then
+and
 
 \[
- \Delta P_{\ne0}=D_{\ne0}+C_{\ne0}.
+ S_{\ne0}=(\lambda_*^2-1)
+ \sum_{R\ne0}\|T_H(R)\|_{F,*}^2,
 \]
 
-The three diagnostics are `(D_{≠0}, C_{≠0},
-|ΔP_{≠0}-D_{≠0}-C_{≠0}|)`. Reporting only a combined departure can hide cancellation.
+where `⟨A,B⟩_{F,*}=Re tr(A†B)/(2E_ref²)`. Unitary invariance gives
+
+\[
+ \Delta P_{\ne0}=D_{\ne0}+C_{\ne0}+S_{\ne0}.
+\]
+
+The four diagnostics are `(D_{≠0}, C_{≠0}, S_{≠0},
+|ΔP_{≠0}-D_{≠0}-C_{≠0}-S_{≠0}|)`. The cross term uses the aligned reference block and
+includes the fitted scale; the separate scale-power term is required unless `λ_*=1`.
+Reporting only a combined departure can hide cancellation.
 
 # F. Fourier and locality measurements
 
@@ -618,15 +629,24 @@ Strict positivity proves coordinate disjointness only.
 
 ## A-DIAG-R06 — independent reconstruction difference
 
-For every serialized scalar or matrix objective `z` and every declared cutoff/case,
+For every declared case `j` and cutoff `R_c`, independently reconstruct the matrix and
+sorted-band target channels and report
 
 \[
- d_{\rm independent}
- =\max_z\operatorname{dist}(z_{\rm producer},z_{\rm verifier}).
+ d_{\rm independent}^{H}
+ =\max_{j,R_c,q}\frac{\|X^{\rm producer}_{j,R_c}(q)
+   -X^{\rm verifier}_{j,R_c}(q)\|_F}{E_{\rm ref}},
+\]
+
+\[
+ d_{\rm independent}^{E}
+ =\max_{j,R_c,q,n}\frac{|\lambda_n(X^{\rm producer}_{j,R_c}(q))
+   -\lambda_n(X^{\rm verifier}_{j,R_c}(q))|}{E_{\rm ref}}.
 \]
 
 The verifier must reconstruct from serialized inputs without calling producer control
-flow. Report discrepancies by channel before taking the maximum.
+flow. Retain the exact case/cutoff coverage set and report the two channel discrepancies
+separately; do not take a maximum across quantities with different units or semantics.
 
 ## A-DIAG-R07 — evidence-integrity gates
 
