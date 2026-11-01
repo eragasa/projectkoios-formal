@@ -22,8 +22,8 @@
 \toprule
 Statement ID & \texttt{BG-FOURIER-THM-159} \\
 Status & proved; no admissions \\
-Lean declaration & \path{ProjectKoios.BandGauge.Fourier.finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos} \\
-Owning module & \path{ProjectKoios/BandGauge/Fourier/ProductGaugeLocalitySeparation.lean} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.Gauge.finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/Gauge/ProductLocalitySeparation.lean} \\
 Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
 \bottomrule
 \end{tabularx}
@@ -56,6 +56,8 @@ KSD execution.  The Formal base is merge commit
 \texttt{709237449b6ddbcb6fce3e2ab83bc9b09ffe2cb392ecff6f0f23ea9e5f2a21a9}.
 No topic commit is claimed before separate checkpoint authorization.
 
+The recorded module hash authenticates the historical pre-hierarchy source bytes at the stated base. The current declaration and module locator are recorded in \texttt{docs/migrations/fourier-domain-hierarchy.md}.
+
 \section{Assumptions and conventions}
 The momentum group is exactly \texttt{Fin 3 $\to$ ZMod 2}.  The selected coordinate is zero.
 The fiber is the exact complex $2\times2$ matrix carrier.  Forward coefficients use the
@@ -79,7 +81,7 @@ and rank-two unitary band invariance.  Toolchain: Lean \texttt{4.35.0} at
 \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
 \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
 \begin{lstlisting}
-#print axioms ProjectKoios.BandGauge.Fourier.finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos
+#print axioms ProjectKoios.BandGauge.Fourier.Gauge.finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos
 -- [propext, Classical.choice, Quot.sound]
 \end{lstlisting}
 No repository-owned axiom, \texttt{sorry}, or admission occurs.

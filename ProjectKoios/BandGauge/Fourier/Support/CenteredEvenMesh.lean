@@ -6,8 +6,8 @@ Formal proof completed: 2026-10-30
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.FiniteReconstruction
-public import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Reconstruction
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.MatrixFrobenius
 public import Mathlib.Data.Int.Interval
 
 /-!
@@ -29,7 +29,9 @@ squared Frobenius sum and is not an off-mesh error or an ordinary omitted-tail n
 
 open scoped BigOperators
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Support
+
+open ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 /-- `BG-FOURIER-DEF-032`: a positive even finite-mesh size. -/
 structure CenteredEvenMesh where
@@ -260,4 +262,4 @@ theorem normalizedNegativeNyquistPower_range_independent
       (fun _maximumRange : ℕ => normalizedNegativeNyquistPower mesh coefficients) secondRange := by
   rfl
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Support

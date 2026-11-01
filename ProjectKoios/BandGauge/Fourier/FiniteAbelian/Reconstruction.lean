@@ -24,7 +24,7 @@ inversion, Parseval, physical locality, continuum convergence, or completeness o
 
 open scoped BigOperators
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 variable {Momentum Mode V W : Type*}
 
@@ -131,4 +131,4 @@ theorem omittedWeight_anti [Fintype Mode] [DecidableEq Mode]
   intro mode _ _
   exact hweight mode
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.FiniteAbelian

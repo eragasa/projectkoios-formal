@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-19
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.FiniteAbelianTransform
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Transform
 public import Mathlib.Analysis.InnerProductSpace.Basic
 
 /-!
@@ -27,7 +27,7 @@ open scoped BigOperators ComplexConjugate
 open Fintype (card)
 open RCLike
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 variable {G V : Type*} [AddCommGroup G] [Fintype G] [DecidableEq G]
 
@@ -222,4 +222,4 @@ theorem finiteFourierTruncationResidual_parseval
     exact finiteFourierCoefficient_truncationResidual support coefficients mode
   rw [hcoeff, finiteFourierPower_sub_truncate_eq_omitted]
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.FiniteAbelian

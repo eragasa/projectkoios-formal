@@ -6,8 +6,8 @@ Formal proof completed: 2026-11-01
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.GaugeTruncationCounterexample
-public import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
+public import ProjectKoios.BandGauge.Fourier.Gauge.TruncationCounterexample
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.MatrixFrobenius
 public import ProjectKoios.BandGauge.Foundations.RankTwoConjugation
 public import Mathlib.LinearAlgebra.Matrix.Hermitian
 
@@ -32,7 +32,9 @@ open Fintype (card)
 
 @[expose] public section
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Gauge
+
+open ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 /-- `BG-FOURIER-DEF-059`: binary finite product momentum mesh over a dimension index. -/
 abbrev BinaryProductMomentum (Dimension : Type*) := Dimension → ZMod 2
@@ -407,4 +409,4 @@ theorem finThree_coordinateSwap_omittedMatrixFrobeniusPower_pos :
           (productConstantProjectorField (Dimension := Fin 3)))) {0} := by
   exact product_gauged_omittedMatrixFrobeniusPower_pos (0 : Fin 3)
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Gauge

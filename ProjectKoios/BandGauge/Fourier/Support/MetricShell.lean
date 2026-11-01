@@ -30,7 +30,7 @@ hypotheses. A complete metric shell is not thereby a source-defined physical hop
 
 @[expose] public section
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Support
 
 variable {Mode Radius Symmetry : Type*}
 
@@ -351,4 +351,4 @@ theorem fccShellIndex_swap12 (x y z : ℤ) :
   simp [fccShellIndex]
   ring
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Support

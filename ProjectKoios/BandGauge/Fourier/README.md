@@ -9,21 +9,23 @@ Initial document completed: 2026-10-19
 
 This directory owns exact finite Fourier, support, truncation, Parseval, fixed-unitary equivariance, pointwise-gauge boundary, and normalized finite product-torus factorization results.
 
-- `FiniteReconstruction.lean`: reconstruction with an explicit caller-supplied kernel, support truncation, and exact tail decomposition; it selects no Fourier convention.
-- `CenteredEvenMesh.lean`: positive even centered integer inventories, exact deletion of the negative Nyquist representative, full-versus-removed reconstruction, normalized deleted-block power, and symmetric ordinary support below half the mesh size.
-- `MetricShellSupport.lean`: complete finite metric shells, exact attained-radius inventories, tie retention, conditional inversion/symmetry closure, no-skipped-shell theorems, and square, triangular, simple-cubic, and normalized FCC integer shell indices.
-- `NormalizedProductTorus.lean`: the explicit finite product of unit additive circles with normalized product Haar measure, factorization of coordinate-separable complex averages, exponential factorization for additive phases, and equal-factor power laws with 2-D square and 3-D cube corollaries.
-- `NormalizedCircleBessel.lean`: the standard period-one sine coordinate, positive-sign sine phase, normalized one-circle `J₀` identity, arbitrary finite product power, and exact 2-D square, 3-D cube, and 3-D `2a/3` scaling corollaries.
-- `FiniteAbelianTransform.lean`: conjugated-character forward transform with normalization `1 / |G|` and finite inversion.
-- `FiniteParseval.lean`: inner-product and power Parseval identities; reconstructed residual power equals `|G|` times omitted coefficient power.
-- `HermitianPairing.lean`: negative-mode pairing and Hermitian reconstruction.
-- `MatrixFrobenius.lean`: entrywise matrix Parseval and the analogous exact Frobenius residual-tail equality.
-- `ResidualChannels.lean`: identifies the deliberate-truncation channel with the exact Fourier residual, proves its Hilbert and explicit matrix-Frobenius power and root-mean-square tail equalities, and bounds its pointwise and finite-maximum ambient norms by the omitted coefficient one-norm tail.
-- `RankTwoWeightedBridge.lean`: constant weight `weight / (2 Eref²)` and the uniform specialization in which `|G|` cancels.
-- `UnitaryEquivariance.lean`: Frobenius invariance and Fourier commutation for one fixed finite-rank unitary.
-- `PointwiseGauge.lean`: character-phase mode shifts, trivial scalar-operator conjugation, pointwise matrix conjugation, coefficient separation, and pointwise Frobenius invariance.
-- `GaugeTruncationCounterexample.lean`: an exact rank-two, two-point witness in which a pointwise swap gauge creates a nonzero odd Fourier mode and fails to commute with zero-mode support truncation.
-- `ProductGaugeLocalitySeparation.lean`: an arbitrary-finite-dimensional binary product-mesh lift with exact Hermiticity, pointwise ordered-band equality, full reconstruction, zero-mode-truncation noncommutation, positive omitted matrix-Frobenius power, and explicit 2-D/3-D corollaries.
+The declaration surface is deliberately divided into five ownership families. Declarations are not
+re-exported through a flat compatibility namespace.
+
+- `FiniteAbelian/`: convention-neutral reconstruction followed by the explicit finite-abelian
+  transform, inversion, Parseval, Hermitian pairing, and matrix-Frobenius identities.
+- `Gauge/`: fixed-unitary equivariance, pointwise-gauge boundaries, and exact finite witnesses
+  separating ordered-band equality from Fourier locality.
+- `Support/`: centered-even mesh inventories, negative-Nyquist removal, and complete metric-shell
+  semantics over supplied finite inventories.
+- `Torus/`: normalized finite products of unit additive circles and exact normalized sine-phase
+  `J₀` evaluations.
+- `Residual/`: deliberate-truncation residual channels, exact power/root-mean-square tails, maximum
+  bounds, and the constant/uniform rank-two weighted bridge.
+
+Each family has its own README and imports only the lower-level families it requires. The complete
+old-name to hierarchical-name crosswalk is
+[`docs/migrations/fourier-domain-hierarchy.md`](../../../docs/migrations/fourier-domain-hierarchy.md).
 
 ## Boundaries
 

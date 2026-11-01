@@ -7,7 +7,7 @@ Formal proof completed: 2026-10-28
 module
 
 public import ProjectKoios.BandGauge.Hilbert.ResidualChannels
-public import ProjectKoios.BandGauge.Fourier.MatrixFrobenius
+public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.MatrixFrobenius
 
 /-!
 # Fourier bridge for finite residual channels
@@ -29,7 +29,9 @@ adequacy decision.
 
 open Fintype (card)
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Residual
+
+open ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 open ProjectKoios.BandGauge.Hilbert
 
@@ -203,4 +205,4 @@ theorem finiteMaximumNorm_truncationResidual_le_omitted
       fun momentum =>
         norm_truncationResidual_fourierReconstruction_le_omitted support coefficients momentum
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Residual

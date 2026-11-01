@@ -6,7 +6,7 @@ Formal proof completed: 2026-10-28
 -/
 module
 
-public import ProjectKoios.BandGauge.Fourier.PointwiseGauge
+public import ProjectKoios.BandGauge.Fourier.Gauge.PointwiseGauge
 public import Mathlib.LinearAlgebra.Matrix.Notation
 
 /-!
@@ -25,7 +25,9 @@ assert continuum locality, decay, smoothness, runtime-array correctness, or nume
 
 open scoped BigOperators ComplexConjugate Matrix
 
-namespace ProjectKoios.BandGauge.Fourier
+namespace ProjectKoios.BandGauge.Fourier.Gauge
+
+open ProjectKoios.BandGauge.Fourier.FiniteAbelian
 
 /-- `BG-FOURIER-DEF-023`: the rank-two coordinate-swap matrix, packaged with its exact
 unitarity proof. -/
@@ -203,4 +205,4 @@ theorem pointwiseSwapConjugation_zeroModeFourierTruncation_ne :
   rw [pointwiseSwapConjugation_at_one] at hone
   exact rankTwoCoordinateProjectors_ne (hzero.symm.trans hone)
 
-end ProjectKoios.BandGauge.Fourier
+end ProjectKoios.BandGauge.Fourier.Gauge

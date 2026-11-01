@@ -23,8 +23,8 @@
 \toprule
 Statement ID & \texttt{BG-FOURIER-THM-086} \\
 Status & proved; no admissions \\
-Lean declaration & \path{ProjectKoios.BandGauge.Fourier.finiteReconstruction_eq_negativeNyquistRemoved_add} \\
-Owning module & \path{ProjectKoios/BandGauge/Fourier/CenteredEvenMesh.lean} \\
+Lean declaration & \path{ProjectKoios.BandGauge.Fourier.Support.finiteReconstruction_eq_negativeNyquistRemoved_add} \\
+Owning module & \path{ProjectKoios/BandGauge/Fourier/Support/CenteredEvenMesh.lean} \\
 Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
 \bottomrule
 \end{tabularx}
@@ -49,6 +49,8 @@ The exact declaration was introduced at Formal commit
 \texttt{ad5fd4472d3bbdabe63a976dcf148f8a3eaee2d5}.  The owning module SHA-256 is
 \texttt{ce13025abea15f70a6754cccf9568984150223d90c28bb62c071875fae223aca}; the exact locator is
 \texttt{BG-FOURIER-THM-086}.
+
+The recorded module hash authenticates the historical pre-hierarchy source bytes at the stated base. The current declaration and module locator are recorded in \texttt{docs/migrations/fourier-domain-hierarchy.md}.
 
 Motivation came from the centered-even convention inspected read-only at KSD PR~\#80 merge
 \texttt{d8e7d1db3eaf16332e691427fb9d5949325badd6}, tree
@@ -94,7 +96,7 @@ Lean first applies
 \texttt{negativeNyquistRemovedReconstruction}, rewrites the omitted complement using the singleton
 result, and evaluates the singleton sum.  The critical local dependency is
 \texttt{BG-FOURIER-THM-081}; the generic decomposition is in
-\path{ProjectKoios/BandGauge/Fourier/FiniteReconstruction.lean}.
+\path{ProjectKoios/BandGauge/Fourier/FiniteAbelian/Reconstruction.lean}.
 
 Toolchain: Lean \texttt{4.35.0}, commit
 \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
@@ -103,7 +105,7 @@ Toolchain: Lean \texttt{4.35.0}, commit
 \section{Trusted base and axiom report}
 \begin{verbatim}
 #print axioms
-  ProjectKoios.BandGauge.Fourier.
+  ProjectKoios.BandGauge.Fourier.Support.
     finiteReconstruction_eq_negativeNyquistRemoved_add
 -- [propext, Classical.choice, Quot.sound]
 \end{verbatim}
