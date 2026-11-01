@@ -48,7 +48,7 @@ noncomputable def finiteMatrixConvolution
 
 /-- `BG-FOURIER-FINITE-LEM-001`: reconstruction turns finite matrix convolution into pointwise
 matrix multiplication. -/
-theorem finiteFourierReconstruction_finiteMatrixConvolution
+lemma finiteFourierReconstruction_finiteMatrixConvolution
     [AddCommGroup G] [Fintype G] [DecidableEq G]
     [Fintype n]
     (left : AddChar G ℂ → Matrix m n ℂ)

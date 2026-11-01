@@ -34,7 +34,7 @@ open ProjectKoios.BandGauge.Fourier.FiniteAbelian
 variable {G m n ι : Type*} [AddCommGroup G] [Fintype G]
 
 /-- `BG-FOURIER-GAUGE-LEM-001`: coefficient conjugation negates the finite character mode. -/
-theorem finiteFourierCoefficient_conj
+lemma finiteFourierCoefficient_conj
     (field : G → ℂ) (mode : AddChar G ℂ) :
     finiteFourierCoefficient (fun momentum => conj (field momentum)) mode =
       conj (finiteFourierCoefficient field (-mode)) := by
@@ -49,7 +49,7 @@ theorem finiteFourierCoefficient_conj
   rfl
 
 /-- `BG-FOURIER-GAUGE-LEM-002`: coefficient conjugate transpose negates the finite character mode. -/
-theorem finiteFourierCoefficient_conjTranspose
+lemma finiteFourierCoefficient_conjTranspose
     (field : G → Matrix m n ℂ) (mode : AddChar G ℂ) :
     finiteFourierCoefficient (fun momentum => (field momentum)ᴴ) mode =
       (finiteFourierCoefficient field (-mode))ᴴ := by
@@ -61,7 +61,7 @@ theorem finiteFourierCoefficient_conjTranspose
 omit [Fintype G] in
 /-- `BG-FOURIER-GAUGE-LEM-003`: negating modes and taking conjugate transpose negates an exact
 coefficient support. -/
-theorem conjTranspose_negated_coefficients_supportedOn_neg
+lemma conjTranspose_negated_coefficients_supportedOn_neg
     (coefficients : AddChar G ℂ → Matrix m n ℂ)
     (support : Finset (AddChar G ℂ))
     (hsupport : CoefficientSupportedOn support coefficients) :
