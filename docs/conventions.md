@@ -16,7 +16,7 @@ Record every convention that affects a proposition.
 | Special functions | exact library function, order, phase sign, coordinate scaling, and measure normalization | equality of differently normalized integral formulas |
 | Operators | spaces, basis/frame, adjoint, norm | matrix/operator identity without a map |
 | Support | indices, metric, shells, closure, finite/decaying semantics | physical range from coordinate cutoff |
-| Gauge | group, action, global/pointwise dependence | larger alignment family |
+| Gauge | group family, represented finite dimension, action side, inner-product or metric convention, and global/pointwise dependence | group family from metric, represented dimension from spatial dimension, or a larger alignment family |
 | Spectrum | multiplicity, ordering, gaps, retained subspace | canonical eigenvectors at degeneracy |
 | Parameters | domains, positivity, compactness, units | bounded conclusions from unbounded formulas |
 | Evidence | equality, bound, tolerance, or external obligation | approximate-to-exact promotion |
@@ -45,6 +45,7 @@ Before comparing operators, identify:
 5. lattice and reciprocal coordinates.
 
 Projection, disentanglement, basis change, Fourier conversion, and truncation are different operations.
+For a column frame `F : Ambient × Retained`, the retained-coordinate action `F ↦ F U` is a right action and compression transforms as `H ↦ Uᴴ H U`. A left-action label does not determine a conformable formula without a separately typed row-frame or ambient-action convention. For a nonorthonormal coordinate basis, distinguish a compressed sesquilinear-form matrix from a coordinate endomorphism before selecting `Uᴴ H U` versus `U⁻¹ H U`.
 
 ## Normalized-circle Bessel convention
 

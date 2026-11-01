@@ -540,3 +540,92 @@ adjoint compatibility, and then applies Mathlib's unitary linear-isometry equiva
 places identity, constant, and arbitrary matrix-unitary fields into the already declared identity,
 global, and complete alignment families. It authenticates no external mesh, runtime polar factor,
 SVD, numerical rank, tolerance, optimizer, or serialized evidence.
+
+### Later typed gauge-identity inspection
+
+A later KSD handoff was inspected read-only at immutable local commit
+`b47e455ba92a4b3a3b21e24cc087f7d9b7e088ee`, tree
+`d3ab5b5c38bd36fdeb9bf8169c32a81a2c130d37`, on branch
+`work/periodic23-rank2-ragasa-metric-extension`. The checkout was twelve commits ahead of its
+configured `origin/main` and dirty in unrelated 2-D/3-D calculation, documentation, and analysis
+paths. The cited paths below were unmodified and were read from immutable commit blobs:
+
+| SHA-256 | Owner-repository path |
+|---|---|
+| `ccebe25afba837f40b91c7c4c9006be49fcd24a2f355e2db63edd1886233e662` | `python/src/ksdft2effmass/gauge_alignment/base.py` |
+| `77f7400da43f6cd59e4b97e63a50700b7a1f7f08895c156c92d3e29ed28a451b` | `docs/architecture/v3/ksdft2effmass/scientific-operation-taxonomy.md` |
+| `929b0388236cf3ad56bdbdb3ca9e3b034ee511656a9e63de5209fb00dab327ea` | `docs/architecture/v3/ksdft2effmass/periodic1d/rank2/gauge_alignment/index.md` |
+| `254f8e2f54d1c8a7cb11322d742597053dbf550f12d6cc672c665235e6b12a4d` | `docs/architecture/v3/ksdft2effmass/periodic1d/rank2/gauge_alignment/scientifics.md` |
+| `1fa5f00f3826d6c9d6a1a8abefa10d5d477d67564724638f1b83c9db67929c0b` | `docs/architecture/v3/ksdft2effmass/periodic1d/rank2/gauge_alignment/numerics.md` |
+| `1c35738d7963f366f11fe2065ce494ef71202a0aae4e55bfc8903670d9f8e1e5` | `docs/architecture/v3/ksdft2effmass/periodic1d/rankN/band_alignment/composite/index.md` |
+| `3ae8ade99c1ee47f0d203121996041307ae3446017918f197a16ca3c9de89845` | `docs/architecture/v3/ksdft2effmass/periodic1d/rankN/band_alignment/composite/scientifics.md` |
+| `848835dfb799d3338b226fe4f910022094462b5283b3e03b5272401224e7fc35` | `docs/architecture/v3/ksdft2effmass/periodic1d/rankN/band_alignment/composite/numerics.md` |
+| `319385f51815c6c7c949be734ef1cc823acc29798dff044f6ae80f5d59bd8927` | `docs/research/proofs/formal/theorem-catalog/PRF-05.md` |
+
+A follow-up rank-one specialization was inspected at child commit
+`b07897216f6d28aa77d4615e9e20ca812701e223`, tree
+`b943efc9ab42cc0eaa5db312611997ade50209db`. The same unrelated dirty-state limitation applied;
+the cited paths were again read from immutable commit blobs:
+
+| SHA-256 | Owner-repository path |
+|---|---|
+| `c56aaf43e2ba0738acde6444141e653eea0257140ecc208cf32c34a8c171a94f` | `doc/sphinx/api/gauge-alignment.rst` |
+| `63b44e09ff112e4986e7740f2fea4f8d7ebc7e94a3154bb5e4831f8b5ceb4fa7` | `docs/architecture/v3/ksdft2effmass/periodic1d/fourier_locality/index.md` |
+| `18fc04099ca947745cc643554aeba23f6db6368e33a9eb64fabb86caf6b6d6fd` | `docs/architecture/v3/ksdft2effmass/scientific-operation-taxonomy.md` |
+| `9f36c799d700369576e8eee1a9877ecfc877d4f9aa6cdb8d234f54cce09163d9` | `python/src/ksdft2effmass/periodic1d/rank1/alignment/analysis.py` |
+| `871677b2b1c9b40d9ebfa4a730d8b02104c5fa39f5ea8b152fab22a0ac6b3903` | `python/src/ksdft2effmass/periodic1d/rank1/alignment/result.py` |
+| `03e6382cae653df7b81717cd59781a457860abe35bd49f15c0ad5656a05423c6` | `python/tests/ksdft2effmass/periodic1d/rank1/test__rank1_capabilities.py` |
+
+The follow-up derives the rank-one label `U(1)` from the same typed unitary-family identity while
+retaining operator-trivial applicability. This agrees with the existing exact scalar boundary
+`BG-FOURIER-THM-049`: unitary phase membership exists, but conjugation of a scalar represented
+operator is trivial and does not create duplicate operator-locality channels.
+
+The convention correction was then inspected at child commit
+`9e1629a5656816c5e9b36b399c8691ca038e12c2`, tree
+`25c4f9e739c67e5c8014ccbbcb7e7251eb9c2b4a`. The checkout was fourteen commits ahead of its
+configured `origin/main` and remained dirty in unrelated calculation and model-adequacy paths; all
+cited bytes were read from the immutable commit rather than the working tree:
+
+| SHA-256 | Owner-repository path |
+|---|---|
+| `d16399f1b2003c27570312dc573fd01d412bcd0b48eba0fd007d61bd9c033d0d` | `doc/sphinx/api/gauge-alignment.rst` |
+| `66ced572c5b921ea6923454614926f2445c68741e1905548f659aab4d6f195e6` | `docs/architecture/v3/ksdft2effmass/periodic1d/rank2/gauge_alignment/index.md` |
+| `adb13c507f25e6e946a6e6661f70c261084e34deaad9204be8ad365433cb4db7` | `docs/architecture/v3/ksdft2effmass/periodic1d/rank2/gauge_alignment/scientifics.md` |
+| `de8af777830306ff436f272c1de93fdc58654157120cdd48406bd47856362a38` | `docs/architecture/v3/ksdft2effmass/periodic1d/rankN/band_alignment/composite/index.md` |
+| `7996734eb2288f837233f7963fd4a47631cd589fd32b047b6997b2bff52cce37` | `docs/architecture/v3/ksdft2effmass/periodic1d/rankN/band_alignment/composite/scientifics.md` |
+| `84f89678dd50b23a01cec6cf30044520c8dc5d185dbf1b690f9456bedd7e3031` | `docs/architecture/v3/ksdft2effmass/scientific-operation-taxonomy.md` |
+| `58978f7d9cc6befeba106e5fe249404cf85636cd40258b2ab5b8f4ec56c92a83` | `python/src/ksdft2effmass/gauge_alignment/base.py` |
+| `266db3fa86a20074e6e8271c3c019e815859672809b82bd2e2ab6e4fe711f313` | `python/src/ksdft2effmass/periodic1d/rank2/gauge_alignment/analysis.py` |
+| `3f5a2b7b791e9dbfe3bf2b139df564f93775725d5d2343127135ead14198f054` | `python/src/ksdft2effmass/periodic1d/rank2/gauge_alignment/result.py` |
+| `f8f699a0c1d98f820f3b516a35b1f08bf74070581ac1918703f43cb673768c70` | `python/src/ksdft2effmass/periodic1d/rankN/band_alignment/composite/result/gauge_alignment.py` |
+| `60d64f5147902ad77e5dd37ce99aaddcc39d4e4227bed67aa1242d9ed82029ff` | `python/src/ksdft2effmass/periodic1d/rankN/gauge_alignment/request.py` |
+| `3e0bd8aebe06908b8841ddef327fc1d6b9bf36a1ed4a269c5ecb906106effaea` | `python/tests/ksdft2effmass/periodic1d/rank2/gauge_alignment/test__Periodic1DRank2GaugeAlignmentAnalyzer.py` |
+| `6c7eabc9879f8062921cdb211792968b9fb0f1ce9d423fa545321122a59e1e54` | `python/tests/ksdft2effmass/periodic1d/rankN/band_alignment/composite/test__Periodic1DRankNAlignmentAnalyzer.py` |
+| `f4d07deffb2e41eb8348371fc24c2f11959437020cf52e196604efeaf644e63d` | `python/tests/ksdft2effmass/test__GaugeAlignment__ownership.py` |
+
+This correction freezes `GaugeAlignmentInnerProductConvention.EUCLIDEAN` without embedding frame
+orthonormality in the label. Concrete frame and request contracts retain frame-validity ownership.
+It also records that the current `Ambient × Retained` column frames admit retained-space right
+actions, and that future metric-aware work must distinguish the coordinate-endomorphism law
+`U⁻¹ H U` from the compressed sesquilinear-form law `Uᴴ H U` before defining an operator
+transformation or objective. These owner boundaries agree with the bounded Formal layer.
+
+The initial handoff separates the unitary group family, finite represented dimension, left/right
+action label, a then-named Euclidean-orthonormal inner-product convention, ordered sample domain,
+and global-versus-pointwise constraint. Formal maps these to a closed family vocabulary, a
+type-derived finite cardinality, a separate action-side vocabulary, an explicit Euclidean-metric
+convention that does not assert frame orthonormality, the existing sample type, and the existing
+global/complete alignment families. The current column-frame equation
+is already `F ↦ F U`, and `BG-ALIGNMENT-THM-005` proves the resulting compression law
+`H ↦ Uᴴ H U`.
+
+Two boundaries remain explicit. First, a retained-space left action is not conformable with the
+current `Ambient × Retained` column-frame carrier without a separately typed row-frame convention;
+an ambient left action would be a different operation. Second, for a nonorthonormal basis,
+`Uᴴ M U = M` defines metric isometry, but a coordinate endomorphism generally transforms by
+`U⁻¹ H U`, whereas a compressed sesquilinear-form matrix transforms by `Uᴴ H U`. The inspected
+KSD sources now require that future contract to choose its represented object and adjoint, but they
+do not choose one or define a metric-aware objective. Formal therefore records only the exact
+metric-isometry predicate and does not claim a metric-aware alignment implementation, optimizer,
+certificate, locality result, or scientific acceptance.

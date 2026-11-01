@@ -20,6 +20,7 @@ import ProjectKoios.BandGauge.Alignment.Family
 import ProjectKoios.BandGauge.Alignment.FamilySeparation
 import ProjectKoios.BandGauge.Alignment.UnitaryProcrustes
 import ProjectKoios.BandGauge.Alignment.FiniteMeshProcrustes
+import ProjectKoios.BandGauge.Alignment.GaugeIdentity
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.ResidualChannels
 import ProjectKoios.BandGauge.Hilbert.FourStageResidualChannels
@@ -581,6 +582,15 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Alignment.knownInverseUnitaryField_objective_zero
 #print axioms ProjectKoios.BandGauge.Alignment.knownInverseUnitaryField_is_global
 #print axioms ProjectKoios.BandGauge.Alignment.knownInverseUnitaryField_eq_polarMinimizer
+#print axioms ProjectKoios.BandGauge.Alignment.euclideanRightUnitaryIdentity_representedDimension
+#print axioms ProjectKoios.BandGauge.Alignment.unitary_isMetricUnitary_identity
+#print axioms ProjectKoios.BandGauge.Alignment.compressOperator_rightUnitaryFrame_eq_rightGaugeConjugate
+#print axioms ProjectKoios.BandGauge.Alignment.identity_isMetricUnitary
+#print axioms ProjectKoios.BandGauge.Alignment.IsMetricUnitary.mul
+#print axioms ProjectKoios.BandGauge.Alignment.rightGaugeConjugate_one
+#print axioms ProjectKoios.BandGauge.Alignment.rightGaugeConjugate_mul
+#print axioms ProjectKoios.BandGauge.Alignment.rightGaugeConjugate_conjTranspose
+#print axioms ProjectKoios.BandGauge.Alignment.rightGaugeConjugate_isHermitian
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply
 #print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_operatorFieldDifference
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap

@@ -1,0 +1,67 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-01
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Ordinary Unitary Preserves the Identity Metric}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-01}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-ALIGNMENT-THM-060} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Alignment.unitary_isMetricUnitary_identity} \\
+Owning module & \path{ProjectKoios/BandGauge/Alignment/GaugeIdentity.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $U$ be an exact finite complex unitary matrix. Then $U$ is unitary in the identity metric:
+\[
+  U^* I U = I.
+\]
+This is the identity-metric specialization of the separately defined predicate
+$U^* M U=M$.
+
+\section{Proof}
+Matrix multiplication by the identity reduces the left side to $U^*U$. Mathlib's exact membership
+condition for the finite unitary group supplies $U^*U=I$.
+
+\section{Source relation and boundaries}
+The KSD consumer vocabulary was inspected at immutable commit
+\texttt{b47e455ba92a4b3a3b21e24cc087f7d9b7e088ee}, with the Euclidean convention and action boundary
+corrected at \texttt{9e1629a5656816c5e9b36b399c8691ca038e12c2}; exact path hashes and dirty-state limitations are
+recorded in \path{docs/source-audit.md}. The theorem proves only the Euclidean identity-metric case.
+It does not prove positivity of a general metric, define a metric adjoint or Procrustes objective,
+authenticate a runtime matrix, or validate numerical or scientific acceptance.
+
+The Formal base is \texttt{5f05c767771c2ea64de65f14d0f06ccc16679015}, tree
+\texttt{9f6625c03ecc4b951eac794359fa4f7a5e59487c}. The owning-module SHA-256 is
+\texttt{960767a08764c41212b46d895325124c4c10fba65b5171c322576165696f0a79}; the source locator is
+\texttt{GaugeIdentity.lean:107} and \texttt{BG-ALIGNMENT-THM-060}. No topic commit is claimed.
+
+\section{Lean realization and trusted base}
+Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Alignment.unitary_isMetricUnitary_identity
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{AI and review boundary}
+The Lean proof and dossier were AI-assisted and kernel checked. This is not independent scientific,
+source-fidelity, novelty, or publication review.
+\end{document}

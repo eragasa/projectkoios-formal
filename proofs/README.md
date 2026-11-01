@@ -162,6 +162,19 @@ inverse is a conditional control, not universal ground truth. No theorem constru
 witness, authenticates a runtime mesh, verifies SVD/rank/tolerance behavior, selects a
 rank-deficient completion, binds external arrays, or checks a certificate.
 
+## Finite gauge-identity tranche
+
+The typed gauge-identity extension has dossiers for `BG-ALIGNMENT-THM-059` through
+`BG-ALIGNMENT-THM-061`. They record type-derived represented dimension, identity-metric preservation
+by an ordinary unitary, and the exact right-frame-action compression law. Group family, dimension,
+action side, inner-product convention, sample domain, and global-versus-pointwise family remain
+separate. The metric-isometry predicate does not claim a metric-aware adjoint, objective, optimizer,
+or runtime binding. A left-action label does not silently define a conformable operation on the
+current column-frame carrier. `BG-ALIGNMENT-THM-062` through `BG-ALIGNMENT-THM-067` add the
+identity and multiplication laws for a fixed metric plus identity, composition,
+conjugate-transpose, and Hermiticity laws for right conjugation; they are recorded in Lean and the
+theorem manifest without separate dossiers.
+
 ## Selected complete metric-shell tranche
 
 The source-neutral metric-shell extension has selected dossiers for `BG-FOURIER-THM-100` and
