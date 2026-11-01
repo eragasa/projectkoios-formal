@@ -26,29 +26,33 @@ Formal status requires visible assumptions and admissions checks.
 
 ## Required gates
 
-Every promotion tree passes the same gate set.
+Validation is proportional to the changed trust surface.
 
 | Layer | Check |
 |---|---|
 | Pins | `./scripts/check-pins.py` |
-| Build | one cached or incremental `lake build` per exact candidate tree |
-| Admissions and audit coverage | `./scripts/audit.sh` |
-| Named axioms | `ProjectKoios/Audit.lean` |
-| Manifest | compare declarations with `docs/theorem-manifest.md` |
-| Crosswalk | compare source revision, statement, and assumptions |
+| Affected Lean targets | compile every changed module, its bounded affected consumers, and the smallest relevant audit target; not required for documentation-only changes unless a formal-status or reproducibility claim must be replayed |
+| Repository-wide build | `lake build` only for toolchain/dependency, Lake/package, namespace-root, unbounded shared-foundation, ambiguous targeted-coverage, release/publication, or explicit-request gates |
+| Admissions and audit coverage | `./scripts/audit.sh` for Lean changes and any changed formal-status claim |
+| Named axioms | `ProjectKoios/Audit.lean` for new or changed proved declarations |
+| Manifest | compare changed declarations with `docs/theorem-manifest.md` |
+| Crosswalk | compare changed source revision, statement, and assumptions |
+| Generated state | confirm build products remain ignored and untracked |
 
 ## Build reuse
 
-Build evidence is keyed by exact tree and dependency identity.
+Targeted and repository-wide evidence have different scopes and must be labeled honestly.
 
 - Identify evidence by source tree, `lean-toolchain`, and `lake-manifest.json`.
 - Reuse `.lake` and immutable dependency materialization.
 - Prefer one persistent clean integration worktree.
 - Run `lake update` only for dependency changes.
-- Compile affected modules during development.
-- Run the full build once for the promotion tree.
-- Reuse the result after unchanged staging, commit, or byte-identical merge.
-- Rebuild only after identity changes, failure/interruption, or loss of trusted evidence.
+- Compile every changed module and its bounded affected consumers during development or promotion.
+- Do not require a repository-wide build merely because an otherwise bounded source tree changed.
+- Except when freezing a release or publication snapshot, when toolchain and dependency identity are unchanged, combine prior repository-wide evidence with exact affected-target and audit checks for descendant trees. A frozen release or publication snapshot requires a repository-wide build of that exact tree.
+- Escalate to a full build when the affected set cannot be bounded reliably, targeted validation fails, a release/publication snapshot is frozen, or an operator/reviewer requests it.
+- Reuse results after unchanged staging, commit, or byte-identical merge.
+- Never report affected-target compilation as a full repository build.
 
 ## Publication-facing gate
 
@@ -60,7 +64,7 @@ Record:
 4. assumption delta;
 5. direct proof dependencies;
 6. axiom report;
-7. pin and build results; and
+7. pin and validation results, distinguishing targeted compilation from repository-wide builds; and
 8. external certificate or numerical obligations.
 
 ## Historical tranche records
