@@ -44,6 +44,8 @@ Planning files organize work without changing formal status.
 - `BandGauge/Geometry/witness-separation-statement-selection.md`: `BG-PLAN-001` decision record.
 - `BandGauge/higher-rank-composite-band-formalization-plan.md`: higher-rank D1 plan.
 - `BandGauge/Papers/`: series and per-paper plans.
+- `BandGauge/Papers/Ragasa2026A/diagnostic-mathematical-specification.md`: proposed mathematical semantics for the Paper A diagnostic registry.
+- `BandGauge/Papers/Ragasa2026A/diagnostic-python-interface-recommendation.md`: owner-side diagnostic naming and immutable-record recommendation.
 - `papers/`: Formal-owned, publication-quality proof companions and their publication boundaries.
 - `SolidState/TightBinding/vogl-sp3s-star-formalization.md`: Vogl exact-algebra scope.
 

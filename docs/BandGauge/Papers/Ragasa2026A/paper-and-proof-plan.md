@@ -61,6 +61,17 @@ Not implemented or not bound:
 
 See `docs/theorem-manifest.md` for declaration status.
 
+## Diagnostic design documents
+
+The prospective diagnostic study is
+[`diagnostic-usefulness-study-plan.md`](diagnostic-usefulness-study-plan.md). Exact proposed
+measurement semantics are recorded in
+[`diagnostic-mathematical-specification.md`](diagnostic-mathematical-specification.md), and
+owner-side names and immutable Python record signatures are recommended in
+[`diagnostic-python-interface-recommendation.md`](diagnostic-python-interface-recommendation.md).
+These documents do not implement an owner schema, bind runtime values, establish diagnostic
+usefulness, or promote numerical evidence.
+
 ## Source-to-Lean structure
 
 Each source layer has one formal or external owner.

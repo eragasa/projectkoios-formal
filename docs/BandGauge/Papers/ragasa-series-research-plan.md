@@ -43,7 +43,12 @@ Formal state:
 
 Next gate: freeze and independently verify an owner-controlled exact or outward-rounded runtime certificate.
 
-Detailed plan: `Ragasa2026A/paper-and-proof-plan.md`.
+Detailed plan: `Ragasa2026A/paper-and-proof-plan.md`. The prospective diagnostic study,
+proposed mathematical semantics, and owner-side interface recommendation are
+`Ragasa2026A/diagnostic-usefulness-study-plan.md`,
+`Ragasa2026A/diagnostic-mathematical-specification.md`, and
+`Ragasa2026A/diagnostic-python-interface-recommendation.md`, respectively; none changes
+formal or evidence status.
 
 ## Paper B — projection-induced nonlocality
 
