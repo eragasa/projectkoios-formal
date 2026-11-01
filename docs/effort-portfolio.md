@@ -21,9 +21,9 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board baseline: remote `main` merge commit
-`24263f08a5b69fc34be3073bc724a3b0ad4b80d6`, tree
-`2cbef2a05174f5ad491392b40dd4265a751ed932`, integrating PR #44.
+Current board reconciliation source baseline: remote `main` merge commit
+`500e84a52a90c89fda48132c07e9706ecd989453`, tree
+`f7bf17426c6e18213b0601b8dc9c191fca54c558`, integrating PR #55.
 
 ## Mission
 
@@ -69,10 +69,9 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-The first WIP slot contains the isolated source-neutral finite multidimensional gauge–locality
-separation milestone: exact binary product-mesh 2-D/3-D witnesses with equal ordered bands,
-zero-mode-truncation noncommutation, and positive omitted Fourier power. No trust,
-documentation, or maintenance effort occupies the second WIP slot.
+No mathematical or certificate effort is recorded as active on this reconciled `main` snapshot. No
+trust, documentation, or maintenance effort is recorded in the second WIP slot. New work must enter
+a slot explicitly rather than inheriting an already-merged worktree or branch description.
 
 ## Ready
 
@@ -100,7 +99,9 @@ Blocked work lacks a required source or evidence gate.
   `37a173ed220b81394706e0af3c76f279ca6f1b3c`, but that binary64 transport/status API is not a
   Formal certificate input; no parser or runtime binding is authorized, and the checked
   runtime-certificate count remains zero.
-- Projection/nonlocality promotion pending provenance, dossier, spectral-characterization, and status fixes.
+- Any external promotion of the exact projection/nonlocality counterexample to a quantitative or
+  scientific locality claim pending an owner-specific source binding, quantitative decay/locality
+  theorem, applicability review, and independent scientific review.
 - Paper A retained runtime certificate and active package.
 - Paper B retained production evidence and exhaustive checked table.
 - Paper C retained independent evidence and fail-closed calculator contract.
@@ -230,6 +231,41 @@ These items are merged Formal content only.
   coordinate or phase convention, authenticate quadrature or a runtime mesh, establish
   finite-to-continuum convergence, or certify a KSD comparator, external certificate, or scientific
   conclusion.
+- The reusable projection and finite multidimensional gauge-locality slices are proved as
+  `BG-PROJECTION-DEF-001--011`, `BG-PROJECTION-THM-001--008`,
+  `BG-FOURIER-DEF-059--064`, and `BG-FOURIER-THM-134--159`. They merged through PR #50 at
+  commit `7d475b0815d447b84337096e083f486aecd242fc`, tree
+  `c0d6aad8c42debe1d02e72d8911456544013468c`; the projection result is one exact rank-two
+  counterexample, while the finite product witnesses establish equal ordered bands alongside
+  truncation noncommutation and positive omitted power. Neither slice authenticates runtime
+  coefficients, physical hopping range, quantitative decay, model adequacy, or production evidence.
+- The Fourier declaration domain is organized into the `FiniteAbelian`, `Gauge`, `Support`, `Torus`,
+  and `Residual` ownership families, with a complete migration manifest and no compatibility
+  facade. The controlled structural migration merged through PR #51 at commit
+  `681b14f50a559f0ecf49d45c0a7d60adfc187eb5`, tree
+  `b9a24d0a9e9cb73f8bd100529b79477e6006e0da`; historical stable IDs and propositions remain
+  preserved.
+- Gauge identity, represented-dimension, Euclidean-metric, right-action, and rank-one carrier laws
+  are proved as `BG-ALIGNMENT-DEF-030--037` and `BG-ALIGNMENT-THM-059--067`. They merged
+  through PR #52 at commit `f982fd299a96b280d331e2c7d3569d4aec995b3a`, tree
+  `f1ec8567cbde025ac8cc2cba90ecb42125e28453`; the laws do not authenticate runtime frames,
+  metric-aware objectives, optimizer recovery, or numerical alignment quality.
+- Affected-target validation policy, exact-tree release-build requirements, and status-free quantum
+  roadmap reconciliation merged through PRs #53 and #54 at commits
+  `ad0cf798fd4aaac176ca427d0fa678e6a51ffaad` and
+  `953b776945c413e848881ce4447e9bdee8fbd925`. These are policy and documentation results, not
+  new mathematical, runtime, scientific, or publication evidence. The non-building dependency-graph
+  tooling and Paper A documentation reconciliation likewise merged through PRs #48 and #49 without
+  creating proof or evidence-status transfers.
+- Exact finite matrix-product convolution, conjugate-transpose mode reversal, the pointwise-unitary
+  triple-convolution law, and finite support inclusion in `(-S_U + S_A) + S_U` are implemented as
+  `BG-FOURIER-FINITE-DEF-001--002`, `BG-FOURIER-FINITE-LEM-001`,
+  `BG-FOURIER-FINITE-THM-001--002`, `BG-FOURIER-GAUGE-LEM-001--003`, and
+  `BG-FOURIER-GAUGE-THM-001--002`. They merged through PR #55 at commit
+  `500e84a52a90c89fda48132c07e9706ecd989453`, tree
+  `f7bf17426c6e18213b0601b8dc9c191fca54c558`; support is an inclusion in a supplied finite
+  character inventory and establishes no support equality, runtime binding, continuum decay,
+  physical hopping range, or scientific adequacy.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit
@@ -300,7 +336,7 @@ Each program retains independent formal and evidence status.
 | Paper E | absent | KSD has pre-results common-space defect methodology but no immutable experiment or retained defect operator |
 | Paper F | finite gauge-loop and projector--Bargmann algebra only | KSD has pre-results obstruction methodology but no selected model family, invariant protocol, or retained classification; current Formal results do not establish topology |
 | Paper G | absent | KSD has a pre-results matched-SOC application plan but no authorized matched pristine/Si:P/Si:B branches or retained material result |
-| Monograph projection | dirty isolated work | provenance, statement, dossier, and status corrections |
+| Monograph projection | exact reusable rank-two projection/non-finite-support counterexample merged on `main` | owner-specific source binding, quantitative decay or locality consequences, retained production evidence, applicability review, and scientific validation remain missing |
 
 ## Change rules
 
