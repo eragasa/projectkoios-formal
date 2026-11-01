@@ -39,6 +39,7 @@ Planning files organize work without changing formal status.
 - `definition-and-lemma-inventory.md`: implemented and candidate mathematics.
 - `roadmap.md`: dependency-ordered future work.
 - `ecosystem-architecture.md`: repository boundaries.
+- `BandGauge/ksdft2effmass/mathematical-representation-class-architecture-plan.md`: verification-side recommendation for owner-controlled computational representation classes and certificate boundaries.
 - `ksdft2effmass-calculations-formal-support-inventory.md`: calculation-to-formal-support assessment.
 - `witness-catalog.md`: candidate exact examples.
 - `BandGauge/Geometry/witness-separation-statement-selection.md`: `BG-PLAN-001` decision record.
