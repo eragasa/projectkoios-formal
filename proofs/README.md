@@ -236,6 +236,19 @@ half-open coordinate or runtime phase convention, authenticates quadrature or a 
 proves finite-to-continuum convergence, or certifies a KSD analytic comparator, material model,
 certificate, or scientific conclusion.
 
+## Selected multidimensional gauge--locality separation tranche
+
+The source-neutral binary product-mesh extension has selected dossiers for
+`BG-FOURIER-THM-156` and `BG-FOURIER-THM-159`. They cover strictly positive omitted
+matrix-Frobenius power after zero-mode truncation for the explicit `Fin 2 → ZMod 2` and
+`Fin 3 → ZMod 2` witnesses. Exact Hermiticity, pointwise spectrum and ordered-band equality,
+full Fourier reconstruction, truncation noncommutation, and the dimension-parametric versions
+remain fully recorded in Lean and the theorem manifest without separate dossiers.
+
+These theorems establish an exact finite representation-locality separation only. They do not
+bind a runtime mesh, gauge, frame, eigensolver, coefficient array, physical hopping range,
+finite-to-continuum limit, material model, certificate, or scientific conclusion.
+
 ## Required contents
 
 A dossier records:

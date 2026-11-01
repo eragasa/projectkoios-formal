@@ -23,6 +23,7 @@ This directory owns exact finite Fourier, support, truncation, Parseval, fixed-u
 - `UnitaryEquivariance.lean`: Frobenius invariance and Fourier commutation for one fixed finite-rank unitary.
 - `PointwiseGauge.lean`: character-phase mode shifts, trivial scalar-operator conjugation, pointwise matrix conjugation, coefficient separation, and pointwise Frobenius invariance.
 - `GaugeTruncationCounterexample.lean`: an exact rank-two, two-point witness in which a pointwise swap gauge creates a nonzero odd Fourier mode and fails to commute with zero-mode support truncation.
+- `ProductGaugeLocalitySeparation.lean`: an arbitrary-finite-dimensional binary product-mesh lift with exact Hermiticity, pointwise ordered-band equality, full reconstruction, zero-mode-truncation noncommutation, positive omitted matrix-Frobenius power, and explicit 2-D/3-D corollaries.
 
 ## Boundaries
 
@@ -31,7 +32,7 @@ Every specialization must freeze its convention.
 - Every specialization must state sign, normalization, index group, support rule, and finite or continuum domain.
 - Character multiplication of a vector field shifts mode labels; it is not scalar-operator conjugation.
 - Scalar rank-one operator conjugation is pointwise trivial and is not a gauge-locality effect.
-- A momentum-dependent higher-rank gauge that changes the field changes at least one coefficient. The explicit two-point witness proves that such a gauge need not commute with zero-mode support truncation, but it does not provide a general convolution or support formula.
+- A momentum-dependent higher-rank gauge that changes the field changes at least one coefficient. The two-point and binary product-mesh witnesses prove that exact pointwise ordered-band equality can coexist with zero-mode-truncation noncommutation and strictly positive omitted Fourier power, but they do not provide a general convolution or support formula.
 - The Fourier residual bridge does not identify a runtime interpolant, coefficient array, or support inventory with its exact inputs.
 - Negative-Nyquist removal is a singleton projection, not a representation-preserving equivalence: the full reconstruction differs by the explicit deleted term away from any separately established equality set.
 - The normalized negative-Nyquist power is independent of later range selection by construction. It is not an off-mesh error and is not the ordinary omitted-coefficient tail.
