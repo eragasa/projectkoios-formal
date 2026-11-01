@@ -1,0 +1,76 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-01
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Right Frame Action and Compression Covariance}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-01}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-ALIGNMENT-THM-061} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Alignment.compressOperator_rightUnitaryFrame_eq_rightGaugeConjugate} \\
+Owning module & \path{ProjectKoios/BandGauge/Alignment/GaugeIdentity.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $F\in\mathbb C^{D\times r}$ be a finite column frame, let
+$A\in\mathbb C^{D\times D}$, and let $U\in U(r)$. With
+$H(F,A)=F^*AF$, the retained-space right action $F\mapsto FU$ obeys
+\[
+  H(FU,A)=U^*H(F,A)U.
+\]
+The conclusion uses the named right-action conjugation operation.
+
+\section{Proof and relation to existing declarations}
+The theorem is a naming bridge to \texttt{BG-ALIGNMENT-THM-005}. Expanding
+$(FU)^*A(FU)$ and using $(FU)^*=U^*F^*$ gives the equality by associativity. No
+orthonormality or Hermiticity premise is needed for this covariance identity.
+
+\section{Source relation and convention mismatch}
+KSD commits \texttt{b47e455ba92a4b3a3b21e24cc087f7d9b7e088ee},
+\texttt{b07897216f6d28aa77d4615e9e20ca812701e223}, and the boundary correction
+\texttt{9e1629a5656816c5e9b36b399c8691ca038e12c2} retain this Euclidean right-action convention;
+exact source hashes are in \path{docs/source-audit.md}. A retained-space left action is not
+conformable with the same $D\times r$ column-frame carrier unless a different row-frame or ambient
+action is specified. For a future nonorthonormal basis, a coordinate endomorphism generally uses
+$U^{-1}HU$, whereas a compressed sesquilinear-form matrix uses $U^*HU$; this theorem does not
+silently choose between those future objects.
+
+The Formal base is \texttt{5f05c767771c2ea64de65f14d0f06ccc16679015}, tree
+\texttt{9f6625c03ecc4b951eac794359fa4f7a5e59487c}. The owning-module SHA-256 is
+\texttt{960767a08764c41212b46d895325124c4c10fba65b5171c322576165696f0a79}; the source locator is
+\texttt{GaugeIdentity.lean:117} and \texttt{BG-ALIGNMENT-THM-061}. No topic commit is claimed.
+
+\section{Lean realization and trusted base}
+Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Alignment.compressOperator_rightUnitaryFrame_eq_rightGaugeConjugate
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Numerical and scientific boundaries}
+The theorem authenticates no runtime frame, unitary, metric, optimizer, Procrustes result, rank
+cutoff, mesh, locality diagnostic, certificate, or acceptance decision. The checked runtime-
+certificate count remains zero.
+
+\section{AI and review boundary}
+The Lean proof and dossier were AI-assisted and kernel checked. This is not independent scientific,
+source-fidelity, novelty, or publication review.
+\end{document}
