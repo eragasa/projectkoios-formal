@@ -1,0 +1,42 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-01
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Pointwise-Unitary Fourier Shell Radius}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-11-01}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-GAUGE-THM-003}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.Gauge.}}\\
+{\tiny\path{pointwiseUnitaryConjugation_coefficients_supportedOn_metricShell}}.
+\section{Exact statement and proof}
+Let $\rho$ be a nonnegative radius on the finite character group such that
+\[
+ \rho(-p)=\rho(p),\qquad \rho(p+q)\leq \rho(p)+\rho(q).
+\]
+If the Fourier coefficients of $U$ vanish outside the complete shell of radius $R_U$ and those of
+$A$ vanish outside the complete shell of radius $R_A$, then
+\[
+ \operatorname{supp}\widehat{U^\dagger A U}
+ \subseteq \operatorname{shell}(R_A+2R_U).
+\]
+The existing triple-convolution support theorem places the coefficients in
+$(-\operatorname{shell}(R_U)+\operatorname{shell}(R_A))+\operatorname{shell}(R_U)$.
+Inversion invariance identifies the negated gauge shell with the original shell. Applying
+subadditivity at the two support additions gives the cutoff
+$(R_U+R_A)+R_U=R_A+2R_U$. Support monotonicity transfers the earlier coefficient-support theorem
+to this larger complete shell.
+\section{Boundary}
+The shell inventory is the complete finite character inventory \texttt{Finset.univ}, and the radius
+and both of its laws are explicit inputs. The theorem does not assert that the repository's square,
+triangular, simple-cubic, or FCC squared-radius indices satisfy the triangle hypothesis. The result
+is an inclusion and may be non-sharp because coefficients can cancel. It authenticates no external
+inventory, FFT convention, runtime gauge, physical hopping range, continuum decay, convergence, or
+scientific adequacy.
+\section{Trusted base and verification}
+Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

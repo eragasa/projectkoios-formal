@@ -16,10 +16,11 @@ re-exported through a flat compatibility namespace.
   transform, inversion, Parseval, Hermitian pairing, matrix-Frobenius identities, and exact finite
   matrix-product convolution.
 - `Gauge/`: fixed-unitary equivariance, pointwise-gauge boundaries, exact pointwise-unitary
-  triple convolution and support inclusion, and finite witnesses separating ordered-band equality
-  from Fourier locality.
-- `Support/`: centered-even mesh inventories, negative-Nyquist removal, and complete metric-shell
-  semantics over supplied finite inventories.
+  triple convolution, finite-support and complete-shell radius inclusions, and finite witnesses
+  separating ordered-band equality from Fourier locality.
+- `Support/`: centered-even mesh inventories, negative-Nyquist removal, complete metric-shell
+  semantics over supplied finite inventories, and complete-shell growth under explicitly supplied
+  radius hypotheses.
 - `Torus/`: normalized finite products of unit additive circles and exact normalized sine-phase
   `J₀` evaluations.
 - `Residual/`: deliberate-truncation residual channels, exact power/root-mean-square tails, maximum
@@ -36,7 +37,7 @@ Every specialization must freeze its convention.
 - Every specialization must state sign, normalization, index group, support rule, and finite or continuum domain.
 - Character multiplication of a vector field shifts mode labels; it is not scalar-operator conjugation.
 - Scalar rank-one operator conjugation is pointwise trivial and is not a gauge-locality effect.
-- A momentum-dependent higher-rank gauge obeys an exact finite triple-convolution law, with coefficient support contained in `(-S_U + S_A) + S_U`; this is an inclusion in a declared finite character inventory, not support equality or physical range. The two-point and binary product-mesh witnesses separately prove that exact pointwise ordered-band equality can coexist with zero-mode-truncation noncommutation and strictly positive omitted Fourier power.
+- A momentum-dependent higher-rank gauge obeys an exact finite triple-convolution law, with coefficient support contained in `(-S_U + S_A) + S_U`; for a supplied inversion-invariant subadditive nonnegative radius and complete character inventory, this implies the shell bound `R_A + 2 R_U`. Both statements are inclusions, not support equality or physical range. The two-point and binary product-mesh witnesses separately prove that exact pointwise ordered-band equality can coexist with zero-mode-truncation noncommutation and strictly positive omitted Fourier power.
 - The Fourier residual bridge does not identify a runtime interpolant, coefficient array, or support inventory with its exact inputs.
 - Negative-Nyquist removal is a singleton projection, not a representation-preserving equivalence: the full reconstruction differs by the explicit deleted term away from any separately established equality set.
 - The normalized negative-Nyquist power is independent of later range selection by construction. It is not an off-mesh error and is not the ordinary omitted-coefficient tail.
@@ -45,8 +46,8 @@ Every specialization must freeze its convention.
 - The maximum-tail bound uses the ambient norm on a complex normed space. It does not imply an entrywise matrix-Frobenius maximum bound without a separate representation bridge.
 - Uniform weights do not replace nonuniform quadrature.
 - Concrete weights and supports must satisfy `docs/BandGauge/publication-evidence-contract.md`.
-- A complete metric shell is exact only relative to its supplied inventory, radius, cutoff, and invariance hypotheses. It does not authenticate a serialized inventory, turn a metric radius into a source-defined hopping range, or prove external orbit coverage.
-- The square, triangular, simple-cubic, and FCC shell indices use exact dimensionless reduced integer coordinates; lattice constants, physical units, basis connectivity, and material interpretation remain external.
+- A complete metric shell is exact only relative to its supplied inventory, radius, cutoff, and invariance hypotheses. The support-growth result uses `Finset.univ`; it does not authenticate an external incomplete inventory, turn a metric radius into a source-defined hopping range, or prove external orbit coverage.
+- The square, triangular, simple-cubic, and FCC shell indices use exact dimensionless reduced integer coordinates. They are squared-radius indices and are not silently treated as instances of the support-growth theorem's triangle hypothesis; lattice constants, physical units, basis connectivity, and material interpretation remain external.
 - The normalized product-torus carrier is explicitly `Dimension → UnitAddCircle`, with `Dimension` finite and the product of standard unit-circle Haar measures. It does not infer endpoint identification, coordinate scaling, phase convention, or measure from external notation.
 - The normalized-circle Bessel bridge fixes `UnitAddCircle`, standard Haar mass one, the coordinate `sin(2πx)`, positive phase, and no extra `2π` in the real amplitude. It does not identify an external coordinate or runtime phase with these exact inputs, authenticate quadrature or a finite mesh, establish finite-to-continuum convergence, or certify a KSD analytic comparator.
 - The modules do not identify a generic finite group with a publication mesh or certify Wannier90, runtime arrays, continuum convergence, or physical locality.

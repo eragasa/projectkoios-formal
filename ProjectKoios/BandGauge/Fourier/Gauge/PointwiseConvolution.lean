@@ -8,6 +8,7 @@ module
 
 public import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Convolution
 public import ProjectKoios.BandGauge.Fourier.Gauge.PointwiseGauge
+public import ProjectKoios.BandGauge.Fourier.Support.RadiusGrowth
 
 /-!
 # Pointwise-gauge Fourier convolution
@@ -30,6 +31,7 @@ open scoped BigOperators ComplexConjugate Matrix Pointwise
 namespace ProjectKoios.BandGauge.Fourier.Gauge
 
 open ProjectKoios.BandGauge.Fourier.FiniteAbelian
+open ProjectKoios.BandGauge.Fourier.Support
 
 variable {G m n ι : Type*} [AddCommGroup G] [Fintype G]
 
@@ -76,6 +78,30 @@ lemma conjTranspose_negated_coefficients_supportedOn_neg
   change (coefficients (-mode))ᴴ = 0
   rw [hsupport (-mode) hneg]
   simp
+
+section Radius
+
+variable {Mode : Type*} [AddCommGroup Mode] [Fintype Mode] [DecidableEq Mode]
+
+/-- `BG-FOURIER-GAUGE-LEM-004`: gauge-field-gauge addition of complete shells for an
+inversion-invariant subadditive radius lies in the shell with radius bound `R_A + 2 R_U`. -/
+lemma pointwiseConjugation_supportShell_subset
+    (radius : Mode → NNReal) (gaugeRadius fieldRadius : NNReal)
+    (hneg : ∀ mode, radius (-mode) = radius mode)
+    (hadd : ∀ left right, radius (left + right) ≤ radius left + radius right) :
+    ((-(metricShell Finset.univ radius gaugeRadius) +
+        metricShell Finset.univ radius fieldRadius) +
+      metricShell Finset.univ radius gaugeRadius) ⊆
+      metricShell Finset.univ radius (fieldRadius + 2 * gaugeRadius) := by
+  rw [neg_metricShell_univ_eq radius gaugeRadius hneg]
+  have hsubset := (Finset.add_subset_add
+    (metricShell_univ_add_subset radius gaugeRadius fieldRadius hadd)
+    (fun _ h => h)).trans
+      (metricShell_univ_add_subset radius
+        (gaugeRadius + fieldRadius) gaugeRadius hadd)
+  simpa only [two_mul, add_assoc, add_left_comm, add_comm] using hsubset
+
+end Radius
 
 section Matrix
 
@@ -146,6 +172,37 @@ theorem pointwiseUnitaryConjugation_coefficients_supportedOn
   intro mode hmode
   rw [finiteFourierCoefficient_pointwiseUnitaryConjugation_convolution]
   exact htriple mode hmode
+
+/-- `BG-FOURIER-GAUGE-THM-003`: if the gauge coefficients lie in a complete shell of radius
+`R_U` and the field coefficients lie in a complete shell of radius `R_A`, then an
+inversion-invariant subadditive mode radius bounds the pointwise-conjugated coefficients by the
+complete shell of radius `R_A + 2 R_U`.  This is an exact finite inclusion, not support equality or
+a physical-range claim. -/
+theorem pointwiseUnitaryConjugation_coefficients_supportedOn_metricShell
+    (gauge : G → Matrix.unitaryGroup ι ℂ)
+    (field : G → Matrix ι ι ℂ)
+    (radius : AddChar G ℂ → NNReal)
+    (gaugeRadius fieldRadius : NNReal)
+    (hneg : ∀ mode, radius (-mode) = radius mode)
+    (hadd : ∀ left right, radius (left + right) ≤ radius left + radius right)
+    (hgauge : CoefficientSupportedOn
+      (metricShell Finset.univ radius gaugeRadius)
+      (finiteFourierCoefficient
+        (fun momentum => (gauge momentum : Matrix ι ι ℂ))))
+    (hfield : CoefficientSupportedOn
+      (metricShell Finset.univ radius fieldRadius)
+      (finiteFourierCoefficient field)) :
+    CoefficientSupportedOn
+      (metricShell Finset.univ radius (fieldRadius + 2 * gaugeRadius))
+      (finiteFourierCoefficient (pointwiseUnitaryConjugation gauge field)) := by
+  apply coefficientSupportedOn_mono
+    (pointwiseConjugation_supportShell_subset
+      radius gaugeRadius fieldRadius hneg hadd)
+  exact pointwiseUnitaryConjugation_coefficients_supportedOn
+    gauge field
+    (metricShell Finset.univ radius gaugeRadius)
+    (metricShell Finset.univ radius fieldRadius)
+    hgauge hfield
 
 end Matrix
 
