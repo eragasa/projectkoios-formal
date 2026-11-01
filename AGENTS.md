@@ -61,17 +61,19 @@ Dependency identity must be immutable and tested.
 
 ## Validation
 
-Validate each distinct candidate tree once.
+Use affected-target validation by default; a repository-wide build is an escalation gate, not a
+routine per-tree requirement.
 
-- During development, compile only the smallest affected module or audit target.
-- Before promotion, run one cached or incremental `lake build`, pin inspection, axiom/admission audit, and generated-state check.
-- Identify build evidence by source tree, `lean-toolchain`, and `lake-manifest.json`.
+- During development and ordinary promotion, compile every changed Lean module, its bounded affected consumers, and the smallest relevant audit target. Run pin inspection, axiom/admission coverage, manifest/crosswalk review, and generated-state checks appropriate to the changed surface.
+- Documentation-only changes do not require Lean compilation unless they change a theorem-status, axiom, dependency, or reproducibility claim that must be replayed.
+- Require a repository-wide `lake build` only when dependency or toolchain identity changes; Lake/package configuration or namespace roots change; a broadly shared foundation makes the affected target set unreliable; targeted validation fails or leaves import coverage ambiguous; a release or publication snapshot is being frozen; or the operator/reviewer explicitly requests it.
+- Record targeted and repository-wide evidence separately. Identify each by source tree, `lean-toolchain`, and `lake-manifest.json`; never imply that targeted compilation was a full build.
+- Except when freezing a release or publication snapshot, reuse prior repository-wide build evidence when toolchain and dependency identity are unchanged, and validate descendant source changes through their affected modules and audit targets. A frozen release or publication snapshot requires a repository-wide build of that exact tree.
 - Reuse populated `.lake` state and prefer one persistent clean integration worktree.
 - Create another worktree only for required concurrent isolation.
 - Run `lake update` only for an intentional dependency change.
 - Never delete `.lake` or rematerialize dependencies merely to call a build clean.
-- Do not rebuild after staging, committing, or merging a byte-identical tree.
-- Rebuild only after a tree, toolchain, or manifest change, a failed/interrupted build, or loss of trusted evidence.
+- Do not repeat a validation command after staging, committing, or merging a byte-identical tree.
 
 ## Protected actions
 

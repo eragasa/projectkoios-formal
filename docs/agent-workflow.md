@@ -56,16 +56,29 @@ lake env lean path/to/AffectedModule.lean
 
 ### 5. Promote
 
-Run the complete gate once for the exact candidate tree.
+Validate the changed trust surface once for the exact candidate tree.
 
-- `./scripts/check-pins.py`
-- one cached or incremental `lake build`
-- `./scripts/audit.sh`
-- named `#print axioms` reports
-- manifest and crosswalk review
-- residual-obligation report
+For a Lean change:
 
-Reuse the result after staging, commit, or a byte-identical merge. Rebuild only after a source-tree, toolchain, or manifest change; a failed or interrupted build; or loss of trusted evidence.
+- compile every changed module and its bounded affected consumers, using targeted Lake builds when updated `.olean` files are needed;
+- compile the smallest relevant audit target and run `./scripts/audit.sh`;
+- run named `#print axioms` reports;
+- run `./scripts/check-pins.py`;
+- review the manifest, crosswalk, generated state, and residual obligations.
+
+For a documentation-only change, run the applicable document, link, schema, or dossier checks. Lean
+compilation is unnecessary unless the documentation changes a theorem-status, axiom, dependency, or
+reproducibility claim that needs replay evidence.
+
+Escalate to repository-wide `lake build` only for a toolchain/dependency change, Lake/package or
+namespace-root change, an unbounded shared-foundation change, ambiguous or failed targeted coverage,
+a release/publication snapshot, or an explicit operator/reviewer request. Record targeted compilation
+as targeted evidence, never as a full build.
+
+Reuse results after staging, commit, or a byte-identical merge. Except when freezing a release or
+publication snapshot, when toolchain and dependency identity are unchanged, a prior repository-wide
+build plus exact affected-target checks may validate a descendant tree without another full build. A
+frozen release or publication snapshot requires a repository-wide build of that exact tree.
 
 ## Tool adoption
 

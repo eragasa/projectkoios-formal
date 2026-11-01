@@ -215,10 +215,14 @@ resolved revisions as commit identities. The durable dependency record is
 \modulepath{lake-manifest.json}. A reproducibility review must inspect that file and must
 not replace its immutable revisions with floating branches or tags.
 
-The minimum repository validation boundary consists of:
+Routine repository validation is affected-target based: every changed Lean module, its
+bounded affected consumers, and the relevant audit target are compiled, while documentation-only
+changes use their applicable document checks. Targeted compilation must not be described as a repository-wide build.
+
+For a frozen publication snapshot, the stronger validation boundary consists of:
 
 \begin{enumerate}
-  \item a successful Lake build for the exact Lean input tree, toolchain, and manifest;
+  \item a successful repository-wide Lake build for the exact Lean input tree, toolchain, and manifest;
   \item immutable dependency-pin inspection;
   \item an audit for admissions and repository-owned axioms;
   \item coverage of proved declarations by named axiom reports; and
