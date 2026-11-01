@@ -87,3 +87,15 @@ The barrier tranche passed its declared gates.
 - Forty-four constant-region, transfer-matrix, finite-barrier, and interface-matching declarations had unique manifest rows.
 - Thirty named reports used only `propext`, `Classical.choice`, and `Quot.sound`.
 - The symbolic results do not solve constrained left-incident scattering amplitudes, assign flux probabilities, certify numerical transmission/reflection, take an infinite-barrier limit, bind runtime arrays, or establish continuum convergence.
+
+### Finite product gauge--locality separation, 2026-11-01
+
+The source-neutral product-mesh tranche passed its declared Lean gates.
+
+- `lake build`: passed, 3,883 jobs.
+- `./scripts/check-pins.py`: passed against Mathlib `56a005855ea17e0b0958f73ec801ae140b0a1679` and immutable dependency revisions.
+- `./scripts/audit.sh`: passed with 847 proved theorem/lemma rows and 851 unique named axiom reports; the scan found no repository-owned admitted declaration marker.
+- The new module defines six witness objects (`BG-FOURIER-DEF-059`--`064`) and proves 26 declarations (`BG-FOURIER-THM-134`--`159`), including generic finite-product results and explicit `Fin 2` and `Fin 3` specializations.
+- All 26 new named reports use only `propext`, `Classical.choice`, and `Quot.sound`.
+- `ProjectKoios/BandGauge/Fourier/ProductGaugeLocalitySeparation.lean` has SHA-256 `709237449b6ddbcb6fce3e2ab83bc9b09ffe2cb392ecff6f0f23ea9e5f2a21a9`.
+- The exact finite identities do not authenticate an external torus coordinate or gauge, a runtime mesh or comparator, quadrature, finite-mesh approximation, physical hopping range, finite-to-continuum convergence, or scientific adequacy.
