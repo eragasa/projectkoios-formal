@@ -13,6 +13,7 @@ This family owns the exact algebra shared by the higher Fourier families.
 - `Parseval.lean`: inner-product and power Parseval identities and exact residual power.
 - `HermitianPairing.lean`: negative-mode pairing and Hermitian reconstruction.
 - `MatrixFrobenius.lean`: entrywise matrix Parseval and the exact Frobenius residual tail.
+- `Convolution.lean`: exact finite matrix-product convolution and finite-support addition.
 
 The modules choose no runtime mesh, FFT implementation, serialized coefficient array, or physical
 locality interpretation.

@@ -104,7 +104,7 @@ Status: generic foundations implemented.
 - Positive even centered integer inventories, exact negative-Nyquist singleton removal, full-versus-removed reconstruction, normalized removed-block power independent of later range selection, and symmetric ordinary support below half the mesh size.
 - Complete finite metric shells over caller-supplied inventories, including nested cutoffs, exact tie retention, conditional inversion and symmetry-orbit closure, strict block-count growth at every attained radius, no-skipped-attained-shell semantics, and exact square, triangular, simple-cubic, and normalized FCC reduced-coordinate indices; no runtime inventory, physical hopping-range, or material binding is inferred.
 - Exact reference/interpolation/conversion/deliberate-truncation residual decomposition with pointwise, finite-maximum, and finite root-mean-square triangle bounds, plus exact Hilbert and explicit matrix-Frobenius power and root-mean-square Fourier-tail identities and pointwise and finite-maximum ambient-norm tail bounds for the deliberate-truncation channel.
-- Exact character-phase mode shifts, trivial pointwise scalar-operator conjugation, coefficient separation, and pointwise-unitary Frobenius invariance.
+- Exact character-phase mode shifts, trivial pointwise scalar-operator conjugation, coefficient separation, pointwise-unitary Frobenius invariance, the finite matrix-product convolution law, and the pointwise-unitary triple-convolution support inclusion `supp(Uᴴ A U) ⊆ (-S_U + S_A) + S_U`.
 - An explicit rank-two `ZMod 2` witness in which a pointwise swap gauge creates the odd coefficient `diag(1/2,-1/2)` and does not commute with zero-mode truncation.
 - An arbitrary-finite-dimensional binary product-mesh lift, with explicit 2-D and 3-D cases, in which exact pointwise Hermiticity and ordered-band equality coexist with exact full Fourier reconstruction, zero-mode-truncation noncommutation, and strictly positive omitted matrix-Frobenius power.
 - Rectangular complex frames, ambient projectors, compression/reconstruction, and right-unitary retained-coordinate covariance.
@@ -129,7 +129,6 @@ Open:
 - matrix-Frobenius maximum-tail specialization after selecting an explicit representation bridge;
 - runtime interpolation, evaluation-mesh, and exact/outward-rounded residual-channel bindings;
 - an exact owner-specific bridge from NumPy `fft`/`fftshift` and its centered-origin phase convention to the abstract centered inventory and coefficient field;
-- general pointwise-gauge convolution and support formulas;
 - source-defined physical hopping-range, external shell-inventory, and publication-mesh bindings beyond the exact source-neutral metric-shell semantics;
 - nonuniform weighted Parseval;
 - runtime interval serialization, enclosure-production arguments, and external coverage;

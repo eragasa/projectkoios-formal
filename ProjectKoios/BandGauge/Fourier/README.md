@@ -13,9 +13,11 @@ The declaration surface is deliberately divided into five ownership families. De
 re-exported through a flat compatibility namespace.
 
 - `FiniteAbelian/`: convention-neutral reconstruction followed by the explicit finite-abelian
-  transform, inversion, Parseval, Hermitian pairing, and matrix-Frobenius identities.
-- `Gauge/`: fixed-unitary equivariance, pointwise-gauge boundaries, and exact finite witnesses
-  separating ordered-band equality from Fourier locality.
+  transform, inversion, Parseval, Hermitian pairing, matrix-Frobenius identities, and exact finite
+  matrix-product convolution.
+- `Gauge/`: fixed-unitary equivariance, pointwise-gauge boundaries, exact pointwise-unitary
+  triple convolution and support inclusion, and finite witnesses separating ordered-band equality
+  from Fourier locality.
 - `Support/`: centered-even mesh inventories, negative-Nyquist removal, and complete metric-shell
   semantics over supplied finite inventories.
 - `Torus/`: normalized finite products of unit additive circles and exact normalized sine-phase
@@ -34,7 +36,7 @@ Every specialization must freeze its convention.
 - Every specialization must state sign, normalization, index group, support rule, and finite or continuum domain.
 - Character multiplication of a vector field shifts mode labels; it is not scalar-operator conjugation.
 - Scalar rank-one operator conjugation is pointwise trivial and is not a gauge-locality effect.
-- A momentum-dependent higher-rank gauge that changes the field changes at least one coefficient. The two-point and binary product-mesh witnesses prove that exact pointwise ordered-band equality can coexist with zero-mode-truncation noncommutation and strictly positive omitted Fourier power, but they do not provide a general convolution or support formula.
+- A momentum-dependent higher-rank gauge obeys an exact finite triple-convolution law, with coefficient support contained in `(-S_U + S_A) + S_U`; this is an inclusion in a declared finite character inventory, not support equality or physical range. The two-point and binary product-mesh witnesses separately prove that exact pointwise ordered-band equality can coexist with zero-mode-truncation noncommutation and strictly positive omitted Fourier power.
 - The Fourier residual bridge does not identify a runtime interpolant, coefficient array, or support inventory with its exact inputs.
 - Negative-Nyquist removal is a singleton projection, not a representation-preserving equivalence: the full reconstruction differs by the explicit deleted term away from any separately established equality set.
 - The normalized negative-Nyquist power is independent of later range selection by construction. It is not an off-mesh error and is not the ordinary omitted-coefficient tail.

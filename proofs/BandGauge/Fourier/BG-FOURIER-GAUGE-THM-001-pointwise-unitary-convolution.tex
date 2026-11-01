@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Pointwise-Unitary Triple Convolution}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-31}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-GAUGE-THM-001}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.Gauge.}}\\
+{\tiny\path{finiteFourierCoefficient_pointwiseUnitaryConjugation_convolution}}.
+\section{Exact statement and proof}
+For a finite abelian momentum group, a unitary matrix field $U$, and a square matrix field $A$,
+\[
+ \widehat{U^\dagger A U}
+ =\bigl((p\mapsto \widehat U(-p)^\dagger)\star\widehat A\bigr)\star\widehat U.
+\]
+Equivalently, the coefficient at $m$ is a finite sum of products
+$\widehat U(a)^\dagger\widehat A(b)\widehat U(c)$ whose indices satisfy
+$-a+b+c=m$. Conjugate transpose negates the Fourier mode under the repository convention, and two
+applications of the finite matrix-product convolution theorem give the result.
+\section{Boundary}
+Unitarity specifies the existing pointwise gauge carrier, but the coefficient multiplication law is
+algebraic. The theorem does not select or authenticate a gauge, bind runtime coefficients, establish
+optimizer behavior, infer continuum decay, or assign a physical hopping range.
+\section{Trusted base and verification}
+Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

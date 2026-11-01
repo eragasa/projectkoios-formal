@@ -1,0 +1,30 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Finite Convolution Support}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-31}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-FINITE-THM-002}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteMatrixConvolution_supportedOn_add}}.
+\section{Exact statement and proof}
+If matrix coefficient fields $L$ and $R$ vanish outside finite supports $S$ and $T$, respectively,
+then $L\star R$ vanishes outside the finite pointwise sum
+\[
+  S+T=\{s+t:s\in S,\ t\in T\}.
+\]
+For a mode outside $S+T$, each convolution summand vanishes: either its left index is outside $S$,
+its right index is outside $T$, or the index sum is not the selected mode. Both finite sums are
+therefore zero.
+\section{Boundary}
+The conclusion is support inclusion, not equality; matrix products or finite sums may cancel. The
+support is relative to an exact declared finite character inventory and has no automatic runtime,
+continuum-decay, physical-range, or scientific interpretation.
+\section{Trusted base and verification}
+Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}
