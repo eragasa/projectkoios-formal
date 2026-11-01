@@ -1,0 +1,32 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Finite Matrix-Product Convolution}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-31}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-FINITE-THM-001}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierCoefficient_mul}}.
+\section{Exact statement and proof}
+For a finite abelian group and compatible finite complex matrix fields $L$ and $R$, the
+normalized conjugated-character Fourier coefficient of the pointwise product $L(k)R(k)$ equals
+\[
+  (\widehat L\star\widehat R)(m)
+  =\sum_{p,q}\mathbf 1_{p+q=m}\,\widehat L(p)\widehat R(q).
+\]
+Reconstructing the convolution distributes the character phase over both finite sums. Character
+multiplicativity turns the product of phases into the phase at $p+q$, and the conditional sum
+selects that mode. Fourier inversion then identifies the coefficient of the pointwise product.
+\section{Conventions and boundary}
+The forward transform carries $|G|^{-1}$ and a conjugated character; reconstruction uses the
+unconjugated character and no additional normalization. Consequently no extra cardinality factor
+appears. The result is exact finite algebra and does not bind an FFT, runtime array, external mesh,
+continuum transform, or physical hopping range.
+\section{Trusted base and verification}
+Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

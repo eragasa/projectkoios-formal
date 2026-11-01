@@ -1,0 +1,33 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-10-31
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Pointwise-Unitary Fourier Support}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-10-31}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-GAUGE-THM-002}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.Gauge.}}\\
+{\tiny\path{pointwiseUnitaryConjugation_coefficients_supportedOn}}.
+\section{Exact statement and proof}
+If the Fourier coefficients of $U$ vanish outside $S_U$ and those of $A$ vanish outside $S_A$,
+then
+\[
+ \operatorname{supp}\widehat{U^\dagger A U}
+ \subseteq (-S_U+S_A)+S_U.
+\]
+Conjugate transpose and mode reversal place the left gauge factor on $-S_U$. Applying finite
+convolution support addition first to that factor and $A$, then to the resulting convolution and the
+right gauge factor, gives the declared support. The triple-convolution identity transfers this
+support statement to the pointwise-conjugated field.
+\section{Boundary}
+The conclusion is inclusion in a supplied finite character inventory, not support equality. It does
+not authenticate either support, infer quantitative localization or continuum decay, identify a
+physical hopping range, or certify runtime gauge recovery or scientific adequacy.
+\section{Trusted base and verification}
+Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no admissions.
+AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}
