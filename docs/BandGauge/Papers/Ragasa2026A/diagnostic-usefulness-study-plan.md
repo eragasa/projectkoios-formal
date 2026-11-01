@@ -12,6 +12,8 @@ This plan evaluates the Paper A diagnostics. Only the immutable producer-field a
 - Owner revision: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`.
 - Source inventory: M01–M15, A01–A12, N01–N23, and V01–V10.
 - Exact source limits: `docs/source-audit.md`.
+- Proposed mathematical semantics: [`diagnostic-mathematical-specification.md`](diagnostic-mathematical-specification.md).
+- Owner-side naming and immutable-record recommendation: [`diagnostic-python-interface-recommendation.md`](diagnostic-python-interface-recommendation.md).
 - This file is not numerical evidence, a theorem inventory, execution authorization, or proof of usefulness.
 
 ## Primary decision
@@ -142,6 +144,106 @@ These diagnostics test robustness and provenance.
 
 Evidence-integrity diagnostics can establish that the declared calculation was performed
 as recorded. They do not establish physical applicability.
+
+## Conceptual coherence review
+
+This review asks whether each diagnostic has a coherent mathematical or decision role
+before any empirical usefulness study. It does **not** claim that a retained diagnostic is
+stable, predictive, cost-effective, numerically verified, or scientifically validated.
+The recommended dispositions are:
+
+- **retain** — coherent and sufficiently distinct to remain in the study;
+- **derive** — coherent, but should be computed from primary fields rather than treated as
+  independent evidence;
+- **redefine** — the intent is useful, but the current quantity bundles stages, assumes a
+  sign, or supports an invalid inference;
+- **conditional** — meaningful only when the named method or mesh convention is active;
+  otherwise report `not-applicable`, not zero.
+
+| ID | Recommended disposition | Conceptual assessment |
+|---|---|---|
+| A-DIAG-P01 | retain | Essential isolation gate. Define it as distance from the retained cluster to the full complement; `λ₃-λ₂` is sufficient only when the retained pair is the two lowest states. |
+| A-DIAG-P02 | retain | Essential discrete transport-rank gate, provided every neighbor and closure link is included and the singular-value margin is reported. |
+| A-DIAG-P03 | retain | Cheap structural identity check. It is partly redundant with frame construction but detects corrupted or stale frames. |
+| A-DIAG-P04 | retain | Essential eigenspace-validity check. Report a scale-aware residual and keep eigenpair and subspace/projector residuals distinct. |
+| A-DIAG-P05 | retain | Coherent gauge-invariant cross-check against the declared retained projector; useful even when frame-coordinate checks pass. |
+| A-DIAG-P06 | retain | Coherent explanatory sewing quantity, but it has no topological or causal interpretation and must not gate locality conclusions by itself. |
+| A-DIAG-P07 | retain | Essential post-closure sewing gate. Boundary convention and norm must be frozen. |
+| A-DIAG-P08 | redefine | Hermiticity checks make sense, but one maximum over parent, retained, aligned, Fourier, and reconstructed stages destroys fault localization. Store stage-resolved defects. |
+| A-DIAG-A01 | retain | The three harmonic coefficients are the exact sufficient statistics for the restricted optimizer and should be exported with their normalization. |
+| A-DIAG-A02 | retain | Reproducible witness only when paired with a degeneracy disposition; the angle itself is meaningless for a constant harmonic. |
+| A-DIAG-A03 | retain | Central normalized compatibility statistic. It requires positive `κ`, a fixed alignment family, and a proved or checked `[-1,1]` bound. |
+| A-DIAG-A04 | retain | Central operator-fidelity quantity and direct decision input. State whether the reported value is squared, rooted, maximum, or RMS. |
+| A-DIAG-A05 | derive | Mathematically useful screening bound, but it is an exact function of the primary power/correlation fields and is not independent evidence from A03/A04. |
+| A-DIAG-A06 | redefine | “Onsite-block mismatch” is underspecified. Freeze the aligned blocks, identity/traceless treatment, normalization, and norm; a difference of onsite powers is not a block mismatch. |
+| A-DIAG-A07 | redefine | Use a signed name such as `comparison_minus_reference_nononsite_power`. It is not universally an excess or cost because it may be negative. |
+| A-DIAG-A08 | retain | Valid implementation covariance check. It is mainly a development identity audit, not a scientific observable. |
+| A-DIAG-A09 | redefine | Split the signed cross term from the remaining deformation/remainder. A combined departure can hide cancellation and has no bound status by itself. |
+| A-DIAG-F01 | retain | Essential coefficient-pairing identity for Hermitian reconstruction, with the cyclic Nyquist case reported separately. |
+| A-DIAG-F02 | retain | Essential finite-transform inversion check at construction nodes. It does not measure off-grid interpolation. |
+| A-DIAG-F03 | retain | Essential normalization/power identity and independent audit of F02. Report absolute and scale-relative defects. |
+| A-DIAG-F04 | conditional | Meaningful only for even cyclic meshes undergoing centered-cyclic to ordinary-lattice conversion. Otherwise it is `not-applicable`. |
+| A-DIAG-F05 | retain | Coherent locality summary, but not a truncation error or spectral bound. Keep onsite convention and normalization explicit. |
+| A-DIAG-F06 | retain | Exact truncation quantity under the declared uniform Parseval hypotheses. Do not transfer the identity silently to nonuniform quadrature. |
+| A-DIAG-F07 | redefine | Block count and support radius are different costs, especially in higher dimensions and nonorthogonal lattices. Split them and define shell completeness. |
+| A-DIAG-F08 | retain | Necessary construction-mesh interpolation channel, evaluated on coordinate-disjoint points and reported separately from truncation. |
+| A-DIAG-F09 | retain | Necessary deliberate support-reduction channel at fixed interpolation. |
+| A-DIAG-F10 | retain | Necessary end-to-end channel. Preserve the exact matrix decomposition and never add scalar norms as independent errors. |
+| A-DIAG-S01 | retain | Strong complete-field integrity check. Sorted spectra are appropriate at degeneracy; it does not validate eigenvectors or observables. |
+| A-DIAG-S02 | retain | Primary spectral consequence and decision input. Freeze maximum versus RMS, normalization, sorting, and evaluation inventory. |
+| A-DIAG-S03 | redefine | The valid general bound uses operator norm or **unnormalized** Frobenius norm. A rank-normalized Frobenius value is not a universal Weyl upper bound without extra structure. |
+| A-DIAG-S04 | derive | Useful bound-slack summary only after S03 is valid and nonzero. Define zero-denominator and unresolved dispositions. |
+| A-DIAG-S05 | retain | Coherent finite matrix-channel decision when the cutoff order and exhaustion disposition are explicit. |
+| A-DIAG-S06 | retain | Coherent finite spectral-channel decision under the same requirements. |
+| A-DIAG-S07 | derive | Useful signed consequence of S05/S06, reported separately by channel; “inflation” must not presuppose positivity. |
+| A-DIAG-S08 | retain | The principal common-witness decision. It must scan one shared support inventory rather than combine separate channel minima. |
+| A-DIAG-S09 | conditional | Descriptive only for the frozen, a-priori weighted grid. It is not a prevalence claim about a continuum or population. |
+| A-DIAG-S10 | derive | Low-cost consistency summary derivable from S05/S06; agreement never licenses channel substitution. |
+| A-DIAG-R01 | retain | Necessary discretization-stability check. Include objective changes, margins, and decision changes rather than only raw value differences. |
+| A-DIAG-R02 | retain | Necessary decision-robustness quantity. Signed interval margins should replace bare pass/fail near thresholds. |
+| A-DIAG-R03 | redefine | Immediate-predecessor failure is only a local check. A certified first pass requires the selected cutoff to pass and **every earlier declared cutoff** to fail. |
+| A-DIAG-R04 | retain | Coherent bounded sensitivity study if parameter ranges are frozen prospectively; it is not a continuum robustness theorem. |
+| A-DIAG-R05 | retain | Necessary construction/evaluation separation check. Coordinate disjointness does not imply statistical independence. |
+| A-DIAG-R06 | retain | High-value independent-control-flow audit, provided it reconstructs every declared cutoff and does not call the producer. Same hardware or binary64 remains a stated limitation. |
+| A-DIAG-R07 | redefine | Schema validity, finite coverage, digest binding, and source identity are separate fail-closed gates. Split them so one passing subcheck cannot mask another missing gate. |
+| A-DIAG-R08 | retain | Necessary provenance metadata gate, not a numerical diagnostic. Record immutable dependency, executable, platform, and environment identities. |
+| A-DIAG-R09 | conditional | Keep only as an admission test when an amplitude interpolant is proposed. If interpolation is rejected and unused, omit it from the primary diagnostic set. |
+
+The registry is therefore conceptually sound in broad structure, but not publication-ready
+as written: 31 entries can be retained, four should be derived rather than promoted as
+independent evidence, eight require redefinition, and three are conditional. None should
+be removed solely because it is redundant; independent exact-identity checks can be
+valuable. The paper-facing set should nevertheless be much smaller than this complete
+audit registry.
+
+### Required correction to the perturbation-bound channel
+
+The current immutable producer defines its matrix channel as
+`||A-B||_F / √2` for rank two. That quantity is **not** a general upper bound on sorted
+Hermitian eigenvalue error. For example, with `A = diag(1,0)` and `B = 0`, the maximum
+sorted eigenvalue error is `1`, while the normalized Frobenius value is `1/√2`.
+Accordingly A-DIAG-S03 may be called a certified Weyl/Frobenius bound only if one of the
+following is adopted and checked:
+
+1. use the unnormalized Frobenius norm;
+2. use the operator norm;
+3. prove the residual is traceless rank two, where the selected normalization has the
+   required special relation; or
+4. provide another explicit theorem with its exact coefficient and hypotheses.
+
+The reusable rank-two theorem for option 1 is now kernel-checked as
+`BG-FOUNDATION-THM-012`: maximum lower/upper band error is bounded by the unnormalized
+entrywise Frobenius distance. This does not repair the immutable owner producer, which
+still emits the normalized quantity and is not bound to the Lean declaration. Until that
+producer and schema are corrected, sampled observations that band error lies below its
+matrix channel are empirical checks, not a general perturbation certificate, and
+A-DIAG-S04 is only a descriptive ratio.
+
+The corrected first-pass semantics are likewise kernel-checked as
+`BG-DECISION-THM-014--016`: a first pass exists when a finite ordered inventory contains
+a pass, is unique, checks every earlier inventory member, and uses one cutoff for both
+channels. The audited owner verifier still checks only the immediate predecessor and is
+not thereby upgraded.
 
 ## Source-result coverage map
 

@@ -39,11 +39,14 @@ Planning files organize work without changing formal status.
 - `definition-and-lemma-inventory.md`: implemented and candidate mathematics.
 - `roadmap.md`: dependency-ordered future work.
 - `ecosystem-architecture.md`: repository boundaries.
+- `BandGauge/ksdft2effmass/mathematical-representation-class-architecture-plan.md`: verification-side recommendation for owner-controlled computational representation classes and certificate boundaries.
 - `ksdft2effmass-calculations-formal-support-inventory.md`: calculation-to-formal-support assessment.
 - `witness-catalog.md`: candidate exact examples.
 - `BandGauge/Geometry/witness-separation-statement-selection.md`: `BG-PLAN-001` decision record.
 - `BandGauge/higher-rank-composite-band-formalization-plan.md`: higher-rank D1 plan.
 - `BandGauge/Papers/`: series and per-paper plans.
+- `BandGauge/Papers/Ragasa2026A/diagnostic-mathematical-specification.md`: proposed mathematical semantics for the Paper A diagnostic registry.
+- `BandGauge/Papers/Ragasa2026A/diagnostic-python-interface-recommendation.md`: owner-side diagnostic naming and immutable-record recommendation.
 - `papers/`: Formal-owned, publication-quality proof companions and their publication boundaries.
 - `SolidState/TightBinding/vogl-sp3s-star-formalization.md`: Vogl exact-algebra scope.
 
