@@ -2,6 +2,58 @@
 
 This roadmap orders work by dependency. It does not authorize implementation, execution, publication, or scientific claims.
 
+## Goal spines
+
+These diagrams show intended direction, not proof status. Solid arrows describe mathematical or
+contract flow within a spine; dashed arrows mark planned prerequisites, external evidence flows, or
+authority gates. Neither kind of arrow replaces the theorem manifest, a source crosswalk, a checked
+certificate, applicability review, or publication authorization. Planned arrows must not be imported
+into the generated kernel-dependency graph as though they were Lean implications.
+
+The verification-sidecar spine is:
+
+```mermaid
+flowchart LR
+  A[Source-neutral exact mathematics]
+  B[Source-specific formal bridge]
+  C[Exact certificate schema and checker]
+  D[Immutable owner-produced evidence]
+  E[Bounded publication-facing claim]
+  A --> B
+  B --> C
+  C -. producer and parser binding .-> D
+  D -. source fidelity and applicability review .-> E
+```
+
+The current quantum-mechanics direction is:
+
+```mermaid
+flowchart LR
+  Q0[Normalized state-vector representatives]
+  Q1[Finite bounded measurement operations]
+  Q2[Typed ket, bra, bracket, and rank-one operators]
+  Q3[Rigged Hilbert-space core]
+  Q4[Dense invariant test-domain partial operators]
+  Q5[Closedness, adjoint equality, and self-adjointness]
+  Q6[Dual extensions and generalized eigenvectors]
+  Q7[Qualified spectral expansion]
+  Q8[Governed source and physical-model crosswalk]
+  Q0 --> Q1
+  Q0 --> Q2
+  Q2 --> Q3
+  Q3 --> Q4
+  Q4 -. planned .-> Q5
+  Q5 -. planned .-> Q6
+  Q6 -. additional analysis required .-> Q7
+  Q7 -. source and applicability gates .-> Q8
+```
+
+The manifest records the source-neutral Q0--Q4 layers. Q5--Q8 remain planned: formal-adjoint
+containment is not adjoint equality or self-adjointness, and no generalized spectral theorem,
+textbook-postulate fidelity claim, runtime binding, or concrete Hamiltonian application follows from
+the arrows alone. Actual compiled dependencies remain separately documented in
+[`declaration-dependency-graph.md`](declaration-dependency-graph.md).
+
 ## R0 — repository contract
 
 Status: complete.

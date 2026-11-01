@@ -37,6 +37,22 @@ Read only the repository documents relevant to the task.
 Use current official Lean and Mathlib guidance, but verify every declaration against the pinned
 revision. Consult current Physlib rules only for an actual proposed Physlib contribution.
 
+## Declaration presentation
+
+Declaration kinds and stable IDs must reflect how the mathematics is presented, not merely the fact
+that Lean represents both `lemma` and `theorem` as proved constants.
+
+- Use `*-DEF-*` for definitions, abbreviations, structures, and named constructions.
+- Use `*-LEM-*` and the Lean `lemma` keyword for supporting identities, rewrite rules, and
+  intermediate results.
+- Use `*-THM-*` and the Lean `theorem` keyword for principal mathematical results.
+- Do not promote a supporting lemma to `THM` merely because it is public, proved, audited, or has a
+  proof dossier.
+- Record the exact presentation kind in the declaration manifest, and audit every proved lemma and
+  theorem. Publication-facing lemmas may have dossiers under their `LEM` IDs.
+- Apply this classification prospectively. Preserve established IDs and attached propositions unless
+  a separately reviewed migration explicitly authorizes relabeling.
+
 ## Boundaries
 
 Keep formal, computational, scientific, and publication authority separate.
