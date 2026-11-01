@@ -36,6 +36,16 @@ def CoefficientSupportedOn [Zero V]
     (support : Finset Mode) (coefficients : CoefficientField Mode V) : Prop :=
   ∀ mode, mode ∉ support → coefficients mode = 0
 
+/-- `BG-FOURIER-FINITE-LEM-002`: enlarging a declared support preserves exact coefficient
+support. -/
+lemma coefficientSupportedOn_mono [Zero V]
+    {smaller larger : Finset Mode} {coefficients : CoefficientField Mode V}
+    (hsubset : smaller ⊆ larger)
+    (hsupported : CoefficientSupportedOn smaller coefficients) :
+    CoefficientSupportedOn larger coefficients := by
+  intro mode hmode
+  exact hsupported mode fun hsmall => hmode (hsubset hsmall)
+
 /-- `BG-FOURIER-FINITE-DEF-002`: matrix-valued convolution over the finite character group. -/
 noncomputable def finiteMatrixConvolution
     [AddCommGroup G] [Fintype G] [DecidableEq G]

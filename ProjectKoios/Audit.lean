@@ -41,6 +41,7 @@ import ProjectKoios.BandGauge.Decision.MandatoryChannelComposition
 import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Reconstruction
 import ProjectKoios.BandGauge.Fourier.Support.CenteredEvenMesh
 import ProjectKoios.BandGauge.Fourier.Support.MetricShell
+import ProjectKoios.BandGauge.Fourier.Support.RadiusGrowth
 import ProjectKoios.BandGauge.Fourier.Torus.NormalizedProduct
 import ProjectKoios.BandGauge.Fourier.Torus.NormalizedCircleBessel
 import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Transform
@@ -488,14 +489,19 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.pointwiseUnitaryConjugation_const
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.exists_finiteFourierCoefficient_pointwiseUnitaryConjugation_ne
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.weightedFiniteMatrixFrobeniusPower_pointwiseUnitaryConjugation
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.coefficientSupportedOn_mono
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierReconstruction_finiteMatrixConvolution
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierCoefficient_mul
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteMatrixConvolution_supportedOn_add
+#print axioms ProjectKoios.BandGauge.Fourier.Support.metricShell_univ_add_subset
+#print axioms ProjectKoios.BandGauge.Fourier.Support.neg_metricShell_univ_eq
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.finiteFourierCoefficient_conj
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.finiteFourierCoefficient_conjTranspose
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.conjTranspose_negated_coefficients_supportedOn_neg
+#print axioms ProjectKoios.BandGauge.Fourier.Gauge.pointwiseConjugation_supportShell_subset
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.finiteFourierCoefficient_pointwiseUnitaryConjugation_convolution
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.pointwiseUnitaryConjugation_coefficients_supportedOn
+#print axioms ProjectKoios.BandGauge.Fourier.Gauge.pointwiseUnitaryConjugation_coefficients_supportedOn_metricShell
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.rankTwoSwapConjugation_firstCoordinateProjector
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.zeroModeFourierTruncation_eq_coefficient
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.zeroModeFourierTruncation_twoPointConstantProjectorField
