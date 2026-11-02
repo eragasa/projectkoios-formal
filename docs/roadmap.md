@@ -71,9 +71,11 @@ Status: substantially implemented.
 - Pointwise Bloch sewing and finite rank-two samples.
 - Hilbert-ball and weighted Frobenius geometry.
 - Rank-two fields, exact canonical band values, exact complex-unitary spectrum/trace/determinant and lower/upper-band invariance, pointwise band-field invariance, unnormalized Frobenius perturbation bound, spectral decomposition, and correlation optimization.
+- Exact finite-rank analytic-parent qualification: nonempty finite-bond structure-factor bounds, selected orbital-coordinate bounds, retained/exterior energy bounds, external gap at least `19/10`, and adjacent retained gap at least `7/(10(r-1))`.
 
 Open:
 
+- immutable owner-commit binding for the provisional Periodic2D/3D rank-N formulas and any runtime-array, NumPy, sampled-gap, or scientific applicability bridge;
 - periodic-potential construction;
 - quotient-torus and regularity contracts;
 - concrete publication-data binding; and

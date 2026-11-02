@@ -718,3 +718,43 @@ coefficient and proves total power equals onsite plus nononsite power, uniformly
 and matrix rank, with named 1-D, 2-D, and 3-D corollaries. The theorem neither diagnoses a retained
 runtime artifact nor verifies Python summation, IEEE-754 subtraction, mesh coverage, support/gauge
 binding, thresholds, or scientific consequences.
+
+## Provisional Periodic2D/3D rank-N analytic-parent crosswalk
+
+A read-only inspection on 2026-11-02 examined the active KSD rank-first development worktree:
+
+- owner repository: `ksdft2effmass`;
+- worktree: `/Users/eugene/worktrees/ksdft2effmass-periodic23-rank2-ragasa-metric-extension`;
+- branch: `work/periodic23-rank2-ragasa-metric-extension`;
+- checked-out commit: `0a5ef2b8d15a82f7271ce3e1b194f759c63c6ee9`;
+- dirty-state limitation: 428 short-status entries were present, and all four cited files below
+  were untracked. The hashes identify only the inspected working-tree bytes. They are not immutable
+  commit locators and must be refreshed against a reviewed owner commit before any release claim.
+
+| SHA-256 of inspected untracked bytes | Owner-repository path | Locator and crosswalk use |
+|---|---|---|
+| `16f88ea8bcba5f2c1a12bda5abcc8aa4284f6e19fae4f71971bd62656661b718` | `python/src/ksdft2effmass/periodic2d/rankN/band_equivalence_hopping_locality/model.py` | lines 35 and 137–169: declared `1.9` bound, structure factor, orbital coordinates, and retained/exterior energies |
+| `b886fae702c9f44449255fa52b837df6837ce531f6fe521b49aa729ebfaa27ea` | `python/src/ksdft2effmass/periodic3d/rankN/band_equivalence_hopping_locality/model.py` | lines 35 and 137–169: dimension-parallel formulas |
+| `8cb6faf776281589c6c49b6d5cde9c9532ac0d746ff5aa0ba0d3600c6ba3ef50` | `calculations/periodic2d/rankN/recommended-baseline.md` | lines 53–94: exact analytic-parent formulas, bounded structure factor, `1.9` external gap, and retained ordering claim |
+| `c0da1a4bc65187d4af0ea5d5114b0c2a3fca45d0dd71dd3f5135cc54f27c5bd2` | `calculations/periodic3d/rankN/recommended-baseline.md` | lines 49–85: dimension-parallel analytic-parent formulas and claims |
+
+A final read-only identity recheck on 2026-11-02 found 430 short-status entries because unrelated
+owner work continued concurrently; the branch, checked-out commit, four untracked classifications,
+and four byte hashes above were unchanged. Neither count is a clean-source claim.
+
+`BG-FOUNDATION-DEF-017` through `BG-FOUNDATION-DEF-021`,
+`BG-FOUNDATION-LEM-001` through `BG-FOUNDATION-LEM-003`, and
+`BG-FOUNDATION-THM-026` through `BG-FOUNDATION-THM-031` plus
+`BG-FOUNDATION-THM-033` through `BG-FOUNDATION-THM-037` validate the source-neutral exact mathematics
+behind those formulas. The
+finite bond inventory is represented by an abstract nonempty finite type, and the reciprocal
+phase is supplied exactly. The resulting structure factor lies in `[-1,1]`; selected orbital
+coordinates lie in `[-1,1]`; the retained and exterior energies are bounded by `7/10` and `13/5`;
+the external gap is therefore at least `19/10`; and adjacent retained energies differ by at least
+`7/(10(r-1))`.
+
+This crosswalk does **not** prove that Python or NumPy evaluates these definitions exactly, that a
+runtime bond or mesh inventory matches the abstract finite type, that binary64 trigonometric values
+satisfy exact identities, that sampled minima equal continuum minima, or that any eigensolver,
+Procrustes fit, transport, Fourier transform, support selection, artifact, or scientific conclusion
+is valid. No KSD file was modified during the inspection.

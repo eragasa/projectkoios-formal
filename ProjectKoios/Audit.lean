@@ -30,6 +30,7 @@ import ProjectKoios.BandGauge.Hilbert.OperatorLossBridge
 import ProjectKoios.BandGauge.Hilbert.SpectralLossBridge
 import ProjectKoios.BandGauge.Foundations.RankTwoSpectralPerturbation
 import ProjectKoios.BandGauge.Foundations.RankTwoConjugation
+import ProjectKoios.BandGauge.Foundations.FiniteRankAnalyticParent
 import ProjectKoios.BandGauge.Decision.FinitePareto
 import ProjectKoios.BandGauge.Decision.FiniteCutoff
 import ProjectKoios.BandGauge.Decision.FiniteCompatibility
@@ -685,6 +686,20 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Foundations.rankTwoUpperBand_eq_of_unitaryConjugation
 #print axioms ProjectKoios.BandGauge.Foundations.rankTwoBands_eq_of_unitaryConjugation
 #print axioms ProjectKoios.BandGauge.Foundations.rankTwoFiniteBandFields_eq_of_pointwiseUnitaryConjugation
+#print axioms ProjectKoios.BandGauge.Foundations.parentScale_mul_structureFactor_mem_Icc
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankOrbitalCoordinate_succ_sub
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankBondHarmonic_mem_Icc
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankStructureFactor_mem_Icc
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankOrbitalCoordinate_mem_Icc
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankRetainedEnergy_le
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankExteriorEnergy_ge
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRank_externalGap_ge
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankRetainedEnergy_sub
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankRetainedEnergy_strictMono
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankRetainedEnergy_adjacentGap_ge
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankStructureFactor_externalGap_ge
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankStructureFactor_adjacentGap_ge
+#print axioms ProjectKoios.BandGauge.Foundations.finiteRankStructureFactor_adjacent_strictMono
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_traceless
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_commonPower
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.abs_operatorCorrelation_le_commonPower
