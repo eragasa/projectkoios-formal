@@ -3,7 +3,8 @@
 ## Scope
 
 This crosswalk records why `BG-FOURIER-LATTICE-DEF-001–006`,
-`BG-FOURIER-LATTICE-LEM-001`, and `BG-FOURIER-LATTICE-THM-001–005` are relevant to periodic 1-D,
+`BG-FOURIER-LATTICE-LEM-001`, `BG-FOURIER-LATTICE-THM-001–009`, and the generic direct-power
+partition `BG-FOURIER-FINITE-DEF-003/004`, `LEM-005`, and `THM-006` are relevant to periodic 1-D,
 2-D, and 3-D rank-one, rank-two, and finite-rank KSD calculations.
 
 The Formal carrier is lattice based. For a finite dimension type `D`, exact positive periods `Nᵢ`,
@@ -66,6 +67,30 @@ complex matrix fields whose retained rank is explicit. Their baseline documents 
 triangular, simple-cubic, and FCC-like physical metrics. Those facts motivate the separation between
 the quotient lattice coordinates and the reciprocal basis in Formal.
 
+### Later direct-power-partition source inspection
+
+The onsite/nononsite theorem was selected after a later read-only inspection of KSD repository
+`ksdft2effmass`, branch `work/source-code-cleanup-audit`, at immutable commit
+`4626f56b159bd15a548d00317bdfda9e367fd2f8`, tree
+`16bc9400b94203aaaa605c027f5a0e04b37a56e9`.  The initial status inspection at that revision was
+clean.  During the subsequent audit another process advanced the same worktree and introduced
+unrelated dirty and untracked paths; all locators below therefore use immutable `git show` bytes at
+`4626f56…`, not the later working copy.
+
+| SHA-256 at `4626f56…` | Owner-repository path | Relevance |
+|---|---|---|
+| `c3e94f6624ddc17fa0cf887669eec0fa9326f0e5b9990eae7d18c46610edce9c` | `python/src/ksdft2effmass/band_equivalence_hopping_locality/shell_power.py` | direct finite summation methods for complete and selected displacement inventories |
+| `13aee150be5fd176ec50a6e1e405628db1ff302d30a6d507341c9c895164b00a` | `python/src/ksdft2effmass/periodic2d/rankN/band_equivalence_hopping_locality/analysis.py` | 2-D rank-N summary computes nononsite power by subtracting onsite power from total power at lines 297–305 |
+| `c7656f375ae126883832d1c92da6d7b81a34b484f707d93c700afc615e6ea803` | `python/src/ksdft2effmass/periodic2d/rankN/band_equivalence_hopping_locality/fourier_reference.py` | 2-D reference repeats the same subtraction at lines 580–595 |
+| `5fb8a4c98f53af50dc38ba588ee2a438d1183f3cb4ba2ffdfd9f0ab153563f99` | `python/src/ksdft2effmass/periodic2d/rankN/band_equivalence_hopping_locality/result.py` | binary64 absolute-tolerance check of `total = onsite + nononsite` at lines 69–83 |
+| `1b9e1d540df4e38a0d252d29f0bfc1249bb67b5816cdcf89abf57e059a1f1591` | `python/src/ksdft2effmass/periodic3d/rankN/band_equivalence_hopping_locality/analysis.py` | 3-D rank-N summary computes nononsite power by subtraction at lines 297–305 |
+| `08bdfc3d89b8c70c59263c7991f766895a3ea75395f35ce58d269ef213f0e82d` | `python/src/ksdft2effmass/periodic3d/rankN/band_equivalence_hopping_locality/fourier_reference.py` | 3-D reference repeats the same subtraction at lines 580–595 |
+| `0ecff89042b9e82f8414ffe7dab3c3bf37d997dc724d561478f606c85738389c` | `python/src/ksdft2effmass/periodic3d/rankN/band_equivalence_hopping_locality/result.py` | binary64 absolute-tolerance check of `total = onsite + nononsite` at lines 69–83 |
+
+The source inspection motivates an exact semantic contract only.  It does not establish that a
+particular runtime false zero occurred, that the current analytic baseline is scientifically
+affected, or that Formal checks IEEE-754 arithmetic.
+
 ## Exact Formal coverage
 
 `BG-FOURIER-LATTICE-THM-001` proves, for arbitrary finite lattice dimension and arbitrary finite
@@ -79,7 +104,19 @@ FrobeniusError(candidate)
 
 `BG-FOURIER-LATTICE-THM-002` proves minimality and equality exactly at the truncated exact
 coefficient field. `BG-FOURIER-LATTICE-THM-003–005` expose periodic 1-D, 2-D, and 3-D
-specializations without duplicating the proof. Rank is still arbitrary in every specialization.
+least-squares specializations without duplicating the proof. Rank is still arbitrary in every
+specialization.
+
+`BG-FOURIER-FINITE-THM-006` partitions the exact matrix coefficient power as
+
+```text
+total power = identity-coefficient power + direct nonidentity-coefficient power.
+```
+
+`BG-FOURIER-FINITE-LEM-005` proves the direct nonidentity sum nonnegative, so no exact clamping
+operation is required. `BG-FOURIER-LATTICE-THM-006–009` expose the arbitrary-dimensional lattice
+statement and its periodic 1-D, 2-D, and 3-D rank-generic specializations. These declarations do not
+state that subtraction of separately rounded totals computes the direct nonidentity sum.
 
 The exact statement applies after a gauge has been selected: a pointwise gauge changes the matrix
 field and therefore generally changes its Fourier coefficients and locality. These declarations do
@@ -97,7 +134,9 @@ Application to a retained KSD execution still requires exact evidence for all of
 6. the runtime Frobenius convention equals the exact entrywise power;
 7. the support and selected gauge equal the values used in the theorem; and
 8. runtime floating-point values are connected to exact or outward-enclosed values by an accepted
-   evidence boundary.
+   evidence boundary; and
+9. the runtime onsite/nononsite classification is a disjoint exhaustive partition and the reported
+   nononsite value is computed or certified against the direct nonzero-displacement sum.
 
 Neither SHA-256 hashes nor source correspondence discharge these obligations. The theorem does not
 certify NumPy execution, FFT conventions, least-squares conditioning, binary64 route agreement,

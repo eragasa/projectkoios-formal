@@ -272,10 +272,12 @@ in Lean and the theorem manifest without a separate dossier.
 
 These theorems concern exact equal-weight finite sums on a complete character inventory. The
 `BG-FOURIER-LATTICE-THM-001–005` application layer derives arbitrary-rank periodic 1-D/2-D/3-D
-matrix statements from the same proof and is recorded in Lean, the theorem manifest, and its
-source crosswalk without separate theorem dossiers. These declarations do not authenticate a
-runtime design, quotient periods, reciprocal basis, gauge, NumPy solve, numerical rank,
-conditioning, binary64 coefficient route, threshold, artifact, or scientific conclusion.
+matrix least-squares statements from the same proof. The separate direct onsite/nononsite power
+partition is recorded by `BG-FOURIER-FINITE-THM-006` and its lattice specializations
+`BG-FOURIER-LATTICE-THM-006–009`. These declarations are recorded in Lean, the theorem manifest,
+and the source crosswalk without separate theorem dossiers. They do not authenticate a runtime
+design, quotient periods, reciprocal basis, gauge, NumPy solve, numerical rank, conditioning,
+binary64 coefficient summation or route, threshold, artifact, or scientific conclusion.
 
 ## Required contents
 
