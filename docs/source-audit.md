@@ -345,6 +345,33 @@ algebraic consequences over `ℤ` and `ZMod n`. It does not import PhysKit, veri
 Python object, prove signed-64-bit batch execution free of overflow, establish that an
 external lattice uses the declared bases, or validate a crystallographic or physical
 interpretation.
+
+### Periodic3D rank-N Bain quotient-admission request
+
+A later read-only inspection recorded the consuming KSD context:
+
+- repository: `ksdft2effmass`;
+- worktree: `/Users/eugene/worktrees/ksdft2effmass-periodic23-rank2-ragasa-metric-extension`;
+- branch: `work/periodic23-rank2-ragasa-metric-extension`;
+- HEAD: `0bef3dc574648ac60e4014962da75077ded3b4b2`;
+- tree: `d957c541e73f78a312107ddb62cf3eb9fff8514f`;
+- whole-worktree status count when recorded: 124 entries; and
+- access mode: read-only.
+
+The directly relevant file,
+`calculations/periodic3d_rankN_bain_path/geometry-common-state-space.md`, was untracked. Its
+inspected working-byte SHA-256 was
+`6b9c019b86b0a66d6581742e76d6ef6f6d21a8b50ce442ea366b59f58c45b9fd`. It states the already
+immutable PhysKit matrix constants, calls for an independent finite-quotient proof, and keeps
+unsupported mixed quotients unresolved. Because the file was untracked, the byte hash is only a
+provisional locator and the bytes cannot be reconstructed from the recorded KSD commit. The exact
+matrix authority remains the immutable PhysKit source above.
+
+The new Formal result proves exact lattice preservation, quotient finiteness for positive diagonal
+periods, cubic admission, the mixed condition `N₂ = N₃ ∧ N₁ ∣ N₂`, and quotient bijectivity after
+both forward and inverse preservation proofs. It does not bind a runtime mesh, validate execution,
+prove numerical convergence, or establish a scientific conclusion.
+
 ## Calculation-support and finite-folding inspection
 
 A later read-only calculation inventory and finite-folding crosswalk used another immutable
