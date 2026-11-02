@@ -30,7 +30,7 @@ Crosswalk modules bind narrow immutable constants.
 
 | Directory | Owns | Excludes |
 |---|---|---|
-| `Crosswalks/PhysKit/` | immutable exact FCC--Bain constants and consequences | Python execution, package mirroring, physical applicability |
+| `Crosswalks/PhysKit/` | immutable exact FCC--Bain constants, uniform-modulus consequences, positive diagonal-quotient finiteness, and exact mixed-modulus admission criteria | Python execution, package mirroring, runtime mesh identity, convergence, physical applicability |
 
 ## Quantum mechanics
 
@@ -56,7 +56,7 @@ Solid-state modules remain finite and source-neutral.
 
 | Directory | Owns | Excludes |
 |---|---|---|
-| `SolidState/FiniteLattice/` | finite folding, route identities, gauge loops, projector--Bargmann crosswalk | runtime arrays, topology, Wannier90, material claims |
+| `SolidState/FiniteLattice/` | finite folding, route identities, gauge loops, projector--Bargmann crosswalk, integer-lattice preservation certificates, full-rank integer-quotient finiteness, and induced quotient-map bijectivity | runtime arrays, runtime mesh authentication, topology, Wannier90, material claims |
 | `SolidState/TightBinding/` | exact tetrahedral `sp³`/`sp³s⋆` transforms and abstract Vogl blocks | empirical values, spectra, DFT/Wannier evidence, silicon validation |
 
 ## Import direction
