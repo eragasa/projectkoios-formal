@@ -1,0 +1,70 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-02
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Finite-Rank Unitary Spectrum Preservation}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-02}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-ALIGNMENT-THM-069} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Alignment.spectrum_rightGaugeConjugate_unitary} \\
+Owning module & \path{ProjectKoios/BandGauge/Alignment/ExactGaugeConstruction.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+For any finite retained index type, exact complex unitary $G$, and exact represented operator $D$,
+\[
+ \operatorname{spectrum}_{\mathbb C}(G^*DG)
+ =\operatorname{spectrum}_{\mathbb C}(D).
+\]
+The operator need not be diagonal or Hermitian. A diagonal analytic parent is a specialization.
+
+\section{Proof structure and trusted base}
+The theorem is a named specialization of Mathlib's exact unitary spectrum-invariance result
+\texttt{Unitary.spectrum\_star\_left\_conjugate}. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. No novelty claim is made.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Alignment.
+  spectrum_rightGaugeConjugate_unitary
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Source relation and identity limitation}
+The provisional KSD Periodic2D/3D rank-N model bytes inspected at checked-out commit
+\texttt{0a5ef2b8d15a82f7271ce3e1b194f759c63c6ee9} implement $G^*DG$. Both cited files were
+untracked in a worktree with 438 status entries. Their byte hashes and exact locators are recorded
+in \path{docs/source-audit.md}; they are not immutable owner-commit bindings.
+
+\section{Evidence and interpretation boundaries}
+This is exact set-spectrum equality. It does not certify a NumPy unitary, floating-point matrix
+product, eigenvalue order, multiplicity list, eigensolver, band tracker, mesh, artifact, or
+scientific conclusion.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-11-02 & initial dossier & AI-assisted maintainer review & exact spectrum equality proved; runtime and immutable owner binding remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

@@ -1,0 +1,81 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-02
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Exact Finite-Rank Unitary Gauge Construction}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-02}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-ALIGNMENT-THM-071} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Alignment.exactUnitaryGaugeConstruction} \\
+Owning module & \path{ProjectKoios/BandGauge/Alignment/ExactGaugeConstruction.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $F_0$ be an exact finite rectangular complex frame with $F_0^*F_0=I$, let $G$ be an exact
+finite complex unitary, and let $D$ be an exact represented operator. Define
+\[
+ F'=F_0G,\qquad H'=G^*DG.
+\]
+Then $F'^*F'=I$, the complex spectra of $H'$ and $D$ agree, and the supplied known inverse $G^*$
+recovers both reference objects:
+\[
+ F'G^*=F_0,\qquad G H'G^*=D.
+\]
+
+\section{Proof structure}
+Existing right-unitary frame algebra proves orthonormality preservation. Mathlib unitary similarity
+proves spectrum equality. The unitary identities $GG^*=I$ and $G^*G=I$, associativity, and the
+right-action composition theorem prove the two recovery identities. No numerical inverse or
+optimizer is constructed.
+
+\section{Lean realization and trusted base}
+The theorem composes \texttt{BG-ALIGNMENT-THM-003},
+\texttt{BG-ALIGNMENT-LEM-001/002}, and \texttt{BG-ALIGNMENT-THM-069}. Toolchain: Lean \texttt{4.35.0} at
+\texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Alignment.
+  exactUnitaryGaugeConstruction
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Source relation and identity limitation}
+The provisional Periodic2D/3D rank-N KSD model bytes implement the same formulas at lines 249--272.
+They were untracked in a dirty owner worktree at checked-out commit
+\texttt{0a5ef2b8d15a82f7271ce3e1b194f759c63c6ee9}; hashes and limitations are in
+\path{docs/source-audit.md}. The source-neutral theorem does not promote those bytes to accepted or
+immutable evidence.
+
+\section{Evidence and interpretation boundaries}
+The theorem does not authenticate runtime frame orthonormality, Givens-circuit unitarity, NumPy
+products, binary64 values, eigensolver output or ordering, Procrustes rank or recovery, meshes,
+Fourier coefficients, artifacts, material applicability, or scientific adequacy.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-11-02 & initial dossier & AI-assisted maintainer review & exact construction and inverse identities proved; all runtime and scientific bindings remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

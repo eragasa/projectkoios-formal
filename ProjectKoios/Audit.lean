@@ -22,6 +22,7 @@ import ProjectKoios.BandGauge.Alignment.FamilySeparation
 import ProjectKoios.BandGauge.Alignment.UnitaryProcrustes
 import ProjectKoios.BandGauge.Alignment.FiniteMeshProcrustes
 import ProjectKoios.BandGauge.Alignment.GaugeIdentity
+import ProjectKoios.BandGauge.Alignment.ExactGaugeConstruction
 import ProjectKoios.BandGauge.Hilbert.AdmissibleBalls
 import ProjectKoios.BandGauge.Hilbert.ResidualChannels
 import ProjectKoios.BandGauge.Hilbert.FourStageResidualChannels
@@ -628,6 +629,10 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Alignment.rightGaugeConjugate_mul
 #print axioms ProjectKoios.BandGauge.Alignment.rightGaugeConjugate_conjTranspose
 #print axioms ProjectKoios.BandGauge.Alignment.rightGaugeConjugate_isHermitian
+#print axioms ProjectKoios.BandGauge.Alignment.rightUnitaryFrame_mul_conjTranspose
+#print axioms ProjectKoios.BandGauge.Alignment.spectrum_rightGaugeConjugate_unitary
+#print axioms ProjectKoios.BandGauge.Alignment.rightGaugeConjugate_conjTranspose_recover
+#print axioms ProjectKoios.BandGauge.Alignment.exactUnitaryGaugeConstruction
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply
 #print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_operatorFieldDifference
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap

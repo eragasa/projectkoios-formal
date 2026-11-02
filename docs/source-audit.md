@@ -758,3 +758,37 @@ runtime bond or mesh inventory matches the abstract finite type, that binary64 t
 satisfy exact identities, that sampled minima equal continuum minima, or that any eigensolver,
 Procrustes fit, transport, Fourier transform, support selection, artifact, or scientific conclusion
 is valid. No KSD file was modified during the inspection.
+
+## Provisional Periodic2D/3D rank-N exact gauge-construction crosswalk
+
+A read-only inspection on 2026-11-02 examined the active KSD rank-first development worktree:
+
+- owner repository: `ksdft2effmass`;
+- worktree: `/Users/eugene/worktrees/ksdft2effmass-periodic23-rank2-ragasa-metric-extension`;
+- branch: `work/periodic23-rank2-ragasa-metric-extension`;
+- checked-out commit: `0a5ef2b8d15a82f7271ce3e1b194f759c63c6ee9`;
+- dirty-state limitation: 438 short-status entries were present, and both cited model files were
+  untracked. Their hashes identify only the inspected working-tree bytes, not immutable commit
+  blobs. They must be refreshed against a reviewed owner commit before any source-fidelity or
+  release claim.
+
+| SHA-256 of inspected untracked bytes | Owner-repository path | Locator and crosswalk use |
+|---|---|---|
+| `16f88ea8bcba5f2c1a12bda5abcc8aa4284f6e19fae4f71971bd62656661b718` | `python/src/ksdft2effmass/periodic2d/rankN/band_equivalence_hopping_locality/model.py` | lines 249–272: `F'=F₀G`, `H'=GᴴDG`, and returned known inverse `Gᴴ` |
+| `b886fae702c9f44449255fa52b837df6837ce531f6fe521b49aa729ebfaa27ea` | `python/src/ksdft2effmass/periodic3d/rankN/band_equivalence_hopping_locality/model.py` | lines 249–272: dimension-parallel construction |
+
+A final read-only recheck on 2026-11-02 confirmed the same branch, checked-out commit, 438-entry
+status count, untracked classifications, and byte hashes. This is not a clean-source claim.
+
+`BG-ALIGNMENT-LEM-001/002` and `BG-ALIGNMENT-THM-069/071` validate the source-neutral exact algebra
+behind those formulas for arbitrary finite ambient and retained types. Given an exact orthonormal
+reference frame, exact finite complex unitary `G`, and exact represented operator `D`, the
+construction preserves frame orthonormality and the complex spectrum. Right multiplication of the
+constructed frame by `Gᴴ` recovers the reference frame, and right-gauge conjugation by `Gᴴ`
+recovers `D`.
+
+This crosswalk does **not** prove that a NumPy array is unitary or orthonormal, that the Python
+Givens circuit equals the exact supplied `G`, that conjugate-transpose or matrix products were
+computed without floating-point error, that an eigensolver returned the exact or correctly ordered
+spectrum, or that Procrustes recovery, meshes, Fourier transforms, retained artifacts, or scientific
+conclusions are valid. No KSD file was modified during the inspection.

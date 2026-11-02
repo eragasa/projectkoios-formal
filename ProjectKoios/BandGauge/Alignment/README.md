@@ -8,6 +8,7 @@ This directory owns exact finite-rank frame and retained-coordinate alignment al
 - `UnitaryProcrustes.lean`: exact complex-unitary right Procrustes objectives, polar-witness global minimality, and positive-definite uniqueness.
 - `FiniteMeshProcrustes.lean`: summed pointwise Procrustes objectives, local-witness global minimality and conditional uniqueness, constant/identity comparisons, exact known-inverse controls, and the matrix-unitary bridge into the alignment-family hierarchy.
 - `GaugeIdentity.lean`: separate gauge-family, represented-dimension, action-side, and inner-product-convention identities; identity/composition laws for the exact metric-isometry equation; and named right-action conjugation, composition, conjugate-transpose, and Hermiticity laws.
+- `ExactGaugeConstruction.lean`: dimension-independent exact construction `F'=F₀G`, `H'=GᴴDG`, including orthonormality and complex-spectrum preservation and known-inverse frame/operator recovery by `Gᴴ`.
 
 ## Boundaries
 
@@ -16,6 +17,7 @@ This directory owns exact finite-rank frame and retained-coordinate alignment al
 - The current supported group family is unitary, but group family, action side, inner-product convention, sample domain, and global-versus-pointwise restriction remain separate concepts.
 - The Euclidean inner-product convention labels the retained-coordinate metric; it does not assert concrete-frame orthonormality or validity.
 - Right-unitary changes preserve the ambient projector and reconstructed compressed operator.
+- Exact `F'=F₀G`, `H'=GᴴDG` construction preserves frame orthonormality and the complex spectrum and is exactly recoverable with `Gᴴ`; this set-spectrum equality does not authenticate ordered runtime eigenvalues.
 - In the current column-frame convention, retained-space gauge matrices act from the right. The `left` vocabulary constructor does not define an untyped left action.
 - `IsMetricUnitary metric gauge` records only `gaugeᴴ * metric * gauge = metric`; the identity and multiplication theorems prove algebraic closure for a fixed metric, while positive definiteness, metric adjoints, metric-aware objectives, and runtime verification remain separate.
 - `rightGaugeConjugate` is the Euclidean compressed-form congruence `Uᴴ H U`; it composes in right-action order and preserves Hermiticity without asserting frame orthonormality, invertibility, or a nonorthonormal coordinate-endomorphism law.
