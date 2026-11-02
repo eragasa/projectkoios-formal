@@ -41,7 +41,7 @@ Planning files organize work without changing formal status.
 - `ecosystem-architecture.md`: repository boundaries.
 - `BandGauge/ksdft2effmass/mathematical-representation-class-architecture-plan.md`: verification-side recommendation for owner-controlled computational representation classes and certificate boundaries.
 - `BandGauge/ksdft2effmass/finite-fourier-least-squares-crosswalk.md`: immutable-source motivation and applicability boundary for exact finite-abelian truncation optimality.
-- `BandGauge/ksdft2effmass/finite-periodic-lattice-matrix-least-squares-crosswalk.md`: explicit periodic 1-D/2-D/3-D and arbitrary-rank lattice application layer, source locators, and remaining owner-specific bindings.
+- `BandGauge/ksdft2effmass/finite-periodic-lattice-matrix-least-squares-crosswalk.md`: explicit periodic 1-D/2-D/3-D and arbitrary-rank lattice least-squares and onsite/nononsite power-partition layers, immutable source locators, and remaining owner-specific bindings.
 - `ksdft2effmass-calculations-formal-support-inventory.md`: calculation-to-formal-support assessment.
 - `witness-catalog.md`: candidate exact examples.
 - `BandGauge/Geometry/witness-separation-statement-selection.md`: `BG-PLAN-001` decision record.

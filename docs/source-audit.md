@@ -697,3 +697,24 @@ reciprocal basis separately. The proved matrix-Frobenius least-squares result is
 lattice dimension and finite matrix rank, with explicit 1-D, 2-D, and 3-D corollaries. It does not
 authenticate a KSD mesh, basis, gauge, matrix array, character inventory, support, numerical solve,
 conditioning result, binary64 value, execution artifact, or scientific conclusion.
+
+## Finite periodic-lattice onsite/nononsite power partition
+
+The direct-power partition was selected after a read-only inspection of `ksdft2effmass` branch
+`work/source-code-cleanup-audit` at immutable commit
+`4626f56b159bd15a548d00317bdfda9e367fd2f8`, tree
+`16bc9400b94203aaaa605c027f5a0e04b37a56e9`. The initial status inspection at that revision was
+clean. During the audit another process advanced and dirtied the same worktree, so all cited source
+bytes and line locators are resolved from the immutable commit rather than the later working copy.
+
+At that revision, both periodic-2D and periodic-3D rank-N summary paths computed nononsite power as
+`max(0.0, total - onsite_power)` in their `analysis.py` and `fourier_reference.py` files. Their
+result contracts checked `total = onsite + nononsite` only through a binary64 absolute tolerance.
+The exact file hashes and locators are recorded in
+`docs/BandGauge/ksdft2effmass/finite-periodic-lattice-matrix-least-squares-crosswalk.md`.
+
+Formal instead defines nononsite power by a direct exact sum over every nonidentity lattice
+coefficient and proves total power equals onsite plus nononsite power, uniformly in finite dimension
+and matrix rank, with named 1-D, 2-D, and 3-D corollaries. The theorem neither diagnoses a retained
+runtime artifact nor verifies Python summation, IEEE-754 subtraction, mesh coverage, support/gauge
+binding, thresholds, or scientific consequences.
