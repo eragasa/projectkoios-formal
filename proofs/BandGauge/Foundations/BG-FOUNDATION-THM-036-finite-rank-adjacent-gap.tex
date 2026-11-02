@@ -1,0 +1,82 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-02
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Finite-Rank Adjacent Retained-Energy Gap}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-02}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOUNDATION-THM-036} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Foundations.finiteRankStructureFactor_adjacentGap_ge} \\
+Owning module & \path{ProjectKoios/BandGauge/Foundations/FiniteRankAnalyticParent.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Under the same nonempty finite-bond structure factor and parent-scale assumptions as
+\texttt{BG-FOUNDATION-THM-035}, for $r\ge2$ and every adjacent coordinate pair,
+\[
+ e^-_{j+1}-e^-_j\ge\frac{7}{10(r-1)}>0.
+\]
+The theorem is algebraic for every natural $j$. The companion
+\texttt{BG-FOUNDATION-THM-037} supplies $j+1<r$ and concludes the strict selected-index ordering
+$e^-_j<e^-_{j+1}$.
+
+\section{Proof structure}
+Adjacent orbital coordinates satisfy
+\[
+ \xi_{j+1}-\xi_j=\frac{2}{r-1}.
+\]
+Retained-energy subtraction factors exactly as
+\[
+ e^-(\xi_{j+1})-e^-(\xi_j)
+ =\frac{2}{r-1}\left(\frac25+\frac1{20}\lambda c_B\right).
+\]
+Since $\lambda c_B\ge-1$, the coefficient is at least $7/20$. Multiplication by the positive
+factor $2/(r-1)$ yields the declared lower bound.
+
+\section{Source relation and identity limitation}
+The provisional owner-source identity and dirty-state limitation are the same as for
+\texttt{BG-FOUNDATION-THM-035}: the inspected KSD model and baseline files were untracked at
+checked-out commit \texttt{0a5ef2b8d15a82f7271ce3e1b194f759c63c6ee9}. Exact hashes and paths
+are recorded in \path{docs/source-audit.md}; no immutable owner-source binding is claimed yet.
+
+\section{Lean realization and trusted base}
+Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Foundations.
+  finiteRankStructureFactor_adjacentGap_ge
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+Strict exact ordering does not authenticate runtime array ordering, floating-point subtraction,
+eigensolver sorting, band tracking, mesh convergence, alignment recovery, or scientific adequacy.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-11-02 & initial dossier & AI-assisted maintainer review & exact adjacent lower gap proved; owner-source commit and runtime binding remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

@@ -1,0 +1,85 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-02
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,booktabs,tabularx}
+\usepackage[margin=0.75in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\title{Proof Dossier: Finite-Rank Analytic-Parent External Gap}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-02}
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{BG-FOUNDATION-THM-035} \\
+Status & proved; no admissions \\
+Lean declaration & \path{ProjectKoios.BandGauge.Foundations.finiteRankStructureFactor_externalGap_ge} \\
+Owning module & \path{ProjectKoios/BandGauge/Foundations/FiniteRankAnalyticParent.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+
+\section{Exact mathematical statement}
+Let $r\ge2$, let $j,k<r$, let $0\le\lambda\le1$, and let $B$ be a nonempty finite bond inventory.
+For exact phases $\theta_b$, define
+\[
+ c_B=\frac1{|B|}\sum_{b\in B}\left(\frac34\cos\theta_b+
+ \frac14\cos(2\theta_b)\right),\qquad
+ \xi_j=\frac{2j-r+1}{r-1},
+\]
+\[
+ e^-_j=\frac25\xi_j+\frac14\lambda\left(1+\frac15\xi_j\right)c_B,
+ \qquad e^+_k=3+\frac3{10}\xi_k+\frac1{10}\lambda c_B.
+\]
+Then
+\[
+ e^+_k-e^-_j\ge\frac{19}{10}.
+\]
+
+\section{Proof structure}
+The standard cosine bounds imply every weighted bond harmonic lies in $[-1,1]$. A finite nonempty
+equal-weight average therefore gives $c_B\in[-1,1]$. The selected orbital coordinates also lie in
+$[-1,1]$. Exact real algebra then gives $e^-_j\le7/10$ and $e^+_k\ge13/5$; subtraction yields
+$13/5-7/10=19/10$.
+
+\section{Source relation and identity limitation}
+The source-neutral theorem was motivated by provisional Periodic2D/3D rank-N KSD baseline bytes
+inspected read-only on branch \texttt{work/periodic23-rank2-ragasa-metric-extension} at checked-out
+commit \texttt{0a5ef2b8d15a82f7271ce3e1b194f759c63c6ee9}. The cited model and baseline files were untracked
+inside a worktree with 428 status entries, so their SHA-256 hashes in \path{docs/source-audit.md}
+identify inspected bytes but are not immutable commit locators. No source-fidelity promotion is
+claimed until the owner freezes a reviewed commit.
+
+\section{Lean realization and trusted base}
+Toolchain: Lean \texttt{4.35.0} at \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc}; Mathlib
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}.
+\begin{verbatim}
+#print axioms ProjectKoios.BandGauge.Foundations.
+  finiteRankStructureFactor_externalGap_ge
+-- [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+No repository-owned axiom or admission occurs.
+
+\section{Evidence and interpretation boundaries}
+The theorem validates exact formulas only. It does not authenticate a reciprocal-coordinate map,
+bond inventory, Python or NumPy execution, binary64 trigonometry, sampled minimum, eigensolver,
+mesh adequacy, gauge alignment, runtime artifact, material model, or scientific conclusion.
+
+\section{AI, automation, and review record}
+The Lean proof and dossier were AI-assisted and checked by the maintainer. Kernel checking is not
+independent mathematical, scientific, source-fidelity, novelty, or publication review.
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule Date & Revision & Process & Outcome and limitation \\
+\midrule 2026-11-02 & initial dossier & AI-assisted maintainer review & exact $19/10$ bound proved; owner-source commit binding and runtime validation remain open \\
+\bottomrule
+\end{tabularx}
+\end{document}

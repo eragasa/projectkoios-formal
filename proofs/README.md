@@ -202,6 +202,23 @@ unitary and post-conjugation coordinate equality are exact hypotheses. No theore
 authenticates a runtime gauge, floating orthonormality, eigensolver, band tracker, momentum mesh,
 external artifact, certificate, Fourier support, truncation error, or scientific adequacy.
 
+## Selected finite-rank analytic-parent tranche
+
+The exact finite-rank analytic-parent extension has selected dossiers for:
+
+- [`BG-FOUNDATION-THM-035-finite-rank-external-gap.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-035-finite-rank-external-gap.tex); and
+- [`BG-FOUNDATION-THM-036-finite-rank-adjacent-gap.tex`](BandGauge/Foundations/BG-FOUNDATION-THM-036-finite-rank-adjacent-gap.tex).
+
+They cover the explicit nonempty finite-bond analytic parent's `19/10` external-gap lower bound and
+its `7/(10(r-1))` adjacent retained-energy lower bound. Bond-harmonic, structure-factor,
+orbital-coordinate, component-energy, and factorization results remain fully recorded in Lean and
+the theorem manifest without separate dossiers.
+
+The KSD source locator is provisional: the inspected Periodic2D/3D rank-N model and baseline files
+were untracked in a dirty owner worktree. The results validate exact formulas only and do not bind
+Python/NumPy execution, binary64 trigonometry, sampled minima, eigensolvers, meshes, alignment,
+artifacts, material models, or scientific adequacy.
+
 ## Selected projection-support counterexample tranche
 
 The source-specific two-band projection tranche has dossiers for
