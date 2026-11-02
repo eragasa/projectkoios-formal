@@ -175,6 +175,22 @@ identity and multiplication laws for a fixed metric plus identity, composition,
 conjugate-transpose, and Hermiticity laws for right conjugation; they are recorded in Lean and the
 theorem manifest without separate dossiers.
 
+## Selected exact finite-rank gauge-construction tranche
+
+The source-neutral exact construction has selected dossiers for:
+
+- [`BG-ALIGNMENT-THM-069-unitary-spectrum.tex`](BandGauge/Alignment/BG-ALIGNMENT-THM-069-unitary-spectrum.tex); and
+- [`BG-ALIGNMENT-THM-071-exact-gauge-construction.tex`](BandGauge/Alignment/BG-ALIGNMENT-THM-071-exact-gauge-construction.tex).
+
+They cover complex-spectrum preservation under `H'=GᴴDG` and the combined preservation/recovery
+contract for `F'=F₀G`, `H'=GᴴDG`. The direct frame and represented-operator recovery identities are
+fully recorded as `BG-ALIGNMENT-LEM-001/002` without separate dossiers.
+
+The owner crosswalk is provisional because the inspected Periodic2D/3D rank-N model files were
+untracked in a dirty KSD worktree. These theorems do not authenticate NumPy arrays, floating-point
+unitarity or orthonormality, eigenvalue order, eigensolvers, Procrustes recovery, meshes, Fourier
+transforms, artifacts, material applicability, or scientific adequacy.
+
 ## Selected complete metric-shell tranche
 
 The source-neutral metric-shell extension has selected dossiers for `BG-FOURIER-THM-100` and
