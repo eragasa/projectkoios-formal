@@ -44,6 +44,7 @@ Planning files organize work without changing formal status.
 - `BandGauge/ksdft2effmass/finite-periodic-lattice-matrix-least-squares-crosswalk.md`: explicit periodic 1-D/2-D/3-D and arbitrary-rank lattice least-squares and onsite/nononsite power-partition layers, immutable source locators, and remaining owner-specific bindings.
 - `BandGauge/ksdft2effmass/finite-rank-analytic-parent-crosswalk.md`: provisional exact-mathematics crosswalk for the Periodic2D/3D rank-N parent formulas, with dirty-source limitations and runtime nonclaims.
 - `BandGauge/ksdft2effmass/exact-gauge-construction-crosswalk.md`: provisional exact-mathematics crosswalk for the Periodic2D/3D rank-N construction `F'=F₀G`, `H'=GᴴDG`, and known inverse `Gᴴ`.
+- `BandGauge/ksdft2effmass/lattice-shell-radius-crosswalk.md`: source-neutral bridge from exact square, triangular, simple-cubic, and normalized FCC squared indices to subadditive integer-lattice radii, with the finite-character quotient seam left explicit.
 - `ksdft2effmass-calculations-formal-support-inventory.md`: calculation-to-formal-support assessment.
 - `witness-catalog.md`: candidate exact examples.
 - `BandGauge/Geometry/witness-separation-statement-selection.md`: `BG-PLAN-001` decision record.

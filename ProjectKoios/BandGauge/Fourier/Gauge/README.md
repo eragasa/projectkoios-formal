@@ -17,6 +17,8 @@ This family owns exact gauge-action results at the Fourier boundary.
 Fixed-unitary equivariance alone does not cover momentum-dependent gauges; the triple-convolution
 law describes their exact finite coefficient mixing. Its support results are inclusions relative to
 declared finite supports. The radius corollary uses a supplied subadditive nonnegative radius over the
-complete finite character inventory; it neither identifies the existing squared lattice-shell indices
-with that radius nor establishes physical hopping range, continuum decay, runtime gauge recovery,
-convergence, or scientific adequacy.
+complete finite character inventory. `Support/LatticeRadius.lean` separately supplies such radii for
+the existing square, triangular, simple-cubic, and normalized FCC integer-coordinate indices, but
+does not identify those infinite lattices with finite characters across quotient wraparound. Neither
+layer establishes physical hopping range, continuum decay, runtime gauge recovery, convergence, or
+scientific adequacy.

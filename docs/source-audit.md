@@ -792,3 +792,21 @@ Givens circuit equals the exact supplied `G`, that conjugate-transpose or matrix
 computed without floating-point error, that an eigensolver returned the exact or correctly ordered
 spectrum, or that Procrustes recovery, meshes, Fourier transforms, retained artifacts, or scientific
 conclusions are valid. No KSD file was modified during the inspection.
+
+## Source-neutral integer lattice radius bridge
+
+`ProjectKoios/BandGauge/Fourier/Support/LatticeRadius.lean` is derived from the repository's
+existing exact integer shell-index definitions rather than from new owner-repository bytes. The
+square and simple-cubic realizations use ordinary Euclidean coordinates. The triangular realization
+uses `(x + y/2, √3 y/2)`. The normalized FCC realization uses the four coordinates
+`((x+y+z)/√2, x/√2, y/√2, z/√2)`. Expanding the Euclidean norm squares gives exactly the existing
+square, triangular, simple-cubic, and normalized FCC indices.
+
+The triangle inequalities are inherited from the Euclidean norm, and inversion invariance follows
+from negating the additive realizations. These facts yield the elementwise `R_A + 2 R_U` bound for
+`-u₁ + a + u₂` and the corresponding inclusion between complete set-valued radius shells. They do
+not identify an infinite integer coordinate with a finite Fourier
+character. Any concrete periodic application must separately specify the quotient map, centered
+representatives, seam/Nyquist convention, and a wraparound-compatible quotient radius. No runtime
+mesh, coefficient array, physical length, source-defined hopping range, applicability, or scientific
+claim is introduced.
