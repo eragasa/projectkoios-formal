@@ -288,10 +288,13 @@ The author reports local kernel checking with Lean \texttt{4.35.0}, Mathlib revi
 The external referee independently confirmed the written mathematics and inspected the cited
 literature, but did not execute the Lean development or verify the KSD snapshot.  Kernel checking
 and repository inspection are therefore reported local verification rather than independently
-reproduced findings of that review.  The milestone remains uncommitted, so no immutable
-ProjectKoios commit yet identifies this exact revision.  The supplement records complete theorem
-signatures, source hashes, build inputs, reported commands and outputs, source identities, and the
-review chronology.
+reproduced findings of that review.  The theorem package was first checkpointed at ProjectKoios
+commit
+\path{e6dffa247e7e01e600ecc5aa64f4ff164dc0f99e} and integrated on the reviewed PR~\#58 base at
+commit \path{c5393e63e6d2918f2ce8f7691faa315b2d41d6fe}.  The supplement preserves the historical
+pre-checkpoint working-tree record, including complete theorem signatures, source hashes, build
+inputs, reported commands and outputs, source identities, and the review chronology; those commit
+identities do not convert it into an independent reproduction or publication certificate.
 
 The KSD relation is \texttt{compares-with}, not \texttt{formalizes}.  Runtime locators, source
 identities, dirty-state limitations, and SHA-256 values are recorded in

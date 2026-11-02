@@ -1,6 +1,6 @@
 # Finite-abelian least-squares audit supplement
 
-Status: working-tree audit record, 2026-11-03. This supplement supports
+Status: historical pre-checkpoint working-tree audit record, 2026-11-03. This supplement supports
 `BG-FOURIER-FINITE-THM-004` and `BG-FOURIER-FINITE-THM-005`. It records the exact Lean statements,
 source identities, dependency pins, and commands used in the maintainer-side verification run. It
 is not a publication certificate, an independent reproduction, or evidence about a numerical
@@ -16,12 +16,16 @@ runtime.
 - Base tree: `df11021c2965f7eb87a7ab3af65494498376ebfe`
 - Base subject: `Merge pull request #57 from eragasa/work/gauge-support-radius`
 - Base commit date: `2026-11-02T05:08:26+08:00`
+- Later source checkpoint: `e6dffa247e7e01e600ecc5aa64f4ff164dc0f99e`
+- Later integration checkpoint on the PR #58 base: `c5393e63e6d2918f2ce8f7691faa315b2d41d6fe`
 
-The least-squares milestone is not committed. At the pre-supplement inspection it had 16 dirty
-status entries: 11 modified tracked files and 5 untracked files. Creation of this supplement adds a
+At the pre-supplement inspection the least-squares milestone was not committed and had 16 dirty
+status entries: 11 modified tracked files and 5 untracked files. Creation of this supplement added a
 sixth untracked file. Therefore the base commit does **not** identify the revised theorem package;
-the byte hashes below identify the audited working-tree sources. No commit, push, merge, release,
-or publication is asserted here.
+the byte hashes below identify the audited working-tree sources. The later checkpoint identities
+record subsequent repository history but do not retroactively turn this maintainer-side record into
+an independent reproduction, publication certificate, runtime binding, or scientific validation.
+No push, merge, release, or publication is asserted by this historical record.
 
 ## 2. Toolchain and immutable dependency lock
 

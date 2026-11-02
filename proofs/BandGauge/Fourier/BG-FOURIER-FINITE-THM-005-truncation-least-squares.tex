@@ -310,11 +310,14 @@ lake build ProjectKoios.BandGauge.Fourier.FiniteAbelian.LeastSquares ProjectKoio
 The external referee independently confirmed the written mathematics and inspected the cited
 literature, but did not obtain or execute the Lean development and did not verify the KSD source
 snapshot.  Accordingly, kernel checking and repository inspection are \emph{reported local
-verification}, not findings independently reproduced by that referee.  The current milestone is
-also uncommitted, so no immutable ProjectKoios commit yet identifies this exact revision.  The
-complete theorem signatures, source hashes, build inputs, commands, reported outputs, source
-identity, and review chronology are separated from the article in
-\path{proofs/BandGauge/Fourier/finite-abelian-least-squares-audit-supplement.md}.
+verification}, not findings independently reproduced by that referee.  The theorem package was
+first checkpointed at ProjectKoios commit
+\path{e6dffa247e7e01e600ecc5aa64f4ff164dc0f99e} and integrated on the reviewed PR~\#58 base at
+commit \path{c5393e63e6d2918f2ce8f7691faa315b2d41d6fe}.  The complete theorem signatures, source
+hashes, build inputs, commands, reported outputs, source identity, and review chronology remain in
+\path{proofs/BandGauge/Fourier/finite-abelian-least-squares-audit-supplement.md} as a historical
+pre-checkpoint working-tree record; those commit identities do not convert it into an independent
+reproduction or publication certificate.
 
 The motivating KSD relation is \texttt{compares-with}, not \texttt{formalizes}.  Exact runtime
 locators, source identities, dirty-state limitations, and SHA-256 values are recorded in
