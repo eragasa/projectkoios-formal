@@ -13,8 +13,10 @@ The declaration surface is deliberately divided into five ownership families. De
 re-exported through a flat compatibility namespace.
 
 - `FiniteAbelian/`: convention-neutral reconstruction followed by the explicit finite-abelian
-  transform, inversion, Parseval, Hermitian pairing, matrix-Frobenius identities, and exact finite
-  matrix-product convolution.
+  transform, inversion, Parseval, Hermitian pairing, matrix-Frobenius identities, exact finite
+  matrix-product convolution, exact equal-weight least-squares optimality of support truncation, and
+  a finite-periodic reciprocal-lattice matrix layer with arbitrary finite dimension/rank and named
+  1-D, 2-D, and 3-D specializations.
 - `Gauge/`: fixed-unitary equivariance, pointwise-gauge boundaries, exact pointwise-unitary
   triple convolution, finite-support and complete-shell radius inclusions, and finite witnesses
   separating ordered-band equality from Fourier locality.
@@ -39,6 +41,7 @@ Every specialization must freeze its convention.
 - Scalar rank-one operator conjugation is pointwise trivial and is not a gauge-locality effect.
 - A momentum-dependent higher-rank gauge obeys an exact finite triple-convolution law, with coefficient support contained in `(-S_U + S_A) + S_U`; for a supplied inversion-invariant subadditive nonnegative radius and complete character inventory, this implies the shell bound `R_A + 2 R_U`. Both statements are inclusions, not support equality or physical range. The two-point and binary product-mesh witnesses separately prove that exact pointwise ordered-band equality can coexist with zero-mode-truncation noncommutation and strictly positive omitted Fourier power.
 - The Fourier residual bridge does not identify a runtime interpolant, coefficient array, or support inventory with its exact inputs.
+- Exact finite-abelian least-squares optimality concerns a complete uniform inventory and an exact supported coefficient class. The lattice layer records reciprocal geometry separately from the product of cyclic quotients, so orthogonal or nonorthogonal bases do not change character orthogonality. Neither layer certifies runtime periods or basis vectors, a selected gauge, a NumPy solve, numerical full rank, conditioning, binary64 route agreement, or a runtime threshold.
 - Negative-Nyquist removal is a singleton projection, not a representation-preserving equivalence: the full reconstruction differs by the explicit deleted term away from any separately established equality set.
 - The normalized negative-Nyquist power is independent of later range selection by construction. It is not an off-mesh error and is not the ordinary omitted-coefficient tail.
 - `CenteredEvenMesh` does not identify the exact centered-index equivalence with NumPy `fft`, `fftshift`, binary64 arrays, serialized bytes, or a retained KSD execution.

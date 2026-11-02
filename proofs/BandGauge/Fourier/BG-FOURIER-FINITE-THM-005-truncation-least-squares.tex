@@ -1,0 +1,352 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-02
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\addbibresource{proofs/BandGauge/Fourier/finite-abelian-least-squares.bib}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\title{Unique Fourier Least Squares on Finite Abelian Meshes\\
+\large An exact equal-weight projection result for computational materials models}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-02}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+When a reciprocal-space field is represented using a prescribed set of Fourier or hopping
+channels, a least-squares fit is often performed numerically.  For a complete uniform
+finite-abelian mesh and an unconstrained supported coefficient field, no optimization ambiguity
+remains: truncating the exact Fourier coefficients is the unique minimizer of the unnormalized
+squared reconstruction error.  We prove the Hilbert-valued result, derive its equality criterion,
+and show how its normalization follows from finite Parseval.  Standard character and projection
+results are cited at the mathematical steps where they enter.  The theorem is machine checked in
+Lean as \texttt{BG-FOURIER-FINITE-THM-005}.  It does not, by itself, establish that a runtime
+least-squares solver returned this minimizer or that a selected support is scientifically adequate.
+\end{abstract}
+
+\section{Why this result matters in a materials workflow}
+Finite-mesh electronic-structure and tight-binding workflows commonly start from samples of a
+scalar band, an orbital-resolved field, or a represented Hamiltonian.  A retained set of
+real-space or hopping-like channels is then fixed, and coefficients are obtained either by direct
+Fourier transformation or by numerical least squares.  This raises two mathematical questions:
+\begin{enumerate}
+  \item Is direct Fourier truncation actually the least-squares solution for the declared support?
+  \item If another supported coefficient field has the same residual, must its coefficients agree
+        with the truncated Fourier coefficients?
+\end{enumerate}
+On a complete uniformly weighted finite-abelian mesh, both answers are yes.  The statement is
+stronger than an inequality: an exact Pythagorean identity gives the excess residual and makes the
+uniqueness criterion explicit.
+
+The result is deliberately source neutral.  The finite group below can represent a periodic
+momentum mesh only after an application-specific bridge identifies the mesh, character convention,
+weights, and coefficient carrier.  The theorem does not silently identify a Python array or a
+physical Brillouin-zone discretization with the abstract finite group.
+
+\section{Finite Fourier model and admissible coefficient class}
+Let $G$ be a finite abelian group, let $\widehat G$ be its character group, let $n=|G|$, and let
+$V$ be a complex Hilbert space.  For $f:G\to V$, define
+\begin{equation}
+  c(\chi):=\widehat f(\chi)
+  =\frac{1}{n}\sum_{g\in G}\overline{\chi(g)}\,f(g),
+  \qquad \chi\in\widehat G,
+  \label{eq:forward}
+\end{equation}
+and reconstruct a coefficient field $a:\widehat G\to V$ by
+\begin{equation}
+  (\mathcal R a)(g)
+  :=\sum_{\chi\in\widehat G}\chi(g)\,a(\chi).
+  \label{eq:reconstruction}
+\end{equation}
+The forward transform carries the factor $1/n$ and reconstruction is unnormalized.
+
+For scalar fields, Tao defines normalized counting measure on $G$ on p.~1, proves character
+orthogonality in Lemma~1.6 on pp.~4--5, proves the character-basis statement in Corollary~1.7 on
+p.~5, identifies one-character orthogonal projection in the paragraph preceding Corollary~1.8,
+and states inversion in Corollary~1.8~\cite{Tao2007FiniteAbelian}.  The Plancherel and Parseval
+identities then appear immediately after Corollary~1.8 on p.~5; they are not themselves
+Corollary~1.8.  Garrett gives the alternative convention on p.~1, states Theorem~1.1 on p.~2, and
+proves it on pp.~2--5~\cite{Garrett2019FiniteAbelian}.  Equations
+\eqref{eq:forward}--\eqref{eq:reconstruction} use Tao's normalized-forward placement.
+
+\subsection{The Hilbert-valued extension}
+The vector-valued inversion and Parseval identities follow from the scalar results without any
+separability assumption on $V$.  For $u:G\to V$, let
+\[
+  W:=\operatorname{span}_{\mathbb C}\{u(g):g\in G\}.
+\]
+Because $G$ is finite, $W$ is finite-dimensional.  Choose an orthonormal basis
+$v_1,\ldots,v_m$ of $W$ and write
+\[
+  u(g)=\sum_{j=1}^{m}u_j(g)v_j,
+  \qquad u_j:G\to\mathbb C.
+\]
+Linearity of the finite sum gives
+\begin{equation}
+  \widehat u(\chi)=\sum_{j=1}^{m}\widehat{u_j}(\chi)v_j.
+  \label{eq:coordinate-transform}
+\end{equation}
+Applying scalar Fourier inversion to every $u_j$ and recombining the basis coordinates proves
+$\mathcal R\widehat u=u$.  Applying scalar Plancherel and summing the coordinate powers gives
+\begin{align}
+  \sum_{g\in G}\|u(g)\|^2
+  &=\sum_{j=1}^{m}\sum_{g\in G}|u_j(g)|^2 \notag\\
+  &=n\sum_{j=1}^{m}\sum_{\chi\in\widehat G}|\widehat{u_j}(\chi)|^2 \notag\\
+  &=n\sum_{\chi\in\widehat G}\|\widehat u(\chi)\|^2.
+  \label{eq:vector-parseval}
+\end{align}
+For an arbitrary coefficient field $a:\widehat G\to V$, character orthogonality also gives the
+left-inverse identity directly:
+\begin{align}
+  \widehat{\mathcal R a}(\chi)
+  &=\frac1n\sum_{g\in G}\overline{\chi(g)}
+      \sum_{\psi\in\widehat G}\psi(g)a(\psi) \notag\\
+  &=\sum_{\psi\in\widehat G}
+      \left(\frac1n\sum_{g\in G}\overline{\chi(g)}\psi(g)\right)a(\psi)
+    =a(\chi).
+  \label{eq:reconstruction-left-inverse}
+\end{align}
+Thus the Hilbert-valued identities used below are established in the written argument as well as
+in the Lean development.
+
+Fix a retained support $S\subseteq\widehat G$.  The exact truncated coefficient field is
+\begin{equation}
+  t(\chi):=(T_Sc)(\chi)=
+  \begin{cases}
+    c(\chi),&\chi\in S,\\
+    0,&\chi\notin S.
+  \end{cases}
+  \label{eq:truncation}
+\end{equation}
+The admissible coefficient class is
+\begin{equation}
+  \mathcal A_S
+  :=\{d:\widehat G\to V\mid d(\chi)=0\text{ whenever }\chi\notin S\}.
+  \label{eq:admissible}
+\end{equation}
+By definition of the zero extension in \eqref{eq:truncation}, $t\in\mathcal A_S$; hence the claimed
+minimizer is itself admissible.  No Hermiticity, reality, regularization, sparsity penalty, or
+additional parameterization is
+imposed on $\mathcal A_S$.  Such constraints define a different optimization problem.
+
+For $d\in\mathcal A_S$, define the unnormalized equal-weight reconstruction error
+\begin{equation}
+  E(d):=\sum_{g\in G}\|f(g)-(\mathcal R d)(g)\|^2
+  \label{eq:error}
+\end{equation}
+and the retained-coefficient mismatch
+\begin{equation}
+  D(d):=\sum_{\chi\in\widehat G}\|t(\chi)-d(\chi)\|^2.
+  \label{eq:mismatch}
+\end{equation}
+
+\section{Least-squares optimality and uniqueness}
+\begin{theorem}[Exact decomposition, optimality, and uniqueness]
+For every $d\in\mathcal A_S$,
+\begin{equation}
+  \boxed{E(d)=E(t)+nD(d).}
+  \label{eq:pythagorean}
+\end{equation}
+Consequently,
+\begin{equation}
+  \boxed{E(t)\le E(d),}
+  \label{eq:minimality}
+\end{equation}
+and
+\begin{equation}
+  \boxed{E(d)=E(t)\quad\Longleftrightarrow\quad d=t.}
+  \label{eq:uniqueness}
+\end{equation}
+Therefore $t=T_S\widehat f\in\mathcal A_S$ is the unique minimizer of $E$ over
+$\mathcal A_S$.
+\end{theorem}
+
+\subsection{Connection to the projection theorem}
+At an abstract Hilbert-space level, this is a best-approximation property of orthogonal
+projection.  For $V$-valued fields, the relevant approximation space is
+\begin{equation}
+  M_S:=\left\{g\longmapsto\sum_{\chi\in S}\chi(g)v_\chi:
+       v_\chi\in V\right\}\subseteq L^2(G;V).
+  \label{eq:approximation-subspace}
+\end{equation}
+Bodmann's Theorems~1.17--1.18 are both stated on p.~8, and the proof of Theorem~1.18 continues on
+p.~9~\cite{Bodmann2009SignalRepresentations}.  They give the finite-dimensional orthogonal
+projection and least-squares interpretation; uniqueness follows from the orthogonal decomposition
+and squared-distance calculation in those results and their proof, rather than from an explicit
+uniqueness clause in Theorem~1.18.
+
+If $V$ is infinite-dimensional and $S$ is nonempty, $M_S$ is generally infinite-dimensional, so
+Bodmann's finite-dimensional theorem does not directly establish the present general-$V$ result.
+The coordinate calculation below proves the projection identity directly for every complex
+Hilbert space $V$.  Bodmann therefore supplies the finite-dimensional interpretation used in
+common scalar, orbital-vector, and finite-matrix applications, not the proof of the full theorem.
+
+\subsection{Proof}
+The decomposition \eqref{eq:pythagorean} is the result proved in
+\texttt{BG-FOURIER-FINITE-THM-004}.  It is the concrete Fourier-coordinate Pythagorean identity
+corresponding, in finite-dimensional instances, to Bodmann's abstract orthogonal decomposition.
+
+To see the ingredients explicitly, finite Parseval under
+\eqref{eq:forward}--\eqref{eq:reconstruction} is
+\begin{equation}
+  \sum_{g\in G}\|u(g)\|^2
+  =n\sum_{\chi\in\widehat G}\|\widehat u(\chi)\|^2.
+  \label{eq:parseval}
+\end{equation}
+For scalar fields, this is the Plancherel identity stated immediately after Tao's
+Corollary~1.8 on p.~5, with normalized counting measure on $G$ as defined on p.~1
+\cite{Tao2007FiniteAbelian}.  Converting normalized group power to the raw sum in
+\eqref{eq:error} yields exactly the factor $n$.  Under Garrett's convention, the forward
+coefficients are unnormalized; his conventions on p.~1, Theorem~1.1 on p.~2, and proof on
+pp.~2--5 give the same relation after the reciprocal factor is moved
+\cite{Garrett2019FiniteAbelian}.  Equation~\eqref{eq:vector-parseval} supplies the written
+Hilbert-valued extension, and the Lean theorem establishes the same identity formally.
+
+The residuals $f-\mathcal R d$ and $f-\mathcal R t$ have coefficient fields $c-d$ and $c-t$,
+respectively.  At every retained character $\chi\in S$, $c(\chi)-t(\chi)=0$.  At every omitted
+character $\chi\notin S$, support of $d$ gives $t(\chi)-d(\chi)=0$.  Hence
+\begin{equation}
+  \|c(\chi)-d(\chi)\|^2
+  =\|c(\chi)-t(\chi)\|^2
+   +\|t(\chi)-d(\chi)\|^2
+  \label{eq:mode-split}
+\end{equation}
+for every $\chi$.  Summing \eqref{eq:mode-split} and applying
+\eqref{eq:parseval} to the two residuals produces \eqref{eq:pythagorean}.
+
+Every summand in $D(d)$ is nonnegative, so $D(d)\ge0$.  Also $n=|G|>0$ because a group contains its
+identity element.  It follows that
+\begin{equation}
+  E(d)=E(t)+nD(d)\ge E(t),
+\end{equation}
+which proves \eqref{eq:minimality}.
+
+For uniqueness, first suppose $E(d)=E(t)$.  Equation~\eqref{eq:pythagorean} then gives
+\begin{equation}
+  nD(d)=0.
+  \label{eq:product-zero}
+\end{equation}
+Since $n\ne0$, we have $D(d)=0$, or
+\begin{equation}
+  \sum_{\chi\in\widehat G}\|t(\chi)-d(\chi)\|^2=0.
+  \label{eq:sum-zero}
+\end{equation}
+The sum is finite and every term is nonnegative.  Therefore
+\[
+  \|t(\chi)-d(\chi)\|^2=0
+  \qquad\text{for every }\chi\in\widehat G.
+\]
+Definiteness of the Hilbert norm gives $t(\chi)=d(\chi)$ for every character, and function
+extensionality gives $d=t$.  Conversely, $d=t$ implies $D(d)=0$, so
+\eqref{eq:pythagorean} reduces to $E(d)=E(t)$.  This proves both directions of
+\eqref{eq:uniqueness}. \hfill$\square$
+
+\begin{corollary}[Exact excess-error diagnostic]
+For every supported candidate,
+\begin{equation}
+  E(d)-E(t)=|G|\sum_{\chi\in\widehat G}\|t(\chi)-d(\chi)\|^2.
+\end{equation}
+Thus a supported candidate has zero excess error exactly when all of its retained coefficients
+equal the exact Fourier coefficients.
+\end{corollary}
+
+\section{Consequences for computational materials modeling}
+The theorem clarifies what an unconstrained equal-weight least-squares calculation is doing on a
+complete uniform periodic mesh.
+
+\paragraph{Direct Fourier truncation is the analytic optimizer.}
+Once $S$ is fixed and the exact complete transform is available, the unique minimizer is obtained
+by retaining $c(\chi)$ on $S$ and setting all other coefficients to zero.  No separate optimizer is
+mathematically required for this idealized problem.
+
+\paragraph{A fitted route has an exact excess-error channel.}
+If a second route proposes coefficients $d$ on the same support, the difference between its squared
+residual and the truncation residual is exactly $|G|D(d)$.  This separates disagreement in the
+retained coefficients from error forced by omitted modes.
+
+\paragraph{The carrier can encode common materials data.}
+The scalar case $V=\mathbb C$ models a scalar sampled band.  Finite-dimensional vector carriers can
+represent orbital-resolved data.  Matrix-valued Hamiltonians fit the same pattern when equipped
+with a Hilbert norm such as the Frobenius norm.  These are mathematical instantiations; a concrete
+software representation still requires an exact crosswalk.
+
+\paragraph{Additional physical constraints require a separate admissibility check.}
+Hermitian-pairing constraints, real-valued hopping symmetries, nonuniform Brillouin-zone weights,
+incomplete paths, regularization, and parameter sharing can restrict the feasible class or alter
+the objective.  If a restricted feasible class is contained in $\mathcal A_S$ and still contains
+$t$, the same decomposition proves that $t$ remains its unique minimizer.  If $t$ is infeasible, or
+if the weights or objective change, truncation need not remain feasible or optimal.  In every
+case, a well-defined finite-mesh optimizer does not establish that the support is physically
+adequate or that the mesh approximates a continuum quantity to a desired tolerance.
+
+\section{Formal status and reproducibility boundary}
+The theorem is implemented in
+\path{ProjectKoios/BandGauge/Fourier/FiniteAbelian/LeastSquares.lean} as
+\par\noindent
+\path{ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierTruncation_leastSquares}.
+The Lean proof rewrites the candidate error with
+\texttt{BG-FOURIER-FINITE-THM-004}, proves nonnegativity, eliminates the nonzero cardinality factor
+in the equality case, and uses the finite-sum zero criterion, norm definiteness, and function
+extensionality.
+
+The author reports local kernel checking with Lean \texttt{4.35.0}, Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679}, and the commands
+\begin{verbatim}
+lake build ProjectKoios.BandGauge.Fourier.FiniteAbelian.LeastSquares ProjectKoios.Audit
+./scripts/audit.sh
+./scripts/check-audit-coverage.py
+./scripts/check-pins.py
+\end{verbatim}
+The external referee independently confirmed the written mathematics and inspected the cited
+literature, but did not obtain or execute the Lean development and did not verify the KSD source
+snapshot.  Accordingly, kernel checking and repository inspection are \emph{reported local
+verification}, not findings independently reproduced by that referee.  The theorem package was
+first checkpointed at ProjectKoios commit
+\path{e6dffa247e7e01e600ecc5aa64f4ff164dc0f99e} and integrated on the reviewed PR~\#58 base at
+commit \path{c5393e63e6d2918f2ce8f7691faa315b2d41d6fe}.  The complete theorem signatures, source
+hashes, build inputs, commands, reported outputs, source identity, and review chronology remain in
+\path{proofs/BandGauge/Fourier/finite-abelian-least-squares-audit-supplement.md} as a historical
+pre-checkpoint working-tree record; those commit identities do not convert it into an independent
+reproduction or publication certificate.
+
+The motivating KSD relation is \texttt{compares-with}, not \texttt{formalizes}.  Exact runtime
+locators, source identities, dirty-state limitations, and SHA-256 values are recorded in
+\path{docs/BandGauge/ksdft2effmass/finite-fourier-least-squares-crosswalk.md}; this theorem does not
+validate a KSD execution.
+
+The prior-art roles are attached to the proof above.  Tao and Garrett support the scalar
+finite-abelian character and normalization steps; Bodmann supports only the finite-dimensional
+projection interpretation.  These three directly inspected sources are university lecture or
+course notes, not an exhaustive literature review or peer-reviewed evidence of novelty.  None of
+the inspected passages states the complete Hilbert-valued, arbitrary-support identity in the
+displayed normalization.  The result is classified as a standard consequence made explicit and
+mechanized here; no novelty or priority claim is made.
+
+\section{Evidence boundary and open applicability work}
+This exact theorem does not prove that
+\begin{itemize}
+  \item a NumPy or SciPy least-squares routine returned $t$;
+  \item a floating-point design matrix is full rank or well conditioned;
+  \item a direct transform and fitted route agree in binary64 arithmetic;
+  \item a runtime array, FFT convention, or serialized artifact matches
+        \eqref{eq:forward}--\eqref{eq:reconstruction};
+  \item a finite reciprocal mesh controls a continuum Brillouin-zone integral; or
+  \item the selected support, residual threshold, or reconstructed Hamiltonian is scientifically
+        adequate.
+\end{itemize}
+A KSD applicability bridge must separately freeze the runtime group, complete character inventory,
+sign, normalization, support, weights, coefficient carrier, and runtime-to-exact value boundary.
+Nonuniform weighted least squares and finite-to-continuum estimates remain outside the theorem.
+
+\printbibliography[title={References}]
+\end{document}

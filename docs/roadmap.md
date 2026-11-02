@@ -100,7 +100,7 @@ Open:
 
 Status: generic foundations implemented.
 
-- Finite reconstruction, inversion, Parseval, residual tails, Hermitian pairing, and fixed-unitary equivariance.
+- Finite reconstruction, inversion, Parseval, residual tails, Hermitian pairing, fixed-unitary equivariance, and exact equal-weight least-squares optimality and uniqueness of support truncation over a complete uniform finite-abelian inventory, together with an arbitrary-dimension/arbitrary-rank matrix-Frobenius lattice layer and explicit periodic 1-D, 2-D, and 3-D specializations.
 - Positive even centered integer inventories, exact negative-Nyquist singleton removal, full-versus-removed reconstruction, normalized removed-block power independent of later range selection, and symmetric ordinary support below half the mesh size.
 - Complete finite metric shells over caller-supplied inventories, including nested cutoffs, exact tie retention, conditional inversion and symmetry-orbit closure, strict block-count growth at every attained radius, no-skipped-attained-shell semantics, and exact square, triangular, simple-cubic, and normalized FCC reduced-coordinate indices; no runtime inventory, physical hopping-range, or material binding is inferred.
 - Exact integer-lattice quotient admission: `AB=BC` well-definedness certificates on `ℤ³/Bℤ³`, separately admitted inverse maps, two-sided quotient bijectivity, finite positive diagonal quotients, positive cubic FCC--Bain admission, and the fail-closed mixed-modulus criterion `N₂=N₃ ∧ N₁∣N₂`; no runtime mesh or convergence binding is inferred.
@@ -135,7 +135,9 @@ Open:
 - runtime interval serialization, enclosure-production arguments, and external coverage;
 - concrete Paper B/C tables; and
 - concrete owner-specific error-channel taxonomies and compatibility inventories, verified structural-requirement contracts, heterogeneous candidate-carrier embeddings, cross-gauge stability bridges, and proposition-specific certificate bindings;
-- runtime-bound cutoff inventories and later Wannier90 layers.
+- runtime-bound cutoff inventories and later Wannier90 layers;
+- exact owner-specific identification of runtime periods, reciprocal-basis coordinates, matrix axes, support, and gauge with the finite-periodic lattice carrier; and
+- exact owner-specific identification of a NumPy design with the complete uniform character inventory, plus numerical rank, conditioning, solver, and binary64 route-agreement validation.
 
 The first Ragasa2026b projection proposition is completed as
 `BG-PROJECTION-DEF-001` through `011` and `BG-PROJECTION-THM-001` through `008`. The proof

@@ -656,3 +656,44 @@ KSD sources now require that future contract to choose its represented object an
 do not choose one or define a metric-aware objective. Formal therefore records only the exact
 metric-isometry predicate and does not claim a metric-aware alignment implementation, optimizer,
 certificate, locality result, or scientific acceptance.
+
+## Finite Fourier least-squares motivation
+
+The source-neutral finite-abelian least-squares milestone was selected after a read-only inspection
+of `ksdft2effmass` worktree
+`/private/tmp/ksdft2effmass-periodic1d-rank1-first-pass-certificate`, branch
+`work/periodic1d-rank1-first-pass-certificate`, at immutable commit
+`ca052e6571ea10dfbfc3f51be47ffdb08e5313d0` and tree
+`447d0634ab6fa09782d50afa899f45e38c156809`. The worktree had 20 dirty-status entries from bounded
+certificate prototype and scope work; the cited paths were clean at the commit.
+
+| SHA-256 | Owner-repository path |
+|---|---|
+| `f350d69c246be13c3d31a81fa0983e34c036bb9f8839079d6db7587eab99e659` | `python/src/ksdft2effmass/analysis/hopping_fits.py` |
+| `8f7244046d772716ed7f5c60022385c2c7b9a99d841489971a00783ae2bcaf7e` | `python/src/ksdft2effmass/solidstate/hopping_transforms.py` |
+| `f93c074ab0e97c448cee02ba5ea955fe4c1c85373fea7b4cce67b66295ed15ce` | `python/src/ksdft2effmass/periodic1d/fourier_locality/analysis.py` |
+| `f0040494d5b57062d9d9c974952f591f3b5d220c59a02d3cfe1c4d55d10c707c` | `calculations/periodic1d/rank1/fourier-locality/numerical-control-decision.md` |
+
+The exact crosswalk is
+`docs/BandGauge/ksdft2effmass/finite-fourier-least-squares-crosswalk.md`. The Lean results establish
+an exact finite equal-weight least-squares theorem only. They authenticate no runtime character
+inventory, NumPy solve, design rank, conditioning, binary64 coefficient, route agreement, threshold,
+artifact, or scientific conclusion.
+
+## Finite periodic-lattice matrix least-squares applicability
+
+The lattice specialization was compared read-only with `ksdft2effmass` branch
+`work/periodic23-rank2-ragasa-metric-extension` at commit
+`0bef3dc574648ac60e4014962da75077ded3b4b2` and tree
+`d957c541e73f78a312107ddb62cf3eb9fff8514f`. The worktree had 81 dirty-status entries. The cited
+Periodic2D/3D rank-two and rank-N Python sources were tracked and clean at that commit; their hashes
+and exact paths are recorded in
+`docs/BandGauge/ksdft2effmass/finite-periodic-lattice-matrix-least-squares-crosswalk.md`. The
+Periodic3D rank-N baseline working copy was modified, so only its committed bytes at the recorded
+commit are cited immutably.
+
+Formal models the mesh as a finite quotient of reciprocal-lattice coordinates and records the
+reciprocal basis separately. The proved matrix-Frobenius least-squares result is uniform in finite
+lattice dimension and finite matrix rank, with explicit 1-D, 2-D, and 3-D corollaries. It does not
+authenticate a KSD mesh, basis, gauge, matrix array, character inventory, support, numerical solve,
+conditioning result, binary64 value, execution artifact, or scientific conclusion.

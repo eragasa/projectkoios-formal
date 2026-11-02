@@ -40,8 +40,8 @@ Each family is classified by existing support, next exact work, and boundary.
 | ICMSEP admissible sets | finite separation, rank-two losses, finite decisions, exact checkers | exact rational certificate decoding after schema freeze | no JSON, Python, chronology, or scientific acceptance claim |
 | QHO1D | Hermite, ladder defect, finite differences, Gram pullback, discrepancy split | `JᵀHJ-D = Jᵀ(HJ-JD)` under `JᵀJ=I` | no box/grid convergence or binary64 residual claim |
 | PIAB1D | exact finite modes, compression, fitting, rectangular basis algebra | full mode completeness and constant-weight invariance | no refinement-rate, eigensolver, or serialized-matrix claim |
-| Mathieu1D/rank-one Fourier | finite transform, Parseval, truncation, Hermitian pairing | phase invariance, exact Mathieu matrix Hermiticity, matched character least squares | no sampled gap, conditioning, cutoff, or package claim |
-| Periodic rank-two and cross-dimensional | rank-two alignment, sewing, Fourier tails, decisions, source-neutral complete finite metric shells with exact square/triangular/simple-cubic/FCC indices, exact pointwise complex-unitary lower/upper-band invariance from supplied coordinate witnesses, exact binary product-mesh 2-D/3-D witnesses separating pointwise band equality from zero-mode Fourier locality with positive omitted power, normalized finite product-torus factorization, the normalized positive sine-phase one-circle `J₀` identity, and exact 2-D `J₀(a)²` and 3-D `J₀(2a/3)³` scaling laws | owner-specific torus-coordinate/phase/measure and analytic-comparator binding, owner-specific inventory and runtime-gauge binding, and calculation-specific certificates after schema freeze | no runtime gauge/eigensolver/mesh or external-inventory authentication, quadrature or finite-to-continuum certification, external `J₀` comparator binding, physical hopping-range inference, tolerance claim, or material transfer across families |
+| Mathieu1D/rank-one Fourier | finite transform, Parseval, truncation, Hermitian pairing, and exact equal-weight least-squares optimality and uniqueness of support truncation over a complete uniform finite-abelian inventory | phase invariance, exact Mathieu matrix Hermiticity, and an owner-specific applicability bridge identifying the runtime design with the exact inventory | no NumPy-solve, numerical-rank, conditioning, binary64 route-agreement, sampled-gap, cutoff, or package claim |
+| Periodic rank-two and cross-dimensional | rank-two alignment, sewing, Fourier tails, decisions, source-neutral complete finite metric shells with exact square/triangular/simple-cubic/FCC indices, exact pointwise complex-unitary lower/upper-band invariance from supplied coordinate witnesses, exact binary product-mesh 2-D/3-D witnesses separating pointwise band equality from zero-mode Fourier locality with positive omitted power, arbitrary-dimension/arbitrary-rank finite-periodic lattice matrix-Frobenius least-squares optimality with explicit 1-D/2-D/3-D specializations, normalized finite product-torus factorization, the normalized positive sine-phase one-circle `J₀` identity, and exact 2-D `J₀(a)²` and 3-D `J₀(2a/3)³` scaling laws | owner-specific period/reciprocal-basis/matrix-axis/support/gauge binding, owner-specific torus-coordinate/phase/measure and analytic-comparator binding, and calculation-specific certificates after schema freeze | no runtime gauge/eigensolver/mesh/basis or external-inventory authentication, NumPy solve, numerical rank or conditioning, binary64 route agreement, quadrature or finite-to-continuum certification, external `J₀` comparator binding, physical hopping-range inference, tolerance claim, or material transfer across families |
 | Higher-rank D1 | arbitrary-rank fixed-unitary Fourier invariance and finite matrix algebra | pointwise gauge, alignment-family, and polar/Procrustes contracts | schema-free summaries are not evidence |
 | Synthetic strain and coordinates | exact FCC--Bain matrices, determinant and inverse identities, general integer-lattice quotient admission certificates, finite positive diagonal quotients, cubic-quotient admission, and the exact mixed-modulus condition `N₂=N₃ ∧ N₁∣N₂` | owner-specific binding of the selected runtime periods/common-cell convention, plus area/volume, reciprocal-map, and shell-symmetry identities | geometry and exact quotient algebra only; no runtime mesh, convergence, elasticity, phase-stability, or execution claim |
 | Spin spaces | spin lift, partial-trace projection, Pauli residuals | basis-permutation, spin-rotation, and time-reversal identities | no authored `4×4` data or runtime result binding |
@@ -100,6 +100,32 @@ The gauge layer proves finite invariance only.
 - Unit-normalized rank-one projector products yield the exact Bargmann trace identity.
 
 Principal phase invariance does not prove nonvanishing, unwrapping, topology, or a Wannier obstruction.
+
+### Exact finite Fourier least squares
+
+The finite-abelian layer proves a coefficient-space Pythagorean identity and transports it through
+finite Parseval. For any exact candidate supported on a declared character support, reconstruction
+error equals truncation error plus `|G|` times the retained coefficient mismatch. Consequently,
+exact Fourier truncation is the least-squares minimizer, and equality occurs exactly at the
+truncated coefficient field.
+
+The immutable KSD source locators and applicability boundary are recorded in
+`docs/BandGauge/ksdft2effmass/finite-fourier-least-squares-crosswalk.md`. The theorem does not
+validate a NumPy solve, runtime inventory, numerical full rank, conditioning, binary64 route
+agreement, threshold, artifact, or scientific interpretation.
+
+### Finite-periodic lattice matrix application layer
+
+The lattice layer instantiates the finite abelian group as `(d : D) → ZMod (N d)`, records a
+`Module.Basis D ℝ (D → ℝ)` separately as exact reciprocal geometry, and lifts the generic result to
+explicit entrywise matrix-Frobenius power. One parametric proof covers arbitrary finite dimension
+and rank, with named periodic 1-D, 2-D, and 3-D corollaries; orthogonal and nonorthogonal bases do
+not change finite-character orthogonality.
+
+The exact owner-source locators and eight remaining applicability obligations are recorded in
+`docs/BandGauge/ksdft2effmass/finite-periodic-lattice-matrix-least-squares-crosswalk.md`. No theorem
+chooses a gauge, authenticates runtime periods, basis vectors, matrix axes, arrays, equal weights,
+support, or character normalization, or validates a numerical execution or scientific claim.
 
 ## Priority
 

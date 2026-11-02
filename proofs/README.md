@@ -262,6 +262,21 @@ These theorems establish an exact finite representation-locality separation only
 bind a runtime mesh, gauge, frame, eigensolver, coefficient array, physical hopping range,
 finite-to-continuum limit, material model, certificate, or scientific conclusion.
 
+## Selected finite Fourier least-squares tranche
+
+The source-neutral finite-abelian extension has selected dossiers for
+`BG-FOURIER-FINITE-THM-004` and `BG-FOURIER-FINITE-THM-005`. They cover the exact reconstruction-
+error decomposition and the resulting least-squares minimality and equality characterization of
+support truncation. The supporting coefficient-space Pythagorean identity remains fully recorded
+in Lean and the theorem manifest without a separate dossier.
+
+These theorems concern exact equal-weight finite sums on a complete character inventory. The
+`BG-FOURIER-LATTICE-THM-001–005` application layer derives arbitrary-rank periodic 1-D/2-D/3-D
+matrix statements from the same proof and is recorded in Lean, the theorem manifest, and its
+source crosswalk without separate theorem dossiers. These declarations do not authenticate a
+runtime design, quotient periods, reciprocal basis, gauge, NumPy solve, numerical rank,
+conditioning, binary64 coefficient route, threshold, artifact, or scientific conclusion.
+
 ## Required contents
 
 A dossier records:

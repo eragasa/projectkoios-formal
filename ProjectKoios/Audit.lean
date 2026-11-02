@@ -50,6 +50,8 @@ import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Parseval
 import ProjectKoios.BandGauge.Fourier.FiniteAbelian.HermitianPairing
 import ProjectKoios.BandGauge.Fourier.FiniteAbelian.MatrixFrobenius
 import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Convolution
+import ProjectKoios.BandGauge.Fourier.FiniteAbelian.LeastSquares
+import ProjectKoios.BandGauge.Fourier.FiniteAbelian.LatticeLeastSquares
 import ProjectKoios.BandGauge.Fourier.Residual.Channels
 import ProjectKoios.BandGauge.Fourier.Residual.RankTwoWeightedBridge
 import ProjectKoios.BandGauge.Fourier.Gauge.UnitaryEquivariance
@@ -494,6 +496,16 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierReconstruction_finiteMatrixConvolution
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierCoefficient_mul
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteMatrixConvolution_supportedOn_add
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.truncateCoefficients_supportedOn
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierPower_sub_supported_eq
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierReconstruction_error_decomposition
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierTruncation_leastSquares
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteMatrixFrobeniusPower_sub_supported_eq
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finitePeriodicLatticeMatrixReconstruction_error_decomposition
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finitePeriodicLatticeMatrixTruncation_leastSquares
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finitePeriodicLatticeMatrixTruncation_leastSquares_oneDimensional
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finitePeriodicLatticeMatrixTruncation_leastSquares_twoDimensional
+#print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finitePeriodicLatticeMatrixTruncation_leastSquares_threeDimensional
 #print axioms ProjectKoios.BandGauge.Fourier.Support.metricShell_univ_add_subset
 #print axioms ProjectKoios.BandGauge.Fourier.Support.neg_metricShell_univ_eq
 #print axioms ProjectKoios.BandGauge.Fourier.Gauge.finiteFourierCoefficient_conj

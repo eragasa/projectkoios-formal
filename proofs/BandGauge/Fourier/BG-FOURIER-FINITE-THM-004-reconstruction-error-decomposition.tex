@@ -1,0 +1,327 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-02
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber,style=numeric,sorting=nyt]{biblatex}
+\addbibresource{proofs/BandGauge/Fourier/finite-abelian-least-squares.bib}
+\newtheorem{theorem}{Theorem}
+\newtheorem{remark}{Remark}
+\title{Exact Error Decomposition for Supported Fourier Reconstruction\\
+\large A finite-mesh result for computational materials models}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-02}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Finite reciprocal-space calculations often replace a sampled field by a reconstruction using only
+a prescribed set of Fourier or hopping channels.  On a complete uniform finite-abelian mesh, the
+resulting squared reconstruction error has an exact decomposition: the error of the Fourier
+truncation plus a nonnegative coefficient-mismatch term.  The latter carries exactly one factor of
+the mesh cardinality under the normalized-forward, unnormalized-reconstruction convention.  We
+derive the Hilbert-valued formula, relate each step to standard finite-abelian Fourier theory, and
+explain its conditional interpretation for scalar, orbital-vector, and matrix-valued materials
+models.  The result is machine checked in Lean as
+\texttt{BG-FOURIER-FINITE-THM-004}.  It is an exact finite-mesh theorem; it does not certify a
+floating-point transform, numerical least-squares solve, physical model, or runtime artifact.
+\end{abstract}
+
+\section{Computational motivation}
+A common materials workflow samples a scalar band, an orbital-resolved quantity, or a represented
+Hamiltonian on a finite reciprocal mesh and reconstructs it from a limited set of real-space or
+hopping-like modes.  Once a support has been selected, two conceptually different errors can occur:
+\begin{enumerate}
+  \item modes outside the retained support are omitted; and
+  \item the coefficients placed on the retained support differ from the exact Fourier
+        coefficients.
+\end{enumerate}
+For a complete, uniformly weighted periodic mesh, these contributions are not merely bounded by a
+triangle inequality.  They separate exactly in squared norm.  This distinction is useful when a
+computational pipeline compares direct Fourier truncation with coefficients returned by a fitting
+route: it identifies the mathematical residual that belongs to support selection and the residual
+that belongs to coefficient mismatch.
+
+The finite mesh is modeled below by an abstract finite abelian group $G$.  In an application, an
+owner-specific bridge must identify the runtime mesh, its group law, its complete character
+inventory, and its normalization with this abstract object.  Without that bridge, the physical
+language in this section is interpretation rather than verified applicability.
+
+\section{Finite-mesh Fourier convention}
+Let $G$ be a finite abelian group, let $\widehat G$ be its character group, let $n=|G|$, and let
+$V$ be a complex Hilbert space.  The carrier $V$ permits a single statement for scalar-valued,
+vector-valued, or finite-dimensional matrix-valued data once the relevant Hilbert norm is fixed.
+For $f:G\to V$, define the normalized forward coefficient
+\begin{equation}
+  \widehat f(\chi)
+  :=\frac{1}{n}\sum_{g\in G}\overline{\chi(g)}\,f(g),
+  \qquad \chi\in\widehat G,
+  \label{eq:forward}
+\end{equation}
+and, for $a:\widehat G\to V$, define the reconstruction
+\begin{equation}
+  (\mathcal R a)(g)
+  :=\sum_{\chi\in\widehat G}\chi(g)\,a(\chi),
+  \qquad g\in G.
+  \label{eq:reconstruction}
+\end{equation}
+The forward transform therefore carries $1/n$, whereas reconstruction carries no additional
+normalization.
+
+The conjugation $\overline{\chi(g)}$ in \eqref{eq:forward} is essential for
+\eqref{eq:forward} and \eqref{eq:reconstruction} to be inverse under this sign convention.  For
+scalar fields, Tao defines normalized counting measure on p.~1, proves character orthogonality in
+Lemma~1.6 on pp.~4--5, proves the character basis in Corollary~1.7 on p.~5, and states inversion in
+Corollary~1.8~\cite{Tao2007FiniteAbelian}.  Plancherel and Parseval appear immediately after
+Corollary~1.8 on p.~5.  Garrett gives the alternative convention on p.~1, states Theorem~1.1 on
+p.~2, and proves it on pp.~2--5~\cite{Garrett2019FiniteAbelian}.  We use Tao's
+normalized-forward placement.
+
+\subsection{Written Hilbert-valued extension}
+For $u:G\to V$, the subspace
+\[
+  W:=\operatorname{span}_{\mathbb C}\{u(g):g\in G\}
+\]
+is finite-dimensional because $G$ is finite.  Choose an orthonormal basis $v_1,\ldots,v_m$ of
+$W$ and write $u(g)=\sum_{j=1}^{m}u_j(g)v_j$.  Linearity gives
+\begin{equation}
+  \widehat u(\chi)=\sum_{j=1}^{m}\widehat{u_j}(\chi)v_j.
+  \label{eq:coordinate-transform}
+\end{equation}
+Scalar inversion applied to every $u_j$ proves $\mathcal R\widehat u=u$.  Scalar Plancherel,
+followed by summation over the orthonormal coordinates, gives
+\begin{align}
+  \sum_{g\in G}\|u(g)\|^2
+  &=\sum_{j=1}^{m}\sum_{g\in G}|u_j(g)|^2 \notag\\
+  &=n\sum_{j=1}^{m}\sum_{\chi\in\widehat G}|\widehat{u_j}(\chi)|^2 \notag\\
+  &=n\sum_{\chi\in\widehat G}\|\widehat u(\chi)\|^2.
+  \label{eq:vector-parseval}
+\end{align}
+No separability assumption on $V$ is needed because only the finite-dimensional range span $W$
+is used.  For arbitrary $a:\widehat G\to V$, character orthogonality gives the other inverse
+directly:
+\begin{align}
+  \widehat{\mathcal R a}(\chi)
+  &=\frac1n\sum_{g\in G}\overline{\chi(g)}
+      \sum_{\psi\in\widehat G}\psi(g)a(\psi) \notag\\
+  &=\sum_{\psi\in\widehat G}
+      \left(\frac1n\sum_{g\in G}\overline{\chi(g)}\psi(g)\right)a(\psi)
+    =a(\chi).
+  \label{eq:reconstruction-left-inverse}
+\end{align}
+Thus
+\begin{equation}
+  \mathcal R\widehat u=u,
+  \qquad
+  \widehat{\mathcal R a}=a.
+  \label{eq:inverse-pair}
+\end{equation}
+These Hilbert-valued identities are now established in the written argument as well as in Lean.
+
+For a retained support $S\subseteq\widehat G$, define the zero-extended truncation
+\begin{equation}
+  (T_Sa)(\chi):=
+  \begin{cases}
+    a(\chi),&\chi\in S,\\
+    0,&\chi\notin S.
+  \end{cases}
+  \label{eq:truncation}
+\end{equation}
+A candidate coefficient field $d:\widehat G\to V$ is \emph{supported on $S$} when
+$d(\chi)=0$ for every $\chi\notin S$.  For a field $u:X\to V$ on a finite type, write
+\begin{equation}
+  \mathcal P_X(u):=\sum_{x\in X}\|u(x)\|^2.
+  \label{eq:power}
+\end{equation}
+This is an unnormalized equal-weight power, matching the raw sum of squared residuals often
+reported on a finite computational mesh.
+
+\section{Exact reconstruction-error decomposition}
+Let $c=\widehat f$ and $t=T_Sc$.  The field $\mathcal R t$ is the reconstruction obtained by
+retaining the exact coefficients on $S$ and setting every other coefficient to zero.
+
+\begin{theorem}[Supported Fourier error decomposition]
+For every coefficient field $d$ supported on $S$,
+\begin{equation}
+  \boxed{
+  \mathcal P_G(f-\mathcal R d)
+  =\mathcal P_G(f-\mathcal R t)
+   +n\,\mathcal P_{\widehat G}(t-d).}
+  \label{eq:main-decomposition}
+\end{equation}
+Equivalently,
+\begin{align*}
+ &\sum_{g\in G}
+   \left\|f(g)-\sum_{\chi\in\widehat G}\chi(g)d(\chi)\right\|^2\\
+ &\quad=
+   \sum_{g\in G}
+   \left\|f(g)-\sum_{\chi\in\widehat G}\chi(g)t(\chi)\right\|^2
+   +|G|\sum_{\chi\in\widehat G}\|t(\chi)-d(\chi)\|^2.
+\end{align*}
+\end{theorem}
+
+\subsection{Proof}
+Set $r_d=f-\mathcal R d$.  Linearity and reconstruction left-inversion in
+\eqref{eq:inverse-pair} give
+\begin{equation}
+  \widehat{r_d}
+  =\widehat f-\widehat{\mathcal R d}
+  =c-d.
+  \label{eq:candidate-residual-coefficient}
+\end{equation}
+Under the convention in \eqref{eq:forward}--\eqref{eq:reconstruction}, finite Parseval reads
+\begin{equation}
+  \mathcal P_G(u)=n\,\mathcal P_{\widehat G}(\widehat u).
+  \label{eq:parseval}
+\end{equation}
+For scalar fields, this is the Plancherel identity stated immediately after Tao's
+Corollary~1.8 on p.~5, using normalized counting measure from p.~1
+\cite{Tao2007FiniteAbelian}.  Replacing the normalized group norm by the unnormalized sum
+\eqref{eq:power} produces the factor $n$.  Garrett's conventions on p.~1, Theorem~1.1 on p.~2,
+and proof on pp.~2--5 yield the same identity after moving the reciprocal factor
+\cite{Garrett2019FiniteAbelian}.  Equation~\eqref{eq:vector-parseval} supplies the written
+$V$-valued extension, while the Lean dependency establishes it formally.  Applying it to
+\eqref{eq:candidate-residual-coefficient} gives
+\begin{equation}
+  \mathcal P_G(r_d)=n\,\mathcal P_{\widehat G}(c-d).
+  \label{eq:candidate-parseval}
+\end{equation}
+
+The remaining step is specific to the retained support and is not imported from the cited scalar
+sources.  It is a direct mode-by-mode identity.  If $\chi\in S$, then $t(\chi)=c(\chi)$, so
+\[
+  c(\chi)-t(\chi)=0,
+  \qquad
+  c(\chi)-d(\chi)=t(\chi)-d(\chi).
+\]
+If $\chi\notin S$, support of $d$ and the definition of $t$ give $t(\chi)=d(\chi)=0$, so
+\[
+  t(\chi)-d(\chi)=0,
+  \qquad
+  c(\chi)-d(\chi)=c(\chi)-t(\chi).
+\]
+Thus, at every character, one of the two error components vanishes and
+\begin{equation}
+  \|c(\chi)-d(\chi)\|^2
+  =\|c(\chi)-t(\chi)\|^2
+   +\|t(\chi)-d(\chi)\|^2.
+  \label{eq:mode-split}
+\end{equation}
+Summing over the complete character inventory gives
+\begin{equation}
+  \mathcal P_{\widehat G}(c-d)
+  =\mathcal P_{\widehat G}(c-t)
+   +\mathcal P_{\widehat G}(t-d).
+  \label{eq:coefficient-split}
+\end{equation}
+
+Now set $r_t=f-\mathcal R t$.  The same left-inverse calculation and Parseval identity yield
+\begin{equation}
+  \widehat{r_t}=c-t,
+  \qquad
+  \mathcal P_G(r_t)=n\,\mathcal P_{\widehat G}(c-t).
+  \label{eq:truncation-parseval}
+\end{equation}
+Substitution of \eqref{eq:coefficient-split} into \eqref{eq:candidate-parseval}, followed by
+\eqref{eq:truncation-parseval}, gives
+\begin{align*}
+  \mathcal P_G(f-\mathcal R d)
+  &=n\,\mathcal P_{\widehat G}(c-d)\\
+  &=n\,\mathcal P_{\widehat G}(c-t)
+    +n\,\mathcal P_{\widehat G}(t-d)\\
+  &=\mathcal P_G(f-\mathcal R t)
+    +n\,\mathcal P_{\widehat G}(t-d),
+\end{align*}
+which is \eqref{eq:main-decomposition}. \hfill$\square$
+
+\begin{remark}[Why there is exactly one factor $|G|$]
+The support split \eqref{eq:coefficient-split} introduces no cardinality factor.  The sole factor
+$n=|G|$ enters when Parseval converts coefficient power into the unnormalized mesh power.  This is
+a convention-sensitive point: moving $1/n$ between the forward and inverse transforms changes the
+appearance of intermediate formulas, but not the final equality after all norms are converted
+consistently.
+\end{remark}
+
+\section{Interpretation for computational materials science}
+Equation~\eqref{eq:main-decomposition} separates two channels that are often conflated in a
+numerical workflow:
+\begin{description}
+  \item[Support-truncation channel.]
+  $\mathcal P_G(f-\mathcal R t)$ is the residual forced by omitting coefficients outside $S$.
+  For the fixed support, it is independent of the alternative supported field $d$.
+  \item[Coefficient-mismatch channel.]
+  $n\mathcal P_{\widehat G}(t-d)$ measures the additional residual caused by changing retained
+  coefficients away from their exact Fourier values.
+\end{description}
+If $V=\mathbb C$, this covers a scalar sampled band or scalar hopping model.  If $V$ is a finite
+orbital-vector or matrix Hilbert space, the same algebra applies with its Hilbert norm; for
+Hamiltonian matrices, the natural computational instance is the Frobenius norm.  These
+interpretations require an explicit bridge fixing the carrier and runtime conventions.
+
+The theorem is especially informative when two computational routes are compared.  A direct
+Fourier route proposes $t$; a fitting route proposes $d$.  In exact arithmetic on a complete
+uniform mesh, the excess squared reconstruction error of the fitting route is exactly the
+coefficient mismatch term.  In floating-point software, however, neither equality to the abstract
+coefficients nor exact evaluation of the displayed sums follows automatically.  Roundoff,
+conditioning, incomplete meshes, nonuniform weights, regularization, symmetry constraints, and
+serialization remain separate obligations.
+
+\section{Formal status and reproducibility boundary}
+The result is implemented in
+\path{ProjectKoios/BandGauge/Fourier/FiniteAbelian/LeastSquares.lean} as
+\par\noindent
+\path{ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierReconstruction_error_decomposition}.
+Equation~\eqref{eq:mode-split} is the Lean lemma
+\texttt{BG-FOURIER-FINITE-LEM-004}; the remainder uses coefficient linearity, reconstruction
+left-inversion, finite Parseval, and exact finite-sum algebra.
+
+The author reports local kernel checking with Lean \texttt{4.35.0}, Mathlib revision
+\path{56a005855ea17e0b0958f73ec801ae140b0a1679}, and the verification commands listed in
+\path{proofs/BandGauge/Fourier/finite-abelian-least-squares-audit-supplement.md}.
+The external referee independently confirmed the written mathematics and inspected the cited
+literature, but did not execute the Lean development or verify the KSD snapshot.  Kernel checking
+and repository inspection are therefore reported local verification rather than independently
+reproduced findings of that review.  The theorem package was first checkpointed at ProjectKoios
+commit
+\path{e6dffa247e7e01e600ecc5aa64f4ff164dc0f99e} and integrated on the reviewed PR~\#58 base at
+commit \path{c5393e63e6d2918f2ce8f7691faa315b2d41d6fe}.  The supplement preserves the historical
+pre-checkpoint working-tree record, including complete theorem signatures, source hashes, build
+inputs, reported commands and outputs, source identities, and the review chronology; those commit
+identities do not convert it into an independent reproduction or publication certificate.
+
+The KSD relation is \texttt{compares-with}, not \texttt{formalizes}.  Runtime locators, source
+identities, dirty-state limitations, and SHA-256 values are recorded in
+\path{docs/BandGauge/ksdft2effmass/finite-fourier-least-squares-crosswalk.md}; this theorem does not
+validate a KSD execution.
+
+Tao and Garrett support the scalar finite-abelian ingredients at the points identified in the
+proof.  These directly inspected lecture notes are not an exhaustive literature review or
+peer-reviewed novelty evidence.  Neither inspected source states the complete Hilbert-valued
+supported-candidate formula verbatim.  The result is a standard consequence made explicit and
+mechanized here; no novelty or priority claim is made.
+
+\section{Scope and limitations}
+The exact result assumes a complete finite character inventory, uniform counting weight, exact
+support of $d$ in $S$, and a common Hilbert norm.  It does not establish any of the following:
+\begin{itemize}
+  \item that a runtime array is the exact field $f$ or that a software transform implements
+        \eqref{eq:forward};
+  \item that a numerical design matrix has full rank or acceptable conditioning;
+  \item that NumPy, SciPy, an FFT, or a serialized coefficient table returns $c$, $t$, or $d$;
+  \item that a finite mesh approximates a continuum Brillouin-zone integral;
+  \item that the support $S$ is physically adequate, optimal under a different cost, or selected
+        by a certified threshold; or
+  \item that the reconstructed model is scientifically adequate for a material.
+\end{itemize}
+Nonuniform weighted least squares, incomplete sampling, continuum error, and runtime-to-exact
+containment require separate theorems or certificates.
+
+\printbibliography[title={References}]
+\end{document}
