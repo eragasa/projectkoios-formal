@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board reconciliation source baseline: remote `main` merge commit
-`0cc2bd7e707393853e34a427e964af355d7ab17a`, tree
-`f1c0fdf8f299990eebeb962c185de0c75bbc70a7`, integrating PR #62.
+`80145602d4d84e26a4c5ccd7bbd362618598e39b`, tree
+`a595559e72657e1f84975b19c2f123a4a35e3cf0`, integrating PR #63.
 
 ## Mission
 
@@ -69,26 +69,39 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort is active: the source-neutral integer lattice radius bridge on branch
-`work/metric-shell-radius-bridge` in
-`/private/tmp/projectkoios-formal-metric-shell-radius-bridge`, based on canonical `main` commit
-`0cc2bd7e707393853e34a427e964af355d7ab17a`. Statement status is candidate; Lean definitions and
-proofs are implemented; affected build, Audit, coverage, pin, and diff checks pass; provenance is
-source-neutral; certificate and numerical-evidence status are absent; integration is isolated; and
-publication status is unmapped. Commit, push, PR, merge, evidence promotion, and cleanup remain
-separate gates.
+One mathematical effort is active: arbitrary-retained-dimension character-gauge locality separation,
+finite-periodic coordinate-character specializations, and a conditional fixed-subspace
+representation bridge on branch `work/finite-rank-locality-separation` in
+`/private/tmp/projectkoios-formal-finite-rank-locality-separation`, based on canonical `main` commit
+`80145602d4d84e26a4c5ccd7bbd362618598e39b`. The Lean source and documentation are uncommitted;
+affected builds, Audit, coverage, pin, admission-marker, and diff checks pass; independent review is
+pending. Certificate and numerical-evidence status are absent, integration remains isolated, and no
+runtime or scientific applicability is claimed.
 
-No trust, documentation, or maintenance effort is recorded in the second WIP slot.
+One documentation effort is active in the canonical checkout: reconciliation of the KSD
+mathematical-implementation proof backlog across the formal-support inventory, roadmap,
+higher-rank plan, source audit, and this board. It is based on the same canonical commit and uses a
+read-only KSD inspection at immutable commit `4835e7bf9161729cc8f0537bcc13db083896a6ae`, tree
+`fd641fb8a4efe7a5ef4d5da9c49f126e1e03e355`, with the recorded 112-entry dirty-checkout limitation.
+No KSD file was modified. Commit, push, PR, merge, evidence promotion, and cleanup remain separate
+gates.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Obtain independent review of the proof companion's provenance-audited background
+1. Obtain independent read-only review of the finite-rank character-gauge, coordinate-character,
+   lattice-specialization, and fixed-subspace bridge patch before any checkpoint or integration.
+2. Obtain independent review of cyclic quotient-radius checkpoint
+   `edefcd55ab551f6a739419b439813195c0522477`.
+3. After those review gates, begin the next reusable theorem slice with polar transport and the
+   principal-angle frame/projector bridge; approximate fixed-subspace and general-rank spectral
+   bounds follow in dependency order.
+4. Obtain independent review of the proof companion's provenance-audited background
    bibliography before publication extraction.
-2. Resume proposition-specific schema design only after KSD supplies a frozen exact or
+5. Resume proposition-specific schema design only after KSD supplies a frozen exact or
    outward-rounded request/result contract.
-3. Treat commits, pushes, PRs, merges, and cleanup as separate authorization gates.
+6. Treat commits, pushes, PRs, merges, and cleanup as separate authorization gates.
 
 ## Blocked
 
@@ -120,9 +133,14 @@ Blocked work lacks a required source or evidence gate.
 
 Deferred work is outside the current WIP limit.
 
+- Exact KSD centered-FFT/product-quotient applicability binding after the polar and approximate-representation slices.
+- Quantitative gauge-tail convolution and omitted-power bounds.
+- Twist-gauge conjugacy and multidimensional seam consistency.
 - Continuum topology and Chern integrality.
-- Wilson eigenphases and phase unwrapping.
-- General Wannier obstruction and Wannier90 execution.
+- Wilson eigenphases, branch-safe phase unwrapping, and Wilson--Chern equivalence.
+- General Wannier obstruction, source-specific `_u.mat`/`_hr.dat` semantics, and Wannier90 execution.
+- Defect-root monotonicity/count, higher-rank Woodbury/Feshbach bounds, and finite-to-infinite-volume limits.
+- Effective-mass curvature, envelope approximation, and continuum convergence under a selected physical model.
 - Broad theorem expansion without a selected consumer.
 - Physlib adoption.
 - Branch and worktree deletion without explicit authorization.
@@ -273,6 +291,30 @@ These items are merged Formal content only.
   `f7bf17426c6e18213b0601b8dc9c191fca54c558`; support is an inclusion in a supplied finite
   character inventory and establishes no support equality, runtime binding, continuum decay,
   physical hopping range, or scientific adequacy.
+- Source-neutral subadditive-radius growth for pointwise gauges, including the exact
+  `R_A + 2 R_U` complete-shell inclusion under supplied inversion and triangle laws, merged through
+  PR #57 at commit `6b8c7ec767cae6348ee818e4495edda0e1fcbfe2`, tree `df11021c2965f7eb87a7ab3af65494498376ebfe`. It does not bind
+  finite quotient seams, runtime support, physical range, or decay.
+- Exact FCC--Bain quotient-admission algebra, including the fail-closed mixed-modulus criterion
+  `N₂=N₃ ∧ N₁∣N₂`, merged through PR #58 at commit `b98d23fe23bb5bc940c6be4cfcbc79c3569c45e7`, tree
+  `c10259e93c6615a126b6066f609536e695823541`. It certifies quotient well-definedness only, not a
+  runtime mesh or common-cell application.
+- Exact finite-abelian and finite-periodic-lattice matrix-Frobenius least-squares identities merged
+  through PR #59 at commit `fc8b085f6669f9af7046f92dc735b0c7fbf40ffa`, tree `923c0c409598d023262cb2f55228b7da60c055fe`.
+  Exact onsite/nononsite direct power partitioning merged through PR #60 at commit `48c4b6c2cc9912ed418350633de1878991e22730`, tree
+  `d558073dbfe1f4728fef26f0173d850823e88c2c`. Neither result validates NumPy solves, binary64
+  summation, runtime classification, conditioning, or route agreement.
+- Exact finite-rank analytic-parent gap and retained-ordering controls merged through PR #61 at
+  commit `ea5e48253d86e973c54a187435d9e08f002b6d34`, tree `e44b8d78468c0ee7259c0b81ce3a0d57f355da31`; exact finite-rank
+  right-unitary frame/operator construction, spectrum preservation, and known-inverse recovery
+  merged through PR #62 at commit `0cc2bd7e707393853e34a427e964af355d7ab17a`, tree
+  `f1c0fdf8f299990eebeb962c185de0c75bbc70a7`. These are source-neutral controls and do not
+  authenticate runtime bonds, frames, gauges, eigensolvers, or sampled gaps.
+- Exact additive Euclidean lattice radii for square, triangular, simple-cubic, and normalized FCC
+  coordinates merged through PR #63 at commit `80145602d4d84e26a4c5ccd7bbd362618598e39b`, tree
+  `a595559e72657e1f84975b19c2f123a4a35e3cf0`. Their squared norms equal the source-neutral shell
+  indices and satisfy inversion and triangle laws, but they do not identify finite quotient
+  characters with centered representatives or physical distances.
 - The finite aligned-operator budget and compatibility-adapter slice is proved as
   `BG-DECISION-DEF-028--031` and `BG-DECISION-THM-039--050`, with four selected explanatory
   dossiers. It merged through PR #36 at commit

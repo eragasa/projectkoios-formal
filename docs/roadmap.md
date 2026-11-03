@@ -129,15 +129,21 @@ Open:
 
 - owner-specific retained-frame, alignment, self-adjointness-hypothesis, and exact/outward operator-norm binding;
 - exact or independently checked construction of application-specific Procrustes polar witnesses, with rank-deficient completion policy kept external unless a consumer freezes it;
+- exact polar neighbor transport, sequential transport, periodic seam closure, and stability under a stated lower singular-value bound;
+- principal-angle identities connecting optimal frame-alignment error, overlap singular values, and projector error;
+- approximate fixed-subspace compression and leakage bounds when runtime frames or projectors are not exactly related by a right unitary;
+- general-rank Hermitian maximum and root-mean-square eigenvalue perturbation bounds from operator and entrywise matrix-Frobenius error;
 - matrix-Frobenius maximum-tail specialization after selecting an explicit representation bridge;
 - runtime interpolation, evaluation-mesh, and exact/outward-rounded residual-channel bindings;
 - an exact owner-specific bridge from NumPy `fft`/`fftshift` and its centered-origin phase convention to the abstract centered inventory and coefficient field;
 - source-defined physical hopping-range, external shell-inventory, and publication-mesh bindings beyond the exact source-neutral metric-shell semantics, including a quotient-compatible bridge from finite character modes and centered representatives to the new integer-lattice radii;
 - nonuniform weighted Parseval;
 - runtime interval serialization, enclosure-production arguments, and external coverage;
-- concrete Paper B/C tables; and
+- concrete Paper B/C tables;
 - concrete owner-specific error-channel taxonomies and compatibility inventories, verified structural-requirement contracts, heterogeneous candidate-carrier embeddings, cross-gauge stability bridges, and proposition-specific certificate bindings;
-- runtime-bound cutoff inventories and later Wannier90 layers;
+- runtime-bound cutoff inventories and later Wannier90 layers, including separate square-unitary, rectangular-isometry, disentanglement, `_u.mat`, `_hr.dat`, and localization semantics;
+- quantitative gauge-convolution and omitted-power bounds for gauges without compact finite Fourier support;
+- exact twist-gauge conjugacy between uniform-link and seam-localized finite periodic operators;
 - exact owner-specific identification of runtime periods, reciprocal-basis coordinates, matrix axes, support, and gauge with the finite-periodic lattice carrier; and
 - exact owner-specific identification of a NumPy design with the complete uniform character inventory, plus numerical rank, conditioning, solver, and binary64 route-agreement validation.
 
@@ -148,6 +154,31 @@ source-assumption Laurent square-root obstruction, establishes unit-circle Laure
 uniqueness, verifies the lower-band projector and sandwich identity, and derives the final
 matrix-valued non-finite-support conclusion. Later projection questions—quantitative decay,
 higher rank, multidimensional parents, and general preservation criteria—remain open.
+
+## R2.6 — implementation applicability and approximate representation bridges
+
+Status: planned, with separate review-pending exact worktrees that are not yet canonical.
+
+This stage connects source-neutral finite mathematics to authenticated KSD representations without treating runtime floating-point data as exact by default.
+
+Exact finite targets:
+
+- polar frame transport, closure, uniqueness, and lower-singular-value stability;
+- principal-angle frame/projector error identities;
+- approximate compression covariance and separate subspace-leakage terms;
+- general-rank Hermitian spectral perturbation;
+- quantitative gauge-tail convolution and omitted-power bounds;
+- product-quotient radius and twist-seam conjugacy; and
+- claim-driven discrete topology only after orientation, nonzero-overlap, and branch hypotheses are frozen.
+
+Owner-specific bridges:
+
+- centered FFT origin, sign, normalization, tensor-axis, ordering, and Nyquist conventions;
+- mesh periods, reciprocal basis, units, energy reference, frames, projectors, matrix axes, gauge action side, support, and shell inventories;
+- distinct Wannier90 square-unitary, rectangular-isometry, disentanglement, Hamiltonian-block, and localization semantics; and
+- proposition-specific exact or outward-rounded certificate schemas with independent verification.
+
+The review-pending cyclic quotient-radius and finite-rank character-gauge/fixed-subspace worktrees may discharge parts of this stage only after independent review and separately authorized integration. A successful local build or audit is not canonical integration, runtime applicability, or evidence admission.
 
 ## R3 — continuum Fourier analysis
 

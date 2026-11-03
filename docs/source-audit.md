@@ -810,3 +810,34 @@ character. Any concrete periodic application must separately specify the quotien
 representatives, seam/Nyquist convention, and a wraparound-compatible quotient radius. No runtime
 mesh, coefficient array, physical length, source-defined hopping range, applicability, or scientific
 claim is introduced.
+
+## KSD mathematical implementation backlog inspection
+
+A later read-only inspection examined mathematical implementation paths in the current KSD checkout to identify remaining proof obligations rather than to establish source-specific applicability.
+
+- owner repository: `ksdft2effmass`;
+- checkout: `/Users/eugene/repos/ksdft2effmass`;
+- branch: `work/monograph-current-library-capabilities`;
+- checked-out commit: `4835e7bf9161729cc8f0537bcc13db083896a6ae`;
+- tree: `fd641fb8a4efe7a5ef4d5da9c49f126e1e03e355`;
+- dirty-state limitation: 112 short-status entries were present;
+- path-level limitation: the specifically listed paths had no short-status entries, so the hashes below identify immutable blobs at the checked-out commit. This does not make the rest of the checkout clean.
+
+| SHA-256 of commit blob | Owner-repository path | Backlog use |
+|---|---|---|
+| `e0deceebb75d84304eb02f80d1734afc0cd36be611dbd741d63298e96de33240` | `python/src/ksdft2effmass/solid_state/band_frames.py` | finite frame, sewing, transport, and closure semantics |
+| `3e5124fe785cfc75d5a2bb80030e6bccf9c4bcb82ed540de9c2a4e32b57400ea` | `python/src/ksdft2effmass/solid_state/frame_alignment.py` | pointwise SVD/Procrustes, numerical-rank, frame-defect, and projector-defect semantics |
+| `a2116911da6d3cba98a2b2a0776996bdda6b9f0e3a4470fcb7ee8c8d7df5b98f` | `python/src/ksdft2effmass/solid_state/hopping_transforms.py` | centered FFT, origin phase, reconstruction, and array ordering |
+| `d0e71cdba5d3f4b728b3b513e18c435b1cfc97a76674f13dee206f12785a989f` | `python/src/ksdft2effmass/solid_state/gauge_bridges.py` | distributed-link and seam-localized twist gauges |
+| `36bb668f0268ae8a93dc93021e9d141b2b42401c93cde657feef926d03272429` | `python/src/ksdft2effmass/solid_state/wilson_loops.py` | Wilson products, phases, winding, and gauge invariance |
+| `8266198076c4abb0ced4e74d03d9c74bab6f245fd5e7406d2a2ed6e6bfa54235` | `python/src/ksdft2effmass/analysis/wannier_localization.py` | finite localization and polarization interpretations |
+| `fcfa1ea0bad66aef5914cb9a1228d8c928ff82535925347a57d898744944c08b` | `python/src/ksdft2effmass/analysis/model_adequacy/band_equivalence_locality/alignment.py` | global and pointwise alignment implementation contracts |
+| `9758029e5b4d310cf75010c63d1630fa7930e7bfed2eb1a477d83e3661ef19e3` | `python/src/ksdft2effmass/analysis/model_adequacy/band_equivalence_locality/fourier.py` | multidimensional Fourier and truncation conventions |
+| `8ce3a227fe3cbac045f15ed30d9e9cfebeeed4990100189bc0d134abe37a3639` | `python/src/ksdft2effmass/periodic1d/multiband_alignment/calculate.py` | multiband objective and transport production |
+| `5de3a07437174022efe63dd42c34c0a8004a540e3c66359ff765e0494f394e13` | `python/src/ksdft2effmass/periodic1d/multiband_alignment/verify.py` | independent numerical recomputation boundary |
+| `4d15a4b411767581c5d7195ac85329f9e8147ce7a1c632a7f5a4cedff7cb73f6` | `python/src/ksdft2effmass/integration/wannier90/unitary_matrices.py` | square-unitary versus rectangular-isometry semantics |
+| `06678c72892170c566de13a01f3444ae02c4fba5aa53ec00a3065a46ebf70554` | `python/src/ksdft2effmass/integration/wannier90/hamiltonian_blocks.py` | degeneracy-weighted Hamiltonian-block reconstruction |
+| `3528f2ed0ba593179b293fe49873925e299066e74498f27b918d902061c86b74` | `python/src/ksdft2effmass/periodic2d/run/topological/calculate.py` | plaquette phases, winding, and model-specific topology claims |
+| `6411a6e4d6282ba66d34ab2c531ee1be1aa8d4c7450b9e7575dd627b13edcf6d` | `python/src/ksdft2effmass/campaigns/periodic_1d/defects/finite_rank_oracle/workflow.py` | finite-rank defect roots and oracle comparison |
+
+The inspection motivates polar-transport and principal-angle theorems, approximate fixed-subspace and general-rank spectral bounds, exact FFT and twist-gauge bridges, quantitative gauge-tail bounds, and later claim-specific topology, Wannier, defect, and effective-mass programs. It does not prove that NumPy or SciPy implements those theorems, that a runtime SVD has exact rank, that binary64 values satisfy exact hypotheses, that a mesh is converged, or that DFT/Wannier90 output is physically adequate. No KSD file was modified during this inspection.

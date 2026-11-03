@@ -16,6 +16,20 @@ The inventory used one read-only dirty worktree.
 
 The commit is an immutable baseline. Some inspected calculation documents were dirty or untracked. The hashes below identify inspected bytes; they do not make unavailable dirty bytes reproducible or place them in the commit.
 
+### Later implementation-oriented inspection
+
+A later read-only inspection broadened the inventory from calculation documents to the current KSD mathematical implementation graph.
+
+- Repository: `ksdft2effmass`
+- Checkout: `/Users/eugene/repos/ksdft2effmass`
+- Branch: `work/monograph-current-library-capabilities`
+- Commit: `4835e7bf9161729cc8f0537bcc13db083896a6ae`
+- Tree: `fd641fb8a4efe7a5ef4d5da9c49f126e1e03e355`
+- Whole-worktree status count: 112
+- Access: read-only
+
+The specifically inspected implementation paths were clean relative to that commit, but the checkout as a whole was not clean. The immutable blob hashes and path-level scope are recorded in `docs/source-audit.md`. This inspection supports backlog discovery only: it does not authenticate dirty sibling files, runtime arrays, external artifacts, or source-specific theorem applicability.
+
 ## Historical Formal state
 
 This table records the state when the first-pass inventory was written.
@@ -31,6 +45,8 @@ This table records the state when the first-pass inventory was written.
 
 Later consolidation integrated QHO, PIAB1D, FCC--Bain, spin, folding, Vogl, finite measurement, arbitrary-rank Fourier, rank-one resolvent, gauge-loop, and projector--Bargmann checkpoints through `e6c9ad895eeb84608eb43292eacffd5d4d552b6e`. Projection/nonlocality remained outside that branch. These are integration facts, not release or evidence promotion.
 
+Canonical `main` at the later inspection was `80145602d4d84e26a4c5ccd7bbd362618598e39b`. Separate review-pending worktrees contain cyclic quotient-radius proofs and finite-rank character-gauge/fixed-subspace proofs. Their successful local builds and audits do not make them canonical declarations: independent review, correction if required, and separately authorized integration remain outstanding.
+
 ## Calculation-family assessment
 
 Each family is classified by existing support, next exact work, and boundary.
@@ -42,16 +58,16 @@ Each family is classified by existing support, next exact work, and boundary.
 | PIAB1D | exact finite modes, compression, fitting, rectangular basis algebra | full mode completeness and constant-weight invariance | no refinement-rate, eigensolver, or serialized-matrix claim |
 | Mathieu1D/rank-one Fourier | finite transform, Parseval, truncation, Hermitian pairing, and exact equal-weight least-squares optimality and uniqueness of support truncation over a complete uniform finite-abelian inventory | phase invariance, exact Mathieu matrix Hermiticity, and an owner-specific applicability bridge identifying the runtime design with the exact inventory | no NumPy-solve, numerical-rank, conditioning, binary64 route-agreement, sampled-gap, cutoff, or package claim |
 | Periodic rank-two and cross-dimensional | rank-two alignment, sewing, Fourier tails, decisions, source-neutral complete finite metric shells with exact square/triangular/simple-cubic/FCC indices and exact integer-lattice Euclidean radii satisfying the squared-index, inversion, triangle, elementwise `R_A + 2 R_U`, and complete-shell inclusion bounds, exact pointwise complex-unitary lower/upper-band invariance from supplied coordinate witnesses, exact binary product-mesh 2-D/3-D witnesses separating pointwise band equality from zero-mode Fourier locality with positive omitted power, arbitrary-dimension/arbitrary-rank finite-periodic lattice matrix-Frobenius least-squares optimality and direct onsite/nononsite power partition with explicit 1-D/2-D/3-D specializations, normalized finite product-torus factorization, the normalized positive sine-phase one-circle `J₀` identity, and exact 2-D `J₀(a)²` and 3-D `J₀(2a/3)³` scaling laws | owner-specific period/reciprocal-basis/matrix-axis/support/gauge binding, finite-character/centered-representative quotient-radius compatibility across modular seams, disjoint/exhaustive runtime onsite classification and direct-sum binding, owner-specific torus-coordinate/phase/measure and analytic-comparator binding, and calculation-specific certificates after schema freeze | no runtime gauge/eigensolver/mesh/basis or external-inventory authentication, NumPy solve, numerical rank or conditioning, binary64 summation or route agreement, quadrature or finite-to-continuum certification, external `J₀` comparator binding, physical hopping-range inference, tolerance claim, or material transfer across families |
-| Higher-rank D1 | arbitrary-rank fixed-unitary Fourier invariance and finite matrix algebra | pointwise gauge, alignment-family, and polar/Procrustes contracts | schema-free summaries are not evidence |
+| Higher-rank D1 | arbitrary-rank frame/compression covariance, exact finite-rank analytic-parent qualification, exact right-unitary gauge construction, fixed-unitary Fourier invariance, Procrustes minimality under supplied polar witnesses, finite-mesh alignment-family semantics, and finite matrix algebra | polar transport and seam closure, principal-angle frame/projector identities, approximate fixed-subspace compression, general-rank spectral perturbation, quantitative gauge-tail bounds, and authenticated runtime binding | schema-free summaries, numerical SVD ranks, binary64 orthonormality, and sampled objectives are not evidence |
 | Synthetic strain and coordinates | exact FCC--Bain matrices, determinant and inverse identities, general integer-lattice quotient admission certificates, finite positive diagonal quotients, cubic-quotient admission, and the exact mixed-modulus condition `N₂=N₃ ∧ N₁∣N₂` | owner-specific binding of the selected runtime periods/common-cell convention, plus area/volume, reciprocal-map, and shell-symmetry identities | geometry and exact quotient algebra only; no runtime mesh, convergence, elasticity, phase-stability, or execution claim |
 | Spin spaces | spin lift, partial-trace projection, Pauli residuals | basis-permutation, spin-rotation, and time-reversal identities | no authored `4×4` data or runtime result binding |
-| 1-D defects and independent routes | finite folding and route commutativity | seam/twist crosswalk and weighted nonunitary transform | no parent, defect, truncation, observable, or binary64 validation |
-| Finite-rank defect oracle | rank-one determinant, inverse, resolvent, and supplied-root eigenvector | spectral-order positivity, monotonicity, uniqueness, and root count | no bisection, bracket, root, or trend certification |
+| 1-D defects and independent routes | finite folding, route commutativity, and source-neutral twisted cyclic finite-difference algebra | exact conjugacy between uniform-link and seam-localized twist gauges, multidimensional seam consistency, and a weighted nonunitary-transform theorem under explicit metric hypotheses | no parent, defect, truncation, observable, or binary64 validation |
+| Finite-rank defect oracle | rank-one determinant, inverse, resolvent, and supplied-root eigenvector | spectral-order positivity, local-Green-function monotonicity, root existence/uniqueness/count, rank-`r` determinant/Woodbury generalization, and Feshbach residual bounds | no bisection, bracket, root, trend, or finite-to-infinite-volume certification |
 | Blind alignment | supporting matrix algebra | polar partial-isometry identifiability and completion equivalence | numerical thresholds remain external |
 | 2-D defect stages | reusable folding and projector algebra | two-direction seam consistency, `D₄`/`D₂` covariance, axis swaps | no authorization journal, runtime, schema, or evidence validation |
-| Periodic topology/Wannier controls | gauge loops and projector--Bargmann trace identity | separable Kronecker spectra and degenerate-projector identities | no Chern integrality, unwrapping, topology, Wannier90, or mesh validation |
-| Continuum refinement/optimizer basin | small exact finite identities only | none without a selected theorem | do not formalize observed finite refinement or basin statistics as exact claims |
-| Bulk silicon/Vogl | abstract tetrahedral `sp³s⋆` and Hermitian block algebra | optional exact metadata predicates or perturbation implications | no QE/Wannier90, Table 1, spectrum, convergence, or silicon validation |
+| Periodic topology/Wannier controls | gauge-loop cancellation, Wilson-determinant invariance, and projector--Bargmann trace identity | nonzero-overlap hypotheses, plaquette/Wilson gauge invariance with orientation, discrete Chern integrality, branch-safe unwrapping, Wilson--Chern equivalence, rectangular-isometry/disentanglement semantics, and exact `_u.mat`/`_hr.dat` convention bridges | no topological classification, Wannier obstruction, Wannier90 execution, or mesh validation follows from the existing finite identities |
+| Continuum refinement/optimizer basin | small exact finite identities only | selected finite-to-continuum theorem with explicit regularity, stability, and quadrature hypotheses; effective-mass curvature and remainder bounds only after a physical model is fixed | do not formalize observed finite refinement, optimizer basins, or regression trends as exact or scientific claims |
+| Bulk silicon/Vogl | abstract tetrahedral `sp³s⋆` and Hermitian block algebra | authenticated QE/Wannier90 representation bindings, general-rank spectral/operator error transfer, and model-specific effective-mass hypotheses if selected | no QE/Wannier90, Table 1, spectrum, convergence, silicon applicability, or effective-mass validation |
 
 ## Implemented bounded targets
 
@@ -140,18 +156,49 @@ not establish IEEE-754 correctness, certify Python `sum` or `math.fsum`, authent
 classification or arrays, or prove that any retained calculation contains a subtraction-induced
 false zero.
 
+## Prioritized remaining proof obligations
+
+The implementation-oriented inspection separates four kinds of remaining work.
+
+### 1. Reusable exact finite mathematics
+
+1. Polar neighbor transport, sequential transport, periodic closure distribution, uniqueness under nonsingular overlaps, and an explicit rank-deficient boundary.
+2. Principal-angle identities connecting optimal Procrustes frame error, overlap singular values, and projector error.
+3. Approximate fixed-subspace compression bounds, including a bound of the form
+   `‖CᴴHC - UᴴFᴴHFU‖_F ≤ 2 ‖H‖op ‖C-FU‖_F` under explicit isometry hypotheses, plus separate projector/leakage terms when retained subspaces differ.
+4. General-rank Hermitian spectral perturbation from operator and matrix-Frobenius error, with maximum and root-mean-square eigenvalue consequences kept distinct.
+5. Quantitative `ℓ¹`/`ℓ²` gauge-convolution and omitted-power bounds for gauges without finite Fourier support.
+6. Exact twist-gauge conjugacy and seam consistency.
+7. Later, claim-driven topology, defect-root, Feshbach, and continuum/effective-mass theorem families.
+
+### 2. Source-specific representation bridges
+
+1. Identify KSD's centered `fft`/`fftshift`, origin phase, positive reconstruction phase, tensor-axis order, and negative-Nyquist convention with the exact finite-character transform.
+2. Bind product-quotient characters to wraparound-compatible radii and authenticate supplied square, triangular, cubic, and FCC shell inventories.
+3. Bind runtime frames, projectors, represented operators, action side, units, bases, energy references, and matrix axes to the exact carrier.
+4. Give separate semantics for square unitary Wannier matrices, rectangular isometries, disentanglement maps, `_hr.dat` degeneracy weights, and localization outputs.
+
+### 3. Rigorous numerical certificates
+
+Any application must freeze a proposition-specific exact or outward-rounded schema, producer identity, independent verifier, complete objective inventory, ordering and finite-value rules, and fail-closed checker. SHA-256 authenticates retained bytes only. No binary64 value becomes exact rational evidence merely by serialization.
+
+### 4. Convergence and scientific validation
+
+Mesh convergence, finite-to-continuum limits, effective-mass curvature, material adequacy, topology, transferability, threshold selection, and publication conclusions require separate analytical hypotheses, retained numerical evidence, and scientific review. They are not consequences of finite algebra or software tests.
+
 ## Priority
 
-Completed on the consolidation branch:
+Completed historical integration includes QHO, PIAB1D, FCC--Bain, spin, folding, fixed-unitary Fourier invariance, rank-one resolvent algebra, gauge loops, and projector--Bargmann algebra.
 
-1. integrate QHO, PIAB1D, and FCC--Bain;
-2. integrate spin and folding;
-3. generalize fixed-unitary Fourier invariance;
-4. integrate finite rank-one resolvent algebra;
-5. integrate gauge loops; and
-6. integrate projector--Bargmann algebra.
+The next dependency order is:
 
-Next certificate work begins only after KSD freezes an exact schema, calculation identity, producer, independent verifier, and retained package.
+1. independently review the cyclic-radius and finite-rank character/fixed-subspace worktrees before any integration;
+2. prove polar transport and the principal-angle frame/projector bridge;
+3. prove approximate fixed-subspace compression and general-rank spectral-error transfer;
+4. prove the exact KSD centered-FFT/product-quotient binding; and
+5. freeze one KSD proposition-specific certificate contract before implementing or admitting runtime evidence.
+
+Topology/Wannier, defect/Feshbach, and continuum/effective-mass programs follow only when a concrete owner claim selects their hypotheses. Checked runtime-certificate count remains zero.
 
 ## Nonclaims
 

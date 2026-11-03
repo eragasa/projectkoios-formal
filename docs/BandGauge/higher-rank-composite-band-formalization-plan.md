@@ -15,6 +15,12 @@ The owner worktree was dirty: the protocol and sibling README had uncommitted sc
 
 The source does not use the labels `O_A`, `O_B`, `O_C` or define a common `τ_E`/`τ_O` decision. Those labels are planning interpretations.
 
+### Later implementation-oriented inspection
+
+A later read-only inspection examined the broader mathematical implementation graph at KSD commit `4835e7bf9161729cc8f0537bcc13db083896a6ae`, tree `fd641fb8a4efe7a5ef4d5da9c49f126e1e03e355`, on branch `work/monograph-current-library-capabilities` in `/Users/eugene/repos/ksdft2effmass`. The checkout had 112 short-status entries, although the specifically cited frame, alignment, Fourier, gauge, Wilson-loop, Wannier90, and defect-oracle implementation paths were clean relative to that commit.
+
+That later inspection broadens the proof backlog but does not replace the immutable protocol source above. It supports no claim about dirty sibling files, runtime execution, applicability, numerical evidence, or scientific validity. Exact blob hashes and inspected paths are recorded in `docs/source-audit.md`.
+
 ## Source experiment
 
 For retained rank `r ≥ 3`, ambient dimension `2r`, frame `F(k)`, retained operator `K_ret(k)`, exterior block `D_ext(k)`, and ambient unitary `W(k)`, the protocol defines
@@ -151,37 +157,56 @@ Each declared support gives one attainable cost/operator/spectral objective poin
 
 ## Implemented support
 
-Current reusable modules cover finite sewing, reference-minus-aligned-candidate operator differences and their sewing closure, rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary retained-coordinate covariance, explicit identity/global/complete alignment-family semantics and strict-separation witnesses, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, and route identities.
+Current canonical reusable modules cover finite sewing, reference-minus-aligned-candidate operator differences and their sewing closure, rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary retained-coordinate covariance, exact finite-rank analytic-parent gap and ordering controls, exact right-unitary gauge construction and recovery, explicit identity/global/complete alignment-family semantics and strict-separation witnesses, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, route identities, pointwise gauge convolution, support-radius growth, and exact source-neutral integer lattice shell radii.
 
-They do not bind the owner protocol's runtime arrays or prove its case coverage.
+Separate uncommitted worktrees contain cyclic quotient-radius proofs and arbitrary-retained-dimension character-gauge/fixed-subspace separation proofs. They have passed local affected builds and audits but remain review-pending and noncanonical.
+
+Neither canonical nor review-pending source-neutral results bind the owner protocol's runtime arrays or prove its case coverage.
 
 ## Missing obligations
 
-Eight obligations remain outside current proofs.
+The remaining obligations divide into exact mathematics, owner-specific representation bindings, and evidence contracts.
 
-1. Source-faithful binding of owner frame arrays to the exact finite-frame and projector API.
-2. Exact contracts for the structured local alignment family.
-3. Endpoint sewing and polar-conditioning hypotheses.
-4. Complete support hierarchy for D1/D2/D3.
-5. Strict owner schema and canonical serialization.
-6. Independent verifier and retained evidence.
-7. Exact or outward-rounded objective certificates.
-8. Thin paper-specific bridge after the reusable layer is stable.
+### Exact reusable mathematics
 
-Wannier90 is absent from D1. A later owner protocol using it must separately check retained rank, eigenpair and subspace residuals, gauge, sewing, disentanglement, and withheld reconstruction. It remains an external witness producer, not a Lean dependency or trusted runtime.
+1. Polar neighbor transport, sequential transport, periodic closure distribution, and uniqueness under nonsingular overlaps, with rank-deficient completion kept explicit.
+2. Principal-angle identities connecting optimal Procrustes frame error, overlap singular values, and projector error.
+3. Approximate fixed-subspace compression bounds and separate leakage terms when reference and candidate projectors differ.
+4. General-rank Hermitian spectral perturbation, keeping maximum-eigenvalue and root-mean-square bounds distinct.
+5. Quantitative gauge-convolution and omitted-power bounds for gauges without finite Fourier support.
+6. Exact twist-gauge conjugacy and quotient-seam consistency where finite periodic operators use distributed or seam-localized phases.
+
+### Owner-specific bindings
+
+7. Source-faithful binding of owner frame, projector, operator, mesh, basis, unit, energy-reference, matrix-axis, and gauge-action data to the exact APIs.
+8. An exact bridge from KSD's centered `fft`/`fftshift`, origin phase, positive reconstruction phase, tensor-axis order, and negative-Nyquist convention to the finite-character transform.
+9. Product-quotient character/radius and complete D1/D2/D3 support-hierarchy authentication.
+10. Exact contracts for any structured local alignment family.
+
+### Evidence boundary
+
+11. A strict proposition-specific owner schema and canonical serialization using exact rational or outward-rounded data rather than promoted binary64 values.
+12. An independent verifier, retained complete objective inventory, and fail-closed exact checker.
+13. A thin paper-specific bridge only after the reusable layer and owner binding are stable.
+
+Wannier90 is absent from D1. A later owner protocol using it must separately distinguish square unitary matrices, rectangular isometries, and disentanglement maps, and must authenticate retained rank, eigenpair and subspace residuals, action side, Fourier normalization, `_u.mat`/`_hr.dat` conventions, gauge, sewing, degeneracy weights, and withheld reconstruction. It remains an external witness producer, not a Lean dependency or trusted runtime.
 
 ## Formalization order
 
-Work proceeds from abstract frames to retained evidence. The first two reusable algebra steps are implemented; owner-specific binding remains external.
+Work proceeds from abstract frames to retained evidence. Basic frame, covariance, alignment-family, Fourier, and decision algebra is implemented source-neutrally; owner-specific binding remains external.
 
 1. Freeze the finite-rank frame API and right action. *(implemented source-neutrally)*
 2. Prove projector and compression covariance. *(implemented source-neutrally)*
 3. Encode identity, global-unitary, and complete pointwise-unitary alignment families. *(implemented source-neutrally; structured restricted-circuit families remain open)*
-4. Connect aligned fields to finite Fourier truncation.
-5. Add common-threshold decision semantics.
-6. Freeze the owner certificate schema.
-7. Verify one retained case family independently.
-8. Add source-specific instantiations and dossiers.
+4. Connect exact aligned fields to finite Fourier truncation and support growth. *(implemented source-neutrally)*
+5. Add common-threshold decision semantics. *(implemented source-neutrally for supplied finite inventories)*
+6. Independently review the cyclic-radius and character-gauge/fixed-subspace worktrees before integration.
+7. Prove polar transport and the principal-angle frame/projector bridge.
+8. Prove approximate fixed-subspace compression and general-rank spectral-error transfer.
+9. Prove the owner-specific centered-FFT/product-quotient representation bridge.
+10. Freeze the owner certificate schema.
+11. Verify one retained case family independently.
+12. Add source-specific instantiations and dossiers.
 
 ## Nonclaims
 
