@@ -129,9 +129,10 @@ transfer into Formal proof status.
   nonemptiness evidence when the finite separation converses are invoked;
 - bind a concrete model hierarchy through reviewed conformant embeddings and a complete
   declared inventory;
-- obtain independent review and integration of the review-pending cyclic-quotient-radius,
-  character-gauge locality, supplied-shell, and fixed-subspace representation work before
-  treating those results as part of this pinned theorem basis;
+- keep the cyclic-quotient-radius, character-gauge locality, supplied-shell, and fixed-subspace
+  representation results outside this companion until an explicit reviewed refresh advances its
+  pinned theorem basis; their integration into later Formal source does not retroactively change
+  this companion's pin;
 - prove polar neighbor transport and periodic closure, principal-angle identities,
   approximate fixed-subspace compression bounds, and general-rank spectral perturbation
   bounds;

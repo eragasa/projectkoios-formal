@@ -157,7 +157,7 @@ higher rank, multidimensional parents, and general preservation criteria—remai
 
 ## R2.6 — implementation applicability and approximate representation bridges
 
-Status: planned, with separate review-pending exact worktrees that are not yet canonical.
+Status: exact cyclic quotient-radius and finite-rank character/fixed-subspace slices implemented and independently reviewed; runtime applicability and approximate-representation bridges remain planned.
 
 This stage connects source-neutral finite mathematics to authenticated KSD representations without treating runtime floating-point data as exact by default.
 
@@ -178,7 +178,7 @@ Owner-specific bridges:
 - distinct Wannier90 square-unitary, rectangular-isometry, disentanglement, Hamiltonian-block, and localization semantics; and
 - proposition-specific exact or outward-rounded certificate schemas with independent verification.
 
-The review-pending cyclic quotient-radius and finite-rank character-gauge/fixed-subspace worktrees may discharge parts of this stage only after independent review and separately authorized integration. A successful local build or audit is not canonical integration, runtime applicability, or evidence admission.
+The current integration milestone discharges the exact cyclic quotient-radius, finite-rank character-gauge, coordinate-character, supplied-shell, and conditional fixed-subspace representation slices. These exact declarations do not establish runtime applicability or evidence admission; authenticated external bindings, approximate projector/leakage bounds, and numerical or scientific validation remain separate obligations.
 
 ## R3 — continuum Fourier analysis
 

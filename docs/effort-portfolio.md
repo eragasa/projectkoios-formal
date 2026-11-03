@@ -69,39 +69,24 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-One mathematical effort is active: arbitrary-retained-dimension character-gauge locality separation,
-finite-periodic coordinate-character specializations, and a conditional fixed-subspace
-representation bridge on branch `work/finite-rank-locality-separation` in
-`/private/tmp/projectkoios-formal-finite-rank-locality-separation`, based on canonical `main` commit
-`80145602d4d84e26a4c5ccd7bbd362618598e39b`. The Lean source and documentation are uncommitted;
-affected builds, Audit, coverage, pin, admission-marker, and diff checks pass; independent review is
-pending. Certificate and numerical-evidence status are absent, integration remains isolated, and no
-runtime or scientific applicability is claimed.
-
-One documentation effort is active in the canonical checkout: reconciliation of the KSD
-mathematical-implementation proof backlog across the formal-support inventory, roadmap,
-higher-rank plan, source audit, and this board. It is based on the same canonical commit and uses a
-read-only KSD inspection at immutable commit `4835e7bf9161729cc8f0537bcc13db083896a6ae`, tree
-`fd641fb8a4efe7a5ef4d5da9c49f126e1e03e355`, with the recorded 112-entry dirty-checkout limitation.
-No KSD file was modified. Commit, push, PR, merge, evidence promotion, and cleanup remain separate
-gates.
+No mathematical, certificate, or documentation effort is active after this integration milestone.
+The milestone incorporates the cyclic quotient-radius, arbitrary-retained-dimension character-gauge,
+finite-periodic coordinate-character, supplied-shell, and conditional fixed-subspace representation
+slices into the current source tree after independent review and correction. Certificate and
+numerical-evidence status remain absent, and no runtime or scientific applicability is claimed.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Obtain independent read-only review of the finite-rank character-gauge, coordinate-character,
-   lattice-specialization, and fixed-subspace bridge patch before any checkpoint or integration.
-2. Obtain independent review of cyclic quotient-radius checkpoint
-   `edefcd55ab551f6a739419b439813195c0522477`.
-3. After those review gates, begin the next reusable theorem slice with polar transport and the
-   principal-angle frame/projector bridge; approximate fixed-subspace and general-rank spectral
-   bounds follow in dependency order.
-4. Obtain independent review of the proof companion's provenance-audited background
-   bibliography before publication extraction.
-5. Resume proposition-specific schema design only after KSD supplies a frozen exact or
+1. Begin the next reusable theorem slice with polar transport and the principal-angle
+   frame/projector bridge; approximate fixed-subspace and general-rank spectral bounds follow in
+   dependency order.
+2. Obtain independent review of the proof companion's provenance-audited background bibliography
+   before publication extraction.
+3. Resume proposition-specific schema design only after KSD supplies a frozen exact or
    outward-rounded request/result contract.
-6. Treat commits, pushes, PRs, merges, and cleanup as separate authorization gates.
+4. Treat commits, pushes, PRs, merges, and cleanup as separate authorization gates.
 
 ## Blocked
 
@@ -158,6 +143,9 @@ These items are merged Formal content only.
 - Fixed-unitary Fourier equivariance.
 - Pointwise-gauge and Fourier boundaries.
 - Exact rank-two gauge--truncation noncommutation witness.
+- Cyclic quotient-radius support bounds, arbitrary-finite-rank and character-gauge locality
+  separation, canonical finite-periodic coordinate characters with supplied-shell specializations,
+  and the conditional fixed-subspace representation bridge.
 - Finite orthonormal-frame algebra.
 - Sewn aligned-operator differences, including pointwise self-adjointness closure for ordinary
   subtraction, unitary pullback, and reference-minus-pulled-back-candidate fields under complete

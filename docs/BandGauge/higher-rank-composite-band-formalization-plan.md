@@ -159,9 +159,9 @@ Each declared support gives one attainable cost/operator/spectral objective poin
 
 Current canonical reusable modules cover finite sewing, reference-minus-aligned-candidate operator differences and their sewing closure, rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary retained-coordinate covariance, exact finite-rank analytic-parent gap and ordering controls, exact right-unitary gauge construction and recovery, explicit identity/global/complete alignment-family semantics and strict-separation witnesses, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, route identities, pointwise gauge convolution, support-radius growth, and exact source-neutral integer lattice shell radii.
 
-Separate uncommitted worktrees contain cyclic quotient-radius proofs and arbitrary-retained-dimension character-gauge/fixed-subspace separation proofs. They have passed local affected builds and audits but remain review-pending and noncanonical.
+The current integration milestone includes the independently reviewed cyclic quotient-radius proofs and arbitrary-retained-dimension character-gauge/fixed-subspace separation proofs. The fixed-subspace bridge remains conditional on an exact ambient-compression binding, and the supplied-shell results retain caller-supplied exact radii and cutoffs.
 
-Neither canonical nor review-pending source-neutral results bind the owner protocol's runtime arrays or prove its case coverage.
+These source-neutral results do not bind the owner protocol's runtime arrays or prove its case coverage.
 
 ## Missing obligations
 
@@ -200,7 +200,7 @@ Work proceeds from abstract frames to retained evidence. Basic frame, covariance
 3. Encode identity, global-unitary, and complete pointwise-unitary alignment families. *(implemented source-neutrally; structured restricted-circuit families remain open)*
 4. Connect exact aligned fields to finite Fourier truncation and support growth. *(implemented source-neutrally)*
 5. Add common-threshold decision semantics. *(implemented source-neutrally for supplied finite inventories)*
-6. Independently review the cyclic-radius and character-gauge/fixed-subspace worktrees before integration.
+6. Integrate independently reviewed cyclic-radius and character-gauge/fixed-subspace exact slices. *(implemented source-neutrally in the current milestone)*
 7. Prove polar transport and the principal-angle frame/projector bridge.
 8. Prove approximate fixed-subspace compression and general-rank spectral-error transfer.
 9. Prove the owner-specific centered-FFT/product-quotient representation bridge.
