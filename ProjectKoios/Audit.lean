@@ -44,6 +44,7 @@ import ProjectKoios.BandGauge.Decision.MandatoryChannelComposition
 import ProjectKoios.BandGauge.Fourier.FiniteAbelian.Reconstruction
 import ProjectKoios.BandGauge.Fourier.Support.CenteredEvenMesh
 import ProjectKoios.BandGauge.Fourier.Support.MetricShell
+import ProjectKoios.BandGauge.Fourier.Support.LatticeRadius
 import ProjectKoios.BandGauge.Fourier.Support.RadiusGrowth
 import ProjectKoios.BandGauge.Fourier.Torus.NormalizedProduct
 import ProjectKoios.BandGauge.Fourier.Torus.NormalizedCircleBessel
@@ -403,6 +404,28 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Fourier.Support.triangularShellIndex_rotate
 #print axioms ProjectKoios.BandGauge.Fourier.Support.simpleCubicShellIndex_swap12
 #print axioms ProjectKoios.BandGauge.Fourier.Support.fccShellIndex_swap12
+#print axioms ProjectKoios.BandGauge.Fourier.Support.squareShellRadius_sq
+#print axioms ProjectKoios.BandGauge.Fourier.Support.triangularShellRadius_sq
+#print axioms ProjectKoios.BandGauge.Fourier.Support.simpleCubicShellRadius_sq
+#print axioms ProjectKoios.BandGauge.Fourier.Support.fccShellRadius_sq
+#print axioms ProjectKoios.BandGauge.Fourier.Support.squareShellRadius_neg
+#print axioms ProjectKoios.BandGauge.Fourier.Support.triangularShellRadius_neg
+#print axioms ProjectKoios.BandGauge.Fourier.Support.simpleCubicShellRadius_neg
+#print axioms ProjectKoios.BandGauge.Fourier.Support.fccShellRadius_neg
+#print axioms ProjectKoios.BandGauge.Fourier.Support.squareShellRadius_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.triangularShellRadius_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.simpleCubicShellRadius_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.fccShellRadius_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.radius_neg_add_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.squareShellRadius_neg_add_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.triangularShellRadius_neg_add_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.simpleCubicShellRadius_neg_add_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.fccShellRadius_neg_add_add_le
+#print axioms ProjectKoios.BandGauge.Fourier.Support.radiusShellSet_neg_add_add_subset
+#print axioms ProjectKoios.BandGauge.Fourier.Support.squareShellRadius_shell_neg_add_add_subset
+#print axioms ProjectKoios.BandGauge.Fourier.Support.triangularShellRadius_shell_neg_add_add_subset
+#print axioms ProjectKoios.BandGauge.Fourier.Support.simpleCubicShellRadius_shell_neg_add_add_subset
+#print axioms ProjectKoios.BandGauge.Fourier.Support.fccShellRadius_shell_neg_add_add_subset
 #print axioms ProjectKoios.BandGauge.Fourier.Torus.normalizedProductTorusMeasure_univ
 #print axioms ProjectKoios.BandGauge.Fourier.Torus.normalizedProductTorusAverage_one
 #print axioms ProjectKoios.BandGauge.Fourier.Torus.exp_separableProductTorusPhase

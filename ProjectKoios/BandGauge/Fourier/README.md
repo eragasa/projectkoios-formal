@@ -21,8 +21,8 @@ re-exported through a flat compatibility namespace.
   triple convolution, finite-support and complete-shell radius inclusions, and finite witnesses
   separating ordered-band equality from Fourier locality.
 - `Support/`: centered-even mesh inventories, negative-Nyquist removal, complete metric-shell
-  semantics over supplied finite inventories, and complete-shell growth under explicitly supplied
-  radius hypotheses.
+  semantics over supplied finite inventories, complete-shell growth under explicitly supplied
+  radius hypotheses, and exact subadditive radii for standard integer-lattice squared indices.
 - `Torus/`: normalized finite products of unit additive circles and exact normalized sine-phase
   `J₀` evaluations.
 - `Residual/`: deliberate-truncation residual channels, exact power/root-mean-square tails, maximum
@@ -50,7 +50,7 @@ Every specialization must freeze its convention.
 - Uniform weights do not replace nonuniform quadrature.
 - Concrete weights and supports must satisfy `docs/BandGauge/publication-evidence-contract.md`.
 - A complete metric shell is exact only relative to its supplied inventory, radius, cutoff, and invariance hypotheses. The support-growth result uses `Finset.univ`; it does not authenticate an external incomplete inventory, turn a metric radius into a source-defined hopping range, or prove external orbit coverage.
-- The square, triangular, simple-cubic, and FCC shell indices use exact dimensionless reduced integer coordinates. They are squared-radius indices and are not silently treated as instances of the support-growth theorem's triangle hypothesis; lattice constants, physical units, basis connectivity, and material interpretation remain external.
+- The square, triangular, simple-cubic, and FCC shell indices use exact dimensionless reduced integer coordinates. Their explicit Euclidean radii square to those indices and satisfy inversion invariance and the triangle inequality, yielding both the elementwise bound and the complete-shell inclusion at `R_A + 2 R_U`. This infinite-lattice result does not identify a finite character group with centered representatives: quotient wraparound, lattice constants, physical units, basis connectivity, and material interpretation remain external.
 - The normalized product-torus carrier is explicitly `Dimension → UnitAddCircle`, with `Dimension` finite and the product of standard unit-circle Haar measures. It does not infer endpoint identification, coordinate scaling, phase convention, or measure from external notation.
 - The normalized-circle Bessel bridge fixes `UnitAddCircle`, standard Haar mass one, the coordinate `sin(2πx)`, positive phase, and no extra `2π` in the real amplitude. It does not identify an external coordinate or runtime phase with these exact inputs, authenticate quadrature or a finite mesh, establish finite-to-continuum convergence, or certify a KSD analytic comparator.
 - The modules do not identify a generic finite group with a publication mesh or certify Wannier90, runtime arrays, continuum convergence, or physical locality.

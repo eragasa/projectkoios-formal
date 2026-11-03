@@ -22,8 +22,8 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
 Current board reconciliation source baseline: remote `main` merge commit
-`500e84a52a90c89fda48132c07e9706ecd989453`, tree
-`f7bf17426c6e18213b0601b8dc9c191fca54c558`, integrating PR #55.
+`0cc2bd7e707393853e34a427e964af355d7ab17a`, tree
+`f1c0fdf8f299990eebeb962c185de0c75bbc70a7`, integrating PR #62.
 
 ## Mission
 
@@ -69,9 +69,16 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical or certificate effort is recorded as active on this reconciled `main` snapshot. No
-trust, documentation, or maintenance effort is recorded in the second WIP slot. New work must enter
-a slot explicitly rather than inheriting an already-merged worktree or branch description.
+One mathematical effort is active: the source-neutral integer lattice radius bridge on branch
+`work/metric-shell-radius-bridge` in
+`/private/tmp/projectkoios-formal-metric-shell-radius-bridge`, based on canonical `main` commit
+`0cc2bd7e707393853e34a427e964af355d7ab17a`. Statement status is candidate; Lean definitions and
+proofs are implemented; affected build, Audit, coverage, pin, and diff checks pass; provenance is
+source-neutral; certificate and numerical-evidence status are absent; integration is isolated; and
+publication status is unmapped. Commit, push, PR, merge, evidence promotion, and cleanup remain
+separate gates.
+
+No trust, documentation, or maintenance effort is recorded in the second WIP slot.
 
 ## Ready
 

@@ -1,0 +1,65 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-02
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{amsmath,amssymb}\usepackage[margin=1in]{geometry}\usepackage[hidelinks]{hyperref}
+\title{Proof Dossier: Normalized FCC Complete-Shell Gauge-Support Radius}\author{Eugene Joseph M. Ragasa}\date{Formal proof completed: 2026-11-02}
+\begin{document}\maketitle
+\section{Identity and status}
+ID \texttt{BG-FOURIER-SUPPORT-THM-016}; status \texttt{proved}. Lean declaration:
+\par\noindent{\tiny\path{ProjectKoios.BandGauge.Fourier.Support.}}\\
+{\tiny\path{fccShellRadius_shell_neg_add_add_subset}}.
+
+\section{Exact radius}
+For integer reduced coordinates $m=(x,y,z)$, the existing normalized FCC shell index is
+\[
+ q(m)=x^2+y^2+z^2+xy+xz+yz.
+\]
+Define the additive Euclidean realization
+\[
+ v(m)=\frac{1}{\sqrt 2}(x+y+z,x,y,z)
+\]
+and the nonnegative radius $\rho(m)=\lVert v(m)\rVert_2$. Direct expansion proves
+$\rho(m)^2=q(m)$ exactly. Because $v(-m)=-v(m)$ and $v(m+n)=v(m)+v(n)$, the Euclidean norm gives
+\[
+ \rho(-m)=\rho(m),\qquad \rho(m+n)\leq\rho(m)+\rho(n).
+\]
+These prerequisites are proved separately:
+\begin{itemize}
+\item \texttt{BG-FOURIER-SUPPORT-THM-004} gives the exact squared-index identity;
+\item \texttt{BG-FOURIER-SUPPORT-LEM-006} gives inversion invariance; and
+\item \texttt{BG-FOURIER-SUPPORT-THM-008} gives the triangle inequality.
+\end{itemize}
+
+\section{Gauge--field--gauge bound}
+Suppose two gauge modes $u_1,u_2$ obey $\rho(u_i)\leq R_U$ and a field mode $a$ obeys
+$\rho(a)\leq R_A$. Inversion invariance and two applications of the triangle inequality give
+\[
+ \rho(-u_1+a+u_2)
+ \leq \rho(u_1)+\rho(a)+\rho(u_2)
+ \leq R_A+2R_U.
+\]
+The elementwise theorem \texttt{BG-FOURIER-SUPPORT-THM-012} specializes a carrier-independent
+helper to the normalized FCC radius. Defining the complete shell
+$S_\rho(R)=\{m\mid \rho(m)\leq R\}$ then gives the dossier theorem
+\[
+ (-S_\rho(R_U)+S_\rho(R_A))+S_\rho(R_U)
+ \subseteq S_\rho(R_A+2R_U).
+\]
+Membership in the two pointwise set sums supplies $u_1,a,u_2$; the elementwise estimate proves
+membership in the shell on the right.
+
+\section{Boundary}
+This is a support inclusion on the infinite integer lattice, not a support equality. It does not identify a
+finite Fourier character with a centered integer representative. A finite periodic application must
+separately prove quotient and seam compatibility, including modular wraparound. Cancellation may
+make actual coefficient support smaller. No runtime mesh, FFT convention, coefficient array,
+physical length, hopping range, material applicability, or scientific adequacy is certified.
+
+\section{Trusted base and verification}
+Checked with Lean \texttt{4.35.0} and Mathlib revision
+\texttt{56a005855ea17e0b0958f73ec801ae140b0a1679}. Kernel axioms are
+\texttt{propext}, \texttt{Classical.choice}, and \texttt{Quot.sound}; no repository-owned axiom or
+admission is used. AI-assisted and kernel-checked; no independent expert review recorded.
+\end{document}

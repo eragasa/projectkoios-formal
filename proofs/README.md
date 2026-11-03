@@ -48,6 +48,19 @@ certificate, or scientific model. In particular, fixed-unitary Fourier equivaria
 momentum-dependent gauges, the resolvent equation does not itself prove a nonzero eigenvector, and
 finite loop-phase invariance does not establish continuum topology.
 
+## Selected integer lattice radius bridge
+
+The exact squared-index/radius bridge has a selected dossier for
+[`BG-FOURIER-SUPPORT-THM-016-fcc-shell-radius-inclusion.tex`](BandGauge/Fourier/BG-FOURIER-SUPPORT-THM-016-fcc-shell-radius-inclusion.tex).
+It records the normalized FCC Euclidean realization, exact radius-squared identity, inversion and
+triangle laws, the elementwise `R_A + 2 R_U` gauge--field--gauge bound, and the resulting complete-shell inclusion. The parallel square,
+triangular, and simple-cubic results and the carrier-independent helpers remain fully recorded in
+Lean and the theorem manifest without separate dossiers.
+
+These are infinite integer-lattice statements. They do not identify finite Fourier characters with
+centered representatives across modular seams, authenticate a runtime mesh or FFT convention, or
+assign physical hopping-range or scientific meaning.
+
 ## Selected aligned-operator norm and stability tranche
 
 The source-neutral aligned-difference extension has selected dossiers for
