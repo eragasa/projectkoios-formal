@@ -91,8 +91,8 @@ routine per-tree requirement.
 - Never delete `.lake` or rematerialize dependencies merely to call a build clean.
 - Do not repeat a validation command after staging, committing, or merging a byte-identical tree.
 
-## Protected actions
+## Workflow and protected actions
 
-Local read-only exploration and authorized edits are allowed.
-
-- Commits, checkpoints, remotes, pushes, publication, releases, deployments, theorem-completion claims, and scientific-validation claims require separate explicit authorization.
+- Complete edits, validation, fixes, and rereview in one pass; use one coherent milestone, not microcommits.
+- Ask once for protected actions: commits, remotes or pushes, publication, release, deployment, and theorem or scientific-validation claims. Authorization may bundle actions.
+- Commit or push authorization does not authorize publication or scientific claims.
