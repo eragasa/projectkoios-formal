@@ -44,6 +44,23 @@ norms.  The exact rank-two counterexample demonstrates gauge--truncation
 noncommutation, while the finite-tail results give positive control only of the
 deliberate-truncation leg after a support has been declared.
 
+The newer finite-rank control layer makes this locality boundary quantitative without
+turning it into a runtime claim.  An explicit analytic parent has exact retained and
+external gap bounds at every retained dimension $r\geq2$.  Arbitrary-dimensional right-unitary
+gauges preserve exact frame orthonormality and complex set-spectrum and admit known-inverse
+recovery.  Pointwise gauge conjugation is a triple convolution whose support lies in
+$(-S_U+S_A)+S_U$; under an inversion-invariant subadditive radius, complete shells grow by
+at most $R_A+2R_U$.  Exact integer-lattice radii establish this bound for square,
+triangular, simple-cubic, and normalized FCC coordinates, but not for a finite cyclic
+quotient seam.
+
+Finite Parseval further identifies coefficient truncation as the exact equal-weight
+least-squares minimizer inside a declared finite support class.  Total entrywise
+Frobenius power splits into direct onsite and nononsite sums.  Separately, the checked
+two-band Laurent example shows that spectral projection can destroy finite support even
+when its parent is finite range.  Thus gauge mixing, deliberate truncation, and changing
+the retained projector remain mathematically distinct mechanisms.
+
 The geometry and decision theorems address the outer compatibility layer.  Closed-ball,
 rank-two ellipse, and rectangle families provide exact intersection and separation
 criteria under explicit hypotheses.  The generic finite compatibility schema now
@@ -117,7 +134,10 @@ Appendix~\ref{app:formal-crosswalk} and packages their outer finite logic in
 bibliographic references, control reproducibility. The schema contains finite model and candidate
 inventories, spectral and aligned-operator losses and budgets, alignment families,
 mandatory channel predicates, central and witness compatibility, conformant embeddings,
-metric separation, and first-compatible selection.
+metric separation, and first-compatible selection.  The later precise-channel,
+four-stage residual, budget-synthesis, and mandatory-channel composition modules retain
+all consumer-supplied extra channels rather than treating the narrow four-stage inventory
+as universally complete.
 
 The snapshot does not instantiate that schema with the scientific data required by the
 proposed study.  It still lacks:
@@ -186,10 +206,32 @@ contract must bind the model class, loss definitions, tolerances, metric, alignm
 family, and coverage claim.
 \end{openproblem}
 
-\begin{openproblem}[Operator-norm equivariance]
-Establish invariance of the induced Euclidean operator norm under finite unitary
-conjugation and package it for aligned operator differences.  This would support
-operator-norm criteria without changing the alignment-family semantics.
+\begin{openproblem}[Polar transport and principal-angle identities]
+Construct exact neighbor-to-neighbor polar transport, sequential transport, and periodic
+closure under explicit full-rank hypotheses.  State the rank-deficient nonuniqueness boundary and
+prove minimum-singular-value stability.  Connect the optimal Procrustes frame error to overlap
+singular values and projector error without treating a runtime SVD as exact evidence.
+\end{openproblem}
+
+\begin{openproblem}[Approximate fixed-subspace representation]
+The exact right-unitary identities apply when two frames represent one fixed subspace and the
+compressed operator binding is exact.  Prove leakage and approximate-compression bounds when the
+projectors differ, and combine them with general-rank Hermitian maximum and root-mean-square
+spectral perturbation bounds.  Disentanglement and changing projectors must remain explicit error
+channels.
+\end{openproblem}
+
+\begin{openproblem}[Authenticated finite quotient and centered-FFT bridge]
+Bind finite periodic product quotients to a reviewed centered-coordinate convention, including
+origin phase, tensor-axis ordering, even-grid Nyquist choice, Fourier normalization, and the
+consumer's square, triangular, simple-cubic, or FCC shell inventory.  An integer-lattice radius
+alone does not cross a modular seam.
+\end{openproblem}
+
+\begin{openproblem}[Quantitative gauge tails]
+Extend the exact finite-support convolution law to quantitative coefficient-tail estimates under
+explicit summability or weighted-norm hypotheses.  Keep finite Fourier power, exponential decay,
+Wannier spread, physical hopping range, and continuum localization as distinct conclusions.
 \end{openproblem}
 
 \begin{openproblem}[Conformant two-path residuals]
@@ -198,28 +240,17 @@ and prove gauge invariance of the resulting residual under explicit conformity
 hypotheses.  Separately selected gauges define different routes.
 \end{openproblem}
 
-\begin{openproblem}[Pointwise-gauge convolution]
-Derive a general finite convolution formula for Fourier coefficients under pointwise
-unitary conjugation, with support consequences specializing to the proved two-point
-counterexample.  The theorem should remain finite and should not be presented as an
-infinite-volume decay result.
-\end{openproblem}
-
-\begin{openproblem}[Shell-resolved fixed-unitary invariance]
-For a declared real-space shell decomposition, prove Frobenius invariance under one
-constant unitary acting internally on retained coordinates without mixing shell labels.
-\end{openproblem}
-
 \begin{openproblem}[Finite elimination]
 Develop exact finite Feshbach or Schur-complement elimination separately from
 spectral-gap and norm-bound certificates.  State invertibility and domain hypotheses
 explicitly and do not infer infinite-volume consequences from the finite formula.
 \end{openproblem}
 
-\begin{openproblem}[Projection-induced support growth]
-Prove a bounded finite support-growth statement for a specified projection mechanism.
-Quantify the finite support relation without claiming exponential decay, continuum
-localization, or topology.
+\begin{openproblem}[Quantitative projection locality]
+The exact two-band counterexample proves that spectral projection can destroy finite support.  A
+separate theorem must quantify tails or finite approximations for a selected projection mechanism.
+Such a result must not silently claim exponential decay, continuum localization, topology, or
+material applicability.
 \end{openproblem}
 
 \section{Analytical, numerical, and scientific questions beyond the finite theory}

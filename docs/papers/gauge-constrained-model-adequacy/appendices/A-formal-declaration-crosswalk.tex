@@ -213,6 +213,8 @@ The key declarations for Theorem~\ref{thm:two-point-gauge-truncation} are:
 
 The declaration sequence for Theorem~\ref{thm:finite-fourier-tail-bounds} is:
 
+\begingroup
+\small
 \begin{description}
   \item[\decl{BG-FOURIER-THM-067}.]
     \path{ProjectKoios.BandGauge.Fourier.Residual.truncationResidual_fourierReconstruction_eq}.
@@ -225,14 +227,19 @@ The declaration sequence for Theorem~\ref{thm:finite-fourier-tail-bounds} is:
   \item[\decl{BG-FOURIER-THM-071}.]
     \path{ProjectKoios.BandGauge.Fourier.Residual.finiteRootMeanSquareNorm_truncationResidual_sq_eq_omitted}.
   \item[\decl{BG-FOURIER-THM-072}.]
-    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_eq_sqrt_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.}\\
+    \path{finiteMatrixFrobeniusRootMeanSquare_}\\
+    \path{truncationResidual_eq_sqrt_omitted}.
   \item[\decl{BG-FOURIER-THM-073}.]
-    \path{ProjectKoios.BandGauge.Fourier.Residual.finiteMatrixFrobeniusRootMeanSquare_truncationResidual_sq_eq_omitted}.
+    \path{ProjectKoios.BandGauge.Fourier.Residual.}\\
+    \path{finiteMatrixFrobeniusRootMeanSquare_}\\
+    \path{truncationResidual_sq_eq_omitted}.
   \item[\decl{BG-FOURIER-THM-074}.]
     \path{ProjectKoios.BandGauge.Fourier.Residual.norm_truncationResidual_fourierReconstruction_le_omitted}.
   \item[\decl{BG-FOURIER-THM-075}.]
     \path{ProjectKoios.BandGauge.Fourier.Residual.finiteMaximumNorm_truncationResidual_le_omitted}.
 \end{description}
+\endgroup
 
 The dossiers follow the stable filenames
 \modulepath{proofs/BandGauge/Fourier/BG-FOURIER-THM-067-truncation-channel.tex}
@@ -241,6 +248,91 @@ through
 The two root-mean-square families require the explicit nonempty-domain premise recorded
 in their Lean types. The maximum-norm result uses the ambient norm and is not an
 entrywise matrix-Frobenius specialization.
+
+\section{Finite-rank gauge and locality controls}
+
+Chapter~\ref{ch:finite-rank-gauge-locality} draws on the following exact theorem families.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabularx}{\textwidth}{@{}Z Y Y@{}}
+\toprule
+Declaration range & Source module & Mathematical role \\
+\midrule
+\decl{BG-FOUNDATION-THM-026--031}; \decl{BG-FOUNDATION-THM-033--037}
+  & \modulepath{ProjectKoios/BandGauge/Foundations/FiniteRankAnalyticParent.lean}
+  & bounded structure factor, retained/exterior energy bounds, external gap, and adjacent
+    retained-energy gap \\
+\decl{BG-ALIGNMENT-THM-059--067}
+  & \modulepath{ProjectKoios/BandGauge/Alignment/GaugeIdentity.lean}
+  & represented dimension, metric convention, right action, and conjugation algebra \\
+\decl{BG-ALIGNMENT-THM-069}, \decl{BG-ALIGNMENT-THM-071}
+  & \modulepath{ProjectKoios/BandGauge/Alignment/ExactGaugeConstruction.lean}
+  & complex set-spectrum preservation and exact frame/operator recovery under an arbitrary
+    finite-dimensional right-unitary gauge \\
+\decl{BG-FOURIER-GAUGE-THM-001--003}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/Gauge/PointwiseConvolution.lean}
+  & triple convolution, support inclusion, and complete-shell radius bound for pointwise
+    unitary conjugation \\
+\decl{BG-FOURIER-SUPPORT-THM-001--016};
+    \decl{BG-FOURIER-SUPPORT-LEM-003--008}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/Support/LatticeRadius.lean}
+  & exact square, triangular, simple-cubic, and normalized FCC integer-lattice radii,
+    inversion laws, triangle laws, and $R_A+2R_U$ inclusions \\
+\decl{BG-FOURIER-FINITE-THM-004--006}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/FiniteAbelian/LeastSquares.lean};
+    \modulepath{ProjectKoios/BandGauge/Fourier/FiniteAbelian/PowerPartition.lean}
+  & exact reconstruction-error decomposition, supported least-squares minimizer, and
+    direct onsite/nononsite Frobenius-power partition \\
+\decl{BG-FOURIER-LATTICE-THM-001--009}
+  & \modulepath{ProjectKoios/BandGauge/Fourier/FiniteAbelian/LatticeLeastSquares.lean};
+    \modulepath{ProjectKoios/BandGauge/Fourier/FiniteAbelian/PowerPartition.lean}
+  & arbitrary-rank periodic one-, two-, and three-dimensional lattice specializations \\
+\decl{BG-PROJECTION-THM-001--008}
+  & \modulepath{ProjectKoios/BandGauge/Projection/LaurentObstruction.lean};
+    \modulepath{ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean}
+  & Laurent square-root obstruction, algebraic lower-band projector, and exact
+    projection-induced loss of finite support \\
+\bottomrule
+\end{tabularx}
+\caption{Finite-rank gauge, Fourier locality, and projection-control crosswalk.}
+\label{tab:finite-rank-gauge-locality-crosswalk}
+\end{table}
+\FloatBarrier
+
+The selected dossiers for the analytic parent are
+\modulepath{proofs/BandGauge/Foundations/BG-FOUNDATION-THM-035-finite-rank-external-gap.tex}
+and
+\modulepath{proofs/BandGauge/Foundations/BG-FOUNDATION-THM-036-finite-rank-adjacent-gap.tex}.
+The selected exact-gauge dossiers are
+\modulepath{proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-069-unitary-spectrum.tex}
+and
+\modulepath{proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-071-exact-gauge-construction.tex}.
+The finite Fourier least-squares dossiers are
+\modulepath{proofs/BandGauge/Fourier/BG-FOURIER-FINITE-THM-004-reconstruction-error-decomposition.tex}
+and
+\modulepath{proofs/BandGauge/Fourier/BG-FOURIER-FINITE-THM-005-truncation-least-squares.tex}.
+The complete normalized FCC shell inclusion is documented by
+\modulepath{proofs/BandGauge/Fourier/BG-FOURIER-SUPPORT-THM-016-fcc-shell-radius-inclusion.tex}.
+The projection sequence has dossiers under \modulepath{proofs/BandGauge/Projection/}.
+Supporting definitions and lemmas remain traceable through the theorem manifest without requiring
+one publication subsection per declaration.
+
+The pinned basis does not include the review-pending cyclic quotient radius, character-gauge
+locality, supplied-shell specialization, or fixed-subspace representation bridge work.  Those
+results must not be inferred from the integer-lattice or exact-gauge rows above.
+
+\section{Expanded residual and mandatory-channel families}
+
+The three-channel calculus has been extended without collapsing its error categories.  The exact
+four-stage field decomposition is recorded by \decl{BG-HILBERT-THM-022--025}; precise mandatory
+operator channels, four-stage finite budgets, component-to-total synthesis, and disjoint extra
+channel composition are recorded by \decl{BG-DECISION-THM-057--086}.  These declarations live in
+\modulepath{ProjectKoios/BandGauge/Hilbert/FourStageResidualChannels.lean} and the corresponding
+modules under \modulepath{ProjectKoios/BandGauge/Decision/}.  Their hypotheses retain one common
+candidate and, where required, one common alignment.  They do not authenticate a consumer's
+runtime channel inventory or establish that its taxonomy is complete.
 
 \section{Reduction, certificates, and finite decisions}
 
@@ -311,7 +403,7 @@ assembly as open.
 \section{Mechanization status at the pinned snapshot}
 
 The theorem manifest is the authoritative declaration inventory. At the pinned snapshot,
-the repository audit covers 645 proved theorem or lemma rows and 649 unique named axiom
+the repository audit covers 955 proved theorem or lemma rows and 959 unique named axiom
 reports. The repository-owned Lean sources contain no \texttt{sorry}, \texttt{admit}, or
 repository-owned \texttt{axiom} declaration. Individual reports may include the standard
 foundational dependencies \texttt{propext}, \texttt{Classical.choice}, and

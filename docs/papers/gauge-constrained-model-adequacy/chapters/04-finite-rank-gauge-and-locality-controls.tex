@@ -1,0 +1,293 @@
+\chapter{Finite-Rank Gauge Constructions and Locality Controls}
+\label{ch:finite-rank-gauge-locality}
+
+\section{Why exact control families matter}
+
+The preceding chapters isolate the representation and alignment operations that enter an
+operator comparison.  This chapter assembles a second proof arc needed by higher-rank
+applications: an exact finite-rank parent with a qualified retained sector, an arbitrary
+right-unitary gauge construction, and finite Fourier statements that distinguish spectrum
+preservation from representation locality.  The objects are source-neutral controls.  They do
+not identify a runtime DFT or Wannier subspace, certify floating-point arrays, or establish the
+scientific adequacy of a material model.
+
+Throughout this chapter, ``rank $N$'' means that the retained coordinate space has dimension
+$N$.  It does not mean that a represented matrix has algebraic rank $N$ or is nonsingular.
+
+\section{A qualified finite-rank analytic parent}
+
+Let $r\geq 2$ be the retained dimension.  For an index $j$ with $0\leq j<r$, define the evenly
+spaced orbital coordinate
+\[
+  x_j=\frac{2j-r+1}{r-1}.
+\]
+Then $-1\leq x_j\leq 1$, and adjacent coordinates satisfy
+\[
+  x_{j+1}-x_j=\frac{2}{r-1}.
+\]
+For a nonempty finite bond inventory $B$ with phases $\phi_b$, define
+\[
+  h(\phi)=\frac34\cos\phi+\frac14\cos(2\phi),
+  \qquad
+  s=\frac{1}{|B|}\sum_{b\in B}h(\phi_b).
+\]
+Each harmonic and therefore their average lies in $[-1,1]$.  Given a parent scale
+$0\leq p\leq 1$, the retained and exterior energies are
+\[
+  E_{\mathrm{ret}}(x,p,s)
+    =\frac25x+\frac14p\left(1+\frac15x\right)s
+\]
+and
+\[
+  E_{\mathrm{ext}}(x,p,s)
+    =3+\frac3{10}x+\frac1{10}ps.
+\]
+
+\begin{theorem}[Exact finite-rank gap controls]
+\label{thm:finite-rank-gap-controls}
+For $x,y,s\in[-1,1]$ and $p\in[0,1]$,
+\[
+  E_{\mathrm{ret}}(x,p,s)\leq\frac7{10},
+  \qquad
+  E_{\mathrm{ext}}(y,p,s)\geq\frac{13}{5},
+\]
+and hence
+\[
+  E_{\mathrm{ext}}(y,p,s)-E_{\mathrm{ret}}(x,p,s)
+    \geq\frac{19}{10}.
+\]
+If $r\geq2$ and $j+1<r$, adjacent selected retained energies obey
+\[
+  E_{\mathrm{ret}}(x_{j+1},p,s)-E_{\mathrm{ret}}(x_j,p,s)
+    \geq \frac{7}{10(r-1)}>0.
+\]
+The universal energy and external-gap bounds are checked by
+\decl{BG-FOUNDATION-THM-029--031}; the generic adjacent-gap bound is
+\decl{BG-FOUNDATION-THM-034}; and the finite-bond external-gap and adjacent-gap
+specializations are \decl{BG-FOUNDATION-THM-035--037}.
+\end{theorem}
+
+\begin{proof}
+Since $p\in[0,1]$ and $s\in[-1,1]$, their product $q=ps$ lies in $[-1,1]$.
+The retained energy can be rearranged as
+\[
+  E_{\mathrm{ret}}(x,p,s)
+   =\left(\frac25+\frac1{20}q\right)x+\frac14q.
+\]
+The coefficient of $x$ is nonnegative.  Its maximum over $x,q\in[-1,1]$ is therefore
+attained at $x=q=1$, giving $7/10$.  The exterior energy is affine in both $y$ and
+$q$; its minimum on the same rectangle is attained at $y=q=-1$, giving $13/5$.
+Subtracting the two bounds gives $19/10$.
+
+For adjacent retained levels, direct subtraction factors as
+\[
+  E_{\mathrm{ret}}(x_{j+1},p,s)-E_{\mathrm{ret}}(x_j,p,s)
+  =(x_{j+1}-x_j)
+    \left(\frac25+\frac1{20}q\right).
+\]
+The first factor is $2/(r-1)$ and the second is at least $7/20$, which gives the
+stated lower bound.  The Lean proof separates the interval bounds, coordinate identity,
+and affine factorization so that no numerical sampling or trigonometric approximation enters the
+argument.
+\end{proof}
+
+\begin{remark}
+The parent is a constant exact control family.  The theorem does not prove that a consuming
+Hamiltonian has these energies, that an external mesh realizes the stated structure factor, or
+that an eigensolver has ordered its output consistently.
+\end{remark}
+
+\section{Exact arbitrary-dimensional right-unitary gauges}
+
+Let $F$ be an ambient-by-retained complex frame with $F^\dagger F=I$, let $D$ be an arbitrary
+retained operator, and let $G$ be a retained-space unitary.  Define
+\[
+  F'=FG,
+  \qquad
+  H'=G^\dagger D G.
+\]
+This fixes the action side: gauges act on frame columns from the right, and represented operators
+transform by right-gauge conjugation.
+
+\begin{theorem}[Exact finite-rank gauge construction]
+\label{thm:exact-finite-rank-gauge-construction}
+The constructed frame and operator satisfy
+\[
+  F'^\dagger F'=I,
+  \qquad
+  \operatorname{spec}_{\mathbb C}(H')
+    =\operatorname{spec}_{\mathbb C}(D),
+\]
+and the known inverse $G^\dagger$ recovers both reference objects:
+\[
+  F'G^\dagger=F,
+  \qquad
+  G H'G^\dagger=D.
+\]
+These conclusions are checked by \decl{BG-ALIGNMENT-THM-069} and
+\decl{BG-ALIGNMENT-THM-071}.
+\end{theorem}
+
+\begin{proof}
+Orthonormality follows from
+\[
+  F'^\dagger F'=G^\dagger F^\dagger F G=G^\dagger G=I.
+\]
+The spectrum equality is unitary similarity over $\mathbb C$; it is an equality of spectra as
+sets, not an assertion about an external eigenvalue ordering.  Finally,
+\[
+  F'G^\dagger=FGG^\dagger=F
+\]
+and
+\[
+  GH'G^\dagger=GG^\dagger DGG^\dagger=D.
+\]
+The formal theorem packages the four conclusions with the exact supplied unitary and frame
+orthonormality as hypotheses.
+\end{proof}
+
+This theorem supplies an arbitrary-retained-dimension construction, while the earlier rank-two
+examples expose particular locality effects.  It does not claim that every coordinate is mixed,
+that the gauge was recovered by a numerical Procrustes solve, or that two externally produced
+frames span the same subspace.
+
+\section{Pointwise gauges as finite Fourier convolution}
+
+Let $K$ be a finite abelian momentum group and $\widehat K$ its character group.  The convention
+used here is
+\[
+  \widehat A(\chi)
+    =\frac1{|K|}\sum_{k\in K}\overline{\chi(k)}A(k),
+  \qquad
+  A(k)=\sum_{\chi\in\widehat K}\chi(k)\widehat A(\chi).
+\]
+For a pointwise unitary gauge $U(k)$, set
+\[
+  A^U(k)=U(k)^\dagger A(k)U(k).
+\]
+Complex conjugation of a coefficient negates its character mode.  Applying the finite product
+convolution law twice therefore gives the exact triple convolution
+\[
+  \widehat{A^U}(m)
+   =\sum_{-a+b+c=m}
+      \widehat U(a)^\dagger\,\widehat A(b)\,\widehat U(c).
+\]
+This is \decl{BG-FOURIER-GAUGE-THM-001}.
+
+If $\widehat U$ is supported on $S_U$ and $\widehat A$ on $S_A$, cancellation may make the actual
+support smaller, but every possible nonzero mode lies in
+\[
+  \operatorname{supp}\widehat{A^U}
+  \subseteq (-S_U+S_A)+S_U.
+\]
+The formal result \decl{BG-FOURIER-GAUGE-THM-002} is deliberately an inclusion rather than an
+equality.
+
+Suppose now that $\rho:\widehat K\to\mathbb R_{\geq0}$ is invariant under inversion and
+subadditive:
+\[
+  \rho(-m)=\rho(m),
+  \qquad
+  \rho(m+n)\leq\rho(m)+\rho(n).
+\]
+If the gauge coefficients lie in the complete shell of radius $R_U$ and the field coefficients
+in the complete shell of radius $R_A$, then every mode in the triple support satisfies
+\[
+  \rho(-a+b+c)\leq R_A+2R_U.
+\]
+Consequently
+\[
+  \operatorname{supp}\widehat{A^U}
+  \subseteq \operatorname{Shell}(R_A+2R_U),
+\]
+which is checked by \decl{BG-FOURIER-GAUGE-THM-003}.  This is a finite support bound.  It is not a
+decay estimate and need not be sharp.
+
+\section{Source-neutral lattice radii}
+
+The square, triangular, simple-cubic, and normalized FCC integer shell indices admit exact
+Euclidean realizations.  Their associated nonnegative radii are norms of additive real embeddings.
+The formal development proves that the real square of each radius is exactly the corresponding
+integer shell index (\decl{BG-FOURIER-SUPPORT-THM-001--004}), that each radius is inversion
+invariant (\decl{BG-FOURIER-SUPPORT-LEM-003--006}), and that each satisfies the triangle
+inequality (\decl{BG-FOURIER-SUPPORT-THM-005--008}).  Thus the general support argument gives the complete
+shell inclusions
+\[
+  (-\operatorname{Shell}(R_U)+\operatorname{Shell}(R_A))
+       +\operatorname{Shell}(R_U)
+  \subseteq \operatorname{Shell}(R_A+2R_U)
+\]
+for all four source-neutral integer lattices
+(\decl{BG-FOURIER-SUPPORT-THM-013--016}).
+
+These are infinite integer-lattice statements.  They do not identify a finite cyclic character
+with a preferred centered representative across a quotient seam.  Finite quotient radii, FFT
+ordering, Nyquist conventions, reciprocal bases, and physical distance require separate bridges.
+
+\section{Fourier truncation as exact finite least squares}
+
+Let $S\subseteq\widehat K$ be a declared coefficient support and let $T_S\widehat A$ retain exactly
+the coefficients in $S$.  If $C$ is any coefficient field supported on $S$, finite Parseval and a
+coefficient-space Pythagorean identity give
+\[
+\begin{split}
+ \sum_{k\in K}\left\|A(k)-\mathcal F^{-1}C(k)\right\|^2
+ ={}&\sum_{k\in K}
+       \left\|A(k)-\mathcal F^{-1}(T_S\widehat A)(k)\right\|^2\\
+ &+|K|\sum_{\chi\in\widehat K}
+       \left\|(T_S\widehat A)(\chi)-C(\chi)\right\|^2.
+\end{split}
+\]
+The second term is nonnegative and vanishes exactly when $C=T_S\widehat A$.  Hence exact Fourier
+truncation is the unique coefficient field attaining the equal-weight finite least-squares minimum
+inside the declared support class.  These are \decl{BG-FOURIER-FINITE-THM-004} and
+\decl{BG-FOURIER-FINITE-THM-005}; their arbitrary-rank periodic one-, two-, and three-dimensional
+matrix specializations are \decl{BG-FOURIER-LATTICE-THM-001--005}.
+
+For a matrix coefficient field $C$, total entrywise Frobenius power splits directly into the
+identity coefficient and every nonidentity coefficient:
+\[
+  \sum_{x\in K}\sum_{i,j}|C(x)_{ij}|^2
+  =\sum_{i,j}|C(0)_{ij}|^2
+   +\sum_{x\neq0}\sum_{i,j}|C(x)_{ij}|^2.
+\]
+The nononsite term is defined by the second direct sum, not by subtracting separately rounded
+runtime totals.  The exact partition and lattice specializations are
+\decl{BG-FOURIER-FINITE-THM-006} and \decl{BG-FOURIER-LATTICE-THM-006--009}.
+
+\section{Projection can destroy finite support}
+
+Gauge-induced support growth is distinct from support growth caused by changing the retained
+subspace.  The checked two-band Laurent example makes that distinction exact.  A nearest-neighbor
+Laurent-polynomial parent $H(z)$ has finite support, but its positive dispersion contains a square
+root that is not a Laurent polynomial when the product of the gap and hopping parameters is
+nonzero.  The algebraic lower-band projector
+\[
+  P_-(k)=\frac12\left(I-\frac{H(k)}{d(k)}\right)
+\]
+is idempotent, lies in the lower eigenspace, and satisfies
+\[
+  P_-(k)H(k)P_-(k)=\frac12\bigl(H(k)-d(k)I\bigr).
+\]
+The final expression has no finite matrix Laurent representation although the parent does.
+Therefore spectral projection can destroy finite hopping support
+(\decl{BG-PROJECTION-THM-003--008}).
+
+This is one exact counterexample, not a universal decay theorem.  It neither quantifies an
+exponential tail nor establishes a Wannier obstruction, a topological invariant, or material
+localization.
+
+\section{Combined interpretation}
+
+The results of this chapter establish three separate facts.  First, exact finite-rank control
+families can have explicit retained and external gaps.  Second, right-unitary gauge changes
+preserve frame orthonormality and complex set-spectrum while changing represented coordinates.
+Third, both pointwise gauges and spectral projection can alter Fourier locality, by different
+mechanisms.  Exact least squares then identifies the best approximation inside a frozen finite
+support class and the direct power partition separates onsite from nononsite coefficients.
+
+None of these implications binds an external array to the formal objects.  Runtime use still
+requires authentication of the momentum mesh and ordering, retained basis and frames, action side,
+Fourier normalization, matrix axes, support inventory, and exact or rigorously enclosed entries.
+Changing projectors or performing disentanglement additionally requires hypotheses or error bounds
+that are absent from the fixed-subspace gauge identities.

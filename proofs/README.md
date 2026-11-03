@@ -13,6 +13,12 @@ A dossier makes one proof reviewable without changing its authority.
 
 The maintainer operates and reviews this process as a computational materials scientist, not as an independent expert mathematician or theoretical physicist. AI-generated material remains untrusted until checked by Lean and reviewed against the stated sources and assumptions.
 
+## Relationship to publication proof companions
+
+Dossiers are declaration-centred audit records. Longer publication proofs are organized separately as argument-centred proof companions under `docs/papers/`. A companion may combine several definitions, helper lemmas, and main theorems into one continuous mathematical argument while citing the stable Lean declaration IDs.
+
+Do not duplicate the full publication narrative in every dossier. The dossier preserves the exact statement, assumptions, dependencies, concise proof synopsis, Lean realization, and audit boundary. The proof companion owns the polished extended exposition, and its declaration crosswalk maps the narrative back to Lean and the dossiers.
+
 ## File rule
 
 Each dossier mirrors its Lean module path and uses one statement ID.
@@ -334,7 +340,7 @@ A dossier records:
 3. immutable source identity and locator;
 4. assumptions, conventions, and source-to-Lean delta;
 5. statement-specific prior art and contribution boundary;
-6. proof structure and readable proof or explicit gap;
+6. proof structure and concise readable proof synopsis or explicit gap; extended publication exposition belongs in the relevant argument-centred proof companion;
 7. Lean dependencies and realization summary;
 8. trusted-base and `#print axioms` results;
 9. AI, automation, toolchain, maintainer-context, and independent-review status;

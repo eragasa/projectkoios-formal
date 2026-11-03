@@ -40,11 +40,18 @@ intersection problem. The checked foundation supports:
    truncation leg;
 6. exact admissible-set geometries, certificate soundness, and three-way interval
    decisions; and
-7. first-passing selection over one declared finite inventory; and
+7. first-passing selection over one declared finite inventory;
 8. a generic finite compatibility schema separating central infimum-based compatibility
    from stronger common-alignment witness compatibility, with finite central admissible
    sets, attained separation under nonemptiness, zero/positive distance converses,
-   explicit conformant model embeddings, and first-compatible selection.
+   explicit conformant model embeddings, and first-compatible selection;
+9. exact finite-rank analytic-parent gap controls and arbitrary-dimensional right-unitary
+   gauge construction;
+10. pointwise-gauge Fourier convolution, support inclusion, and complete-shell
+    `R_A + 2 R_U` bounds with source-neutral integer-lattice radii;
+11. exact finite-support Fourier least squares and direct onsite/nononsite Frobenius-power
+    partitioning; and
+12. an exact two-band example in which spectral projection destroys finite Fourier support.
 
 The current theorem basis packages the generic exact finite logic but does not instantiate
 the complete ICMSEP study as one proposition-specific Lean theorem, and it contains no
@@ -52,10 +59,11 @@ retained bulk-silicon runtime certificate.
 
 ## Editorial architecture
 
-The mathematical narrative comes first. The five numbered chapters develop the central
+The mathematical narrative comes first. The six numbered chapters develop the central
 spectral–operator compatibility problem, operator foundations, alignment and Fourier
-analysis, admissible-set and certificate logic, and the remaining end-to-end formal
-obligations. Code-facing material is kept in appendices:
+analysis, finite-rank gauge and locality controls, admissible-set and certificate logic,
+and the remaining end-to-end formal obligations. Code-facing material is kept in
+appendices:
 
 - `appendices/A-formal-declaration-crosswalk.tex` records declaration IDs, Lean names,
   module locations, proof-dossier locations, and mechanization status;
@@ -75,6 +83,19 @@ The main text may state that a result is exact or machine checked when that fact
 to the argument, but repository mechanics, source paths, hashes, audit commands, and
 workflow checklists belong in the appendices.
 
+## Narrative proof policy
+
+The companion is organized by mathematical argument, not by Lean declaration or proof-dossier
+file. A chapter may combine supporting definitions and lemmas into one continuous proof arc,
+provided that it preserves the exact hypotheses and identifies the principal checked declarations.
+Small implementation lemmas need not become separate publication subsections.
+
+The companion owns the extended publication-quality exposition. Statement-level dossiers remain
+concise audit records containing the exact proposition, assumptions, dependency outline, Lean
+realization, and proof-status boundary. Appendix A maps the narrative results to their stable Lean
+IDs and dossiers, so the main chapters need not duplicate repository-level metadata or reproduce
+one standalone dossier per paragraph of mathematics.
+
 ## Authority
 
 The authority order is:
@@ -92,8 +113,8 @@ conventions, declaration identities, and nonclaims recorded here.
 ## Snapshot boundary
 
 The current theorem basis is Formal checkpoint commit
-`57720829b0611b48293837f4ae20146fff09b4c5`, tree
-`4a12333b548fecc233b89b36c2e957112d7a3c9a`. Appendix B records the central module
+`1d703892a4363b87937648697a7835676394196b`, tree
+`0744b8432a0cb1c7a264ba582dae1989fd1574c9`. Appendix B records the central module
 hashes at that exact source state. The companion must be refreshed or explicitly marked
 historical after relevant theorem statements, toolchain pins, or manifest status change.
 
@@ -108,8 +129,14 @@ transfer into Formal proof status.
   nonemptiness evidence when the finite separation converses are invoked;
 - bind a concrete model hierarchy through reviewed conformant embeddings and a complete
   declared inventory;
-- obtain independent review of the expanded aligned-difference and alignment-family
-  dossiers;
+- obtain independent review and integration of the review-pending cyclic-quotient-radius,
+  character-gauge locality, supplied-shell, and fixed-subspace representation work before
+  treating those results as part of this pinned theorem basis;
+- prove polar neighbor transport and periodic closure, principal-angle identities,
+  approximate fixed-subspace compression bounds, and general-rank spectral perturbation
+  bounds;
+- authenticate any KSD centered-FFT, quotient-coordinate, basis, frame, normalization,
+  and array-ordering bridge before claiming runtime applicability;
 - complete prior-art and novelty review;
 - obtain independent review of the provenance-audited background bibliography;
 - obtain independent mathematical and artifact review; and

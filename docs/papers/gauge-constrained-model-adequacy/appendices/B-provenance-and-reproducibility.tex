@@ -6,16 +6,16 @@
 The theorem basis used by this companion is Project Koios Formal checkpoint commit
 
 \begin{center}
-\decl{57720829b0611b48293837f4ae20146fff09b4c5},
+\decl{1d703892a4363b87937648697a7835676394196b},
 \end{center}
 
 with Git tree
 
 \begin{center}
-\decl{4a12333b548fecc233b89b36c2e957112d7a3c9a}.
+\decl{0744b8432a0cb1c7a264ba582dae1989fd1574c9}.
 \end{center}
 
-Modules central to the alignment, residual, and compatibility narrative have the
+Modules central to the compatibility, gauge, residual, and locality narrative have the
 following SHA-256 identities at that tree:
 
 \begin{description}
@@ -27,30 +27,54 @@ following SHA-256 identities at that tree:
     \modulepath{ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean},
     SHA-256
     \decl{45e737324df4718497566d57d72ff9bd575f37d59a5f6768a101034b4c232a0d}.
+  \item[Mandatory-channel composition.]
+    \modulepath{ProjectKoios/BandGauge/Decision/MandatoryChannelComposition.lean},
+    SHA-256
+    \decl{8fb609f42289780c511f7317069c26bf784b9d5daff85c92739008675c2b465e}.
   \item[Aligned operator differences.]
     \modulepath{ProjectKoios/BandGauge/Bloch/AlignedDifference.lean},
     SHA-256
-    \decl{050e2cc7736e583c87f65488059f587b259fe5748960822b7f7eaba2485ffab8}.
+    \decl{e15bd4f76e4e2cc148092a9c6c80e500ae25e837d5fddf5a3aee5d050e9ea34a}.
   \item[Alignment families.]
     \modulepath{ProjectKoios/BandGauge/Alignment/Family.lean},
     SHA-256
     \decl{27b1c817bf10778a6d9032e6d5c8d20601aa9fa12f3c70ab560cdbf7dc672aab}.
-  \item[Alignment-family separation.]
-    \modulepath{ProjectKoios/BandGauge/Alignment/FamilySeparation.lean},
+  \item[Exact finite-rank gauge construction.]
+    \modulepath{ProjectKoios/BandGauge/Alignment/ExactGaugeConstruction.lean},
     SHA-256
-    \decl{8811fffaca7411e525f37e710ad6c5b3ea9ba9064cfc74c3435344e8858caa71}.
-  \item[Three-channel residual algebra.]
-    \modulepath{ProjectKoios/BandGauge/Hilbert/ResidualChannels.lean},
+    \decl{32687b848a95faeac3d871c4ad6841d85caaeef016b8d643e5a413c85c4bc765}.
+  \item[Finite-rank analytic parent.]
+    \modulepath{ProjectKoios/BandGauge/Foundations/FiniteRankAnalyticParent.lean},
     SHA-256
-    \decl{38d0604da95a88a85ecc818037fedda0fb73ee9a51055bffa0a6891d8a4ee150}.
-  \item[Gauge--truncation counterexample.]
-    \modulepath{ProjectKoios/BandGauge/Fourier/GaugeTruncationCounterexample.lean},
+    \decl{380eae448305b24ce503332e082b3bb2cfe1c877fd21e276eb0e253a6d659186}.
+  \item[Four-stage residual algebra.]
+    \modulepath{ProjectKoios/BandGauge/Hilbert/FourStageResidualChannels.lean},
     SHA-256
-    \decl{3b4d9083c04592ff9982cbddf891c8243cc599ad6bc32f5e4a10f708bec6186d}.
+    \decl{3931c865c24db66dd42ac65c922742448402134dbc071e596df686d124e3dfec}.
+  \item[Pointwise-gauge convolution.]
+    \modulepath{ProjectKoios/BandGauge/Fourier/Gauge/PointwiseConvolution.lean},
+    SHA-256
+    \decl{d43d43e563f9cf649300a6d4baea04c4a939df8a16e53660d13162c0487b5333}.
   \item[Residual channels and finite tails.]
-    \modulepath{ProjectKoios/BandGauge/Fourier/ResidualChannels.lean},
+    \modulepath{ProjectKoios/BandGauge/Fourier/Residual/Channels.lean},
     SHA-256
-    \decl{d2da775a99edf7dea2d8955a121d4929cc183be4fcf64a515ab5e002c019a28b}.
+    \decl{ee75ad9c008fe451ade7ec0a7bf07088c6f6df9d7b9b6ae12e61859dd1859496}.
+  \item[Finite Fourier least squares.]
+    \modulepath{ProjectKoios/BandGauge/Fourier/FiniteAbelian/LeastSquares.lean},
+    SHA-256
+    \decl{2f9f7fd8c9575d1592e2867946d84d3fb21b8ae8fcab91951b407b837b4cc5fb}.
+  \item[Onsite/nononsite power partition.]
+    \modulepath{ProjectKoios/BandGauge/Fourier/FiniteAbelian/PowerPartition.lean},
+    SHA-256
+    \decl{a3fe0f9360191e565ea8c0803368cb0f2aef7312bd85077894b28f0e14721584}.
+  \item[Integer-lattice shell radii.]
+    \modulepath{ProjectKoios/BandGauge/Fourier/Support/LatticeRadius.lean},
+    SHA-256
+    \decl{d145a008b3b9e161691f35f4cae4d13b15419984ae6199e499834931c5d5a065}.
+  \item[Projection-induced loss of finite support.]
+    \modulepath{ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean},
+    SHA-256
+    \decl{6cb39a3825085cde2294ab8f594e62912f3ed9d9b72c16211f472599675b47d9}.
 \end{description}
 
 These identities bind the exposition to one immutable source state. No statement about a
