@@ -334,6 +334,7 @@ These items are merged Formal content only.
   `47ffab7ffe3c26abb23301c7179aed1088c997cf`.
 - Three-way interval threshold, joint-feasibility, and first-passing certificates.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
+- General-rank Hermitian spectral-error infrastructure: canonical decreasing eigenvalue vectors retaining multiplicity, separate maximum and RMS ordered errors, `RMS ≤ maximum`, and characteristic-polynomial zero-error criteria. General-rank Weyl/Hoffman--Wielandt inequalities and runtime eigensolver bindings remain open.
 - Finite three-channel residual identity with pointwise, maximum, and root-mean-square
   triangle bounds and exact deliberate-truncation Fourier-tail bridges.
 - Exact Hilbert and explicit matrix-Frobenius root-mean-square Fourier-tail identities.
