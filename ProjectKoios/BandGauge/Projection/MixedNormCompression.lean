@@ -66,6 +66,32 @@ lemma opn_nonneg {m n : Type*} [Fintype m] [Fintype n] [DecidableEq n]
   exact @norm_nonneg (Matrix m n ℂ)
     (Matrix.instL2OpNormedAddCommGroup (𝕜 := ℂ) (m := m) (n := n)).toNormedAddGroup.toSeminormedAddGroup A
 
+private lemma column_l2OperatorNorm_le {m : Type*} [Fintype m]
+    (x : EuclideanSpace ℂ m) :
+    opn (fun i (_ : Fin 1) => x i) ≤ ‖x‖ := by
+  let B : Matrix m (Fin 1) ℂ := fun i _ => x i
+  change @norm (Matrix m (Fin 1) ℂ)
+      Matrix.instL2OpNormedAddCommGroup.toNorm B ≤ ‖x‖
+  rw [Matrix.l2_opNorm_def]
+  apply ContinuousLinearMap.opNorm_le_bound
+    ((Matrix.toEuclideanLin (𝕜 := ℂ) (m := m) (n := Fin 1)).trans
+      LinearMap.toContinuousLinearMap B) (norm_nonneg x)
+  intro z
+  change ‖(EuclideanSpace.equiv m ℂ).symm (B *ᵥ z)‖ ≤ ‖x‖ * ‖z‖
+  have hz : ‖z 0‖ ≤ ‖z‖ := PiLp.norm_apply_le z 0
+  have heq : (EuclideanSpace.equiv m ℂ).symm (B *ᵥ z) = z 0 • x := by
+    ext i
+    simp [B, Matrix.mulVec, dotProduct, mul_comm]
+  rw [heq, norm_smul]
+  nlinarith [norm_nonneg x]
+
+private lemma frob_column {m : Type*} [Fintype m] (x : EuclideanSpace ℂ m) :
+    frob (fun i (_ : Fin 1) => x i) = ‖x‖ := by
+  have hsquare := frob_sq_eq_sum_col (fun i (_ : Fin 1) => x i)
+  simp only [Fin.sum_univ_one] at hsquare
+  change frob (fun i (_ : Fin 1) => x i) ^ 2 = ‖x‖ ^ 2 at hsquare
+  nlinarith [frob_nonneg (fun i (_ : Fin 1) => x i), norm_nonneg x]
+
 /-- `BG-PROJECTION-LEM-009`: Frobenius norm is invariant under conjugate transpose. -/
 lemma frob_conjTranspose {m n : Type*} [Fintype m] [Fintype n]
     (A : Matrix m n ℂ) : frob Aᴴ = frob A := by
@@ -122,6 +148,33 @@ theorem frob_mul_le_frob_mul_op {l m n : Type*}
     _ ≤ opn Bᴴ * frob Aᴴ := frob_mul_le_op_mul_frob Bᴴ Aᴴ
     _ = frob A * opn B := by
       rw [opn_conjTranspose, frob_conjTranspose, mul_comm]
+
+/-- `BG-PROJECTION-THM-020`: the Euclidean matrix operator norm is bounded by the entrywise
+Frobenius norm.  Both norm-instance boundaries remain explicit. -/
+theorem matrixL2OperatorNorm_le_matrixFrobeniusNorm
+    {m n : Type*} [Fintype m] [Fintype n] [DecidableEq n]
+    (A : Matrix m n ℂ) : opn A ≤ frob A := by
+  classical
+  let TA : EuclideanSpace ℂ n →L[ℂ] EuclideanSpace ℂ m :=
+    (Matrix.toEuclideanLin (𝕜 := ℂ) (m := m) (n := n)).trans
+      LinearMap.toContinuousLinearMap A
+  change ‖TA‖ ≤ frob A
+  apply ContinuousLinearMap.opNorm_le_bound TA (frob_nonneg A)
+  intro x
+  let X : Matrix n (Fin 1) ℂ := fun i _ => x i
+  have hmul := frob_mul_le_frob_mul_op A X
+  have hcol := column_l2OperatorNorm_le x
+  have hmatrix : A * X = fun i (_ : Fin 1) => (TA x) i := by
+    ext i j
+    have hj : j = 0 := Subsingleton.elim _ _
+    subst j
+    rfl
+  have hAX : frob (A * X) = ‖TA x‖ := by
+    rw [hmatrix, frob_column]
+  have hX : opn X ≤ ‖x‖ := by
+    simpa [X] using hcol
+  rw [hAX] at hmul
+  exact hmul.trans (mul_le_mul_of_nonneg_left hX (frob_nonneg A))
 
 open ProjectKoios.BandGauge.Alignment
 

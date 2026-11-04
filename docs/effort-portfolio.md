@@ -69,20 +69,19 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-The current mathematical milestone adds the exact mixed Frobenius/operator compression layer for
-nonempty finite retained spaces. It proves both mixed matrix-multiplication inequalities, the target
-factor-two orthonormal-frame compression estimate, the frozen right-unitary specialization, a
-separate projector-sandwich mismatch bound, and a frame-plus-projector reproduction-residual bound
-relative to an exact zero-residual orthonormal reference. General-rank spectral-error transfer remains
-next. Certificate and numerical-evidence status remain absent, and no runtime orthonormality,
-leakage, frame/projector binding, eigensolver output, or scientific applicability is claimed.
+The current mathematical milestone proves the general-rank maximum-form Weyl inequality by a
+direct finite-dimensional eigenbasis/subspace-intersection argument and transfers it through the
+exact mixed Frobenius/operator compression layer. The resulting maximum ordered-spectrum bound
+includes the frozen right-unitary specialization `Uᴴ(FᴴHF)U`. The distinct RMS/Frobenius
+Hoffman--Wielandt result remains later work. Certificate and numerical-evidence status remain absent,
+and no runtime orthonormality, leakage, frame/projector binding, eigensolver output, or scientific
+applicability is claimed.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Validate and independently review the active mixed Frobenius/operator compression and leakage
-   slice, then prove general-rank spectral bounds with maximum and RMS consequences kept distinct.
+1. Validate and independently review the active maximum-form Weyl and ordered-spectrum compression-transfer slice; keep any later RMS/Hoffman--Wielandt proof as a distinct milestone.
 2. Obtain independent review of the proof companion's provenance-audited background bibliography
    before publication extraction.
 3. Resume proposition-specific schema design only after KSD supplies a frozen exact or
@@ -334,7 +333,7 @@ These items are merged Formal content only.
   `47ffab7ffe3c26abb23301c7179aed1088c997cf`.
 - Three-way interval threshold, joint-feasibility, and first-passing certificates.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
-- General-rank Hermitian spectral-error infrastructure: canonical decreasing eigenvalue vectors retaining multiplicity, separate maximum and RMS ordered errors, `RMS ≤ maximum`, and characteristic-polynomial zero-error criteria. General-rank Weyl/Hoffman--Wielandt inequalities and runtime eigensolver bindings remain open.
+- General-rank Hermitian spectral-error infrastructure: canonical decreasing eigenvalue vectors retaining multiplicity, separate maximum and RMS ordered errors, `RMS ≤ maximum`, characteristic-polynomial zero-error criteria, the maximum-form Weyl/operator-norm inequality, and maximum compression transfer. The distinct Hoffman--Wielandt RMS/Frobenius inequality and runtime eigensolver bindings remain open.
 - Finite three-channel residual identity with pointwise, maximum, and root-mean-square
   triangle bounds and exact deliberate-truncation Fourier-tail bridges.
 - Exact Hilbert and explicit matrix-Frobenius root-mean-square Fourier-tail identities.

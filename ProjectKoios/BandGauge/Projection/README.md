@@ -23,6 +23,7 @@ frames, projectors, arrays, or eigensolver output.
   Euclidean operator matrix norms;
 - `BG-PROJECTION-THM-014/015`, the mixed multiplication bounds
   `‖AB‖F ≤ ‖A‖op‖B‖F` and `‖AB‖F ≤ ‖A‖F‖B‖op`;
+- `BG-PROJECTION-THM-020`, the explicit norm bridge `‖A‖op ≤ ‖A‖F`;
 - `BG-PROJECTION-THM-016/017`, the target factor-two Frobenius compression bound and its frozen
   right-unitary specialization;
 - `BG-PROJECTION-THM-018`, the separate Frobenius projector-sandwich mismatch bound; and
@@ -31,6 +32,12 @@ frames, projectors, arrays, or eigensolver output.
 
 The final leakage result retains separate frame and projector channels. It does not claim runtime
 smallness, exact runtime orthonormality, or invariance of an unauthenticated external subspace.
+
+`OrderedSpectralCompression.lean` provides `BG-PROJECTION-THM-021/022`: the maximum canonical
+ordered-eigenvalue error between retained compressions is at most `2‖H‖op‖C-F‖F`, including the
+frozen right-unitary specialization with represented reference `Uᴴ(FᴴHF)U`. This transfers only the
+maximum-form Weyl bound. The distinct RMS/Frobenius Hoffman--Wielandt result remains open, and no
+runtime frame, matrix, gauge, or eigensolver output is authenticated.
 
 `LaurentObstruction.lean` implements the algebraic core of the Ragasa2026b two-band
 counterexample:

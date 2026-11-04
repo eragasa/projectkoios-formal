@@ -23,7 +23,7 @@ Each evidence class has a separate authority boundary.
 
 Semantic directories separate reusable mathematics from crosswalks.
 
-- `ProjectKoios/BandGauge/`: reusable band-gauge mathematics, including canonical decreasing Hermitian eigenvalue vectors with separate maximum/RMS error carriers, exact matrix-`L2Operator` and mixed Frobenius/operator approximate frame/projector compression bounds with orthonormal-reference leakage controls, the exact two-band projection-support counterexample, and thin paper crosswalks.
+- `ProjectKoios/BandGauge/`: reusable band-gauge mathematics, including canonical decreasing Hermitian eigenvalue vectors with separate maximum/RMS error carriers, a direct maximum-form Weyl theorem, maximum ordered-spectrum transfer through exact mixed Frobenius/operator frame compression, exact approximate frame/projector bounds with orthonormal-reference leakage controls, the exact two-band projection-support counterexample, and thin paper crosswalks.
 - `ProjectKoios/QuantumMechanics/`: source-neutral quantum mathematics and controlled models.
 - `ProjectKoios/SolidState/`: finite-lattice and tight-binding algebra.
 - `ProjectKoios/Crosswalks/`: narrow immutable-source constant bridges.

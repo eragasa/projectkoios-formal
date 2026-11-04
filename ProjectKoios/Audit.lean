@@ -35,6 +35,7 @@ import ProjectKoios.BandGauge.Foundations.RankTwoSpectralPerturbation
 import ProjectKoios.BandGauge.Foundations.RankTwoConjugation
 import ProjectKoios.BandGauge.Foundations.FiniteRankAnalyticParent
 import ProjectKoios.BandGauge.Foundations.HermitianSpectralError
+import ProjectKoios.BandGauge.Foundations.HermitianEigenvaluePerturbation
 import ProjectKoios.BandGauge.Decision.FinitePareto
 import ProjectKoios.BandGauge.Decision.FiniteCutoff
 import ProjectKoios.BandGauge.Decision.FiniteCompatibility
@@ -76,6 +77,7 @@ import ProjectKoios.BandGauge.Projection.LaurentObstruction
 import ProjectKoios.BandGauge.Projection.SpectralProjectionRange
 import ProjectKoios.BandGauge.Projection.ApproximateCompression
 import ProjectKoios.BandGauge.Projection.MixedNormCompression
+import ProjectKoios.BandGauge.Projection.OrderedSpectralCompression
 import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Certificates.IntervalDecision
 import ProjectKoios.BandGauge.Certificates.RankTwoSeparationBox
@@ -496,6 +498,7 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Projection.frob_add_le
 #print axioms ProjectKoios.BandGauge.Projection.opn_mul_le
 #print axioms ProjectKoios.BandGauge.Projection.frob_mul_le_frob_mul_op
+#print axioms ProjectKoios.BandGauge.Projection.matrixL2OperatorNorm_le_matrixFrobeniusNorm
 #print axioms ProjectKoios.BandGauge.Projection.frame_opn_le_one
 #print axioms ProjectKoios.BandGauge.Projection.compression_difference_frob_le
 #print axioms ProjectKoios.BandGauge.Projection.compression_rightUnitaryFrame_frob_le
@@ -504,6 +507,9 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Projection.leakage_difference_decomposition
 #print axioms ProjectKoios.BandGauge.Projection.frob_sub_le
 #print axioms ProjectKoios.BandGauge.Projection.leakage_frob_le_of_reference_zero
+#print axioms ProjectKoios.BandGauge.Projection.rightUnitaryRepresentedOperator_isHermitian
+#print axioms ProjectKoios.BandGauge.Projection.compression_orderedEigenvalueMaxError_frob_le
+#print axioms ProjectKoios.BandGauge.Projection.compression_rightUnitaryFrame_orderedEigenvalueMaxError_frob_le
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteCharacterKernel
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierReconstruction_coefficients
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.card_smul_finiteFourierCoefficient
@@ -847,6 +853,15 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Foundations.orderedHermitianEigenvalues_eq_iff_charpoly_eq
 #print axioms ProjectKoios.BandGauge.Foundations.orderedEigenvalueMaxError_eq_zero_iff_charpoly_eq
 #print axioms ProjectKoios.BandGauge.Foundations.orderedEigenvalueRmsError_eq_zero_iff_charpoly_eq
+#print axioms ProjectKoios.BandGauge.Foundations.symmetric_re_inner_eq_eigenvalue_sum
+#print axioms ProjectKoios.BandGauge.Foundations.leadingEigenvectorSubspace_re_inner_lower
+#print axioms ProjectKoios.BandGauge.Foundations.trailingEigenvectorSubspace_re_inner_upper
+#print axioms ProjectKoios.BandGauge.Foundations.leadingEigenvectorSubspace_finrank
+#print axioms ProjectKoios.BandGauge.Foundations.trailingEigenvectorSubspace_finrank
+#print axioms ProjectKoios.BandGauge.Foundations.exists_nonzero_mem_leading_trailing
+#print axioms ProjectKoios.BandGauge.Foundations.symmetricEigenvalue_abs_sub_le_operatorNorm
+#print axioms ProjectKoios.BandGauge.Foundations.orderedHermitianEigenvalue_abs_sub_le_l2OperatorNorm
+#print axioms ProjectKoios.BandGauge.Foundations.orderedEigenvalueMaxError_le_l2OperatorNorm
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_traceless
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_commonPower
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.abs_operatorCorrelation_le_commonPower
