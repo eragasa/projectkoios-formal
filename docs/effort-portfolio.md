@@ -21,9 +21,10 @@ Historical portfolio snapshot: remote `main` merge commit `95a6724ca2472d674fc90
 
 Supplemental snapshot after the rank-two box-certificate merge: `1f9e3c56b4e85c1efa75916719a50fc57c8f978a`.
 
-Current board reconciliation source baseline: remote `main` merge commit
-`80145602d4d84e26a4c5ccd7bbd362618598e39b`, tree
-`a595559e72657e1f84975b19c2f123a4a35e3cf0`, integrating PR #63.
+Current board reconciliation source baseline: remote `main` commit
+`9192f3b123613a5d21ae899a1e8b5364a4fca65a`, tree
+`875704b55631bf5136d6cb453a83c9f73bfea29e`, containing the independently reviewed
+Hoffman--Wielandt and RMS compression milestone.
 
 ## Mission
 
@@ -69,20 +70,20 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-The current mathematical milestone proves the general-rank Hoffman--Wielandt square-sum inequality
-through doubly stochastic eigenbasis overlaps and transfers its dimension-normalized RMS consequence
-through the exact mixed Frobenius/operator compression layer. The resulting RMS bound includes the
-frozen right-unitary specialization `Uᴴ(FᴴHF)U` and remains distinct from the implemented
-maximum-form Weyl result. Certificate and numerical-evidence status remain absent, and no runtime
-orthonormality, leakage, frame/projector binding, eigensolver output, or scientific applicability is
-claimed. Affected-target validation, audit coverage, pin checks, and fresh-context read-only review
-have passed for the current working-tree checkpoint; integration remains uncommitted.
+The current design milestone specifies a fail-closed authenticated external binding contract for
+applying the exact ordered-spectrum theorems to selected KSD, DFT, or Wannier90 data. The contract
+must bind immutable source identity, matrix dimensions and entries or outward enclosures, frames and
+bases, mesh axes and conventions, right-unitary action, normalization, eigenvalue ordering, and
+degeneracy handling. This milestone does not implement a runtime parser, mutate KSD, admit numerical
+evidence, or promote scientific applicability; the checked runtime-certificate count remains zero.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Request explicit authorization for one coherent commit of the validated and independently reviewed Hoffman--Wielandt square-sum/RMS and ordered-spectrum compression-transfer slice; request push separately or jointly and keep maximum and RMS conclusions explicitly distinct.
+1. Draft and independently review the Formal-owned authenticated external matrix/frame binding
+   contract while keeping it distinct from any proposition-specific KSD request/result schema and
+   making no owner-repository mutation.
 2. Obtain independent review of the proof companion's provenance-audited background bibliography
    before publication extraction.
 3. Resume proposition-specific schema design only after KSD supplies a frozen exact or
@@ -334,7 +335,20 @@ These items are merged Formal content only.
   `47ffab7ffe3c26abb23301c7179aed1088c997cf`.
 - Three-way interval threshold, joint-feasibility, and first-passing certificates.
 - Rank-two canonical spectral perturbation and unnormalized Frobenius band-error bound.
-- General-rank Hermitian spectral-error infrastructure: canonical decreasing eigenvalue vectors retaining multiplicity, separate maximum and RMS ordered errors, `RMS ≤ maximum`, characteristic-polynomial zero-error criteria, the maximum-form Weyl/operator-norm inequality, and maximum-spectrum compression transfer. Runtime eigensolver and matrix-entry bindings remain open.
+- General-rank Hermitian spectral-error infrastructure: canonical decreasing eigenvalue vectors
+  retaining multiplicity, separate maximum and RMS ordered errors, `RMS ≤ maximum`,
+  characteristic-polynomial zero-error criteria, the maximum-form Weyl/operator-norm inequality,
+  and maximum-spectrum compression transfer. Runtime eigensolver and matrix-entry bindings remain
+  open.
+- The separate general-rank Hoffman--Wielandt square-sum and dimension-normalized RMS/Frobenius
+  bounds, exact-frame compression transfer, and frozen right-unitary specialization landed on
+  `main` at commit `9192f3b123613a5d21ae899a1e8b5364a4fca65a`, tree
+  `875704b55631bf5136d6cb453a83c9f73bfea29e`, as `BG-FOUNDATION-DEF-027`,
+  `BG-FOUNDATION-LEM-017--019`, `BG-FOUNDATION-THM-045--047`,
+  `BG-PROJECTION-LEM-018`, and `BG-PROJECTION-THM-023--025`. Affected-target build, pin, audit,
+  coverage, admission, whitespace, and independent-review gates passed; no external matrix, frame,
+  eigensolver, runtime norm, certificate, numerical evidence, or scientific applicability was
+  authenticated.
 - Finite three-channel residual identity with pointwise, maximum, and root-mean-square
   triangle bounds and exact deliberate-truncation Fourier-tail bridges.
 - Exact Hilbert and explicit matrix-Frobenius root-mean-square Fourier-tail identities.

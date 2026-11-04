@@ -126,10 +126,13 @@ The source-neutral product-mesh tranche passed its declared Lean gates.
 
 ### Hermitian Hoffman--Wielandt and RMS compression, 2026-11-04
 
-The source-neutral ordered-spectrum RMS tranche passed its declared affected-target gates.
+The source-neutral ordered-spectrum RMS tranche passed its declared affected-target gates and landed
+on `main` at immutable commit `9192f3b123613a5d21ae899a1e8b5364a4fca65a`, tree
+`875704b55631bf5136d6cb453a83c9f73bfea29e`.
 
 - The new foundation and projection modules, their direct dependency modules, and `ProjectKoios.Audit` built successfully under Lean 4.35.0 and pinned Mathlib `56a005855ea17e0b0958f73ec801ae140b0a1679`.
 - `./scripts/audit.sh` passed; the scan found no repository-owned `sorry`, `admit`, or `axiom` marker.
 - Audit coverage passed with 1,086 proved theorem/lemma rows and 1,090 unique named axiom reports.
 - All ten new named reports use only `propext`, `Classical.choice`, and `Quot.sound`.
+- Fresh-context read-only review found no blocking mathematical, normalization, norm-instance, audit, manifest, or documentation issue after correction of the pre-integration board status.
 - The exact results prove an unnormalized ordered-eigenvalue square-sum bound, its nonzero-dimension RMS normalization, and exact-frame compression transfer. They do not authenticate external matrices, frames, eigensolver ordering or degeneracy handling, runtime norm evaluation, scientific applicability, or numerical evidence.
