@@ -811,6 +811,26 @@ representatives, seam/Nyquist convention, and a wraparound-compatible quotient r
 mesh, coefficient array, physical length, source-defined hopping range, applicability, or scientific
 claim is introduced.
 
+## KSD five-stage matrix/frame binding lifecycle source
+
+The authenticated external matrix/frame binding recommendation preserves the five-stage calculation
+contract from a clean immutable KSD source:
+
+- owner repository: `ksdft2effmass`;
+- checkout: `/Users/eugene/worktrees/ksdft2effmass-si-right-handed-kpoint`;
+- branch: `work/si-right-handed-kpoint`;
+- commit: `b0af45f4eea97ee41eb0e2ae23a35a986a6c6e78`;
+- tree: `3b5e66c797d0ffa1fa1ad9d9a6d3f603f243f4c3`;
+- path: `calculations/periodic1d/rank2/band-equivalence-versus-hopping-locality/protocol.md`;
+- Git blob: `cfebcdfdb0d3d8316f38b0383d42642e2fbf3cd7`;
+- SHA-256 of commit bytes: `aabe8c6e005e6605ca4e2fec7103985f1ad303d2f41ff76fce1bbd4867aa74e4`;
+- worktree state during inspection: clean.
+
+The source separates simulation, independent simulation verification, analysis of verified output,
+independent analysis verification, and plotting from verified analysis. The Formal recommendation
+preserves that order and no-overwrite authority boundary; it does not claim that the stages have
+executed, that a conforming external export exists, or that any KSD result is formally checked.
+
 ## KSD mathematical implementation backlog inspection
 
 A later read-only inspection examined mathematical implementation paths in the current KSD checkout to identify remaining proof obligations rather than to establish source-specific applicability.

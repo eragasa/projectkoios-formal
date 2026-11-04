@@ -160,7 +160,7 @@ higher rank, multidimensional parents, and general preservation criteria—remai
 
 Status: exact cyclic quotient-radius, finite-rank character/fixed-subspace, supplied-witness polar-transport, principal-value frame/projector, matrix-`L2Operator`, mixed Frobenius/operator approximate-compression/projector-mismatch, ordered Hermitian spectral-error carriers, separate maximum-form Weyl and Hoffman--Wielandt RMS bounds, and maximum/RMS ordered-spectrum compression transfer implemented; runtime applicability and closure distribution/stability remain planned.
 
-This stage connects source-neutral finite mathematics to authenticated KSD representations without treating runtime floating-point data as exact by default.
+This stage connects source-neutral finite mathematics to authenticated KSD representations without treating runtime floating-point data as exact by default. The candidate semantic and fail-closed design is recorded in [`BandGauge/ksdft2effmass/authenticated-external-matrix-frame-binding-contract.md`](BandGauge/ksdft2effmass/authenticated-external-matrix-frame-binding-contract.md); it is not a frozen wire schema, implemented parser, checked certificate, or runtime evidence admission.
 
 Exact finite targets:
 

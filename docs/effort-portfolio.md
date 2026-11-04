@@ -70,20 +70,25 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-The current design milestone specifies a fail-closed authenticated external binding contract for
-applying the exact ordered-spectrum theorems to selected KSD, DFT, or Wannier90 data. The contract
-must bind immutable source identity, matrix dimensions and entries or outward enclosures, frames and
-bases, mesh axes and conventions, right-unitary action, normalization, eigenvalue ordering, and
-degeneracy handling. This milestone does not implement a runtime parser, mutate KSD, admit numerical
-evidence, or promote scientific applicability; the checked runtime-certificate count remains zero.
+The current design milestone produced the candidate fail-closed contract at
+[`BandGauge/ksdft2effmass/authenticated-external-matrix-frame-binding-contract.md`](BandGauge/ksdft2effmass/authenticated-external-matrix-frame-binding-contract.md)
+for applying exact ordered-spectrum theorems to selected KSD, DFT, or Wannier90 data. It binds
+immutable source identity, exact scalar and matrix semantics, frames and bases, mesh axes and
+conventions, the frozen right-unitary action, normalization, eigenvalue ordering, degeneracy
+handling, owner retention, and a non-self-referential domain-separated digest preimage. Final
+fresh-context rereview reported `NO_BLOCKING_FINDINGS` on 2026-11-04. The document remains a design
+recommendation rather than a frozen wire schema, parser, checker, retained artifact, or evidence
+admission. It does not mutate KSD or promote scientific applicability; the checked
+runtime-certificate count remains zero.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Draft and independently review the Formal-owned authenticated external matrix/frame binding
-   contract while keeping it distinct from any proposition-specific KSD request/result schema and
-   making no owner-repository mutation.
+1. If implementation is requested, prepare a bounded Phase 1 exact synthetic direct-matrix pilot
+   plan and obtain separate authorization before adding a parser, checker, fixtures, or owner
+   adapter. Real floating DFT or Wannier90 data remain blocked on a separately proved
+   outward-enclosure bridge.
 2. Obtain independent review of the proof companion's provenance-audited background bibliography
    before publication extraction.
 3. Resume proposition-specific schema design only after KSD supplies a frozen exact or

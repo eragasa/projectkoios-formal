@@ -40,6 +40,7 @@ Planning files organize work without changing formal status.
 - `roadmap.md`: dependency-ordered future work.
 - `ecosystem-architecture.md`: repository boundaries.
 - `BandGauge/ksdft2effmass/mathematical-representation-class-architecture-plan.md`: verification-side recommendation for owner-controlled computational representation classes and certificate boundaries.
+- `BandGauge/ksdft2effmass/authenticated-external-matrix-frame-binding-contract.md`: candidate fail-closed contract for binding immutable external matrices, frames, bases, meshes, and conventions to exact theorem-application profiles without treating runtime arrays as formal evidence.
 - `BandGauge/ksdft2effmass/finite-fourier-least-squares-crosswalk.md`: immutable-source motivation and applicability boundary for exact finite-abelian truncation optimality.
 - `BandGauge/ksdft2effmass/finite-periodic-lattice-matrix-least-squares-crosswalk.md`: explicit periodic 1-D/2-D/3-D and arbitrary-rank lattice least-squares and onsite/nononsite power-partition layers, immutable source locators, and remaining owner-specific bindings.
 - `BandGauge/ksdft2effmass/finite-rank-analytic-parent-crosswalk.md`: provisional exact-mathematics crosswalk for the Periodic2D/3D rank-N parent formulas, with dirty-source limitations and runtime nonclaims.
