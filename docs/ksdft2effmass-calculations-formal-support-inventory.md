@@ -58,7 +58,7 @@ Each family is classified by existing support, next exact work, and boundary.
 | PIAB1D | exact finite modes, compression, fitting, rectangular basis algebra | full mode completeness and constant-weight invariance | no refinement-rate, eigensolver, or serialized-matrix claim |
 | Mathieu1D/rank-one Fourier | finite transform, Parseval, truncation, Hermitian pairing, and exact equal-weight least-squares optimality and uniqueness of support truncation over a complete uniform finite-abelian inventory | phase invariance, exact Mathieu matrix Hermiticity, and an owner-specific applicability bridge identifying the runtime design with the exact inventory | no NumPy-solve, numerical-rank, conditioning, binary64 route-agreement, sampled-gap, cutoff, or package claim |
 | Periodic rank-two and cross-dimensional | rank-two alignment, sewing, Fourier tails, decisions, source-neutral complete finite metric shells with exact square/triangular/simple-cubic/FCC indices and exact integer-lattice Euclidean radii satisfying the squared-index, inversion, triangle, elementwise `R_A + 2 R_U`, and complete-shell inclusion bounds, exact pointwise complex-unitary lower/upper-band invariance from supplied coordinate witnesses, exact binary product-mesh 2-D/3-D witnesses separating pointwise band equality from zero-mode Fourier locality with positive omitted power, arbitrary-dimension/arbitrary-rank finite-periodic lattice matrix-Frobenius least-squares optimality and direct onsite/nononsite power partition with explicit 1-D/2-D/3-D specializations, normalized finite product-torus factorization, the normalized positive sine-phase one-circle `J₀` identity, and exact 2-D `J₀(a)²` and 3-D `J₀(2a/3)³` scaling laws | owner-specific period/reciprocal-basis/matrix-axis/support/gauge binding, finite-character/centered-representative quotient-radius compatibility across modular seams, disjoint/exhaustive runtime onsite classification and direct-sum binding, owner-specific torus-coordinate/phase/measure and analytic-comparator binding, and calculation-specific certificates after schema freeze | no runtime gauge/eigensolver/mesh/basis or external-inventory authentication, NumPy solve, numerical rank or conditioning, binary64 summation or route agreement, quadrature or finite-to-continuum certification, external `J₀` comparator binding, physical hopping-range inference, tolerance claim, or material transfer across families |
-| Higher-rank D1 | arbitrary-rank frame/compression covariance, exact finite-rank analytic-parent qualification, exact right-unitary gauge construction, fixed-unitary Fourier invariance, exact finite-rank and character-gauge locality-separation witnesses, a conditional fixed-subspace compression bridge, Procrustes minimality under supplied polar witnesses, finite-mesh alignment-family semantics, and finite matrix algebra | polar transport and seam closure, principal-angle frame/projector identities, approximate fixed-subspace compression, general-rank spectral perturbation, quantitative gauge-tail bounds, and authenticated runtime binding | schema-free summaries, numerical SVD ranks, binary64 orthonormality, and sampled objectives are not evidence |
+| Higher-rank D1 | arbitrary-rank frame/compression covariance, exact finite-rank analytic-parent qualification, exact right-unitary gauge construction, fixed-unitary Fourier invariance, exact finite-rank and character-gauge locality-separation witnesses, a conditional fixed-subspace compression bridge, Procrustes minimality under supplied polar witnesses, exact neighbor/sequential/periodic-seam transport structures with projector preservation, known-gauge recovery, and conditional exact closure, exact positive-polar principal-value frame/projector identities and factor-two bounds, finite-mesh alignment-family semantics, and finite matrix algebra | closure distribution and lower-singular-value transport stability, approximate fixed-subspace compression, general-rank spectral perturbation, quantitative gauge-tail bounds, and authenticated runtime binding | schema-free summaries, numerical SVD ranks/principal angles, binary64 orthonormality, sampled objectives, and runtime loop closure are not evidence |
 | Synthetic strain and coordinates | exact FCC--Bain matrices, determinant and inverse identities, general integer-lattice quotient admission certificates, finite positive diagonal quotients, cubic-quotient admission, and the exact mixed-modulus condition `N₂=N₃ ∧ N₁∣N₂` | owner-specific binding of the selected runtime periods/common-cell convention, plus area/volume, reciprocal-map, and shell-symmetry identities | geometry and exact quotient algebra only; no runtime mesh, convergence, elasticity, phase-stability, or execution claim |
 | Spin spaces | spin lift, partial-trace projection, Pauli residuals | basis-permutation, spin-rotation, and time-reversal identities | no authored `4×4` data or runtime result binding |
 | 1-D defects and independent routes | finite folding, route commutativity, and source-neutral twisted cyclic finite-difference algebra | exact conjugacy between uniform-link and seam-localized twist gauges, multidimensional seam consistency, and a weighted nonunitary-transform theorem under explicit metric hypotheses | no parent, defect, truncation, observable, or binary64 validation |
@@ -162,14 +162,13 @@ The implementation-oriented inspection separates four kinds of remaining work.
 
 ### 1. Reusable exact finite mathematics
 
-1. Polar neighbor transport, sequential transport, periodic closure distribution, uniqueness under nonsingular overlaps, and an explicit rank-deficient boundary.
-2. Principal-angle identities connecting optimal Procrustes frame error, overlap singular values, and projector error.
-3. Approximate fixed-subspace compression bounds, including a bound of the form
+1. Periodic closure distribution and polar-transport perturbation stability under an explicit lower principal-value bound; exact supplied-witness neighbor/sequential/seam transport, known-gauge uniqueness and conditional exact seam closure, and the rank-deficient nonuniqueness boundary are already explicit.
+2. Approximate fixed-subspace compression bounds, including a bound of the form
    `‖CᴴHC - UᴴFᴴHFU‖_F ≤ 2 ‖H‖op ‖C-FU‖_F` under explicit isometry hypotheses, plus separate projector/leakage terms when retained subspaces differ.
-4. General-rank Hermitian spectral perturbation from operator and matrix-Frobenius error, with maximum and root-mean-square eigenvalue consequences kept distinct.
-5. Quantitative `ℓ¹`/`ℓ²` gauge-convolution and omitted-power bounds for gauges without finite Fourier support.
-6. Exact twist-gauge conjugacy and seam consistency.
-7. Later, claim-driven topology, defect-root, Feshbach, and continuum/effective-mass theorem families.
+3. General-rank Hermitian spectral perturbation from operator and matrix-Frobenius error, with maximum and root-mean-square eigenvalue consequences kept distinct.
+4. Quantitative `ℓ¹`/`ℓ²` gauge-convolution and omitted-power bounds for gauges without finite Fourier support.
+5. Exact twist-gauge conjugacy and seam consistency.
+6. Later, claim-driven topology, defect-root, Feshbach, and continuum/effective-mass theorem families.
 
 ### 2. Source-specific representation bridges
 
@@ -192,9 +191,9 @@ Completed historical integration includes QHO, PIAB1D, FCC--Bain, spin, folding,
 
 The next dependency order is:
 
-1. prove polar transport and the principal-angle frame/projector bridge;
-2. prove approximate fixed-subspace compression and general-rank spectral-error transfer;
-3. prove the exact KSD centered-FFT/product-quotient binding; and
+1. prove approximate fixed-subspace compression and general-rank spectral-error transfer;
+2. prove the exact KSD centered-FFT/product-quotient binding;
+3. add closure-distribution/lower-principal-value transport stability when its exact consumer contract is selected; and
 4. freeze one KSD proposition-specific certificate contract before implementing or admitting runtime evidence.
 
 Topology/Wannier, defect/Feshbach, and continuum/effective-mass programs follow only when a concrete owner claim selects their hypotheses. Checked runtime-certificate count remains zero.

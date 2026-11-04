@@ -9,6 +9,8 @@ This directory owns exact finite-rank frame and retained-coordinate alignment al
 - `FiniteMeshProcrustes.lean`: summed pointwise Procrustes objectives, local-witness global minimality and conditional uniqueness, constant/identity comparisons, exact known-inverse controls, and the matrix-unitary bridge into the alignment-family hierarchy.
 - `GaugeIdentity.lean`: separate gauge-family, represented-dimension, action-side, and inner-product-convention identities; identity/composition laws for the exact metric-isometry equation; and named right-action conjugation, composition, conjugate-transpose, and Hermiticity laws.
 - `ExactGaugeConstruction.lean`: dimension-independent exact construction `F'=F₀G`, `H'=GᴴDG`, including orthonormality and complex-spectrum preservation and known-inverse frame/operator recovery by `Gᴴ`.
+- `PolarTransport.lean`: neighbor, sequential, and periodic-seam transport from supplied exact polar witnesses, including projector preservation, pointwise minimality, exact known-gauge recovery and uniqueness controls, and conditional exact seam closure when the endpoint is a known right-unitary gauge of the initial frame.
+- `PrincipalAngleBridge.lean`: exact overlap positive-factor principal values, their `[0,1]` bounds for orthonormal frames, frame/projector defect identities, and the factor-two bridge between optimal Procrustes and projector Frobenius errors.
 
 ## Boundaries
 
@@ -29,7 +31,9 @@ This directory owns exact finite-rank frame and retained-coordinate alignment al
 - An exact polar witness proves global minimality; uniqueness requires a positive-definite factor and is not claimed for rank-deficient factors.
 - On a finite mesh, one supplied witness per point minimizes the summed objective; summed uniqueness requires every local positive factor to be positive definite.
 - The known-inverse route is an explicit exact zero-objective control, not a universal ground truth or an authenticated practical optimizer.
+- Neighbor, sequential, and periodic-seam transport use supplied exact polar witnesses. A conditional control closes exactly when the endpoint is already known to be a right-unitary gauge of the orthonormal initial frame; the seam structure alone does not prove that an external loop closes or distribute a closure correction across the loop.
+- For orthonormal frames, positive-polar-factor eigenvalues lie in `[0,1]`; the minimum frame defect is `2∑(1-σᵢ)` and projector defect is `2∑(1-σᵢ²)`, yielding the exact factor-two comparison. No runtime singular-value ordering or principal-angle array is authenticated.
 - Matrix unitarity is converted to a linear isometry by proving the adjoint identities; no unavailable direct coercion is assumed.
-- It does not construct or authenticate a runtime SVD, numerical rank, tolerance, null-space completion, optimizer output, or certificate.
+- It does not construct or authenticate a runtime SVD, numerical rank, tolerance, null-space completion, optimizer output, transport stability under perturbation, or certificate.
 - It does not select an alignment, establish Fourier locality, bind an optimizer or eigensolver, or validate a physical model.
 - `docs/theorem-manifest.md` is the declaration ledger.

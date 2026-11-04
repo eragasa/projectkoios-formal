@@ -69,19 +69,22 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-No mathematical, certificate, or documentation effort is active after this integration milestone.
-The milestone incorporates the cyclic quotient-radius, arbitrary-retained-dimension character-gauge,
-finite-periodic coordinate-character, supplied-shell, and conditional fixed-subspace representation
-slices into the current source tree after independent review and correction. Certificate and
-numerical-evidence status remain absent, and no runtime or scientific applicability is claimed.
+The current mathematical milestone implements exact supplied-witness polar neighbor, sequential,
+and periodic-seam transport together with the positive-polar principal-value frame/projector bridge.
+It preserves orthonormality and projectors under right transport, proves known-gauge recovery and
+uniqueness controls, places principal values in `[0,1]` for orthonormal frames, and proves the exact
+factor-two comparison between optimal frame and projector Frobenius errors. Affected validation and
+fresh independent review completed; the review's declaration-kind corrections were applied and
+revalidated, and focused rereview found no blocking issue. The milestone is ready for a separately
+authorized integration action. Certificate and numerical-evidence status remain absent, and no
+runtime SVD, mesh, loop closure, or scientific applicability is claimed.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Begin the next reusable theorem slice with polar transport and the principal-angle
-   frame/projector bridge; approximate fixed-subspace and general-rank spectral bounds follow in
-   dependency order.
+1. After focused rereview and protected integration of the active polar/principal-value slice, begin
+   approximate fixed-subspace compression and general-rank spectral bounds in dependency order.
 2. Obtain independent review of the proof companion's provenance-audited background bibliography
    before publication extraction.
 3. Resume proposition-specific schema design only after KSD supplies a frozen exact or

@@ -113,6 +113,8 @@ Status: generic foundations implemented.
 - Rectangular complex frames, ambient projectors, compression/reconstruction, and right-unitary retained-coordinate covariance, including the exact dimension-independent construction `F'=F₀G`, `H'=GᴴDG`, complex-spectrum preservation, and known-inverse frame/operator recovery by `Gᴴ`.
 - Exact complex-unitary right Procrustes algebra for `‖candidate * gauge - reference‖_F²`, including the cross matrix `candidateᴴ * reference`, Frobenius/trace expansion, polar-witness global minimality, and uniqueness under an explicit positive-definite factor; no runtime SVD, rank, tolerance, or rank-deficient completion is authenticated.
 - A finite-mesh Procrustes hierarchy that sums local objectives, lifts one supplied polar witness per point to pointwise and global minimality, requires positive definiteness at every point for summed uniqueness, compares against constant and identity fields, proves exact known-inverse zero-objective controls, and embeds unitary matrices into the abstract identity/global/complete alignment families; no mesh, runtime witness, optimizer, or certificate is authenticated.
+- Exact neighbor, sequential, and periodic-seam polar transport from supplied witnesses, including orthonormality and projector preservation, local/seam objective minimality, exact known-gauge recovery and uniqueness, and conditional exact closure when the endpoint is already a known right-unitary gauge of the initial frame. The closure witness is supplied and does not authenticate or distribute an external loop correction.
+- An exact orthonormal-frame principal-value bridge: positive-polar-factor eigenvalues lie in `[0,1]`, optimal frame error is `2∑(1-σᵢ)`, projector error is `2∑(1-σᵢ²)`, and the former bounds the latter within a factor of two. No runtime SVD, ordering, rank, or principal-angle array is authenticated.
 - Separate singleton, identity, global-unitary, and complete pointwise-unitary alignment families with inclusion-based feasibility transfer and explicit strict-separation witnesses.
 - Sewn reference-minus-aligned-candidate operator differences with exact recovery and zero criteria, pointwise self-adjointness closure under complete-space and explicit self-adjointness hypotheses, exact action/operator-norm bounds, and same-alignment subtraction and Lipschitz stability.
 - Finite dominance, Pareto efficiency, threshold feasibility, minimum cost, and two-channel classification.
@@ -129,8 +131,7 @@ Open:
 
 - owner-specific retained-frame, alignment, self-adjointness-hypothesis, and exact/outward operator-norm binding;
 - exact or independently checked construction of application-specific Procrustes polar witnesses, with rank-deficient completion policy kept external unless a consumer freezes it;
-- exact polar neighbor transport, sequential transport, periodic seam closure, and stability under a stated lower singular-value bound;
-- principal-angle identities connecting optimal frame-alignment error, overlap singular values, and projector error;
+- periodic closure-distribution laws and perturbative polar-transport stability under a stated lower singular-value bound;
 - approximate fixed-subspace compression and leakage bounds when runtime frames or projectors are not exactly related by a right unitary;
 - general-rank Hermitian maximum and root-mean-square eigenvalue perturbation bounds from operator and entrywise matrix-Frobenius error;
 - matrix-Frobenius maximum-tail specialization after selecting an explicit representation bridge;
@@ -157,14 +158,13 @@ higher rank, multidimensional parents, and general preservation criteria—remai
 
 ## R2.6 — implementation applicability and approximate representation bridges
 
-Status: exact cyclic quotient-radius and finite-rank character/fixed-subspace slices implemented and independently reviewed; runtime applicability and approximate-representation bridges remain planned.
+Status: exact cyclic quotient-radius, finite-rank character/fixed-subspace, supplied-witness polar-transport, and principal-value frame/projector slices implemented; runtime applicability, closure distribution/stability, and approximate-representation bridges remain planned.
 
 This stage connects source-neutral finite mathematics to authenticated KSD representations without treating runtime floating-point data as exact by default.
 
 Exact finite targets:
 
-- polar frame transport, closure, uniqueness, and lower-singular-value stability;
-- principal-angle frame/projector error identities;
+- polar closure distribution and lower-singular-value perturbation stability beyond the implemented exact supplied-witness transport and known-gauge uniqueness control;
 - approximate compression covariance and separate subspace-leakage terms;
 - general-rank Hermitian spectral perturbation;
 - quantitative gauge-tail convolution and omitted-power bounds;

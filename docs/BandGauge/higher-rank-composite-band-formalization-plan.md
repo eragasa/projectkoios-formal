@@ -159,7 +159,7 @@ Each declared support gives one attainable cost/operator/spectral objective poin
 
 Current canonical reusable modules cover finite sewing, reference-minus-aligned-candidate operator differences and their sewing closure, rectangular complex frames, ambient projectors, compression/reconstruction, right-unitary retained-coordinate covariance, exact finite-rank analytic-parent gap and ordering controls, exact right-unitary gauge construction and recovery, explicit identity/global/complete alignment-family semantics and strict-separation witnesses, finite Fourier algebra, weighted Frobenius losses, fixed-unitary equivariance, exact character-phase mode shifts, scalar-conjugation triviality, pointwise-unitary coefficient-change and Frobenius boundaries, finite decisions, reduction bases, spin-independent projection, spin Pauli residuals, folding, route identities, pointwise gauge convolution, support-radius growth, and exact source-neutral integer lattice shell radii.
 
-The current integration milestone includes the independently reviewed cyclic quotient-radius proofs and arbitrary-retained-dimension character-gauge/fixed-subspace separation proofs. The fixed-subspace bridge remains conditional on an exact ambient-compression binding, and the supplied-shell results retain caller-supplied exact radii and cutoffs.
+The current exact layer also includes neighbor, sequential, and periodic-seam transport structures from supplied polar witnesses, exact known-gauge recovery, uniqueness, and conditional seam-closure controls, and the orthonormal-frame principal-value bridge `E_frame=2∑(1-σᵢ)`, `E_projector=2∑(1-σᵢ²)`, with `E_frame≤E_projector≤2E_frame`. The fixed-subspace bridge remains conditional on an exact ambient-compression binding, the supplied-shell results retain caller-supplied exact radii and cutoffs, and no runtime SVD, mesh, transport loop, or seam closure is authenticated.
 
 These source-neutral results do not bind the owner protocol's runtime arrays or prove its case coverage.
 
@@ -169,12 +169,11 @@ The remaining obligations divide into exact mathematics, owner-specific represen
 
 ### Exact reusable mathematics
 
-1. Polar neighbor transport, sequential transport, periodic closure distribution, and uniqueness under nonsingular overlaps, with rank-deficient completion kept explicit.
-2. Principal-angle identities connecting optimal Procrustes frame error, overlap singular values, and projector error.
-3. Approximate fixed-subspace compression bounds and separate leakage terms when reference and candidate projectors differ.
-4. General-rank Hermitian spectral perturbation, keeping maximum-eigenvalue and root-mean-square bounds distinct.
-5. Quantitative gauge-convolution and omitted-power bounds for gauges without finite Fourier support.
-6. Exact twist-gauge conjugacy and quotient-seam consistency where finite periodic operators use distributed or seam-localized phases.
+1. Periodic closure distribution and polar-transport perturbation stability under an explicit lower principal-value bound; supplied-witness neighbor/sequential/seam transport and exact known-gauge uniqueness and conditional seam closure are implemented, while rank-deficient completion remains explicit and external.
+2. Approximate fixed-subspace compression bounds and separate leakage terms when reference and candidate projectors differ.
+3. General-rank Hermitian spectral perturbation, keeping maximum-eigenvalue and root-mean-square bounds distinct.
+4. Quantitative gauge-convolution and omitted-power bounds for gauges without finite Fourier support.
+5. Exact twist-gauge conjugacy and quotient-seam consistency where finite periodic operators use distributed or seam-localized phases.
 
 ### Owner-specific bindings
 
@@ -201,12 +200,13 @@ Work proceeds from abstract frames to retained evidence. Basic frame, covariance
 4. Connect exact aligned fields to finite Fourier truncation and support growth. *(implemented source-neutrally)*
 5. Add common-threshold decision semantics. *(implemented source-neutrally for supplied finite inventories)*
 6. Integrate independently reviewed cyclic-radius and character-gauge/fixed-subspace exact slices. *(implemented source-neutrally in the current milestone)*
-7. Prove polar transport and the principal-angle frame/projector bridge.
+7. Prove polar transport and the principal-angle frame/projector bridge. *(implemented source-neutrally for supplied exact polar witnesses, including principal values in `[0,1]` and factor-two frame/projector error bounds; closure distribution and perturbative stability remain open)*
 8. Prove approximate fixed-subspace compression and general-rank spectral-error transfer.
 9. Prove the owner-specific centered-FFT/product-quotient representation bridge.
-10. Freeze the owner certificate schema.
-11. Verify one retained case family independently.
-12. Add source-specific instantiations and dossiers.
+10. Add closure-distribution/lower-principal-value transport stability when its consumer contract is selected.
+11. Freeze the owner certificate schema.
+12. Verify one retained case family independently.
+13. Add source-specific instantiations and dossiers.
 
 ## Nonclaims
 
