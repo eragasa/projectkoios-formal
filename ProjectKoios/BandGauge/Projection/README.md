@@ -1,8 +1,22 @@
 # BandGauge projection
 
-This directory owns retained compression, invariant-subspace reconstruction, leakage bounds,
-and spectral-projection support results. Projection remains distinct from gauge change,
-disentanglement, Fourier conversion, and truncation.
+This directory owns retained compression, invariant-subspace reconstruction, leakage quantities,
+approximate frame/projector mismatch bounds, and spectral-projection support results. Projection
+remains distinct from gauge change, disentanglement, Fourier conversion, and truncation.
+
+`ApproximateCompression.lean` provides:
+
+- `BG-PROJECTION-THM-009/010`, matrix-`L2Operator` compression mismatch bounds for two exact
+  orthonormal frames and for the frozen right-unitary convention;
+- `BG-PROJECTION-DEF-012` and `BG-PROJECTION-THM-011/013`, an exact compressed-action
+  reproduction residual, its algebraic zero criterion, and its invariant-range meaning under exact
+  orthonormality; and
+- `BG-PROJECTION-THM-012`, a separate ambient projector-sandwich mismatch bound when retained
+  projectors differ.
+
+These results use exact finite matrices and exact orthonormality. They are operator-norm results,
+not the still-open mixed operator/Frobenius estimate, and do not authenticate runtime frames,
+projectors, arrays, or eigensolver output.
 
 `LaurentObstruction.lean` implements the algebraic core of the Ragasa2026b two-band
 counterexample:

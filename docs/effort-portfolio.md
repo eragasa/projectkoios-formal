@@ -69,22 +69,20 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-The current mathematical milestone implements exact supplied-witness polar neighbor, sequential,
-and periodic-seam transport together with the positive-polar principal-value frame/projector bridge.
-It preserves orthonormality and projectors under right transport, proves known-gauge recovery and
-uniqueness controls, places principal values in `[0,1]` for orthonormal frames, and proves the exact
-factor-two comparison between optimal frame and projector Frobenius errors. Affected validation and
-fresh independent review completed; the review's declaration-kind corrections were applied and
-revalidated, and focused rereview found no blocking issue. The milestone is ready for a separately
-authorized integration action. Certificate and numerical-evidence status remain absent, and no
-runtime SVD, mesh, loop closure, or scientific applicability is claimed.
+The current mathematical milestone adds exact approximate-compression structure for nonempty
+finite retained spaces. It proves matrix-`L2Operator` bounds for two orthonormal-frame compressions,
+the frozen right-unitary specialization, and differing ambient projector sandwiches; it also defines
+an exact compressed-action reproduction residual, proves its algebraic zero criterion, and proves its invariant-range interpretation under exact orthonormality. The mixed operator/Frobenius estimate and
+general-rank spectral-error transfer remain next. Certificate and numerical-evidence status remain
+absent, and no runtime orthonormality, leakage, frame/projector binding, eigensolver output, or
+scientific applicability is claimed.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. After focused rereview and protected integration of the active polar/principal-value slice, begin
-   approximate fixed-subspace compression and general-rank spectral bounds in dependency order.
+1. Validate and independently review the active matrix-`L2Operator` approximate-compression slice,
+   then extend it to the mixed Frobenius target and general-rank spectral bounds in dependency order.
 2. Obtain independent review of the proof companion's provenance-audited background bibliography
    before publication extraction.
 3. Resume proposition-specific schema design only after KSD supplies a frozen exact or
