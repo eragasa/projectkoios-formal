@@ -35,9 +35,13 @@ smallness, exact runtime orthonormality, or invariance of an unauthenticated ext
 
 `OrderedSpectralCompression.lean` provides `BG-PROJECTION-THM-021/022`: the maximum canonical
 ordered-eigenvalue error between retained compressions is at most `2‖H‖op‖C-F‖F`, including the
-frozen right-unitary specialization with represented reference `Uᴴ(FᴴHF)U`. This transfers only the
-maximum-form Weyl bound. The distinct RMS/Frobenius Hoffman--Wielandt result remains open, and no
-runtime frame, matrix, gauge, or eigensolver output is authenticated.
+frozen right-unitary specialization with represented reference `Uᴴ(FᴴHF)U`. This transfers the
+maximum-form Weyl bound.
+
+`OrderedSpectralRmsCompression.lean` separately provides `BG-PROJECTION-THM-023` through `025`:
+the Hoffman--Wielandt RMS error is at most `‖A-B‖F/√N`, and exact orthonormal-frame compression gives
+`RMS ≤ 2‖H‖op‖C-F‖F/√N`, including the frozen right-unitary specialization. Maximum and RMS
+conclusions remain distinct. No runtime frame, matrix, gauge, or eigensolver output is authenticated.
 
 `LaurentObstruction.lean` implements the algebraic core of the Ragasa2026b two-band
 counterexample:

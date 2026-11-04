@@ -36,6 +36,7 @@ import ProjectKoios.BandGauge.Foundations.RankTwoConjugation
 import ProjectKoios.BandGauge.Foundations.FiniteRankAnalyticParent
 import ProjectKoios.BandGauge.Foundations.HermitianSpectralError
 import ProjectKoios.BandGauge.Foundations.HermitianEigenvaluePerturbation
+import ProjectKoios.BandGauge.Foundations.HermitianEigenvalueRmsPerturbation
 import ProjectKoios.BandGauge.Decision.FinitePareto
 import ProjectKoios.BandGauge.Decision.FiniteCutoff
 import ProjectKoios.BandGauge.Decision.FiniteCompatibility
@@ -78,6 +79,7 @@ import ProjectKoios.BandGauge.Projection.SpectralProjectionRange
 import ProjectKoios.BandGauge.Projection.ApproximateCompression
 import ProjectKoios.BandGauge.Projection.MixedNormCompression
 import ProjectKoios.BandGauge.Projection.OrderedSpectralCompression
+import ProjectKoios.BandGauge.Projection.OrderedSpectralRmsCompression
 import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Certificates.IntervalDecision
 import ProjectKoios.BandGauge.Certificates.RankTwoSeparationBox
@@ -510,6 +512,10 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Projection.rightUnitaryRepresentedOperator_isHermitian
 #print axioms ProjectKoios.BandGauge.Projection.compression_orderedEigenvalueMaxError_frob_le
 #print axioms ProjectKoios.BandGauge.Projection.compression_rightUnitaryFrame_orderedEigenvalueMaxError_frob_le
+#print axioms ProjectKoios.BandGauge.Projection.matrixFrobeniusNorm_sq_eq_sum_entry
+#print axioms ProjectKoios.BandGauge.Projection.orderedEigenvalueRmsError_le_normalizedFrobenius
+#print axioms ProjectKoios.BandGauge.Projection.compression_orderedEigenvalueRmsError_frob_le
+#print axioms ProjectKoios.BandGauge.Projection.compression_rightUnitaryFrame_orderedEigenvalueRmsError_frob_le
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteCharacterKernel
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierReconstruction_coefficients
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.card_smul_finiteFourierCoefficient
@@ -862,6 +868,12 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Foundations.symmetricEigenvalue_abs_sub_le_operatorNorm
 #print axioms ProjectKoios.BandGauge.Foundations.orderedHermitianEigenvalue_abs_sub_le_l2OperatorNorm
 #print axioms ProjectKoios.BandGauge.Foundations.orderedEigenvalueMaxError_le_l2OperatorNorm
+#print axioms ProjectKoios.BandGauge.Foundations.orthonormalOverlapSq_mem_doublyStochastic
+#print axioms ProjectKoios.BandGauge.Foundations.doublyStochastic_bilinear_le_sorted
+#print axioms ProjectKoios.BandGauge.Foundations.paired_sqDiff_le_doublyStochastic
+#print axioms ProjectKoios.BandGauge.Foundations.symmetricEigenvalue_sqSum_le_basisAction
+#print axioms ProjectKoios.BandGauge.Foundations.orderedHermitianEigenvalue_sqSum_le_entrywiseFrobenius
+#print axioms ProjectKoios.BandGauge.Foundations.orderedEigenvalueRmsError_sq_le_entrywiseFrobeniusAverage
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_traceless
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.alignedSplittingFields_commonPower
 #print axioms ProjectKoios.BandGauge.Papers.Ragasa2026A.abs_operatorCorrelation_le_commonPower

@@ -132,8 +132,8 @@ Open:
 - owner-specific retained-frame, alignment, self-adjointness-hypothesis, and exact/outward operator-norm binding;
 - exact or independently checked construction of application-specific Procrustes polar witnesses, with rank-deficient completion policy kept external unless a consumer freezes it;
 - periodic closure-distribution laws and perturbative polar-transport stability under a stated lower singular-value bound;
-- authenticated runtime compression/leakage bounds; exact matrix-`L2Operator` and mixed Frobenius/operator frame-compression and projector-sandwich bounds, maximum ordered-spectrum compression transfer, an exact reproduction residual and its orthonormal invariant-range criterion, and a frame-plus-projector bound relative to a zero-residual reference are implemented, but runtime frames and projectors remain unauthenticated;
-- the general-rank Hermitian Hoffman--Wielandt root-mean-square perturbation bound from entrywise matrix-Frobenius error; the canonical decreasing eigenvalue carrier, separate maximum/RMS error definitions, `RMS ≤ maximum`, characteristic-polynomial zero-error criteria, and maximum-form Weyl/operator-norm bound are implemented;
+- authenticated runtime compression/leakage bounds; exact matrix-`L2Operator` and mixed Frobenius/operator frame-compression and projector-sandwich bounds, separate maximum/RMS ordered-spectrum compression transfer, an exact reproduction residual and its orthonormal invariant-range criterion, and a frame-plus-projector bound relative to a zero-residual reference are implemented, but runtime frames and projectors remain unauthenticated;
+- authenticated runtime use of the implemented general-rank Hermitian Hoffman--Wielandt square-sum and dimension-normalized RMS/Frobenius bounds; the exact canonical carrier, separate maximum/RMS errors, maximum-form Weyl bound, and RMS compression transfer are implemented, but runtime matrices and eigensolver outputs remain unauthenticated;
 - matrix-Frobenius maximum-tail specialization after selecting an explicit representation bridge;
 - runtime interpolation, evaluation-mesh, and exact/outward-rounded residual-channel bindings;
 - an exact owner-specific bridge from NumPy `fft`/`fftshift` and its centered-origin phase convention to the abstract centered inventory and coefficient field;
@@ -158,14 +158,14 @@ higher rank, multidimensional parents, and general preservation criteria—remai
 
 ## R2.6 — implementation applicability and approximate representation bridges
 
-Status: exact cyclic quotient-radius, finite-rank character/fixed-subspace, supplied-witness polar-transport, principal-value frame/projector, matrix-`L2Operator`, mixed Frobenius/operator approximate-compression/projector-mismatch, ordered Hermitian spectral-error carriers, the maximum-form Weyl bound, and maximum ordered-spectrum compression transfer implemented; runtime applicability, closure distribution/stability, and RMS/Hoffman--Wielandt perturbation transfer remain planned.
+Status: exact cyclic quotient-radius, finite-rank character/fixed-subspace, supplied-witness polar-transport, principal-value frame/projector, matrix-`L2Operator`, mixed Frobenius/operator approximate-compression/projector-mismatch, ordered Hermitian spectral-error carriers, separate maximum-form Weyl and Hoffman--Wielandt RMS bounds, and maximum/RMS ordered-spectrum compression transfer implemented; runtime applicability and closure distribution/stability remain planned.
 
 This stage connects source-neutral finite mathematics to authenticated KSD representations without treating runtime floating-point data as exact by default.
 
 Exact finite targets:
 
 - polar closure distribution and lower-singular-value perturbation stability beyond the implemented exact supplied-witness transport and known-gauge uniqueness control;
-- the general-rank Hermitian Hoffman--Wielandt RMS/Frobenius perturbation inequality and its compression-specific transfer beyond the implemented maximum-form Weyl/operator-norm and maximum compression-transfer bounds;
+- authenticated external binding for the implemented general-rank Hermitian Hoffman--Wielandt RMS/Frobenius perturbation and compression-transfer inequalities, without conflating exact mathematics with runtime eigensolver correctness;
 - quantitative gauge-tail convolution and omitted-power bounds;
 - product-quotient radius and twist-seam conjugacy; and
 - claim-driven discrete topology only after orientation, nonzero-overlap, and branch hypotheses are frozen.
@@ -177,7 +177,7 @@ Owner-specific bridges:
 - distinct Wannier90 square-unitary, rectangular-isometry, disentanglement, Hamiltonian-block, and localization semantics; and
 - proposition-specific exact or outward-rounded certificate schemas with independent verification.
 
-The current exact layer discharges the cyclic quotient-radius, finite-rank character-gauge, coordinate-character, supplied-shell, conditional fixed-subspace representation, supplied-witness polar/principal-value, matrix-`L2Operator`, mixed Frobenius/operator approximate compression/projector-mismatch, canonical ordered Hermitian maximum/RMS error carriers, the maximum-form Weyl inequality, and maximum ordered-spectrum compression transfer. These declarations do not establish the distinct Hoffman--Wielandt RMS/Frobenius inequality, runtime applicability, or evidence admission; RMS spectral transfer, authenticated external bindings, numerical evidence, and scientific validation remain separate obligations.
+The current exact layer discharges the cyclic quotient-radius, finite-rank character-gauge, coordinate-character, supplied-shell, conditional fixed-subspace representation, supplied-witness polar/principal-value, matrix-`L2Operator`, mixed Frobenius/operator approximate compression/projector-mismatch, canonical ordered Hermitian maximum/RMS error carriers, the maximum-form Weyl inequality, the separate Hoffman--Wielandt square-sum/RMS inequality, and maximum/RMS ordered-spectrum compression transfer. These declarations do not establish runtime applicability or evidence admission; authenticated external bindings, numerical evidence, and scientific validation remain separate obligations.
 
 ## R3 — continuum Fourier analysis
 

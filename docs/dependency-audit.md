@@ -18,6 +18,7 @@ No floating dependency is used.
 Current modules reuse the following APIs.
 
 - Finite Hermitian spectra: `Matrix.IsHermitian.eigenvalues`, `eigenvectorUnitary`, and `conjStarAlgAut_star_eigenvectorUnitary` from `Mathlib.Analysis.Matrix.Spectrum`.
+- Ordered Hermitian perturbation: symmetric-map eigenbases, Birkhoff--von Neumann decomposition of doubly stochastic matrices, finite rearrangement inequalities, orthonormal-basis Parseval identities, adjoints, and basis-independent trace/Hilbert--Schmidt sums from pinned Mathlib's `Spectrum`, `Birkhoff`, `Rearrangement`, and `Trace` modules.
 - Matrix and block algebra: finite multiplication, `Matrix.fromBlocks`, conjugate transpose, Hermitian predicates, `Complex.normSq`, and complex exponential norm identities.
 - Fourier algebra: finite additive characters, orthogonality, and Pontryagin duality.
 - Normalized product-torus integration: `UnitAddCircle`, its standard total-mass-one Haar measure, finite product measures, `integral_fintype_prod_eq_prod`, and `integral_fintype_prod_eq_pow` from pinned Mathlib's `IntervalIntegral.Periodic` and `Integral.Pi` modules.

@@ -123,3 +123,13 @@ The source-neutral product-mesh tranche passed its declared Lean gates.
 - All 26 new named reports use only `propext`, `Classical.choice`, and `Quot.sound`.
 - At that historical tranche, `ProjectKoios/BandGauge/Fourier/ProductGaugeLocalitySeparation.lean` had SHA-256 `709237449b6ddbcb6fce3e2ab83bc9b09ffe2cb392ecff6f0f23ea9e5f2a21a9`; the later hierarchy migration is recorded separately and does not rewrite this historical byte identity.
 - The exact finite identities do not authenticate an external torus coordinate or gauge, a runtime mesh or comparator, quadrature, finite-mesh approximation, physical hopping range, finite-to-continuum convergence, or scientific adequacy.
+
+### Hermitian Hoffman--Wielandt and RMS compression, 2026-11-04
+
+The source-neutral ordered-spectrum RMS tranche passed its declared affected-target gates.
+
+- The new foundation and projection modules, their direct dependency modules, and `ProjectKoios.Audit` built successfully under Lean 4.35.0 and pinned Mathlib `56a005855ea17e0b0958f73ec801ae140b0a1679`.
+- `./scripts/audit.sh` passed; the scan found no repository-owned `sorry`, `admit`, or `axiom` marker.
+- Audit coverage passed with 1,086 proved theorem/lemma rows and 1,090 unique named axiom reports.
+- All ten new named reports use only `propext`, `Classical.choice`, and `Quot.sound`.
+- The exact results prove an unnormalized ordered-eigenvalue square-sum bound, its nonzero-dimension RMS normalization, and exact-frame compression transfer. They do not authenticate external matrices, frames, eigensolver ordering or degeneracy handling, runtime norm evaluation, scientific applicability, or numerical evidence.

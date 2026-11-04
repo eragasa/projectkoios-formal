@@ -19,8 +19,9 @@ finite type has no canonical order.
 
 The maximum and root-mean-square errors are separate exact definitions.  This module proves their
 basic finite-dimensional relationship and their zero-error characterization through characteristic
-polynomials.  It does not yet prove a Weyl or Hoffman--Wielandt perturbation bound.  It also does
-not authenticate runtime eigensolver ordering, floating-point arrays, degeneracy handling, meshes,
+polynomials.  Separate modules supply the Weyl and Hoffman--Wielandt perturbation bounds.  This
+carrier module does not authenticate runtime eigensolver ordering, floating-point arrays,
+degeneracy handling, meshes,
 or scientific applicability.
 -/
 

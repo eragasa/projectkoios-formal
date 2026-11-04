@@ -18,7 +18,7 @@ frame mismatch.  A separate theorem uses the repository's frozen right-unitary a
 
 These are exact finite-dimensional inequalities.  They do not authenticate runtime frames,
 orthonormality, matrices, gauges, eigensolver output, degeneracy handling, or scientific adequacy.
-They also do not provide the distinct Frobenius-to-RMS Hoffman--Wielandt perturbation result.
+The distinct Frobenius-to-RMS Hoffman--Wielandt transfer is supplied by a separate module.
 -/
 
 @[expose] public section
