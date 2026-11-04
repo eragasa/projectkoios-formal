@@ -74,6 +74,7 @@ import ProjectKoios.BandGauge.Fourier.Gauge.FixedSubspaceRepresentationBridge
 import ProjectKoios.BandGauge.Projection.LaurentObstruction
 import ProjectKoios.BandGauge.Projection.SpectralProjectionRange
 import ProjectKoios.BandGauge.Projection.ApproximateCompression
+import ProjectKoios.BandGauge.Projection.MixedNormCompression
 import ProjectKoios.BandGauge.Certificates.FinitePareto
 import ProjectKoios.BandGauge.Certificates.IntervalDecision
 import ProjectKoios.BandGauge.Certificates.RankTwoSeparationBox
@@ -485,6 +486,23 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Projection.projector_sandwich_difference_decomposition
 #print axioms ProjectKoios.BandGauge.Projection.frameProjector_l2OperatorNorm_le_one
 #print axioms ProjectKoios.BandGauge.Projection.projector_sandwich_difference_l2OperatorNorm_le
+#print axioms ProjectKoios.BandGauge.Projection.frob_sq_eq_sum_col
+#print axioms ProjectKoios.BandGauge.Projection.frob_nonneg
+#print axioms ProjectKoios.BandGauge.Projection.opn_nonneg
+#print axioms ProjectKoios.BandGauge.Projection.frob_conjTranspose
+#print axioms ProjectKoios.BandGauge.Projection.opn_conjTranspose
+#print axioms ProjectKoios.BandGauge.Projection.frob_mul_le_op_mul_frob
+#print axioms ProjectKoios.BandGauge.Projection.frob_add_le
+#print axioms ProjectKoios.BandGauge.Projection.opn_mul_le
+#print axioms ProjectKoios.BandGauge.Projection.frob_mul_le_frob_mul_op
+#print axioms ProjectKoios.BandGauge.Projection.frame_opn_le_one
+#print axioms ProjectKoios.BandGauge.Projection.compression_difference_frob_le
+#print axioms ProjectKoios.BandGauge.Projection.compression_rightUnitaryFrame_frob_le
+#print axioms ProjectKoios.BandGauge.Projection.frameProjector_opn_le_one
+#print axioms ProjectKoios.BandGauge.Projection.projector_sandwich_difference_frob_le
+#print axioms ProjectKoios.BandGauge.Projection.leakage_difference_decomposition
+#print axioms ProjectKoios.BandGauge.Projection.frob_sub_le
+#print axioms ProjectKoios.BandGauge.Projection.leakage_frob_le_of_reference_zero
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteCharacterKernel
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.finiteFourierReconstruction_coefficients
 #print axioms ProjectKoios.BandGauge.Fourier.FiniteAbelian.card_smul_finiteFourierCoefficient

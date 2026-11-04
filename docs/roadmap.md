@@ -132,7 +132,7 @@ Open:
 - owner-specific retained-frame, alignment, self-adjointness-hypothesis, and exact/outward operator-norm binding;
 - exact or independently checked construction of application-specific Procrustes polar witnesses, with rank-deficient completion policy kept external unless a consumer freezes it;
 - periodic closure-distribution laws and perturbative polar-transport stability under a stated lower singular-value bound;
-- the mixed operator/Frobenius fixed-subspace estimate and authenticated runtime bounds; exact matrix-`L2Operator` frame-compression and projector-sandwich mismatch bounds plus an exact reproduction residual and its zero-leakage invariant-range criterion under orthonormality are now implemented, but runtime frames and projectors remain unauthenticated;
+- authenticated runtime compression/leakage bounds; exact matrix-`L2Operator` and mixed Frobenius/operator frame-compression and projector-sandwich bounds, an exact reproduction residual and its orthonormal invariant-range criterion, and a frame-plus-projector bound relative to a zero-residual reference are implemented, but runtime frames and projectors remain unauthenticated;
 - general-rank Hermitian maximum and root-mean-square eigenvalue perturbation bounds from operator and entrywise matrix-Frobenius error;
 - matrix-Frobenius maximum-tail specialization after selecting an explicit representation bridge;
 - runtime interpolation, evaluation-mesh, and exact/outward-rounded residual-channel bindings;
@@ -158,14 +158,14 @@ higher rank, multidimensional parents, and general preservation criteria—remai
 
 ## R2.6 — implementation applicability and approximate representation bridges
 
-Status: exact cyclic quotient-radius, finite-rank character/fixed-subspace, supplied-witness polar-transport, principal-value frame/projector, and matrix-`L2Operator` approximate-compression/projector-mismatch slices implemented; runtime applicability, closure distribution/stability, the mixed Frobenius bridge, and general-rank spectral transfer remain planned.
+Status: exact cyclic quotient-radius, finite-rank character/fixed-subspace, supplied-witness polar-transport, principal-value frame/projector, matrix-`L2Operator`, and mixed Frobenius/operator approximate-compression/projector-mismatch slices implemented; runtime applicability, closure distribution/stability, and general-rank spectral transfer remain planned.
 
 This stage connects source-neutral finite mathematics to authenticated KSD representations without treating runtime floating-point data as exact by default.
 
 Exact finite targets:
 
 - polar closure distribution and lower-singular-value perturbation stability beyond the implemented exact supplied-witness transport and known-gauge uniqueness control;
-- the mixed operator/Frobenius compression estimate and any stronger quantitative leakage bound beyond the implemented exact reproduction residual, algebraic zero criterion, orthonormal-frame invariant-range criterion, matrix-`L2Operator` frame mismatch, and separate projector-sandwich mismatch bounds;
+- general-rank spectral transfer beyond the implemented mixed Frobenius/operator compression, projector-sandwich, and zero-reference frame-plus-projector residual bounds;
 - general-rank Hermitian spectral perturbation;
 - quantitative gauge-tail convolution and omitted-power bounds;
 - product-quotient radius and twist-seam conjugacy; and
@@ -178,7 +178,7 @@ Owner-specific bridges:
 - distinct Wannier90 square-unitary, rectangular-isometry, disentanglement, Hamiltonian-block, and localization semantics; and
 - proposition-specific exact or outward-rounded certificate schemas with independent verification.
 
-The current exact layer discharges the cyclic quotient-radius, finite-rank character-gauge, coordinate-character, supplied-shell, conditional fixed-subspace representation, supplied-witness polar/principal-value, and matrix-`L2Operator` approximate compression/projector-mismatch slices. These declarations do not establish runtime applicability or evidence admission; the mixed Frobenius bridge, general-rank spectral transfer, authenticated external bindings, numerical evidence, and scientific validation remain separate obligations.
+The current exact layer discharges the cyclic quotient-radius, finite-rank character-gauge, coordinate-character, supplied-shell, conditional fixed-subspace representation, supplied-witness polar/principal-value, matrix-`L2Operator`, and mixed Frobenius/operator approximate compression/projector-mismatch slices. These declarations do not establish runtime applicability or evidence admission; general-rank spectral transfer, authenticated external bindings, numerical evidence, and scientific validation remain separate obligations.
 
 ## R3 — continuum Fourier analysis
 

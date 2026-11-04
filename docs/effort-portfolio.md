@@ -69,20 +69,20 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-The current mathematical milestone adds exact approximate-compression structure for nonempty
-finite retained spaces. It proves matrix-`L2Operator` bounds for two orthonormal-frame compressions,
-the frozen right-unitary specialization, and differing ambient projector sandwiches; it also defines
-an exact compressed-action reproduction residual, proves its algebraic zero criterion, and proves its invariant-range interpretation under exact orthonormality. The mixed operator/Frobenius estimate and
-general-rank spectral-error transfer remain next. Certificate and numerical-evidence status remain
-absent, and no runtime orthonormality, leakage, frame/projector binding, eigensolver output, or
-scientific applicability is claimed.
+The current mathematical milestone adds the exact mixed Frobenius/operator compression layer for
+nonempty finite retained spaces. It proves both mixed matrix-multiplication inequalities, the target
+factor-two orthonormal-frame compression estimate, the frozen right-unitary specialization, a
+separate projector-sandwich mismatch bound, and a frame-plus-projector reproduction-residual bound
+relative to an exact zero-residual orthonormal reference. General-rank spectral-error transfer remains
+next. Certificate and numerical-evidence status remain absent, and no runtime orthonormality,
+leakage, frame/projector binding, eigensolver output, or scientific applicability is claimed.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. Validate and independently review the active matrix-`L2Operator` approximate-compression slice,
-   then extend it to the mixed Frobenius target and general-rank spectral bounds in dependency order.
+1. Validate and independently review the active mixed Frobenius/operator compression and leakage
+   slice, then prove general-rank spectral bounds with maximum and RMS consequences kept distinct.
 2. Obtain independent review of the proof companion's provenance-audited background bibliography
    before publication extraction.
 3. Resume proposition-specific schema design only after KSD supplies a frozen exact or

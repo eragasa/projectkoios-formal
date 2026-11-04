@@ -14,9 +14,23 @@ remains distinct from gauge change, disentanglement, Fourier conversion, and tru
 - `BG-PROJECTION-THM-012`, a separate ambient projector-sandwich mismatch bound when retained
   projectors differ.
 
-These results use exact finite matrices and exact orthonormality. They are operator-norm results,
-not the still-open mixed operator/Frobenius estimate, and do not authenticate runtime frames,
-projectors, arrays, or eigensolver output.
+These results use exact finite matrices and exact orthonormality. They do not authenticate runtime
+frames, projectors, arrays, or eigensolver output.
+
+`MixedNormCompression.lean` provides:
+
+- `BG-PROJECTION-DEF-013/014`, explicit boundaries for Mathlib's entrywise Frobenius and
+  Euclidean operator matrix norms;
+- `BG-PROJECTION-THM-014/015`, the mixed multiplication bounds
+  `‖AB‖F ≤ ‖A‖op‖B‖F` and `‖AB‖F ≤ ‖A‖F‖B‖op`;
+- `BG-PROJECTION-THM-016/017`, the target factor-two Frobenius compression bound and its frozen
+  right-unitary specialization;
+- `BG-PROJECTION-THM-018`, the separate Frobenius projector-sandwich mismatch bound; and
+- `BG-PROJECTION-THM-019`, a frame-plus-projector bound for candidate reproduction leakage when
+  an exact orthonormal reference frame has zero residual.
+
+The final leakage result retains separate frame and projector channels. It does not claim runtime
+smallness, exact runtime orthonormality, or invariance of an unauthenticated external subspace.
 
 `LaurentObstruction.lean` implements the algebraic core of the Ragasa2026b two-band
 counterexample:
