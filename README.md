@@ -27,11 +27,12 @@ Semantic directories separate reusable mathematics from crosswalks.
 - `ProjectKoios/QuantumMechanics/`: source-neutral quantum mathematics and controlled models.
 - `ProjectKoios/SolidState/`: finite-lattice and tight-binding algebra.
 - `ProjectKoios/Crosswalks/`: narrow immutable-source constant bridges.
+- `specification/`: source-neutral normative certificate and interchange schemas.
 - `docs/`: policy, provenance, manifests, crosswalks, and plans.
 - `proofs/`: one human-readable dossier per publication-facing statement.
 - `papers/`: non-authoritative working syntheses.
 
-See `docs/README.md` for the documentation index.
+See `docs/README.md` for the documentation index and `specification/index.md` for normative schemas.
 
 ## Validation checks
 

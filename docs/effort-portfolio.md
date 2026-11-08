@@ -70,25 +70,27 @@ Everything else is ready, blocked, deferred, or completed.
 
 ## Active
 
-The current design milestone produced the candidate fail-closed contract at
-[`BandGauge/ksdft2effmass/authenticated-external-matrix-frame-binding-contract.md`](BandGauge/ksdft2effmass/authenticated-external-matrix-frame-binding-contract.md)
-for applying exact ordered-spectrum theorems to selected KSD, DFT, or Wannier90 data. It binds
-immutable source identity, exact scalar and matrix semantics, frames and bases, mesh axes and
-conventions, the frozen right-unitary action, normalization, eigenvalue ordering, degeneracy
-handling, owner retention, and a non-self-referential domain-separated digest preimage. Final
-fresh-context rereview reported `NO_BLOCKING_FINDINGS` on 2026-11-04. The document remains a design
-recommendation rather than a frozen wire schema, parser, checker, retained artifact, or evidence
-admission. It does not mutate KSD or promote scientific applicability; the checked
-runtime-certificate count remains zero.
+The current design milestone extracted the source-neutral exact direct-matrix schemas to
+[`specification/certificates/exact-direct-matrix/`](../specification/certificates/exact-direct-matrix/index.md).
+Version 1 retains the reviewed canonical body/envelope, digest, exact rational-complex semantics,
+theorem profile, deterministic reasons, result, and single-replay record. Version 2 is the mandatory
+Lean/Rust/Mojo architecture and adds two native conformance records, failure-dominates-missing
+precedence, a frozen exact-arithmetic schedule, and cycle-free Lean finalization. Independent review
+identified one v1 and four v2 blocking findings; the corrected canonical documents then passed a
+fresh-context focused rereview with `NO_BLOCKING_FINDINGS`. Version 1 is frozen for audit retention
+only, and version 2 is frozen as the sole future implementation target. The KSD-facing
+[`pilot plan`](BandGauge/ksdft2effmass/exact-synthetic-direct-matrix-pilot-plan.md) now contains only
+motivation, ownership boundaries, implementation gates, and nonclaims. No schema is a parser,
+checker, executable, fixture, native record, owner adapter, retained artifact, production schema, or
+evidence admission. The checked runtime-certificate count remains zero.
 
 ## Ready
 
 Ready work has a bounded next action.
 
-1. If implementation is requested, prepare a bounded Phase 1 exact synthetic direct-matrix pilot
-   plan and obtain separate authorization before adding a parser, checker, fixtures, or owner
-   adapter. Real floating DFT or Wannier90 data remain blocked on a separately proved
-   outward-enclosure bridge.
+1. Obtain the remaining toolchain, dependency, implementation, and clean-base authorizations before
+   adding exact direct-matrix code or fixtures. Real floating DFT or Wannier90 data remain blocked on
+   a separately proved outward-enclosure bridge.
 2. Obtain independent review of the proof companion's provenance-audited background bibliography
    before publication extraction.
 3. Resume proposition-specific schema design only after KSD supplies a frozen exact or
