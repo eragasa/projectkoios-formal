@@ -61,19 +61,26 @@ digest, arithmetic, and semantic routes are independently implemented from the p
 
 ## Required quality gates
 
-Before the mandatory Rust route can participate in an accepted result, Gate 0 must freeze locally
-passing commands for:
+Gate 0 froze locally passing capability-probe commands for formatting, Clippy with warnings denied,
+offline locked tests and builds, dependency/license inspection, bounded raw-byte input, exact
+arithmetic, SHA-256 vectors, and deterministic release output.
 
-- formatting and linting with warnings denied;
-- build and unit tests on the pinned target;
+Before the mandatory Rust route can participate in an accepted result, the separately authorized
+implementation must additionally freeze passing commands for:
+
 - parser fuzzing or an equivalently bounded adversarial corpus;
-- unsafe-code inspection;
-- dependency/license audit;
-- canonical fixture reproduction; and
+- implementation-specific unsafe-code inspection;
+- canonical fixture and mutation-corpus reproduction;
+- deterministic conformance-record serialization; and
 - byte-for-byte differential comparison with Lean and Mojo.
 
 ## Current status
 
-No `rust/` source root exists. A local inventory on 2026-11-04 found `rustc`, Cargo, and Rustup
-absent. No Rust version, target, command set, crate dependency, or distribution artifact has been
-selected, installed, or authorized.
+No `rust/` source root or checker exists. The external 2026-11-08 Gate 0 workspace qualified Rust
+1.99.1 for `aarch64-apple-darwin`, the checksum-pinned standalone distribution, and a vendored exact
+Cargo graph containing 15 external crates. The capability probe passed format, Clippy, offline tests,
+release build, exact arithmetic, SHA-256, byte-boundary, overflow, schedule, linkage, and
+deterministic-build checks. See the [Rust installation guide](../../user-guide/installation/rust/index.md).
+
+The external probe is not repository implementation. Adding the compiler constraint, Cargo graph,
+source, or lock to the repository requires separate authorization.

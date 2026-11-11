@@ -111,17 +111,18 @@ reviewed, not assumed to remove all platform trust.
 
 ## Acceptance-command registry
 
-The Lean commands above are frozen. The remaining commands are Gate 0 blockers until the toolchains
-are installed and probed; architecture documents must not invent commands that have not run locally.
-Before source creation, this table must replace every `UNFROZEN` entry with an exact passing command.
+The Lean commands and external Gate 0 **capability-probe** commands are frozen from successful local
+executions. Architecture documents must not invent implementation commands before those commands run
+successfully. The retained external registry records exact working directories, tool paths,
+environment variables, expected outputs, exit semantics, and probe hashes.
 
-| Area | Format/lint/type command | Test/build command | Status |
+| Area | Qualified Gate 0 command class | Implementation acceptance command | Status |
 |---|---|---|---|
-| Lean | `lake build` plus repository audit | `./scripts/audit.sh` | available |
-| Rust | `UNFROZEN` | `UNFROZEN` | toolchain absent |
-| Mojo | `UNFROZEN` | `UNFROZEN` | toolchain absent |
-| Python | `UNFROZEN` | `UNFROZEN` | package absent |
-| Cross-language | exact differential command `UNFROZEN` | exact finalization command `UNFROZEN` | normative v2 schema frozen; implementation commands remain unfrozen |
+| Lean | `lake build`, pin check, repository audit, audit coverage | certificate finalization `UNFROZEN` | existing harness qualified; finalizer absent |
+| Rust | format, Clippy with warnings denied, offline locked test/build, bounded capability probe, deterministic rebuild | parser/checker and conformance commands `UNFROZEN` | environment qualified; implementation absent |
+| Mojo | `mblack`, `mojo format`, warnings-as-errors builds, Decimo tests, bounded capability probes, deterministic rebuild | parser/checker and conformance commands `UNFROZEN` | environment qualified; implementation absent |
+| Python | package-empty deterministic fixture/mutation capability probe | fixture corpus and orchestration commands `UNFROZEN` | support environment qualified; implementation absent |
+| Cross-language | shared standard vectors only | differential and final acceptance commands `UNFROZEN` | normative v2 schema frozen; implementation absent |
 
 ## Cross-language completion gate
 

@@ -67,8 +67,12 @@ stage and must be recorded.
 ## Current status
 
 Only the architecture documentation, source-neutral v1/v2 specifications, and existing Lean harness
-are present. No Rust, Mojo, or Python source root, parser, checker, executable, fixture corpus, native
-conformance record, or accepted
-result has been created. A local inventory performed on 2026-11-04 found Rust and Mojo toolchains
-absent; that observation is inventory evidence, not a durable toolchain pin. The checked
-runtime-certificate count remains zero.
+are present in the repository. No Rust, Mojo, or Python source root, parser, checker, implementation
+fixture corpus, native conformance record, or accepted result has been created.
+
+The external 2026-11-08 Gate 0 workspace qualified checksum-pinned Rust 1.99.1, Mojo 1.2.0, a
+hash-locked Cargo graph, source-built Decimo, an independent pure-Mojo SHA-256 route, and a
+package-empty Python support environment on Apple ARM64. Those installations, sources, executables,
+and logs are capability-probe artifacts outside the repository, not checker implementation or
+certificate evidence. Gate 0 found no blocking environment issue; implementation and dependency
+addition remain unauthorized. The checked runtime-certificate count remains zero.

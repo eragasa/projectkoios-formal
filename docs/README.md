@@ -64,6 +64,11 @@ Planning files organize work without changing formal status.
 
 - `migrations/fourier-domain-hierarchy.md`: complete stable-ID crosswalk from the former flat Fourier namespace to the `FiniteAbelian`, `Gauge`, `Support`, `Torus`, and `Residual` families.
 
+## User guide
+
+- `user-guide/index.md`: local environment guidance.
+- `user-guide/installation/index.md`: audit-first Lean, Rust, Mojo, Python, platform, and Gate 0 installation qualification.
+
 ## Related indexes
 
 These indexes point to explanatory material.
