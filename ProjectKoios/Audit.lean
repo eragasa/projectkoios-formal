@@ -22,6 +22,7 @@ import ProjectKoios.BandGauge.Alignment.FamilySeparation
 import ProjectKoios.BandGauge.Alignment.UnitaryProcrustes
 import ProjectKoios.BandGauge.Alignment.FiniteMeshProcrustes
 import ProjectKoios.BandGauge.Alignment.GaugeIdentity
+import ProjectKoios.BandGauge.Alignment.ConjugateLinearCoordinates
 import ProjectKoios.BandGauge.Alignment.ExactGaugeConstruction
 import ProjectKoios.BandGauge.Alignment.PolarTransport
 import ProjectKoios.BandGauge.Alignment.PrincipalAngleBridge
@@ -776,6 +777,14 @@ import ProjectKoios.QuantumMechanics.Operator.TestDomain
 #print axioms ProjectKoios.BandGauge.Alignment.frameProjector_distance_eq_polarPrincipalProjectorDefect
 #print axioms ProjectKoios.BandGauge.Alignment.polarPrincipalDefect_bounds
 #print axioms ProjectKoios.BandGauge.Alignment.rightUnitaryProcrustesObjective_frameProjector_bounds
+#print axioms ProjectKoios.BandGauge.Alignment.conjugateVector_conjugateVector
+#print axioms ProjectKoios.BandGauge.Alignment.entrywiseConjugate_mulVec_conjugateVector
+#print axioms ProjectKoios.BandGauge.Alignment.conjugateLinearBasisChange_action
+#print axioms ProjectKoios.BandGauge.Alignment.entrywiseConjugate_conjTranspose
+#print axioms ProjectKoios.BandGauge.Alignment.entrywiseConjugate_mul
+#print axioms ProjectKoios.BandGauge.Alignment.entrywiseConjugate_metricBasisChange
+#print axioms ProjectKoios.BandGauge.Alignment.conjugateLinearBasisChange_metricCompatible
+#print axioms ProjectKoios.BandGauge.Alignment.conjugateLinearCoordinateAction_comp
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_apply
 #print axioms ProjectKoios.BandGauge.Bloch.isBlochOperatorField_operatorFieldDifference
 #print axioms ProjectKoios.BandGauge.Bloch.operatorFieldDifference_swap

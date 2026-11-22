@@ -8,6 +8,7 @@ This directory owns exact finite-rank frame and retained-coordinate alignment al
 - `UnitaryProcrustes.lean`: exact complex-unitary right Procrustes objectives, polar-witness global minimality, and positive-definite uniqueness.
 - `FiniteMeshProcrustes.lean`: summed pointwise Procrustes objectives, local-witness global minimality and conditional uniqueness, constant/identity comparisons, exact known-inverse controls, and the matrix-unitary bridge into the alignment-family hierarchy.
 - `GaugeIdentity.lean`: separate gauge-family, represented-dimension, action-side, and inner-product-convention identities; identity/composition laws for the exact metric-isometry equation; and named right-action conjugation, composition, conjugate-transpose, and Hermiticity laws.
+- `ConjugateLinearCoordinates.lean`: source/target-dimension-explicit conjugate-linear coordinate actions, independent invertible basis changes `M'=A_t⁻¹ M conjugate(A_s)`, algebraic metric compatibility under `G'=AᴴGA`, and the composition rule `(M K)(N K)=M conjugate(N)`.
 - `ExactGaugeConstruction.lean`: dimension-independent exact construction `F'=F₀G`, `H'=GᴴDG`, including orthonormality and complex-spectrum preservation and known-inverse frame/operator recovery by `Gᴴ`.
 - `PolarTransport.lean`: neighbor, sequential, and periodic-seam transport from supplied exact polar witnesses, including projector preservation, pointwise minimality, exact known-gauge recovery and uniqueness controls, and conditional exact seam closure when the endpoint is a known right-unitary gauge of the initial frame.
 - `PrincipalAngleBridge.lean`: exact overlap positive-factor principal values, their `[0,1]` bounds for orthonormal frames, frame/projector defect identities, and the factor-two bridge between optimal Procrustes and projector Frobenius errors.
@@ -23,7 +24,9 @@ This directory owns exact finite-rank frame and retained-coordinate alignment al
 - In the current column-frame convention, retained-space gauge matrices act from the right. The `left` vocabulary constructor does not define an untyped left action.
 - `IsMetricUnitary metric gauge` records only `gaugeᴴ * metric * gauge = metric`; the identity and multiplication theorems prove algebraic closure for a fixed metric, while positive definiteness, metric adjoints, metric-aware objectives, and runtime verification remain separate.
 - `rightGaugeConjugate` is the Euclidean compressed-form congruence `Uᴴ H U`; it composes in right-action order and preserves Hermiticity without asserting frame orthonormality, invertibility, or a nonorthonormal coordinate-endomorphism law.
-- The current API concerns equal retained rank and unitary fiber equivalences.
+- Conjugate-linear coordinate algebra is separate from ordinary complex-linear gauge conjugation: entrywise conjugation is explicit, source and target dimensions may differ, and composition retains conjugation in the middle coordinate space.
+- `IsConjugateLinearMetricCompatible` records only `Mᴴ G_t M = conjugate(G_s)`. Hermiticity, positive definiteness, bijectivity, norm preservation, isometry, and antiunitarity are not inferred; bijectivity has a separate predicate.
+- The current ordinary gauge API concerns equal retained rank and unitary fiber equivalences; the conjugate-linear coordinate module separately permits distinct finite source and target types.
 - `U(1)` remains a valid group identity, while scalar represented-operator conjugation is exactly trivial by `BG-FOURIER-THM-049`; group membership does not require duplicate numerical channels.
 - Feasibility transfers from a smaller family to a larger family only through an explicit inclusion.
 - Supplied nonidentity and two-point witnesses show that reverse feasibility transfer fails in general.
