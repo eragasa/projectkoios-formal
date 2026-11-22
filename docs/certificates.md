@@ -18,6 +18,7 @@ Each class has a distinct conclusion.
 | Finite Pareto checks | implemented | no external table or coverage binding |
 | Three-way interval decisions | implemented | no parser, enclosure-production, or external inventory binding |
 | Evidence acceptance contract | specified as `PKF-BG-EVIDENCE-CONTRACT/1` | not a production schema or artifact |
+| Exact direct-matrix synthetic pilot | source-neutral [v1 and v2 schemas](../specification/certificates/exact-direct-matrix/index.md) independently reviewed, corrected, focused-rereviewed, and frozen; v1 retained only and v2 unimplemented | exact rational Hermitian-pair fixtures only; no owner or runtime evidence |
 | Exact analytic source certificate | one Paper A construction | not runtime or material evidence |
 | Runtime scientific certificate | none | requires retained exact data and a bound checker result |
 

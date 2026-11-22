@@ -705,6 +705,15 @@ objects. It should not call the producer's aggregate-result implementation as it
 
 ### Phase 1: exact direct-matrix pilot
 
+The source-neutral Formal-owned schemas for this bounded synthetic phase are
+[`v1`](../../../specification/certificates/exact-direct-matrix/v1.md) and
+[`v2`](../../../specification/certificates/exact-direct-matrix/v2.md). The KSD-facing
+[`pilot plan`](exact-synthetic-direct-matrix-pilot-plan.md) retains motivation and gates only. The
+co-located Lean/Rust/Mojo/Python ownership decision is recorded in
+[`../../architecture/index.md`](../../architecture/index.md). Version 2 defines both mandatory native
+bindings. Both source-neutral schemas passed independent review and corrected focused rereview;
+implementation remains separately gated.
+
 - define strict canonical compact bytes;
 - implement exact rational scalar, carrier, and dense-matrix decoding;
 - check source identity and exact Hermiticity;
