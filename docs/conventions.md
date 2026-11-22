@@ -46,6 +46,7 @@ Before comparing operators, identify:
 
 Projection, disentanglement, basis change, Fourier conversion, and truncation are different operations.
 For a column frame `F : Ambient × Retained`, the retained-coordinate action `F ↦ F U` is a right action and compression transforms as `H ↦ Uᴴ H U`. A left-action label does not determine a conformable formula without a separately typed row-frame or ambient-action convention. For a nonorthonormal coordinate basis, distinguish a compressed sesquilinear-form matrix from a coordinate endomorphism before selecting `Uᴴ H U` versus `U⁻¹ H U`.
+For a conjugate-linear coordinate action, write the conjugation explicitly: `x ↦ M conjugate(x)`, `M' = A_t⁻¹ M conjugate(A_s)`, and `(M K)(N K) = M conjugate(N)`. Do not model componentwise complex conjugation as a complex-linear map, and do not infer Hermiticity, positive definiteness, bijectivity, isometry, or antiunitarity from the algebraic metric equation alone.
 
 ## Normalized-circle Bessel convention
 

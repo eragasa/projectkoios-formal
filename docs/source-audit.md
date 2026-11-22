@@ -861,3 +861,41 @@ A later read-only inspection examined mathematical implementation paths in the c
 | `6411a6e4d6282ba66d34ab2c531ee1be1aa8d4c7450b9e7575dd627b13edcf6d` | `python/src/ksdft2effmass/campaigns/periodic_1d/defects/finite_rank_oracle/workflow.py` | finite-rank defect roots and oracle comparison |
 
 The inspection motivates polar-transport and principal-angle theorems, approximate fixed-subspace and general-rank spectral bounds, exact FFT and twist-gauge bridges, quantitative gauge-tail bounds, and later claim-specific topology, Wannier, defect, and effective-mass programs. The source-neutral polar-transport and positive-polar principal-value frame/projector slice is implemented in `ProjectKoios/BandGauge/Alignment/PolarTransport.lean` and `ProjectKoios/BandGauge/Alignment/PrincipalAngleBridge.lean`: it consumes supplied exact polar witnesses and proves finite matrix consequences only. The source-neutral approximate-compression modules `ProjectKoios/BandGauge/Projection/ApproximateCompression.lean` and `ProjectKoios/BandGauge/Projection/MixedNormCompression.lean` prove matrix-`L2Operator` and mixed Frobenius/operator frame and projector mismatch bounds, an exact reproduction residual whose zero value characterizes invariant-range closure under exact orthonormality, a separate frame-plus-projector residual bound relative to an exact zero-residual reference, and the explicit operator-to-Frobenius norm bridge. `ProjectKoios/BandGauge/Foundations/HermitianSpectralError.lean` fixes the canonical decreasing, multiplicity-retaining Hermitian eigenvalue carrier and distinct maximum/RMS errors, proves `RMS ≤ maximum`, and characterizes zero error by characteristic-polynomial equality. `ProjectKoios/BandGauge/Foundations/HermitianEigenvaluePerturbation.lean` proves the maximum-form Weyl/operator-norm inequality by a direct finite-dimensional eigenbasis/subspace-intersection argument, while `ProjectKoios/BandGauge/Foundations/HermitianEigenvalueRmsPerturbation.lean` separately proves the unnormalized Hoffman--Wielandt square-sum bound from doubly stochastic eigenbasis overlaps and its dimension-normalized RMS consequence. `ProjectKoios/BandGauge/Projection/OrderedSpectralCompression.lean` and `ProjectKoios/BandGauge/Projection/OrderedSpectralRmsCompression.lean` transfer the distinct maximum and RMS bounds through exact orthonormal-frame compression, including the frozen right-unitary action. None of these modules proves that NumPy or SciPy implements the theorems, that runtime frames are exactly orthonormal, that runtime leakage is small, that a runtime SVD has exact rank or principal values, that runtime eigenvalues have authenticated ordering or degeneracy handling, that a runtime transport loop closes, that binary64 values satisfy exact hypotheses, that a mesh is converged, or that DFT/Wannier90 output is physically adequate. No KSD file was modified during this inspection or formalization.
+
+## Provisional Chapter 9 conjugate-linear coordinate-algebra inspection
+
+A later read-only inspection used an active KSD monograph worktree:
+
+- owner repository: `ksdft2effmass`;
+- worktree: `/Users/eugene/worktrees/ksdft2effmass-silicon-main-package-0matampv`;
+- branch: `work/silicon-gram-rank-enclosure`;
+- checked-out commit: `dac209a60aec502ae05fe84abd0c5eca23d3b4df`;
+- checked-out tree: `99e9a090dcb4a762e7250c9bc616485f674f950b`;
+- cited path: `docs/publications/research-monograph/chapters/symmetry-actions-and-represented-subspaces.tex`;
+- SHA-256 of inspected bytes: `6618147457500455e6b1c50e788436440622733769b3827b935cb3bb35386b34`;
+- dirty-state limitation: 73 short-status entries were present, and the cited Chapter 9 file was
+  untracked. The commit and tree therefore identify only the surrounding checkout, not the cited
+  file bytes. No Git blob or immutable commit locator is claimed for this file.
+
+The authenticated bytes at lines 208–267 define the conjugate-linear coordinate action
+`x ↦ M conjugate(x)`, distinguish antiunitarity from conjugate-linear isometry through bijectivity,
+state the algebraic metric equation `M† G_t M = conjugate(G_s)`, retain conjugation in composition
+`(M K)(N K) = M conjugate(N)`, and give the independent source/target basis-change formula
+`M' = A_t⁻¹ M conjugate(A_s)` with `G'_a = A_a† G_a A_a`. Lines 270–279 provide a `2 × 2`
+diagnostic showing that a norm check alone does not detect omission of source-coordinate
+conjugation.
+
+`ProjectKoios/BandGauge/Alignment/ConjugateLinearCoordinates.lean` formalizes the source-neutral
+finite algebra for arbitrary finite source and target coordinate types, using independently
+invertible `Matrix.GeneralLinearGroup` basis matrices. It proves the transformed coordinate action,
+preservation of the algebraic metric equation, and the distinct-middle-type composition identity.
+The optional `2 × 2` diagnostic is not promoted to a separate named declaration because the generic
+basis-change lemma already covers it and the source bytes are not immutable.
+
+This formalization does not infer Hermiticity, positive definiteness, bijectivity, norm
+preservation, isometry, or antiunitarity from the algebraic metric equation. It does not formalize
+operator covariance, symmetry-sector closure, Wigner theory, runtime residual tolerances, external
+matrix authentication, scientific applicability, or publication status. The detailed formula and
+nonclaim crosswalk is
+[`docs/BandGauge/ksdft2effmass/conjugate-linear-coordinate-algebra-crosswalk.md`](BandGauge/ksdft2effmass/conjugate-linear-coordinate-algebra-crosswalk.md).
+No KSD file, index, branch, worktree, or configuration was modified.

@@ -65,6 +65,24 @@ namespace, or promote schema-free development output to retained evidence.
 
 Paper 3 remains pre-results for the new higher-rank campaign: the selected D1 P0/G0 protocol has no implementation, run, result, retained evidence package, submission, or publication asserted by the source. Its exact prose certificates do not establish numerical convergence, locality, or scientific acceptance.
 
+## Research monograph Chapter 9 — provisional conjugate-linear coordinate crosswalk
+
+A read-only inspection of untracked Chapter 9 bytes provisionally motivates
+`ProjectKoios.BandGauge.Alignment.ConjugateLinearCoordinates`. The exact source path, SHA-256,
+line locators, 73-entry dirty-worktree limitation, and absence of an immutable Git blob are recorded
+in [`source-audit.md`](source-audit.md). The detailed correspondence is
+[`BandGauge/ksdft2effmass/conjugate-linear-coordinate-algebra-crosswalk.md`](BandGauge/ksdft2effmass/conjugate-linear-coordinate-algebra-crosswalk.md).
+
+| Chapter 9 declaration/location | Source status | Lean status |
+|---|---|---|
+| `lem:symmetry-antiunitary-basis-change` and `eq:symmetry-antiunitary-basis-change`, lines 239–251 | lemma in untracked monograph bytes: `M'=A_t⁻¹M conjugate(A_s)` for invertible source and target bases | `BG-ALIGNMENT-DEF-050` through `BG-ALIGNMENT-DEF-054` and `BG-ALIGNMENT-LEM-012` through `BG-ALIGNMENT-LEM-017` formalize the exact finite coordinate algebra, including distinct source and target dimensions |
+| `eq:symmetry-antiunitary-metric` and `eq:symmetry-antiunitary-metric-basis-change`, lines 223–267 | algebraic metric equation and its coordinate invariance; source prose separately requires bijectivity for antiunitarity | `BG-ALIGNMENT-DEF-055/056` separate metric compatibility from bijectivity; `BG-ALIGNMENT-LEM-018` proves preservation without Hermitian, positive-definite, bijective, isometric, or antiunitary premises |
+| composition warning, lines 231–236 | `(M K)(N K)=M conjugate(N)` with conjugation retained in the compatible middle space | `BG-ALIGNMENT-LEM-019` proves the identity for distinct finite source, middle, and target types |
+| analytical `2 × 2` check, lines 270–279 | diagnostic prose distinguishing the correct conjugate-linear formula from the ordinary linear formula | not a separate named Lean declaration; the generic basis-change lemma subsumes the algebra, and no runtime or source-immutability claim follows |
+
+These declarations are supporting exact algebra, not a novelty, physical-symmetry, antiunitary-sector,
+source-publication-completion, runtime, or scientific-validation claim.
+
 ## Controlled model systems — not publication claims
 
 The QHO1D and PIAB1D modules are exact, source-neutral controlled-model mathematics motivated by
