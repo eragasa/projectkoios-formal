@@ -79,10 +79,12 @@ definitions and their nonnegativity and occupation-weight identities remain full
 and the theorem manifest without separate dossiers.
 
 The dossier uses the inspected `Kohn1965.pdf` SHA-256 and exact Section II.A equation locators while
-marking the References-owned canonical identity unresolved. The theorem is exact remainder algebra:
-it does not establish noninteracting representability, orbital existence, continuum normalization,
-functional differentiability, an effective potential or eigenproblem, LDA, self-consistency,
-finite-basis execution, PAW, or scientific validity.
+marking the References-owned canonical identity unresolved. The declarations and initial dossier
+draft were introduced at immutable Formal commit
+`f4630b815096586516d86e590d598aa4c451411d`. The theorem is exact remainder algebra: it does not
+establish noninteracting representability, orbital existence, continuum normalization, functional
+differentiability, an effective potential or eigenproblem, LDA, self-consistency, finite-basis
+execution, PAW, or scientific validity.
 
 ## Selected integer lattice radius bridge
 

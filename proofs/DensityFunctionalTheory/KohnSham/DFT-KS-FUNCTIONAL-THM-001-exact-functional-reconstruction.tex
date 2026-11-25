@@ -58,8 +58,8 @@ Immutable inspected bytes & \texttt{Kohn1965.pdf}, SHA-256 \hash{71df6859ee7cb16
 Exact locator & Section II.A, equations (2.1)--(2.2); equation (2.3) is an approximation boundary not used by this theorem \\
 Inspection limitation & image-scan source; equations were checked against the rendered page image rather than accepted from OCR alone \\
 Reference authority & proposed citekey \texttt{Kohn1965}; References-owned canonical identity remains unresolved \\
-Formal candidate base & branch \texttt{review/conjugate-linear-coordinate-algebra}, base commit \hash{07dc7df121c0f14af2c83f1119f9b5ba1fa40342} \\
-Formal provenance limitation & declaration and dossier are currently uncommitted; immutable introduction commit pending \\
+Formal introduction & branch \texttt{review/conjugate-linear-coordinate-algebra}, commit \hash{f4630b815096586516d86e590d598aa4c451411d} \\
+Dossier provenance & declaration and initial draft dossier were introduced together at that immutable commit; this dossier remains a draft \\
 \bottomrule
 \end{tabularx}
 The declaration \texttt{adapts} the exact decomposition obtained by combining the source equations.
@@ -126,7 +126,7 @@ theorem ScalarKohnShamFunctionalData.
 Lean toolchain & Lean \texttt{4.35.0}, commit \hash{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
 Mathlib revision & \hash{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
 Imports & constrained-search foundations and \texttt{Mathlib.Tactic.Ring} \\
-Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed on the candidate tree \\
+Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed for the introduction tree at \hash{f4630b815096586516d86e590d598aa4c451411d} \\
 \bottomrule
 \end{tabularx}
 
@@ -155,7 +155,6 @@ finite-basis matrices, PAW, numerical evidence, or a material claim.
 \section{Unresolved questions}
 \begin{itemize}
 \item Resolve the proposed \texttt{Kohn1965} identity through \texttt{projectkoios-references}.
-\item Record the immutable Formal introduction commit after the candidate tree is committed.
 \item Later layers must add explicit noninteracting representability and orbital realization hypotheses.
 \item No independent expert review has been completed.
 \end{itemize}
@@ -166,6 +165,7 @@ finite-basis matrices, PAW, numerical evidence, or a material claim.
 Date & Revision & Reviewer or process & Outcome and limitations \\
 \midrule
 2026-11-26 & initial draft & AI-assisted maintainer review & exact algebra, scanned-source locator, statement delta, proof, and axiom report checked; immutable Formal commit, canonical identity, and independent review pending \\
+2026-11-26 & provenance backfill & repository history review & Formal introduction fixed at \hash{f4630b815096586516d86e590d598aa4c451411d}; canonical identity and independent review remain pending \\
 \bottomrule
 \end{tabularx}
 
