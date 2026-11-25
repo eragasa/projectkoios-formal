@@ -70,6 +70,20 @@ initial dossier drafts were introduced at immutable Formal commit
 wavefunction spaces, particle-number or density representability, minimizer existence, degenerate
 Hohenberg--Kohn theory, Kohn--Sham orbitals, PAW, runtime evidence, or scientific validation.
 
+## Selected scalar Kohn--Sham functional tranche
+
+The first scalar Kohn--Sham layer has a dossier for `DFT-KS-FUNCTIONAL-THM-001`, the exact
+reconstruction of a supplied universal internal-energy functional from supplied noninteracting
+kinetic and Hartree terms plus the exchange--correlation remainder. The finite orbital-density
+definitions and their nonnegativity and occupation-weight identities remain fully recorded in Lean
+and the theorem manifest without separate dossiers.
+
+The dossier uses the inspected `Kohn1965.pdf` SHA-256 and exact Section II.A equation locators while
+marking the References-owned canonical identity unresolved. The theorem is exact remainder algebra:
+it does not establish noninteracting representability, orbital existence, continuum normalization,
+functional differentiability, an effective potential or eigenproblem, LDA, self-consistency,
+finite-basis execution, PAW, or scientific validity.
+
 ## Selected integer lattice radius bridge
 
 The exact squared-index/radius bridge has a selected dossier for
