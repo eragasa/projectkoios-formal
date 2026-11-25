@@ -64,12 +64,11 @@ density. Supporting definitions and lemmas remain fully recorded in Lean and the
 without separate dossiers.
 
 These are draft dossiers. The inspected Hohenberg--Kohn, Levy, and Lieb PDF bytes are identified by
-SHA-256, while their References-owned canonical identities remain unresolved. The corresponding
-Formal declarations are proved in the current candidate tree but are not yet committed, so their
-immutable Formal introduction commit remains explicitly pending. The declarations do not establish
-continuum wavefunction spaces, particle-number or density representability, minimizer existence,
-degenerate Hohenberg--Kohn theory, Kohn--Sham orbitals, PAW, runtime evidence, or scientific
-validation.
+SHA-256, while their References-owned canonical identities remain unresolved. The declarations and
+initial dossier drafts were introduced at immutable Formal commit
+`970fd14a87de34f1acdac05e2f7ea7980f46a9f2`. The declarations do not establish continuum
+wavefunction spaces, particle-number or density representability, minimizer existence, degenerate
+Hohenberg--Kohn theory, Kohn--Sham orbitals, PAW, runtime evidence, or scientific validation.
 
 ## Selected integer lattice radius bridge
 
