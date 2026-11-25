@@ -38,6 +38,17 @@ Crosswalk modules bind narrow immutable constants.
 |---|---|---|
 | `Crosswalks/PhysKit/` | immutable exact FCC--Bain constants, uniform-modulus consequences, positive diagonal-quotient finiteness, and exact mixed-modulus admission criteria | Python execution, package mirroring, runtime mesh identity, convergence, physical applicability |
 
+## Density functional theory
+
+Density-functional modules begin with source-audited scalar variational foundations.  Orbital,
+finite-basis, PAW, spin, and relativistic layers must import rather than redefine this core.
+
+| Directory | Owns | Excludes |
+|---|---|---|
+| `DensityFunctionalTheory/Foundations/` | abstract real-valued density variational data, ground-state and strict-ground-state predicates, scalar-potential equivalence modulo additive constants, the strict nondegenerate Hohenberg--Kohn variational contradiction, conditional potential recovery with the model-specific shared-state uniqueness step exposed as a hypothesis, and an abstract Levy--Lieb constrained search over the explicitly representable density subtype with an infimum functional, outer variational bound, and equality at a supplied ground-state density | continuum electron function spaces, Coulomb Hamiltonians, particle-number normalization, independent minimizer-existence or uniqueness theorems, degenerate HK theory, ensemble/density-matrix relaxation, Kohn--Sham orbitals, exchange--correlation approximations, PAW, runtime solvers, numerical evidence, and scientific-validation claims |
+| `DensityFunctionalTheory/KohnSham/` | future universal/noninteracting functional decomposition, orbital realization, Euler--Lagrange conditions, and finite-basis specialization | currently no implemented API; no functional derivative, self-consistency, or numerical convergence claim |
+| `DensityFunctionalTheory/PAW/` | future exact transformation, overlap, transformed-operator, and generalized-eigenproblem algebra downstream of orbital Kohn--Sham foundations | currently no implemented API; no dataset, augmentation-sphere, compensation-charge, implementation, or materials claim |
+
 ## Quantum mechanics
 
 Quantum modules separate general mathematics from controlled models.
@@ -49,7 +60,7 @@ Quantum modules separate general mathematics from controlled models.
 | `Dirac.lean` | typed ordinary bras, kets, brackets, and rank-one operators | generalized eigenvectors |
 | `RiggedHilbertSpace.lean` | test-space inclusion and generalized functional embeddings | nuclearity and spectral completeness |
 | `Operator/TestDomain.lean` | dense partial operators and formal-adjoint containment | closedness, adjoint equality, self-adjointness, spectra |
-| `FiniteDimensional/` | compression, reduction, fitting, resolvents, and spin algebra | runtime data and physical interpretation |
+| `FiniteDimensional/` | compression, reduction, fitting, resolvents, spin embeddings and projections, exact Pauli-vector algebra, scalar-plus-Pauli decomposition, fixed-basis collinearity, and exact global `SU(2)` active spin-frame rotations | runtime data, DFT/SOC source bindings, induced `SO(3)` identification, position-dependent frames, and physical interpretation |
 | `FiniteDifference/` | exact lattice, boundary, transfer, and barrier algebra | continuum convergence and numerical scattering |
 | `HarmonicOscillator/` | exact Hermite, ladder, truncation, and comparison algebra | runtime and continuum validation |
 | `Piab1d/` | finite one-dimensional box specialization | general finite-difference ownership |
@@ -77,6 +88,7 @@ FiniteDimensional spin algebra -> SolidState/FiniteLattice
 FiniteLadder -> TruncationDistortion
 FiniteDifference -> Piab1d
 State -> Measurement and Dirac -> RiggedHilbertSpace -> Operator/TestDomain
+DFT/Foundations/Variational -> DFT/Foundations/HohenbergKohn and ConstrainedSearch -> future KohnSham -> future PAW and spin bindings
 TetrahedralSp3 -> TetrahedralSp3sStar and TetrahedralStructureFactors -> VoglSp3sStar
 ```
 

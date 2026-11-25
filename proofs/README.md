@@ -54,6 +54,23 @@ certificate, or scientific model. In particular, fixed-unitary Fourier equivaria
 momentum-dependent gauges, the resolvent equation does not itself prove a nonzero eigenvector, and
 finite loop-phase invariance does not establish continuum topology.
 
+## Selected scalar DFT foundations tranche
+
+The first source-audited scalar density-functional tranche has dossiers for
+`DFT-VARIATIONAL-THM-001`, `DFT-HK-THM-001`, and `DFT-CONSTRAINED-THM-001/002`. They cover the
+strict variational density-separation contradiction, conditional scalar-potential recovery modulo
+constants, the outer constrained-search lower bound, and equality at a supplied ground-state
+density. Supporting definitions and lemmas remain fully recorded in Lean and the theorem manifest
+without separate dossiers.
+
+These are draft dossiers. The inspected Hohenberg--Kohn, Levy, and Lieb PDF bytes are identified by
+SHA-256, while their References-owned canonical identities remain unresolved. The corresponding
+Formal declarations are proved in the current candidate tree but are not yet committed, so their
+immutable Formal introduction commit remains explicitly pending. The declarations do not establish
+continuum wavefunction spaces, particle-number or density representability, minimizer existence,
+degenerate Hohenberg--Kohn theory, Kohn--Sham orbitals, PAW, runtime evidence, or scientific
+validation.
+
 ## Selected integer lattice radius bridge
 
 The exact squared-index/radius bridge has a selected dossier for

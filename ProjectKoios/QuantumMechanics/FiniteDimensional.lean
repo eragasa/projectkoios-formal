@@ -8,5 +8,8 @@ public import ProjectKoios.QuantumMechanics.FiniteDimensional.ReductionBasis
 public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinEmbedding
 public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinIndependentProjection
 public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinPauliResidual
+public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinPauliVector
+public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinPauliDecomposition
+public import ProjectKoios.QuantumMechanics.FiniteDimensional.SpinFrameRotation
 
 /-! Narrow import root for source-neutral finite-dimensional quantum algebra. -/

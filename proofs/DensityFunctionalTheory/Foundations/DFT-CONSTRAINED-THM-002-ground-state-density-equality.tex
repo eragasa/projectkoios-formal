@@ -1,0 +1,178 @@
+% Copyright (c) 2026 Eugene Joseph M. Ragasa.
+% SPDX-License-Identifier: Apache-2.0
+% Author: Eugene Joseph M. Ragasa
+% Formal proof completed: 2026-11-26
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{listings}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\newcommand{\hash}[1]{{\scriptsize\texttt{#1}}}
+
+\title{Project Koios Formal Proof Dossier\\\large DFT-CONSTRAINED-THM-002: Equality at a ground-state density}
+\author{Eugene Joseph M. Ragasa}
+\date{Formal proof completed: 2026-11-26}
+
+\begin{document}
+\raggedright
+\maketitle
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{DFT-CONSTRAINED-THM-002} \\
+Status & proved; no admissions; draft dossier \\
+Lean declaration & \path{ProjectKoios.DensityFunctionalTheory.Foundations.VariationalDensityModel.IsGroundState.densityTotalEnergy_representableDensityOfState} \\
+Owning module & \path{ProjectKoios/DensityFunctionalTheory/Foundations/ConstrainedSearch.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+The theorem proves equality at the density of an already supplied ground state.  It does not prove
+that a ground state or an arbitrary constrained-search minimizer exists.
+
+\section{Exact mathematical statement}
+Let a variational model have density map \(n\), internal energy \(F\), and external energy
+\(E_{\rm ext}\).  For a representable density \(\rho\), let
+\[
+ \mathcal F(\rho)=\inf\{F(\phi):n(\phi)=\rho\},\qquad
+ \mathcal E_v(\rho)=\mathcal F(\rho)+E_{\rm ext}(v,\rho).
+\]
+If \(\psi\) is a ground state for \(v\), then its represented density satisfies
+\[
+ \mathcal E_v(n(\psi))
+ =F(\psi)+E_{\rm ext}(v,n(\psi)).
+\]
+The representable-density object on the left carries \(\psi\) as its witness.
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Primary literature source & M. Levy, ``Universal Variational Functionals of Electron Densities, First-Order Density Matrices, and Natural Spin-Orbitals and Solution of the v-Representability Problem,'' DOI \texttt{10.1073/pnas.76.12.6062} \\
+Immutable inspected bytes & \texttt{Levy1979.pdf}, SHA-256 \hash{996fbf157f4aefe65e946e87c21135b58d6d60903733d155a673461efb806cf4} \\
+Exact locator & equation (5), Theorem II and equation (7), Theorem II proof within equations (8)--(21) \\
+Rigorous background & E. H. Lieb, ``Density Functionals for Coulomb Systems,'' DOI \texttt{10.1002/qua.560240302}; \texttt{Lieb1983.pdf}, SHA-256 \hash{962140e96a0a7d189f9c1f72e37231d9457500b67b6f62e7c08322aedb1d5563}; section 3, equations (3.14)--(3.15), with Theorem 3.3 as a separate continuum attainment result not formalized here \\
+Reference authority & proposed citekeys \texttt{Levy1979} and \texttt{Lieb1983}; canonical References identities remain unresolved \\
+Formal candidate base & branch \texttt{review/conjugate-linear-coordinate-algebra}, base commit \texttt{c210b1d81511b318f23b7438e33d2a78871f0a1c} \\
+Formal provenance limitation & declaration and dossier are currently uncommitted; immutable introduction commit pending \\
+\bottomrule
+\end{tabularx}
+The declaration \texttt{adapts} Levy's equality theorem and \texttt{compares-with} Lieb's density
+variational identity.  The PDF hashes identify inspected bytes but do not establish canonical
+reference authority.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}YYY@{}}
+\toprule
+Source feature & Lean encoding & Delta or limitation \\
+\midrule
+Ground-state density & density of one supplied ground state & no theorem that a ground state exists \\
+Constrained minimum & real \texttt{sInf} of the fixed-density energy fiber & no global minimum is built into the definition \\
+Attainment at the ground density & the supplied ground state is proved to minimize its own fiber & no independent compactness or lower-semicontinuity result \\
+External energy & arbitrary supplied function & no spatial integral or scalar-potential function space \\
+Continuum admissibility & absent & no Sobolev, antisymmetry, normalization, Coulomb, or ensemble setting \\
+\bottomrule
+\end{tabularx}
+The theorem is exact for the abstract interface but does not reproduce Lieb's analytic attainment
+theorem or Levy's continuum wavefunction assumptions.
+
+\section{Statement-specific prior art and contribution boundary}
+\begin{tabularx}{\textwidth}{@{}lYYY@{}}
+\toprule
+Relation & Authority & Locator & Role and caveat \\
+\midrule
+adapts & proposed \texttt{Levy1979} & Theorem II, equation (7), proof within equations (8)--(21) & equality of outer energy at a ground-state density \\
+compares-with & proposed \texttt{Lieb1983} & section 3, equations (3.14)--(3.15) & infimum functional and density variational identity \\
+background-only & proposed \texttt{Lieb1983} & Theorem 3.3 & continuum attainment under hypotheses not encoded here \\
+\bottomrule
+\end{tabularx}
+The underlying result is classical.  The local contribution is an explicit proof that the supplied
+ground state witnesses fixed-density minimization in the abstract model, without silently claiming
+a general existence theorem.
+
+\section{Proof schematic}
+\[
+\begin{array}{c}
+ \psi\text{ is a ground state}\\
+ \Downarrow\ \text{compare only states }\phi\text{ with }n(\phi)=n(\psi)\\
+ F(\psi)+E_{\rm ext}(v,n(\psi))
+ \le F(\phi)+E_{\rm ext}(v,n(\psi))\\
+ \Downarrow\\
+ F(\psi)\le F(\phi)\\
+ \Downarrow\\
+ \mathcal F(n(\psi))=F(\psi)\\
+ \Downarrow\\
+ \mathcal E_v(n(\psi))=E_v(\psi)
+\end{array}
+\]
+
+\section{Human-readable mathematical argument}
+Take any state \(\phi\) having the same density as the supplied ground state \(\psi\).  Ground-state
+minimality compares their total energies.  Since both external-energy terms are evaluated at the
+same density, they cancel, giving \(F(\psi)\le F(\phi)\).  Thus \(\psi\) is a constrained-search
+minimizer in its own density fiber.  Its internal energy is both a member and a lower bound of that
+nonempty fiber, so it equals the real infimum.  Adding the common external-energy term gives the
+stated total-energy equality.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem VariationalDensityModel.IsGroundState.
+    densityTotalEnergy_representableDensityOfState
+    (hstate : model.IsGroundState potential state) :
+    model.densityTotalEnergy potential
+      (model.representableDensityOfState state) =
+    model.totalEnergy potential state
+\end{lstlisting}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Lean toolchain & Lean \texttt{4.35.0}, commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
+Mathlib revision & \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Key order API & \texttt{csInf\_le}, \texttt{le\_csInf}; real conditional completeness \\
+Key local lemma & \texttt{constrainedSearchEnergy\_eq\_internalEnergy\_of\_minimizer} \\
+Validation & affected-target build, \texttt{ProjectKoios.Audit}, admission audit, coverage check, and pin check passed \\
+\bottomrule
+\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.DensityFunctionalTheory.Foundations.
+  VariationalDensityModel.IsGroundState.
+    densityTotalEnergy_representableDensityOfState
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+No repository-owned \texttt{axiom}, \texttt{sorry}, or \texttt{admit} occurs in the declaration.
+
+\section{AI, automation, and comprehension record}
+The Lean proof and dossier were AI-assisted.  The maintainer read the cited source locations,
+checked the attainment delta, and ran the recorded validations.  Lean kernel checking, tactics,
+hashing, and LaTeX compilation are automation rather than independent expert review.  No
+independent mathematical or DFT-specialist review is recorded.
+
+\section{Scientific and evidence boundaries}
+This equality does not establish continuum representability, existence of minimizers for arbitrary
+densities, convexity, lower semicontinuity, ensemble relaxation, Kohn--Sham orbital realization, or
+PAW mathematics.  It binds no numerical state, density, potential, runtime output, material, or
+certificate.
+
+\section{Unresolved questions}
+\begin{itemize}
+\item Resolve both proposed literature identities through \texttt{projectkoios-references}.
+\item Record the immutable Formal introduction commit after the candidate tree is committed.
+\item Future continuum work must separate pure-state, ensemble, and convex-relaxed functionals.
+\item No independent expert review has been completed.
+\end{itemize}
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-11-26 & initial draft & AI-assisted maintainer review & exact equality, minimizer argument, source delta, and boundaries recorded; canonical identities, immutable Formal commit, and independent review pending \\
+\bottomrule
+\end{tabularx}
+
+\end{document}

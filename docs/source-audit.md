@@ -2,6 +2,67 @@
 
 This ledger records immutable source identities, locators, byte hashes, and dirty-state limits. It does not transfer source ownership or proof status.
 
+## External literature candidate: noncollinear spin-density matrices
+
+A read-only literature inspection on 2026-11-25 identified the following preferred statement source
+for a future density-functional binding:
+
+- Carsten A. Ullrich, “Density-functional theory for systems with noncollinear spin:
+  orbital-dependent exchange-correlation functionals and their application to the Hubbard dimer,”
+  *Physical Review B* **98**, 035140 (2018),
+  [DOI `10.1103/PhysRevB.98.035140`](https://doi.org/10.1103/PhysRevB.98.035140);
+- immutable inspected manuscript: [`arXiv:1805.06417v1`](https://arxiv.org/abs/1805.06417v1);
+- inspected PDF SHA-256: `d59bd57f77549e0fd24970f3234b652c1ad0be93cac6c76e4f68a136881647f5`;
+- inspected PDF size: `2481695` bytes; and
+- exact locators: Section II.A, manuscript page 2, equations (3)--(9), especially
+  `mᵢ(r) = tr{σᵢ n(r)}` in equation (4) and
+  `n(r) = (1/2) ∑ⱼ σⱼ mⱼ(r)` in equation (5), together with the preceding paragraph distinguishing
+  a fixed global spin direction from a spatially varying noncollinear magnetization.
+
+Crossref publisher metadata confirms the journal title, author, volume, article number, publication
+date, and DOI.  The inspected arXiv bytes, rather than a transient publisher rendering, supply the
+exact locator evidence.  Ullrich's statement concerns a pointwise Hermitian `2 × 2` spin-density
+matrix.  The current Lean decomposition instead concerns arbitrary finite orbital blocks and does
+not encode position dependence, positivity, representability, occupations, density-functional
+semantics, or a common spatial spin axis.  Therefore a future physical density declaration may
+`adapt` this source only with those deltas recorded; the current source-neutral Pauli declarations
+remain unbound supporting algebra.
+
+The global-spin-rotation convention was inspected separately:
+
+- F. G. Eich and E. K. U. Gross, “Transverse Spin-Gradient Functional for Noncollinear
+  Spin-Density-Functional Theory,” *Physical Review Letters* **111**, 156401 (2013),
+  [DOI `10.1103/PhysRevLett.111.156401`](https://doi.org/10.1103/PhysRevLett.111.156401);
+- immutable inspected manuscript: [`arXiv:1212.3658v2`](https://arxiv.org/abs/1212.3658v2);
+- inspected PDF SHA-256: `3ecb788ad1c424c7dd6374a9676e420cb5eb8294c3ea1dda821276b8ead3147c`;
+- inspected PDF size: `4440982` bytes; and
+- exact locator: manuscript page 2, paragraph immediately preceding equation (9), which states
+  the global internal-spin transformation `Φ(r) ↦ U Φ(r)` for `U ∈ SU(2)` and the corresponding
+  magnetization-vector transformation `m(r) ↦ R m(r)`.
+
+`SpinFrameRotation.lean` adopts the first transformation only to fix the active matrix-conjugation
+order.  It does not yet construct the corresponding `SO(3)` matrix `R`, bind a spin-density field,
+or formalize exchange-correlation rotational invariance or the zero-torque theorem.
+
+Foundational background was also inspected read-only:
+
+- U. von Barth and L. Hedin, “A local exchange-correlation potential for the spin polarized case.
+  I,” *Journal of Physics C: Solid State Physics* **5**, 1629--1642 (1972),
+  [DOI `10.1088/0022-3719/5/13/012`](https://doi.org/10.1088/0022-3719/5/13/012);
+- inspected PDF SHA-256: `ebaa63df16bb4189c38195d365b0fb6d95fce58c35ceae1043cd7cc0a581af50`;
+- inspected PDF size: `737669` bytes; and
+- exact locators: Section 2, equation (2.3) and page 1631 for the Hermitian spin-density matrix;
+  Section 3, page 1632 for the local coordinate system whose `z` axis follows the local spin; and
+  the Appendix, page 1641, for the Cartesian Pauli spin-vector operator.
+
+These works do not yet have replay-derived References-owned canonical identities or evidence IDs
+in the local `projectkoios-references` checkout at commit
+`0fac430c715939a77c1be66c46ad0bbebb49447b`.  An operator-requested `Ullrich2018` BibLaTeX entry
+and same-basename local candidate PDF have now been added there, but import and filename agreement
+do not themselves establish canonical identity under that repository's authority model.
+Accordingly this section records candidate identity and exact-locator evidence only.  It is not a
+completed literature crosswalk, and DOI strings are not being used as cross-repository keys.
+
 ## Final inspected identity
 
 The final inspection resolved one clean immutable source revision.
@@ -899,3 +960,29 @@ matrix authentication, scientific applicability, or publication status. The deta
 nonclaim crosswalk is
 [`docs/BandGauge/ksdft2effmass/conjugate-linear-coordinate-algebra-crosswalk.md`](BandGauge/ksdft2effmass/conjugate-linear-coordinate-algebra-crosswalk.md).
 No KSD file, index, branch, worktree, or configuration was modified.
+
+## Scalar DFT and PAW primary-source acquisition
+
+The initial scalar DFT authority set was acquired on `2026-11-25` for the planned
+Hohenberg--Kohn, Levy--Lieb, Kohn--Sham, orbital, and PAW sequence.  The inspected References
+checkout was `/Users/eugene/repos/projectkoios-references`, branch `master`, commit
+`0fac430c715939a77c1be66c46ad0bbebb49447b`; `bibliography/references.bib` was modified during
+this acquisition.  The PDF files below are ignored local candidate assets.  Their matching
+`AuthorYYYY.pdf` names, PDF headers, sizes, and hashes are observations only: they are not replay-
+derived canonical References identities or asset authorizations.
+
+| Proposed citekey | Source and acquisition locator | Local candidate observation | Formal use status |
+|---|---|---|---|
+| `Hohenberg1964` | P. Hohenberg and W. Kohn, “Inhomogeneous Electron Gas,” DOI `10.1103/PhysRev.136.B864`; institutional copy retrieved from `http://metal.elte.hu/~groma/mater_phys/PhysRev.136.B864.pdf` | `Hohenberg1964.pdf`; 838879 bytes; SHA-256 `d241218df9578242dd461101f369c4a7d3ed58388567897a53f2e885a1be8a97`; PDF 1.4, 8 pages | Part I §1, equations (5)--(8), is cited directly in the relevant `.lean` module and declaration docstrings for the abstract nondegenerate variational core; the adaptation does not formalize the paper's continuum hypotheses |
+| `Kohn1965` | W. Kohn and L. J. Sham, “Self-Consistent Equations Including Exchange and Correlation Effects,” DOI `10.1103/PhysRev.140.A1133`; institutional copy retrieved from `http://www.lptms.universite-paris-saclay.fr/nicolas_pavloff/files/2010/03/PhysRev.140.A11331.pdf` | `Kohn1965.pdf`; 989990 bytes; SHA-256 `71df6859ee7cb1619b34d6ab87d82516735ae48a6213cc1a6f608eb81810b779`; PDF 1.3, 6 pages | acquired for later Kohn--Sham declarations; no current Lean statement is attributed to it |
+| `Levy1979` | M. Levy, “Universal Variational Functionals of Electron Densities, First-Order Density Matrices, and Natural Spin-Orbitals and Solution of the V-Representability Problem,” DOI `10.1073/pnas.76.12.6062`; open full text retrieved through Europe PMC, PMCID `PMC411802` | `Levy1979.pdf`; 731350 bytes; SHA-256 `996fbf157f4aefe65e946e87c21135b58d6d60903733d155a673461efb806cf4`; PDF 1.3, 4 pages | equation (5), Theorems I/II, equations (6)--(7), and proofs (8)--(21) are cited directly in `ConstrainedSearch.lean` for the abstract representable-density infimum and outer variational results; continuum state-space and attainment claims are not imported |
+| `Blochl1994` | P. E. Blöchl, “Projector Augmented-Wave Method,” DOI `10.1103/PhysRevB.50.17953`; institutional copy retrieved from `https://users.wfu.edu/natalie/s11phy752/lecturenote/BlochlPhysRevB.50.17953.pdf` | `Blochl1994.pdf`; 5118150 bytes; SHA-256 `a74d1f7c884153880c8c98b36a354b0d3af1c20777231e33d6b7965ad86589f6`; PDF 1.3, 27 pages | acquired for later PAW transformation declarations; no current Lean statement is attributed to it |
+| `Lieb1983` | E. H. Lieb, “Density Functionals for Coulomb Systems,” DOI `10.1002/qua.560240302`; operator-supplied publisher PDF copied read-only from `$HOME/Downloads/Lieb1983` after title and embedded DOI verification | `Lieb1983.pdf`; 1650444 bytes; SHA-256 `962140e96a0a7d189f9c1f72e37231d9457500b67b6f62e7c08322aedb1d5563`; PDF 1.3, 35 pages | Section 3, equations (3.14)--(3.15), is cited directly in `ConstrainedSearch.lean` for the infimum/domain distinction and ground-energy identity; Theorem 3.3 is named only as a separate continuum attainment result not proved by the abstract module |
+| `Kresse1999` | G. Kresse and D. Joubert, “From Ultrasoft Pseudopotentials to the Projector Augmented-Wave Method,” DOI `10.1103/PhysRevB.59.1758`; operator-supplied publisher article copied read-only from `$HOME/Downloads/kresse1999.pdf` after title, author, abstract, and article-page verification | `Kresse1999.pdf`; 289506 bytes; SHA-256 `e4cd6772b96ab2318904aeaa99a0f9ac253f5d4c29719bc78be3505ed1621b28`; PDF 1.1, 18 extracted article pages | acquired for the later PAW/ultrasoft relationship and implementation-bridge declarations; no current Lean statement is attributed to it |
+
+The earlier APS and Wiley access failures were not used as source substitutes.  Search results that
+only cited these works, non-authoritative document-sharing pages, later reviews, and unrelated
+theses were not retained.  Bibliography entries were added for all six works, but those entries and
+the six local candidate files do not
+establish accepted References identities, canonical citekeys, rights clearance, or publication
+authority.
