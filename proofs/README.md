@@ -146,7 +146,9 @@ dossiers.
 The dossier cites `Blochl1994` Section II.A, Eqs. (6)--(9). The explicit overlap expansion in Eq.
 (30) is not derived because this tranche assumes projector duality only and does not yet supply a
 resolution-of-identity or completeness contract. The inspected PDF hash is recorded while the
-References-owned canonical identity and immutable Formal introduction commit remain pending.
+References-owned canonical identity remains unresolved. The declarations and initial dossier draft
+were introduced at immutable Formal commit
+`347f5c12c281ee8f57f9a8fc98b78ded40da2f18`.
 
 ## Selected integer lattice radius bridge
 

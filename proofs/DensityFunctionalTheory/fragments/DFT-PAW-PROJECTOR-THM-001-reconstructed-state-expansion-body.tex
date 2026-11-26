@@ -39,8 +39,8 @@ Immutable inspected bytes & \texttt{Blochl1994.pdf}, SHA-256 \hash{a74d1f7c88415
 Exact locators & Section II.A, equations (6)--(7) for projector amplitudes and duality, equation (8) for $T$, and equation (9) for state reconstruction \\
 Inspection limitation & image-scan source; binding-critical equations were checked against rendered page images rather than accepted from OCR alone \\
 Reference authority & proposed citekey \texttt{Blochl1994}; References-owned canonical identity remains unresolved \\
-Formal candidate base & branch \texttt{review/conjugate-linear-coordinate-algebra}, base commit \hash{3739ddbee2d9fc18c43dd79a0ba6614fda274b54} \\
-Formal provenance limitation & declaration and dossier are currently uncommitted; immutable introduction commit pending \\
+Formal introduction & branch \texttt{review/conjugate-linear-coordinate-algebra}, commit \hash{347f5c12c281ee8f57f9a8fc98b78ded40da2f18} \\
+Dossier provenance & declaration and initial draft dossier were introduced together at that immutable commit; this dossier remains a draft \\
 \bottomrule
 \end{tabularx}
 
@@ -108,7 +108,7 @@ theorem FiniteProjectorAugmentation.
 Lean toolchain & Lean \texttt{4.35.0}, commit \hash{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
 Mathlib revision & \hash{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
 Imports & finite PAW transformation and Mathlib finite matrix algebra \\
-Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed on the candidate tree \\
+Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed for the introduction tree at \hash{347f5c12c281ee8f57f9a8fc98b78ded40da2f18} \\
 \bottomrule
 \end{tabularx}
 
@@ -135,7 +135,6 @@ numerical result.  Those require additional definitions and hypotheses.
 
 \section{Unresolved questions}
 \begin{itemize}
-\item Record the immutable Formal introduction commit.
 \item Resolve the proposed \texttt{Blochl1994} identity through \texttt{projectkoios-references}.
 \item Add an explicit completeness contract before deriving Bl\"ochl equation (30).
 \item No independent expert review has been completed.
@@ -147,5 +146,6 @@ numerical result.  Those require additional definitions and hypotheses.
 Date & Revision & Reviewer or process & Outcome and limitations \\
 \midrule
 2026-11-26 & initial draft & AI-assisted maintainer review & finite-rank convention, scan locators, statement delta, proof, and axiom report checked; immutable Formal commit, canonical identity, and independent review pending \\
+2026-11-26 & provenance backfill & repository history review & Formal introduction fixed at \hash{347f5c12c281ee8f57f9a8fc98b78ded40da2f18}; canonical identity and independent review remain pending \\
 \bottomrule
 \end{tabularx}
