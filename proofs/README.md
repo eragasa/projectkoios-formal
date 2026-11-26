@@ -98,8 +98,9 @@ The dossier cites `Kohn1965` Section II.A, Eq. (2.9), only for the occupied-orbi
 does not attribute the finite basis expansion to that paper and does not claim basis completeness,
 normalization, orthogonality, physical filling, an operator or overlap matrix, an eigenproblem,
 discretization convergence, self-consistency, PAW, or scientific validity. The inspected PDF hash is
-recorded while the References-owned canonical identity and immutable Formal introduction commit
-remain pending.
+recorded while the References-owned canonical identity remains unresolved. The declarations and
+initial dossier draft were introduced at immutable Formal commit
+`b5f7f29507dba582f6dd69bddd6ad8d92f4d5bce`.
 
 ## Selected integer lattice radius bridge
 
