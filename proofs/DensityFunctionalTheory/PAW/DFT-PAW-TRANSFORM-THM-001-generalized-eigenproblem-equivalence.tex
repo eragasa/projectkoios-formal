@@ -62,8 +62,8 @@ Companion inspected bytes & \texttt{Kresse1999.pdf}, SHA-256 \hash{e4cd6772b96ab
 Companion locators & Section III.A, equations (38)--(40), and Section III.D, generalized Kohn--Sham equation immediately after equation (51) \\
 Inspection limitation & Bl\"ochl is an image scan; binding-critical equations were checked against rendered page images rather than accepted from OCR alone \\
 Reference authority & proposed citekeys \texttt{Blochl1994} and \texttt{Kresse1999}; References-owned canonical identities remain unresolved \\
-Formal candidate base & branch \texttt{review/conjugate-linear-coordinate-algebra}, base commit \hash{9743c11ed1bf8d310d72608d1dd0e470ebc38dab} \\
-Formal provenance limitation & declaration and dossier are currently uncommitted; immutable introduction commit pending \\
+Formal introduction & branch \texttt{review/conjugate-linear-coordinate-algebra}, commit \hash{fa0394941cf9604fe5ee1824f2fd17e42cb3a826} \\
+Dossier provenance & declaration and initial draft dossier were introduced together at that immutable commit; this dossier remains a draft \\
 \bottomrule
 \end{tabularx}
 The sources provide the PAW reconstruction, transported operator, overlap, and generalized equation.
@@ -138,7 +138,7 @@ theorem FinitePawTransformation.
 Lean toolchain & Lean \texttt{4.35.0}, commit \hash{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
 Mathlib revision & \hash{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
 Imports & Mathlib complex matrices, positive-definite matrices, and matrix invertibility \\
-Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed on the candidate tree \\
+Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed for the introduction tree at \hash{fa0394941cf9604fe5ee1824f2fd17e42cb3a826} \\
 \bottomrule
 \end{tabularx}
 
@@ -166,7 +166,6 @@ self-consistent Kohn--Sham problem, or validate a material calculation.
 
 \section{Unresolved questions}
 \begin{itemize}
-\item Record the immutable Formal introduction commit.
 \item Resolve the proposed \texttt{Blochl1994} and \texttt{Kresse1999} identities through \texttt{projectkoios-references}.
 \item Add the finite-rank projector/partial-wave specialization in a separate layer.
 \item No independent expert review has been completed.
@@ -178,6 +177,7 @@ self-consistent Kohn--Sham problem, or validate a material calculation.
 Date & Revision & Reviewer or process & Outcome and limitations \\
 \midrule
 2026-11-26 & initial draft & AI-assisted maintainer review & finite PAW conventions, source locators, explicit invertibility delta, proof, and axiom report checked; immutable Formal commit, canonical identities, and independent review pending \\
+2026-11-26 & provenance backfill & repository history review & Formal introduction fixed at \hash{fa0394941cf9604fe5ee1824f2fd17e42cb3a826}; canonical identities and independent review remain pending \\
 \bottomrule
 \end{tabularx}
 

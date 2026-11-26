@@ -115,7 +115,8 @@ paragraph locators while marking both References-owned canonical identities unre
 is supplied finite matrix algebra: it does not construct the projector/partial-wave transformation,
 prove completeness, define augmentation or compensation data, derive density or total-energy
 formulas, authenticate a dataset or implementation, or establish numerical or scientific validity.
-The immutable Formal introduction commit remains pending.
+The declarations and initial dossier draft were introduced at immutable Formal commit
+`fa0394941cf9604fe5ee1824f2fd17e42cb3a826`.
 
 ## Selected integer lattice radius bridge
 
