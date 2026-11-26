@@ -7,10 +7,14 @@ These files record policy, provenance, status, and plans. They do not establish 
 Five ledgers control status and provenance.
 
 - `theorem-manifest.md`: declarations and proof status.
-- `source-audit.md`: inspected source identities and byte hashes.
+- `audit/source-audit.md`: stable source-record inventory; detailed identities and byte hashes are
+  split across the linked `audit/source-*.md` records.
 - `publication-crosswalk.md`: source claims and formalization mapping.
-- `trusted-base-audit.md`: audit requirements and recorded checks.
-- `dependency-audit.md`: Lean, Mathlib, and Physlib evaluation.
+- `audit/trusted-base-audit.md`: audit requirements and current recorded checks;
+  `audit/validation-history.md` preserves older tranche evidence.
+- `audit/dependency-audit.md`: Lean, Mathlib, and Physlib evaluation.
+
+The audit directory is indexed at [`audit/index.md`](audit/index.md).
 
 ## Policy
 
@@ -28,7 +32,9 @@ Policy files define evidence and workflow boundaries.
 
 Derived audit views inspect existing formal state without changing theorem or evidence status.
 
-- `declaration-dependency-graph.md`: optional non-building graph generation from an already validated compiled audit environment.
+- `audit/declaration-dependency-graph.md`: optional non-building graph generation from an already validated compiled audit environment.
+- `api-maps/quantum-mechanics-operators.md`: declaration-level overlap and gap map for Project Koios test-space operators and the adopted Physlib operator stack.
+- `api-maps/continuum-schrodinger.md`: adopted `SpaceDQuantumSystem` carrier, Sobolev and multiplication APIs, Schwartz-core and singular hydrogenic Hamiltonian bridges, and self-adjointness gates.
 
 ## Architecture and planning
 

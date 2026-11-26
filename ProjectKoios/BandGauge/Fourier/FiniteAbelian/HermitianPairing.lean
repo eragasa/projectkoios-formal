@@ -45,8 +45,6 @@ theorem finiteFourierCoefficient_neg_eq_conjTranspose
   ext i j
   simp [finiteFourierCoefficient, Matrix.conjTranspose_apply,
     AddChar.map_neg_eq_inv, AddChar.inv_apply_eq_conj]
-  simp_rw [Matrix.sum_apply, Matrix.smul_apply]
-  rw [map_sum]
   apply Finset.sum_congr rfl
   intro momentum _
   have hentry : conj (field momentum j i) = field momentum i j := by

@@ -19,7 +19,7 @@ The source does not use the labels `O_A`, `O_B`, `O_C` or define a common `τ_E`
 
 A later read-only inspection examined the broader mathematical implementation graph at KSD commit `4835e7bf9161729cc8f0537bcc13db083896a6ae`, tree `fd641fb8a4efe7a5ef4d5da9c49f126e1e03e355`, on branch `work/monograph-current-library-capabilities` in `/Users/eugene/repos/ksdft2effmass`. The checkout had 112 short-status entries, although the specifically cited frame, alignment, Fourier, gauge, Wilson-loop, Wannier90, and defect-oracle implementation paths were clean relative to that commit.
 
-That later inspection broadens the proof backlog but does not replace the immutable protocol source above. It supports no claim about dirty sibling files, runtime execution, applicability, numerical evidence, or scientific validity. Exact blob hashes and inspected paths are recorded in `docs/source-audit.md`.
+That later inspection broadens the proof backlog but does not replace the immutable protocol source above. It supports no claim about dirty sibling files, runtime execution, applicability, numerical evidence, or scientific validity. Exact blob hashes and inspected paths are recorded in [`AUD-SRC-028`](../audit/source-owner-repositories.md#aud-src-028).
 
 ## Source experiment
 

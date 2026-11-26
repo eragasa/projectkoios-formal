@@ -6,12 +6,13 @@ Lean is the existing formal authority. The repository layout remains under `Proj
 
 | Item | Pin |
 |---|---|
-| Lean toolchain | `leanprover/lean4:v4.35.0` |
-| Lean commit reported locally | `eb6cafb7290e8bd5f2937522d8d804f58f02bafc` |
-| Mathlib revision | `56a005855ea17e0b0958f73ec801ae140b0a1679` |
-| `lean-toolchain` SHA-256 | `ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c` |
-| `lakefile.toml` SHA-256 | `56ae2d336f7e52273fc28ab89ca23eca9aa2b06556464cd96f2f8ad8518c1018` |
-| `lake-manifest.json` SHA-256 | `3b189da2837c60b3458a3d1cff6a01d584c8d8e4ee5f46b7d71053510ef98ec9` |
+| Lean toolchain | `leanprover/lean4:v4.36.0` |
+| Lean commit reported locally | `611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9` |
+| Mathlib revision | `fc4f59e577feb1a4956671bc04ac18aaaf8cd842` |
+| Physlib revision | `101e93cf91f0304f5ab9bfbfdec6cebcc031f7cd` |
+| `lean-toolchain` SHA-256 | `582a63f8f9c5128067b688778c1051cf1464c3ca9d57b9325025c051c29b774a` |
+| `lakefile.toml` SHA-256 | `b7cd33fa996f803dffae8d96218c8b5e4d71a511bc7487a697984f5208531298` |
+| `lake-manifest.json` SHA-256 | `4854285512498c87dc59f0e4d675212f0afcb7b8b65eafc91fbf47a5bbd667c5` |
 
 `lake-manifest.json` records the resolved transitive dependency revisions. It is a resolution record, not by itself proof that a remote, cache, checkout, or binary is authentic.
 
@@ -21,8 +22,8 @@ The retained inventory and authorized correction pass reported:
 
 ```text
 elan 4.2.3 (b6cec7e10 2026-06-08)
-Lake version 5.0.0-src+eb6cafb (Lean version 4.35.0)
-Lean 4.35.0, arm64-apple-darwin24.6.0, commit eb6cafb..., Release
+Lake version 5.0.0-src+611c117 (Lean version 4.36.0)
+Lean 4.36.0, arm64-apple-darwin24.6.0, commit 611c117..., Release
 ```
 
 The Lean binary's reported target baseline differs from the host kernel version and must be retained as toolchain identity rather than rewritten as the host target.
@@ -32,7 +33,7 @@ The Lean binary's reported target baseline differs from the host kernel version 
 Installing or changing Elan or a Lean toolchain remains protected. In an authorized environment:
 
 ```sh
-elan toolchain install leanprover/lean4:v4.35.0
+elan toolchain install leanprover/lean4:v4.36.0
 lean --version
 lake --version
 ```

@@ -28,7 +28,7 @@ A later read-only inspection broadened the inventory from calculation documents 
 - Whole-worktree status count: 112
 - Access: read-only
 
-The specifically inspected implementation paths were clean relative to that commit, but the checkout as a whole was not clean. The immutable blob hashes and path-level scope are recorded in `docs/source-audit.md`. This inspection supports backlog discovery only: it does not authenticate dirty sibling files, runtime arrays, external artifacts, or source-specific theorem applicability.
+The specifically inspected implementation paths were clean relative to that commit, but the checkout as a whole was not clean. The immutable blob hashes and path-level scope are recorded in [`AUD-SRC-028`](audit/source-owner-repositories.md#aud-src-028). This inspection supports backlog discovery only: it does not authenticate dirty sibling files, runtime arrays, external artifacts, or source-specific theorem applicability.
 
 ## Historical Formal state
 

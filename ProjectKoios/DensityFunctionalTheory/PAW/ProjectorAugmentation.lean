@@ -12,60 +12,88 @@ public import Mathlib.Data.Matrix.Basic
 /-!
 # Finite-rank PAW projector augmentation
 
+Finite-coordinate partial waves and projectors define the projector augmented-wave reconstruction
+map and its exact action on pseudo states.
+
+## i. Overview
+
 This module specializes the abstract finite PAW transformation to the finite-rank construction built
-from all-electron partial waves, pseudo partial waves, and projector functions. For a finite channel
-index `i`, define
+from supplied all-electron partial waves `φᵢ`, pseudo partial waves `φ̃ᵢ`, and projector vectors
+`p̃ᵢ`. For each finite augmentation channel, define
 
 `Δφᵢ = φᵢ - φ̃ᵢ`,
 
 `T = I + ∑ i, |Δφᵢ⟩⟨p̃ᵢ|`.
 
-The main theorem proves the pointwise finite-coordinate reconstruction formula
+The reconstructed state satisfies
 
 `T ψ̃ = ψ̃ + ∑ i, ⟨p̃ᵢ|ψ̃⟩ Δφᵢ`.
 
-A separate duality predicate records `⟨p̃ᵢ|φ̃ⱼ⟩ = δᵢⱼ`. Under that explicit hypothesis, the
-transformation maps each pseudo partial wave to its corresponding all-electron partial wave.
-
-## Source locators
-
-Blöchl, “Projector Augmented-Wave Method,” Physical Review B 50 (1994), DOI
-`10.1103/PhysRevB.50.17953`, Section II.A:
-
-* equations (6)--(7) for projector amplitudes and projector/pseudo-partial-wave duality;
-* equation (8) for the finite-rank transformation;
-* equation (9) for reconstructed states.
-
-Proposed citekey: `Blochl1994`. The inspected PDF SHA-256 is
-`a74d1f7c884153880c8c98b36a354b0d3af1c20777231e33d6b7965ad86589f6`. The scan equations were
-checked against rendered page images; OCR was used only for discovery. The References-owned
-canonical identity remains unresolved.
-
-## Coordinate conventions
-
 `State` indexes coordinates in one finite complex state space, and `Channel` indexes augmentation
-triples. Kets are functions `State → ℂ`. The bra associated with a projector is represented by
-`star projector`, so
+triples. Kets are functions `State → ℂ`; the bra associated with a projector is represented by
+`star projector`. `Matrix.vecMulVec ket bra` represents `|ket⟩⟨bra|`. These are active
+reconstruction conventions rather than passive coordinate changes.
 
-`projectorAmplitude i ψ = star (p̃ i) ⬝ᵥ ψ`.
+Projector duality, `⟨p̃ᵢ|φ̃ⱼ⟩ = δᵢⱼ`, is an explicit independent hypothesis. No
+resolution-of-identity or partial-wave completeness condition is assumed. Consequently the module
+proves Blöchl's finite-rank transformation and reconstructed-state formulas and their direct finite
+consequences, but not the explicit overlap expansion, spatial augmentation formulas, density
+reconstruction, or energy-functional identities.
 
-`Matrix.vecMulVec ket bra` represents the rank-one matrix `|ket⟩⟨bra|`. Consequently the correction
-matrix has entries
+## ii. Key results
 
-`∑ i, (φᵢ(row) - φ̃ᵢ(row)) * conj (p̃ᵢ(column))`.
+- `FiniteProjectorAugmentation`: supplied all-electron waves, pseudo waves, and projectors.
+- `FiniteProjectorAugmentation.transformation`: the finite-rank PAW transformation.
+- `FiniteProjectorAugmentation.IsProjectorDual`: projector and pseudo-partial-wave duality.
+- `FiniteProjectorAugmentation.reconstructState_eq_pseudoState_add_corrections`: exact reconstructed
+  state formula.
+- `FiniteProjectorAugmentation.reconstructState_pseudoPartialWave`: partial-wave mapping under
+  projector duality.
 
-These conventions agree with the active reconstruction convention in `FiniteTransformation.lean`.
-They are not passive coordinate changes.
+## iii. Table of contents
 
-## Formal scope
+- A. Proof schematic
+- B. Augmentation data and finite-rank transformation
+- C. Projector duality
+- D. Reconstruction identities
 
-The state and channel carriers are finite, and the partial waves and projectors are supplied as
-coordinate vectors. Projector duality is a separate hypothesis. No resolution-of-identity or
-partial-wave completeness condition is assumed.
+## iv. References
 
-Accordingly, this module proves equations (8)--(9) and their direct consequences. Deriving the
-explicit overlap expansion in equation (30) requires an additional completeness contract. Spatial
-augmentation data and density or energy functionals require separate structures.
+- P. E. Blöchl, “Projector Augmented-Wave Method,” *Physical Review B* 50 (1994), DOI
+  `10.1103/PhysRevB.50.17953`, Section II.A, equations (6)--(9). Proposed citekey: `Blochl1994`.
+
+The inspected PDF SHA-256 is
+`a74d1f7c884153880c8c98b36a354b0d3af1c20777231e33d6b7965ad86589f6`. The equations were checked
+against rendered page images; OCR was used only for discovery. The References-owned canonical
+identity remains unresolved.
+
+## A. Proof schematic
+
+```mermaid
+flowchart TD
+    data["DFT-PAW-PROJECTOR-DEF-001<br/>augmentation data"]
+    correction["DFT-PAW-PROJECTOR-DEF-002<br/>partial-wave correction"]
+    amplitude["DFT-PAW-PROJECTOR-DEF-003<br/>projector amplitude"]
+    matrix["DFT-PAW-PROJECTOR-DEF-004<br/>correction matrix"]
+    transform["DFT-PAW-PROJECTOR-DEF-005<br/>PAW transformation"]
+    duality["DFT-PAW-PROJECTOR-DEF-006<br/>projector duality"]
+    action["DFT-PAW-PROJECTOR-LEM-001<br/>correction action"]
+    reconstruction["DFT-PAW-PROJECTOR-THM-001<br/>state reconstruction"]
+    partialWave["DFT-PAW-PROJECTOR-LEM-002<br/>partial-wave mapping"]
+    identity["DFT-PAW-PROJECTOR-LEM-003<br/>zero-correction identity"]
+
+    data --> correction
+    data --> amplitude
+    correction --> matrix
+    amplitude --> action
+    matrix --> action
+    matrix --> transform
+    transform --> reconstruction
+    action --> reconstruction
+    duality --> partialWave
+    reconstruction --> partialWave
+    correction --> identity
+```
 -/
 
 open scoped BigOperators ComplexConjugate Matrix

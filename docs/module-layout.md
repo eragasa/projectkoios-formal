@@ -46,7 +46,7 @@ finite-basis, PAW, spin, and relativistic layers must import rather than redefin
 | Directory | Owns | Excludes |
 |---|---|---|
 | `DensityFunctionalTheory/Foundations/` | abstract real-valued density variational data, ground-state and strict-ground-state predicates, scalar-potential equivalence modulo additive constants, the strict nondegenerate Hohenberg--Kohn variational contradiction, conditional potential recovery with the model-specific shared-state uniqueness step exposed as a hypothesis, and an abstract Levy--Lieb constrained search over the explicitly representable density subtype with an infimum functional, outer variational bound, and equality at a supplied ground-state density | continuum electron function spaces, Coulomb Hamiltonians, particle-number normalization, independent minimizer-existence or uniqueness theorems, degenerate HK theory, ensemble/density-matrix relaxation, Kohn--Sham orbitals, exchange--correlation approximations, PAW, runtime solvers, numerical evidence, and scientific-validation claims |
-| `DensityFunctionalTheory/KohnSham/` | supplied scalar universal, noninteracting kinetic, and Hartree functionals; exact exchange--correlation remainder reconstruction; specialization of the universal term to the abstract constrained-search energy; finite complex scalar orbital families; pointwise unit/occupation-weighted density sums; and the thin binding from source-neutral finite-basis orbital expansion to fully expanded Kohn--Sham density | noninteracting representability, continuum normalization or orthogonality, physical occupation bounds or particle-number sums, Coulomb kernels, functional derivatives, effective potentials/operators, Hamiltonian or overlap matrices, eigenvalue equations, LDA or other approximations, self-consistency, discretization error, numerical convergence, and PAW |
+| `DensityFunctionalTheory/KohnSham/` | supplied scalar universal, noninteracting kinetic, and Hartree functionals; exact exchange--correlation remainder reconstruction; specialization of the universal term to the abstract constrained-search energy; finite complex scalar orbital families; pointwise unit/occupation-weighted density sums; representative-safe real `L¹` continuum densities from Physlib `L²` orbitals with almost-everywhere pointwise crosswalks and an abstract variational-model adapter; and the thin binding from source-neutral finite-basis orbital expansion to fully expanded Kohn--Sham density | noninteracting representability, derived normalization or orthogonality, physical occupation bounds, filling rules, or externally fixed particle-number constraints, Coulomb kernels, functional derivatives, effective potentials/operators, Hamiltonian or overlap matrices, eigenvalue equations, LDA or other approximations, self-consistency, discretization error, numerical convergence, and PAW |
 | `DensityFunctionalTheory/PAW/` | exact supplied finite transformation `T`, reconstructed states, transported operators `Tᴴ A T`, overlap `Tᴴ T`, Hermiticity and positivity, sesquilinear pairing transport, generalized-eigenproblem equivalence under explicit injectivity or invertibility hypotheses, and the finite-rank partial-wave/projector construction with explicit duality | resolution-of-identity and completeness contracts, the derived explicit overlap expansion, augmentation-region geometry, compensation charges, density and total-energy decompositions, and frozen-core or cutoff approximation models |
 
 ## Quantum mechanics
@@ -57,12 +57,19 @@ Quantum modules separate general mathematics from controlled models.
 |---|---|---|
 | `State.lean` | normalized representatives and phase shifts | ray quotients and full postulates |
 | `Measurement/FinitePureState.lean` | finite operations and explicit norm completeness | general observables and continuous outcomes |
+| `QuantumInformation/` | thin bindings to the pinned `QuantumInfo` finite pure-ray, mixed-state, POVM, CPTP-channel, tensor-product, partial-trace, and separability APIs | competing state/channel abstractions, infinite-dimensional trace-class states, continuous outcomes, general instruments, LOCC protocols, continuum density matrices, and physical applicability |
 | `Dirac.lean` | typed ordinary bras, kets, brackets, and rank-one operators | generalized eigenvectors |
 | `RiggedHilbertSpace.lean` | test-space inclusion and generalized functional embeddings | nuclearity and spectral completeness |
-| `Operator/TestDomain.lean` | dense partial operators and formal-adjoint containment | closedness, adjoint equality, self-adjointness, spectra |
+| `Operator/TestDomain.lean` | source-neutral construction of dense partial operators and formal-adjoint containment from the rigged test carrier | Physlib symmetry, self-adjointness, spectra, and physical Hamiltonian semantics |
+| `Operator/SelfAdjoint.lean` | bridge from test-space symmetry to adopted Physlib closability, expectation values, self-adjoint domain criteria, and dense-eigenvector essential self-adjointness | competing observable/operator abstractions, concrete Hamiltonians, spectral-measure association, functional calculus, and Stone evolution |
+| `Operator/Schrodinger.lean` | domain, symmetry, and core-action bridge for Physlib `SpaceDQuantumSystem`: momentum square, kinetic operator, maximal real multiplication potential, exact Schwartz Hamiltonian domain under explicit inclusion, dense closability, and almost-everywhere Schrödinger action | a second Schrödinger-system abstraction, Sobolev-domain realization, singular-potential domain proofs, essential self-adjointness, spectra, and time evolution |
+| `Operator/Hydrogen.lean` | thin binding of the general symmetry theorem to Physlib's unregularized `-k/‖x‖` hydrogenic potential and its dense polynomially bounded Schwartz subdomain | exact Coulomb Hamiltonian domain, dimension-dependent essential self-adjointness, spectra, eigenstates, and physical hydrogen validation |
+| `AngularMomentum/` | thin binding to stable Physlib's three-dimensional continuum orbital-angular-momentum operators on the invariant Schwartz domain and to PhyslibAlpha's finite standard spin-half and dimensionless `L·S` representation theory, including the Project Koios/Physlib Pauli crosswalk | a new angular-momentum abstraction, essential self-adjointness or selected closures of the continuum operators, continuum-to-finite `L·S` identification, dimensional SOC coupling constants, local SOC Hamiltonians, DFT effective-potential binding, and physical applicability |
 | `FiniteDimensional/` | compression, reduction, fitting, resolvents, source-neutral finite-basis complex orbital-amplitude expansion, spin embeddings and projections, exact Pauli-vector algebra, scalar-plus-Pauli decomposition, fixed-basis collinearity, and exact global `SU(2)` active spin-frame rotations | runtime data, density or DFT/SOC source bindings, basis completeness or integration, induced `SO(3)` identification, position-dependent frames, and physical interpretation |
 | `FiniteDifference/` | exact lattice, boundary, transfer, and barrier algebra | continuum convergence and numerical scattering |
-| `HarmonicOscillator/` | exact Hermite, ladder, truncation, and comparison algebra | runtime and continuum validation |
+| `Fourier/` | function-level injectivity of the pointwise Fourier integral on integrable complex functions | identification with Mathlib's abstract `L²` Fourier isometry, generalized harmonic analysis, and numerical transforms |
+| `Evolution/` | explicit physical convention `U(t)=exp(-itH/ℏ)`, reparameterization of PhyslibAlpha's `exp(isH)` group, strong continuity, unitarity, adjoint reversal, all-time domain-vector derivatives, domain invariance, and commutation with the self-adjoint generator | a competing spectral theorem, a second strong-group structure, automatic Hamiltonian selection, dimensional-unit checking, and source-specific physical validation |
+| `HarmonicOscillator/` | Physlib continuum Hamiltonian domain/symmetry/closability bridge, legacy-to-Cartesian one-dimensional Hilbert/eigenstate equivalence, unconditional one-dimensional completeness and essential self-adjointness, exact `QuantumSystem.mkESA` closure packaging, concrete domain-aware Cayley spectral measure, convention-fixed physical strong Stone evolution, retained historical conditional route, and general dense-eigenstate reduction, plus exact local Hermite, ladder, truncation, and comparison algebra | arbitrary-dimensional completeness, spectral eigenfunction expansion, numerical propagation/runtime binding, and physical validation |
 | `Piab1d/` | finite one-dimensional box specialization | general finite-difference ownership |
 
 Reduction bases use `Φ`, retained projector `P = Φ Φᵀ`, and complement `Q = I - P`. Spin indices are orbital-major `ι × Fin 2` and use `A ⊗ₖ I₂`.
@@ -80,17 +87,70 @@ Solid-state modules remain finite and source-neutral.
 
 Imports flow from reusable foundations toward thin bindings.
 
-```text
-Foundations -> Bloch, Geometry, Hilbert, Fourier, Projection
-Projection + Alignment + Fourier + Hilbert -> Decision
-Geometry + Decision -> Certificates -> thin Papers bindings
-FiniteDimensional spin algebra -> SolidState/FiniteLattice
-FiniteLadder -> TruncationDistortion
-FiniteDifference -> Piab1d
-State -> Measurement and Dirac -> RiggedHilbertSpace -> Operator/TestDomain
-DFT/Foundations/Variational -> DFT/Foundations/HohenbergKohn and ConstrainedSearch -> DFT/KohnSham/FunctionalDecomposition -> DFT/KohnSham/OccupiedOrbitals
-QM/FiniteDimensional/OrbitalExpansion + DFT/KohnSham/OccupiedOrbitals -> DFT/KohnSham/FiniteBasisDensity -> DFT/PAW/FiniteTransformation -> DFT/PAW/ProjectorAugmentation -> future overlap specialization and spin bindings
-TetrahedralSp3 -> TetrahedralSp3sStar and TetrahedralStructureFactors -> VoglSp3sStar
+```mermaid
+flowchart TD
+    bgFoundations["BandGauge/Foundations"]
+    bgBloch["BandGauge/Bloch"]
+    bgGeometry["BandGauge/Geometry"]
+    bgHilbert["BandGauge/Hilbert"]
+    bgFourier["BandGauge/Fourier"]
+    bgProjection["BandGauge/Projection"]
+    bgAlignment["BandGauge/Alignment"]
+    bgDecision["BandGauge/Decision"]
+    bgCertificates["BandGauge/Certificates"]
+    bgPapers["BandGauge/Papers"]
+
+    bgFoundations --> bgBloch
+    bgFoundations --> bgGeometry
+    bgFoundations --> bgHilbert
+    bgFoundations --> bgFourier
+    bgFoundations --> bgProjection
+    bgProjection --> bgDecision
+    bgAlignment --> bgDecision
+    bgFourier --> bgDecision
+    bgHilbert --> bgDecision
+    bgGeometry --> bgCertificates
+    bgDecision --> bgCertificates
+    bgCertificates --> bgPapers
+
+    spin["FiniteDimensional spin algebra"] --> finiteLattice["SolidState/FiniteLattice"]
+    finiteLadder["FiniteLadder"] --> truncation["TruncationDistortion"]
+    finiteDifference["FiniteDifference"] --> piab["Piab1d"]
+    state["State"] --> measurement["Measurement"]
+    quantumInfoUpstream["Pinned QuantumInfo"] --> quantumInfo["QuantumInformation"]
+    state --> dirac["Dirac"]
+    dirac --> rhs["RiggedHilbertSpace"]
+    rhs --> testDomain["Operator/TestDomain"]
+    testDomain --> selfAdjoint["Operator/SelfAdjoint"]
+    physlibSpaceD["Physlib SpaceDQuantumSystem"] --> schrodinger["Operator/Schrodinger"]
+    schrodinger --> hydrogen["Operator/Hydrogen"]
+    physlibHydrogen["Physlib HydrogenAtom"] --> hydrogen
+    physlibAngular["Physlib 3D angular momentum"] --> angularContinuum["AngularMomentum/Continuum"]
+    physlibAlphaSpin["PhyslibAlpha spin half and spin orbit"] --> angularSpinOrbit["AngularMomentum/SpinOrbit"]
+    finiteSpin["FiniteDimensional Pauli algebra"] --> angularSpinOrbit
+    schrodinger --> continuumQho["HarmonicOscillator/Continuum"]
+    physlibQho["Physlib HarmonicOscillator"] --> continuumQho
+    legacyQho["Physlib legacy 1D completeness infrastructure"] --> continuumQho
+    fourierInjective["QuantumMechanics/Fourier"] --> continuumQho
+    continuumQho --> qhoSystem["HarmonicOscillator/QuantumSystem"]
+    physlibSystem["Physlib QuantumSystem.mkESA"] --> qhoSystem
+
+    variational["DFT/Foundations/Variational"] --> hk["DFT/Foundations/HohenbergKohn"]
+    variational --> constrained["DFT/Foundations/ConstrainedSearch"]
+    constrained --> functional["DFT/KohnSham/FunctionalDecomposition"]
+    functional --> occupied["DFT/KohnSham/OccupiedOrbitals"]
+    occupied --> continuumDensity["DFT/KohnSham/ContinuumDensity"]
+    physlibSpaceD --> continuumDensity
+    orbitalExpansion["QM/FiniteDimensional/OrbitalExpansion"] --> basisDensity["DFT/KohnSham/FiniteBasisDensity"]
+    occupied --> basisDensity
+    basisDensity --> pawTransform["DFT/PAW/FiniteTransformation"]
+    pawTransform --> pawProjector["DFT/PAW/ProjectorAugmentation"]
+    pawProjector --> pawFuture["Future overlap specialization and spin bindings"]
+
+    sp3["TetrahedralSp3"] --> sp3star["TetrahedralSp3sStar"]
+    sp3 --> factors["TetrahedralStructureFactors"]
+    sp3star --> vogl["VoglSp3sStar"]
+    factors --> vogl
 ```
 
 Actual imports remain narrower than this sketch. Root modules must not become catch-all re-export surfaces.

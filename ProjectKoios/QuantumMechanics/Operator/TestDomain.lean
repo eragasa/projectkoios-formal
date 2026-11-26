@@ -41,7 +41,9 @@ self-adjointness, essential self-adjointness, and a spectral theorem are not ass
 The pinned Mathlib module `Mathlib.Analysis.InnerProductSpace.LinearPMap` already supplies partial
 linear operators, adjoint domains, formal adjoints, closedness, closability, and self-adjointness.
 This module reuses that API and owns only the bridge from the declared rigged-space test carrier.
-Physlib remains unadopted.
+The adopted Physlib dependency supplies additional unbounded-operator and spectral-theory APIs.
+This source-neutral constructor module does not duplicate them; the downstream
+`Operator/SelfAdjoint.lean` module imports Physlib and proves the corresponding bridge results.
 
 ## Source status
 

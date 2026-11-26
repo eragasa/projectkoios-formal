@@ -5,7 +5,7 @@
 This is a **provisional exact-mathematics crosswalk**, not a runtime or evidence binding. The
 inspected Periodic2D/3D rank-N KSD model files were untracked in a highly dirty owner worktree.
 Exact byte hashes, branch, checked-out commit, line locators, and dirty-state limitations are
-recorded in [`docs/source-audit.md`](../../source-audit.md).
+recorded in [`AUD-SRC-025`](../../audit/source-owner-repositories.md#aud-src-025).
 
 ## Formula correspondence
 

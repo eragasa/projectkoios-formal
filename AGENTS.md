@@ -29,8 +29,8 @@ Read only the repository documents relevant to the task.
 
 - Declaration status: `docs/theorem-manifest.md`
 - Authority and evidence: `docs/authority-boundaries.md`, `docs/formal-vs-numerical-evidence.md`, `docs/certificates.md`
-- Provenance: `docs/source-audit.md`, `docs/publication-crosswalk.md`, `docs/reference-crosswalk-policy.md`
-- Trust and dependencies: `docs/dependency-audit.md`, `docs/trusted-base-audit.md`
+- Provenance: `docs/audit/source-audit.md`, `docs/publication-crosswalk.md`, `docs/reference-crosswalk-policy.md`
+- Trust and dependencies: `docs/audit/dependency-audit.md`, `docs/audit/trusted-base-audit.md`
 - Organization: `docs/module-layout.md`, `docs/conventions.md`, `docs/definition-and-lemma-inventory.md`
 - Proof dossiers and agent procedure: `proofs/README.md`, `docs/agent-workflow.md`
 

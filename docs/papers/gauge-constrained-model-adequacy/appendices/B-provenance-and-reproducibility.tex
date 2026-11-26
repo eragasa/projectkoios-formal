@@ -233,8 +233,9 @@ checked-certificate bridge connects its retained data to the theorem's premises.
 
 \section{Dependency and toolchain boundary}
 
-The pinned Formal snapshot uses Lean \decl{4.35.0}. Mathlib is pinned to immutable commit
-\decl{56a005855ea17e0b0958f73ec801ae140b0a1679}; the dependency inspection reports nine
+The pinned Formal snapshot uses Lean \decl{4.36.0}. Mathlib is pinned to immutable commit
+\decl{fc4f59e577feb1a4956671bc04ac18aaaf8cd842}, and the Physlib package is pinned to
+\decl{101e93cf91f0304f5ab9bfbfdec6cebcc031f7cd}; the dependency inspection reports ten
 resolved revisions as commit identities. The durable dependency record is
 \modulepath{lake-manifest.json}. A reproducibility review must inspect that file and must
 not replace its immutable revisions with floating branches or tags.

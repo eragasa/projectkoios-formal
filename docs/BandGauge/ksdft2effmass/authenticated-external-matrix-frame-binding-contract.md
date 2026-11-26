@@ -81,7 +81,7 @@ The five-stage computational lifecycle was inspected read-only from:
 - worktree state during inspection: clean.
 
 The broader KSD mathematical backlog inspection remains the immutable but dirty-checkout-limited
-source record already listed in `docs/source-audit.md`: commit
+source record [`AUD-SRC-028`](../../audit/source-owner-repositories.md#aud-src-028): commit
 `4835e7bf9161729cc8f0537bcc13db083896a6ae`, tree
 `fd641fb8a4efe7a5ef4d5da9c49f126e1e03e355`, with 112 short-status entries. Its specifically
 hashed commit blobs motivated the required KSD, Fourier, and Wannier90 adapter fields; dirty bytes

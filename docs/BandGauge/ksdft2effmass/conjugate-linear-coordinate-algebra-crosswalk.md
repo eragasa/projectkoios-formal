@@ -6,7 +6,7 @@ This is a **provisional exact-mathematics crosswalk**, not an immutable publicat
 runtime binding. The inspected KSD Chapter 9 file was untracked in a dirty owner worktree. The
 worktree commit and tree identify only the surrounding checkout; the cited file is bound solely by
 its recorded path and SHA-256. Exact source identity and dirty-state limitations are recorded in
-[`docs/source-audit.md`](../../source-audit.md).
+[`AUD-SRC-029`](../../audit/source-publications.md#aud-src-029).
 
 ## Source locators
 

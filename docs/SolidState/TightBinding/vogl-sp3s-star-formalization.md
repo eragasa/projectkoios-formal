@@ -1,6 +1,6 @@
 # Vogl `sp³s⋆` exact-algebra scope
 
-This note maps the audited Vogl control to reusable Lean algebra. Source identity is in `docs/source-audit.md`; declarations are in `docs/theorem-manifest.md`.
+This note maps the audited Vogl control to reusable Lean algebra. Source identity is in `docs/audit/source-audit.md`; declarations are in `docs/theorem-manifest.md`.
 
 ## Proved scope
 

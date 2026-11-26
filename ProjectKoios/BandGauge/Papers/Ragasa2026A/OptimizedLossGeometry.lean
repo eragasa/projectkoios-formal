@@ -42,14 +42,14 @@ noncomputable def canonicalOptimizedOperatorLoss
     (comparisonSplittingField data))
 
 /-- `BG-RAGASA2026A-DEF-018`: the canonical spectral-loss sublevel set. -/
-def canonicalSpectralAdmissibleSet
+noncomputable def canonicalSpectralAdmissibleSet
     {Γ K I : Type*} [Group Γ] [MulAction Γ K] [Fintype I]
     (data : RankTwoFieldContract Γ K I) (spectralBudget : ℝ) :
     Set Geometry.RankTwoParameter :=
   Geometry.spectralAdmissibleSet (canonicalSpectralLoss data) spectralBudget
 
 /-- `BG-RAGASA2026A-DEF-019`: the continuously optimized operator-loss sublevel set. -/
-def canonicalOptimizedOperatorAdmissibleSet
+noncomputable def canonicalOptimizedOperatorAdmissibleSet
     {Γ K I : Type*} [Group Γ] [MulAction Γ K] [Fintype I]
     (data : RankTwoFieldContract Γ K I) (operatorBudget : ℝ) :
     Set Geometry.RankTwoParameter :=
@@ -58,7 +58,7 @@ def canonicalOptimizedOperatorAdmissibleSet
 
 /-- `BG-RAGASA2026A-DEF-020`: the canonical spectral-loss admissible set restricted to
 the declared candidate rectangle. -/
-def canonicalSpectralAdmissibleSetInRectangle
+noncomputable def canonicalSpectralAdmissibleSetInRectangle
     {Γ K I : Type*} [Group Γ] [MulAction Γ K] [Fintype I]
     (data : RankTwoFieldContract Γ K I)
     (lower upper : Geometry.RankTwoParameter) (spectralBudget : ℝ) :
@@ -68,7 +68,7 @@ def canonicalSpectralAdmissibleSetInRectangle
 
 /-- `BG-RAGASA2026A-DEF-021`: the optimized operator-loss admissible set restricted to
 the declared candidate rectangle. -/
-def canonicalOptimizedOperatorAdmissibleSetInRectangle
+noncomputable def canonicalOptimizedOperatorAdmissibleSetInRectangle
     {Γ K I : Type*} [Group Γ] [MulAction Γ K] [Fintype I]
     (data : RankTwoFieldContract Γ K I)
     (lower upper : Geometry.RankTwoParameter) (operatorBudget : ℝ) :

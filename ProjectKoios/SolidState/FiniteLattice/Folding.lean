@@ -355,8 +355,6 @@ theorem blockHoppingSupercell_diagonalization (hopping : G → Matrix ι ι ℂ)
   by_cases heq : χ = ψ
   · subst ψ
     simp [cellShiftMatrix_diagonalization, foldedBlochBlockDiagonal, blochFiber]
-    rw [Matrix.sum_apply]
-    rfl
   · simp [cellShiftMatrix_diagonalization, foldedBlochBlockDiagonal, heq]
 
 /-- `SS-FOLDING-THM-010`: cyclic `N`-cell block folding is unitary. -/

@@ -25,7 +25,7 @@ This action order matches the spinor transformation `Φ(r) ↦ U Φ(r)` describe
 *Physical Review Letters* 111, 156401 (2013), arXiv:1212.3658v2, in the paragraph immediately
 preceding their equation (9).  The citation fixes convention context only: the declarations below
 are source-neutral matrix algebra and do not bind a density-functional field or functional.  The
-inspected source identity and byte hash are recorded in `docs/source-audit.md`.
+inspected source identity and byte hash are recorded in `docs/audit/source-audit.md`.
 
 The active action is deliberately distinguished from the passive coordinate change
 `M ↦ (I ⊗ₖ U)ᴴ M (I ⊗ₖ U)`.  The module proves the lifted group laws, exact unitarity, preservation

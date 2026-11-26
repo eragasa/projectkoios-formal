@@ -1,6 +1,6 @@
 # Harmonic-oscillator formalization
 
-This directory owns exact QHO mathematics used to analyze finite truncation. It does not certify a numerical calculation or physical model.
+This directory owns exact QHO mathematics spanning the adopted Physlib continuum operator and local finite-truncation analysis. It does not certify a numerical calculation or physical model.
 
 ## Source crosswalk
 
@@ -16,8 +16,20 @@ The commit was local-only at inspection. It identifies reviewed bytes but is not
 
 ## Modules
 
-Five modules separate analytic, finite, and comparison results.
+Eight modules separate continuum, quantum-system, spectral-evolution, analytic, finite, and
+comparison results.
 
+- `Continuum.lean`: mirrored Physlib continuum Hamiltonian bridge proving the exact Schwartz domain,
+  symmetry, dense closability, and essential self-adjointness conditional on density of the supplied
+  Cartesian eigenstates; it also identifies Physlib's legacy and Cartesian one-dimensional Hilbert
+  carriers and eigenstates, and uses Project Koios pointwise Fourier-integral injectivity to prove
+  unconditional one-dimensional density and essential self-adjointness.
+- `QuantumSystem.lean`: packages the closure of the one-dimensional Schwartz-core Hamiltonian as a
+  self-adjoint Physlib `QuantumSystem` using `QuantumSystem.mkESA`.
+- `SpectralEvolution.lean`: selects PhyslibAlpha's domain-aware Cayley spectral measure for that
+  closure, identifies it explicitly as a spectral theorem for the packaged quantum-system
+  Hamiltonian, and constructs physical `U(t)=exp(-itH̄/ℏ)`, with strong continuity, all-time Stone
+  derivatives, domain invariance, and Hamiltonian commutation.
 - `HermiteEigenfunction.lean`: physicists' Hermite recurrence, differential equation, Hermite--Gaussian function, and pointwise eigenvalue equation
   \[
   \left(-\tfrac12\,d^2/dx^2+x^2/2\right)\psi_n=(n+1/2)\psi_n.
@@ -41,8 +53,15 @@ Five modules separate analytic, finite, and comparison results.
 
 ## Boundaries
 
-The formal layer excludes numerical and continuum validation.
+The formal layer excludes numerical and physical-model validation.
 
-- The Hermite function is unnormalized; no `L²` normalization, orthogonality, completeness, or spectral theorem is proved.
+- The local `HermiteEigenfunction.lean` function is unnormalized; no theorem identifies it with the
+  normalized Physlib continuum eigenstates.
+- The continuum bridge proves the required eigenstate dense-span premise and essential
+  self-adjointness for `d = 1`, and the closure is packaged as a self-adjoint quantum-system
+  Hamiltonian; its concrete domain-aware Cayley spectral measure and physical
+  `U(t)=exp(-itH̄/ℏ)` evolution are now bound. Arbitrary-dimensional completeness and evolution,
+  spectral eigenfunction expansion, continuum measurement semantics, and numerical propagation
+  remain open.
 - No theorem binds SciPy, NumPy, binary64 data, hashes, grids, or retained artifacts to these exact objects.
 - Finite-box, discretization, truncation, conditioning, and floating-point errors remain separate obligations.

@@ -11,7 +11,7 @@ This plan evaluates the Paper A diagnostics. Only the immutable producer-field a
 
 - Owner revision: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`.
 - Source inventory: M01–M15, A01–A12, N01–N23, and V01–V10.
-- Exact source limits: `docs/source-audit.md`.
+- Exact source limits: `docs/audit/source-audit.md`.
 - Proposed mathematical semantics: [`diagnostic-mathematical-specification.md`](diagnostic-mathematical-specification.md).
 - Owner-side naming and immutable-record recommendation: [`diagnostic-python-interface-recommendation.md`](diagnostic-python-interface-recommendation.md).
 - This file is not numerical evidence, a theorem inventory, execution authorization, or proof of usefulness.

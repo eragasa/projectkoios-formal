@@ -9,7 +9,7 @@ Each class has a distinct conclusion.
 | Class | Current status | Boundary |
 |---|---|---|
 | Dependency lock | available | identifies revisions; does not prove suitability |
-| Source snapshot | available in `source-audit.md` | identifies bytes; does not transfer ownership |
+| Source snapshot | available in `audit/source-audit.md` | identifies bytes; does not transfer ownership |
 | Build record | commands documented | proves compilation only |
 | Theorem inventory | available in `theorem-manifest.md` | planned entries are not theorems |
 | Axiom report | available for named declarations | covers only named declarations |

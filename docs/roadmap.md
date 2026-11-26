@@ -34,25 +34,60 @@ flowchart LR
   Q2[Typed ket, bra, bracket, and rank-one operators]
   Q3[Rigged Hilbert-space core]
   Q4[Dense invariant test-domain partial operators]
-  Q5[Closedness, adjoint equality, and self-adjointness]
+  Q5[Closability and self-adjointness criteria]
   Q6[Dual extensions and generalized eigenvectors]
   Q7[Qualified spectral expansion]
   Q8[Governed source and physical-model crosswalk]
+  QI0[Pinned QuantumInfo finite API]
+  QI1[Pure rays, mixed states, POVMs, CPTP maps, tensor products, and separability]
+  QA0[Pinned Physlib angular momentum and PhyslibAlpha spin orbit]
+  QA1[Schwartz-domain orbital angular momentum and finite dimensionless L dot S]
   Q0 --> Q1
   Q0 --> Q2
   Q2 --> Q3
   Q3 --> Q4
-  Q4 -. planned .-> Q5
+  Q4 -. concrete self-adjointness proof planned .-> Q5
   Q5 -. planned .-> Q6
   Q6 -. additional analysis required .-> Q7
   Q7 -. source and applicability gates .-> Q8
+  QI0 --> QI1
+  QA0 --> QA1
 ```
 
-The manifest records the source-neutral Q0--Q4 layers. Q5--Q8 remain planned: formal-adjoint
-containment is not adjoint equality or self-adjointness, and no generalized spectral theorem,
-textbook-postulate fidelity claim, runtime binding, or concrete Hamiltonian application follows from
-the arrows alone. Actual compiled dependencies remain separately documented in
-[`declaration-dependency-graph.md`](declaration-dependency-graph.md).
+The manifest records the source-neutral Q0--Q4 layers, a thin finite-dimensional binding to the
+pinned `QuantumInfo` pure-ray, mixed-state, POVM, CPTP-channel, tensor-product, partial-trace, and
+separability APIs, plus a thin binding to Physlib's three-dimensional Schwartz-domain orbital
+angular momentum and PhyslibAlpha's standard spin-half and dimensionless finite `L·S` algebra.
+The continuum angular-momentum binding proves symmetry, dense closability, and domain-evaluated
+commutation laws but no essential self-adjointness or spectral theorem; the finite spin-orbit
+binding does not yet identify a continuum or DFT SOC Hamiltonian. The manifest also records
+Physlib-backed Q5 domain criteria and essential-self-adjointness sufficient conditions, a first
+`SpaceDQuantumSystem` Hamiltonian bridge proving an exact Schwartz domain, symmetry, and
+closability under explicit smooth-potential hypotheses, and a singular hydrogenic specialization
+proving symmetry and dense closability on Physlib's polynomially bounded Schwartz subdomain. The
+continuum harmonic-oscillator bridge further proves exact Schwartz domain, symmetry, closability,
+and essential self-adjointness conditional on
+density of Physlib's Cartesian eigenstates. It also identifies the legacy and Cartesian
+one-dimensional Hilbert carriers and eigenstates. A checked function-level Fourier-integral
+injectivity theorem now replaces the integral-form Plancherel premise in the final legacy
+completeness step, yielding unconditional one-dimensional eigenstate density and essential
+self-adjointness. The self-adjoint closure is now packaged as
+`oneDimensionalQuantumSystem` through Physlib's `QuantumSystem.mkESA`. Project Koios now fixes the
+generic physical convention `U(t)=exp(-itH/ℏ)` and reparameterizes PhyslibAlpha's `exp(isH)` group
+accordingly, including all-time domain-vector derivatives, domain invariance, and Hamiltonian
+commutation. The one-dimensional oscillator closure is now bound to PhyslibAlpha's concrete
+Cayley-transform domain-aware spectral measure and this physical evolution adapter. The continuum
+to scalar-DFT bridge now maps Physlib `L²` orbitals to representative-safe real `L¹` densities,
+proves almost-everywhere agreement with the finite pointwise Kohn--Sham density formulas, and binds
+those densities to the existing abstract HK/Levy--Lieb variational interface without adding energy
+or representability claims. Normalization-dependent integral identities now recover the supplied
+occupation sum and the unit-occupation orbital count; normalization, occupation constraints, and
+physical filling rules remain explicit rather than inferred. Extending completeness and the
+spectral/evolution binding beyond `d = 1` remains planned. No
+eigenfunction spectral expansion, textbook-postulate fidelity claim, runtime binding,
+or physical-model applicability follows from the arrows alone. Actual compiled dependencies remain
+separately documented in
+[`audit/declaration-dependency-graph.md`](audit/declaration-dependency-graph.md).
 
 ## R0 — repository contract
 

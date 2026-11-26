@@ -2,7 +2,7 @@
 
 The declaration dependency graph is a read-only audit view of the compiled Lean environment. It
 answers which repository declarations directly occur in the type or value of each declaration in
-the authoritative declaration table of [`theorem-manifest.md`](theorem-manifest.md).
+the authoritative declaration table of [`../theorem-manifest.md`](../theorem-manifest.md).
 
 It is not an additional proof registry, a workflow engine, or scientific evidence. The compiled
 Lean environment and declaration manifest remain authoritative.
@@ -77,7 +77,7 @@ The graph supports:
 ## Roadmap overlay
 
 Actual kernel dependencies and intended future work must remain visually distinct. The goal spine
-in [`roadmap.md`](roadmap.md) uses solid descriptions of implemented/current layers and dashed
+in [`../roadmap.md`](../roadmap.md) uses solid descriptions of implemented/current layers and dashed
 planning arrows for intended work. A planned arrow does not mean that a Lean declaration, proof,
 source crosswalk, numerical certificate, or scientific validation exists.
 

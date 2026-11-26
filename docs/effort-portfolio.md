@@ -10,8 +10,8 @@ Initial document completed: 2026-10-27
 This file is the execution board. Detailed status remains in the linked ledgers.
 
 - Proof status: `theorem-manifest.md`
-- Trust: `trusted-base-audit.md`
-- Source identity: `source-audit.md`
+- Trust: `audit/trusted-base-audit.md`
+- Source identity: `audit/source-audit.md`
 - Publication mapping: `publication-crosswalk.md`
 - Evidence boundary: `formal-vs-numerical-evidence.md`
 - Module ownership: `module-layout.md`

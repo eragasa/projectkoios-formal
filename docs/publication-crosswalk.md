@@ -70,7 +70,7 @@ Paper 3 remains pre-results for the new higher-rank campaign: the selected D1 P0
 A read-only inspection of untracked Chapter 9 bytes provisionally motivates
 `ProjectKoios.BandGauge.Alignment.ConjugateLinearCoordinates`. The exact source path, SHA-256,
 line locators, 73-entry dirty-worktree limitation, and absence of an immutable Git blob are recorded
-in [`source-audit.md`](source-audit.md). The detailed correspondence is
+in [`audit/source-audit.md`](audit/source-audit.md). The detailed correspondence is
 [`BandGauge/ksdft2effmass/conjugate-linear-coordinate-algebra-crosswalk.md`](BandGauge/ksdft2effmass/conjugate-linear-coordinate-algebra-crosswalk.md).
 
 | Chapter 9 declaration/location | Source status | Lean status |
@@ -96,7 +96,7 @@ Dirichlet modes, canonical phases `exp(i kπ/(N+1))`, real representability, and
 constant-potential characters, determinant-one transfer matrices, finite left/barrier/right
 piecewise-constant recurrence, and exact character-amplitude/interface-state matching results. These barrier declarations are
 methodology infrastructure, not an adopted PIAB1D or Ragasa-series claim. See
-`docs/source-audit.md` for the dirty-worktree crosswalk limitation. No retained numerical result,
+`docs/audit/source-audit.md` for the dirty-worktree crosswalk limitation. No retained numerical result,
 observed convergence order, runtime eigensolver claim, continuum spectral completeness claim,
 constrained scattering-amplitude solution, flux probability, scattering coefficient,
 infinite-barrier limit, novelty claim, or publication status follows.

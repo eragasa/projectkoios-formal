@@ -1,77 +1,22 @@
-# Trusted-base audit
+# Validation history
 
-This file defines the trust boundary and records selected historical audit results.
+These records preserve superseded or tranche-specific validation evidence. They establish only the
+checks stated for the recorded source bytes, toolchain, and dependency identity. They are not
+current-tree validation and do not establish scientific validity or publication authority.
 
-## Trusted base
+## Record inventory
 
-The trusted base is explicit and small.
-
-- Lean 4.35.0 kernel and `lean-toolchain`.
-- Mathlib and transitive revisions in `lake-manifest.json`.
-- Repository Lean declarations under `ProjectKoios/`.
-- Audit scripts as evidence producers, not logical axioms.
-
-Physlib is not a dependency.
-
-## Policy
-
-Formal status requires visible assumptions and admissions checks.
-
-- No repository scientific axioms.
-- No hidden `sorry`, `admit`, or equivalent admissions.
-- No `proved` status without a named `#print axioms` report.
-- Report classical axioms exactly.
-- Document soundness boundaries for reflection, native computation, generated code, or external solvers.
-- Treat builds as compilation evidence only.
-
-## Required gates
-
-Validation is proportional to the changed trust surface.
-
-| Layer | Check |
+| Record | Historical tranche |
 |---|---|
-| Pins | `./scripts/check-pins.py` |
-| Affected Lean targets | compile every changed module, its bounded affected consumers, and the smallest relevant audit target; not required for documentation-only changes unless a formal-status or reproducibility claim must be replayed |
-| Repository-wide build | `lake build` only for toolchain/dependency, Lake/package, namespace-root, unbounded shared-foundation, ambiguous targeted-coverage, release/publication, or explicit-request gates |
-| Admissions and audit coverage | `./scripts/audit.sh` for Lean changes and any changed formal-status claim |
-| Named axioms | `ProjectKoios/Audit.lean` for new or changed proved declarations |
-| Manifest | compare changed declarations with `docs/theorem-manifest.md` |
-| Crosswalk | compare changed source revision, statement, and assumptions |
-| Generated state | confirm build products remain ignored and untracked |
+| [`AUD-HIST-001`](#aud-hist-001) | PIAB1D, 2026-10-21 |
+| [`AUD-HIST-002`](#aud-hist-002) | Symbolic finite barrier, 2026-10-21 |
+| [`AUD-HIST-003`](#aud-hist-003) | Two-band projection-support counterexample, 2026-10-20 |
+| [`AUD-HIST-004`](#aud-hist-004) | Finite product gauge--locality separation, 2026-11-01 |
+| [`AUD-HIST-005`](#aud-hist-005) | Hermitian Hoffman--Wielandt and RMS compression, 2026-11-04 |
 
-## Build reuse
+<a id="aud-hist-001"></a>
 
-Targeted and repository-wide evidence have different scopes and must be labeled honestly.
-
-- Identify evidence by source tree, `lean-toolchain`, and `lake-manifest.json`.
-- Reuse `.lake` and immutable dependency materialization.
-- Prefer one persistent clean integration worktree.
-- Run `lake update` only for dependency changes.
-- Compile every changed module and its bounded affected consumers during development or promotion.
-- Do not require a repository-wide build merely because an otherwise bounded source tree changed.
-- Except when freezing a release or publication snapshot, when toolchain and dependency identity are unchanged, combine prior repository-wide evidence with exact affected-target and audit checks for descendant trees. A frozen release or publication snapshot requires a repository-wide build of that exact tree.
-- Escalate to a full build when the affected set cannot be bounded reliably, targeted validation fails, a release/publication snapshot is frozen, or an operator/reviewer requests it.
-- Reuse results after unchanged staging, commit, or byte-identical merge.
-- Never report affected-target compilation as a full repository build.
-
-## Publication-facing gate
-
-Record:
-
-1. fully qualified declaration;
-2. exact Lean type;
-3. immutable source and locator;
-4. assumption delta;
-5. direct proof dependencies;
-6. axiom report;
-7. pin and validation results, distinguishing targeted compilation from repository-wide builds; and
-8. external certificate or numerical obligations.
-
-## Historical tranche records
-
-These records preserve earlier promotion evidence.
-
-### PIAB1D, 2026-10-21
+## `AUD-HIST-001` — PIAB1D, 2026-10-21
 
 The PIAB1D tranche passed its declared gates.
 
@@ -81,7 +26,10 @@ The PIAB1D tranche passed its declared gates.
 - Exact `Matrix.mulVec` results bind no NumPy/SciPy arrays, binary64 values, JSON, or retained calculation.
 - Canonical Dirichlet, periodic, and twisted modes prove no continuum completeness, universal mode nonzero/distinctness, or Bloch--Floquet theorem. Scalar real-space twisting is not reciprocal-fiber sewing.
 
-### Symbolic finite barrier, 2026-10-21
+
+<a id="aud-hist-002"></a>
+
+## `AUD-HIST-002` — Symbolic finite barrier, 2026-10-21
 
 The barrier tranche passed its declared gates.
 
@@ -92,7 +40,10 @@ The barrier tranche passed its declared gates.
 - Thirty named reports used only `propext`, `Classical.choice`, and `Quot.sound`.
 - The symbolic results do not solve constrained left-incident scattering amplitudes, assign flux probabilities, certify numerical transmission/reflection, take an infinite-barrier limit, bind runtime arrays, or establish continuum convergence.
 
-### Two-band projection-support counterexample, 2026-10-20
+
+<a id="aud-hist-003"></a>
+
+## `AUD-HIST-003` — Two-band projection-support counterexample, 2026-10-20
 
 Historical artifacts preserved in the original dirty worktree show exact module and audit
 compilation under Lean 4.35.0 and pinned Mathlib revision
@@ -112,7 +63,10 @@ results prove only the exact analytic counterexample; they do not establish nume
 material, runtime-evidence, localization-rate, universal-projection, release, or publication
 claims.
 
-### Finite product gauge--locality separation, 2026-11-01
+
+<a id="aud-hist-004"></a>
+
+## `AUD-HIST-004` — Finite product gauge--locality separation, 2026-11-01
 
 The source-neutral product-mesh tranche passed its declared Lean gates.
 
@@ -124,7 +78,10 @@ The source-neutral product-mesh tranche passed its declared Lean gates.
 - At that historical tranche, `ProjectKoios/BandGauge/Fourier/ProductGaugeLocalitySeparation.lean` had SHA-256 `709237449b6ddbcb6fce3e2ab83bc9b09ffe2cb392ecff6f0f23ea9e5f2a21a9`; the later hierarchy migration is recorded separately and does not rewrite this historical byte identity.
 - The exact finite identities do not authenticate an external torus coordinate or gauge, a runtime mesh or comparator, quadrature, finite-mesh approximation, physical hopping range, finite-to-continuum convergence, or scientific adequacy.
 
-### Hermitian Hoffman--Wielandt and RMS compression, 2026-11-04
+
+<a id="aud-hist-005"></a>
+
+## `AUD-HIST-005` — Hermitian Hoffman--Wielandt and RMS compression, 2026-11-04
 
 The source-neutral ordered-spectrum RMS tranche passed its declared affected-target gates and landed
 on `main` at immutable commit `9192f3b123613a5d21ae899a1e8b5364a4fca65a`, tree

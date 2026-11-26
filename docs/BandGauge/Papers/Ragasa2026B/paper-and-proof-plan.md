@@ -17,7 +17,7 @@ The plan uses one immutable publication directory.
 - Commit: `99a46cb59d0c6f27ada7d709f194996ef9619d9f`
 - Path: `docs/publications/papers/Ragasa2026b/v2`
 
-Version 2 states that it preserves the relevant version 1 mathematics and scope. Exact hashes and dirty-state limits are in `docs/source-audit.md`.
+Version 2 states that it preserves the relevant version 1 mathematics and scope. Exact hashes and dirty-state limits are in `docs/audit/source-audit.md`.
 
 ## Thesis
 
