@@ -86,6 +86,21 @@ establish noninteracting representability, orbital existence, continuum normaliz
 differentiability, an effective potential or eigenproblem, LDA, self-consistency, finite-basis
 execution, PAW, or scientific validity.
 
+## Selected finite-basis Kohn--Sham density bridge
+
+The source-neutral finite-basis orbital expansion and its thin Kohn--Sham binding have a dossier for
+`DFT-KS-BASIS-THM-001`. The theorem substitutes a supplied finite coefficient expansion into the
+unit-occupation pointwise orbital-density sum. Supporting coefficient-linearity, weighted-density,
+and nonnegativity declarations remain fully recorded in Lean and the theorem manifest without
+separate dossiers.
+
+The dossier cites `Kohn1965` Section II.A, Eq. (2.9), only for the occupied-orbital density sum. It
+does not attribute the finite basis expansion to that paper and does not claim basis completeness,
+normalization, orthogonality, physical filling, an operator or overlap matrix, an eigenproblem,
+discretization convergence, self-consistency, PAW, or scientific validity. The inspected PDF hash is
+recorded while the References-owned canonical identity and immutable Formal introduction commit
+remain pending.
+
 ## Selected integer lattice radius bridge
 
 The exact squared-index/radius bridge has a selected dossier for

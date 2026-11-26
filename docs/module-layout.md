@@ -46,7 +46,7 @@ finite-basis, PAW, spin, and relativistic layers must import rather than redefin
 | Directory | Owns | Excludes |
 |---|---|---|
 | `DensityFunctionalTheory/Foundations/` | abstract real-valued density variational data, ground-state and strict-ground-state predicates, scalar-potential equivalence modulo additive constants, the strict nondegenerate Hohenberg--Kohn variational contradiction, conditional potential recovery with the model-specific shared-state uniqueness step exposed as a hypothesis, and an abstract Levy--Lieb constrained search over the explicitly representable density subtype with an infimum functional, outer variational bound, and equality at a supplied ground-state density | continuum electron function spaces, Coulomb Hamiltonians, particle-number normalization, independent minimizer-existence or uniqueness theorems, degenerate HK theory, ensemble/density-matrix relaxation, Kohn--Sham orbitals, exchange--correlation approximations, PAW, runtime solvers, numerical evidence, and scientific-validation claims |
-| `DensityFunctionalTheory/KohnSham/` | supplied scalar universal, noninteracting kinetic, and Hartree functionals; exact exchange--correlation remainder reconstruction; specialization of the universal term to the abstract constrained-search energy; finite complex scalar orbital families; and pointwise unit/occupation-weighted density sums with exact nonnegativity and weight-linearity identities | noninteracting representability, continuum normalization or orthogonality, physical occupation bounds or particle-number sums, Coulomb kernels, functional derivatives, effective potentials/operators, eigenvalue equations, LDA or other approximations, self-consistency, finite-basis matrices, numerical convergence, and PAW |
+| `DensityFunctionalTheory/KohnSham/` | supplied scalar universal, noninteracting kinetic, and Hartree functionals; exact exchange--correlation remainder reconstruction; specialization of the universal term to the abstract constrained-search energy; finite complex scalar orbital families; pointwise unit/occupation-weighted density sums; and the thin binding from source-neutral finite-basis orbital expansion to fully expanded Kohn--Sham density | noninteracting representability, continuum normalization or orthogonality, physical occupation bounds or particle-number sums, Coulomb kernels, functional derivatives, effective potentials/operators, Hamiltonian or overlap matrices, eigenvalue equations, LDA or other approximations, self-consistency, discretization error, numerical convergence, and PAW |
 | `DensityFunctionalTheory/PAW/` | future exact transformation, overlap, transformed-operator, and generalized-eigenproblem algebra downstream of orbital Kohn--Sham foundations | currently no implemented API; no dataset, augmentation-sphere, compensation-charge, implementation, or materials claim |
 
 ## Quantum mechanics
@@ -60,7 +60,7 @@ Quantum modules separate general mathematics from controlled models.
 | `Dirac.lean` | typed ordinary bras, kets, brackets, and rank-one operators | generalized eigenvectors |
 | `RiggedHilbertSpace.lean` | test-space inclusion and generalized functional embeddings | nuclearity and spectral completeness |
 | `Operator/TestDomain.lean` | dense partial operators and formal-adjoint containment | closedness, adjoint equality, self-adjointness, spectra |
-| `FiniteDimensional/` | compression, reduction, fitting, resolvents, spin embeddings and projections, exact Pauli-vector algebra, scalar-plus-Pauli decomposition, fixed-basis collinearity, and exact global `SU(2)` active spin-frame rotations | runtime data, DFT/SOC source bindings, induced `SO(3)` identification, position-dependent frames, and physical interpretation |
+| `FiniteDimensional/` | compression, reduction, fitting, resolvents, source-neutral finite-basis complex orbital-amplitude expansion, spin embeddings and projections, exact Pauli-vector algebra, scalar-plus-Pauli decomposition, fixed-basis collinearity, and exact global `SU(2)` active spin-frame rotations | runtime data, density or DFT/SOC source bindings, basis completeness or integration, induced `SO(3)` identification, position-dependent frames, and physical interpretation |
 | `FiniteDifference/` | exact lattice, boundary, transfer, and barrier algebra | continuum convergence and numerical scattering |
 | `HarmonicOscillator/` | exact Hermite, ladder, truncation, and comparison algebra | runtime and continuum validation |
 | `Piab1d/` | finite one-dimensional box specialization | general finite-difference ownership |
@@ -88,7 +88,8 @@ FiniteDimensional spin algebra -> SolidState/FiniteLattice
 FiniteLadder -> TruncationDistortion
 FiniteDifference -> Piab1d
 State -> Measurement and Dirac -> RiggedHilbertSpace -> Operator/TestDomain
-DFT/Foundations/Variational -> DFT/Foundations/HohenbergKohn and ConstrainedSearch -> DFT/KohnSham/FunctionalDecomposition -> DFT/KohnSham/OccupiedOrbitals -> future finite-basis, PAW, and spin bindings
+DFT/Foundations/Variational -> DFT/Foundations/HohenbergKohn and ConstrainedSearch -> DFT/KohnSham/FunctionalDecomposition -> DFT/KohnSham/OccupiedOrbitals
+QM/FiniteDimensional/OrbitalExpansion + DFT/KohnSham/OccupiedOrbitals -> DFT/KohnSham/FiniteBasisDensity -> future PAW and spin bindings
 TetrahedralSp3 -> TetrahedralSp3sStar and TetrahedralStructureFactors -> VoglSp3sStar
 ```
 
