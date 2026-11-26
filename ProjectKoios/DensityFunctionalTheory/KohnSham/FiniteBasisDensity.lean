@@ -41,18 +41,12 @@ representation algebra and is not attributed to Kohn and Sham.
 The inspected scan was checked against the rendered page image; OCR was used only for discovery.
 Proposed citekey: `Kohn1965`. The References-owned canonical identity remains unresolved.
 
-## Explicit limitations
+## Formal scope
 
-This module assumes finite basis and orbital index types supplied by `Fintype`. It does not infer:
-
-* basis completeness, linear independence, normalization, or spatial integration;
-* orbital normalization, mutual orthogonality, occupation bounds, or a particle-number sum;
-* noninteracting representability or existence of Kohn--Sham orbitals;
-* a Hamiltonian, overlap matrix, eigenvalue equation, functional derivative, or self-consistency;
-* a finite-basis discretization error bound, numerical implementation, or PAW transformation.
-
-Consequently, the result is an exact bridge between supplied finite data, not a theorem that a
-continuum Kohn--Sham solution admits this representation.
+The basis and orbital index types are finite. Basis values, coefficient tables, and occupations are
+supplied directly. Completeness, normalization, orthogonality, occupation bounds, and particle-number
+constraints are separate hypotheses when needed. This module relates the supplied expansion to the
+pointwise density definition; it does not introduce an operator or eigenproblem.
 -/
 
 open scoped BigOperators
@@ -69,8 +63,8 @@ variable {Basis Orbital Position : Type*} [Fintype Basis] [Fintype Orbital]
 `DFT-KS-BASIS-DEF-001`: view a finite-basis expansion as the scalar orbital family used by the
 Kohn--Sham density API.
 
-This construction copies only the reconstructed amplitude function. It adds no normalization,
-orthogonality, occupancy, or representability evidence.
+This construction copies only the reconstructed amplitude function. Normalization, orthogonality,
+and occupation conditions remain separate predicates.
 -/
 def finiteBasisOrbitalFamily
     (expansion : FiniteBasisOrbitalExpansion Basis Orbital Position) :
@@ -121,9 +115,8 @@ Source locator: Kohn and Sham (1965), DOI `10.1103/PhysRev.140.A1133`, Section I
 for `ρ(r) = ∑ᵢ |ψᵢ(r)|²`. Lean substitutes the separately defined source-neutral finite expansion
 `ψᵢ(r) = ∑μ C μ i * χ μ r` and represents `|z|²` by `Complex.normSq z`.
 
-The equality is exact for the supplied finite data. It does not assert that the basis or orbitals
-exist for a continuum Kohn--Sham problem, nor that they are normalized, orthogonal, occupied
-according to a physical filling rule, or self-consistent.
+The equality is exact for the supplied finite data. It uses no completeness, normalization,
+orthogonality, or filling hypothesis.
 -/
 theorem finiteBasisOccupiedDensity_eq_sum_normSq
     (expansion : FiniteBasisOrbitalExpansion Basis Orbital Position)

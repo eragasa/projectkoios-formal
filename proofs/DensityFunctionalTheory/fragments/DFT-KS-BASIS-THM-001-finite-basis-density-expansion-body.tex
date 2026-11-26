@@ -1,0 +1,152 @@
+% Body fragment for DFT-KS-BASIS-THM-001-finite-basis-density-expansion.tex.
+% Included by the standalone wrapper and the DFT formal proof compendium.
+\DossierHeading{DFT-KS-BASIS-THM-001: Finite-basis density expansion}{2026-11-26}
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{DFT-KS-BASIS-THM-001} \\
+Status & proved; no admissions; draft dossier \\
+Lean declaration & \path{ProjectKoios.DensityFunctionalTheory.KohnSham.finiteBasisOccupiedDensity_eq_sum_normSq} \\
+Owning module & \path{ProjectKoios/DensityFunctionalTheory/KohnSham/FiniteBasisDensity.lean} \\
+Source-neutral dependency & \path{ProjectKoios/QuantumMechanics/FiniteDimensional/OrbitalExpansion.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+The status concerns exact finite sums over supplied basis functions and coefficients.  It does not
+prove that a continuum Kohn--Sham solution has the supplied representation.
+
+\section{Exact mathematical statement}
+Let $B$ and $I$ be finite index types, let $X$ be any position carrier, and supply complex values
+$\chi_\mu(r)$ and coefficients $C_{\mu i}$.  Define
+\[
+ \psi_i(r)=\sum_{\mu\in B} C_{\mu i}\chi_\mu(r)
+ \qquad\text{and}\qquad
+ \rho(r)=\sum_{i\in I}|\psi_i(r)|^2.
+\]
+Then, for every $r\in X$,
+\[
+ \rho(r)=\sum_{i\in I}
+   \left|\sum_{\mu\in B}C_{\mu i}\chi_\mu(r)\right|^2.
+\]
+Lean represents the squared complex modulus by \texttt{Complex.normSq}.
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Literature source & W. Kohn and L. J. Sham, ``Self-Consistent Equations Including Exchange and Correlation Effects,'' DOI \texttt{10.1103/PhysRev.140.A1133} \\
+Immutable inspected bytes & \texttt{Kohn1965.pdf}, SHA-256 \hash{71df6859ee7cb1619b34d6ab87d82516735ae48a6213cc1a6f608eb81810b779} \\
+Exact locator & Section II.A, equation (2.9), for the occupied-orbital density sum only \\
+Inspection limitation & image-scan source; the equation was checked against the rendered page image rather than accepted from OCR alone \\
+Finite-basis authority & none claimed; the coefficient expansion is source-neutral representation algebra \\
+Reference authority & proposed citekey \texttt{Kohn1965}; References-owned canonical identity remains unresolved \\
+Formal introduction & branch \texttt{review/conjugate-linear-coordinate-algebra}, commit \hash{b5f7f29507dba582f6dd69bddd6ad8d92f4d5bce} \\
+Dossier provenance & declaration and initial draft dossier were introduced together at that immutable commit; this dossier remains a draft \\
+\bottomrule
+\end{tabularx}
+The inspected source supports the sum of squared occupied-orbital amplitudes.  It is not cited as
+provenance for finite basis discretization, coefficient existence, or approximation quality.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}YYY@{}}
+\toprule
+Source or model feature & Lean encoding & Delta or limitation \\
+\midrule
+Occupied orbitals & arbitrary finite orbital index type $I$ & no filling rule, degeneracy, or spin factor inferred \\
+Orbital modulus square & \texttt{Complex.normSq} & exact complex scalar amplitude \\
+Basis expansion & finite type $B$, supplied $C_{\mu i}$ and $\chi_\mu(r)$ & source-neutral substitution; no completeness or error theorem \\
+Position & arbitrary carrier $X$ & no measure, topology, dimension, or integration \\
+Occupation & unit contribution for every $i\in I$ & weighted companion definition exists; no particle-number constraint \\
+\bottomrule
+\end{tabularx}
+The multiplication convention is $C_{\mu i}\chi_\mu(r)$.  No conjugation is applied to the
+coefficient during amplitude reconstruction; conjugation enters only through the squared modulus.
+
+\section{Statement-specific prior art and contribution boundary}
+\begin{tabularx}{\textwidth}{@{}lYYY@{}}
+\toprule
+Relation & Authority & Locator & Role and caveat \\
+\midrule
+adapts & proposed \texttt{Kohn1965} & Section II.A, equation (2.9) & occupied-density sum; continuum and spin conventions replaced by explicit finite indices \\
+local dependency & source-neutral Lean module & \texttt{OrbitalExpansion.lean} & finite coefficient reconstruction; no literature authority claimed \\
+depends-on & pinned Mathlib & finite sums and \texttt{Complex.normSq} & proof infrastructure only \\
+\bottomrule
+\end{tabularx}
+The scientific formula is classical.  The local contribution is an auditable separation between
+generic finite-basis amplitude algebra and the Kohn--Sham density binding.  No novelty claim is made.
+
+\section{Proof schematic}
+\[
+\begin{array}{c}
+ \psi_i(r)=\sum_\mu C_{\mu i}\chi_\mu(r)\\[2mm]
+ \rho(r)=\sum_i \operatorname{normSq}(\psi_i(r))\\
+ \Downarrow\ \text{unfold the semantic bridge}\\
+ \rho(r)=\sum_i\operatorname{normSq}\!\left(\sum_\mu C_{\mu i}\chi_\mu(r)\right).
+\end{array}
+\]
+
+\section{Human-readable mathematical argument}
+The source-neutral module defines each reconstructed amplitude to be its finite coefficient-weighted
+basis sum.  The Kohn--Sham bridge uses those amplitudes as an orbital family, and the established
+unit-occupation density definition sums their squared complex moduli.  Substituting the first
+definition into the second yields the displayed formula exactly.  No analytic or variational
+argument is required.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem finiteBasisOccupiedDensity_eq_sum_normSq
+    (expansion : FiniteBasisOrbitalExpansion Basis Orbital Position)
+    (position : Position) :
+    finiteBasisOccupiedDensity expansion position =
+      Finset.univ.sum (fun orbital => Complex.normSq
+        (Finset.univ.sum (fun basis =>
+          expansion.coefficient basis orbital *
+            expansion.basisFunction basis position)))
+\end{lstlisting}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Lean toolchain & Lean \texttt{4.35.0}, commit \hash{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
+Mathlib revision & \hash{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Imports & source-neutral finite-basis orbital expansion and scalar occupied-orbital density \\
+Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed for the introduction tree at \hash{b5f7f29507dba582f6dd69bddd6ad8d92f4d5bce} \\
+\bottomrule
+\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.DensityFunctionalTheory.KohnSham.
+  finiteBasisOccupiedDensity_eq_sum_normSq
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+The candidate-tree audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and comprehension record}
+The Lean proof and dossier were AI-assisted.  The maintainer previously checked the cited scanned
+page against its rendered image and authorized the ownership split between source-neutral quantum
+algebra and the thin Kohn--Sham binding.  Lean kernel checking, OCR used for discovery, hashing,
+audits, and LaTeX compilation are automation, not independent expert review.  No independent
+mathematical or DFT-specialist review is recorded.
+
+\section{Scientific and evidence boundaries}
+The theorem does not prove basis completeness, orbital normalization or orthogonality, a physical
+occupation count, noninteracting representability, an effective Hamiltonian or overlap matrix,
+solution of an eigenproblem, convergence under basis enlargement, self-consistency, PAW, numerical
+evidence, or a material claim.
+
+\section{Unresolved questions}
+\begin{itemize}
+\item Resolve the proposed \texttt{Kohn1965} identity through \texttt{projectkoios-references}.
+\item Add Hamiltonian, overlap, generalized-eigenproblem, and PAW layers only with separate contracts.
+\item No independent expert review has been completed.
+\end{itemize}
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-11-26 & initial draft & AI-assisted maintainer review & ownership split, finite sums, scanned-source locator, statement delta, proof, and axiom report checked; immutable Formal commit, canonical identity, and independent review pending \\
+2026-11-26 & provenance backfill & repository history review & Formal introduction fixed at \hash{b5f7f29507dba582f6dd69bddd6ad8d92f4d5bce}; canonical identity and independent review remain pending \\
+\bottomrule
+\end{tabularx}

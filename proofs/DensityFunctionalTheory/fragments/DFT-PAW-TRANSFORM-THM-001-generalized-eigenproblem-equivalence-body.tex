@@ -1,0 +1,162 @@
+% Body fragment for DFT-PAW-TRANSFORM-THM-001-generalized-eigenproblem-equivalence.tex.
+% Included by the standalone wrapper and the DFT formal proof compendium.
+\DossierHeading{DFT-PAW-TRANSFORM-THM-001: Generalized eigenproblem equivalence}{2026-11-26}
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{DFT-PAW-TRANSFORM-THM-001} \\
+Status & proved; no admissions; draft dossier \\
+Lean declaration & \path{ProjectKoios.DensityFunctionalTheory.PAW.FinitePawTransformation.isGeneralizedEigenpair_iff_isReconstructedEigenpair_of_isUnit} \\
+Owning module & \path{ProjectKoios/DensityFunctionalTheory/PAW/FiniteTransformation.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+The status concerns exact finite complex matrix algebra for a supplied invertible transformation.  It
+does not prove that a concrete PAW dataset defines such a transformation.
+
+\section{Exact mathematical statement}
+Let $I$ be a finite index type, let $T,H\in\mathbb C^{I\times I}$, let
+$\widetilde\psi\in\mathbb C^I$, and let $\varepsilon\in\mathbb C$.  Define
+\[
+ \psi=T\widetilde\psi,\qquad
+ \widetilde H=T^\dagger H T,\qquad
+ S=T^\dagger T.
+\]
+If $T$ is invertible, then
+\[
+ \widetilde H\widetilde\psi=\varepsilon S\widetilde\psi
+ \quad\Longleftrightarrow\quad
+ H\psi=\varepsilon\psi.
+\]
+No Hermiticity or normalization premise is needed for this equivalence.
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Primary source & P. E. Bl\"ochl, ``Projector Augmented-Wave Method,'' DOI \texttt{10.1103/PhysRevB.50.17953} \\
+Primary inspected bytes & \texttt{Blochl1994.pdf}, SHA-256 \hash{a74d1f7c884153880c8c98b36a354b0d3af1c20777231e33d6b7965ad86589f6} \\
+Primary locators & Section II.A, equations (8)--(9); Section II.B, equation (11); Section IV.A, equation (30) \\
+Companion source & G. Kresse and D. Joubert, ``From Ultrasoft Pseudopotentials to the Projector Augmented-Wave Method,'' DOI \texttt{10.1103/PhysRevB.59.1758} \\
+Companion inspected bytes & \texttt{Kresse1999.pdf}, SHA-256 \hash{e4cd6772b96ab2318904aeaa99a0f9ac253f5d4c29719bc78be3505ed1621b28} \\
+Companion locators & Section III.A, equations (38)--(40), and Section III.D, generalized Kohn--Sham equation immediately after equation (51) \\
+Inspection limitation & Bl\"ochl is an image scan; binding-critical equations were checked against rendered page images rather than accepted from OCR alone \\
+Reference authority & proposed citekeys \texttt{Blochl1994} and \texttt{Kresse1999}; References-owned canonical identities remain unresolved \\
+Formal introduction & branch \texttt{review/conjugate-linear-coordinate-algebra}, commit \hash{fa0394941cf9604fe5ee1824f2fd17e42cb3a826} \\
+Dossier provenance & declaration and initial draft dossier were introduced together at that immutable commit; this dossier remains a draft \\
+\bottomrule
+\end{tabularx}
+The sources provide the PAW reconstruction, transported operator, overlap, and generalized equation.
+Lean adds an explicit finite invertibility premise for the converse implication.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}YYY@{}}
+\toprule
+Source or model feature & Lean encoding & Delta or limitation \\
+\midrule
+PAW transformation & supplied square complex matrix $T$ & explicit projector/partial-wave construction deferred \\
+Reconstructed state & matrix action $T\widetilde\psi$ & finite coordinate vector only \\
+Transported operator & $T^\dagger H T$ & exact congruence; no one-center expansion \\
+Overlap & $T^\dagger T$ & induced metric; positivity is proved separately \\
+Converse eigenproblem transport & \texttt{IsUnit T} & invertibility exposed explicitly rather than inferred from completeness \\
+Eigenvalue & arbitrary $\varepsilon\in\mathbb C$ & reality would require a separate Hermitian spectral argument \\
+\bottomrule
+\end{tabularx}
+Matrix action is on column vectors.  The active reconstruction convention is
+$\psi=T\widetilde\psi$; this is not a passive coordinate change.
+
+\section{Statement-specific prior art and contribution boundary}
+\begin{tabularx}{\textwidth}{@{}lYYY@{}}
+\toprule
+Relation & Authority & Locator & Role and caveat \\
+\midrule
+adapts & proposed \texttt{Blochl1994} & equations (9), (11), and (30) & reconstruction, transported operator, and overlap; analytic and projector detail omitted \\
+adapts & proposed \texttt{Kresse1999} & Section III.D after equation (51) & generalized Kohn--Sham equation; self-consistency and forces omitted \\
+depends-on & pinned Mathlib & conjugate transpose, matrix action, \texttt{IsUnit}, injectivity & exact proof infrastructure only \\
+\bottomrule
+\end{tabularx}
+The transformation identities are classical PAW algebra.  The local contribution is an auditable
+finite theorem with the cancellation premise stated explicitly.  No novelty claim is made.
+
+\section{Proof schematic}
+For the forward direction,
+\[
+ H(T\widetilde\psi)=\varepsilon(T\widetilde\psi)
+ \quad\Longrightarrow\quad
+ T^\dagger H T\widetilde\psi=\varepsilon T^\dagger T\widetilde\psi.
+\]
+For the converse, the generalized equation says
+\[
+ T^\dagger\bigl(H(T\widetilde\psi)\bigr)
+ =T^\dagger\bigl(\varepsilon(T\widetilde\psi)\bigr).
+\]
+Invertibility of $T$ implies injectivity of the action of $T^\dagger$, so it can be cancelled.
+
+\section{Human-readable mathematical argument}
+Substitute the definitions of the transformed operator and overlap.  Any reconstructed-state
+eigenpair remains an eigenpair after applying $T^\dagger$ to both sides, giving the generalized
+equation without an invertibility assumption.  Conversely, if $T$ is invertible, then so is
+$T^\dagger$; hence its matrix action is injective.  Cancelling that action from the generalized
+equation recovers the standard eigenproblem for the reconstructed state.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem FinitePawTransformation.
+    isGeneralizedEigenpair_iff_isReconstructedEigenpair_of_isUnit
+    [DecidableEq Index]
+    (transformation : FinitePawTransformation Index)
+    (operator : Matrix Index Index Complex)
+    (pseudoState : Index -> Complex) (energy : Complex)
+    (hinvertible : IsUnit transformation) :
+    transformation.IsGeneralizedEigenpair
+        operator pseudoState energy <->
+      transformation.IsReconstructedEigenpair
+        operator pseudoState energy
+\end{lstlisting}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Lean toolchain & Lean \texttt{4.35.0}, commit \hash{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
+Mathlib revision & \hash{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Imports & Mathlib complex matrices, positive-definite matrices, and matrix invertibility \\
+Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed for the introduction tree at \hash{fa0394941cf9604fe5ee1824f2fd17e42cb3a826} \\
+\bottomrule
+\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.DensityFunctionalTheory.PAW.
+  FinitePawTransformation.
+    isGeneralizedEigenpair_iff_isReconstructedEigenpair_of_isUnit
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+The candidate-tree audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and comprehension record}
+The Lean proof and dossier were AI-assisted.  The maintainer previously checked the binding-critical
+Bl\"ochl scan equations against rendered page images and reviewed the Kresse--Joubert source notes.
+Lean kernel checking, OCR used for discovery, hashing, audits, and LaTeX compilation are automation,
+not independent expert review.  No independent mathematical or PAW-specialist review is recorded.
+
+\section{Scientific and evidence boundaries}
+The theorem does not construct $T$, prove partial-wave/projector duality or completeness, define
+augmentation regions or compensation charges, derive a PAW density or energy functional, establish
+frozen-core or basis-cutoff accuracy, authenticate a dataset or implementation, solve a
+self-consistent Kohn--Sham problem, or validate a material calculation.
+
+\section{Unresolved questions}
+\begin{itemize}
+\item Resolve the proposed \texttt{Blochl1994} and \texttt{Kresse1999} identities through \texttt{projectkoios-references}.
+\item Add the finite-rank projector/partial-wave specialization in a separate layer.
+\item No independent expert review has been completed.
+\end{itemize}
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-11-26 & initial draft & AI-assisted maintainer review & finite PAW conventions, source locators, explicit invertibility delta, proof, and axiom report checked; immutable Formal commit, canonical identities, and independent review pending \\
+2026-11-26 & provenance backfill & repository history review & Formal introduction fixed at \hash{fa0394941cf9604fe5ee1824f2fd17e42cb3a826}; canonical identities and independent review remain pending \\
+\bottomrule
+\end{tabularx}

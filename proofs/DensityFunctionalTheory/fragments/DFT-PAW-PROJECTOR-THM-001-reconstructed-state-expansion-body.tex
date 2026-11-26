@@ -1,0 +1,151 @@
+% Body fragment for DFT-PAW-PROJECTOR-THM-001-reconstructed-state-expansion.tex.
+% Included by the standalone wrapper and the DFT formal proof compendium.
+\DossierHeading{DFT-PAW-PROJECTOR-THM-001: Reconstructed-state expansion}{2026-11-26}
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{DFT-PAW-PROJECTOR-THM-001} \\
+Status & proved; no admissions; draft dossier \\
+Lean declaration & \path{ProjectKoios.DensityFunctionalTheory.PAW.FiniteProjectorAugmentation.reconstructState_eq_pseudoState_add_corrections} \\
+Owning module & \path{ProjectKoios/DensityFunctionalTheory/PAW/ProjectorAugmentation.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+The theorem is exact finite complex matrix algebra for supplied partial waves and projectors.
+
+\section{Exact mathematical statement}
+Let $V$ be a finite complex coordinate space and let $I$ be a finite channel set.  Supply
+all-electron partial waves $\phi_i\in V$, pseudo partial waves $\widetilde\phi_i\in V$, and projector
+vectors $\widetilde p_i\in V$.  Define
+\[
+ \Delta\phi_i=\phi_i-\widetilde\phi_i,
+ \qquad
+ T=I_V+\sum_{i\in I}|\Delta\phi_i\rangle\langle\widetilde p_i|.
+\]
+Then every pseudo state $\widetilde\psi\in V$ satisfies
+\[
+ T\widetilde\psi
+ =\widetilde\psi+
+   \sum_{i\in I}\langle\widetilde p_i|\widetilde\psi\rangle\Delta\phi_i.
+\]
+Projector duality and partial-wave completeness are not premises of this action identity.
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Literature source & P. E. Bl\"ochl, ``Projector Augmented-Wave Method,'' DOI \texttt{10.1103/PhysRevB.50.17953} \\
+Immutable inspected bytes & \texttt{Blochl1994.pdf}, SHA-256 \hash{a74d1f7c884153880c8c98b36a354b0d3af1c20777231e33d6b7965ad86589f6} \\
+Exact locators & Section II.A, equations (6)--(7) for projector amplitudes and duality, equation (8) for $T$, and equation (9) for state reconstruction \\
+Inspection limitation & image-scan source; binding-critical equations were checked against rendered page images rather than accepted from OCR alone \\
+Reference authority & proposed citekey \texttt{Blochl1994}; References-owned canonical identity remains unresolved \\
+Formal candidate base & branch \texttt{review/conjugate-linear-coordinate-algebra}, base commit \hash{3739ddbee2d9fc18c43dd79a0ba6614fda274b54} \\
+Formal provenance limitation & declaration and dossier are currently uncommitted; immutable introduction commit pending \\
+\bottomrule
+\end{tabularx}
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}YYY@{}}
+\toprule
+Source feature & Lean encoding & Delta or limitation \\
+\midrule
+Partial waves and projectors & supplied finite coordinate vectors & radial and angular representations are not introduced \\
+Projector bra & componentwise conjugate followed by finite dot product & fixes conjugation and pairing convention \\
+Rank-one operator & \texttt{Matrix.vecMulVec} & fixes row/column orientation explicitly \\
+Channel sum & finite type enumeration & no convergence issue \\
+Duality & separate predicate & not needed by this theorem; used for mapping pseudo partial waves to all-electron partial waves \\
+Completeness & absent & required later for the explicit overlap expansion \\
+\bottomrule
+\end{tabularx}
+
+\section{Statement-specific prior art and contribution boundary}
+\begin{tabularx}{\textwidth}{@{}lYYY@{}}
+\toprule
+Relation & Authority & Locator & Role and caveat \\
+\midrule
+adapts & proposed \texttt{Blochl1994} & Section II.A, equations (6)--(9) & finite-rank transformation and reconstructed-state action \\
+depends-on & pinned Mathlib & finite sums, rank-one matrices, and matrix-vector action & proof infrastructure only \\
+\bottomrule
+\end{tabularx}
+The local contribution is a typed finite-coordinate realization with explicit conjugation and
+rank-one orientation.  No novelty claim is made.
+
+\section{Proof schematic}
+\[
+\begin{aligned}
+ T\widetilde\psi
+ &=\left(I_V+\sum_i|\Delta\phi_i\rangle\langle\widetilde p_i|\right)
+   \widetilde\psi\\
+ &=\widetilde\psi+
+   \sum_i |\Delta\phi_i\rangle
+   \langle\widetilde p_i|\widetilde\psi\rangle\\
+ &=\widetilde\psi+
+   \sum_i\langle\widetilde p_i|\widetilde\psi\rangle\Delta\phi_i.
+\end{aligned}
+\]
+
+\section{Human-readable mathematical argument}
+Distribute matrix-vector action over the identity plus the finite correction sum.  The identity
+matrix returns the pseudo state.  Each rank-one matrix
+$|\Delta\phi_i\rangle\langle\widetilde p_i|$ sends the state to the scalar projector amplitude
+$\langle\widetilde p_i|\widetilde\psi\rangle$ times $\Delta\phi_i$.  Summing these channel
+contributions gives the result.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem FiniteProjectorAugmentation.
+    reconstructState_eq_pseudoState_add_corrections
+    [DecidableEq State]
+    (data : FiniteProjectorAugmentation State Channel)
+    (pseudoState : State -> Complex) :
+    data.transformation.reconstructState pseudoState =
+      pseudoState + Finset.univ.sum (fun channel =>
+        SMul.smul (data.projectorAmplitude channel pseudoState)
+          (data.partialWaveCorrection channel))
+\end{lstlisting}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Lean toolchain & Lean \texttt{4.35.0}, commit \hash{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
+Mathlib revision & \hash{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Imports & finite PAW transformation and Mathlib finite matrix algebra \\
+Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed on the candidate tree \\
+\bottomrule
+\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.DensityFunctionalTheory.PAW.
+  FiniteProjectorAugmentation.
+    reconstructState_eq_pseudoState_add_corrections
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+The candidate-tree audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and comprehension record}
+The Lean proof and dossier were AI-assisted.  The maintainer previously checked the binding-critical
+scan equations against rendered page images.  Lean kernel checking, OCR used for discovery, hashing,
+audits, and LaTeX compilation are automation, not independent expert review.  No independent
+mathematical or PAW-specialist review is recorded.
+
+\section{Scientific and evidence boundaries}
+The theorem supplies no radial representation, augmentation geometry, projector-construction
+algorithm, resolution of identity, overlap expansion, PAW density or energy functional, dataset, or
+numerical result.  Those require additional definitions and hypotheses.
+
+\section{Unresolved questions}
+\begin{itemize}
+\item Record the immutable Formal introduction commit.
+\item Resolve the proposed \texttt{Blochl1994} identity through \texttt{projectkoios-references}.
+\item Add an explicit completeness contract before deriving Bl\"ochl equation (30).
+\item No independent expert review has been completed.
+\end{itemize}
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-11-26 & initial draft & AI-assisted maintainer review & finite-rank convention, scan locators, statement delta, proof, and axiom report checked; immutable Formal commit, canonical identity, and independent review pending \\
+\bottomrule
+\end{tabularx}

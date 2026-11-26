@@ -53,14 +53,14 @@ sesquilinear pairing is `star x ⬝ᵥ y`, conjugate-linear in the first argumen
 
 The converse generalized-eigenproblem theorem first exposes the exact necessary hypothesis that
 left multiplication by `Tᴴ` on vectors is injective. The principal corollary derives that hypothesis
-from `IsUnit T`. No claim is made that a concrete PAW construction satisfies invertibility.
+from `IsUnit T`; invertibility is not derived from the matrix definitions.
 
-## Explicit limitations
+## Formal scope
 
-This layer does not define the finite-rank partial-wave/projector formula for `T`, augmentation
-regions, dual projectors, compensation charges, density or total-energy decompositions, frozen-core
-approximations, plane-wave cutoffs, datasets, numerical algorithms, or material accuracy. It is
-exact finite matrix algebra for supplied data, not a validation theorem for PAW calculations.
+This module treats `T` and the all-electron operator as supplied finite matrices. It proves the
+induced overlap, transported-operator, pairing, and eigenproblem identities. The finite-rank
+partial-wave/projector construction is provided separately by `ProjectorAugmentation.lean`.
+Spatial augmentation data and PAW density or energy functionals require additional structures.
 -/
 
 open scoped ComplexConjugate ComplexOrder Matrix
@@ -72,8 +72,8 @@ namespace ProjectKoios.DensityFunctionalTheory.PAW
 /--
 `DFT-PAW-TRANSFORM-DEF-001`: a finite PAW transformation represented by a square complex matrix.
 
-The abbreviation adds PAW semantics to a supplied matrix but does not assert invertibility,
-locality, or a partial-wave/projector construction.
+Invertibility is a separate hypothesis on this supplied matrix; the partial-wave/projector
+construction is defined in `ProjectorAugmentation.lean`.
 -/
 abbrev FinitePawTransformation (Index : Type*) := Matrix Index Index ℂ
 
@@ -93,8 +93,8 @@ def FinitePawTransformation.reconstructState
 /--
 `DFT-PAW-TRANSFORM-DEF-003`: transport an operator by PAW congruence, `Ã = Tᴴ A T`.
 
-Source binding: Blöchl (1994), Section II.B, equation (11). The explicit one-center expansion in that
-equation is deliberately deferred.
+Source binding: Blöchl (1994), Section II.B, equation (11). This declaration records the congruence
+form; a one-center operator expansion requires additional PAW data.
 -/
 def FinitePawTransformation.transformedOperator
     (transformation : FinitePawTransformation Index)
@@ -128,8 +128,8 @@ def FinitePawTransformation.IsReconstructedEigenpair
 /--
 `DFT-PAW-TRANSFORM-DEF-006`: generalized pseudo-state eigenproblem `Ã ψ̃ = ε S ψ̃`.
 
-This is the exact finite algebraic form of the PAW generalized Kohn--Sham equation. It does not
-assert that the state is normalized in the overlap metric or that it is a self-consistent solution.
+This is the finite algebraic form of the PAW generalized Kohn--Sham equation. Overlap normalization
+is a separate condition on the pseudo state.
 -/
 def FinitePawTransformation.IsGeneralizedEigenpair
     (transformation : FinitePawTransformation Index)
@@ -158,8 +158,8 @@ lemma FinitePawTransformation.overlapMatrix_posSemidef
 /--
 `DFT-PAW-TRANSFORM-LEM-003`: an injective state transformation induces a positive-definite overlap.
 
-The hypothesis is stated directly on `Matrix.mulVec`; it is not inferred from a PAW dataset or from
-partial-wave completeness.
+The hypothesis is stated directly on `Matrix.mulVec`; it is independent of any later completeness
+condition on partial waves and projectors.
 -/
 lemma FinitePawTransformation.overlapMatrix_posDef
     (transformation : FinitePawTransformation Index)
@@ -180,8 +180,8 @@ lemma FinitePawTransformation.transformedOperator_isHermitian
 `DFT-PAW-TRANSFORM-LEM-005`: physical inner products of reconstructed states equal overlap-metric
 pairings of pseudo states.
 
-This identity is the finite algebra behind Kresse--Joubert (1999), equation (38). It does not impose
-the Kronecker-delta orthonormality condition appearing there.
+This identity is the finite algebra behind Kresse--Joubert (1999), equation (38). The
+Kronecker-delta orthonormality condition is a separate condition on a family of pseudo states.
 -/
 lemma FinitePawTransformation.overlap_pairing_transport
     (transformation : FinitePawTransformation Index)
@@ -282,8 +282,8 @@ pseudo-state eigenproblem is equivalent to the standard eigenproblem for the rec
 
 Source binding: Blöchl (1994), equations (9), (11), and (30), together with the generalized
 Kohn--Sham equation displayed in Kresse--Joubert (1999), Section III.D, immediately after equation
-(51). Lean states invertibility explicitly as `IsUnit T`; neither source identity nor a concrete PAW
-dataset is used to manufacture this premise.
+(51). Lean states invertibility explicitly as `IsUnit T`; the theorem uses that premise to obtain
+injectivity of the adjoint matrix action.
 -/
 theorem FinitePawTransformation.isGeneralizedEigenpair_iff_isReconstructedEigenpair_of_isUnit
     [DecidableEq Index]

@@ -17,11 +17,9 @@ unit-occupation density is the finite-index adaptation of [Kohn1965], Section II
 `n(r) = ∑ᵢ |ψᵢ(r)|²`.  A separate weighted definition accepts explicit real occupation weights and
 proves nonnegativity only under an explicit nonnegativity hypothesis.
 
-The coordinate type and finite orbital index are arbitrary.  No measure, spatial dimension,
-normalization integral, orthogonality, particle-number sum, occupation upper bound, kinetic
-operator, eigenvalue equation, spin multiplicity, noninteracting representability, or
-self-consistency claim is encoded here.  In particular, these auxiliary orbitals are not identified
-with interacting natural orbitals.
+The position carrier and orbital index are arbitrary. The construction is pointwise, so normalization
+and orthogonality require a separately supplied measure or inner product. Occupation bounds and a
+particle-number sum are likewise separate conditions on the weight function.
 
 ## Conventions and dependency role
 
@@ -31,12 +29,10 @@ with interacting natural orbitals.
   `re(ψ)² + im(ψ)²`.  No square root or floating norm enters the definitions.
 * `occupiedDensity` sums every member of the explicit finite index exactly once.  This is how the
   source's occupied-index range is represented; no additional spin factor is inserted.
-* `occupationWeightedDensity` is deliberately more permissive than a physical occupation model.
-  Its weights are arbitrary reals, and nonnegativity is obtained only when a separate hypothesis
-  states that every supplied weight is nonnegative.
-* Orthonormality and normalization are absent because they require an inner product or measure not
-  owned by this pointwise module.  A later finite-basis or continuum realization must add those
-  structures explicitly.
+* `occupationWeightedDensity` accepts arbitrary real weights. Its nonnegativity theorem assumes
+  each supplied weight is nonnegative.
+* Orthonormality and normalization are stated only after choosing an inner product or measure; this
+  pointwise module does not choose either structure.
 
 The pointwise density API is downstream of the functional decomposition but upstream of any
 kinetic-energy, eigenproblem, or PAW representation.

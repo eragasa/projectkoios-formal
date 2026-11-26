@@ -19,6 +19,23 @@ Dossiers are declaration-centred audit records. Longer publication proofs are or
 
 Do not duplicate the full publication narrative in every dossier. The dossier preserves the exact statement, assumptions, dependencies, concise proof synopsis, Lean realization, and audit boundary. The proof companion owns the polished extended exposition, and its declaration crosswalk maps the narrative back to Lean and the dossiers.
 
+## Compendium assembly
+
+A domain may assemble its selected dossiers into one formal proof compendium without changing their
+declaration-level identity. Shared formatting lives in `proofs/dossier-preamble.tex`. Each migrated
+dossier has:
+
+- a stable standalone wrapper at its existing path;
+- one reusable body under the domain's `fragments/` directory;
+- an optional domain compendium that inputs those bodies in dependency order.
+
+`proofs/DensityFunctionalTheory/compendium.tex` is the first such assembly. It combines the scalar
+DFT, Kohn--Sham, and finite PAW dossiers while preserving independent compilation of every existing
+dossier path. Body fragments are presentation components, not additional dossiers or declaration
+IDs. Compile wrappers and compendia from the repository root so their shared input paths resolve.
+The compendium is a formal audit document, not the scientific research manuscript owned by
+`projectkoios-dft`.
+
 ## File rule
 
 Each dossier mirrors its Lean module path and uses one statement ID.
@@ -117,6 +134,19 @@ prove completeness, define augmentation or compensation data, derive density or 
 formulas, authenticate a dataset or implementation, or establish numerical or scientific validity.
 The declarations and initial dossier draft were introduced at immutable Formal commit
 `fa0394941cf9604fe5ee1824f2fd17e42cb3a826`.
+
+## Selected finite-rank PAW projector tranche
+
+The finite-rank projector specialization has a dossier for `DFT-PAW-PROJECTOR-THM-001`, the exact
+reconstructed-state expansion obtained from the supplied all-electron partial waves, pseudo partial
+waves, and projector vectors. The rank-one action identity, projector-duality consequence, and
+zero-correction identity case remain recorded in Lean and the theorem manifest without separate
+dossiers.
+
+The dossier cites `Blochl1994` Section II.A, Eqs. (6)--(9). The explicit overlap expansion in Eq.
+(30) is not derived because this tranche assumes projector duality only and does not yet supply a
+resolution-of-identity or completeness contract. The inspected PDF hash is recorded while the
+References-owned canonical identity and immutable Formal introduction commit remain pending.
 
 ## Selected integer lattice radius bridge
 

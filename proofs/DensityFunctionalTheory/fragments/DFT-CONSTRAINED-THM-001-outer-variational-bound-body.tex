@@ -1,0 +1,154 @@
+% Body fragment for DFT-CONSTRAINED-THM-001-outer-variational-bound.tex.
+% Included by the standalone wrapper and the DFT formal proof compendium.
+\DossierHeading{DFT-CONSTRAINED-THM-001: Outer constrained-search variational bound}{2026-11-26}
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{DFT-CONSTRAINED-THM-001} \\
+Status & proved; no admissions; draft dossier \\
+Lean declaration & \path{ProjectKoios.DensityFunctionalTheory.Foundations.VariationalDensityModel.IsGroundState.totalEnergy_le_densityTotalEnergy} \\
+Owning module & \path{ProjectKoios/DensityFunctionalTheory/Foundations/ConstrainedSearch.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+The result is an abstract real-valued constrained-search theorem.  It does not formalize the
+continuum state space or attainment statements in the cited papers.
+
+\section{Exact mathematical statement}
+Let a variational model supply a state-to-density map \(n\), internal energy \(F\), and external
+energy \(E_{\rm ext}\).  For a density \(\rho\) represented by at least one state, define
+\[
+ \mathcal F(\rho)=\inf\{F(\phi):n(\phi)=\rho\}
+\]
+using the real \texttt{sInf}, and define
+\(\mathcal E_v(\rho)=\mathcal F(\rho)+E_{\rm ext}(v,\rho)\).
+If \(\psi\) is a ground state for \(v\), then every representable density satisfies
+\[
+ F(\psi)+E_{\rm ext}(v,n(\psi))\le \mathcal E_v(\rho).
+\]
+The ground-state inequality itself supplies a real lower bound for the fixed-density fiber, so the
+conditionally complete real infimum is used only in a bounded-below setting in this theorem.
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Primary literature source & M. Levy, ``Universal Variational Functionals of Electron Densities, First-Order Density Matrices, and Natural Spin-Orbitals and Solution of the v-Representability Problem,'' DOI \texttt{10.1073/pnas.76.12.6062} \\
+Immutable inspected bytes & \texttt{Levy1979.pdf}, SHA-256 \hash{996fbf157f4aefe65e946e87c21135b58d6d60903733d155a673461efb806cf4} \\
+Exact locator & equation (5), Theorem I and equation (6), Theorem I proof within equations (8)--(21) \\
+Rigorous background & E. H. Lieb, ``Density Functionals for Coulomb Systems,'' DOI \texttt{10.1002/qua.560240302}; \texttt{Lieb1983.pdf}, SHA-256 \hash{962140e96a0a7d189f9c1f72e37231d9457500b67b6f62e7c08322aedb1d5563}; section 3, equations (3.14)--(3.15) \\
+Reference authority & proposed citekeys \texttt{Levy1979} and \texttt{Lieb1983}; canonical References identities remain unresolved \\
+Formal introduction & branch \texttt{review/conjugate-linear-coordinate-algebra}, commit \hash{970fd14a87de34f1acdac05e2f7ea7980f46a9f2} \\
+Dossier provenance & declaration and initial draft dossier were introduced together at that immutable commit; this dossier remains a draft \\
+\bottomrule
+\end{tabularx}
+The declaration \texttt{adapts} Levy's outer variational theorem and uses Lieb's infimum/domain
+distinction as background.  Candidate PDF hashes do not establish governed bibliography identity.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}YYY@{}}
+\toprule
+Source feature & Lean encoding & Delta or limitation \\
+\midrule
+N-representable density & subtype image of an arbitrary state-to-density map & no antisymmetry, particle number, or continuum density conditions \\
+Universal functional & real \texttt{sInf} of an internal-energy fiber & Levy's minimum is replaced by an infimum; no attainment claim \\
+Boundedness below & derived from the supplied ground state and external energy at \(\rho\) & arbitrary unbounded fibers receive no scientific interpretation \\
+External-potential pairing & supplied function \(V\to D\to\mathbb R\) & no integral \(\int v\rho\) is constructed \\
+Ground state & supplied global minimizer & no existence or degeneracy restriction \\
+\bottomrule
+\end{tabularx}
+The theorem is more abstract than the source and weaker analytically: it proves the variational
+order statement but none of the continuum domain or attainment results.
+
+\section{Statement-specific prior art and contribution boundary}
+\begin{tabularx}{\textwidth}{@{}lYYY@{}}
+\toprule
+Relation & Authority & Locator & Role and caveat \\
+\midrule
+adapts & proposed \texttt{Levy1979} & equation (5), Theorem I, equation (6), proof within equations (8)--(21) & fixed-density search followed by outer variation \\
+background-only & proposed \texttt{Lieb1983} & section 3, equations (3.14)--(3.15) & rigorous infimum/domain framing; continuum theorems not imported \\
+depends-on & pinned Mathlib & \texttt{le\_csInf} on \(\mathbb R\) & conditionally complete order infrastructure \\
+\bottomrule
+\end{tabularx}
+The variational theorem is classical.  The local contribution is a checked abstract interface that
+keeps representability, boundedness, and attainment boundaries explicit.  No novelty claim is made.
+
+\section{Proof schematic}
+\[
+\begin{array}{c}
+ \psi\text{ ground state},\quad n(\phi)=\rho\\
+ \Downarrow\\
+ E_v(\psi)\le F(\phi)+E_{\rm ext}(v,\rho)\\
+ \Downarrow\\
+ E_v(\psi)-E_{\rm ext}(v,\rho)\le F(\phi)
+ \quad\text{for every }F(\phi)\text{ in the fiber}\\
+ \Downarrow\ \texttt{le\_csInf}\\
+ E_v(\psi)-E_{\rm ext}(v,\rho)\le\mathcal F(\rho)\\
+ \Downarrow\\
+ E_v(\psi)\le\mathcal E_v(\rho)
+\end{array}
+\]
+
+\section{Human-readable mathematical argument}
+Fix a representable trial density \(\rho\).  Every energy in its internal-energy fiber comes from a
+state \(\phi\) with \(n(\phi)=\rho\).  Ground-state minimality gives
+\(E_v(\psi)\le F(\phi)+E_{\rm ext}(v,\rho)\), hence
+\(E_v(\psi)-E_{\rm ext}(v,\rho)\le F(\phi)\).  This common lower bound applies to every member of
+the nonempty fiber, so it is below the fiber infimum.  Adding back the external term gives the
+claimed outer variational inequality.  The same lower bound also proves the fiber is bounded below.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem VariationalDensityModel.IsGroundState.
+    totalEnergy_le_densityTotalEnergy
+    (hstate : model.IsGroundState potential state)
+    (density : model.RepresentableDensity) :
+    model.totalEnergy potential state <=
+      model.densityTotalEnergy potential density
+\end{lstlisting}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Lean toolchain & Lean \texttt{4.35.0}, commit \texttt{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
+Mathlib revision & \texttt{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Key order API & \texttt{le\_csInf}; real conditional completeness from \texttt{Mathlib.Algebra.Order.Archimedean.Real.Basic} \\
+Validation & affected-target build, \texttt{ProjectKoios.Audit}, admission audit, coverage check, and pin check passed \\
+\bottomrule
+\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.DensityFunctionalTheory.Foundations.
+  VariationalDensityModel.IsGroundState.
+    totalEnergy_le_densityTotalEnergy
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+No repository-owned \texttt{axiom}, \texttt{sorry}, or \texttt{admit} occurs in the declaration.
+
+\section{AI, automation, and comprehension record}
+The Lean proof and dossier were AI-assisted.  The maintainer read the cited source locations,
+checked the replacement of minimum by infimum, and ran the recorded validations.  Lean kernel
+checking, tactics, hashing, and LaTeX compilation are automation rather than independent expert
+review.  No independent mathematical or DFT-specialist review is recorded.
+
+\section{Scientific and evidence boundaries}
+The theorem does not define an electronic wavefunction space, prove N-representability, construct
+kinetic or Coulomb energies, or prove an infimum is attained.  It establishes no Kohn--Sham,
+finite-basis, PAW, numerical, implementation, material, or scientific-validation claim.  No
+runtime certificate is created.
+
+\section{Unresolved questions}
+\begin{itemize}
+\item Resolve both proposed literature identities through \texttt{projectkoios-references}.
+\item Future continuum work must specify admissible densities and prove the relevant analytic lower bounds and attainment results.
+\item No independent expert review has been completed.
+\end{itemize}
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-11-26 & initial draft & AI-assisted maintainer review & exact proposition, infimum proof, source delta, and boundaries recorded; canonical identities, immutable Formal commit, and independent review pending \\
+2026-11-26 & provenance backfill & repository history review & Formal introduction fixed at \hash{970fd14a87de34f1acdac05e2f7ea7980f46a9f2}; canonical identities and independent review remain pending \\
+\bottomrule
+\end{tabularx}

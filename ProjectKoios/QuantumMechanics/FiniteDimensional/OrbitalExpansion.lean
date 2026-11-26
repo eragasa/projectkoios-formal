@@ -21,10 +21,9 @@ For basis labels `μ`, orbital labels `i`, and positions `r`, the convention is
 scalar field is `ℂ`, this order is algebraically commutative, but it is fixed explicitly so later
 matrix and publication crosswalks do not infer a convention.
 
-The position carrier is arbitrary and purely pointwise. No measure, spatial dimension,
-normalization, orthogonality, completeness, kinetic operator, Hamiltonian, eigenproblem, density,
-or physical interpretation is asserted. In particular, this module does not own Kohn--Sham or PAW
-semantics.
+The position carrier is arbitrary and the construction is pointwise. Completeness, normalization,
+orthogonality, integration, and operator equations are separate structures or hypotheses. Kohn--Sham
+density semantics are added only by the downstream DFT binding.
 
 ## Dependency role
 
@@ -45,7 +44,8 @@ namespace ProjectKoios.QuantumMechanics.FiniteDimensional
 `QM-ORBITAL-EXPANSION-DEF-001`: data for complex scalar orbitals expanded in a finite basis.
 
 The `Fintype Basis` parameter makes the reconstructed sum finite. The orbital and position carriers
-may remain arbitrary. Neither field includes normalization or orthogonality evidence.
+may remain arbitrary. Normalization and orthogonality conditions, when required, are stated
+separately.
 -/
 structure FiniteBasisOrbitalExpansion
     (Basis Orbital Position : Type*) [Fintype Basis] where
@@ -60,8 +60,8 @@ variable {Basis Orbital Position : Type*} [Fintype Basis]
 `QM-ORBITAL-EXPANSION-DEF-002`: reconstruct one orbital amplitude as
 `ψᵢ(r) = ∑ μ, C μ i * χ μ r`.
 
-This is a finite algebraic sum. It does not claim that the basis spans a function space or that the
-result satisfies an eigenvalue equation.
+This is a finite algebraic sum; spanning and eigenvalue conditions are not needed for its
+definition.
 -/
 def FiniteBasisOrbitalExpansion.orbitalAmplitude
     (expansion : FiniteBasisOrbitalExpansion Basis Orbital Position)
@@ -97,8 +97,8 @@ lemma FiniteBasisOrbitalExpansion.orbitalAmplitude_withCoefficient_zero
 `QM-ORBITAL-EXPANSION-LEM-002`: reconstruction is additive in the coefficient table when the basis
 functions are fixed.
 
-This is pointwise coefficient linearity only; it does not assert linear independence of the basis or
-uniqueness of the coefficient table.
+This is pointwise coefficient linearity. Linear independence is the additional hypothesis needed for
+coefficient uniqueness.
 -/
 lemma FiniteBasisOrbitalExpansion.orbitalAmplitude_withCoefficient_add
     (expansion : FiniteBasisOrbitalExpansion Basis Orbital Position)

@@ -11,12 +11,13 @@ public import ProjectKoios.DensityFunctionalTheory.KohnSham.FunctionalDecomposit
 public import ProjectKoios.DensityFunctionalTheory.KohnSham.OccupiedOrbitals
 public import ProjectKoios.DensityFunctionalTheory.KohnSham.FiniteBasisDensity
 public import ProjectKoios.DensityFunctionalTheory.PAW.FiniteTransformation
+public import ProjectKoios.DensityFunctionalTheory.PAW.ProjectorAugmentation
 
 /-!
 Narrow root for implemented scalar density-functional, Kohn--Sham, and finite PAW algebra.
 
 This root re-exports only the current abstract variational, constrained-search, exact functional
-remainder, pointwise orbital-density, finite-basis density-binding, and exact finite PAW
-transformation layers. It does not expose a continuum solver, self-consistency loop, approximation
+remainder, pointwise orbital-density, finite-basis density-binding, exact finite PAW transformation,
+and finite-rank projector-augmentation layers. It does not expose a continuum solver, self-consistency loop, approximation
 functional, runtime finite-basis implementation, PAW dataset, or augmentation implementation.
 -/

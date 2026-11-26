@@ -1,0 +1,150 @@
+% Body fragment for DFT-KS-FUNCTIONAL-THM-001-exact-functional-reconstruction.tex.
+% Included by the standalone wrapper and the DFT formal proof compendium.
+\DossierHeading{DFT-KS-FUNCTIONAL-THM-001: Exact functional reconstruction}{2026-11-26}
+
+\section{Identity and status}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Statement ID & \texttt{DFT-KS-FUNCTIONAL-THM-001} \\
+Status & proved; no admissions; draft dossier \\
+Lean declaration & \path{ProjectKoios.DensityFunctionalTheory.KohnSham.ScalarKohnShamFunctionalData.reconstructedInternalEnergy_eq_universalInternalEnergy} \\
+Owning module & \path{ProjectKoios/DensityFunctionalTheory/KohnSham/FunctionalDecomposition.lean} \\
+Author and license & Eugene Joseph M. Ragasa; \texttt{Apache-2.0} \\
+\bottomrule
+\end{tabularx}
+The status concerns exact real algebra for supplied density functionals.  It does not prove the
+existence or physical correctness of a Kohn--Sham representation.
+
+\section{Exact mathematical statement}
+Let \(D\) be any density carrier, and let supplied real functionals be
+\(F,T_s,E_H:D\to\mathbb R\).  Define
+\[
+ E_{xc}(\rho)=F(\rho)-T_s(\rho)-E_H(\rho)
+\]
+and reconstruct
+\[
+ F_{\rm KS}(\rho)=T_s(\rho)+E_H(\rho)+E_{xc}(\rho).
+\]
+Then, for every \(\rho\in D\),
+\[
+ F_{\rm KS}(\rho)=F(\rho).
+\]
+
+\section{Source provenance}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Literature source & W. Kohn and L. J. Sham, ``Self-Consistent Equations Including Exchange and Correlation Effects,'' DOI \texttt{10.1103/PhysRev.140.A1133} \\
+Immutable inspected bytes & \texttt{Kohn1965.pdf}, SHA-256 \hash{71df6859ee7cb1619b34d6ab87d82516735ae48a6213cc1a6f608eb81810b779} \\
+Exact locator & Section II.A, equations (2.1)--(2.2); equation (2.3) is an approximation boundary not used by this theorem \\
+Inspection limitation & image-scan source; equations were checked against the rendered page image rather than accepted from OCR alone \\
+Reference authority & proposed citekey \texttt{Kohn1965}; References-owned canonical identity remains unresolved \\
+Formal introduction & branch \texttt{review/conjugate-linear-coordinate-algebra}, commit \hash{f4630b815096586516d86e590d598aa4c451411d} \\
+Dossier provenance & declaration and initial draft dossier were introduced together at that immutable commit; this dossier remains a draft \\
+\bottomrule
+\end{tabularx}
+The declaration \texttt{adapts} the exact decomposition obtained by combining the source equations.
+The inspected hash fixes the source bytes but does not establish canonical bibliography authority.
+
+\section{Assumptions, conventions, and statement delta}
+\begin{tabularx}{\textwidth}{@{}YYY@{}}
+\toprule
+Source feature & Lean encoding & Delta or limitation \\
+\midrule
+Universal interacting functional & arbitrary supplied \(F:D\to\mathbb R\) & no continuum constrained-search domain is required by the generic theorem \\
+Noninteracting kinetic functional & arbitrary supplied \(T_s:D\to\mathbb R\) & no orbital realization or noninteracting representability proof \\
+Classical electrostatic term & arbitrary supplied \(E_H:D\to\mathbb R\) & no Coulomb kernel, finiteness, or positivity theorem \\
+Exchange--correlation term & exact algebraic remainder & exactness is definitional, not a construction or approximation theorem \\
+Local approximation & absent & source equation (2.3), LDA, is explicitly not encoded \\
+\bottomrule
+\end{tabularx}
+The paper first separates the external and classical electrostatic terms and then writes its
+remaining universal term as \(T_s+E_{xc}\).  The Lean statement records the combined modern form
+\(F=T_s+E_H+E_{xc}\).
+
+\section{Statement-specific prior art and contribution boundary}
+\begin{tabularx}{\textwidth}{@{}lYYY@{}}
+\toprule
+Relation & Authority & Locator & Role and caveat \\
+\midrule
+adapts & proposed \texttt{Kohn1965} & Section II.A, equations (2.1)--(2.2) & exact decomposition vocabulary; analytic and orbital assumptions omitted \\
+background-only & proposed \texttt{Kohn1965} & Section II.A, equation (2.3) & local approximation explicitly excluded \\
+depends-on & pinned Mathlib & exact real ring normalization & proof infrastructure only \\
+\bottomrule
+\end{tabularx}
+The decomposition is classical.  The local contribution is a source-audited interface that keeps
+exact remainder algebra separate from orbital representability and approximation-specific claims.
+No novelty claim is made.
+
+\section{Proof schematic}
+\[
+\begin{array}{c}
+ E_{xc}=F-T_s-E_H\\
+ \Downarrow\\
+ F_{\rm KS}=T_s+E_H+(F-T_s-E_H)\\
+ \Downarrow\ \text{exact real ring normalization}\\
+ F_{\rm KS}=F
+\end{array}
+\]
+
+\section{Human-readable mathematical argument}
+Expand the reconstructed internal energy and then unfold the exchange--correlation remainder.  The
+positive and negative copies of \(T_s(\rho)\) cancel, as do the copies of \(E_H(\rho)\).  The only
+remaining term is the supplied universal internal energy \(F(\rho)\).  No variational or analytic
+argument enters this identity.
+
+\section{Lean realization}
+\begin{lstlisting}
+theorem ScalarKohnShamFunctionalData.
+    reconstructedInternalEnergy_eq_universalInternalEnergy
+    (data : ScalarKohnShamFunctionalData Density)
+    (density : Density) :
+    data.reconstructedInternalEnergy density =
+      data.universalInternalEnergy density
+\end{lstlisting}
+\begin{tabularx}{\textwidth}{@{}lY@{}}
+\toprule
+Lean toolchain & Lean \texttt{4.35.0}, commit \hash{eb6cafb7290e8bd5f2937522d8d804f58f02bafc} \\
+Mathlib revision & \hash{56a005855ea17e0b0958f73ec801ae140b0a1679} \\
+Imports & constrained-search foundations and \texttt{Mathlib.Tactic.Ring} \\
+Validation & affected-target build and named \texttt{ProjectKoios.Audit} axiom report passed for the introduction tree at \hash{f4630b815096586516d86e590d598aa4c451411d} \\
+\bottomrule
+\end{tabularx}
+
+\section{Trusted base and axiom report}
+\begin{lstlisting}
+#print axioms ProjectKoios.DensityFunctionalTheory.KohnSham.
+  ScalarKohnShamFunctionalData.
+    reconstructedInternalEnergy_eq_universalInternalEnergy
+-- [propext, Classical.choice, Quot.sound]
+\end{lstlisting}
+The candidate-tree audit reports no repository-owned \texttt{axiom}, \texttt{sorry}, or
+\texttt{admit} for this declaration.
+
+\section{AI, automation, and comprehension record}
+The Lean proof and dossier were AI-assisted.  The maintainer previously checked the cited scanned
+page against its rendered image and reviewed the exact-versus-LDA boundary.  Lean kernel checking,
+ring normalization, OCR used for discovery, hashing, audits, and LaTeX compilation are automation,
+not independent expert review.  No independent mathematical or DFT-specialist review is recorded.
+
+\section{Scientific and evidence boundaries}
+The theorem does not prove that \(T_s\), \(E_H\), or \(E_{xc}\) exist with the desired continuum
+properties, that any density has a noninteracting orbital representation, or that a functional
+derivative or self-consistent solution exists.  It does not encode LDA, an effective potential,
+finite-basis matrices, PAW, numerical evidence, or a material claim.
+
+\section{Unresolved questions}
+\begin{itemize}
+\item Resolve the proposed \texttt{Kohn1965} identity through \texttt{projectkoios-references}.
+\item Later layers must add explicit noninteracting representability and orbital realization hypotheses.
+\item No independent expert review has been completed.
+\end{itemize}
+
+\section{Review and revision history}
+\begin{tabularx}{\textwidth}{@{}lllY@{}}
+\toprule
+Date & Revision & Reviewer or process & Outcome and limitations \\
+\midrule
+2026-11-26 & initial draft & AI-assisted maintainer review & exact algebra, scanned-source locator, statement delta, proof, and axiom report checked; immutable Formal commit, canonical identity, and independent review pending \\
+2026-11-26 & provenance backfill & repository history review & Formal introduction fixed at \hash{f4630b815096586516d86e590d598aa4c451411d}; canonical identity and independent review remain pending \\
+\bottomrule
+\end{tabularx}

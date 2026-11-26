@@ -1,0 +1,35 @@
+% Shared formatting for Project Koios formal proof dossiers and compendia.
+% This file contains presentation only; mathematical status is recorded in each dossier body.
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[margin=0.85in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tabularx}
+\usepackage{listings}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible}
+\newcommand{\hash}[1]{{\scriptsize\texttt{#1}}}
+\AtBeginDocument{\raggedright}
+\makeatletter
+\renewcommand{\@pnumwidth}{2.2em}
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.2em}}
+\makeatother
+
+% A dossier body can be included by either an individual wrapper or a domain compendium.
+\newcommand{\DossierHeading}[2]{%
+  \clearpage
+  \phantomsection
+  \addcontentsline{toc}{part}{#1}%
+  \begin{center}
+    {\LARGE Project Koios Formal Proof Dossier\par}
+    \vspace{0.6em}
+    {\Large #1\par}
+    \vspace{0.8em}
+    {\large Eugene Joseph M. Ragasa\par}
+    \vspace{0.4em}
+    {\large Formal proof completed: #2\par}
+  \end{center}
+  \vspace{1.2em}
+}

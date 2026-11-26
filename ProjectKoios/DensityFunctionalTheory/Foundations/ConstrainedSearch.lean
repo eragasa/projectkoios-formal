@@ -13,21 +13,18 @@ import Mathlib.Tactic.Linarith
 # Abstract Levy--Lieb constrained search
 
 This module defines the universal constrained-search energy as the real infimum of the internal
-energies of states representing one fixed density.  Its domain is the subtype of representable
-densities, so no value is assigned scientific meaning outside a supplied state-to-density image.
-Because `ℝ` is only conditionally complete, infimum elimination additionally requires a lower
-bound.  The principal ground-state theorems derive that bound; no scientific interpretation is
-claimed here for an arbitrary unbounded fiber.
+energies of states representing one fixed density. Its domain is the subtype of densities in the
+image of the supplied state-to-density map. Because `ℝ` is conditionally complete, infimum
+elimination also requires a lower bound; the ground-state hypotheses provide that bound.
 
 The two principal results are the abstract outer variational lower bound and equality at a supplied
 ground-state density.  They adapt [Levy1979], equation (5), Theorems I and II, equations (6)--(7),
 and proofs (8)--(21).  The infimum formulation and explicit representable-density domain follow the
 mathematical distinction emphasized in [Lieb1983], Section 3, equations (3.14)--(3.15).
 
-No continuum wavefunction space, antisymmetry, particle-number normalization, Coulomb operator,
-Sobolev regularity, minimizer existence, or density-matrix relaxation is asserted here.  In
-particular, `constrainedSearchEnergy` is an infimum; this module does not silently replace it by a
-minimum.
+The abstract model does not choose a continuum state space or Coulomb domain. In particular,
+`constrainedSearchEnergy` is an infimum; attainment requires the separate
+`IsConstrainedSearchMinimizer` hypothesis.
 
 ## References
 

@@ -25,8 +25,8 @@ paper's “Note added in proof” motivates a later exact functional-derivative 
 or self-consistent one-particle equation is imported here.
 
 Because `exchangeCorrelationEnergy` is a remainder definition, the reconstruction theorem is exact
-algebra.  It does not prove noninteracting representability, existence of orbitals, differentiability,
-a functional derivative, an effective potential, or a self-consistent solution.
+algebra. Noninteracting representability, orbital realization, and functional differentiation are
+separate layers.
 
 ## Conventions and dependency role
 
@@ -39,8 +39,8 @@ a functional derivative, an effective potential, or a self-consistent solution.
 * The Hartree functional is supplied rather than constructed.  Consequently, this module neither
   chooses a Coulomb normalization nor proves Hartree positivity or finiteness.
 * `kohnShamFunctionalDataOfVariationalModel` is the narrow bridge from the preceding Levy--Lieb
-  layer: only its universal term is fixed to the constrained-search infimum.  The two auxiliary
-  Kohn--Sham functionals remain independent inputs and therefore carry no hidden existence claim.
+  layer: only its universal term is fixed to the constrained-search infimum. The noninteracting
+  kinetic and Hartree functionals remain independent inputs.
 
 This module is intended to precede orbital realization, finite-basis matrices, and PAW.  Those
 layers should import these declarations rather than redefine the functional bookkeeping.
