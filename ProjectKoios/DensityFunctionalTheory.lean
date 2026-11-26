@@ -10,12 +10,13 @@ public import ProjectKoios.DensityFunctionalTheory.Foundations.ConstrainedSearch
 public import ProjectKoios.DensityFunctionalTheory.KohnSham.FunctionalDecomposition
 public import ProjectKoios.DensityFunctionalTheory.KohnSham.OccupiedOrbitals
 public import ProjectKoios.DensityFunctionalTheory.KohnSham.FiniteBasisDensity
+public import ProjectKoios.DensityFunctionalTheory.PAW.FiniteTransformation
 
 /-!
-Narrow root for the implemented scalar density-functional foundations and Kohn--Sham bookkeeping.
+Narrow root for implemented scalar density-functional, Kohn--Sham, and finite PAW algebra.
 
 This root re-exports only the current abstract variational, constrained-search, exact functional
-remainder, pointwise orbital-density, and finite-basis density-binding layers. It does not expose a
-continuum solver, self-consistency loop, approximation functional, operator discretization, runtime
-finite-basis implementation, or PAW API.
+remainder, pointwise orbital-density, finite-basis density-binding, and exact finite PAW
+transformation layers. It does not expose a continuum solver, self-consistency loop, approximation
+functional, runtime finite-basis implementation, PAW dataset, or augmentation implementation.
 -/

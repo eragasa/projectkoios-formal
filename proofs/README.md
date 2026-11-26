@@ -102,6 +102,21 @@ recorded while the References-owned canonical identity remains unresolved. The d
 initial dossier draft were introduced at immutable Formal commit
 `b5f7f29507dba582f6dd69bddd6ad8d92f4d5bce`.
 
+## Selected finite PAW transformation tranche
+
+The first PAW layer has a dossier for `DFT-PAW-TRANSFORM-THM-001`, the equivalence between the
+finite generalized pseudo-state eigenproblem and the standard reconstructed-state eigenproblem for
+a supplied invertible transformation. Supporting overlap Hermiticity and positivity,
+operator-Hermiticity transport, pairing transport, and the one-way eigenproblem result remain fully
+recorded in Lean and the theorem manifest without separate dossiers.
+
+The dossier uses the inspected `Blochl1994.pdf` and `Kresse1999.pdf` hashes and exact equation or
+paragraph locators while marking both References-owned canonical identities unresolved. This layer
+is supplied finite matrix algebra: it does not construct the projector/partial-wave transformation,
+prove completeness, define augmentation or compensation data, derive density or total-energy
+formulas, authenticate a dataset or implementation, or establish numerical or scientific validity.
+The immutable Formal introduction commit remains pending.
+
 ## Selected integer lattice radius bridge
 
 The exact squared-index/radius bridge has a selected dossier for
