@@ -106,6 +106,7 @@ record establishes. A release or publication snapshot still requires immutable e
 | <a id="aud-val-010"></a>`AUD-VAL-010` | current dependency identity | `python3 scripts/check-pins.py` | passed with 10 immutable resolved revisions |
 | <a id="aud-val-011"></a>`AUD-VAL-011` | current formal source tree | `python3 scripts/check-audit-coverage.py` | passed with 1,285 proved theorem/lemma rows and 1,289 unique named axiom reports |
 | <a id="aud-val-012"></a>`AUD-VAL-012` | formal working tree at the recorded run | `bash scripts/audit.sh` | passed; the later audit-document reorganization is documentation-only |
+| <a id="aud-val-013"></a>`AUD-VAL-013` | current dossier tree at the recorded run | whole-repository proof-compendium rebuild | passed for 371 dossiers, one source-defined schematic, and 85 labeled generated inventory fallbacks |
 | <a id="aud-val-014"></a>`AUD-VAL-014` | newly audited declaration set | named `#print axioms` reports | only `propext`, `Classical.choice`, and `Quot.sound` |
 | <a id="aud-val-015"></a>`AUD-VAL-015` | current documentation descendant, 2026-11-27 | `git diff --check`; local Markdown path and anchor checks | passed; zero broken local Markdown paths and zero broken checked anchors after the audit split |
 

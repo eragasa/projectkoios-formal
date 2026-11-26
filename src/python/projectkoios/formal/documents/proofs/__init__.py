@@ -1,0 +1,1 @@
+"""Proof document assembly."""

@@ -34,13 +34,13 @@ and foreign-function calls into the Mojo route are out of scope.
 
 The public core should make invalid state transitions difficult to express:
 
-```text
-RawInput
-  -> ParsedCanonicalPackage
-  -> AuthenticatedPackage
-  -> ValidatedExactMatrices
-  -> ValidatedTheoremInputs
-  -> ConformanceRecord
+```mermaid
+flowchart LR
+    raw["RawInput"] --> parsed["ParsedCanonicalPackage"]
+    parsed --> authenticated["AuthenticatedPackage"]
+    authenticated --> matrices["ValidatedExactMatrices"]
+    matrices --> theoremInputs["ValidatedTheoremInputs"]
+    theoremInputs --> record["ConformanceRecord"]
 ```
 
 Parsing must not return an authenticated or semantically validated type. Exact matrices must not be

@@ -1,6 +1,7 @@
 # Formalization conventions
 
-Every theorem family must state the conventions relevant to its claim.
+Every theorem family must state the conventions relevant to its claim. Module and declaration
+presentation follows the [Lean code standards](lean-code-standards.md).
 
 ## Required record
 

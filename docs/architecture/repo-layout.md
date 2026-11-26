@@ -10,6 +10,8 @@ projectkoios-formal/
 ├── specification/               # source-neutral normative certificate schemas
 ├── docs/                         # policy, crosswalk, plan, and architecture documents
 ├── scripts/                      # audit and immutable-pin checks
+├── src/python/projectkoios/formal/documents/
+│   └── proofs/                   # non-authoritative proof-compendium builder
 ├── lakefile.toml                 # Lake package definition and dependency revision
 ├── lake-manifest.json            # resolved Lake dependency graph
 ├── lean-toolchain                # Lean toolchain pin
@@ -22,6 +24,7 @@ The existing Lean build and audit entry points are:
 lake build
 ./scripts/check-pins.py
 ./scripts/audit.sh
+python3 src/python/projectkoios/formal/documents/proofs/compendium.py
 ```
 
 ## Planned polyglot additions
@@ -39,18 +42,15 @@ projectkoios-formal/
 │   ├── uv.lock                   # committed locked environment resolution
 │   ├── src/                      # Mojo conformance implementation
 │   └── tests/                    # Mojo conformance and adversarial tests
-├── python/
-│   ├── pyproject.toml            # planned non-authoritative tooling package
-│   ├── uv.lock                   # committed locked environment resolution
-│   ├── src/                      # fixture and inspection tooling
-│   └── tests/                    # tooling tests
 └── fixtures/
     └── exact-direct-matrix/      # planned versioned synthetic canonical/adversarial bytes
 ```
 
-These are target additions, not existing source roots. The normative v2 schema review gate is
-complete; additions still require the clean-base gate, dependency review, toolchain authorization,
-and separate implementation authorization.
+The Rust, Mojo, and fixture trees are target additions, not existing source roots. Future Python
+fixture tooling would extend the existing `src/python/projectkoios/formal/` namespace but remains
+separately gated. The normative v2 schema review gate is complete; additions still require the
+clean-base gate, dependency review, toolchain authorization, and separate implementation
+authorization.
 
 ## Why Lean stays under `ProjectKoios/`
 
@@ -68,7 +68,8 @@ new `lean/src/` source root.
   Neither may emit `ACCEPTED_EXACT_BINDING` by itself.
 - Both native records are mandatory. A missing route is unresolved; a malformed, failing, or
   disagreeing route rejects according to the frozen precedence.
-- Python may create and mutate synthetic fixtures but cannot produce authoritative acceptance.
+- Python may assemble proof documents and, when separately authorized, create and mutate synthetic
+  fixtures, but it cannot produce authoritative acceptance.
 - Shared fixtures contain only repository-permitted synthetic bytes and expected dispositions.
 - Generated build output, virtual environments, caches, and runtime state are ignored and never
   treated as source or evidence.
@@ -77,13 +78,18 @@ new `lean/src/` source root.
 
 ## Dependency direction
 
-```text
-formal contract and theorem profile
-          │
-          ├── Lean authoritative semantics, finalizer, and proofs
-          ├── Rust required independent conformance record
-          ├── Mojo required independent conformance record
-          └── Python non-authoritative fixture tooling
+```mermaid
+flowchart TD
+    contract["Formal contract and theorem profile"]
+    lean["Lean<br/>authoritative semantics, finalizer, and proofs"]
+    rust["Rust<br/>required independent conformance record"]
+    mojo["Mojo<br/>required independent conformance record"]
+    python["Python<br/>non-authoritative support tooling"]
+
+    contract --> lean
+    contract --> rust
+    contract --> mojo
+    contract --> python
 ```
 
 Rust and Mojo depend on the frozen byte contract rather than on each other. Python may invoke

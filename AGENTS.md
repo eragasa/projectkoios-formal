@@ -31,13 +31,26 @@ Read only the repository documents relevant to the task.
 - Authority and evidence: `docs/authority-boundaries.md`, `docs/formal-vs-numerical-evidence.md`, `docs/certificates.md`
 - Provenance: `docs/audit/source-audit.md`, `docs/publication-crosswalk.md`, `docs/reference-crosswalk-policy.md`
 - Trust and dependencies: `docs/audit/dependency-audit.md`, `docs/audit/trusted-base-audit.md`
-- Organization: `docs/module-layout.md`, `docs/conventions.md`, `docs/definition-and-lemma-inventory.md`
+- Organization and Lean source style: `docs/module-layout.md`, `docs/conventions.md`,
+  `docs/lean-code-standards.md`, `docs/definition-and-lemma-inventory.md`
 - Proof dossiers and agent procedure: `proofs/README.md`, `docs/agent-workflow.md`
 
 Use current official Lean and Mathlib guidance, but verify every declaration against the pinned
 revision. Consult current Physlib rules only for an actual proposed Physlib contribution.
+Architecture schematics and substantive Lean module proof schematics must use fenced Mermaid
+diagrams rather than ASCII-art flowcharts. Lean module documentation follows the Physlib-compatible
+`Overview`, `Key results`, `Table of contents`, and `References` structure in
+`docs/lean-code-standards.md`. Proof schematics belong in a lettered module-docstring section and
+must show conceptual mathematical dependencies rather than tactic traces.
+Schematic requirements are based on module ownership and proof structure, not on whether declarations
+happen to use the Lean `theorem` keyword.
 
 ## Declaration presentation
+
+Follow `docs/lean-code-standards.md` for module and declaration docstrings. New or materially changed
+public declarations must document their mathematical role, significant assumptions and conventions,
+source adaptation when applicable, and exact formal scope without repeating the Lean signature or
+adding generic boilerplate.
 
 Declaration kinds and stable IDs must reflect how the mathematics is presented, not merely the fact
 that Lean represents both `lemma` and `theorem` as proved constants.

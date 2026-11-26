@@ -60,13 +60,13 @@ stop Phase 1 for review.
 
 Mojo should mirror semantic states, not Rust implementation details:
 
-```text
-RawInput
-  -> ParsedCanonicalPackage
-  -> AuthenticatedPackage
-  -> ValidatedExactMatrices
-  -> ValidatedTheoremInputs
-  -> ConformanceRecord
+```mermaid
+flowchart LR
+    raw["RawInput"] --> parsed["ParsedCanonicalPackage"]
+    parsed --> authenticated["AuthenticatedPackage"]
+    authenticated --> matrices["ValidatedExactMatrices"]
+    matrices --> theoremInputs["ValidatedTheoremInputs"]
+    theoremInputs --> record["ConformanceRecord"]
 ```
 
 A passing conformance record must not be constructible from raw, merely parsed, or unauthenticated

@@ -10,7 +10,8 @@ Decision status: operator-authorized for planning on 2026-11-04; implementation,
 installation, dependencies, commits, and publication remain separately gated. Mojo is mandatory in
 Phase 1 because it is an anticipated long-term migration target for computational Python code outside
 this repository; that motivation does not transfer computational ownership to Formal. Python remains
-present here only for bounded fixture tooling during that transition.
+present here only for bounded non-authoritative support tooling, including proof-document assembly
+and any separately authorized synthetic-fixture work.
 
 The repository is a co-located polyglot verification sidecar with four deliberately different
 language roles:
@@ -20,7 +21,7 @@ language roles:
 | [Lean](lean/index.md) | exact semantics, original-byte authentication, theorem applications, authoritative result, and soundness | mathematical and acceptance authority |
 | [Rust](rust/index.md) | independently implemented native parser/checker route and deterministic conformance record | required Phase 1 conformance gate; not theorem authority |
 | [Mojo](mojo/index.md) | independently implemented native parser/checker route and deterministic conformance record | required Phase 1 conformance gate; not theorem authority |
-| [Python](python/index.md) | synthetic fixture construction, mutation testing, and inspection | non-authoritative tooling only |
+| [Python](python/index.md) | proof-document assembly and separately authorized synthetic fixture construction, mutation testing, and inspection | non-authoritative tooling only |
 
 Rust and Mojo are both mandatory Phase 1 gates. Missing, malformed, failing, or disagreeing native
 conformance records prevent `ACCEPTED_EXACT_BINDING`. Lean alone emits the authoritative result and
@@ -31,6 +32,12 @@ Both native implementations are owned here because the certificate contract and 
 profile are Formal-owned. Computational repositories remain owners of numerical production, owner
 schemas, scientific interpretation, and retained production artifacts. They may invoke a future
 checker as an offline sidecar, but must not import Formal as a runtime library.
+
+## Diagram convention
+
+Architecture schematics use fenced Mermaid diagrams. Do not introduce ASCII-art flowcharts or box
+schematics; Mermaid source keeps the diagram reviewable in Markdown and renderable by repository
+browsers and documentation tooling.
 
 ## Governing documents
 
@@ -66,9 +73,12 @@ stage and must be recorded.
 
 ## Current status
 
-Only the architecture documentation, source-neutral v1/v2 specifications, and existing Lean harness
-are present in the repository. No Rust, Mojo, or Python source root, parser, checker, implementation
-fixture corpus, native conformance record, or accepted result has been created.
+The repository contains the architecture documentation, source-neutral v1/v2 specifications, the
+existing Lean harness, and one standard-library-only Python proof-document builder under
+`src/python/projectkoios/formal/documents/proofs/`. No Rust or Mojo source root, certificate parser,
+checker, implementation fixture corpus, native conformance record, or accepted result has been
+created. The Python document builder compiles and assembles LaTeX dossiers; it is not part of the
+certificate or scientific-computation path.
 
 The external 2026-11-08 Gate 0 workspace qualified checksum-pinned Rust 1.99.1, Mojo 1.2.0, a
 hash-locked Cargo graph, source-built Decimo, an independent pure-Mojo SHA-256 route, and a

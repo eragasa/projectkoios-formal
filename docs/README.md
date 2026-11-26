@@ -26,6 +26,7 @@ Policy files define evidence and workflow boundaries.
 - `BandGauge/publication-evidence-contract.md`: publication-package acceptance requirements.
 - `reference-crosswalk-policy.md`: literature identity and relation policy.
 - `conventions.md`: required theorem-family conventions.
+- `lean-code-standards.md`: Lean module and declaration documentation standards.
 - `agent-workflow.md`: bounded development and promotion procedure.
 
 ## Derived audit views
@@ -67,9 +68,10 @@ Planning files organize work without changing formal status.
 - `papers/`: Formal-owned, publication-quality proof companions and their publication boundaries.
 - `SolidState/TightBinding/vogl-sp3s-star-formalization.md`: Vogl exact-algebra scope.
 
-## Structural migrations
+## Structural migrations and tasks
 
 - `migrations/fourier-domain-hierarchy.md`: complete stable-ID crosswalk from the former flat Fourier namespace to the `FiniteAbelian`, `Gauge`, `Support`, `Torus`, and `Residual` families.
+- `tasks/lean-docstrings-update/`: module-by-module checklist for migration to the Lean documentation standard.
 
 ## User guide
 

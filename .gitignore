@@ -5,6 +5,10 @@
 *.o
 .DS_Store
 
+# Generated Python artifacts
+__pycache__/
+*.py[cod]
+
 # Generated LaTeX artifacts
 *.aux
 *.fdb_latexmk

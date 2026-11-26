@@ -1,0 +1,557 @@
+# Project Koios whole-repository formal proof compendium manifest
+# One repository-relative standalone dossier path per line.
+# Entries are grouped by owning Lean module; module groups determine compendium order.
+# Generated artifacts are not tracked; build with src/python/projectkoios/formal/documents/proofs/compendium.py.
+
+# Domain: BandGauge
+
+# Module: ProjectKoios/BandGauge/Alignment/FiniteFrame.lean
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-001-projector-hermitian.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-002-projector-idempotent.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-003-right-unitary-orthonormal.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-004-projector-right-unitary.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-005-compression-covariance.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-006-compression-hermitian.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-007-reconstruction-projector-sandwich.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-008-reconstruction-right-unitary.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-009-projector-fixes-frame.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-010-compressed-projector-identity.tex
+
+# Module: ProjectKoios/BandGauge/Alignment/Family.lean
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-011-constant-member.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-012-identity-member.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-013-identity-subset-global.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-014-global-subset-complete.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-015-feasibility-monotone.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-016-singleton-feasibility.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-017-identity-feasibility.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-018-global-feasibility.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-019-complete-feasibility.tex
+
+# Module: ProjectKoios/BandGauge/Alignment/FamilySeparation.lean
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-020-two-point-selected.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-021-two-point-other.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-022-two-point-not-global.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-023-two-point-complete.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-024-nonidentity-not-identity-family.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-025-identity-proper-global.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-026-global-proper-complete.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-027-reverse-feasibility-counterexample.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-028-global-not-identity-feasible.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-029-complete-not-global-feasible.tex
+
+# Module: ProjectKoios/BandGauge/Alignment/UnitaryProcrustes.lean
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-044-unitary-procrustes-minimality.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-045-unitary-procrustes-uniqueness.tex
+
+# Module: ProjectKoios/BandGauge/Alignment/FiniteMeshProcrustes.lean
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-052-finite-mesh-procrustes-minimality.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-058-known-inverse-polar-minimizer.tex
+
+# Module: ProjectKoios/BandGauge/Alignment/GaugeIdentity.lean
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-059-represented-dimension.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-060-unitary-identity-metric.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-061-right-action-compression.tex
+
+# Module: ProjectKoios/BandGauge/Alignment/ExactGaugeConstruction.lean
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-069-unitary-spectrum.tex
+proofs/BandGauge/Alignment/BG-ALIGNMENT-THM-071-exact-gauge-construction.tex
+
+# Module: ProjectKoios/BandGauge/Bloch/Sewing.lean
+proofs/BandGauge/Bloch/BG-BLOCH-THM-001-operator-preserves-sewing.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-002-alignment-preserves-covariance.tex
+
+# Module: ProjectKoios/BandGauge/Bloch/PeriodicRankTwo.lean
+proofs/BandGauge/Bloch/BG-BLOCH-THM-003-trace-centering.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-004-sampled-field-traceless.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-005-unitary-conjugation-preserves-trace.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-006-sampled-unitary-power.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-007-two-alignments-common-power.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-008-sampled-correlation-bound.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-009-trace-centering-preserves-hermiticity.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-010-sampled-field-hermitian.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-011-unitary-conjugation-preserves-hermiticity.tex
+
+# Module: ProjectKoios/BandGauge/Bloch/AlignedDifference.lean
+proofs/BandGauge/Bloch/BG-BLOCH-THM-012-operator-difference-apply.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-013-difference-sewing.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-014-difference-swap.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-015-difference-recovery.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-016-difference-zero.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-017-aligned-difference-apply.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-018-aligned-difference-sewing.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-019-aligned-difference-recovery.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-020-aligned-difference-zero.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-021-operator-difference-self-adjoint.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-022-aligned-operator-self-adjoint.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-023-aligned-difference-self-adjoint.tex
+
+# Module: ProjectKoios/BandGauge/Bloch/AlignedDifferenceBounds.lean
+proofs/BandGauge/Bloch/BG-BLOCH-THM-024-aligned-action-norm.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-027-aligned-difference-operator-norm.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-029-aligned-difference-subtraction.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-031-aligned-difference-stability.tex
+proofs/BandGauge/Bloch/BG-BLOCH-THM-032-aligned-operator-norm.tex
+
+# Module: ProjectKoios/BandGauge/Certificates/RankTwoSeparation.lean
+proofs/BandGauge/Certificates/BG-CERT-THM-001-check-implies-valid.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-002-spectral-witness.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-003-ellipse-containment.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-004-strict-separation.tex
+
+# Module: ProjectKoios/BandGauge/Certificates/RankTwoSeparationEnclosure.lean
+proofs/BandGauge/Certificates/BG-CERT-THM-005-enclosure-check-implies-valid.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-006-enclosure-spectral-witness.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-007-enclosure-containment.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-008-enclosure-separation.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-009-inverse-sqrt-two-enclosure.tex
+
+# Module: ProjectKoios/BandGauge/Certificates/FinitePareto.lean
+proofs/BandGauge/Certificates/BG-CERT-THM-010-exact-dominance-check.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-011-exact-threshold-check.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-012-exact-pareto-mask.tex
+
+# Module: ProjectKoios/BandGauge/Certificates/RankTwoSeparationBox.lean
+proofs/BandGauge/Certificates/BG-CERT-THM-013-box-check-implies-valid.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-014-box-spectral-witness.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-015-box-containment.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-016-box-separation.tex
+
+# Module: ProjectKoios/BandGauge/Certificates/IntervalDecision.lean
+proofs/BandGauge/Certificates/BG-CERT-THM-017-upper-bound-acceptance.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-018-upper-bound-accepted-sound.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-019-upper-bound-rejected-sound.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-020-upper-bound-unresolved.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-021-joint-threshold-accepted-sound.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-022-joint-threshold-rejected-sound.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-023-joint-threshold-unresolved.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-024-first-pass-accepted-sound.tex
+proofs/BandGauge/Certificates/BG-CERT-THM-025-first-pass-rejected-sound.tex
+
+# Module: ProjectKoios/BandGauge/Decision/FinitePareto.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-001-weak-improvement-reflexive.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-002-weak-improvement-transitive.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-003-dominance-irreflexive.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-004-dominance-transitive.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-005-duplicate-objectives-do-not-dominate.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-006-efficient-weak-improver-exists.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-007-weak-improvement-preserves-feasibility.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-008-efficient-feasible-decision-exists.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-009-pareto-sufficiency-for-feasibility.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-010-relaxed-thresholds-preserve-feasibility.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-011-minimum-feasible-cost-attained.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-012-minimum-cost-antitone-under-relaxation.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-013-two-channel-outcome-classification.tex
+
+# Module: ProjectKoios/BandGauge/Decision/FiniteCutoff.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-014-first-pass-exists.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-015-first-pass-unique.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-016-first-joint-pass.tex
+
+# Module: ProjectKoios/BandGauge/Decision/FiniteCompatibility.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-034-spectral-admissible-finite.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-035-operator-admissible-finite.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-036-compatibility-distance-attainment.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-037-zero-distance-compatibility.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-038-positive-distance-incompatibility.tex
+
+# Module: ProjectKoios/BandGauge/Decision/AlignedOperatorBudget.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-039-finite-aligned-operator-loss.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-044-aligned-operator-loss-stability.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-047-conformant-operator-witness.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-050-finite-aligned-witness-compatibility.tex
+
+# Module: ProjectKoios/BandGauge/Decision/FiniteAlignmentAttainment.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-051-finite-alignment-attainment.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-056-finite-central-witness-equivalence.tex
+
+# Module: ProjectKoios/BandGauge/Decision/OperatorChannels.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-060-precise-mandatory-operator-channels.tex
+
+# Module: ProjectKoios/BandGauge/Decision/FourStageResidualChannels.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-063-four-stage-channel-acceptance.tex
+
+# Module: ProjectKoios/BandGauge/Decision/FourStageResidualBudgetSynthesis.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-067-four-stage-component-acceptance.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-072-four-stage-witness-compatibility.tex
+
+# Module: ProjectKoios/BandGauge/Decision/MandatoryChannelComposition.lean
+proofs/BandGauge/Decision/BG-DECISION-THM-077-combined-channel-acceptance.tex
+proofs/BandGauge/Decision/BG-DECISION-THM-086-extended-four-stage-witness-compatibility.tex
+
+# Module: ProjectKoios/BandGauge/Foundations/HarmonicOptimization.lean
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-001-second-harmonic-upper-bound.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-002-second-harmonic-arg-attainment.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-005-canonical-angle-range.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-006-canonical-angle-attainment.tex
+
+# Module: ProjectKoios/BandGauge/Foundations/RankTwoPauli.lean
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-003-real-rotation-pauli-action.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-004-pauli-frobenius-correlation.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-007-canonical-pauli-decomposition.tex
+
+# Module: ProjectKoios/BandGauge/Foundations/RankTwoSpectralPerturbation.lean
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-008-rank-two-hermitian.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-009-lower-band-spectrum.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-010-upper-band-spectrum.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-011-frobenius-coefficient-distance.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-012-band-error-frobenius-bound.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-013-hermitian-pauli-representation.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-014-band-order.tex
+
+# Module: ProjectKoios/BandGauge/Foundations/RankTwoConjugation.lean
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-024-unitary-conjugation-bands.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-025-pointwise-unitary-band-fields.tex
+
+# Module: ProjectKoios/BandGauge/Foundations/FiniteRankAnalyticParent.lean
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-035-finite-rank-external-gap.tex
+proofs/BandGauge/Foundations/BG-FOUNDATION-THM-036-finite-rank-adjacent-gap.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/FiniteAbelian/Convolution.lean
+proofs/BandGauge/Fourier/BG-FOURIER-FINITE-THM-001-matrix-product-convolution.tex
+proofs/BandGauge/Fourier/BG-FOURIER-FINITE-THM-002-convolution-support.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/FiniteAbelian/LeastSquares.lean
+proofs/BandGauge/Fourier/BG-FOURIER-FINITE-THM-004-reconstruction-error-decomposition.tex
+proofs/BandGauge/Fourier/BG-FOURIER-FINITE-THM-005-truncation-least-squares.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Gauge/PointwiseConvolution.lean
+proofs/BandGauge/Fourier/BG-FOURIER-GAUGE-THM-001-pointwise-unitary-convolution.tex
+proofs/BandGauge/Fourier/BG-FOURIER-GAUGE-THM-002-pointwise-unitary-support.tex
+proofs/BandGauge/Fourier/BG-FOURIER-GAUGE-THM-003-pointwise-unitary-shell-radius.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Support/LatticeRadius.lean
+proofs/BandGauge/Fourier/BG-FOURIER-SUPPORT-THM-016-fcc-shell-radius-inclusion.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/FiniteAbelian/Reconstruction.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-001-truncation-preserves-supported-coefficient.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-002-truncation-zero-outside-support.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-003-truncated-reconstruction-support-sum.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-004-retained-omitted-decomposition.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-005-full-minus-truncated-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-006-linear-map-reconstruction.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-007-linear-map-truncation.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-008-omitted-weight-antitone.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/FiniteAbelian/Transform.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-009-finite-character-kernel.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-010-finite-fourier-inversion.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/FiniteAbelian/Parseval.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-011-cardinality-removes-forward-normalization.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-012-inner-sum-parseval.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-013-character-orthogonality.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-014-coefficient-reconstruction.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-015-power-is-norm-square-sum.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-016-finite-parseval.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-017-retained-omitted-power.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-018-coefficient-subtraction.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-019-truncation-residual-coefficient.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-020-coefficient-residual-omitted-power.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-021-reconstructed-residual-parseval.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/FiniteAbelian/HermitianPairing.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-022-hermitian-field-coefficient-pairing.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-023-negation-closed-truncation-pairing.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-024-paired-coefficients-hermitian-reconstruction.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-025-truncated-reconstruction-hermitian.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/FiniteAbelian/MatrixFrobenius.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-026-matrix-coefficients-entrywise.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-027-matrix-frobenius-parseval.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-028-matrix-frobenius-residual-tail.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Residual/RankTwoWeightedBridge.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-029-constant-weight-frobenius-bridge.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-030-weighted-residual-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-031-uniform-weight-positive.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-032-uniform-paper-normalization.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Gauge/UnitaryEquivariance.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-035-fixed-unitary-frobenius-inner.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-043-fixed-unitary-fourier-coefficient.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-046-fixed-unitary-truncated-reconstruction.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-047-fixed-unitary-truncation-residual.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Gauge/PointwiseGauge.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-048-character-phase-mode-shift.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-049-scalar-conjugation-trivial.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-050-scalar-conjugation-fourier.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-051-fourier-coefficients-separate.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-052-constant-pointwise-unitary.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-053-pointwise-unitary-coefficient-change.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-054-pointwise-unitary-frobenius.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Gauge/TruncationCounterexample.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-055-swap-conjugation.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-056-zero-mode-coefficient.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-057-constant-zero-mode.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-058-gauged-at-zero.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-059-gauged-at-one.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-060-odd-mode-one.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-061-constant-odd-coefficient.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-062-gauged-odd-coefficient.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-063-odd-coefficient-nonzero.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-064-gauged-odd-mode-nonzero.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-065-coordinate-projectors-distinct.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-066-gauge-truncation-noncommutation.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Residual/Channels.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-067-truncation-channel.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-068-hilbert-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-069-matrix-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-070-hilbert-rms-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-071-hilbert-rms-squared-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-072-matrix-frobenius-rms-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-073-matrix-frobenius-rms-squared-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-074-pointwise-maximum-tail.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-075-finite-maximum-tail.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Support/CenteredEvenMesh.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-081-negative-nyquist-singleton-complement.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-084-symmetric-support-inclusion.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-086-negative-nyquist-reconstruction.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-087-negative-nyquist-removed-power.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Support/MetricShell.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-100-shell-change-attained-radius.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-105-no-skipped-capped-shell.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Torus/NormalizedProduct.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-124-product-torus-exponential-factorization.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-125-equal-phase-power-law.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Torus/NormalizedCircleBessel.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-129-normalized-circle-bessel-j-zero.tex
+
+# Module: ProjectKoios/BandGauge/Fourier/Gauge/ProductLocalitySeparation.lean
+proofs/BandGauge/Fourier/BG-FOURIER-THM-156-fin-two-positive-omitted-power.tex
+proofs/BandGauge/Fourier/BG-FOURIER-THM-159-fin-three-positive-omitted-power.tex
+
+# Module: ProjectKoios/BandGauge/Geometry/AdmissibleSets.lean
+proofs/BandGauge/Geometry/BG-THM-001-feasible-pair-upper-bound.tex
+proofs/BandGauge/Geometry/BG-THM-002-common-witness.tex
+proofs/BandGauge/Geometry/BG-THM-003-certified-separation.tex
+proofs/BandGauge/Geometry/BG-THM-004-compact-attainment-positive-distance.tex
+proofs/BandGauge/Geometry/BG-THM-005-nonempty-finiteness.tex
+proofs/BandGauge/Geometry/BG-THM-006-real-extended-bridge.tex
+proofs/BandGauge/Geometry/BG-THM-007-joint-loss-bounds-zero-distance.tex
+proofs/BandGauge/Geometry/BG-THM-008-certified-separation-excludes-joint-adequacy.tex
+proofs/BandGauge/Geometry/BG-THM-035-compact-distance-attainment.tex
+proofs/BandGauge/Geometry/BG-THM-036-compact-zero-distance-intersection.tex
+proofs/BandGauge/Geometry/BG-THM-037-compact-positive-distance-disjointness.tex
+
+# Module: ProjectKoios/BandGauge/Geometry/RankTwoLoss.lean
+proofs/BandGauge/Geometry/BG-THM-009-irreducible-operator-floor.tex
+proofs/BandGauge/Geometry/BG-THM-010-below-floor-operator-set-empty.tex
+proofs/BandGauge/Geometry/BG-THM-011-normalized-correlation-bound.tex
+proofs/BandGauge/Geometry/BG-THM-012-irreducible-floor-nonnegative.tex
+proofs/BandGauge/Geometry/BG-THM-013-operator-squared-loss-nonnegative.tex
+proofs/BandGauge/Geometry/BG-THM-014-spectral-squared-loss-nonnegative.tex
+proofs/BandGauge/Geometry/BG-THM-015-spectral-square-root-recovery.tex
+proofs/BandGauge/Geometry/BG-THM-016-operator-square-root-recovery.tex
+proofs/BandGauge/Geometry/BG-THM-017-spectral-threshold-equivalence.tex
+proofs/BandGauge/Geometry/BG-THM-018-operator-threshold-equivalence.tex
+proofs/BandGauge/Geometry/BG-THM-019-spectral-sublevel-ellipse.tex
+proofs/BandGauge/Geometry/BG-THM-020-operator-radius-recovery.tex
+proofs/BandGauge/Geometry/BG-THM-021-operator-sublevel-ellipse.tex
+proofs/BandGauge/Geometry/BG-THM-022-common-point-compatibility-bound.tex
+proofs/BandGauge/Geometry/BG-THM-023-strict-center-separation.tex
+proofs/BandGauge/Geometry/BG-THM-024-compatibility-constructs-common-point.tex
+proofs/BandGauge/Geometry/BG-THM-025-full-ellipse-intersection-criterion.tex
+proofs/BandGauge/Geometry/BG-THM-026-real-loss-intersection-criterion.tex
+proofs/BandGauge/Geometry/BG-THM-027-pairwise-distance-lower-bound.tex
+proofs/BandGauge/Geometry/BG-THM-028-distance-attainment.tex
+proofs/BandGauge/Geometry/BG-THM-029-exact-full-ellipse-distance.tex
+proofs/BandGauge/Geometry/BG-THM-030-exact-real-loss-distance.tex
+proofs/BandGauge/Geometry/BG-THM-031-spectral-rectangle-containment-transfer.tex
+proofs/BandGauge/Geometry/BG-THM-032-operator-rectangle-containment-transfer.tex
+proofs/BandGauge/Geometry/BG-THM-033-rectangle-intersection-criterion.tex
+proofs/BandGauge/Geometry/BG-THM-034-exact-rectangle-ellipse-distance.tex
+
+# Module: ProjectKoios/BandGauge/Hilbert/AdmissibleBalls.lean
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-001-ball-intersection-criterion.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-002-ball-distance-lower-bound.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-003-ball-distance-attainment.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-004-exact-ball-set-distance.tex
+
+# Module: ProjectKoios/BandGauge/Hilbert/WeightedFrobenius.lean
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-005-weighted-frobenius-nonnegative.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-006-weighted-frobenius-cauchy-schwarz.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-007-unitary-conjugation-preserves-power.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-008-common-power-correlation-bound.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-009-weighted-frobenius-polarization.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-010-traceless-identity-orthogonality.tex
+
+# Module: ProjectKoios/BandGauge/Hilbert/OperatorLossBridge.lean
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-011-operator-matrix-loss-expansion.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-012-common-power-operator-quadratic.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-013-matrix-to-scalar-operator-loss.tex
+
+# Module: ProjectKoios/BandGauge/Hilbert/SpectralLossBridge.lean
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-014-spectral-residual-expansion.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-015-spectral-field-to-scalar-loss.tex
+
+# Module: ProjectKoios/BandGauge/Hilbert/ResidualChannels.lean
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-016-maximum-norm-sup.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-017-rms-explicit.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-018-residual-decomposition.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-019-pointwise-triangle.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-020-maximum-triangle.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-021-rms-triangle.tex
+
+# Module: ProjectKoios/BandGauge/Hilbert/FourStageResidualChannels.lean
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-022-four-stage-residual-decomposition.tex
+proofs/BandGauge/Hilbert/BG-HILBERT-THM-025-four-stage-rms-bound.tex
+
+# Module: ProjectKoios/BandGauge/Papers/Ragasa2026A/RankTwoFields.lean
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-001-aligned-fields-traceless.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-002-aligned-fields-common-power.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-003-operator-correlation-bound.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-004-operator-matrix-to-scalar-loss.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-005-spectral-field-centered.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-006-spectral-power-equals-parent.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-007-spectral-field-to-scalar-loss.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-018-canonical-spectral-field-centered.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-019-canonical-spectral-power.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-020-canonical-spectral-loss.tex
+
+# Module: ProjectKoios/BandGauge/Papers/Ragasa2026A/CorrelationHarmonic.lean
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-008-correlation-harmonic.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-009-correlation-upper-bound.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-010-maximizing-angle-range.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-011-maximizing-angle-attainment.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-012-correlation-maximum-is-greatest.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-013-maximized-normalized-correlation-bound.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-014-normalized-correlation-at-maximizer.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-015-maximized-matrix-to-scalar-loss.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-016-canonical-correlation-harmonic.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-017-canonical-maximized-matrix-loss.tex
+
+# Module: ProjectKoios/BandGauge/Papers/Ragasa2026A/OptimizedLossGeometry.lean
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-021-canonical-spectral-real-loss.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-022-canonical-optimized-real-loss.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-023-canonical-loss-intersection.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-024-canonical-loss-distance.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-025-rectangle-intersection.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-026-rectangle-distance.tex
+
+# Module: ProjectKoios/BandGauge/Papers/Ragasa2026A/CertificateBridge.lean
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-027-checked-certificate-bridge.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-028-checked-enclosure-bridge.tex
+
+# Module: ProjectKoios/BandGauge/Papers/Ragasa2026A/ConstructedFalsePositive.lean
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-029-uniform-weight-and-power.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-030-constructed-maximum-correlation.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-031-constructed-certificate-accepts.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-032-constructed-false-positive.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-033-exact-separation-distance.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-034-separation-resolution.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-036-box-certificate-accepts.tex
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-037-box-bridge-regression.tex
+
+# Module: ProjectKoios/BandGauge/Papers/Ragasa2026A/KappaEnclosureBridge.lean
+proofs/BandGauge/Papers/Ragasa2026A/BG-RAGASA2026A-THM-035-checked-box-bridge.tex
+
+# Module: ProjectKoios/BandGauge/Projection/LaurentObstruction.lean
+proofs/BandGauge/Projection/BG-PROJECTION-THM-001-parent-square.tex
+proofs/BandGauge/Projection/BG-PROJECTION-THM-002-laurent-square-root-obstruction.tex
+
+# Module: ProjectKoios/BandGauge/Projection/SpectralProjectionRange.lean
+proofs/BandGauge/Projection/BG-PROJECTION-THM-003-unit-circle-injectivity.tex
+proofs/BandGauge/Projection/BG-PROJECTION-THM-004-dispersion-not-finite-fourier.tex
+proofs/BandGauge/Projection/BG-PROJECTION-THM-005-projector-specification.tex
+proofs/BandGauge/Projection/BG-PROJECTION-THM-006-projector-sandwich.tex
+proofs/BandGauge/Projection/BG-PROJECTION-THM-007-projected-operator-not-finite-fourier.tex
+proofs/BandGauge/Projection/BG-PROJECTION-THM-008-spectral-projection-destroys-finite-support.tex
+
+# Module: ProjectKoios/BandGauge/SpecialFunctions/BesselJZeroIntegral.lean
+proofs/BandGauge/SpecialFunctions/BG-SPECIAL-THM-014-full-angle-bessel-j-zero.tex
+
+# Domain: Crosswalks
+
+# Module: ProjectKoios/Crosswalks/PhysKit/FccBainCoordinateBridge.lean
+proofs/Crosswalks/PhysKit/PKF-PHYSKIT-THM-001-forward-inverse-product.tex
+proofs/Crosswalks/PhysKit/PKF-PHYSKIT-THM-002-inverse-forward-product.tex
+proofs/Crosswalks/PhysKit/PKF-PHYSKIT-THM-003-determinant-one.tex
+proofs/Crosswalks/PhysKit/PKF-PHYSKIT-THM-004-modular-mutual-inverses.tex
+proofs/Crosswalks/PhysKit/PKF-PHYSKIT-THM-005-positive-modulus-bijection.tex
+
+# Domain: DensityFunctionalTheory
+
+# Module: ProjectKoios/DensityFunctionalTheory/Foundations/ConstrainedSearch.lean
+proofs/DensityFunctionalTheory/Foundations/DFT-CONSTRAINED-THM-001-outer-variational-bound.tex
+proofs/DensityFunctionalTheory/Foundations/DFT-CONSTRAINED-THM-002-ground-state-density-equality.tex
+
+# Module: ProjectKoios/DensityFunctionalTheory/Foundations/HohenbergKohn.lean
+proofs/DensityFunctionalTheory/Foundations/DFT-HK-THM-001-potential-recovery-modulo-constant.tex
+
+# Module: ProjectKoios/DensityFunctionalTheory/Foundations/Variational.lean
+proofs/DensityFunctionalTheory/Foundations/DFT-VARIATIONAL-THM-001-strict-ground-state-density-separation.tex
+
+# Module: ProjectKoios/DensityFunctionalTheory/KohnSham/FiniteBasisDensity.lean
+proofs/DensityFunctionalTheory/KohnSham/DFT-KS-BASIS-THM-001-finite-basis-density-expansion.tex
+
+# Module: ProjectKoios/DensityFunctionalTheory/KohnSham/FunctionalDecomposition.lean
+proofs/DensityFunctionalTheory/KohnSham/DFT-KS-FUNCTIONAL-THM-001-exact-functional-reconstruction.tex
+
+# Module: ProjectKoios/DensityFunctionalTheory/PAW/ProjectorAugmentation.lean
+proofs/DensityFunctionalTheory/PAW/DFT-PAW-PROJECTOR-THM-001-reconstructed-state-expansion.tex
+
+# Module: ProjectKoios/DensityFunctionalTheory/PAW/FiniteTransformation.lean
+proofs/DensityFunctionalTheory/PAW/DFT-PAW-TRANSFORM-THM-001-generalized-eigenproblem-equivalence.tex
+
+# Domain: QuantumMechanics
+
+# Module: ProjectKoios/QuantumMechanics/Dirac.lean
+proofs/QuantumMechanics/Dirac/QM-DIRAC-THM-001-rank-one-projector-idempotent.tex
+proofs/QuantumMechanics/Dirac/QM-DIRAC-THM-002-rank-one-projector-self-adjoint.tex
+
+# Module: ProjectKoios/QuantumMechanics/FiniteDimensional/RankOneResolvent.lean
+proofs/QuantumMechanics/FiniteDimensional/QM-RESOLVENT-THM-005-rank-one-determinant-factorization.tex
+proofs/QuantumMechanics/FiniteDimensional/QM-RESOLVENT-THM-008-sherman-morrison-inverse.tex
+proofs/QuantumMechanics/FiniteDimensional/QM-RESOLVENT-THM-010-rank-one-defect-singularity.tex
+proofs/QuantumMechanics/FiniteDimensional/QM-RESOLVENT-THM-013-resolvent-defect-eigenvalue-equation.tex
+
+# Module: ProjectKoios/QuantumMechanics/HarmonicOscillator/FiniteComparison.lean
+proofs/QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-001-gram-normalized-injection-isometry.tex
+proofs/QuantumMechanics/HarmonicOscillator/QHO-COMPARISON-THM-002-frobenius-diagonal-offdiagonal-decomposition.tex
+
+# Module: ProjectKoios/QuantumMechanics/HarmonicOscillator/HermiteEigenfunction.lean
+proofs/QuantumMechanics/HarmonicOscillator/QHO-HERMITE-THM-001-physicists-hermite-differential-equation.tex
+proofs/QuantumMechanics/HarmonicOscillator/QHO-HERMITE-THM-002-hermite-gaussian-eigenfunction.tex
+
+# Module: ProjectKoios/QuantumMechanics/HarmonicOscillator/FiniteLadder.lean
+proofs/QuantumMechanics/HarmonicOscillator/QHO-LADDER-THM-001-finite-ladder-commutator-defect.tex
+
+# Module: ProjectKoios/QuantumMechanics/HarmonicOscillator/TruncationDistortion.lean
+proofs/QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-001-compression-multiplication-defect.tex
+proofs/QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-002-truncated-ladder-hamiltonian-boundary-defect.tex
+proofs/QuantumMechanics/HarmonicOscillator/QHO-TRUNCATION-THM-003-truncated-ladder-hamiltonian-inequality.tex
+
+# Module: ProjectKoios/QuantumMechanics/Measurement/FinitePureState.lean
+proofs/QuantumMechanics/Measurement/QM-MEASUREMENT-THM-001-probability-normalization.tex
+proofs/QuantumMechanics/Measurement/QM-MEASUREMENT-THM-002-global-phase-invariance.tex
+proofs/QuantumMechanics/Measurement/QM-MEASUREMENT-THM-003-post-measurement-normalization.tex
+
+# Module: ProjectKoios/QuantumMechanics/Operator/TestDomain.lean
+proofs/QuantumMechanics/Operator/QM-OPERATOR-THM-001-dense-test-domain.tex
+proofs/QuantumMechanics/Operator/QM-OPERATOR-THM-002-formal-adjoint-lift.tex
+proofs/QuantumMechanics/Operator/QM-OPERATOR-THM-003-adjoint-containment.tex
+
+# Module: ProjectKoios/QuantumMechanics/Piab1d/Spectrum.lean
+proofs/QuantumMechanics/Piab1d/PIAB1D-SPECTRUM-THM-015-canonical-mode-cosine-eigenpair.tex
+
+# Module: ProjectKoios/QuantumMechanics/RiggedHilbertSpace.lean
+proofs/QuantumMechanics/RiggedHilbertSpace/QM-RIGGED-THM-001-generalized-bra-injective.tex
+proofs/QuantumMechanics/RiggedHilbertSpace/QM-RIGGED-THM-002-generalized-ket-injective.tex
+
+# Domain: SolidState
+
+# Module: ProjectKoios/SolidState/FiniteLattice/GaugeLoops.lean
+proofs/SolidState/FiniteLattice/SS-GAUGE-THM-008-bargmann-loop-gauge-invariance.tex
+proofs/SolidState/FiniteLattice/SS-GAUGE-THM-011-wilson-loop-determinant-gauge-invariance.tex
+
+# Module: ProjectKoios/SolidState/FiniteLattice/ProjectorBargmann.lean
+proofs/SolidState/FiniteLattice/SS-GAUGE-THM-020-projector-trace-bargmann-crosswalk.tex
+proofs/SolidState/FiniteLattice/SS-GAUGE-THM-023-projector-loop-phase-gauge-invariance.tex

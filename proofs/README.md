@@ -36,6 +36,25 @@ IDs. Compile wrappers and compendia from the repository root so their shared inp
 The compendium is a formal audit document, not the scientific research manuscript owned by
 `projectkoios-dft`.
 
+The whole-repository compendium is assembled at PDF level so every existing standalone dossier can
+participate without first being rewritten as a body fragment. Its source list is
+`proofs/compendium-manifest.txt`, grouped by owning Lean module. Build it from the repository root
+with:
+
+```bash
+python3 src/python/projectkoios/formal/documents/proofs/compendium.py \
+  --output /tmp/projectkoios-formal-proof-compendium.pdf
+```
+
+The builder verifies that the manifest covers every standalone dossier, resolves each statement to
+one owning Lean module, compiles each dossier in an isolated temporary directory, and joins the
+resulting PDFs with domain, module, and statement-ID table-of-contents entries. Before each module's
+dossiers, it inserts a module divider containing the Mermaid proof schematic extracted from the
+owning `.lean` module's `## Proof schematic` docstring section. An explicitly labeled generated
+dossier-inventory diagram is used while that source schematic is pending. Module groups must be
+contiguous in the manifest. Generated PDFs, Mermaid renderings, and LaTeX state are not stored in the
+repository. Use `--strict-warnings` when freezing a publication snapshot.
+
 ## File rule
 
 Each dossier mirrors its Lean module path and uses one statement ID.
