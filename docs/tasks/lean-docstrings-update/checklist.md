@@ -4,7 +4,7 @@ This inventory tracks every current repository-owned `.lean` file. It began with
 task-creation baseline and appends new files as they are added. Check an item only after applying all
 applicable criteria in [README.md](README.md) and recording validation for the wave that changed it.
 
-**Progress:** 0 / 171 modules and Lean support files
+**Progress:** 4 / 185 modules and Lean support files
 
 ## Lake package root (1)
 
@@ -171,10 +171,12 @@ applicable criteria in [README.md](README.md) and recording validation for the w
 - [ ] `ProjectKoios/DensityFunctionalTheory/Foundations/HohenbergKohn.lean`
 - [ ] `ProjectKoios/DensityFunctionalTheory/Foundations/Variational.lean`
 
-## `ProjectKoios/DensityFunctionalTheory/KohnSham/` (4)
+## `ProjectKoios/DensityFunctionalTheory/KohnSham/` (6)
 
 - [ ] `ProjectKoios/DensityFunctionalTheory/KohnSham/ContinuumDensity.lean`
+- [x] `ProjectKoios/DensityFunctionalTheory/KohnSham/ContinuumSpinDensity.lean`
 - [ ] `ProjectKoios/DensityFunctionalTheory/KohnSham/FiniteBasisDensity.lean`
+- [ ] `ProjectKoios/DensityFunctionalTheory/KohnSham/FiniteBasisSpinDensity.lean`
 - [ ] `ProjectKoios/DensityFunctionalTheory/KohnSham/FunctionalDecomposition.lean`
 - [ ] `ProjectKoios/DensityFunctionalTheory/KohnSham/OccupiedOrbitals.lean`
 
@@ -187,7 +189,7 @@ applicable criteria in [README.md](README.md) and recording validation for the w
 
 - [ ] `ProjectKoios/Formal/Authority.lean`
 
-## `ProjectKoios/QuantumMechanics/` (11)
+## `ProjectKoios/QuantumMechanics/` (12)
 
 - [ ] `ProjectKoios/QuantumMechanics/AngularMomentum.lean`
 - [ ] `ProjectKoios/QuantumMechanics/Dirac.lean`
@@ -199,6 +201,7 @@ applicable criteria in [README.md](README.md) and recording validation for the w
 - [ ] `ProjectKoios/QuantumMechanics/Piab1d.lean`
 - [ ] `ProjectKoios/QuantumMechanics/QuantumInformation.lean`
 - [ ] `ProjectKoios/QuantumMechanics/RiggedHilbertSpace.lean`
+- [ ] `ProjectKoios/QuantumMechanics/SpinDensity.lean`
 - [ ] `ProjectKoios/QuantumMechanics/State.lean`
 
 ## `ProjectKoios/QuantumMechanics/AngularMomentum/` (2)
@@ -217,7 +220,7 @@ applicable criteria in [README.md](README.md) and recording validation for the w
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDifference/OddExtension1D.lean`
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDifference/TwistedCyclic1D.lean`
 
-## `ProjectKoios/QuantumMechanics/FiniteDimensional/` (12)
+## `ProjectKoios/QuantumMechanics/FiniteDimensional/` (15)
 
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/DecompositionIdentifiability.lean`
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/ModelClassFitting.lean`
@@ -227,10 +230,13 @@ applicable criteria in [README.md](README.md) and recording validation for the w
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/ReductionBasis.lean`
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinEmbedding.lean`
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinFrameRotation.lean`
+- [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinGlobalCollinearity.lean`
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinIndependentProjection.lean`
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinPauliDecomposition.lean`
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinPauliResidual.lean`
 - [ ] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinPauliVector.lean`
+- [x] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinSO3Covariance.lean`
+- [x] `ProjectKoios/QuantumMechanics/FiniteDimensional/SpinorDensityMatrix.lean`
 
 ## `ProjectKoios/QuantumMechanics/Fourier/` (1)
 
@@ -240,13 +246,17 @@ applicable criteria in [README.md](README.md) and recording validation for the w
 
 - [ ] `ProjectKoios/QuantumMechanics/Evolution/Schrodinger.lean`
 
-## `ProjectKoios/QuantumMechanics/HarmonicOscillator/` (8)
+## `ProjectKoios/QuantumMechanics/HarmonicOscillator/` (12)
 
 - [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/Continuum.lean`
 - [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/FiniteComparison.lean`
 - [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/FiniteDifference.lean`
 - [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/FiniteLadder.lean`
+- [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/FiniteResidualCertificate.lean`
+- [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/FiniteSpectralCompression.lean`
+- [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/FiniteSpectralResidual.lean`
 - [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/HermiteEigenfunction.lean`
+- [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/HilbertBasis.lean`
 - [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/QuantumSystem.lean`
 - [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/SpectralEvolution.lean`
 - [ ] `ProjectKoios/QuantumMechanics/HarmonicOscillator/TruncationDistortion.lean`
@@ -258,6 +268,13 @@ applicable criteria in [README.md](README.md) and recording validation for the w
 ## `ProjectKoios/QuantumMechanics/QuantumInformation/` (1)
 
 - [ ] `ProjectKoios/QuantumMechanics/QuantumInformation/Finite.lean`
+
+## `ProjectKoios/QuantumMechanics/SpinDensity/` (4)
+
+- [ ] `ProjectKoios/QuantumMechanics/SpinDensity/Continuum.lean`
+- [x] `ProjectKoios/QuantumMechanics/SpinDensity/FiniteBasis.lean`
+- [ ] `ProjectKoios/QuantumMechanics/SpinDensity/HilbertBasis.lean`
+- [ ] `ProjectKoios/QuantumMechanics/SpinDensity/OscillatorBasis.lean`
 
 ## `ProjectKoios/QuantumMechanics/Operator/` (4)
 

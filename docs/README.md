@@ -36,6 +36,7 @@ Derived audit views inspect existing formal state without changing theorem or ev
 - `audit/declaration-dependency-graph.md`: optional non-building graph generation from an already validated compiled audit environment.
 - `api-maps/quantum-mechanics-operators.md`: declaration-level overlap and gap map for Project Koios test-space operators and the adopted Physlib operator stack.
 - `api-maps/continuum-schrodinger.md`: adopted `SpaceDQuantumSystem` carrier, Sobolev and multiplication APIs, Schwartz-core and singular hydrogenic Hamiltonian bridges, and self-adjointness gates.
+- [`api-maps/harmonic-oscillator.md`](api-maps/harmonic-oscillator.md): pinned oscillator reuse map, domain/carrier distinctions, checked Alpha ladder/vacuum API probes, legacy Hermite duplication candidate, and private sequence-API limitations.
 
 ## Architecture and planning
 

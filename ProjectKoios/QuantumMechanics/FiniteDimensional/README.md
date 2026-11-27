@@ -11,6 +11,15 @@ This directory owns exact source-neutral finite-dimensional constructions.
 - `SpinEmbedding.lean`: orbital-major `A ⊗ₖ I₂` lifts and spin injections.
 - `SpinIndependentProjection.lean`: half-partial-trace projection and least-distance characterization.
 - `SpinPauliResidual.lean`: Pauli-channel blocks and exact Frobenius residuals.
+- `SpinPauliVector.lean`: ordered Pauli-vector multiplication, trace, commutator, and unitary algebra.
+- `SpinPauliDecomposition.lean`: canonical scalar-plus-Pauli reconstruction and fixed-`z`
+  collinearity criteria.
+- `SpinFrameRotation.lean`: active global `SU(2)` lifting and conjugation on spinful matrices.
+- `SpinSO3Covariance.lean`: induced `SU(2) → SO(3)` homomorphism and Pauli-coefficient covariance.
+- `SpinGlobalCollinearity.lean`: existence and invariance of one global frame making all orbital
+  spin blocks fixed-axis collinear.
+- `SpinorDensityMatrix.lean`: finite pointwise spinor outer products, occupation-weighted density
+  matrices, positive semidefiniteness, and trace formulas.
 
 ## Boundaries
 
@@ -19,4 +28,9 @@ Notation and theorem scope remain explicit.
 - `Q` is reserved for `I - P`.
 - Resolvent results require explicit invertibility and denominator premises; root existence is not proved.
 - Orbital expansion does not assert basis completeness, normalization, orthogonality, density semantics, or coefficient uniqueness.
+- Global-frame collinearity uses one `SU(2)` rotation for the entire finite orbital matrix.
+- Finite spinor density matrices are pointwise algebra only: they contain no measure space, `Lᵖ`
+  equivalence class, spatial basis, discretization error, or convergence claim.
+- The finite modules do not define position-dependent or almost-everywhere frames, continuum spin
+  densities, DFT effective-potential bindings, or spin--orbit Hamiltonians.
 - The modules do not bind runtime matrices, binary64 values, eigensolvers, root finders, serialized data, authored physical coefficients, time-reversal implementations, or applicability.

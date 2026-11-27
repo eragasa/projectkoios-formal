@@ -15,6 +15,7 @@ public import ProjectKoios.QuantumMechanics.Fourier
 public import ProjectKoios.QuantumMechanics.Evolution
 public import ProjectKoios.QuantumMechanics.HarmonicOscillator
 public import ProjectKoios.QuantumMechanics.QuantumInformation
+public import ProjectKoios.QuantumMechanics.SpinDensity
 public import ProjectKoios.QuantumMechanics.Piab1d
 
 /-! Narrow import root for Project Koios quantum-mechanics modules. -/

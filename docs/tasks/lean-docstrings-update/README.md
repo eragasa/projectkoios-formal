@@ -21,9 +21,14 @@ Baseline inventory taken when this task was created:
 
 These counts measure marker presence only. They do not establish compliance with the new standard.
 Import-only namespace roots may correctly contain no declaration docstrings. The live checklist now
-contains 159 entries after adding the `Operator/SelfAdjoint.lean`, `Operator/Schrodinger.lean`,
-`Operator/Hydrogen.lean`, and `HarmonicOscillator/Continuum.lean` modules; this does not rewrite the
-task-creation baseline above.
+contains 185 entries; this does not rewrite the task-creation baseline above. Four modules have
+completed a focused source-presentation wave: `SpinDensity/FiniteBasis.lean`,
+`FiniteDimensional/SpinorDensityMatrix.lean`, `FiniteDimensional/SpinSO3Covariance.lean`, and
+`KohnSham/ContinuumSpinDensity.lean` (the last under `DensityFunctionalTheory`). Their module and
+public declaration documentation was reviewed, their four source schematics rendered, and their
+bounded consumers/audit target compiled. All 52 public declaration IDs and non-comment Lean code
+were preserved. See [`AUD-VAL-099`](../../audit/trusted-base-audit.md#aud-val-099) through
+[`AUD-VAL-102`](../../audit/trusted-base-audit.md#aud-val-102).
 
 `ProjectKoios/DensityFunctionalTheory/PAW/ProjectorAugmentation.lean` now contains the first pilot
 source-defined proof schematic. Its module checklist item remains open until the complete module and

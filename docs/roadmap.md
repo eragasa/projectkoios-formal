@@ -42,6 +42,14 @@ flowchart LR
   QI1[Pure rays, mixed states, POVMs, CPTP maps, tensor products, and separability]
   QA0[Pinned Physlib angular momentum and PhyslibAlpha spin orbit]
   QA1[Schwartz-domain orbital angular momentum and finite dimensionless L dot S]
+  QS0["Global SU(2) active spin-frame action"]
+  QS1["Induced SO(3) Pauli-vector covariance"]
+  QS2[Collinearity after one global frame rotation]
+  QSF[Finite pointwise spinor density algebra]
+  QS3[Representative-safe Ullrich spin-density matrix]
+  QS4[Scalar Kohn-Sham particle-density trace binding]
+  QSC[Finite-basis reconstruction, error, and convergence]
+  QS5[Spin XC, effective-potential, and dimensional SOC binding]
   Q0 --> Q1
   Q0 --> Q2
   Q2 --> Q3
@@ -52,6 +60,13 @@ flowchart LR
   Q7 -. source and applicability gates .-> Q8
   QI0 --> QI1
   QA0 --> QA1
+  QS0 --> QS1
+  QS1 --> QS2
+  QS2 --> QS3
+  QSF --> QS3
+  QS3 --> QS4
+  QS4 -. oscillator/Hermite basis instance proved; Kohn-Sham basis contract planned .-> QSC
+  QSC -. functional, potential, and SOC prerequisites .-> QS5
 ```
 
 The manifest records the source-neutral Q0--Q4 layers, a thin finite-dimensional binding to the
@@ -60,7 +75,68 @@ separability APIs, plus a thin binding to Physlib's three-dimensional Schwartz-d
 angular momentum and PhyslibAlpha's standard spin-half and dimensionless finite `L·S` algebra.
 The continuum angular-momentum binding proves symmetry, dense closability, and domain-evaluated
 commutation laws but no essential self-adjointness or spectral theorem; the finite spin-orbit
-binding does not yet identify a continuum or DFT SOC Hamiltonian. The manifest also records
+binding does not yet identify a continuum or DFT SOC Hamiltonian. The finite spin-frame layer now
+also packages PhyslibAlpha's adjoint matrix as an exact `SU(2) → SO(3)` homomorphism and proves
+active covariance of the recovered orbital-valued Pauli coefficients. The finite layer now also
+defines collinearity after selecting one common global frame. A representative-safe matrix-valued
+`L¹` continuum layer implements almost-everywhere Hermiticity and global collinearity, Ullrich-style
+particle and Pauli magnetization traces, particle-density invariance, induced `SO(3)` magnetization
+covariance, exact Pauli reconstruction, and occupation-weighted `L²` spinor outer-product
+densities. The finite layer includes the exact outer-product difference decomposition, and the
+continuum layer now proves representative-safe componentwise, full-matrix, and fixed-occupation
+finite-family `L² → L¹` density-error bounds through Mathlib's Hölder map, together with conditional
+convergence transfer to the matrix density, particle trace, and all Pauli magnetization components. Finite pointwise spinor density-matrix algebra
+remains isolated in the finite-dimensional layer; the continuum module lifts that algebra almost
+everywhere without identifying finite and continuum carriers. A thin Kohn--Sham binding
+identifies the matrix particle trace with the complexification of the real scalar component-density
+sum and proves particle-number identities under explicit normalization and occupation-sum
+hypotheses. Explicit finite-index continuum-spinor reconstruction maps now specialize those
+bounds and convergence transfers. An idempotent strongly complete projection contract now packages
+the exact remaining obligation. A countable Mathlib Hilbert basis now constructs that contract
+canonically through finite rank-one partial sums. The proved one-dimensional oscillator/Hermite
+family is now packaged as such a Hilbert basis and yields concrete spin-density convergence. The
+thin Kohn--Sham layer now transfers this to real scalar `L¹` density convergence and particle-number
+integral convergence, including the normalized occupation-sum limit. Exact Parseval/Pythagorean
+identities now express orbital truncation errors and particle-number deficits as discarded
+coefficient tails, with a full matrix-density tail error budget. Supplied summable global moments
+`∑ (k+1)^p |c_k|² ≤ M` now give explicit tail rates `M / (N+1)^p`, matrix-density error bounds,
+particle-number deficit bounds, and sufficient cutoff conditions for tolerances. The moment
+contracts explicitly require summability; total `tsum` inequalities alone are insufficient. Global
+budgets remain independent regularity assumptions in the generic layer, not consequences of finite
+retained coefficients. For the one-dimensional oscillator, actual membership in the selected
+Hamiltonian closure domain now discharges the global `p=2` contract: the proved coordinate/Parseval
+identity derives `∑(k+1)²|c_k|² ≤ 4‖H̄ψ‖²/(ℏω₀)²`. This gives explicit inverse-linear orbital and
+full matrix-density error bounds, and an inverse-square particle-number deficit for nonnegative
+occupations. Hamiltonian-image norms are not energy expectations. A further domain-valued
+partial-sum construction now proves convergence in the explicit sum graph norm and hence
+convergence of Physlib quadratic energy values. Nonzero targets give eventual nonzero partial sums
+and convergent Rayleigh quotients; for unit-norm domain targets, normalized partial-sum energy
+expectations converge as well. Exact discarded-energy identities now give a nonnegative raw
+quadratic-energy deficit at most `‖H̄ψ‖²/E_N`. For a unit target with retained squared norm
+`r ≥ m > 0`, the normalized energy error is at most
+`(‖H̄ψ‖²/E_N + ‖H̄ψ‖ |1-r|)/m`; raw and normalized tolerance-cutoff conditions are explicit.
+Early partial sums may vanish, and the retained-norm bound excludes them at a chosen normalized
+cutoff. This does not prove a converse domain characterization, numerical norm/tail/energy
+certificate, normalized-energy monotonicity, or convergence of a Kohn--Sham total-energy functional.
+The existing finite diagonal oscillator Hamiltonian is now bound at scale `ℏω₀` to an explicit
+Euclidean coefficient isometry into the actual continuum closure domain: exact intertwining,
+adjoint compression, and equal finite/continuum quadratic energies are proved. The `K+1`-coefficient
+embedding equals the same domain partial sum used by the approximation layer. This is not a
+sampled-grid, quadrature, floating-point, or numerical eigensolver binding. Exact finite residuals
+now transport with equal continuum norms. Unit coefficient norm gives a retained exact level within
+the residual norm of the trial energy; independently proved residual upper bounds may be used.
+A positive gap from the trial energy to every other retained level bounds the orthogonal component
+outside a selected eigenstate span, without a phase-fixed vector-error or omitted-tail claim.
+The analytic residual and gap inputs are proof hypotheses, not accepted numerical reports. A new
+exact rational checker discharges the residual bound for supplied rational component data: it
+computes positive mass `S`, checks a maximum squared endpoint sum against `B`, and proves normalized
+continuum residual and retained-energy tolerance `sqrt (B/S)`, provided the actual physical scale
+`ℏω₀` is separately proved to lie in the proposed interval. Kernel-checked synthetic fixtures cover
+acceptance and rejection; runtime parsing, solver-data binding, physical-scale enclosure production,
+and gap checking remain deferred. Identifying an
+actual Kohn--Sham or numerical basis with an analogous contract remains a separate bridge;
+exchange-correlation, effective-potential,
+self-consistency, and dimensional SOC bindings remain downstream. The manifest also records
 Physlib-backed Q5 domain criteria and essential-self-adjointness sufficient conditions, a first
 `SpaceDQuantumSystem` Hamiltonian bridge proving an exact Schwartz domain, symmetry, and
 closability under explicit smooth-potential hypotheses, and a singular hydrogenic specialization

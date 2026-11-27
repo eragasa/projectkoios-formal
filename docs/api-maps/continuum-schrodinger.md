@@ -165,6 +165,11 @@ closures, and form sums.
   dense Hamiltonian domain. Project Koios now proves symmetry and closability from that API, while
   Physlib's dimension-dependent essential-self-adjointness statements remain TODOs.
 
+The [oscillator reuse map](harmonic-oscillator.md) gives declaration-level responsibilities for the
+full local oscillator chain, distinguishes public Alpha Schwartz ladder/vacuum APIs from its private
+raw-sequence declarations, and records the legacy physicists' Hermite reuse candidate. These are
+upstream-first integration choices, not a claim that local domain handling supersedes Physlib's.
+
 ## Current self-adjointness boundary
 
 The generic `SpaceDQuantumSystem` and hydrogenic bridges stop at symmetry and closability. The

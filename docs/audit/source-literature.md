@@ -30,12 +30,23 @@ for a future density-functional binding:
 
 Crossref publisher metadata confirms the journal title, author, volume, article number, publication
 date, and DOI.  The inspected arXiv bytes, rather than a transient publisher rendering, supply the
-exact locator evidence.  Ullrich's statement concerns a pointwise Hermitian `2 × 2` spin-density
-matrix.  The current Lean decomposition instead concerns arbitrary finite orbital blocks and does
-not encode position dependence, positivity, representability, occupations, density-functional
-semantics, or a common spatial spin axis.  Therefore a future physical density declaration may
-`adapt` this source only with those deltas recorded; the current source-neutral Pauli declarations
-remain unbound supporting algebra.
+exact locator evidence. Ullrich's statement concerns a pointwise Hermitian `2 × 2` spin-density
+matrix. The finite Project Koios Pauli decomposition remains source-neutral supporting algebra. The
+later `QuantumMechanics/SpinDensity/Continuum.lean` module records an explicit adaptation: a
+matrix-valued complex `L¹` equivalence class replaces the pointwise carrier; Hermiticity and
+collinearity are almost-everywhere predicates; supplied real occupation weights generalize the
+unweighted occupied-orbital sum; equations (4)--(5) become trace/Pauli-trace classes and an
+exact `L¹` reconstruction; and global spin rotation leaves the particle density invariant while
+transforming the magnetization by the induced `SO(3)` matrix. The downstream
+`DensityFunctionalTheory/KohnSham/ContinuumSpinDensity.lean` module adds the exact carrier-level
+identity between the matrix particle trace and the complexification of the real scalar component
+density, plus integral identities under explicit normalization and occupation-sum hypotheses.
+Pointwise positive semidefiniteness is supplied by the separate finite algebra and lifted almost
+everywhere under explicit nonnegative occupations. These modules do not derive occupation or
+normalization hypotheses and prove no representability converse, exchange-correlation statement,
+or physical applicability. The
+source record remains `candidate` because References-owned canonical identity
+and evidence IDs are still unresolved.
 
 The global-spin-rotation convention was inspected separately:
 
@@ -49,9 +60,11 @@ The global-spin-rotation convention was inspected separately:
   the global internal-spin transformation `Φ(r) ↦ U Φ(r)` for `U ∈ SU(2)` and the corresponding
   magnetization-vector transformation `m(r) ↦ R m(r)`.
 
-`SpinFrameRotation.lean` adopts the first transformation only to fix the active matrix-conjugation
-order.  It does not yet construct the corresponding `SO(3)` matrix `R`, bind a spin-density field,
-or formalize exchange-correlation rotational invariance or the zero-torque theorem.
+`SpinFrameRotation.lean` adopts the first transformation to fix the active matrix-conjugation
+order. `SpinSO3Covariance.lean` now constructs the corresponding checked `SO(3)` matrix, and
+`SpinDensity/Continuum.lean` lifts the same global action to a representative-safe spin-density
+field. These modules still do not formalize exchange-correlation rotational invariance, a local
+spin frame, the zero-torque theorem, or a dimensional spin--orbit Hamiltonian.
 
 Foundational background was also inspected read-only:
 
